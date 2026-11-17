@@ -1,7 +1,7 @@
 # Iteración 01-04 · Modelo de contenido
 
 - **Épica:** 01 · Fundación y sistema de diseño
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/01-04-modelo-contenido
 - **Depende de:** 01-01
 - **RDA relacionadas:** RDA-003

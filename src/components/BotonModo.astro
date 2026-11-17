@@ -49,7 +49,17 @@
 
   for (const boton of document.querySelectorAll("[data-boton-modo]")) {
     boton.addEventListener("click", () => {
-      switchTheme(modoActual() === "oscuro" ? "claro" : "oscuro");
+      const cambiar = () =>
+        switchTheme(modoActual() === "oscuro" ? "claro" : "oscuro");
+      // Sin la API View Transitions o con reducir movimiento: cambio al instante.
+      if (
+        !document.startViewTransition ||
+        matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        cambiar();
+        return;
+      }
+      document.startViewTransition(cambiar);
     });
   }
 

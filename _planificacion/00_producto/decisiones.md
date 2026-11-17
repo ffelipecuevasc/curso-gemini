@@ -11,6 +11,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 | RDA-005 | Medición con Cloudflare Web Analytics por script | Aceptada |
 | RDA-006 | Fuentes autoalojadas desde paquetes de Fontsource | Aceptada |
 | RDA-007 | Sin JavaScript, el sitio se muestra en modo claro | Aceptada |
+| RDA-008 | Avance de cada unidad en cuatro tramos iguales | Aceptada |
 
 ---
 
@@ -95,3 +96,15 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 **Decisión:** sin JavaScript el sitio queda en modo claro. No se duplican los tokens oscuros en una consulta `@media (prefers-color-scheme: dark)`.
 **Alternativas consideradas:** repetir los 13 tokens oscuros bajo `prefers-color-scheme` para seguir al sistema sin script; se descartó porque duplica la paleta en dos lugares que hay que mantener iguales, para un caso marginal.
 **Consecuencias:** sin JavaScript el contenido se lee completo y con los contrastes de `DESIGN.md`, siempre en claro. Agregar la consulta de medios requiere una RDA nueva.
+
+---
+
+## RDA-008 · Avance de cada unidad en cuatro tramos iguales
+
+- **Fecha:** 2026-11-17
+- **Estado:** Aceptada
+
+**Contexto:** el esquema de `unidades` exige `avance.desde` y `avance.hasta` (0–100), y el documento de unidades del curso no trae esos valores (bitácora 01-04).
+**Decisión:** el desarrollador fija cuatro tramos iguales: U1 0–25, U2 25–50, U3 50–75 y U4 75–100. Se cargan en el YAML de cada unidad en la épica 03 y los muestra la ruta del curso de la épica 02.
+**Alternativas consideradas:** tramos proporcionales a los minutos de cada clase; no aportan nada porque las 4 clases duran lo mismo, y los tramos iguales se leen más fácil.
+**Consecuencias:** el dato deja de estar pendiente. El contenido de prueba (`prueba.yaml`) no cambia; se reemplaza en la épica 03.

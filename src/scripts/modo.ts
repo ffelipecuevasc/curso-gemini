@@ -21,7 +21,7 @@ export function hayEleccionGuardada(): boolean {
 /**
  * Aplica un modo a la página y sincroniza los botones de modo.
  * Con `guardar`, la elección del participante queda en localStorage.
- * La 01-05 envolverá el cambio en una transición de vista.
+ * BotonModo.astro lo envuelve en una transición de vista (01-05).
  */
 export function switchTheme(modo: Modo, guardar = true): void {
   document.documentElement.dataset.modo = modo;

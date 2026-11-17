@@ -1,6 +1,6 @@
 # Épica 01 · Fundación y sistema de diseño
 
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Objetivo:** dejar el proyecto Astro compilando, con los tokens de `DESIGN.md`, el layout común con su navegación y modos, y el modelo de contenido listo para cargar las unidades.
 
 ## Alcance
@@ -43,4 +43,4 @@
 
 Al cerrar la épica se escribe `bitacoras/bitacora-01-cierre.md`, con la revisión al cierre. Aquí solo se enlaza.
 
-- **Bitácora de cierre:** —
+- **Bitácora de cierre:** [bitacora-01-cierre](bitacoras/bitacora-01-cierre.md)

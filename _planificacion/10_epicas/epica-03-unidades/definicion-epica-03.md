@@ -28,7 +28,8 @@
 
 ## Decisiones de la épica
 
-- Ninguna.
+- Avance de cada unidad según RDA-008: U1 0–25, U2 25–50, U3 50–75, U4 75–100, cargado en el YAML de cada unidad.
+- Los componentes de la 03-01 resuelven cada recurso y descarga con `getEntry` y lanzan un error si no existe, para que `pnpm build` falle (bitácora 01-04).
 
 ## Criterio de término
 

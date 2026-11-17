@@ -17,6 +17,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-001 | `DESIGN.md` · 7. Movimiento | Planificación de la 01-05 | — | Aplicada |
 | P-002 | `README.md` · 4. Organización del repositorio | Iteración 01-02 | 2026-11-17 | Aplicada |
 | P-003 | `DESIGN.md` · 5. Componentes (fila Encabezado) | Iteración 01-03 | 2026-11-17 | Aplicada |
+| P-004 | `AGENTS.md` · 3. Documentos permitidos y `.claude/hooks/documentos-permitidos.md` | Iteración 01-05 | 2026-11-17 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -61,4 +62,28 @@ Y, en la línea de `src/styles/`, agregar el origen de las fuentes:
 
 ```text
 | Encabezado | Navegación en píldoras sobre `--color-superficie-2` con enlaces a Ruta, Unidades (U1 a U4) e Instructor; la píldora de la sección visible se marca con `aria-current`. En móvil se pliega en un menú con botón (`aria-expanded`, `aria-controls`). Incluye el botón de modo. |
+```
+
+## P-004 · El documento de unidades del curso pasa a la lista de documentos permitidos
+
+- **Documento:** `AGENTS.md` (y la lista equivalente de `.claude/hooks/documentos-permitidos.md`)
+- **Sección:** 3. Documentos permitidos, fila `_planificacion/`
+- **Por qué:** el desarrollador decidió versionar `_planificacion/00_producto/unidades-del-curso.md`, la fuente del contenido del curso (sección 8, regla 2). Hoy vive ahí sin estar en la lista. Si no se aplica, el archivo sigue fuera de la regla y un agente o el hook podría tratarlo como documento no permitido.
+
+**Texto actual** (copiado literalmente del documento):
+
+```text
+| _planificacion/ | `_planificacion/README.md` · `_planificacion/plantillas/*.md` · `_planificacion/00_producto/producto.md` · `_planificacion/00_producto/registro-pendientes.md` · `_planificacion/00_producto/registro-archivo.md` · `_planificacion/00_producto/decisiones.md` · `_planificacion/00_producto/propuestas-documentos-protegidos.md` · `_planificacion/10_epicas/epica-*/definicion-epica-*.md` · `_planificacion/10_epicas/epica-*/iteracion-*.md` · `_planificacion/10_epicas/epica-*/bitacoras/bitacora-*.md` |
+```
+
+**Texto propuesto:**
+
+```text
+| _planificacion/ | `_planificacion/README.md` · `_planificacion/plantillas/*.md` · `_planificacion/00_producto/producto.md` · `_planificacion/00_producto/unidades-del-curso.md` · `_planificacion/00_producto/registro-pendientes.md` · `_planificacion/00_producto/registro-archivo.md` · `_planificacion/00_producto/decisiones.md` · `_planificacion/00_producto/propuestas-documentos-protegidos.md` · `_planificacion/10_epicas/epica-*/definicion-epica-*.md` · `_planificacion/10_epicas/epica-*/iteracion-*.md` · `_planificacion/10_epicas/epica-*/bitacoras/bitacora-*.md` |
+```
+
+En `.claude/hooks/documentos-permitidos.md`, sección «_planificacion/», agregar esta línea después de la de `producto.md`:
+
+```text
+- `_planificacion/00_producto/unidades-del-curso.md`
 ```

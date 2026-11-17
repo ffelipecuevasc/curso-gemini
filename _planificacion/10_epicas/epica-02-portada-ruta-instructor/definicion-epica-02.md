@@ -25,6 +25,7 @@
 
 ## Decisiones de la épica
 
+- La ruta muestra el avance de cada unidad según RDA-008: U1 0–25, U2 25–50, U3 50–75, U4 75–100.
 - Los SVG de Gemini y Google se usan tal cual vienen en `iconos-svg.txt` (DESIGN.md, sección 6).
 
 ## Criterio de término

@@ -1,7 +1,7 @@
 # Iteración 02-05 · Bloques y prompts de la Unidad 1 y la Unidad 2
 
 - **Épica:** 02 · Portada, ruta del curso e instructor
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/02-05-bloques-u1-u2
 - **Depende de:** 02-04
 - **RDA relacionadas:** RDA-003, RDA-009
@@ -41,13 +41,23 @@ Cargar en los archivos de bloque de la U1 y la U2 su texto «Para la clase», su
 
 ## Criterios de aceptación
 
-- [ ] La propuesta de la tarea 1 está aprobada por el desarrollador y anotada en la bitácora.
-- [ ] Cada bloque de la U1 y la U2 tiene cuerpo, y su texto coincide con el documento salvo las omisiones aprobadas (lista de omisiones por bloque en la bitácora).
-- [ ] Cada prompt cargado es idéntico al texto del documento (comando y resultado en la bitácora: N de N iguales).
-- [ ] Ningún prompt fue inventado ni completado: los nombrados pero no escritos están en el registro, no en el contenido.
-- [ ] Cada recurso tiene URL `https://` del documento y está referenciado al menos por una ficha; `pnpm build` falla si una ficha referencia un recurso inexistente (comprobado con `getEntry` y revertido).
-- [ ] Búsqueda de `PENDIENTE_` y `VERIFICAR` en `src/content/`: 0 coincidencias.
+- [x] La propuesta de la tarea 1 está aprobada por el desarrollador y anotada en la bitácora.
+- [x] Cada bloque de la U1 y la U2 tiene cuerpo, y su texto coincide con el documento salvo las omisiones aprobadas (lista de omisiones por bloque en la bitácora).
+- [x] Cada prompt cargado es idéntico al texto del documento (comando y resultado en la bitácora: N de N iguales).
+- [x] Ningún prompt fue inventado ni completado: los nombrados pero no escritos están en el registro, no en el contenido.
+- [x] Cada recurso tiene URL `https://` del documento y está referenciado al menos por una ficha; `pnpm build` falla si una ficha referencia un recurso inexistente (comprobado con `getEntry` y revertido).
+- [x] Búsqueda de `PENDIENTE_` y `VERIFICAR` en `src/content/`: 0 coincidencias.
 - [ ] `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; la página se ve igual que al cerrar la 02-04.
+
+Evidencia (detalle en [bitacora-02-05](bitacoras/bitacora-02-05.md)):
+
+- Propuesta aprobada por el desarrollador el 2026-11-17 (4 respuestas, anotadas en la bitácora).
+- Cuerpos: 13 de 13 bloques con cuerpo; 144 líneas, 138 idénticas a una línea del documento y 6 que solo pierden una frase aprobada.
+- Prompts: comando temporal en Node, 8 de 8 iguales al documento.
+- No escritos: el registro tiene una fila por unidad en «Decisiones por tomar».
+- Recursos: 27 con `https://` del documento, todos referenciados (U1: 20, U2: 12, 5 en ambas). Con `tokens-inexistente` en `u1.yaml`, el build falla con «La unidad «u1» referencia «tokens-inexistente», que no existe en src/content/recursos.yaml»; revertido (`cmp` idéntico).
+- `grep -rlE "PENDIENTE_|VERIFICAR" src/content dist`: 0.
+- Sin marcar el último: `pnpm build` (sin la advertencia de `recursos.yaml`) y `astro check` (0/0/0) se midieron, pero «la página se ve igual» no: el build de `HEAD` en una copia aparte fue rechazado, así que no hay hash de comparación. Sí se midieron 1 `h1`, 6 `h2`, 5 `h3` y 3 scripts, igual que al cerrar la 02-04.
 
 ## Riesgos
 

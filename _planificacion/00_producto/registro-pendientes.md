@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-17
-- **Iteración activa:** 02-04 (en revisión)
+- **Iteración activa:** 02-05 (en revisión)
 - **Próximo hito:** épica 02 completa (portada, ruta, instructor y 4 unidades cargadas); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
@@ -21,8 +21,8 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | 02-01 | Portada | 02 | Terminada | 01-05 | [bitacora-02-01](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-01.md) |
 | 02-02 | Fichas de las unidades y modelo de bloques | 02 | Terminada | 02-01 | [bitacora-02-02](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-02.md) |
 | 02-03 | Ruta del curso | 02 | Terminada | 02-02 | [bitacora-02-03](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-03.md) |
-| 02-04 | Instructor | 02 | En revisión | 02-03 | [bitacora-02-04](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-04.md) |
-| 02-05 | Bloques y prompts de la Unidad 1 y la Unidad 2 | 02 | Pendiente | 02-04 | — |
+| 02-04 | Instructor | 02 | Terminada | 02-03 | [bitacora-02-04](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-04.md) |
+| 02-05 | Bloques y prompts de la Unidad 1 y la Unidad 2 | 02 | En revisión | 02-04 | [bitacora-02-05](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-05.md) |
 | 02-06 | Bloques y prompts de la Unidad 3 y la Unidad 4 | 02 | Pendiente | 02-05 | — |
 
 ## 2. Épicas cerradas
@@ -43,8 +43,8 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | 6 | Fichas reales de las 4 unidades con un `.md` por bloque (RDA-009) y sin contenido de prueba | Técnico | — | 02-02 | Terminada |
 | 7 | Ruta del curso: 4 unidades de 0 % a 100 % en mosaico, enlazadas a sus secciones | Funcionalidad | — | 02-03 | Terminada |
 | 7.1 | Ruta del curso en 4 columnas desde 1024 px (P-006 en `DESIGN.md`, sección 4) | Corrección | — | — | Terminada (dicho por el desarrollador, revisión en navegador sin observaciones) |
-| 8 | Sección del instructor | Funcionalidad | — | 02-04 | En revisión |
-| 9 | Texto «Para la clase», prompts y recursos de la Unidad 1 y la Unidad 2 | Funcionalidad | — | 02-05 | Pendiente |
+| 8 | Sección del instructor | Funcionalidad | — | 02-04 | Terminada |
+| 9 | Texto «Para la clase», prompts y recursos de la Unidad 1 y la Unidad 2 | Funcionalidad | — | 02-05 | En revisión |
 | 10 | Texto «Para la clase», prompts y recursos de la Unidad 3 y la Unidad 4 | Funcionalidad | — | 02-06 | Pendiente |
 | 11 | Componentes de unidad: prompt con «Copiar», «Profundiza», recurso externo y descarga, con error de compilación si una referencia a recurso o descarga no existe | Funcionalidad | — | 03-01 | Pendiente |
 | 12 | Presentación de la Unidad 1 y sus pendientes (descargas, videos, «Profundiza») | Funcionalidad | — | 03-02 | Pendiente |
@@ -80,7 +80,9 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Nombre del Worker (define la URL `nombre.subdominio.workers.dev`) y token de Web Analytics | RDA-005 | Desarrollador |
 | Licencia del contenido del sitio (hoy «todos los derechos reservados») | — | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
-| Advertencias aceptadas del cargador `file`: la de `recursos.yaml` debe desaparecer en la 02-05 (primer recurso cargado) y la de `descargas.yaml` en la épica 03 (primera descarga) | 02-02 | Desarrollador |
+| Advertencias aceptadas del cargador `file`: la de `recursos.yaml` desapareció en la 02-05; la de `descargas.yaml` sigue hasta la épica 03 (primera descarga) | 02-02 · 02-05 | Desarrollador |
+| `PENDIENTE_DESARROLLADOR` · Prompts de la U1 nombrados pero no escritos: el «Avanzado» completo de la escalera (bloque 4) y la ronda 3 del laboratorio (bloque 5) | 02-05 | Desarrollador |
+| `PENDIENTE_DESARROLLADOR` · Prompts de la U2 nombrados pero no escritos: «Prompt base» del dashboard (bloque 5), «Prompts base de cada hito» y los carriles extra de los bloques 1 a 5 | 02-05 | Desarrollador |
 
 ## 6. Propuestas fuera de alcance
 
@@ -122,3 +124,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Corrección: la ruta pasa a 4 columnas desde 1024 px (`lg:grid-cols-4`), según la P-006 aplicada en `DESIGN.md` (commit 9c39f9b); `pnpm build` y `astro check` sin cambios en advertencias; falta revisión en navegador. |
 | 2026-11-17 | Corrección de la ruta en 4 columnas terminada: dicho por el desarrollador, revisión en navegador sin observaciones. |
 | 2026-11-17 | Iteración 02-04 en revisión: `#instructor` desde la colección `instructor`, certificación de Gemini primero, sin insignia (no está en el repo); 0 B de JS nuevo; falta revisión en navegador. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-04.md) |
+| 2026-11-17 | Iteración 02-04 terminada: el desarrollador revisó el instructor en el navegador sin observaciones; corregido el comentario de RutaCurso.astro (4 columnas). |
+| 2026-11-17 | Iteración 02-05 en revisión: cuerpos de los 13 bloques de U1 y U2, 8 prompts literales (8 de 8 iguales) y 27 recursos; las fichas fallan al compilar si referencian un recurso inexistente; falta comparar el hash con HEAD. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-05.md) |

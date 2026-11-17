@@ -30,6 +30,10 @@ export async function obtenerUnidadesConBloques(): Promise<UnidadConBloques[]> {
     porUnidad.get(unidad.id)!.push(bloque);
   }
 
+  for (const unidad of unidades) {
+    await comprobarReferencias(unidad);
+  }
+
   return unidades
     .map((unidad) => {
       const propios = porUnidad.get(unidad.id)!.sort(compararBloques);
@@ -37,6 +41,20 @@ export async function obtenerUnidadesConBloques(): Promise<UnidadConBloques[]> {
       return { ...unidad, bloques: propios };
     })
     .sort((a, b) => a.data.numero - b.data.numero);
+}
+
+// Cada recurso y descarga de la ficha debe existir en su colección.
+async function comprobarReferencias(
+  unidad: CollectionEntry<"unidades">,
+): Promise<void> {
+  const referencias = [...unidad.data.recursos, ...unidad.data.descargas];
+  for (const referencia of referencias) {
+    if ((await getEntry(referencia)) === undefined) {
+      throw new Error(
+        `La unidad «${unidad.id}» referencia «${referencia.id}», que no existe en src/content/${referencia.collection}.yaml`,
+      );
+    }
+  }
 }
 
 function comprobarBloques(

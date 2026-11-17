@@ -1,7 +1,7 @@
 # Iteración 02-04 · Instructor
 
 - **Épica:** 02 · Portada, ruta del curso e instructor
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/02-04-instructor
 - **Depende de:** 02-03
 - **RDA relacionadas:** RDA-003, RDA-004
@@ -59,9 +59,9 @@ Del documento del curso. Se quitan las marcas Markdown y la indicación «Se des
 - [x] La certificación de Gemini aparece antes que el resto de la trayectoria.
 - [x] Un `https` faltante en el enlace oficial o un campo obligatorio faltante hace fallar `pnpm build` (comprobado y revertido).
 - [x] Si hay insignia: se sirve optimizada por Astro con `width`, `height` y `alt`. Si no hay: no hay `<img>` roto ni marcador visible (búsqueda de `PENDIENTE_` en `dist/`: 0).
-- [ ] Los enlaces externos abren en pestaña nueva con `rel="noopener noreferrer"` y lo anuncian; se alcanzan con el teclado.
+- [x] Los enlaces externos abren en pestaña nueva con `rel="noopener noreferrer"` y lo anuncian; se alcanzan con el teclado. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
 - [x] Un solo `h1` en la página; `#instructor` con `h2` y el nombre como `h3`.
-- [ ] Sin desborde en 360 px, en ambos modos; `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; 0 B de JavaScript nuevo.
+- [x] Sin desborde en 360 px, en ambos modos; `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; 0 B de JavaScript nuevo. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
 
 Evidencia (detalle en [bitacora-02-04](bitacoras/bitacora-02-04.md)):
 

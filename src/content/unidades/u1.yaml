@@ -19,5 +19,25 @@ terminadoCuando:
   - "Guardé mi plantilla de prompt maestro en Drive y la probé al menos una vez."
   - "Revisé las respuestas antes de usarlas: qué verifiqué y qué aporté yo."
   - "Usé solo datos ficticios o públicos."
-recursos: []
+recursos:
+  - planes-google-ai-chile
+  - google-ai-plus
+  - gemini-4-argon
+  - gemini-4-carbon
+  - gemini-4-hydrogen
+  - introducing-gemini
+  - bard-pasa-a-ser-gemini
+  - io-2024-100-anuncios
+  - que-es-un-llm
+  - tokens
+  - alucinaciones-ia
+  - principios-ia-google
+  - aviso-privacidad-apps-gemini
+  - privacy-hub-workspace
+  - verificar-respuestas
+  - gemini-en-gmail
+  - workspace-studio
+  - prompting-guide-101
+  - estrategias-diseno-prompts
+  - google-ai-essentials
 descargas: []

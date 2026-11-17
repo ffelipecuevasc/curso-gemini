@@ -1,2 +1,137 @@
-# Recursos externos (documentación y videos oficiales). Se cargan en la épica 03.
-[]
+# Recursos externos oficiales, copiados de «Fuentes oficiales» del documento
+# del curso (título sin la descripción entre paréntesis; sitio = dominio).
+- id: planes-google-ai-chile
+  tipo: documento
+  titulo: "Planes de Google AI en Chile"
+  sitio: gemini.google
+  url: https://gemini.google/cl/subscriptions?hl=es-419
+- id: acerca-modelos-gemini
+  tipo: documento
+  titulo: "Acerca de los modelos de Gemini"
+  sitio: support.google.com
+  url: https://support.google.com/gemini/answer/18648722
+- id: google-ai-plus
+  tipo: documento
+  titulo: "Google AI Plus"
+  sitio: support.google.com
+  url: https://support.google.com/googleone/answer/16548195
+- id: gemini-4-argon
+  tipo: documento
+  titulo: "Gemini 4 Argon"
+  sitio: blog.google
+  url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/
+- id: gemini-4-carbon
+  tipo: documento
+  titulo: "Gemini 4 Carbon"
+  sitio: blog.google
+  url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/
+- id: gemini-4-hydrogen
+  tipo: documento
+  titulo: "Gemini 4 Hydrogen"
+  sitio: blog.google
+  url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/
+- id: canvas
+  tipo: documento
+  titulo: "Crear documentos, apps y más con Canvas"
+  sitio: support.google.com
+  url: https://support.google.com/gemini/answer/16047321
+- id: presentaciones-app-gemini
+  tipo: documento
+  titulo: "Generar presentaciones en la app de Gemini"
+  sitio: workspaceupdates.googleblog.com
+  url: https://workspaceupdates.googleblog.com/2025/10/generate-presentations-in-gemini-app.html
+- id: exportar-respuestas
+  tipo: documento
+  titulo: "Exportar respuestas"
+  sitio: support.google.com
+  url: https://support.google.com/gemini/answer/14184041
+- id: generar-editar-imagenes
+  tipo: documento
+  titulo: "Generar y editar imágenes"
+  sitio: support.google.com
+  url: https://support.google.com/gemini/answer/14286560
+- id: nano-banana-pro
+  tipo: documento
+  titulo: "Nano Banana Pro"
+  sitio: blog.google
+  url: https://blog.google/innovation-and-ai/products/nano-banana-pro/
+- id: deep-research
+  tipo: documento
+  titulo: "Usar Deep Research en la app de Gemini"
+  sitio: support.google.com
+  url: https://support.google.com/gemini/answer/15719111
+- id: introducing-gemini
+  tipo: documento
+  titulo: "Introducing Gemini"
+  sitio: blog.google
+  url: https://blog.google/technology/ai/google-gemini-ai
+- id: bard-pasa-a-ser-gemini
+  tipo: documento
+  titulo: "Bard pasa a ser Gemini"
+  sitio: blog.google
+  url: https://blog.google/intl/en-africa/products/explore-get-answers/bard-becomes-gemini-try-ultra-10-and-a-new-mobile-app-today/
+- id: io-2024-100-anuncios
+  tipo: documento
+  titulo: "100 anuncios del I/O 2024"
+  sitio: blog.google
+  url: https://blog.google/innovation-and-ai/products/google-io-2024-100-announcements/
+- id: que-es-un-llm
+  tipo: documento
+  titulo: "Qué es un LLM"
+  sitio: cloud.google.com
+  url: https://cloud.google.com/ai/llms
+- id: tokens
+  tipo: documento
+  titulo: "Tokens"
+  sitio: ai.google.dev
+  url: https://ai.google.dev/gemini-api/docs/tokens
+- id: alucinaciones-ia
+  tipo: documento
+  titulo: "Alucinaciones de IA"
+  sitio: cloud.google.com
+  url: https://cloud.google.com/discover/what-are-ai-hallucinations
+- id: principios-ia-google
+  tipo: documento
+  titulo: "Principios de IA de Google"
+  sitio: ai.google
+  url: https://ai.google/responsibility/principles/
+- id: aviso-privacidad-apps-gemini
+  tipo: documento
+  titulo: "Aviso de privacidad de las apps de Gemini"
+  sitio: support.google.com
+  url: https://support.google.com/gemini/answer/13594961
+- id: privacy-hub-workspace
+  tipo: documento
+  titulo: "Privacy Hub de Workspace"
+  sitio: knowledge.workspace.google.com
+  url: https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub
+- id: verificar-respuestas
+  tipo: documento
+  titulo: "Verificar respuestas"
+  sitio: support.google.com
+  url: https://support.google.com/gemini/answer/14143489
+- id: gemini-en-gmail
+  tipo: documento
+  titulo: "Gemini en Gmail"
+  sitio: support.google.com
+  url: https://support.google.com/mail/answer/14355636
+- id: workspace-studio
+  tipo: documento
+  titulo: "Workspace Studio"
+  sitio: workspaceupdates.googleblog.com
+  url: https://workspaceupdates.googleblog.com/2025/12/workspace-studio.html
+- id: prompting-guide-101
+  tipo: documento
+  titulo: "Prompting guide 101"
+  sitio: services.google.com
+  url: https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf
+- id: estrategias-diseno-prompts
+  tipo: documento
+  titulo: "Estrategias de diseño de prompts"
+  sitio: ai.google.dev
+  url: https://ai.google.dev/gemini-api/docs/prompting-strategies
+- id: google-ai-essentials
+  tipo: documento
+  titulo: "Google AI Essentials"
+  sitio: grow.google
+  url: https://grow.google/ai-essentials/

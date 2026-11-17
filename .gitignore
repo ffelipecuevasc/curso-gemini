@@ -11,3 +11,6 @@ dist/
 
 # Editor
 .idea
+
+# Volcados de memoria de Git Bash en Windows
+*.stackdump

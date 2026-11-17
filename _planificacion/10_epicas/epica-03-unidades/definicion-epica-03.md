@@ -33,6 +33,8 @@
 - El texto «Para la clase» de cada bloque se muestra con `render()` de la colección `bloques` (RDA-009).
 - Mostrar el kit de marca de GTD (HEX aproximados) y su logo depende de la autorización del cliente abierta en el registro.
 - Los componentes de la 03-01 resuelven cada recurso y descarga con `getEntry` y lanzan un error si no existe, para que `pnpm build` falle (bitácora 01-04).
+- Actualización 2026-11-17 (02-05): `comprobarReferencias()` de `src/lib/unidades.ts` ya valida al compilar los recursos y las descargas de cada ficha; la 03-01 no lo repite.
+- Actualización 2026-11-17 (02-05): en U2 · bloque 3, «Ejemplo de estructura:» queda sin el código, que es el prompt `identidad-visual-gtd`; la épica 03 debe mostrar ese prompt junto a ese paso.
 
 ## Criterio de término
 

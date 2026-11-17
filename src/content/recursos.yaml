@@ -135,3 +135,73 @@
   titulo: "Google AI Essentials"
   sitio: grow.google
   url: https://grow.google/ai-essentials/
+- id: crear-cuaderno
+  tipo: documento
+  titulo: "Crear un cuaderno"
+  sitio: support.google.com
+  url: https://support.google.com/gemininotebook/answer/16206563
+- id: agregar-descubrir-fuentes
+  tipo: documento
+  titulo: "Agregar o descubrir fuentes"
+  sitio: support.google.com
+  url: https://support.google.com/gemininotebook/answer/16215270
+- id: usar-chat-cuaderno
+  tipo: documento
+  titulo: "Usar el chat"
+  sitio: support.google.com
+  url: https://support.google.com/gemininotebook/answer/16179559
+- id: generar-presentacion-cuaderno
+  tipo: documento
+  titulo: "Generar una presentación"
+  sitio: support.google.com
+  url: https://support.google.com/gemininotebook/answer/16757456
+- id: cocreacion-presentaciones-videos
+  tipo: documento
+  titulo: "Cocreación de presentaciones y videos"
+  sitio: blog.google
+  url: https://blog.google/innovation-and-ai/products/gemini-notebook/co-create-slides-videos/
+- id: nuevas-herramientas-estudio
+  tipo: documento
+  titulo: "Nuevas herramientas de estudio e informes interactivos"
+  sitio: blog.google
+  url: https://blog.google/innovation-and-ai/products/gemini-notebook/new-study-tools-september-2026/
+- id: deep-research-tipos-fuentes
+  tipo: documento
+  titulo: "Deep Research y más tipos de fuentes"
+  sitio: blog.google
+  url: https://blog.google/technology/google-labs/notebooklm-deep-research-file-types/
+- id: coleccion-comunitaria-prompts-presentaciones
+  tipo: documento
+  titulo: "Colección comunitaria de prompts de presentaciones (no oficial)"
+  sitio: github.com
+  url: https://github.com/serenakeyitan/awesome-notebookLM-prompts
+- id: crear-administrar-skills
+  tipo: documento
+  titulo: "Crear y administrar skills en las apps de Gemini"
+  sitio: support.google.com
+  url: https://support.google.com/gemini?p=pn_skills
+- id: skills-app-gemini-workspace
+  tipo: documento
+  titulo: "Skills en la app de Gemini y Workspace, y qué sigue para Gems"
+  sitio: workspaceupdates.googleblog.com
+  url: https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html
+- id: transicion-gems-skills
+  tipo: documento
+  titulo: "Transición de Gems a skills"
+  sitio: knowledge.workspace.google.com
+  url: https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/about-the-transition-to-skills?hl=en
+- id: anuncio-skills
+  tipo: documento
+  titulo: "Anuncio de skills"
+  sitio: blog.google
+  url: https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/
+- id: formato-skill-md-gemini-enterprise
+  tipo: documento
+  titulo: "Formato SKILL.md en Gemini Enterprise"
+  sitio: docs.cloud.google.com
+  url: https://docs.cloud.google.com/gemini/enterprise/docs/skills
+- id: crear-skills-gemini-cli
+  tipo: documento
+  titulo: "Crear skills en Gemini CLI"
+  sitio: geminicli.com
+  url: https://geminicli.com/docs/cli/creating-skills/

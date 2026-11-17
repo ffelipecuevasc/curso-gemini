@@ -21,5 +21,13 @@ terminadoCuando:
   - "Generé dos presentaciones (sin prompt y con el prompt de estilo GTD) y puedo explicar la diferencia."
   - "Descargué el guion del curso interno en Markdown, marcado como borrador para validación legal."
   - "Usé solo fuentes públicas."
-recursos: []
+recursos:
+  - crear-cuaderno
+  - agregar-descubrir-fuentes
+  - usar-chat-cuaderno
+  - generar-presentacion-cuaderno
+  - cocreacion-presentaciones-videos
+  - nuevas-herramientas-estudio
+  - deep-research-tipos-fuentes
+  - coleccion-comunitaria-prompts-presentaciones
 descargas: []

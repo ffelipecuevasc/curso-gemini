@@ -1,7 +1,7 @@
 # Iteración 02-05 · Bloques y prompts de la Unidad 1 y la Unidad 2
 
 - **Épica:** 02 · Portada, ruta del curso e instructor
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/02-05-bloques-u1-u2
 - **Depende de:** 02-04
 - **RDA relacionadas:** RDA-003, RDA-009
@@ -47,7 +47,7 @@ Cargar en los archivos de bloque de la U1 y la U2 su texto «Para la clase», su
 - [x] Ningún prompt fue inventado ni completado: los nombrados pero no escritos están en el registro, no en el contenido.
 - [x] Cada recurso tiene URL `https://` del documento y está referenciado al menos por una ficha; `pnpm build` falla si una ficha referencia un recurso inexistente (comprobado con `getEntry` y revertido).
 - [x] Búsqueda de `PENDIENTE_` y `VERIFICAR` en `src/content/`: 0 coincidencias.
-- [ ] `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; la página se ve igual que al cerrar la 02-04.
+- [x] `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; la página se ve igual que al cerrar la 02-04. (dicho por el desarrollador, 2026-11-17, hash idéntico)
 
 Evidencia (detalle en [bitacora-02-05](bitacoras/bitacora-02-05.md)):
 

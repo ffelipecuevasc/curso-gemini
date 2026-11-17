@@ -19,5 +19,11 @@ terminadoCuando:
   - "Creé, probé y descargué una skill propia."
   - "Mi proyecto integrador usa una herramienta de investigación, dos skills y un producto final, e incluye la reflexión de 4 preguntas."
   - "Usé solo datos ficticios o públicos (o mi calendario personal en la skill de agenda)."
-recursos: []
+recursos:
+  - crear-administrar-skills
+  - skills-app-gemini-workspace
+  - transicion-gems-skills
+  - anuncio-skills
+  - formato-skill-md-gemini-enterprise
+  - crear-skills-gemini-cli
 descargas: []

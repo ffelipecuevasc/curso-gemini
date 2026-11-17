@@ -1,7 +1,7 @@
 # Iteración 02-06 · Bloques y prompts de la Unidad 3 y la Unidad 4
 
 - **Épica:** 02 · Portada, ruta del curso e instructor
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/02-06-bloques-u3-u4
 - **Depende de:** 02-05
 - **RDA relacionadas:** RDA-003, RDA-009
@@ -43,13 +43,23 @@ Cargar en los archivos de bloque de la U3 y la U4 su texto «Para la clase», su
 
 ## Criterios de aceptación
 
-- [ ] La propuesta de la tarea 1 está aprobada por el desarrollador y anotada en la bitácora.
-- [ ] Cada bloque de las 4 unidades tiene cuerpo; el de la U3 y la U4 coincide con el documento salvo las omisiones aprobadas (lista en la bitácora).
-- [ ] Los prompts de las 4 unidades son idénticos al documento (comando y resultado en la bitácora: N de N iguales).
-- [ ] Cada recurso tiene URL `https://` del documento y está referenciado por al menos una ficha; ningún recurso no oficial entra sin decir «no oficial» en su título.
-- [ ] Búsqueda de `PENDIENTE_` y `VERIFICAR` en `src/content/`: 0 coincidencias.
-- [ ] `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; la página se ve igual que al cerrar la 02-05.
-- [ ] El criterio de término de la épica 02 está comprobado con evidencia en la bitácora de cierre, y la propuesta de la épica 03 está entregada sin generar archivos de iteración.
+- [x] La propuesta de la tarea 1 está aprobada por el desarrollador y anotada en la bitácora.
+- [x] Cada bloque de las 4 unidades tiene cuerpo; el de la U3 y la U4 coincide con el documento salvo las omisiones aprobadas (lista en la bitácora).
+- [x] Los prompts de las 4 unidades son idénticos al documento (comando y resultado en la bitácora: N de N iguales).
+- [x] Cada recurso tiene URL `https://` del documento y está referenciado por al menos una ficha; ningún recurso no oficial entra sin decir «no oficial» en su título.
+- [x] Búsqueda de `PENDIENTE_` y `VERIFICAR` en `src/content/`: 0 coincidencias.
+- [x] `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; la página se ve igual que al cerrar la 02-05.
+- [x] El criterio de término de la épica 02 está comprobado con evidencia en la bitácora de cierre, y la propuesta de la épica 03 está entregada sin generar archivos de iteración.
+
+Evidencia (detalle en [bitacora-02-06](bitacoras/bitacora-02-06.md) y [bitacora-02-cierre](bitacoras/bitacora-02-cierre.md)):
+
+- Propuesta aprobada el 2026-11-17 (4 respuestas, anotadas en la bitácora).
+- 26 de 26 bloques con cuerpo; U3 + U4: 189 líneas, 188 idénticas al documento y 1 que solo pierde la frase `VERIFICAR` aprobada.
+- Comando temporal en Node: 24 de 24 prompts iguales al documento (8 de U1 y U2 + 16 de U3 y U4).
+- 41 recursos, 41 con `https://` presente en el documento, 0 sin referencia; el único no oficial se titula «… (no oficial)».
+- `grep -rlE "PENDIENTE_|VERIFICAR" src/content dist`: 0.
+- `astro check` 0/0; `pnpm build` «Complete!» solo con la advertencia aceptada de `descargas.yaml`; SHA-256 de `dist/index.html` idéntico al de `HEAD` compilado aparte (`c5bc939e…83a5ca`).
+- Propuesta de la épica 03 entregada en el chat; no se generaron archivos de iteración.
 
 ## Riesgos
 

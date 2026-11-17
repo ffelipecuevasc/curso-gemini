@@ -49,4 +49,4 @@
 
 ## Cierre
 
-- **Bitácora de cierre:** —
+- **Bitácora de cierre:** [bitacora-02-cierre](bitacoras/bitacora-02-cierre.md)

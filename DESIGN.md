@@ -98,7 +98,7 @@ Reglas:
 
 | Componente | Descripción y reglas |
 | :--------- | :------------------- |
-| Encabezado | Navegación en píldoras sobre `--color-superficie-2` con enlaces a Ruta, Unidades (U1 a U4), Instructor y Recursos; la píldora de la sección visible se marca con `aria-current`. En móvil se pliega en un menú con botón (`aria-expanded`, `aria-controls`). Incluye el botón de modo. |
+| Encabezado | Navegación en píldoras sobre `--color-superficie-2` con enlaces a Ruta, Unidades (U1 a U4) e Instructor; la píldora de la sección visible se marca con `aria-current`. En móvil se pliega en un menú con botón (`aria-expanded`, `aria-controls`). Incluye el botón de modo. |
 | Portada (hero) | Título del curso (`h1`), una frase de propósito, el botón principal «Ver la ruta», los íconos SVG de Gemini y de Google, un círculo decorativo `--color-superficie` parcialmente fuera del marco y los enlaces de redes pequeños en la esquina inferior izquierda. |
 | Ruta del curso | Mosaico de cuatro bloques de color (sección 2.2), cada uno con su número, nombre, mini-proyecto y avance «0 % → 25 %», «25 % → 50 %», «50 % → 75 %», «75 % → 100 %», escrito en IBM Plex Mono. Cada bloque enlaza a su sección. |
 | Sección de unidad | Encabezado con el bloque de color de la unidad, objetivo, mini-proyecto, tabla de bloques con minutos, y por cada bloque: «Para la clase», prompts copiables, descargas y «Profundiza en tu tiempo» plegado. Cierra con la lista «Terminado cuando…». |

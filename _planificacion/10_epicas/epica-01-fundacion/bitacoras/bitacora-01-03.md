@@ -3,7 +3,7 @@
 - **Fecha:** 2026-11-17
 - **Agente:** Claude Code (Claude Opus 5.5)
 - **Rama:** iteracion/01-03-layout-navegacion-modos
-- **Estado final:** En revisión
+- **Estado final:** Terminada
 
 ## Resumen
 
@@ -39,12 +39,12 @@ La página de muestra de la 01-02 se reemplazó por el layout común. `Base.astr
 
 ## Criterios de aceptación
 
-- [ ] Sin JavaScript, página completa y anclas funcionando (comprobado en el HTML; falta el navegador).
-- [ ] Recarga en oscuro sin parpadeo con «3G lenta» (el script va antes del CSS; falta el navegador).
-- [ ] Primer `Tab` al salto y `Enter` a `main` (comprobado en el HTML; falta el teclado).
-- [ ] Menú en 360 px con teclado y `Escape` (implementado; falta el navegador).
+- [x] Sin JavaScript, página completa y anclas funcionando (comprobado en el HTML; comprobado por el desarrollador).
+- [x] Recarga en oscuro sin parpadeo con «3G lenta» (el script va antes del CSS; comprobado por el desarrollador).
+- [x] Primer `Tab` al salto y `Enter` a `main` (comprobado en el HTML; comprobado por el desarrollador).
+- [x] Menú en 360 px con teclado y `Escape` (implementado; comprobado por el desarrollador).
 - [x] Redes con texto, URL y `rel` exactos (HTML compilado).
-- [ ] Objetivos táctiles de 44 × 44 px (por clases; falta medir).
+- [x] Objetivos táctiles de 44 × 44 px (por clases; comprobado por el desarrollador).
 - [x] JavaScript menor a 3 KB comprimido: 806 B.
 
 ## Diferencias entre lo planificado y lo encontrado

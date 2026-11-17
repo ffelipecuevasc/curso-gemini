@@ -1,7 +1,7 @@
 # Iteración 01-04 · Modelo de contenido
 
 - **Épica:** 01 · Fundación y sistema de diseño
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/01-04-modelo-contenido
 - **Depende de:** 01-01
 - **RDA relacionadas:** RDA-003
@@ -27,10 +27,10 @@ Definir las colecciones de contenido con sus esquemas, para que las unidades se 
 
 ## Criterios de aceptación
 
-- [ ] El modelo propuesto en la tarea 1 está aprobado por el desarrollador y anotado en la bitácora.
-- [ ] `pnpm build` falla con un mensaje que nombra el campo cuando falta uno obligatorio, y pasa cuando el contenido es válido.
-- [ ] Un recurso con URL `http://` hace fallar la compilación.
-- [ ] Los tipos de las colecciones están disponibles en los componentes (`pnpm astro check` sin errores al leer una colección desde `index.astro`).
+- [x] El modelo propuesto en la tarea 1 está aprobado por el desarrollador y anotado en la bitácora. (Aprobado en el chat «tal cual»; anotado en la bitácora 01-04.)
+- [x] `pnpm build` falla con un mensaje que nombra el campo cuando falta uno obligatorio, y pasa cuando el contenido es válido. (Sin `objetivo`: `unidades → prueba … objetivo: Required` y el build se detiene; con el archivo restaurado: «Complete!».)
+- [x] Un recurso con URL `http://` hace fallar la compilación. (`recursos → prueba-documento … url: La URL debe empezar con https://`.)
+- [x] Los tipos de las colecciones están disponibles en los componentes (`pnpm astro check` sin errores al leer una colección desde `index.astro`). (Lectura temporal con `getCollection("unidades")`: 0 errores; asignar `numero` a un `string` da `ts(2322)`, lo que prueba que el tipo llega. La lectura se revirtió.)
 
 ## Fuera de alcance
 

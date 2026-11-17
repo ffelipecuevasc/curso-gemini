@@ -1,0 +1,5 @@
+# Descargas de public/descargas/. Entrada de prueba de la 01-04 (se reemplaza en la épica 03).
+- id: prueba-descarga
+  archivo: /descargas/prueba.txt
+  formato: TXT
+  pesoKB: 1

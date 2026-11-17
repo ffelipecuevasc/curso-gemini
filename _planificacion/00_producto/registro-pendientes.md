@@ -3,8 +3,8 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-17
-- **Iteración activa:** ninguna (01-03 en revisión; próxima: 01-04)
-- **Próximo hito:** cerrar la épica 01 con el modelo de contenido (01-04) y la transición de modo (01-05); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
+- **Iteración activa:** ninguna (01-04 en revisión; próxima: 01-05)
+- **Próximo hito:** cerrar la épica 01 con la transición de modo (01-05); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
 
@@ -20,8 +20,8 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
 | 01-01 | Andamiaje del proyecto | 01 | Terminada | — | [bitacora-01-01](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-01.md) |
 | 01-02 | Tokens de diseño y fuentes | 01 | Terminada | 01-01 | [bitacora-01-02](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-02.md) |
-| 01-03 | Layout, navegación y modos | 01 | En revisión | 01-02 | [bitacora-01-03](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-03.md) |
-| 01-04 | Modelo de contenido | 01 | Pendiente | 01-01 | — |
+| 01-03 | Layout, navegación y modos | 01 | Terminada | 01-02 | [bitacora-01-03](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-03.md) |
+| 01-04 | Modelo de contenido | 01 | En revisión | 01-01 | [bitacora-01-04](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-04.md) |
 | 01-05 | Transición animada del cambio de modo | 01 | Pendiente | 01-03, P-001 | — |
 
 ## 2. Épicas cerradas
@@ -40,9 +40,9 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
 | 1 | Proyecto Astro + Tailwind v4 + PNPM estricto compilando | Técnico | — | 01-01 | Terminada |
 | 2 | Tokens de `DESIGN.md`, modos claro y oscuro, fuentes autoalojadas | Técnico | — | 01-02 | Terminada |
-| 3 | Layout con salto al contenido, navegación en píldoras, menú móvil, botón de modo y pie con redes | Funcionalidad | — | 01-03 | En revisión |
-| 3 | Fijar los finales de línea con `.gitattributes` (`* text=auto eol=lf`) | Técnico | — | 01-03 | En revisión |
-| 4 | Colecciones de contenido con esquemas validados | Técnico | — | 01-04 | Pendiente |
+| 3 | Layout con salto al contenido, navegación en píldoras, menú móvil, botón de modo y pie con redes | Funcionalidad | — | 01-03 | Terminada |
+| 3 | Fijar los finales de línea con `.gitattributes` (`* text=auto eol=lf`) | Técnico | — | 01-03 | Terminada |
+| 4 | Colecciones de contenido con esquemas validados | Técnico | — | 01-04 | En revisión |
 | 4 | Transición animada del cambio de modo | Mejora | — | 01-05 | Pendiente |
 | 5 | Portada con íconos SVG de Gemini y Google y redes | Funcionalidad | — | 02-01 | Pendiente |
 | 6 | Ruta del curso: 4 unidades de 0 % a 100 % en mosaico | Funcionalidad | — | 02-02 | Pendiente |
@@ -80,6 +80,7 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Nombres completos de las certificaciones AWS y Anthropic, si se listan | — | Desarrollador |
 | Nombre del Worker (define la URL `nombre.subdominio.workers.dev`) y token de Web Analytics | RDA-005 | Desarrollador |
 | Licencia del contenido del sitio (hoy «todos los derechos reservados») | — | Desarrollador |
+| % de avance de cada unidad (de y hasta): el esquema lo exige y el documento del curso no lo trae | — | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
 
 ## 6. Propuestas fuera de alcance
@@ -90,6 +91,7 @@ Ideas detectadas durante el trabajo que no forman parte de lo comprometido, incl
 | :-------- | :----- | :---- |
 | Guardar en el navegador las casillas marcadas de «Terminado cuando…» | Planificación inicial | 2026-11-17 |
 | Mostrar los logotipos de Capacita Tu Futuro y GTD en el pie, con autorización del cliente | Planificación inicial | 2026-11-17 |
+| Agregar `_planificacion/00_producto/unidades-del-curso.md` a la lista de documentos permitidos (hoy vive ahí sin estar en la lista), o indicar dónde debe estar | Iteración 01-04 | 2026-11-17 |
 
 ## 7. Historial
 
@@ -104,3 +106,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Iteración 01-02 terminada, aprobada por el desarrollador. |
 | 2026-11-17 | Propuesta de `.gitattributes` aprobada: pasa al backlog como tarea 8 de la 01-03. |
 | 2026-11-17 | Iteración 01-03 en revisión: layout, navegación sin «Recursos» (P-003), menú móvil, botón de modo, pie con redes y `.gitattributes`; JS de 806 B gzip. [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-03.md) |
+| 2026-11-17 | Iteración 01-03 terminada: el desarrollador comprobó en el navegador los cinco criterios pendientes. RDA-007: sin JavaScript, modo claro. |
+| 2026-11-17 | Iteración 01-04 en revisión: 4 colecciones con esquemas Zod estrictos y contenido de prueba; 0 B de JS nuevo. [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-04.md) |

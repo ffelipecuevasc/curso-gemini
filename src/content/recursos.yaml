@@ -1,0 +1,6 @@
+# Recursos externos. Entrada de prueba de la 01-04 (se reemplaza en la épica 03).
+- id: prueba-documento
+  tipo: documento
+  titulo: Recurso de prueba
+  sitio: Sitio de prueba
+  url: https://example.com/

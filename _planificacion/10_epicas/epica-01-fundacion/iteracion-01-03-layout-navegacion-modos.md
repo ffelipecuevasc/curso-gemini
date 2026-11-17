@@ -1,7 +1,7 @@
 # Iteración 01-03 · Layout, navegación y modos
 
 - **Épica:** 01 · Fundación y sistema de diseño
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/01-03-layout-navegacion-modos
 - **Depende de:** 01-02
 - **RDA relacionadas:** RDA-002, RDA-004
@@ -34,12 +34,12 @@ La iteración tiene 8 tareas: la 8 la agregó el desarrollador al empezar.
 
 ## Criterios de aceptación
 
-- [ ] Con JavaScript desactivado, la página se lee completa y todas las anclas de la navegación funcionan. (HTML compilado: los 6 enlaces son anclas a `id` existentes y la lista solo se oculta bajo `[data-js]`; falta la prueba en el navegador.)
-- [ ] Al recargar después de elegir modo oscuro, la página aparece en oscuro sin mostrar antes el modo claro (revisado con la limitación de red «3G lenta» de las herramientas del navegador). (El script en línea va en el `<head>`, antes del CSS; falta la prueba con «3G lenta».)
-- [ ] El primer `Tab` enfoca «Saltar al contenido principal» y `Enter` lleva el foco a `main`. (Es el primer enlace del `body` y `main` tiene `id="contenido"` y `tabindex="-1"`; falta la prueba con teclado.)
-- [ ] En 360 px el menú abre y cierra con teclado, `Escape` lo cierra y `aria-expanded` cambia. (Implementado; falta la prueba en el navegador.)
+- [x] Con JavaScript desactivado, la página se lee completa y todas las anclas de la navegación funcionan. (HTML compilado: los 6 enlaces son anclas a `id` existentes y la lista solo se oculta bajo `[data-js]`; comprobado por el desarrollador en el navegador.)
+- [x] Al recargar después de elegir modo oscuro, la página aparece en oscuro sin mostrar antes el modo claro (revisado con la limitación de red «3G lenta» de las herramientas del navegador). (El script en línea va en el `<head>`, antes del CSS; comprobado por el desarrollador en el navegador.)
+- [x] El primer `Tab` enfoca «Saltar al contenido principal» y `Enter` lleva el foco a `main`. (Es el primer enlace del `body` y `main` tiene `id="contenido"` y `tabindex="-1"`; comprobado por el desarrollador en el navegador.)
+- [x] En 360 px el menú abre y cierra con teclado, `Escape` lo cierra y `aria-expanded` cambia. (Implementado; comprobado por el desarrollador en el navegador.)
 - [x] Los enlaces de redes muestran el texto exacto, apuntan a las URL de `DESIGN.md` y abren en pestaña nueva con `rel="noopener noreferrer"`. (HTML compilado: 2 enlaces con los `href` y textos exactos y `target="_blank" rel="noopener noreferrer"`.)
-- [ ] Todo objetivo táctil del encabezado mide 44 × 44 px o más. (Por clases: `min-h-11 min-w-11` en las píldoras, `size-11` en el botón de modo, `min-h-11` en el botón de menú y en el título; falta medirlo en el navegador.)
+- [x] Todo objetivo táctil del encabezado mide 44 × 44 px o más. (Por clases: `min-h-11 min-w-11` en las píldoras, `size-11` en el botón de modo, `min-h-11` en el botón de menú y en el título; comprobado por el desarrollador en el navegador.)
 - [x] El JavaScript total enviado pesa menos de 3 KB comprimido. (3 scripts incrustados en el HTML: 1892 B sin comprimir, 806 B con gzip.)
 
 ## Fuera de alcance

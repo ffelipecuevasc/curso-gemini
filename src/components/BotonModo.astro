@@ -1,0 +1,61 @@
+---
+// Botón de modo oscuro. Sin JavaScript queda oculto y la página se ve en claro.
+---
+
+<button
+  type="button"
+  data-boton-modo
+  aria-pressed="false"
+  class="hidden js:inline-flex size-11 shrink-0 items-center justify-center rounded-pildora bg-superficie-2 text-texto transition-colors duration-200 hover:bg-superficie motion-reduce:transition-none"
+>
+  <span class="sr-only">Modo oscuro</span>
+  <svg
+    class="size-5 oscuro:hidden"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path>
+  </svg>
+  <svg
+    class="hidden size-5 oscuro:block"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+  </svg>
+</button>
+
+<script>
+  import {
+    hayEleccionGuardada,
+    modoActual,
+    switchTheme,
+  } from "../scripts/modo";
+
+  switchTheme(modoActual(), false);
+
+  for (const boton of document.querySelectorAll("[data-boton-modo]")) {
+    boton.addEventListener("click", () => {
+      switchTheme(modoActual() === "oscuro" ? "claro" : "oscuro");
+    });
+  }
+
+  // Mientras el participante no elija, se sigue el modo del sistema.
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    if (!hayEleccionGuardada())
+      switchTheme(e.matches ? "oscuro" : "claro", false);
+  });
+</script>

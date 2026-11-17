@@ -1,0 +1,119 @@
+---
+// Encabezado con navegación en píldoras (DESIGN.md, sección 5).
+// Sin JavaScript, la lista queda siempre visible y las anclas funcionan.
+import BotonModo from "./BotonModo.astro";
+
+interface Enlace {
+  href: string;
+  texto: string;
+}
+
+interface Props {
+  enlaces: Enlace[];
+}
+
+const { enlaces } = Astro.props;
+---
+
+<header class="sticky top-0 z-10 border-b border-linea bg-fondo">
+  <div
+    data-encabezado
+    class="group mx-auto flex max-w-sitio flex-wrap items-center gap-3 px-6 py-3 lg:flex-nowrap"
+  >
+    <a
+      href="#inicio"
+      class="mr-auto inline-flex min-h-11 items-center font-display font-semibold text-texto no-underline"
+    >
+      Gemini & Google Suite
+    </a>
+
+    <nav
+      aria-label="Principal"
+      class="order-last w-full lg:order-none lg:w-auto"
+    >
+      <ul
+        id="menu-principal"
+        class="flex flex-col gap-1 rounded-bloque bg-superficie-2 p-2 js:max-lg:hidden js:max-lg:group-data-abierto:flex lg:flex-row lg:rounded-pildora lg:p-1"
+      >
+        {enlaces.map(({ href, texto }) => (
+          <li>
+            <a
+              href={href}
+              class="flex min-h-11 min-w-11 items-center justify-center rounded-pildora px-4 font-medium text-texto no-underline transition-colors duration-200 hover:bg-superficie motion-reduce:transition-none aria-[current=true]:bg-primario aria-[current=true]:text-sobre-primario max-lg:justify-start"
+            >
+              {texto}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <BotonModo />
+
+    <button
+      type="button"
+      data-boton-menu
+      aria-expanded="false"
+      aria-controls="menu-principal"
+      class="hidden min-h-11 items-center gap-2 rounded-pildora bg-superficie-2 px-4 font-medium text-texto transition-colors duration-200 hover:bg-superficie motion-reduce:transition-none js:max-lg:inline-flex"
+    >
+      <svg
+        class="size-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M4 7h16M4 12h16M4 17h16"></path>
+      </svg>
+      Menú
+    </button>
+  </div>
+</header>
+
+<script>
+  const raiz = document.querySelector<HTMLElement>("[data-encabezado]");
+  const boton = raiz?.querySelector<HTMLButtonElement>("[data-boton-menu]");
+  const menu = document.getElementById("menu-principal");
+
+  if (raiz && boton && menu) {
+    const abierto = () => boton.getAttribute("aria-expanded") === "true";
+    const fijarMenu = (abrir: boolean) => {
+      raiz.toggleAttribute("data-abierto", abrir);
+      boton.setAttribute("aria-expanded", String(abrir));
+    };
+
+    boton.addEventListener("click", () => fijarMenu(!abierto()));
+    menu.addEventListener("click", (e) => {
+      if ((e.target as Element).closest("a")) fijarMenu(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape" || !abierto()) return;
+      fijarMenu(false);
+      boton.focus();
+    });
+
+    // Píldora de la sección visible (sin script, la navegación funciona igual).
+    const enlaces = new Map<string, HTMLAnchorElement>();
+    for (const a of menu.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')) {
+      enlaces.set(a.hash.slice(1), a);
+    }
+    const observador = new IntersectionObserver(
+      (entradas) => {
+        for (const entrada of entradas) {
+          if (!entrada.isIntersecting) continue;
+          for (const a of enlaces.values()) a.removeAttribute("aria-current");
+          enlaces.get(entrada.target.id)?.setAttribute("aria-current", "true");
+        }
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    for (const id of enlaces.keys()) {
+      const seccion = document.getElementById(id);
+      if (seccion) observador.observe(seccion);
+    }
+  }
+</script>

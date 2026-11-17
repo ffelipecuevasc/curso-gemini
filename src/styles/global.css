@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Variantes del proyecto: `js` aplica solo cuando el script en línea de
+   Base.astro corrió; `oscuro`, cuando el modo oscuro está activo. */
+@custom-variant js (&:where([data-js], [data-js] *));
+@custom-variant oscuro (&:where([data-modo="oscuro"], [data-modo="oscuro"] *));
+
 /* ------------------------------------------------------------------
    Fuentes autoalojadas (RDA-006): woff2 de Fontsource, subconjunto
    latino, solo los pesos de DESIGN.md. Vite las emite a dist/_astro/.

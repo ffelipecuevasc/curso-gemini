@@ -1,7 +1,7 @@
 # Iteración 01-02 · Tokens de diseño y fuentes
 
 - **Épica:** 01 · Fundación y sistema de diseño
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/01-02-tokens-fuentes
 - **Depende de:** 01-01
 - **RDA relacionadas:** RDA-004, RDA-006

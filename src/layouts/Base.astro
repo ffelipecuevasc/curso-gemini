@@ -1,0 +1,70 @@
+---
+// Layout común: head, salto al contenido, encabezado, main y pie.
+import "../styles/global.css";
+import soraBold from "@fontsource/sora/files/sora-latin-700-normal.woff2?url";
+import workSansRegular from "@fontsource/work-sans/files/work-sans-latin-400-normal.woff2?url";
+import Encabezado from "../components/Encabezado.astro";
+import Pie from "../components/Pie.astro";
+
+interface Props {
+  titulo: string;
+  descripcion: string;
+  enlaces: { href: string; texto: string }[];
+}
+
+const { titulo, descripcion, enlaces } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-CL" class="scroll-pt-24 motion-safe:scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    <meta name="description" content={descripcion} />
+    <!-- Aplica el modo antes de pintar: elección guardada o, si no hay, el del sistema. -->
+    <script is:inline>
+      (function () {
+        var d = document.documentElement;
+        var m = null;
+        try {
+          m = localStorage.getItem("modo");
+        } catch (e) {}
+        if (m !== "claro" && m !== "oscuro") {
+          m = matchMedia("(prefers-color-scheme: dark)").matches
+            ? "oscuro"
+            : "claro";
+        }
+        d.dataset.modo = m;
+        d.dataset.js = "";
+      })();
+    </script>
+    <link
+      rel="preload"
+      href={soraBold}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={workSansRegular}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  </head>
+  <body class="bg-fondo text-base text-texto lg:text-lg">
+    <a
+      href="#contenido"
+      class="sr-only rounded-pildora bg-primario px-4 py-2 font-medium text-sobre-primario no-underline focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-20 focus:inline-flex focus:min-h-11 focus:items-center"
+    >
+      Saltar al contenido principal
+    </a>
+    <Encabezado enlaces={enlaces} />
+    <main id="contenido" tabindex="-1" class="outline-none">
+      <slot />
+    </main>
+    <Pie />
+  </body>
+</html>

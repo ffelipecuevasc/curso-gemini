@@ -1,7 +1,7 @@
 # Iteración 01-01 · Andamiaje del proyecto
 
 - **Épica:** 01 · Fundación y sistema de diseño
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/01-01-andamiaje
 - **Depende de:** —
 - **RDA relacionadas:** RDA-002
@@ -40,11 +40,13 @@ Reemplazar el `index.html` vacío por un proyecto Astro con TypeScript estricto,
 
 ## Criterios de aceptación
 
-- [ ] `pnpm install` en una copia limpia termina sin advertencias de dependencias faltantes.
-- [ ] `pnpm build` termina sin errores y genera `dist/index.html` con `lang="es-CL"`.
-- [ ] `pnpm astro check` termina con 0 errores.
-- [ ] `dist/` no contiene archivos `.js` (la página no envía JavaScript todavía).
-- [ ] Una clase de Tailwind usada en `index.astro` aparece aplicada en el CSS generado.
+- [x] `pnpm install` en una copia limpia termina sin advertencias de dependencias faltantes. Evidencia: `pnpm install --frozen-lockfile` en una copia temporal, salida 0, sin `WARN`/`peer`/`missing`.
+- [x] `pnpm build` termina sin errores y genera `dist/index.html` con `lang="es-CL"`. Evidencia: «1 page(s) built… Complete!»; `Select-String` encuentra `lang="es-CL"`.
+- [x] `pnpm astro check` termina con 0 errores. Evidencia: 3 archivos, 0 errores, 0 advertencias, 0 sugerencias.
+- [x] `dist/` no contiene archivos `.js` (la página no envía JavaScript todavía). Evidencia: 0 archivos `.js`; `dist/` tiene solo `index.html` y un `.css`.
+- [x] Una clase de Tailwind usada en `index.astro` aparece aplicada en el CSS generado. Evidencia: el CSS contiene `.text-3xl{font-size:var(--text-3xl)…}` y `.font-bold{…}`.
+
+Detalle en [bitacora-01-01.md](bitacoras/bitacora-01-01.md).
 
 ## Fuera de alcance
 

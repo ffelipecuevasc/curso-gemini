@@ -1,0 +1,10 @@
+# Documentación (protegida o con formato propio): Prettier no la toca
+*.md
+_planificacion/
+.claude/
+
+# Generados
+dist/
+.astro/
+node_modules/
+pnpm-lock.yaml

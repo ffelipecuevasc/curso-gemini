@@ -1,7 +1,7 @@
 # Iteración 01-01 · Andamiaje del proyecto
 
 - **Épica:** 01 · Fundación y sistema de diseño
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/01-01-andamiaje
 - **Depende de:** —
 - **RDA relacionadas:** RDA-002

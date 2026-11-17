@@ -1,1 +1,179 @@
 @import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Fuentes autoalojadas (RDA-006): woff2 de Fontsource, subconjunto
+   latino, solo los pesos de DESIGN.md. Vite las emite a dist/_astro/.
+   ------------------------------------------------------------------ */
+@font-face {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("@fontsource/sora/files/sora-latin-600-normal.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("@fontsource/sora/files/sora-latin-700-normal.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("@fontsource/work-sans/files/work-sans-latin-400-normal.woff2")
+    format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("@fontsource/work-sans/files/work-sans-latin-500-normal.woff2")
+    format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2")
+    format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-500-normal.woff2")
+    format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+/* ------------------------------------------------------------------
+   Tokens de DESIGN.md (modo claro). Se vacía la paleta por defecto de
+   Tailwind para que solo existan las clases de estos tokens.
+   ------------------------------------------------------------------ */
+@theme {
+  --color-*: initial;
+  --font-*: initial;
+  --radius-*: initial;
+
+  /* 2.1 Superficies */
+  --color-fondo: #ffffff;
+  --color-superficie: #e4f3ff;
+  --color-superficie-2: #ecf0ff;
+  --color-linea: #e4f3ff;
+
+  /* 2.2 Acento y texto */
+  --color-texto: #00131d;
+  --color-texto-2: #003b51;
+  --color-primario: #007ea7;
+  --color-primario-hover: #00678a;
+  --color-sobre-primario: #ffffff;
+  --color-enlace: #00678a;
+  --color-foco: #007ea7;
+  --color-linkedin: #0a66c2;
+
+  /* 2.2 Bloques de las unidades (iguales en ambos modos) */
+  --color-u1: #007ea7;
+  --color-sobre-u1: #ffffff;
+  --color-u2: #00b0e8;
+  --color-sobre-u2: #00131d;
+  --color-u3: #003b51;
+  --color-sobre-u3: #e4f3ff;
+  --color-borde-u3: transparent;
+  --color-u4: #f8cd46;
+  --color-sobre-u4: #3d2e00;
+
+  /* 3. Tipografía */
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-texto: "Work Sans", system-ui, sans-serif;
+  --font-codigo: "IBM Plex Mono", ui-monospace, monospace;
+  --leading-texto: 1.6;
+
+  /* 4. Forma y retícula */
+  --radius-bloque: 1.75rem;
+  --radius-esquina: 0.375rem;
+  --radius-pildora: 9999px;
+  --container-sitio: 1100px;
+
+  /* 7. Movimiento */
+  --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Modo oscuro: solo se redefinen los valores que cambian. */
+[data-modo="oscuro"] {
+  color-scheme: dark;
+  --color-fondo: #00131d;
+  --color-superficie: #00212f;
+  --color-superficie-2: #003b51;
+  --color-linea: #003b51;
+  --color-texto: #ffffff;
+  --color-texto-2: #e4f3ff;
+  --color-primario: #00b0e8;
+  --color-primario-hover: #5dc9ff;
+  --color-sobre-primario: #00131d;
+  --color-enlace: #5dc9ff;
+  --color-foco: #f8cd46;
+  --color-linkedin: #ffffff;
+  --color-borde-u3: #00b0e8;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--font-texto);
+    line-height: var(--leading-texto);
+    accent-color: var(--color-primario);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-primario);
+    color: var(--color-sobre-primario);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-foco);
+    outline-offset: 3px;
+  }
+
+  a {
+    color: var(--color-enlace);
+    text-underline-offset: 0.2em;
+  }
+}

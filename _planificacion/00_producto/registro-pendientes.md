@@ -3,8 +3,8 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-17
-- **Iteración activa:** ninguna (01-01 en revisión; próxima: 01-02)
-- **Próximo hito:** cerrar la épica 01 (fundación); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
+- **Iteración activa:** ninguna (01-02 en revisión; próxima: 01-03)
+- **Próximo hito:** cerrar la épica 01 con layout, navegación, modos y modelo de contenido; luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
 
@@ -19,7 +19,7 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
 | 01-01 | Andamiaje del proyecto | 01 | Terminada | — | [bitacora-01-01](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-01.md) |
-| 01-02 | Tokens de diseño y fuentes | 01 | Pendiente | 01-01 | — |
+| 01-02 | Tokens de diseño y fuentes | 01 | En revisión | 01-01 | [bitacora-01-02](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-02.md) |
 | 01-03 | Layout, navegación y modos | 01 | Pendiente | 01-02 | — |
 | 01-04 | Modelo de contenido | 01 | Pendiente | 01-01 | — |
 | 01-05 | Transición animada del cambio de modo | 01 | Pendiente | 01-03, P-001 | — |
@@ -39,7 +39,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
 | 1 | Proyecto Astro + Tailwind v4 + PNPM estricto compilando | Técnico | — | 01-01 | Terminada |
-| 2 | Tokens de `DESIGN.md`, modos claro y oscuro, fuentes autoalojadas | Técnico | — | 01-02 | Pendiente |
+| 2 | Tokens de `DESIGN.md`, modos claro y oscuro, fuentes autoalojadas | Técnico | — | 01-02 | En revisión |
 | 3 | Layout con salto al contenido, navegación en píldoras, menú móvil, botón de modo y pie con redes | Funcionalidad | — | 01-03 | Pendiente |
 | 4 | Colecciones de contenido con esquemas validados | Técnico | — | 01-04 | Pendiente |
 | 4 | Transición animada del cambio de modo | Mejora | — | 01-05 | Pendiente |
@@ -89,6 +89,7 @@ Ideas detectadas durante el trabajo que no forman parte de lo comprometido, incl
 | :-------- | :----- | :---- |
 | Guardar en el navegador las casillas marcadas de «Terminado cuando…» | Planificación inicial | 2026-11-17 |
 | Mostrar los logotipos de Capacita Tu Futuro y GTD en el pie, con autorización del cliente | Planificación inicial | 2026-11-17 |
+| Fijar los finales de línea (`.gitattributes` con `eol=lf` o `endOfLine` en `.prettierrc`): hoy `pnpm format` convierte a LF archivos que Git guarda con CRLF | Iteración 01-02 | 2026-11-17 |
 
 ## 7. Historial
 
@@ -98,3 +99,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | :---- | :----- |
 | 2026-11-17 | Creación de la documentación del proyecto: nivel pequeño, 4 épicas y 15 iteraciones previstas. |
 | 2026-11-17 | Iteración 01-01 en revisión: proyecto Astro + Tailwind v4 + PNPM estricto compilando; se agrega 01-05 al registro. [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-01.md) |
+| 2026-11-17 | Iteración 01-01 terminada, aprobada por el desarrollador. |
+| 2026-11-17 | Iteración 01-02 en revisión: tokens de `DESIGN.md` con modo oscuro y fuentes de Fontsource (RDA-006, propuesta P-002). [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-02.md) |

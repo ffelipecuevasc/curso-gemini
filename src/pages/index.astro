@@ -1,5 +1,23 @@
 ---
+// Página de prueba provisoria de la 01-02: muestra los tokens de DESIGN.md.
+// La reemplazan el layout (01-03) y las secciones reales (épicas 02 y 03).
 import "../styles/global.css";
+import soraBold from "@fontsource/sora/files/sora-latin-700-normal.woff2?url";
+import workSansRegular from "@fontsource/work-sans/files/work-sans-latin-400-normal.woff2?url";
+
+const superficies = [
+  { nombre: "fondo", clase: "bg-fondo" },
+  { nombre: "superficie", clase: "bg-superficie" },
+  { nombre: "superficie-2", clase: "bg-superficie-2" },
+  { nombre: "primario", clase: "bg-primario" },
+];
+
+const bloques = [
+  { codigo: "U1", avance: "0 % → 25 %", clase: "bg-u1 text-sobre-u1" },
+  { codigo: "U2", avance: "25 % → 50 %", clase: "bg-u2 text-sobre-u2" },
+  { codigo: "U3", avance: "50 % → 75 %", clase: "bg-u3 text-sobre-u3" },
+  { codigo: "U4", avance: "75 % → 100 %", clase: "bg-u4 text-sobre-u4" },
+];
 ---
 
 <!doctype html>
@@ -8,12 +26,83 @@ import "../styles/global.css";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Gemini & Google Suite en el Entorno Laboral</title>
+    <link
+      rel="preload"
+      href={soraBold}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={workSansRegular}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
-  <body>
-    <main>
-      <h1 class="text-3xl font-bold">
-        Gemini & Google Suite en el Entorno Laboral
-      </h1>
+  <body class="bg-fondo text-texto text-base lg:text-lg">
+    <main class="mx-auto max-w-sitio px-6 py-12 flex flex-col gap-12">
+      <header class="flex flex-col gap-3">
+        <h1 class="text-4xl font-bold lg:text-5xl">
+          Gemini & Google Suite en el Entorno Laboral
+        </h1>
+        <p class="text-texto-2">
+          Página de prueba de los tokens de diseño. Cambia
+          <code class="font-codigo">data-modo="oscuro"</code> en la etiqueta
+          <code class="font-codigo">html</code> para ver el modo oscuro.
+        </p>
+      </header>
+
+      <section aria-labelledby="titulo-superficies" class="flex flex-col gap-4">
+        <h2 id="titulo-superficies" class="text-2xl font-semibold">
+          Superficies
+        </h2>
+        <ul class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {superficies.map(({ nombre, clase }) => (
+            <li class="flex flex-col gap-2">
+              <span
+                class:list={["h-16 rounded-bloque border border-linea", clase]}
+              />
+              <span class="font-codigo text-sm text-texto-2">{nombre}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="titulo-bloques" class="flex flex-col gap-4">
+        <h2 id="titulo-bloques" class="text-2xl font-semibold">
+          Bloques de las unidades
+        </h2>
+        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {bloques.map(({ codigo, avance, clase }) => (
+            <li
+              class:list={[
+                "flex flex-col gap-6 p-6 rounded-bloque rounded-bl-esquina border border-borde-u3",
+                clase,
+              ]}
+            >
+              <span class="font-display text-3xl font-bold">{codigo}</span>
+              <span class="font-codigo text-sm font-medium">{avance}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="titulo-tipografia" class="flex flex-col gap-4">
+        <h2 id="titulo-tipografia" class="text-2xl font-semibold">
+          Escala tipográfica
+        </h2>
+        <p class="font-display text-5xl font-bold">Sora 700</p>
+        <p class="font-display text-3xl font-semibold">Sora 600</p>
+        <p>Work Sans 400: texto de párrafo con tildes, ñ y signos ¿¡.</p>
+        <p class="font-medium">Work Sans 500: texto de botones y navegación.</p>
+        <p>
+          <a href="#titulo-tipografia">Enlace de texto en un párrafo</a>
+        </p>
+        <pre class="font-codigo text-sm bg-superficie-2 text-texto p-6 rounded-bloque whitespace-pre-wrap"><code>Bloque de código en IBM Plex Mono 400, como el de un prompt.</code></pre>
+        <p class="font-codigo font-medium">IBM Plex Mono 500: 0 % → 100 %</p>
+      </section>
     </main>
   </body>
 </html>

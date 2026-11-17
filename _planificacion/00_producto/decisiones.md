@@ -9,6 +9,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 | RDA-003 | Contenido del curso en colecciones de contenido | Aceptada |
 | RDA-004 | Identidad visual de felipecuevas.dev, estilo Moderno y creativo | Aceptada |
 | RDA-005 | Medición con Cloudflare Web Analytics por script | Aceptada |
+| RDA-006 | Fuentes autoalojadas desde paquetes de Fontsource | Aceptada |
 
 ---
 
@@ -69,3 +70,15 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 **Decisión:** Cloudflare Web Analytics con su script de medición (beacon) y el token del sitio, insertado una sola vez en el layout, con `defer`. Es la única excepción a la regla de no cargar recursos de terceros en tiempo de ejecución. El token lo crea y entrega el desarrollador; no es un secreto, porque viaja en el HTML.
 **Alternativas consideradas:** sin medición; Google Analytics (usa cookies y pesa más); la activación automática de Web Analytics (requiere que el tráfico pase por un dominio administrado en Cloudflare).
 **Consecuencias:** un script externo pequeño y diferido. Hay que confirmar en el panel de Cloudflare que el sitio registra visitas después de publicar, y revisar que el script no baje la nota de Rendimiento.
+
+---
+
+## RDA-006 · Fuentes autoalojadas desde paquetes de Fontsource
+
+- **Fecha:** 2026-11-17
+- **Estado:** Aceptada
+
+**Contexto:** `DESIGN.md` pide Sora (600, 700), Work Sans (400, 500) e IBM Plex Mono (400, 500) en `woff2`, con subconjunto latino, autoalojadas y sin Google Fonts ni otro origen externo en tiempo de ejecución.
+**Decisión:** los `woff2` salen de `@fontsource/sora`, `@fontsource/work-sans` y `@fontsource/ibm-plex-mono` 5.3.0, instalados como dependencias de desarrollo con versión exacta. Los `@font-face` se escriben a mano en `src/styles/global.css` (solo `woff2`, subconjunto latino, los pesos de `DESIGN.md` y `font-display: swap`) y no se importan los CSS de Fontsource. Vite emite los archivos a `dist/_astro/` con un hash en el nombre. La precarga de Sora 700 y Work Sans 400 obtiene esa ruta con `?url` en el frontmatter, y el `<link rel="preload">` lleva `crossorigin`. Las fuentes tienen licencia SIL OFL 1.1.
+**Alternativas consideradas:** copiar los `woff2` oficiales a `public/fuentes/` sin dependencias (cero paquetes, pero las actualizaciones son a mano, los nombres no llevan hash, lo que impide guardarlos en caché de forma indefinida, y la procedencia del archivo no queda registrada); importar los CSS de Fontsource (traen todos los subconjuntos y el respaldo `woff`, que no se necesitan).
+**Consecuencias:** las fuentes quedan versionadas en `pnpm-lock.yaml`, con nombres con hash que admiten caché larga, y no envían JavaScript. `public/fuentes/` deja de existir (propuesta P-002 para `README.md`). Hay que vigilar que, si se actualiza Fontsource, los nombres de archivo de `global.css` y de la precarga sigan existiendo: después de actualizar, se revisa que `dist/_astro/` tenga los seis `woff2` y que la precarga apunte a ellos.

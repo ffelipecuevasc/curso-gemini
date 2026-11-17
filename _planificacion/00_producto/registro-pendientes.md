@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-17
-- **Iteración activa:** ninguna
+- **Iteración activa:** 02-01 (en revisión)
 - **Próximo hito:** épica 02 completa (portada, ruta, instructor y 4 unidades cargadas); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
@@ -18,7 +18,7 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
-| 02-01 | Portada | 02 | Pendiente | 01-05 | — |
+| 02-01 | Portada | 02 | En revisión | 01-05 | [bitacora-02-01](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-01.md) |
 | 02-02 | Fichas de las unidades y modelo de bloques | 02 | Pendiente | 02-01 | — |
 | 02-03 | Ruta del curso | 02 | Pendiente | 02-02 | — |
 | 02-04 | Instructor | 02 | Pendiente | 02-03 | — |
@@ -39,7 +39,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
-| 5 | Portada con el lema, Gemini como logo principal, Google, GTD y Capacita en segundo plano, y las redes con los íconos de Chrome y LinkedIn; SVG guardados como archivos individuales en `src/assets/iconos/` | Funcionalidad | — | 02-01 | Pendiente |
+| 5 | Portada con el lema, Gemini como logo principal, Google, GTD y Capacita en segundo plano, y las redes con los íconos de Chrome y LinkedIn; SVG guardados como archivos individuales en `src/assets/iconos/` | Funcionalidad | — | 02-01 | En revisión |
 | 6 | Fichas reales de las 4 unidades con un `.md` por bloque (RDA-009) y sin contenido de prueba | Técnico | — | 02-02 | Pendiente |
 | 7 | Ruta del curso: 4 unidades de 0 % a 100 % en mosaico, enlazadas a sus secciones | Funcionalidad | — | 02-03 | Pendiente |
 | 8 | Sección del instructor | Funcionalidad | — | 02-04 | Pendiente |
@@ -74,8 +74,6 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Texto de «Profundiza en tu tiempo» de cada bloque: el documento del curso lista los temas, pero no la teoría escrita | — | Desarrollador |
 | Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) | — | Desarrollador |
 | Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 | — | Desarrollador |
-| Pegar los 6 SVG de `iconos-svg.txt` como archivos individuales en `src/assets/iconos/` antes de la 02-01 | — | Desarrollador |
-| Aplicar la propuesta P-005 en `DESIGN.md` (logos del hero e íconos de las redes) antes de la 02-01 | P-005 | Desarrollador |
 | Imagen de la insignia oficial de Gemini Certified Educator para la sección del instructor | — | Desarrollador |
 | Nombres completos de las certificaciones AWS y Anthropic, si se listan | — | Desarrollador |
 | Nombre del Worker (define la URL `nombre.subdominio.workers.dev`) y token de Web Analytics | RDA-005 | Desarrollador |
@@ -113,3 +111,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Iteración 01-05 terminada (revisión en navegador hecha por el desarrollador). Épica 01 cerrada; sus filas pasan a `registro-archivo.md`. Iteraciones de la épica 02 aprobadas, sin detallar. [Cierre](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-cierre.md) |
 | 2026-11-17 | Traspaso a la épica 02: 6 iteraciones generadas (02-01 a 02-06). La carga de las 4 unidades pasa a la épica 02 (un `.md` por bloque, RDA-009 por registrar en la 02-02) y la épica 03 queda solo para presentarlas y completar lo pendiente; backlog renumerado. |
 | 2026-11-17 | Se ajusta la 02-01: Gemini como logo principal, GTD y Capacita en segundo plano, Chrome y LinkedIn en las redes y recoloreo permitido salvo Gemini, Google y Chrome; propuesta P-005 pendiente. |
+| 2026-11-17 | Iteración 02-01 en revisión: portada con lema y logos (Gemini, Google; GTD y Capacita aparte) y redes con Chrome y LinkedIn; salen de «Decisiones por tomar» los SVG y la P-005, ya resueltos. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-01.md) |

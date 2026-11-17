@@ -1,7 +1,7 @@
 # Iteración 02-01 · Portada
 
 - **Épica:** 02 · Portada, ruta del curso e instructor
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/02-01-portada
 - **Depende de:** 01-05 y P-005 aplicada por el desarrollador
 - **RDA relacionadas:** RDA-003, RDA-004, RDA-007
@@ -74,18 +74,18 @@ Reemplazar la portada provisoria por el hero: título del curso, lema, botón «
 
 ## Criterios de aceptación
 
-- [ ] Los seis SVG existen en `src/assets/iconos/` con LF, y `gemini.svg`, `google.svg` y `chrome.svg` tienen el mismo hash que al empezar (no se recolorearon).
-- [ ] La portada muestra los cuatro logos con su jerarquía (Gemini el mayor; GTD y Capacita en una fila aparte y mucho más pequeños), sin texto visible junto a los logos de GTD y Capacita, y cada logo con `role="img"` y su `aria-label` (medidas de alto de cada logo en la bitácora).
-- [ ] Los logos de Capacita Tu Futuro y de GTD Telsur se distinguen en modo claro y oscuro, y la bitácora tiene el `fill` antes y después de cada SVG recoloreado.
-- [ ] En `Redes`, el ícono de Chrome acompaña al enlace `https://felipecuevas.dev/` y el de LinkedIn al enlace `https://www.linkedin.com/in/ffelipecuevasc/`, en la portada y en el pie; los textos visibles son los de `DESIGN.md`.
-- [ ] `pnpm build` falla si `lema` falta en `curso.yaml`, y pasa con el lema aprobado (comprobado y revertido).
-- [ ] El HTML generado tiene un solo `h1`, con el título del curso, y el lema literal «La IA no reemplaza tu talento, lo multiplica».
-- [ ] Ningún texto de la portada menciona respaldo, alianza ni certificación de Google (búsqueda de «respaldo», «alianza», «partner» y «oficial» en el HTML de la portada: 0 coincidencias).
-- [ ] El HTML generado no tiene `id` repetidos y el SVG de Gemini aparece una sola vez (comando y resultado en la bitácora).
-- [ ] «Ver la ruta» lleva a `#ruta` con el teclado y mide 44 px de alto o más; los enlaces de redes abren en pestaña nueva con `rel="noopener noreferrer"`.
-- [ ] La portada se ve sin desborde horizontal en 360 px y en escritorio, en ambos modos, y sin JavaScript queda en modo claro (RDA-007).
-- [ ] No quedan menciones a `iconos-svg.txt` en los documentos vivos de `_planificacion/`.
-- [ ] `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas.
+- [x] Los seis SVG existen en `src/assets/iconos/` con LF, y `gemini.svg`, `google.svg` y `chrome.svg` tienen el mismo hash que al empezar (no se recolorearon). Evidencia: `file src/assets/iconos/*.svg | grep -c CRLF` → 0; `sha256sum` de gemini (`5f8d2e3b…`), google (`dee8d465…`) y chrome (`a0c993b6…`) igual al inicio y al cierre; `git diff --stat -- src/assets` solo lista capacita y linkedin.
+- [x] La portada muestra los cuatro logos con su jerarquía (Gemini el mayor; GTD y Capacita en una fila aparte y mucho más pequeños), sin texto visible junto a los logos de GTD y Capacita, y cada logo con `role="img"` y su `aria-label` (medidas de alto de cada logo en la bitácora). Evidencia: en `dist/index.html`, los cuatro `<svg role="img" aria-label=…>` (Gemini, Google, GTD Telsur, Capacita Tu Futuro); GTD y Capacita en un `div` aparte sin texto; altos en la bitácora (Gemini 144/176/224 px; Google 32/40 px; GTD 32 px; Capacita 28 px).
+- [x] Los logos de Capacita Tu Futuro y de GTD Telsur se distinguen en modo claro y oscuro, y la bitácora tiene el `fill` antes y después de cada SVG recoloreado. Evidencia: contraste calculado contra `--color-fondo` (Capacita con `currentColor` = `--color-texto`: 18,90:1 en ambos modos; GTD `#5F7EBA` 4,05 / 4,66 y `#43649C` 5,93 / 3,19, todos ≥ 3:1). `fill` antes y después en la bitácora. La confirmación visual queda para el desarrollador (ver bitácora).
+- [x] En `Redes`, el ícono de Chrome acompaña al enlace `https://felipecuevas.dev/` y el de LinkedIn al enlace `https://www.linkedin.com/in/ffelipecuevasc/`, en la portada y en el pie; los textos visibles son los de `DESIGN.md`. Evidencia: `grep` en `dist/index.html` → 2 enlaces a cada URL (portada y pie), cada uno con su SVG `aria-hidden` y los textos `www.felipecuevas.dev` y `www.linkedin.com/in/ffelipecuevasc/`.
+- [x] `pnpm build` falla si `lema` falta en `curso.yaml`, y pasa con el lema aprobado (comprobado y revertido). Evidencia: sin la línea, `InvalidContentEntryDataError … lema: Required`; con el lema restaurado, «Complete!».
+- [x] El HTML generado tiene un solo `h1`, con el título del curso, y el lema literal «La IA no reemplaza tu talento, lo multiplica». Evidencia: `grep -o '<h1' dist/index.html | wc -l` → 1, con el título; `grep -c 'La IA no reemplaza tu talento, lo multiplica'` → 1.
+- [x] Ningún texto de la portada menciona respaldo, alianza ni certificación de Google (búsqueda de «respaldo», «alianza», «partner» y «oficial» en el HTML de la portada: 0 coincidencias). Evidencia: 0 coincidencias dentro de `#inicio`. En toda la página hay 1, en la meta descripción ya existente («documentación oficial de Google»), que no es un aval.
+- [x] El HTML generado no tiene `id` repetidos y el SVG de Gemini aparece una sola vez (comando y resultado en la bitácora). Evidencia: `grep -o ' id="[^"]*"' dist/index.html | sort | uniq -d` → vacío; `viewBox="0 0 296 298"` → 1.
+- [ ] «Ver la ruta» lleva a `#ruta` con el teclado y mide 44 px de alto o más; los enlaces de redes abren en pestaña nueva con `rel="noopener noreferrer"`. Parcial: el enlace tiene `href="#ruta"` y `min-h-11` (44 px en el CSS compilado); los 4 enlaces de redes tienen `target="_blank" rel="noopener noreferrer"`. Falta comprobarlo con teclado en el navegador (desarrollador).
+- [ ] La portada se ve sin desborde horizontal en 360 px y en escritorio, en ambos modos, y sin JavaScript queda en modo claro (RDA-007). Sin medir: el agente no tuvo navegador. La sección usa `overflow-hidden` para el círculo y solo tokens con valor claro por defecto; pasos para el desarrollador en la bitácora.
+- [x] No quedan menciones a `iconos-svg.txt` en los documentos vivos de `_planificacion/`. Evidencia: `grep -rn iconos-svg _planificacion` fuera de la épica 01 solo encuentra esta iteración y `definicion-epica-02.md`, que describen la decisión de no subirlo; se reemplazaron 4 en `unidades-del-curso.md` y salió la fila del registro.
+- [x] `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas. Evidencia: «Complete!» sin advertencias; check 0/0/0.
 
 ## Riesgos
 

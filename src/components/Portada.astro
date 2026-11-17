@@ -1,0 +1,76 @@
+---
+// Portada (hero) · DESIGN.md, secciones 5 y 6 (con P-005).
+// Gemini es el logo principal; Google, secundario; GTD Telsur y Capacita
+// Tu Futuro van en una fila aparte, mucho más pequeños y sin texto visible.
+import { getEntry } from "astro:content";
+import Gemini from "../assets/iconos/gemini.svg";
+import Google from "../assets/iconos/google.svg";
+import GtdTelsur from "../assets/iconos/gtd-telsur.svg";
+import CapacitaTuFuturo from "../assets/iconos/capacita-tu-futuro.svg";
+import Redes from "./Redes.astro";
+
+const curso = await getEntry("curso", "curso");
+if (!curso)
+  throw new Error("Falta la entrada «curso» en src/content/curso.yaml");
+const { titulo, lema } = curso.data;
+---
+
+<section
+  id="inicio"
+  aria-labelledby="titulo-inicio"
+  class="relative isolate overflow-hidden"
+>
+  <div
+    class="absolute -top-24 -right-32 -z-10 size-80 rounded-full bg-superficie sm:size-96 lg:-top-32 lg:-right-24 lg:size-[32rem]"
+    aria-hidden="true"
+  ></div>
+
+  <div class="mx-auto grid max-w-sitio grid-cols-1 items-center gap-10 px-6 pt-12 pb-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:pt-20">
+    <div class="flex flex-col items-start gap-6">
+      <h1
+        id="titulo-inicio"
+        class="text-4xl leading-tight font-bold sm:text-5xl lg:text-6xl"
+      >
+        {titulo}
+      </h1>
+      <p class="text-xl text-texto-2 lg:text-2xl">{lema}</p>
+      <a
+        href="#ruta"
+        class="inline-flex min-h-11 items-center rounded-pildora bg-primario px-6 py-3 font-medium text-sobre-primario no-underline transition-colors duration-200 hover:bg-primario-hover motion-reduce:transition-none"
+      >
+        Ver la ruta
+      </a>
+    </div>
+
+    <div class="flex flex-col items-center gap-8 lg:items-end">
+      <div class="flex flex-col items-center gap-4">
+        <Gemini
+          role="img"
+          aria-label="Gemini"
+          class="aspect-[296/298] h-36 w-auto sm:h-44 lg:h-56"
+        />
+        <Google
+          role="img"
+          aria-label="Google"
+          class="aspect-[512/168] h-8 w-auto lg:h-10"
+        />
+      </div>
+      <div class="flex items-center gap-6 text-texto">
+        <GtdTelsur
+          role="img"
+          aria-label="GTD Telsur"
+          class="aspect-[525/380] h-8 w-auto"
+        />
+        <CapacitaTuFuturo
+          role="img"
+          aria-label="Capacita Tu Futuro"
+          class="aspect-[1184/442] h-7 w-auto"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-sitio px-6 pb-10">
+    <Redes class="text-sm" />
+  </div>
+</section>

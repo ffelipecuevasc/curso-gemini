@@ -126,6 +126,7 @@ const unidad = z
 const curso = z.strictObject({
   id: idEntrada,
   titulo: textoNoVacio,
+  lema: textoNoVacio,
   clases: enteroPositivo,
   duracionTotalMin: enteroPositivo,
 });

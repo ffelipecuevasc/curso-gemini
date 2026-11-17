@@ -268,7 +268,7 @@ Si te falta información, hazme hasta 3 preguntas antes de redactar.
    | *Funcionales* | `#4DB99C` / `#C53850` | Botones de WhatsApp y chat | No son colores de marca: no usarlos como acento |
 
    - **Tipografía:** el sitio no fue accesible desde la investigación, así que no se confirmó su CSS. Por la captura, los títulos y la navegación usan una sans geométrica; la alternativa web más cercana es **Montserrat** (Google Fonts). `PENDIENTE_CLIENTE`: confirmar la tipografía oficial. El logotipo usa letras propias y **nunca se recrea con una fuente**.
-   - **Logotipo:** Felipe lo carga en `iconos-svg.txt` y se usa ese SVG tal cual (`PENDIENTE_DESARROLLADOR`: subir el archivo). No se redibuja ni se descarga de sitios de terceros.
+   - **Logotipo:** Felipe lo dejó en `src/assets/iconos/gtd-telsur.svg` y se usa ese SVG tal cual. No se redibuja ni se descarga de sitios de terceros.
 2. **Dataset ficticio del curso** (listo): `dataset-ficticio-solicitudes-gtd-t3-2026.csv`, con 260 solicitudes de soporte de julio a septiembre de 2026. Su diccionario está en `dataset-ficticio-diccionario.md` e incluye 5 patrones plantados para validar las conclusiones de Gemini (por ejemplo, el alza de tiempos en Biobío en agosto).
 3. **Prompts base** de cada hito, listos para copiar.
 4. **Informe de Deep Research de respaldo**, para quien agote su cupo o tenga problemas.
@@ -430,7 +430,7 @@ Si te falta información, hazme hasta 3 preguntas antes de redactar.
 
 ### Pendientes y verificaciones de la U2
 - `PENDIENTE_CLIENTE`: confirmación de los HEX y la tipografía oficiales de GTD, y autorización de uso de la marca en material interno.
-- `PENDIENTE_DESARROLLADOR`: subir `iconos-svg.txt` con el logo; preparar el informe de Deep Research de respaldo y los ejemplos resueltos.
+- `PENDIENTE_DESARROLLADOR`: preparar el informe de Deep Research de respaldo y los ejemplos resueltos.
 - Confirmado por Felipe con su cuenta Google AI Plus: todas las opciones nombradas en la unidad están disponibles.
 - `VERIFICAR` en la prueba previa: cupo de Deep Research e imágenes ante 50 usos simultáneos; cuánto respeta Canvas la paleta en las presentaciones.
 - Riesgo: con 50 personas lanzando Deep Research al mismo tiempo, algunos informes pueden tardar más. El informe de respaldo cubre ese caso.
@@ -697,7 +697,7 @@ recargados, texto en párrafos largos.
 Las skills del curso se distribuyen como **archivos descargables**. Compartirlas desde Gemini requiere enviarlas por correo una por una y, además, compartir sus archivos aparte, lo que no escala con 50 personas.
 
 1. `optimizador-prompts/SKILL.md` (un solo archivo).
-2. `gtd-visual.zip`: `SKILL.md` más la carpeta `references/` (paleta, estilos y logotipo oficial en SVG). `PENDIENTE_DESARROLLADOR`: agregar `references/logo-gtd.svg` desde `iconos-svg.txt` antes de comprimir.
+2. `gtd-visual.zip`: `SKILL.md` más la carpeta `references/` (paleta, estilos y logotipo oficial en SVG). `PENDIENTE_DESARROLLADOR`: agregar `references/logo-gtd.svg` desde `src/assets/iconos/gtd-telsur.svg` antes de comprimir.
 3. Plantillas para el hito 4: `analista-planillas`, `resumen-ejecutivo`, `mi-semana-laboral` y `plantilla-en-blanco`.
 4. Insumos de las clases anteriores: dataset ficticio, informe de Deep Research y cuaderno de la U3.
 5. Lista de terminado y pauta del Demo Day.
@@ -858,7 +858,7 @@ Pasos:
 
 ## 2. Pendientes generales
 
-- `PENDIENTE_DESARROLLADOR`: subir `iconos-svg.txt` y agregar el logo a `gtd-visual`; curar las fuentes públicas de la U3; probar las skills del curso; aprobar las 4 unidades.
+- `PENDIENTE_DESARROLLADOR`: agregar el logo (`src/assets/iconos/gtd-telsur.svg`) a `gtd-visual`; curar las fuentes públicas de la U3; probar las skills del curso; aprobar las 4 unidades.
 - `PENDIENTE_CLIENTE`: confirmar los HEX y la tipografía oficiales de GTD, y la autorización de uso de la marca; redacción del respaldo de Google.
 - Prueba previa completa con una cuenta Google AI Plus antes de la clase 1.
 - Revisar la lista de modelos antes de cada edición del curso, porque cambia con frecuencia.

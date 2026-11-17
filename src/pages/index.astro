@@ -1,7 +1,8 @@
 ---
-// Estructura provisoria de la página: secciones vacías con su id y su h2
-// para probar las anclas. El contenido llega en las épicas 02 y 03.
+// Página única: portada y secciones con su id y su h2. Las secciones
+// vacías reciben su contenido en las épicas 02 y 03.
 import Base from "../layouts/Base.astro";
+import Portada from "../components/Portada.astro";
 
 const secciones = [
   { id: "ruta", nav: "Ruta", titulo: "Ruta del curso" },
@@ -23,15 +24,7 @@ const enlaces = secciones.map(({ id, nav }) => ({
   descripcion="Ruta del curso, prompts listos para copiar, descargas y enlaces a la documentación oficial de Google."
   enlaces={enlaces}
 >
-  <section
-    id="inicio"
-    aria-labelledby="titulo-inicio"
-    class="mx-auto max-w-sitio px-6 py-16"
-  >
-    <h1 id="titulo-inicio" class="text-4xl font-bold lg:text-5xl">
-      Gemini & Google Suite en el Entorno Laboral
-    </h1>
-  </section>
+  <Portada />
 
   {secciones.map(({ id, titulo }) => (
     <section

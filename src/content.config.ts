@@ -1,7 +1,7 @@
 // Colecciones de contenido del curso (RDA-003). Todo objeto es estricto:
 // un campo faltante, desconocido o con formato inválido hace fallar
 // `pnpm build` con un mensaje que nombra la ruta del campo.
-import { defineCollection, reference } from "astro:content";
+import { defineCollection, reference, type SchemaContext } from "astro:content";
 import { file, glob } from "astro/loaders";
 import { z } from "astro/zod";
 
@@ -133,6 +133,28 @@ const curso = z.strictObject({
   duracionTotalMin: enteroPositivo,
 });
 
+// Presentación del instructor (Unidad 1, bloque 1, del documento del curso).
+// Las fechas se guardan como texto literal del documento. La insignia es
+// opcional: si falta, la sección se arma sin imagen.
+const instructor = ({ image }: SchemaContext) =>
+  z.strictObject({
+    id: idEntrada,
+    nombre: textoNoVacio,
+    formacion: textoNoVacio,
+    certificacion: z.strictObject({
+      nombre: textoNoVacio,
+      nombreIngles: textoNoVacio,
+      emisor: textoNoVacio,
+      descripcion: textoNoVacio,
+      emision: textoNoVacio,
+      vigencia: textoNoVacio,
+      enlace: z.strictObject({ titulo: textoNoVacio, url: urlSegura }),
+      insignia: image().optional(),
+    }),
+    trayectoria: z.array(textoNoVacio).min(1),
+    comunidad: textoNoVacio,
+  });
+
 export const collections = {
   unidades: defineCollection({
     loader: glob({ pattern: "*.yaml", base: "./src/content/unidades" }),
@@ -153,5 +175,9 @@ export const collections = {
   curso: defineCollection({
     loader: file("./src/content/curso.yaml"),
     schema: curso,
+  }),
+  instructor: defineCollection({
+    loader: file("./src/content/instructor.yaml"),
+    schema: instructor,
   }),
 };

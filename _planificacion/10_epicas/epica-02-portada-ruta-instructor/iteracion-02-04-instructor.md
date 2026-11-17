@@ -1,7 +1,7 @@
 # Iteración 02-04 · Instructor
 
 - **Épica:** 02 · Portada, ruta del curso e instructor
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/02-04-instructor
 - **Depende de:** 02-03
 - **RDA relacionadas:** RDA-003, RDA-004
@@ -55,13 +55,22 @@ Del documento del curso. Se quitan las marcas Markdown y la indicación «Se des
 
 ## Criterios de aceptación
 
-- [ ] El texto de la sección coincide con el contenido aprobado (comparación línea a línea en la bitácora) y no incluye «Se destaca primero, mostrando la insignia oficial».
-- [ ] La certificación de Gemini aparece antes que el resto de la trayectoria.
-- [ ] Un `https` faltante en el enlace oficial o un campo obligatorio faltante hace fallar `pnpm build` (comprobado y revertido).
-- [ ] Si hay insignia: se sirve optimizada por Astro con `width`, `height` y `alt`. Si no hay: no hay `<img>` roto ni marcador visible (búsqueda de `PENDIENTE_` en `dist/`: 0).
+- [x] El texto de la sección coincide con el contenido aprobado (comparación línea a línea en la bitácora) y no incluye «Se destaca primero, mostrando la insignia oficial».
+- [x] La certificación de Gemini aparece antes que el resto de la trayectoria.
+- [x] Un `https` faltante en el enlace oficial o un campo obligatorio faltante hace fallar `pnpm build` (comprobado y revertido).
+- [x] Si hay insignia: se sirve optimizada por Astro con `width`, `height` y `alt`. Si no hay: no hay `<img>` roto ni marcador visible (búsqueda de `PENDIENTE_` en `dist/`: 0).
 - [ ] Los enlaces externos abren en pestaña nueva con `rel="noopener noreferrer"` y lo anuncian; se alcanzan con el teclado.
-- [ ] Un solo `h1` en la página; `#instructor` con `h2` y el nombre como `h3`.
+- [x] Un solo `h1` en la página; `#instructor` con `h2` y el nombre como `h3`.
 - [ ] Sin desborde en 360 px, en ambos modos; `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; 0 B de JavaScript nuevo.
+
+Evidencia (detalle en [bitacora-02-04](bitacoras/bitacora-02-04.md)):
+
+- Texto: comparación línea a línea del texto de `dist/index.html` contra el documento: 8 de 8 líneas iguales; «Se destaca» aparece 0 veces.
+- Orden: en `dist/index.html`, el bloque de la certificación va después del nombre y la formación y antes de la lista de trayectoria.
+- Fallas comprobadas y revertidas: sin `comunidad` → `comunidad: Required`; con `http://` → `certificacion.enlace.url: La URL debe empezar con https://`; ambas con «Command failed»; el YAML restaurado es idéntico (`cmp`) y el build vuelve a «Complete!».
+- Sin insignia en `src/assets/instructor/` (la carpeta no existe): 0 `<img>` en `#instructor`; `grep -rl PENDIENTE_ dist`: 0 archivos.
+- Títulos: 1 `h1`, 6 `h2`, 1 `h3` en `#instructor` (el nombre).
+- Sin marcar: enlaces (atributos y texto oculto medidos en los 3 enlaces, falta comprobar el teclado) y 360 px en ambos modos (sin navegador). `pnpm build` (solo las 2 advertencias aceptadas), `astro check` (0/0/0) y 0 `<script>` nuevos sí se midieron.
 
 ## Fuera de alcance
 

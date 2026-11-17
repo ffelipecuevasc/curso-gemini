@@ -1,0 +1,78 @@
+---
+// Sección «Instructor» (DESIGN.md, sección 5): nombre, formación, la
+// certificación de Gemini primero, trayectoria y redes. La certificación es
+// un logro personal del instructor, no un respaldo de Google al curso
+// (AGENTS.md, regla de contenido 6). Sin insignia, no se dibuja imagen.
+import { getEntry } from "astro:content";
+import { Image } from "astro:assets";
+import Redes from "./Redes.astro";
+
+const entrada = await getEntry("instructor", "felipe-cuevas");
+if (!entrada) {
+  throw new Error(
+    "Falta la entrada «felipe-cuevas» en src/content/instructor.yaml",
+  );
+}
+const { nombre, formacion, certificacion, trayectoria, comunidad } =
+  entrada.data;
+---
+
+<section
+  id="instructor"
+  aria-labelledby="titulo-instructor"
+  class="mx-auto min-h-svh max-w-sitio border-t border-linea px-6 py-16"
+>
+  <h2 id="titulo-instructor" class="text-3xl font-semibold">
+    Instructor
+  </h2>
+
+  <h3 class="mt-10 text-2xl font-semibold wrap-break-word">{nombre}</h3>
+  <p class="mt-2 max-w-prose text-texto-2">{formacion}</p>
+
+  <div class="mt-8 flex max-w-prose flex-col gap-6 rounded-bloque rounded-bl-esquina bg-superficie p-6 sm:flex-row sm:items-start">
+    {certificacion.insignia && (
+      <Image
+        src={certificacion.insignia}
+        width={120}
+        height={120}
+        alt="Insignia de Gemini Certified Educator"
+        class="size-30 shrink-0"
+      />
+    )}
+    <div>
+      <p class="font-display text-xl font-semibold">
+        {certificacion.nombre}{" "}
+        <span class="font-texto text-base font-normal text-texto-2">
+          (<i lang="en">{certificacion.nombreIngles}</i>, {certificacion.emisor}
+          )
+        </span>
+      </p>
+      <p class="mt-2">{certificacion.descripcion}</p>
+      <p class="mt-2 text-texto-2">
+        Emitida el {certificacion.emision} y válida hasta el{" "}
+        {certificacion.vigencia}.
+      </p>
+      <p class="mt-2">
+        Enlace oficial de la certificación:{" "}
+        <a
+          href={certificacion.enlace.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-11 items-center text-enlace underline"
+        >
+          {certificacion.enlace.titulo}
+          <span class="sr-only">(se abre en una pestaña nueva)</span>
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <ul class="mt-8 max-w-prose list-disc space-y-3 pl-6">
+    {trayectoria.map((linea) => (
+      <li>{linea}</li>
+    ))}
+    <li>{comunidad}</li>
+  </ul>
+
+  <Redes class="mt-8" />
+</section>

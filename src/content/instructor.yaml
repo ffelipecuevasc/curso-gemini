@@ -1,0 +1,22 @@
+# Texto copiado del documento del curso (Unidad 1, bloque 1, «Presentación
+# del instructor» y «Fuentes oficiales», apartado Instructor), sin marcas
+# Markdown. Las redes viven en Redes.astro.
+- id: felipe-cuevas
+  nombre: Francisco Felipe Cuevas Cerón
+  formacion: Ingeniero Informático (INACAP), con Diplomado en Andragogía y Formación Profesional (Universidad de Chile, 2025–2026).
+  certificacion:
+    nombre: Educador certificado de Gemini
+    nombreIngles: Gemini Certified Educator
+    emisor: Google for Education
+    descripcion: Certifica las habilidades, competencias y conocimientos para usar la IA de Google en la educación.
+    emision: 13-10-2026
+    vigencia: 13-10-2029
+    enlace:
+      titulo: Certificaciones Gemini de Google for Education
+      url: https://blog.google/products-and-platforms/products/education/gemini-certifications-education/
+  trayectoria:
+    - Más de 12 años en docencia y formación técnica. Docente universitario en IPLACEX (2024 a la fecha) y antes en INACAP (2012–2020), Duoc UC e IACC.
+    - Más de 300 profesionales formados en bootcamps de reconversión laboral (Talento Digital para Chile, SENCE). Según felipecuevas.dev, suma más de 2.000 estudiantes formados y más de 150 módulos aprobados como relator REUF.
+    - Instructor certificado de IA con Gemini en programas corporativos para Capacita Tu Futuro (más de 50 ejecutivos y colaboradores, octubre de 2026) y Skillnest (junio a agosto de 2026).
+    - "Más de 10 certificaciones profesionales vigentes de Oracle, AWS, Python Institute y Anthropic. Entre ellas: OCI AI Associate, OCI AI Agents Associate, OCI Developer Professional, Oracle Cloud Essentials (Oracle Cloud Infrastructure) y Python PCEP."
+  comunidad: Fundador de la comunidad Pulso Devs.

@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-17
-- **Iteración activa:** 02-04 (pendiente)
+- **Iteración activa:** 02-04 (en revisión)
 - **Próximo hito:** épica 02 completa (portada, ruta, instructor y 4 unidades cargadas); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
@@ -21,7 +21,7 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | 02-01 | Portada | 02 | Terminada | 01-05 | [bitacora-02-01](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-01.md) |
 | 02-02 | Fichas de las unidades y modelo de bloques | 02 | Terminada | 02-01 | [bitacora-02-02](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-02.md) |
 | 02-03 | Ruta del curso | 02 | Terminada | 02-02 | [bitacora-02-03](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-03.md) |
-| 02-04 | Instructor | 02 | Pendiente | 02-03 | — |
+| 02-04 | Instructor | 02 | En revisión | 02-03 | [bitacora-02-04](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-04.md) |
 | 02-05 | Bloques y prompts de la Unidad 1 y la Unidad 2 | 02 | Pendiente | 02-04 | — |
 | 02-06 | Bloques y prompts de la Unidad 3 y la Unidad 4 | 02 | Pendiente | 02-05 | — |
 
@@ -42,8 +42,8 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | 5 | Portada con el lema, Gemini como logo principal, Google, GTD y Capacita en segundo plano, y las redes con los íconos de Chrome y LinkedIn; SVG guardados como archivos individuales en `src/assets/iconos/` | Funcionalidad | — | 02-01 | Terminada |
 | 6 | Fichas reales de las 4 unidades con un `.md` por bloque (RDA-009) y sin contenido de prueba | Técnico | — | 02-02 | Terminada |
 | 7 | Ruta del curso: 4 unidades de 0 % a 100 % en mosaico, enlazadas a sus secciones | Funcionalidad | — | 02-03 | Terminada |
-| 7.1 | Ruta del curso en 4 columnas desde 1024 px (P-006 en `DESIGN.md`, sección 4) | Corrección | — | — | Terminada |
-| 8 | Sección del instructor | Funcionalidad | — | 02-04 | Pendiente |
+| 7.1 | Ruta del curso en 4 columnas desde 1024 px (P-006 en `DESIGN.md`, sección 4) | Corrección | — | — | Terminada (dicho por el desarrollador, revisión en navegador sin observaciones) |
+| 8 | Sección del instructor | Funcionalidad | — | 02-04 | En revisión |
 | 9 | Texto «Para la clase», prompts y recursos de la Unidad 1 y la Unidad 2 | Funcionalidad | — | 02-05 | Pendiente |
 | 10 | Texto «Para la clase», prompts y recursos de la Unidad 3 y la Unidad 4 | Funcionalidad | — | 02-06 | Pendiente |
 | 11 | Componentes de unidad: prompt con «Copiar», «Profundiza», recurso externo y descarga, con error de compilación si una referencia a recurso o descarga no existe | Funcionalidad | — | 03-01 | Pendiente |
@@ -75,8 +75,8 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Texto de «Profundiza en tu tiempo» de cada bloque: el documento del curso lista los temas, pero no la teoría escrita | — | Desarrollador |
 | Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) | — | Desarrollador |
 | Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 | — | Desarrollador |
-| Imagen de la insignia oficial de Gemini Certified Educator para la sección del instructor | — | Desarrollador |
-| Nombres completos de las certificaciones AWS y Anthropic, si se listan | — | Desarrollador |
+| Imagen de la insignia oficial de Gemini Certified Educator para la sección del instructor · La 02-04 se construyó sin ella; el campo `insignia` del esquema está listo para recibirla | 02-04 | Desarrollador |
+| Nombres completos de las certificaciones AWS y Anthropic, si se listan · La 02-04 publica solo el texto del documento, sin detallarlas | 02-04 | Desarrollador |
 | Nombre del Worker (define la URL `nombre.subdominio.workers.dev`) y token de Web Analytics | RDA-005 | Desarrollador |
 | Licencia del contenido del sitio (hoy «todos los derechos reservados») | — | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
@@ -120,3 +120,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Iteración 02-03 en revisión: mosaico de las 4 unidades en `#ruta` desde las colecciones; la validación RDA-009 pasa a `RutaCurso`; 0 B de JS nuevo; falta revisión en navegador. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-03.md) |
 | 2026-11-17 | Iteración 02-03 terminada: el desarrollador revisó la ruta en el navegador (teclado, foco, borde de la U3, 360/640/1024 px, ambos modos) sin observaciones; acepta la esquina asimétrica en los 4 bloques. |
 | 2026-11-17 | Corrección: la ruta pasa a 4 columnas desde 1024 px (`lg:grid-cols-4`), según la P-006 aplicada en `DESIGN.md` (commit 9c39f9b); `pnpm build` y `astro check` sin cambios en advertencias; falta revisión en navegador. |
+| 2026-11-17 | Corrección de la ruta en 4 columnas terminada: dicho por el desarrollador, revisión en navegador sin observaciones. |
+| 2026-11-17 | Iteración 02-04 en revisión: `#instructor` desde la colección `instructor`, certificación de Gemini primero, sin insignia (no está en el repo); 0 B de JS nuevo; falta revisión en navegador. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-04.md) |

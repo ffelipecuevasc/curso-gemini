@@ -6,6 +6,7 @@ import Portada from "../components/Portada.astro";
 // RutaCurso llama a obtenerUnidadesConBloques(): las comprobaciones de
 // unidades y bloques (RDA-009) corren en cada build a través de ella.
 import RutaCurso from "../components/RutaCurso.astro";
+import Instructor from "../components/Instructor.astro";
 
 const secciones = [
   { id: "ruta", nav: "Ruta", titulo: "Ruta del curso" },
@@ -31,7 +32,7 @@ const enlaces = secciones.map(({ id, nav }) => ({
   <RutaCurso />
 
   {secciones
-    .filter(({ id }) => id !== "ruta")
+    .filter(({ id }) => id !== "ruta" && id !== "instructor")
     .map(({ id, titulo }) => (
       <section
         id={id}
@@ -43,4 +44,5 @@ const enlaces = secciones.map(({ id, nav }) => ({
         </h2>
       </section>
     ))}
+  <Instructor />
 </Base>

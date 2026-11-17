@@ -90,7 +90,7 @@ Reglas:
 ## 4. Espaciado, retícula y forma
 
 - Contenedor: ancho máximo de 1100 px, márgenes laterales de 1,5 rem en móvil.
-- Retícula: móvil primero; mosaico de 1 columna en móvil, 2 desde 640 px y 3 desde 1024 px, siempre con `minmax(0, 1fr)`.
+- Retícula: móvil primero; mosaico de 1 columna en móvil, 2 desde 640 px y 4 desde 1024 px (la ruta tiene 4 unidades), siempre con `minmax(0, 1fr)`.
 - Radios: 24 a 32 px en bloques, con esquina asimétrica en los bloques destacados (`28px 28px 28px 6px`); píldoras con radio completo.
 - Sombras: no se usan.
 

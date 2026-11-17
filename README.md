@@ -44,10 +44,9 @@ curso-gemini/
 │   ├── components/     Componentes de la página (portada, ruta, unidad, prompt…)
 │   ├── layouts/        Estructura HTML común
 │   ├── pages/          La página única del sitio
-│   └── styles/         Tokens de diseño y estilos globales
+│   └── styles/         Tokens de diseño, estilos globales y fuentes (de Fontsource, RDA-006)
 ├── public/
-│   ├── descargas/      Archivos que descargan los participantes
-│   └── fuentes/        Tipografías autoalojadas
+│   └── descargas/      Archivos que descargan los participantes
 ├── _planificacion/     Producto, backlog, decisiones, épicas, iteraciones y bitácoras
 ├── .claude/            Permisos y reglas para los agentes de IA en Claude Code
 ├── AGENTS.md           Reglas de trabajo para agentes de IA y comandos

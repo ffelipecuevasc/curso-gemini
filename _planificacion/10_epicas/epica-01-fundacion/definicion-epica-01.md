@@ -7,7 +7,7 @@
 
 1. Proyecto Astro con TypeScript estricto, Tailwind CSS v4 y PNPM en modo estricto.
 2. Tokens de color, tipografía y forma de `DESIGN.md`, con modo claro y oscuro, y fuentes autoalojadas.
-3. Layout común: enlace para saltar al contenido, encabezado con navegación en píldoras y menú móvil, botón de modo y pie con redes.
+3. Layout común: enlace para saltar al contenido, encabezado con navegación en píldoras y menú móvil, botón de modo con transición animada y pie con redes.
 4. Colecciones de contenido con sus esquemas para unidades, bloques, prompts, recursos y descargas.
 
 ## Fuera de alcance
@@ -23,6 +23,7 @@
 | 01-02 | Tokens de diseño y fuentes |
 | 01-03 | Layout, navegación y modos |
 | 01-04 | Modelo de contenido |
+| 01-05 | Transición animada del cambio de modo |
 
 ## Decisiones de la épica
 

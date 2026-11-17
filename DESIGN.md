@@ -128,8 +128,9 @@ Todos: forma de píldora, alto mínimo de 44 px, foco visible con `outline: 2px 
 ## 7. Movimiento
 
 - Transiciones de 150 a 300 ms en hover y foco; apertura de «Profundiza» sin animación de altura.
+- Cambio de modo: el modo nuevo se revela con un círculo de borde difuminado que crece desde el centro de la pantalla hasta cubrirla, en 1 s, con la curva `--ease-expo-out` (`cubic-bezier(0.16, 1, 0.3, 1)`). Se hace con la API View Transitions (`document.startViewTransition`); el modo anterior queda quieto debajo. En navegadores sin esa API, el modo cambia al instante.
 - No se usan animaciones infinitas, parallax ni apariciones al desplazarse.
-- Con `prefers-reduced-motion: reduce`, se quitan las transiciones y el desplazamiento suave a las anclas.
+- Con `prefers-reduced-motion: reduce`, se quitan las transiciones, el revelado del cambio de modo (el modo cambia al instante) y el desplazamiento suave a las anclas.
 
 ## 8. Implementación de los tokens
 

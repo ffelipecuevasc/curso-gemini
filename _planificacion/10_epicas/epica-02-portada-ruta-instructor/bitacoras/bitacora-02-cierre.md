@@ -3,7 +3,7 @@
 - **Fecha:** 2026-11-17
 - **Agente:** Claude Code (Claude Opus 5.5)
 - **Rama:** iteracion/02-06-bloques-u3-u4
-- **Estado final:** En revisión
+- **Estado final:** Terminada
 
 ## Resumen
 
@@ -26,7 +26,7 @@ La página muestra portada, ruta e instructor. Las unidades están cargadas, per
 | 02-03 | Ruta del curso | Terminada | [bitacora-02-03](bitacora-02-03.md) |
 | 02-04 | Instructor | Terminada | [bitacora-02-04](bitacora-02-04.md) |
 | 02-05 | Bloques y prompts de la Unidad 1 y la Unidad 2 | Terminada | [bitacora-02-05](bitacora-02-05.md) |
-| 02-06 | Bloques y prompts de la Unidad 3 y la Unidad 4 | En revisión | [bitacora-02-06](bitacora-02-06.md) |
+| 02-06 | Bloques y prompts de la Unidad 3 y la Unidad 4 | Terminada | [bitacora-02-06](bitacora-02-06.md) |
 
 ## Criterio de término
 
@@ -72,7 +72,7 @@ Ninguno. El proyecto es de nivel pequeño y no tiene auditorías (RDA-001).
 
 ## Propuesta de la épica siguiente
 
-Entregada en el chat el 2026-11-17, **pendiente de aprobación**. No se generaron archivos de iteración ni se archivaron filas.
+Entregada en el chat el 2026-11-17 y **aprobada por el desarrollador el 2026-11-17** sin cambios en la lista. Las 5 iteraciones se generaron en `epica-03-unidades/` con el detalle de esa aprobación.
 
 | Iteración | Nombre | Objetivo |
 | :-------- | :----- | :------- |

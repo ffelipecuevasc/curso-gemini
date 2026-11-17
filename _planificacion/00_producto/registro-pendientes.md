@@ -3,8 +3,8 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-17
-- **Iteración activa:** 02-06 (en revisión; cierre de la épica 02 y propuesta de la épica 03 por aprobar)
-- **Próximo hito:** épica 02 completa (portada, ruta, instructor y 4 unidades cargadas); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
+- **Iteración activa:** ninguna; la próxima es la 03-01 (pendiente)
+- **Próximo hito:** épica 03 (las 4 unidades presentadas en la página); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
 
@@ -18,12 +18,11 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
-| 02-01 | Portada | 02 | Terminada | 01-05 | [bitacora-02-01](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-01.md) |
-| 02-02 | Fichas de las unidades y modelo de bloques | 02 | Terminada | 02-01 | [bitacora-02-02](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-02.md) |
-| 02-03 | Ruta del curso | 02 | Terminada | 02-02 | [bitacora-02-03](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-03.md) |
-| 02-04 | Instructor | 02 | Terminada | 02-03 | [bitacora-02-04](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-04.md) |
-| 02-05 | Bloques y prompts de la Unidad 1 y la Unidad 2 | 02 | Terminada | 02-04 | [bitacora-02-05](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-05.md) |
-| 02-06 | Bloques y prompts de la Unidad 3 y la Unidad 4 | 02 | En revisión | 02-05 | [bitacora-02-06](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-06.md) · [bitacora-02-cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |
+| 03-01 | Sección de unidad y texto de los bloques | 03 | Pendiente | 02-06 | — |
+| 03-02 | Prompts con «Copiar» y recursos externos | 03 | Pendiente | 03-01 | — |
+| 03-03 | Descargas y «Profundiza» | 03 | Pendiente | 03-02 | — |
+| 03-04 | Pendientes de la Unidad 1 y la Unidad 2 | 03 | Pendiente | 03-03 | — |
+| 03-05 | Pendientes de la Unidad 3 y la Unidad 4 | 03 | Pendiente | 03-04 | — |
 
 ## 2. Épicas cerradas
 
@@ -32,6 +31,7 @@ Una fila por épica cerrada, con enlace a su bitácora de cierre.
 | Épica | Nombre | Cerrada | Bitácora de cierre |
 | :---- | :----- | :------ | :----------------- |
 | 01 | Fundación y sistema de diseño | 2026-11-17 | [bitacora-01-cierre](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-cierre.md) |
+| 02 | Portada, ruta del curso e instructor | 2026-11-17 | [bitacora-02-cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |
 
 ## 3. Backlog
 
@@ -39,20 +39,13 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
-| 5 | Portada con el lema, Gemini como logo principal, Google, GTD y Capacita en segundo plano, y las redes con los íconos de Chrome y LinkedIn; SVG guardados como archivos individuales en `src/assets/iconos/` | Funcionalidad | — | 02-01 | Terminada |
-| 6 | Fichas reales de las 4 unidades con un `.md` por bloque (RDA-009) y sin contenido de prueba | Técnico | — | 02-02 | Terminada |
-| 7 | Ruta del curso: 4 unidades de 0 % a 100 % en mosaico, enlazadas a sus secciones | Funcionalidad | — | 02-03 | Terminada |
-| 7.1 | Ruta del curso en 4 columnas desde 1024 px (P-006 en `DESIGN.md`, sección 4) | Corrección | — | — | Terminada (dicho por el desarrollador, revisión en navegador sin observaciones) |
-| 8 | Sección del instructor | Funcionalidad | — | 02-04 | Terminada |
-| 9 | Texto «Para la clase», prompts y recursos de la Unidad 1 y la Unidad 2 | Funcionalidad | — | 02-05 | Terminada |
-| 10 | Texto «Para la clase», prompts y recursos de la Unidad 3 y la Unidad 4 | Funcionalidad | — | 02-06 | En revisión |
-| 11 | Componentes de unidad: prompt con «Copiar», «Profundiza», recurso externo y descarga, con error de compilación si una referencia a recurso o descarga no existe | Funcionalidad | — | 03-01 | Pendiente |
-| 12 | Presentación de la Unidad 1 y sus pendientes (descargas, videos, «Profundiza») | Funcionalidad | — | 03-02 | Pendiente |
-| 13 | Configuración de Cloudflare Workers y guardia de marcadores `PENDIENTE_` | Técnico | — | 04-01 | Pendiente |
-| 14 | Cloudflare Web Analytics y metadatos para compartir | Funcionalidad | — | 04-02 | Pendiente |
-| 15 | Presentación de la Unidad 2 y sus pendientes (descargas, videos, «Profundiza») | Funcionalidad | — | 03-03 | Pendiente |
-| 16 | Presentación de la Unidad 3 y sus pendientes (descargas, videos, «Profundiza») | Funcionalidad | — | 03-04 | Pendiente |
-| 17 | Presentación de la Unidad 4 y sus pendientes (descargas, videos, «Profundiza») | Funcionalidad | — | 03-05 | Pendiente |
+| 11 | Sección de unidad: ficha, tabla de bloques y texto «Para la clase» de las 4 unidades con un solo componente | Funcionalidad | — | 03-01 | Pendiente |
+| 12 | Prompts con «Copiar» (IDs con unidad y bloque) y recursos externos de cada unidad | Funcionalidad | — | 03-02 | Pendiente |
+| 13 | Descargas con formato y peso medidos del archivo (RDA-010) y «Profundiza» plegable | Funcionalidad | — | 03-03 | Pendiente |
+| 14 | Pendientes de la Unidad 1 y la Unidad 2 (descargas, videos, «Profundiza») | Funcionalidad | — | 03-04 | Pendiente |
+| 15 | Pendientes de la Unidad 3 y la Unidad 4 (descargas, videos, «Profundiza») | Funcionalidad | — | 03-05 | Pendiente |
+| 16 | Configuración de Cloudflare Workers y guardia de marcadores `PENDIENTE_` | Técnico | — | 04-01 | Pendiente |
+| 17 | Cloudflare Web Analytics y metadatos para compartir | Funcionalidad | — | 04-02 | Pendiente |
 | 18 | Verificación final de rendimiento y accesibilidad en la URL publicada | Técnico | — | 04-03 | Pendiente |
 
 ## 4. Datos pendientes del cliente
@@ -63,8 +56,8 @@ Mientras falten, se usa `PENDIENTE_CLIENTE` donde corresponda.
 | :--- | :------- | :------------- | :----- |
 | Fechas de las 4 clases (define el hito de publicación) | — | Planificación de 03 y 04 | Pendiente |
 | Redacción del respaldo de Google a la formación, si se quiere mencionar en el sitio (sin logos de Google como sello) | — | Mención futura (la 02-01 no lo menciona) | Pendiente |
-| Autorización para publicar en un sitio público el kit de marca de GTD (HEX y tipografía aproximados) y el logo de GTD, que se muestra en el hero desde la 02-01 (riesgo asumido por el desarrollador) y que usan la U2, la U3 (prompt de estilo GTD) y la U4 (`gtd-visual`) | — | 02-01 y 03-03 a 03-05 | Pendiente |
-| HEX y tipografía oficiales de GTD, si se confirman antes de la clase 2 | — | 03-03 | Pendiente |
+| Autorización para publicar en un sitio público el kit de marca de GTD (HEX y tipografía aproximados) y el logo de GTD, que se muestra en el hero desde la 02-01 (riesgo asumido por el desarrollador) y que usan la U2, la U3 (prompt de estilo GTD) y la U4 (`gtd-visual`) | — | 02-01 y 03-02 a 03-05 (se muestra desde la 03-02 bajo responsabilidad del desarrollador; queda como riesgo) | Pendiente |
+| HEX y tipografía oficiales de GTD, si se confirman antes de la clase 2 | — | 03-02 | Pendiente |
 
 ## 5. Decisiones por tomar
 
@@ -72,9 +65,9 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 
 | Tema | RDA o hallazgo | Responsable |
 | :--- | :------------- | :---------- |
-| Texto de «Profundiza en tu tiempo» de cada bloque: el documento del curso lista los temas, pero no la teoría escrita | — | Desarrollador |
-| Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) | — | Desarrollador |
-| Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 | — | Desarrollador |
+| Texto de «Profundiza en tu tiempo» de cada bloque: el documento del curso lista los temas, pero no la teoría escrita · Opcional desde 2026-11-17: «Profundiza» usa los recursos oficiales ya cargados y el texto no bloquea nada | — | Desarrollador |
+| Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) · Bloquea la tarea 3 de la 03-04 y la 03-05 | — | Desarrollador |
+| Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Un primer archivo real es tarea del desarrollador en la 03-03; el resto bloquea la tarea 4 de la 03-04 y la 03-05 | — | Desarrollador |
 | Imagen de la insignia oficial de Gemini Certified Educator para la sección del instructor · La 02-04 se construyó sin ella; el campo `insignia` del esquema está listo para recibirla | 02-04 | Desarrollador |
 | Nombres completos de las certificaciones AWS y Anthropic, si se listan · La 02-04 publica solo el texto del documento, sin detallarlas | 02-04 | Desarrollador |
 | Nombre del Worker (define la URL `nombre.subdominio.workers.dev`) y token de Web Analytics | RDA-005 | Desarrollador |
@@ -130,3 +123,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Iteración 02-05 en revisión: cuerpos de los 13 bloques de U1 y U2, 8 prompts literales (8 de 8 iguales) y 27 recursos; las fichas fallan al compilar si referencian un recurso inexistente; falta comparar el hash con HEAD. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-05.md) |
 | 2026-11-17 | Iteración 02-05 terminada: el desarrollador comprobó el hash de dist/index.html (idéntico a HEAD); se elimina sh.exe.stackdump y se agrega *.stackdump a .gitignore. |
 | 2026-11-17 | Iteración 02-06 en revisión: bloques de U3 y U4 con 16 prompts (24 de 24 iguales en las 4 unidades) y 14 recursos; hash idéntico a HEAD; cierre de la épica 02 y propuesta de la 03 por aprobar. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-06.md) · [Cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |
+| 2026-11-17 | Iteración 02-06 terminada y épica 02 cerrada (aprobada por el desarrollador); sus filas pasan a `registro-archivo.md`. Épica 03: 5 iteraciones generadas (03-01 a 03-05); backlog renumerado (los antiguos 11, 12, 15, 16 y 17 pasan a 11 a 15; Cloudflare y la verificación final, a 16 a 18). [Cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |

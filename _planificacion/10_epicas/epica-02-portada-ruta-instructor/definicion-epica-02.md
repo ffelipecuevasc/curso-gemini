@@ -1,6 +1,6 @@
 # Épica 02 · Portada, ruta del curso e instructor
 
-- **Estado:** Pendiente de iniciar
+- **Estado:** Cerrada (2026-11-17)
 - **Objetivo:** publicar en la página la portada con los íconos de Gemini y Google, la vista general de la ruta (4 unidades de 0 % a 100 %) y la sección del instructor, y dejar las 4 unidades cargadas completas en las colecciones de contenido.
 
 ## Alcance

@@ -1,7 +1,7 @@
 # Iteración 02-06 · Bloques y prompts de la Unidad 3 y la Unidad 4
 
 - **Épica:** 02 · Portada, ruta del curso e instructor
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/02-06-bloques-u3-u4
 - **Depende de:** 02-05
 - **RDA relacionadas:** RDA-003, RDA-009

@@ -1,7 +1,7 @@
 # Iteración 01-05 · Transición animada del cambio de modo
 
 - **Épica:** 01 · Fundación y sistema de diseño
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/01-05-transicion-cambio-modo
 - **Depende de:** 01-03 y la propuesta P-001 aplicada en `DESIGN.md`
 - **RDA relacionadas:** RDA-004
@@ -75,11 +75,11 @@ document.startViewTransition(switchTheme);
 
 ## Criterios de aceptación
 
-- [ ] (Pendiente de revisión del desarrollador; pasos en la bitácora 01-05.) En Chrome, al pulsar el botón (con mouse y con teclado), el modo nuevo aparece como un círculo difuminado que crece desde el centro durante 1 s, en ambos sentidos.
-- [ ] (Pendiente de revisión del desarrollador.) En un navegador sin `document.startViewTransition`, o con `startViewTransition` borrado a mano desde la consola, el modo cambia al instante y la consola no muestra errores.
-- [ ] (Pendiente de revisión del desarrollador.) Con «prefers-reduced-motion: reduce» emulado en las herramientas del navegador, el modo cambia al instante, sin círculo.
-- [ ] (Pendiente de revisión del desarrollador.) Después del efecto, `aria-pressed`, `data-modo` y el valor guardado en `localStorage` coinciden con el modo visible, y el foco sigue en el botón.
-- [ ] El JavaScript total enviado sigue bajo 3 KB comprimido y la pestaña Red no muestra peticiones nuevas. (Tamaño medido: 852 B gzip, antes 802 B con el mismo método; la máscara es un `data:` dentro del CSS, sin URL externa. La pestaña Red queda pendiente de revisión del desarrollador.)
+- [x] (Navegador: comprobado por el desarrollador el 2026-11-17.) En Chrome, al pulsar el botón (con mouse y con teclado), el modo nuevo aparece como un círculo difuminado que crece desde el centro durante 1 s, en ambos sentidos.
+- [x] (Navegador: comprobado por el desarrollador el 2026-11-17.) En un navegador sin `document.startViewTransition`, o con `startViewTransition` borrado a mano desde la consola, el modo cambia al instante y la consola no muestra errores.
+- [x] (Navegador: comprobado por el desarrollador el 2026-11-17.) Con «prefers-reduced-motion: reduce» emulado en las herramientas del navegador, el modo cambia al instante, sin círculo.
+- [x] (Navegador: comprobado por el desarrollador el 2026-11-17.) Después del efecto, `aria-pressed`, `data-modo` y el valor guardado en `localStorage` coinciden con el modo visible, y el foco sigue en el botón.
+- [x] El JavaScript total enviado sigue bajo 3 KB comprimido y la pestaña Red no muestra peticiones nuevas. (Tamaño medido: 852 B gzip, antes 802 B con el mismo método; la máscara es un `data:` dentro del CSS, sin URL externa. Pestaña Red: comprobado por el desarrollador el 2026-11-17.)
 - [x] `pnpm build` y `pnpm astro check` sin errores. (Build «Complete!»; check: 0 errores, 0 advertencias.)
 
 ## Riesgos

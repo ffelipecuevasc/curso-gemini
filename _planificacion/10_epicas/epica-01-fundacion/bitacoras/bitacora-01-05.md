@@ -3,7 +3,7 @@
 - **Fecha:** 2026-11-17
 - **Agente:** Claude Code (Claude Opus 5.5)
 - **Rama:** iteracion/01-05-transicion-cambio-modo
-- **Estado final:** En revisión
+- **Estado final:** Terminada
 
 ## Resumen
 
@@ -33,11 +33,11 @@ Al pulsar el botón de modo, el modo nuevo se revela con un círculo difuminado 
 
 ## Criterios de aceptación
 
-- [ ] Revelado circular de 1 s en Chrome, con mouse y teclado, en ambos sentidos. Pendiente de revisión del desarrollador.
-- [ ] Sin `startViewTransition`: cambio al instante y consola sin errores. Pendiente de revisión del desarrollador.
-- [ ] Con «reducir movimiento» emulado: cambio al instante. Pendiente de revisión del desarrollador.
-- [ ] `aria-pressed`, `data-modo`, `localStorage` y foco coinciden después del efecto. Pendiente de revisión del desarrollador (por código, `switchTheme` es la misma de la 01-03 y el foco no se mueve).
-- [ ] JS bajo 3 KB y sin peticiones nuevas: tamaño medido (852 B); la pestaña Red, pendiente de revisión del desarrollador.
+- [x] Revelado circular de 1 s en Chrome, con mouse y teclado, en ambos sentidos. Evidencia: comprobado por el desarrollador el 2026-11-17.
+- [x] Sin `startViewTransition`: cambio al instante y consola sin errores. Evidencia: comprobado por el desarrollador el 2026-11-17.
+- [x] Con «reducir movimiento» emulado: cambio al instante. Evidencia: comprobado por el desarrollador el 2026-11-17.
+- [x] `aria-pressed`, `data-modo`, `localStorage` y foco coinciden después del efecto. Evidencia: comprobado por el desarrollador el 2026-11-17.
+- [x] JS bajo 3 KB y sin peticiones nuevas: tamaño medido por el agente (852 B); pestaña Red comprobado por el desarrollador el 2026-11-17.
 - [x] `pnpm build` y `pnpm astro check` sin errores.
 
 ## Diferencias entre lo planificado y lo encontrado
@@ -48,7 +48,7 @@ Al pulsar el botón de modo, el modo nuevo se revela con un círculo difuminado 
 
 ## No se pudo verificar
 
-Exige navegador. Pasos para el desarrollador, con `pnpm build` y `pnpm preview`:
+El agente no tenía navegador. El desarrollador ejecutó estos pasos el 2026-11-17 y todos salieron bien (informado por el desarrollador, no medido por el agente), con `pnpm build` y `pnpm preview`:
 
 1. Chrome: pulsa el botón con el mouse y luego con `Tab` + `Enter`; el círculo debe crecer desde el centro en 1 s, de claro a oscuro y de vuelta.
 2. Pulsa varias veces seguidas: el modo final debe coincidir con el último clic.

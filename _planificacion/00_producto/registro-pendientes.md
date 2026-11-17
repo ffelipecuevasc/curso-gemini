@@ -3,8 +3,8 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-17
-- **Iteración activa:** ninguna (01-05 y cierre de la épica 01 en revisión)
-- **Próximo hito:** aprobar la 01-05 y la propuesta de iteraciones de la épica 02; luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
+- **Iteración activa:** ninguna
+- **Próximo hito:** traspaso a la épica 02 (a la espera de la instrucción del desarrollador); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
 
@@ -18,11 +18,7 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
-| 01-01 | Andamiaje del proyecto | 01 | Terminada | — | [bitacora-01-01](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-01.md) |
-| 01-02 | Tokens de diseño y fuentes | 01 | Terminada | 01-01 | [bitacora-01-02](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-02.md) |
-| 01-03 | Layout, navegación y modos | 01 | Terminada | 01-02 | [bitacora-01-03](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-03.md) |
-| 01-04 | Modelo de contenido | 01 | Terminada | 01-01 | [bitacora-01-04](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-04.md) |
-| 01-05 | Transición animada del cambio de modo | 01 | En revisión | 01-03, P-001 | [bitacora-01-05](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-05.md) · [cierre](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-cierre.md) |
+| — | Épica 02 pendiente de iniciar: iteraciones aprobadas, sin detallar | 02 | Pendiente | 01 | — |
 
 ## 2. Épicas cerradas
 
@@ -30,7 +26,7 @@ Una fila por épica cerrada, con enlace a su bitácora de cierre.
 
 | Épica | Nombre | Cerrada | Bitácora de cierre |
 | :---- | :----- | :------ | :----------------- |
-| — | — | — | — |
+| 01 | Fundación y sistema de diseño | 2026-11-17 | [bitacora-01-cierre](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-cierre.md) |
 
 ## 3. Backlog
 
@@ -38,14 +34,8 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
-| 1 | Proyecto Astro + Tailwind v4 + PNPM estricto compilando | Técnico | — | 01-01 | Terminada |
-| 2 | Tokens de `DESIGN.md`, modos claro y oscuro, fuentes autoalojadas | Técnico | — | 01-02 | Terminada |
-| 3 | Layout con salto al contenido, navegación en píldoras, menú móvil, botón de modo y pie con redes | Funcionalidad | — | 01-03 | Terminada |
-| 3 | Fijar los finales de línea con `.gitattributes` (`* text=auto eol=lf`) | Técnico | — | 01-03 | Terminada |
-| 4 | Colecciones de contenido con esquemas validados | Técnico | — | 01-04 | Terminada |
-| 4 | Transición animada del cambio de modo | Mejora | — | 01-05 | En revisión |
 | 5 | Portada con íconos SVG de Gemini y Google y redes | Funcionalidad | — | 02-01 | Pendiente |
-| 6 | Ruta del curso: 4 unidades de 0 % a 100 % en mosaico | Funcionalidad | — | 02-02 | Pendiente |
+| 6 | Ruta del curso: 4 unidades de 0 % a 100 % en mosaico, con las 4 unidades cargadas como YAML reales y sin contenido de prueba | Funcionalidad | — | 02-02 | Pendiente |
 | 7 | Sección del instructor | Funcionalidad | — | 02-03 | Pendiente |
 | 8 | Componentes de unidad: prompt con «Copiar», «Profundiza», recurso externo y descarga, con error de compilación si una referencia a recurso o descarga no existe | Funcionalidad | — | 03-01 | Pendiente |
 | 9 | Contenido de la Unidad 1 | Funcionalidad | — | 03-02 | Pendiente |
@@ -110,3 +100,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Iteración 01-04 terminada, aprobada por el desarrollador (commit y push hechos). |
 | 2026-11-17 | RDA-008: avance de las unidades en cuatro tramos iguales; sale de «Decisiones por tomar». Propuesta P-004: el documento de unidades pasa a la lista permitida. |
 | 2026-11-17 | Iteración 01-05 en revisión: revelado circular del cambio de modo con View Transitions; JS 852 B gzip. Cierre de la épica 01 preparado. [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-05.md) · [Cierre](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-cierre.md) |
+| 2026-11-17 | Iteración 01-05 terminada (revisión en navegador hecha por el desarrollador). Épica 01 cerrada; sus filas pasan a `registro-archivo.md`. Iteraciones de la épica 02 aprobadas, sin detallar. [Cierre](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-cierre.md) |

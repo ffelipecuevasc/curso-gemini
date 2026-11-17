@@ -1,6 +1,6 @@
 # Épica 01 · Fundación y sistema de diseño
 
-- **Estado:** En revisión
+- **Estado:** Cerrada (2026-11-17)
 - **Objetivo:** dejar el proyecto Astro compilando, con los tokens de `DESIGN.md`, el layout común con su navegación y modos, y el modelo de contenido listo para cargar las unidades.
 
 ## Alcance

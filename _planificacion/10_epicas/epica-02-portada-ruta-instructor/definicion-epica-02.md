@@ -1,6 +1,6 @@
 # Épica 02 · Portada, ruta del curso e instructor
 
-- **Estado:** Pendiente
+- **Estado:** Pendiente de iniciar
 - **Objetivo:** publicar en la página la portada con los íconos de Gemini y Google, la vista general de la ruta (4 unidades de 0 % a 100 %) y la sección del instructor.
 
 ## Alcance
@@ -21,10 +21,11 @@
 | 02-02 | Ruta del curso |
 | 02-03 | Instructor |
 
-> Las iteraciones se detallan al cerrar la épica 01.
+> Iteraciones aprobadas por el desarrollador el 2026-11-17 (bitácora de cierre de la épica 01); pendientes de detallar en el traspaso a la épica 02.
 
 ## Decisiones de la épica
 
+- La 02-02 carga las 4 unidades completas como YAML reales desde el documento de unidades del curso, y elimina `prueba.yaml` y las entradas ficticias de recursos y descargas.
 - La ruta muestra el avance de cada unidad según RDA-008: U1 0–25, U2 25–50, U3 50–75, U4 75–100.
 - Los SVG de Gemini y Google se usan tal cual vienen en `iconos-svg.txt` (DESIGN.md, sección 6).
 

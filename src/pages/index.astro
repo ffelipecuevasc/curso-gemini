@@ -3,11 +3,9 @@
 // vacías reciben su contenido en las épicas 02 y 03.
 import Base from "../layouts/Base.astro";
 import Portada from "../components/Portada.astro";
-import { obtenerUnidadesConBloques } from "../lib/unidades";
-
-// Valida unidades y bloques al compilar (RDA-009); la ruta del curso
-// (02-03) usará este resultado para mostrarlos.
-await obtenerUnidadesConBloques();
+// RutaCurso llama a obtenerUnidadesConBloques(): las comprobaciones de
+// unidades y bloques (RDA-009) corren en cada build a través de ella.
+import RutaCurso from "../components/RutaCurso.astro";
 
 const secciones = [
   { id: "ruta", nav: "Ruta", titulo: "Ruta del curso" },
@@ -30,16 +28,19 @@ const enlaces = secciones.map(({ id, nav }) => ({
   enlaces={enlaces}
 >
   <Portada />
+  <RutaCurso />
 
-  {secciones.map(({ id, titulo }) => (
-    <section
-      id={id}
-      aria-labelledby={`titulo-${id}`}
-      class="mx-auto min-h-svh max-w-sitio border-t border-linea px-6 py-16"
-    >
-      <h2 id={`titulo-${id}`} class="text-3xl font-semibold">
-        {titulo}
-      </h2>
-    </section>
-  ))}
+  {secciones
+    .filter(({ id }) => id !== "ruta")
+    .map(({ id, titulo }) => (
+      <section
+        id={id}
+        aria-labelledby={`titulo-${id}`}
+        class="mx-auto min-h-svh max-w-sitio border-t border-linea px-6 py-16"
+      >
+        <h2 id={`titulo-${id}`} class="text-3xl font-semibold">
+          {titulo}
+        </h2>
+      </section>
+    ))}
 </Base>

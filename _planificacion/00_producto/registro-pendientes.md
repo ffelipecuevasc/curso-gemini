@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-17
-- **Iteración activa:** 02-02 (en revisión)
+- **Iteración activa:** 02-03 (en revisión)
 - **Próximo hito:** épica 02 completa (portada, ruta, instructor y 4 unidades cargadas); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
@@ -19,8 +19,8 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
 | 02-01 | Portada | 02 | Terminada | 01-05 | [bitacora-02-01](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-01.md) |
-| 02-02 | Fichas de las unidades y modelo de bloques | 02 | En revisión | 02-01 | [bitacora-02-02](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-02.md) |
-| 02-03 | Ruta del curso | 02 | Pendiente | 02-02 | — |
+| 02-02 | Fichas de las unidades y modelo de bloques | 02 | Terminada | 02-01 | [bitacora-02-02](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-02.md) |
+| 02-03 | Ruta del curso | 02 | En revisión | 02-02 | [bitacora-02-03](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-03.md) |
 | 02-04 | Instructor | 02 | Pendiente | 02-03 | — |
 | 02-05 | Bloques y prompts de la Unidad 1 y la Unidad 2 | 02 | Pendiente | 02-04 | — |
 | 02-06 | Bloques y prompts de la Unidad 3 y la Unidad 4 | 02 | Pendiente | 02-05 | — |
@@ -40,8 +40,8 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
 | 5 | Portada con el lema, Gemini como logo principal, Google, GTD y Capacita en segundo plano, y las redes con los íconos de Chrome y LinkedIn; SVG guardados como archivos individuales en `src/assets/iconos/` | Funcionalidad | — | 02-01 | Terminada |
-| 6 | Fichas reales de las 4 unidades con un `.md` por bloque (RDA-009) y sin contenido de prueba | Técnico | — | 02-02 | En revisión |
-| 7 | Ruta del curso: 4 unidades de 0 % a 100 % en mosaico, enlazadas a sus secciones | Funcionalidad | — | 02-03 | Pendiente |
+| 6 | Fichas reales de las 4 unidades con un `.md` por bloque (RDA-009) y sin contenido de prueba | Técnico | — | 02-02 | Terminada |
+| 7 | Ruta del curso: 4 unidades de 0 % a 100 % en mosaico, enlazadas a sus secciones | Funcionalidad | — | 02-03 | En revisión |
 | 8 | Sección del instructor | Funcionalidad | — | 02-04 | Pendiente |
 | 9 | Texto «Para la clase», prompts y recursos de la Unidad 1 y la Unidad 2 | Funcionalidad | — | 02-05 | Pendiente |
 | 10 | Texto «Para la clase», prompts y recursos de la Unidad 3 y la Unidad 4 | Funcionalidad | — | 02-06 | Pendiente |
@@ -79,6 +79,7 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Nombre del Worker (define la URL `nombre.subdominio.workers.dev`) y token de Web Analytics | RDA-005 | Desarrollador |
 | Licencia del contenido del sitio (hoy «todos los derechos reservados») | — | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
+| Advertencias aceptadas del cargador `file`: la de `recursos.yaml` debe desaparecer en la 02-05 (primer recurso cargado) y la de `descargas.yaml` en la épica 03 (primera descarga) | 02-02 | Desarrollador |
 
 ## 6. Propuestas fuera de alcance
 
@@ -114,3 +115,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Iteración 02-01 en revisión: portada con lema y logos (Gemini, Google; GTD y Capacita aparte) y redes con Chrome y LinkedIn; salen de «Decisiones por tomar» los SVG y la P-005, ya resueltos. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-01.md) |
 | 2026-11-17 | Iteración 02-01 terminada: el desarrollador revisó la portada en el navegador (teclado, 360 px y escritorio, ambos modos, logo de GTD) sin observaciones. |
 | 2026-11-17 | Iteración 02-02 en revisión: 4 fichas y 26 bloques `.md` (RDA-009) validados al compilar; sin contenido de prueba; 2 advertencias de cargador vacío aceptadas hasta la 03. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-02.md) |
+| 2026-11-17 | Iteración 02-02 terminada: aprobada por el desarrollador; 2 advertencias del cargador file aceptadas hasta que haya contenido. |
+| 2026-11-17 | Iteración 02-03 en revisión: mosaico de las 4 unidades en `#ruta` desde las colecciones; la validación RDA-009 pasa a `RutaCurso`; 0 B de JS nuevo; falta revisión en navegador. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-03.md) |

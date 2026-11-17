@@ -1,7 +1,7 @@
 # Iteración 02-02 · Fichas de las unidades y modelo de bloques
 
 - **Épica:** 02 · Portada, ruta del curso e instructor
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/02-02-fichas-unidades
 - **Depende de:** 02-01
 - **RDA relacionadas:** RDA-003, RDA-008 · crea RDA-009
@@ -57,7 +57,7 @@ Cargar la ficha real de las 4 unidades y sus bloques (un archivo `.md` por bloqu
 - [x] No queda contenido de prueba: búsqueda de «prueba» en `src/content/`: 0 coincidencias de datos (solo pueden quedar comentarios que expliquen el archivo). Evidencia: `grep -rni prueba src/content` → 1, el tipo literal «Exposición interactiva + mini-prueba» del curso; `prueba.yaml` eliminado y `recursos.yaml` y `descargas.yaml` en `[]`.
 - [x] Ningún archivo de `src/content/` contiene `PENDIENTE_` ni `VERIFICAR` (búsqueda: 0 coincidencias). Evidencia: `grep -rnE "PENDIENTE_|VERIFICAR" src/content | wc -l` → 0.
 - [x] La RDA-009 y la actualización de la RDA-008 están en `decisiones.md`, con la tabla índice al día. Evidencia: fila RDA-009 en el índice, la sección RDA-009 y «Actualización 2026-11-17» al final de la RDA-008.
-- [ ] `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; la página se ve igual que al cerrar la 02-01 (esta iteración no cambia la interfaz). Parcial: `astro check` 0/0/0; `pnpm build` «Complete!» sin errores, pero con 2 advertencias nuevas, `[file-loader] No items found` en `recursos.yaml` y `descargas.yaml` (riesgo previsto, aceptado por el desarrollador hasta la épica 03). Interfaz: `dist/index.html` con el mismo SHA-256 que un build de `HEAD`.
+- [ ] `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; la página se ve igual que al cerrar la 02-01 (esta iteración no cambia la interfaz). Parcial: `astro check` 0/0/0; `pnpm build` «Complete!» sin errores, pero con 2 advertencias nuevas, `[file-loader] No items found` en `recursos.yaml` y `descargas.yaml` (riesgo previsto, aceptado por el desarrollador hasta la épica 03). Interfaz: `dist/index.html` con el mismo SHA-256 que un build de `HEAD`. Excepción aceptada por el desarrollador, 2026-11-17.
 
 ## Riesgos
 

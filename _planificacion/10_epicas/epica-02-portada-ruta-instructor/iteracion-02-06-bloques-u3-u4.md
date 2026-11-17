@@ -28,6 +28,7 @@ Cargar en los archivos de bloque de la U3 y la U4 su texto «Para la clase», su
 
 - Las mismas de la 02-05 (2026-11-17): copia literal sin reescribir, omisión de lo que es solo para el instructor, y «Profundiza», videos y descargas en la épica 03.
 - 2026-11-17: la épica 03 solo presenta el contenido y completa lo pendiente; no vuelve a cargar unidades.
+- 2026-11-17: los textos de la U3 para participantes que no tienen campo («Enfoque de la herramienta», «Carril alternativo», «Advertencia de contenido» —con su «no es asesoría legal», que no puede perderse— y la tabla «Pieza del kit») se cargan en el cuerpo Markdown del bloque de la U3 que corresponda, sin cambiar el modelo.
 
 ## Tareas
 

@@ -1,7 +1,7 @@
 # Iteración 02-03 · Ruta del curso
 
 - **Épica:** 02 · Portada, ruta del curso e instructor
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/02-03-ruta-curso
 - **Depende de:** 02-02
 - **RDA relacionadas:** RDA-003, RDA-004, RDA-008
@@ -38,13 +38,13 @@ Mostrar en `#ruta` el mosaico de las 4 unidades, cada una con su color, número,
 
 ## Criterios de aceptación
 
-- [ ] El mosaico muestra 4 bloques en el orden U1 a U4, con título completo, mini-proyecto y avance tomados de las colecciones (búsqueda en los componentes de los títulos de unidad: 0 coincidencias).
-- [ ] El avance de cada bloque es el de la RDA-008, en IBM Plex Mono.
-- [ ] Con `Tab` se recorren los 4 bloques en orden, el foco se ve en los dos modos y `Enter` lleva a `#unidad-1` … `#unidad-4`.
-- [ ] Contraste del texto de cada bloque según la tabla 2.3 de `DESIGN.md`, y en modo oscuro la U3 tiene su borde `#00B0E8`.
-- [ ] Sin desborde horizontal en 360 px; 1, 2 y 3 columnas en 360, 640 y 1024 px.
-- [ ] La página sigue con un solo `h1`; `#ruta` tiene su `h2` y cada bloque su `h3`.
-- [ ] `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; 0 B de JavaScript nuevo.
+- [x] El mosaico muestra 4 bloques en el orden U1 a U4, con título completo, mini-proyecto y avance tomados de las colecciones (búsqueda en los componentes de los títulos de unidad: 0 coincidencias). Evidencia: en `dist/index.html` los 4 `h3` salen en orden U1 a U4 con el título completo y los 4 mini-proyectos de los YAML; `grep -rnF` de los títulos de U1, U3 y U4 en `BloqueUnidad.astro` y `RutaCurso.astro`: 0. Fuera de los componentes de la ruta queda 1 coincidencia, «Gemini Notebook» en el `h2` provisorio de `#unidad-3` de `index.astro` (épica 03, no se toca); el título de la U2, «Gemini», no se puede buscar porque es también el nombre del logo.
+- [x] El avance de cada bloque es el de la RDA-008, en IBM Plex Mono. Evidencia: `dist/index.html` trae «0 % → 25 %», «25 % → 50 %», «50 % → 75 %» y «75 % → 100 %», armados con `avance.desde` y `avance.hasta`, en un `p` con `font-codigo` (clase presente en el CSS generado).
+- [ ] Con `Tab` se recorren los 4 bloques en orden, el foco se ve en los dos modos y `Enter` lleva a `#unidad-1` … `#unidad-4`. Sin marcar: falta la prueba con teclado en el navegador (pasos en la bitácora). Medido en el HTML: 4 enlaces `href="#unidad-1"` a `#unidad-4` en orden, cada uno con `aria-labelledby` al número y al título; el foco usa el `:focus-visible` global (`--color-foco`, `outline-offset: 3px`).
+- [ ] Contraste del texto de cada bloque según la tabla 2.3 de `DESIGN.md`, y en modo oscuro la U3 tiene su borde `#00B0E8`. Sin marcar: falta verlo en el navegador. Medido con la fórmula WCAG sobre los tokens: U1 4,62:1 (todo el texto del bloque es de 16 px o más), U2 7,54:1, U3 10,64:1, U4 8,69:1; anillo de foco 4,62:1 en claro y 12,43:1 en oscuro. La clase `border-borde-u3` está en el CSS y el token vale `#00B0E8` en oscuro.
+- [ ] Sin desborde horizontal en 360 px; 1, 2 y 3 columnas en 360, 640 y 1024 px. Sin marcar: falta verlo en el navegador. Medido en el CSS: `grid-cols-1`, `@media (width>=40rem)` con `repeat(2,minmax(0,1fr))` y `@media (width>=64rem)` con `repeat(3,minmax(0,1fr))`; títulos y mini-proyectos con `wrap-break-word` y `text-wrap: balance` en `h3`.
+- [x] La página sigue con un solo `h1`; `#ruta` tiene su `h2` y cada bloque su `h3`. Evidencia: `grep -o` en `dist/index.html`: 1 `h1`, 6 `h2` (incluido `titulo-ruta`), 4 `h3`; `id="ruta"` e `id="unidad-1"` a `id="unidad-4"` presentes una vez cada uno.
+- [x] `pnpm build` y `pnpm astro check` sin errores ni advertencias nuevas; 0 B de JavaScript nuevo. Evidencia: `astro check` 0/0/0; `pnpm build` «Complete!» con solo las 2 advertencias del cargador `file` ya aceptadas en la 02-02; los componentes nuevos tienen 0 `<script>` y `dist/index.html` sigue con 3 scripts (modo, botón de modo y menú).
 
 ## Fuera de alcance
 

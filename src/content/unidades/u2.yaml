@@ -1,0 +1,24 @@
+# Ficha de la Unidad 2. Fuente: unidades-del-curso.md (v5). Bloques en src/content/bloques/u2/.
+numero: 2
+titulo: "Gemini"
+clase: 2
+duracionMin: 120
+nivel: "Principiante → Intermedio"
+avance:
+  desde: 25
+  hasta: 50
+objetivo: "que cada participante domine las capacidades clave de la app de Gemini y las use para producir, en una sola clase, los recursos de comunicación que más pide el trabajo diario: modelos y niveles de razonamiento, Deep Research y Canvas para documentos, planillas, infografías, presentaciones y dashboards. Todo debe respetar la identidad visual de GTD."
+miniProyecto:
+  titulo: "Kit de comunicación GTD"
+  descripcion: "Un mismo caso atraviesa toda la clase. Cada participante es analista de un área de GTD y debe presentar a su gerencia los resultados de un trimestre ficticio, más un contexto de mercado basado en información pública. Termina con seis piezas conectadas entre sí, cinco de ellas con la marca GTD."
+entregable: "Planilla comparativa de modelos, informe de Deep Research en Docs, infografía, presentación y dashboard interactivo, todo con la marca GTD"
+terminadoCuando:
+  - "Mi planilla compara al menos 3 configuraciones de modelo y nivel, y sé cuándo usar cada una."
+  - "Mi informe de Deep Research está en Docs y verifiqué al menos 3 afirmaciones en sus fuentes."
+  - "Tengo una infografía con la paleta GTD, sin logo inventado y con cifras revisadas."
+  - "Mi presentación está en Google Presentaciones, con los colores de la marca y el logo oficial."
+  - "Mi dashboard filtra por mes, región y servicio, muestra el rótulo de datos ficticios y comprobé 3 cifras."
+  - "Guardé mi bloque de marca junto a la plantilla de la U1."
+  - "No usé información real de GTD ni de sus clientes."
+recursos: []
+descargas: []

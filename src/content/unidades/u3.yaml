@@ -1,0 +1,25 @@
+# Ficha de la Unidad 3. Fuente: unidades-del-curso.md (v5). Bloques en src/content/bloques/u3/.
+numero: 3
+titulo: "Gemini Notebook"
+clase: 3
+duracionMin: 120
+nivel: "Principiante → Intermedio"
+avance:
+  desde: 50
+  hasta: 75
+objetivo: "que cada participante use Gemini Notebook para estudiar e investigar a partir de fuentes confiables, como leyes, reportes técnicos e información pública del sector. Con eso convierte un cuaderno en material de capacitación interna listo para usar."
+miniProyecto:
+  titulo: "Kit de capacitación interna: Ley 21.719 en GTD"
+  descripcion: "La nueva Ley de Protección de Datos Personales (Ley 21.719) entra en vigencia el 1 de diciembre de 2026, y una empresa de telecomunicaciones trata grandes volúmenes de datos de clientes. Cada participante construye un cuaderno sobre la ley, solo con fuentes públicas, y lo transforma en un kit para capacitar a un equipo de GTD."
+entregable: "Cuaderno configurado con fuentes etiquetadas, informe interactivo, cuestionario, presentación con estilo GTD y guion del curso interno en Markdown"
+holguraMin: 5
+terminadoCuando:
+  - "Mi cuaderno tiene al menos 5 fuentes públicas (PDF, URL, YouTube y fuentes importadas con Fast Research o Deep Research), etiquetadas, y sé por qué está cada una."
+  - "Configuré el chat en Personalizado (rol, objetivo y estilo) y probé al menos 2 longitudes de respuesta."
+  - "Verifiqué al menos 2 citas en el pasaje original y guardé notas."
+  - "Generé un mapa mental, un informe interactivo y un cuestionario."
+  - "Generé dos presentaciones (sin prompt y con el prompt de estilo GTD) y puedo explicar la diferencia."
+  - "Descargué el guion del curso interno en Markdown, marcado como borrador para validación legal."
+  - "Usé solo fuentes públicas."
+recursos: []
+descargas: []

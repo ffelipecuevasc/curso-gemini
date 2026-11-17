@@ -1,0 +1,23 @@
+# Ficha de la Unidad 1. Fuente: unidades-del-curso.md (v5). Bloques en src/content/bloques/u1/.
+numero: 1
+titulo: "Fundamentos de IA Generativa & Ingeniería de Prompts"
+clase: 1
+duracionMin: 120
+nivel: "Principiante → Intermedio"
+avance:
+  desde: 0
+  hasta: 25
+objetivo: "que cada participante entienda cómo funciona la IA generativa y cuáles son sus límites, sepa dónde está Gemini en el ecosistema de Google y salga con un método para escribir prompts. Ese método queda guardado en una plantilla que reutilizará todo el curso."
+miniProyecto:
+  titulo: "Mi prompt maestro"
+  descripcion: "Cada participante resuelve 3 tareas de su trabajo con Gemini, usando datos ficticios o públicos. Mejora sus prompts con la rúbrica de la clase y termina con una plantilla de prompt reutilizable guardada en su Drive. En la U4, esa plantilla se convierte en la skill «Optimizador de prompts»."
+entregable: "Prompts evaluados con la rúbrica y una plantilla de prompt reutilizable guardada"
+holguraMin: 2
+terminadoCuando:
+  - "Confirmé que trabajo con la cuenta del curso y Google AI Plus activo."
+  - "Resolví 3 tareas con Gemini y al menos un prompt llegó a 8 puntos en la rúbrica."
+  - "Guardé mi plantilla de prompt maestro en Drive y la probé al menos una vez."
+  - "Revisé las respuestas antes de usarlas: qué verifiqué y qué aporté yo."
+  - "Usé solo datos ficticios o públicos."
+recursos: []
+descargas: []

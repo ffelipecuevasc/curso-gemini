@@ -1,0 +1,23 @@
+# Ficha de la Unidad 4. Fuente: unidades-del-curso.md (v5). Bloques en src/content/bloques/u4/.
+numero: 4
+titulo: "Gemini Skills & Proyecto Integrador"
+clase: 4
+duracionMin: 120
+nivel: "Principiante → Intermedio"
+avance:
+  desde: 75
+  hasta: 100
+objetivo: "que cada participante entienda qué son las skills y por qué reemplazan a los Gems, las use y combine, instale dos skills del curso, cree una propia y cierre el bootcamp con un proyecto integrador que use todo lo aprendido."
+miniProyecto:
+  titulo: "Mi caja de herramientas IA + Demo Day"
+  descripcion: "Cada participante termina con al menos 3 skills activas en su cuenta: optimizador-prompts, gtd-visual y una propia. Con ellas resuelve una tarea real de punta a punta."
+entregable: "Skills optimizador-prompts, gtd-visual y una propia instaladas y probadas; proyecto integrador presentado"
+terminadoCuando:
+  - "Puedo explicar en 2 frases qué es una skill y por qué reemplaza a los Gems."
+  - "optimizador-prompts está instalada; la probé con 3 prompts y la personalicé con una regla propia."
+  - "gtd-visual está instalada y generé con ella una presentación o un dashboard con el logo intacto y cifras verificadas."
+  - "Creé, probé y descargué una skill propia."
+  - "Mi proyecto integrador usa una herramienta de investigación, dos skills y un producto final, e incluye la reflexión de 4 preguntas."
+  - "Usé solo datos ficticios o públicos (o mi calendario personal en la skill de agenda)."
+recursos: []
+descargas: []

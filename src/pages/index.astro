@@ -3,6 +3,11 @@
 // vacías reciben su contenido en las épicas 02 y 03.
 import Base from "../layouts/Base.astro";
 import Portada from "../components/Portada.astro";
+import { obtenerUnidadesConBloques } from "../lib/unidades";
+
+// Valida unidades y bloques al compilar (RDA-009); la ruta del curso
+// (02-03) usará este resultado para mostrarlos.
+await obtenerUnidadesConBloques();
 
 const secciones = [
   { id: "ruta", nav: "Ruta", titulo: "Ruta del curso" },

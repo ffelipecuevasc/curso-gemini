@@ -12,6 +12,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 | RDA-006 | Fuentes autoalojadas desde paquetes de Fontsource | Aceptada |
 | RDA-007 | Sin JavaScript, el sitio se muestra en modo claro | Aceptada |
 | RDA-008 | Avance de cada unidad en cuatro tramos iguales | Aceptada |
+| RDA-009 | Un archivo `.md` por bloque, en su propia colección | Aceptada |
 
 ---
 
@@ -108,3 +109,17 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 **Decisión:** el desarrollador fija cuatro tramos iguales: U1 0–25, U2 25–50, U3 50–75 y U4 75–100. Se cargan en el YAML de cada unidad en la épica 03 y los muestra la ruta del curso de la épica 02.
 **Alternativas consideradas:** tramos proporcionales a los minutos de cada clase; no aportan nada porque las 4 clases duran lo mismo, y los tramos iguales se leen más fácil.
 **Consecuencias:** el dato deja de estar pendiente. El contenido de prueba (`prueba.yaml`) no cambia; se reemplaza en la épica 03.
+
+**Actualización 2026-11-17:** el contenido de prueba se reemplazó en la 02-02, no en la épica 03. Los tramos ya están cargados en `src/content/unidades/u1.yaml` a `u4.yaml`.
+
+---
+
+## RDA-009 · Un archivo `.md` por bloque, en su propia colección
+
+- **Fecha:** 2026-11-17
+- **Estado:** Aceptada
+
+**Contexto:** cada bloque necesita un texto «Para la clase» con listas, negritas y prompts, y el esquema de la 01-04 guardaba los bloques y los prompts dentro del YAML de cada unidad, sin un lugar para ese texto. Además, `reference()` no hace fallar el build si la entrada referida no existe (bitácora 01-04).
+**Decisión:** la colección `unidades` (YAML) guarda solo la ficha: título completo, clase, duración, nivel, avance (RDA-008), objetivo, mini-proyecto, entregable, `holguraMin` opcional, «Terminado cuando…», recursos y descargas. La colección nueva `bloques` usa el cargador `glob` sobre `src/content/bloques/<unidad>/bloque-<n>.md`: el frontmatter trae `unidad` (referencia), `numero`, `titulo`, `minutos`, `tipo` o `microcharlaMin` + `practicaMin`, `prompts` (texto literal) y `profundiza`; el cuerpo Markdown es el texto «Para la clase», que se muestra con `render()` sin dependencias nuevas. La fila de cierre de U2 a U4 («Vitrina y cierre», «Cierre del bootcamp») es `<unidad>/cierre.md`, con `cierre: true` y sin número; la holgura de U1 y U3 es `holguraMin` en la unidad, no un bloque. Los campos de texto simple se guardan sin `**` ni comillas invertidas. `src/lib/unidades.ts` resuelve cada unidad con `getEntry` y lanza un error si un bloque apunta a una unidad inexistente, si se repite un número de bloque, si hay más de un cierre, si una unidad queda sin bloques o si bloques + holgura no suman `duracionMin`; `index.astro` lo ejecuta al compilar.
+**Alternativas consideradas:** el texto de cada bloque como campo de varias líneas en el YAML de la unidad (un archivo enorme, sin resaltado de Markdown y con riesgo de errores de sangría); darle al cierre el número 6 (agrega un dato que el documento no trae); un campo `cierre` en la unidad (quedaría sin cuerpo para su texto); omitir la holgura (se pierde la comprobación de que los minutos suman 120).
+**Consecuencias:** cada bloque se edita en su archivo y la compilación detecta errores al traspasar las tablas. Las comprobaciones entre colecciones solo corren si una página llama a `obtenerUnidadesConBloques()`; si `index.astro` deja de hacerlo, se pierden. Mientras `recursos.yaml` y `descargas.yaml` estén vacíos, `pnpm build` emite dos advertencias `No items found`, aceptadas por el desarrollador hasta la épica 03.

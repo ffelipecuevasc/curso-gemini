@@ -43,19 +43,39 @@ const profundiza = z.strictObject({
   recursos: z.array(reference("recursos")).default([]),
 });
 
-// U1 declara un «tipo» por bloque; U2 a U4 separan los minutos en
-// microcharla y práctica. Cada bloque debe traer una de las dos formas.
+const prompt = z.strictObject({
+  id: idEntrada,
+  titulo: textoNoVacio,
+  // Texto literal: se copia tal cual, sin recortar espacios ni saltos.
+  texto: z.string().min(1),
+});
+
+// Un archivo `.md` por bloque (RDA-009): los datos van en el frontmatter y
+// el texto «Para la clase» en el cuerpo. U1 declara un «tipo» por bloque;
+// U2 a U4 separan los minutos en microcharla y práctica. La fila de cierre
+// de cada unidad («Vitrina y cierre», «Cierre del bootcamp») lleva
+// `cierre: true` y no tiene número, porque el documento no se lo da.
 const bloque = z
   .strictObject({
-    numero: z.number().int().min(0),
+    unidad: reference("unidades"),
+    numero: z.number().int().min(0).optional(),
+    cierre: z.literal(true).optional(),
     titulo: textoNoVacio,
     minutos: enteroPositivo,
     tipo: textoNoVacio.optional(),
     microcharlaMin: z.number().int().min(0).optional(),
     practicaMin: z.number().int().min(0).optional(),
+    prompts: z.array(prompt).default([]),
     profundiza: profundiza.optional(),
   })
   .superRefine((b, ctx) => {
+    if ((b.numero === undefined) === (b.cierre === undefined)) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["numero"],
+        message: "Cada bloque lleva «numero» o «cierre: true», no ambos",
+      });
+    }
     const tieneReparto =
       b.microcharlaMin !== undefined || b.practicaMin !== undefined;
     if (b.tipo === undefined && !tieneReparto) {
@@ -78,50 +98,32 @@ const bloque = z
     }
   });
 
-const prompt = z.strictObject({
-  id: idEntrada,
+// Los bloques viven en su propia colección; la unidad solo trae su ficha.
+// La suma de minutos (bloques + holgura = duracionMin) y los números de
+// bloque se comprueban en `src/lib/unidades.ts`, que ve ambas colecciones.
+const unidad = z.strictObject({
+  numero: z.number().int().min(1).max(4),
   titulo: textoNoVacio,
-  bloque: z.number().int().min(0),
-  // Texto literal: se copia tal cual, sin recortar espacios ni saltos.
-  texto: z.string().min(1),
-});
-
-const unidad = z
-  .strictObject({
-    numero: z.number().int().min(1).max(4),
-    titulo: textoNoVacio,
-    clase: z.number().int().min(1).max(4),
-    duracionMin: enteroPositivo,
-    nivel: textoNoVacio,
-    avance: z
-      .strictObject({ desde: porcentaje, hasta: porcentaje })
-      .refine((a) => a.desde < a.hasta, {
-        error: "«avance.desde» debe ser menor que «avance.hasta»",
-      }),
-    objetivo: textoNoVacio,
-    miniProyecto: z.strictObject({
-      titulo: textoNoVacio,
-      descripcion: textoNoVacio,
+  clase: z.number().int().min(1).max(4),
+  duracionMin: enteroPositivo,
+  nivel: textoNoVacio,
+  avance: z
+    .strictObject({ desde: porcentaje, hasta: porcentaje })
+    .refine((a) => a.desde < a.hasta, {
+      error: "«avance.desde» debe ser menor que «avance.hasta»",
     }),
-    entregable: textoNoVacio,
-    bloques: z.array(bloque).min(1),
-    prompts: z.array(prompt).default([]),
-    terminadoCuando: z.array(textoNoVacio).min(1),
-    recursos: z.array(reference("recursos")).default([]),
-    descargas: z.array(reference("descargas")).default([]),
-  })
-  .superRefine((u, ctx) => {
-    const numeros = new Set(u.bloques.map((b) => b.numero));
-    u.prompts.forEach((p, i) => {
-      if (!numeros.has(p.bloque)) {
-        ctx.addIssue({
-          code: "custom",
-          path: ["prompts", i, "bloque"],
-          message: `El prompt «${p.id}» apunta al bloque ${p.bloque}, que no existe en la unidad`,
-        });
-      }
-    });
-  });
+  objetivo: textoNoVacio,
+  miniProyecto: z.strictObject({
+    titulo: textoNoVacio,
+    descripcion: textoNoVacio,
+  }),
+  entregable: textoNoVacio,
+  // Minutos de reserva del instructor; no son un bloque (RDA-009).
+  holguraMin: enteroPositivo.optional(),
+  terminadoCuando: z.array(textoNoVacio).min(1),
+  recursos: z.array(reference("recursos")).default([]),
+  descargas: z.array(reference("descargas")).default([]),
+});
 
 const curso = z.strictObject({
   id: idEntrada,
@@ -135,6 +137,10 @@ export const collections = {
   unidades: defineCollection({
     loader: glob({ pattern: "*.yaml", base: "./src/content/unidades" }),
     schema: unidad,
+  }),
+  bloques: defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/bloques" }),
+    schema: bloque,
   }),
   recursos: defineCollection({
     loader: file("./src/content/recursos.yaml"),

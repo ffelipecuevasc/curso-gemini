@@ -19,6 +19,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-003 | `DESIGN.md` · 5. Componentes (fila Encabezado) | Iteración 01-03 | 2026-11-17 | Aplicada |
 | P-004 | `AGENTS.md` · 3. Documentos permitidos y `.claude/hooks/documentos-permitidos.md` | Iteración 01-05 | 2026-11-17 | Aplicada |
 | P-005 | `DESIGN.md` · 5. Componentes (filas Portada y Redes) y 6. Íconos y logotipos | Planificación de la 02-01 | 2026-11-17 | Aplicada |
+| P-006 | `DESIGN.md` · 4. Espaciado, retícula y forma (Retícula) | Revisión de la 02-03 | 2026-11-17 | Aplicada (2026-11-17, commit 9c39f9b) |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -126,4 +127,23 @@ En `.claude/hooks/documentos-permitidos.md`, sección «_planificacion/», agreg
 - Logotipos de GTD Telsur y Capacita Tu Futuro: SVG que entrega el desarrollador, solo en el hero, sin texto visible y con `role="img"` y `aria-label` («GTD Telsur», «Capacita Tu Futuro»). Se pueden recolorear con tokens para que se distingan en ambos modos, sin cambiar sus trazados ni sus proporciones.
 - Ícono de LinkedIn: el SVG que entrega el desarrollador, recoloreado con tokens (círculo `--color-linkedin`, glifo `--color-fondo`). Los íconos de redes no llevan efectos.
 - Los SVG viven como archivos individuales en `src/assets/iconos/`.
+```
+
+## P-006 · La ruta del curso pasa a 4 columnas desde 1024 px
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 4. Espaciado, retícula y forma, línea «Retícula»
+- **Por qué:** la ruta tiene 4 unidades; con 3 columnas desde 1024 px el mosaico quedaba en 3 + 1, con un bloque solo en la segunda fila. Si no se aplica, el documento obliga a esa distribución desequilibrada.
+- **Estado:** aplicada por el desarrollador el 2026-11-17 en el commit 9c39f9b, que cambia solo esta línea.
+
+**Texto actual** (copiado literalmente de `git show 920f097:DESIGN.md`, la versión anterior al cambio):
+
+```text
+- Retícula: móvil primero; mosaico de 1 columna en móvil, 2 desde 640 px y 3 desde 1024 px, siempre con `minmax(0, 1fr)`.
+```
+
+**Texto propuesto:**
+
+```text
+- Retícula: móvil primero; mosaico de 1 columna en móvil, 2 desde 640 px y 4 desde 1024 px (la ruta tiene 4 unidades), siempre con `minmax(0, 1fr)`.
 ```

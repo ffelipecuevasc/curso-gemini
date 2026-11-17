@@ -17,7 +17,7 @@ const unidades = await obtenerUnidadesConBloques();
   <h2 id="titulo-ruta" class="text-3xl font-semibold">
     Ruta del curso
   </h2>
-  <ol class="mt-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3">
+  <ol class="mt-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-4">
     {unidades.map((unidad) => (
       <BloqueUnidad unidad={unidad} />
     ))}

@@ -18,6 +18,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-002 | `README.md` · 4. Organización del repositorio | Iteración 01-02 | 2026-11-17 | Aplicada |
 | P-003 | `DESIGN.md` · 5. Componentes (fila Encabezado) | Iteración 01-03 | 2026-11-17 | Aplicada |
 | P-004 | `AGENTS.md` · 3. Documentos permitidos y `.claude/hooks/documentos-permitidos.md` | Iteración 01-05 | 2026-11-17 | Aplicada |
+| P-005 | `DESIGN.md` · 5. Componentes (filas Portada y Redes) y 6. Íconos y logotipos | Planificación de la 02-01 | 2026-11-17 | Aplicada |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -86,4 +87,43 @@ En `.claude/hooks/documentos-permitidos.md`, sección «_planificacion/», agreg
 
 ```text
 - `_planificacion/00_producto/unidades-del-curso.md`
+```
+
+## P-005 · Logos del hero y íconos de las redes
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 5. Componentes (filas «Portada (hero)» y «Redes») y 6. Íconos y logotipos
+- **Por qué:** el desarrollador decidió el 2026-11-17 que el logo de Gemini es el principal del hero; que los de GTD Telsur (cliente) y Capacita Tu Futuro (organizador) aparecen en el hero con mucho menos protagonismo; y que las redes llevan el SVG de Chrome junto al enlace a felipecuevas.dev y el de LinkedIn junto al enlace al perfil. También autorizó recolorear los SVG de GTD, Capacita y LinkedIn, pero no los de Gemini, Google ni Chrome. Si no se aplica, `DESIGN.md` dice lo contrario de la iteración 02-01 y la regla de «seguir el documento tal como está» bloquea la implementación.
+- **Nota:** el pie solo lleva `Redes`, así que el cambio de íconos también llega al pie; los logos de GTD y Capacita quedan solo en el hero.
+
+**Texto actual** (copiado literalmente del documento):
+
+```text
+| Portada (hero) | Título del curso (`h1`), una frase de propósito, el botón principal «Ver la ruta», los íconos SVG de Gemini y de Google, un círculo decorativo `--color-superficie` parcialmente fuera del marco y los enlaces de redes pequeños en la esquina inferior izquierda. |
+```
+
+```text
+| Redes | Texto visible exacto `www.felipecuevas.dev` (a `https://felipecuevas.dev/`) y `www.linkedin.com/in/ffelipecuevasc/` (a `https://www.linkedin.com/in/ffelipecuevasc/`); ícono y texto forman un solo enlace. Ícono web `#007EA7` y texto `#003B51` en claro; ícono web `#00B0E8` y texto `#E4F3FF` en oscuro. Van en la portada (pequeñas, abajo a la izquierda) y en el pie. |
+```
+
+```text
+- Logotipos de Gemini y Google: se usan los SVG oficiales que entrega el desarrollador, tal cual, sin redibujarlos, recolorearlos ni deformarlos, en la portada y donde se nombre la herramienta. El SVG de Gemini usa `mask` y `filter` con identificadores propios: si aparece más de una vez en la página, cada copia lleva identificadores únicos. Van con `role="img"` y un `aria-label` («Gemini», «Google»).
+- Íconos de redes: los de la identidad de felipecuevas.dev, sin efectos.
+```
+
+**Texto propuesto:**
+
+```text
+| Portada (hero) | Título del curso (`h1`), una frase de propósito (el lema del curso), el botón principal «Ver la ruta», el logo de Gemini como protagonista, el de Google como secundario, y en una fila aparte, mucho más pequeños y sin texto visible, los de GTD Telsur (cliente) y Capacita Tu Futuro (organizador); un círculo decorativo `--color-superficie` parcialmente fuera del marco y los enlaces de redes pequeños en la esquina inferior izquierda. |
+```
+
+```text
+| Redes | Texto visible exacto `www.felipecuevas.dev` (a `https://felipecuevas.dev/`) y `www.linkedin.com/in/ffelipecuevasc/` (a `https://www.linkedin.com/in/ffelipecuevasc/`); ícono y texto forman un solo enlace. El enlace a felipecuevas.dev lleva el SVG de Chrome y el de LinkedIn lleva el SVG de LinkedIn (en claro con `--color-linkedin` y en oscuro con el glifo invertido, como en los tokens); texto `#003B51` en claro y `#E4F3FF` en oscuro. Van en la portada (pequeñas, abajo a la izquierda) y en el pie. |
+```
+
+```text
+- Logotipos de Gemini, Google y Chrome: se usan los SVG que entrega el desarrollador, tal cual, sin redibujarlos, recolorearlos ni deformarlos. El de Gemini y el de Google van en la portada y donde se nombre la herramienta; el de Chrome, junto al enlace a felipecuevas.dev. El SVG de Gemini usa `mask` y `filter` con identificadores propios: si aparece más de una vez en la página, cada copia lleva identificadores únicos. Los logotipos de Gemini y Google van con `role="img"` y un `aria-label` («Gemini», «Google»).
+- Logotipos de GTD Telsur y Capacita Tu Futuro: SVG que entrega el desarrollador, solo en el hero, sin texto visible y con `role="img"` y `aria-label` («GTD Telsur», «Capacita Tu Futuro»). Se pueden recolorear con tokens para que se distingan en ambos modos, sin cambiar sus trazados ni sus proporciones.
+- Ícono de LinkedIn: el SVG que entrega el desarrollador, recoloreado con tokens (círculo `--color-linkedin`, glifo `--color-fondo`). Los íconos de redes no llevan efectos.
+- Los SVG viven como archivos individuales en `src/assets/iconos/`.
 ```

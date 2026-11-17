@@ -1,12 +1,12 @@
 # Épica 03 · Unidades del curso
 
 - **Estado:** Pendiente
-- **Objetivo:** publicar las cuatro unidades con sus bloques, prompts copiables, descargas, «Profundiza en tu tiempo» con enlaces a documentación y videos oficiales de Google, y su lista de terminado.
+- **Objetivo:** presentar en la página las cuatro unidades ya cargadas en las colecciones (épica 02), con sus bloques, prompts copiables y lista de terminado, y completar lo pendiente: descargas, videos oficiales de Google y textos de «Profundiza en tu tiempo».
 
 ## Alcance
 
 1. Componentes de la sección de unidad: encabezado, tabla de bloques, bloque de prompt con botón «Copiar», «Profundiza» plegable, enlace a recurso externo y tarjeta de descarga.
-2. Contenido de la U1, la U2, la U3 y la U4 cargado en las colecciones desde el documento del curso.
+2. Presentación de la U1, la U2, la U3 y la U4 desde las colecciones cargadas en la épica 02 (no se vuelven a cargar), más lo pendiente de cada una: textos de «Profundiza», enlaces a videos oficiales y descargas.
 3. Archivos de descarga en `public/descargas/`.
 
 ## Fuera de alcance
@@ -19,16 +19,19 @@
 | Iteración | Nombre |
 | :-------- | :----- |
 | 03-01 | Componentes de unidad y botón de copiar |
-| 03-02 | Unidad 1 · Fundamentos y prompts |
-| 03-03 | Unidad 2 · Gemini |
-| 03-04 | Unidad 3 · Gemini Notebook |
-| 03-05 | Unidad 4 · Skills y proyecto integrador |
+| 03-02 | Unidad 1 · presentación y pendientes |
+| 03-03 | Unidad 2 · presentación y pendientes |
+| 03-04 | Unidad 3 · presentación y pendientes |
+| 03-05 | Unidad 4 · presentación y pendientes |
 
-> Las iteraciones se detallan al cerrar la épica 02. Si una unidad no cabe en el tamaño máximo, se parte al proponerla.
+> Las iteraciones se detallan al cerrar la épica 02 (02-06). Si una unidad no cabe en el tamaño máximo, se parte al proponerla.
+> Actualización 2026-11-17: el contenido de las unidades (fichas, bloques con su texto, prompts y recursos) se carga en la épica 02. La épica 03 lo presenta y completa solo lo pendiente.
 
 ## Decisiones de la épica
 
-- Avance de cada unidad según RDA-008: U1 0–25, U2 25–50, U3 50–75, U4 75–100, cargado en el YAML de cada unidad.
+- Avance de cada unidad según RDA-008: U1 0–25, U2 25–50, U3 50–75, U4 75–100, ya cargado en la ficha de cada unidad (02-02).
+- El texto «Para la clase» de cada bloque se muestra con `render()` de la colección `bloques` (RDA-009).
+- Mostrar el kit de marca de GTD (HEX aproximados) y su logo depende de la autorización del cliente abierta en el registro.
 - Los componentes de la 03-01 resuelven cada recurso y descarga con `getEntry` y lanzan un error si no existe, para que `pnpm build` falle (bitácora 01-04).
 
 ## Criterio de término

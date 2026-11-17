@@ -4,7 +4,7 @@
 
 - **Última actualización:** 2026-11-17
 - **Iteración activa:** ninguna
-- **Próximo hito:** traspaso a la épica 02 (a la espera de la instrucción del desarrollador); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
+- **Próximo hito:** épica 02 completa (portada, ruta, instructor y 4 unidades cargadas); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
 
@@ -18,7 +18,12 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
-| — | Épica 02 pendiente de iniciar: iteraciones aprobadas, sin detallar | 02 | Pendiente | 01 | — |
+| 02-01 | Portada | 02 | Pendiente | 01-05 | — |
+| 02-02 | Fichas de las unidades y modelo de bloques | 02 | Pendiente | 02-01 | — |
+| 02-03 | Ruta del curso | 02 | Pendiente | 02-02 | — |
+| 02-04 | Instructor | 02 | Pendiente | 02-03 | — |
+| 02-05 | Bloques y prompts de la Unidad 1 y la Unidad 2 | 02 | Pendiente | 02-04 | — |
+| 02-06 | Bloques y prompts de la Unidad 3 y la Unidad 4 | 02 | Pendiente | 02-05 | — |
 
 ## 2. Épicas cerradas
 
@@ -34,17 +39,20 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
-| 5 | Portada con íconos SVG de Gemini y Google y redes | Funcionalidad | — | 02-01 | Pendiente |
-| 6 | Ruta del curso: 4 unidades de 0 % a 100 % en mosaico, con las 4 unidades cargadas como YAML reales y sin contenido de prueba | Funcionalidad | — | 02-02 | Pendiente |
-| 7 | Sección del instructor | Funcionalidad | — | 02-03 | Pendiente |
-| 8 | Componentes de unidad: prompt con «Copiar», «Profundiza», recurso externo y descarga, con error de compilación si una referencia a recurso o descarga no existe | Funcionalidad | — | 03-01 | Pendiente |
-| 9 | Contenido de la Unidad 1 | Funcionalidad | — | 03-02 | Pendiente |
-| 10 | Configuración de Cloudflare Workers y guardia de marcadores `PENDIENTE_` | Técnico | — | 04-01 | Pendiente |
-| 11 | Cloudflare Web Analytics y metadatos para compartir | Funcionalidad | — | 04-02 | Pendiente |
-| 12 | Contenido de la Unidad 2 | Funcionalidad | — | 03-03 | Pendiente |
-| 13 | Contenido de la Unidad 3 | Funcionalidad | — | 03-04 | Pendiente |
-| 14 | Contenido de la Unidad 4 | Funcionalidad | — | 03-05 | Pendiente |
-| 15 | Verificación final de rendimiento y accesibilidad en la URL publicada | Técnico | — | 04-03 | Pendiente |
+| 5 | Portada con el lema, Gemini como logo principal, Google, GTD y Capacita en segundo plano, y las redes con los íconos de Chrome y LinkedIn; SVG guardados como archivos individuales en `src/assets/iconos/` | Funcionalidad | — | 02-01 | Pendiente |
+| 6 | Fichas reales de las 4 unidades con un `.md` por bloque (RDA-009) y sin contenido de prueba | Técnico | — | 02-02 | Pendiente |
+| 7 | Ruta del curso: 4 unidades de 0 % a 100 % en mosaico, enlazadas a sus secciones | Funcionalidad | — | 02-03 | Pendiente |
+| 8 | Sección del instructor | Funcionalidad | — | 02-04 | Pendiente |
+| 9 | Texto «Para la clase», prompts y recursos de la Unidad 1 y la Unidad 2 | Funcionalidad | — | 02-05 | Pendiente |
+| 10 | Texto «Para la clase», prompts y recursos de la Unidad 3 y la Unidad 4 | Funcionalidad | — | 02-06 | Pendiente |
+| 11 | Componentes de unidad: prompt con «Copiar», «Profundiza», recurso externo y descarga, con error de compilación si una referencia a recurso o descarga no existe | Funcionalidad | — | 03-01 | Pendiente |
+| 12 | Presentación de la Unidad 1 y sus pendientes (descargas, videos, «Profundiza») | Funcionalidad | — | 03-02 | Pendiente |
+| 13 | Configuración de Cloudflare Workers y guardia de marcadores `PENDIENTE_` | Técnico | — | 04-01 | Pendiente |
+| 14 | Cloudflare Web Analytics y metadatos para compartir | Funcionalidad | — | 04-02 | Pendiente |
+| 15 | Presentación de la Unidad 2 y sus pendientes (descargas, videos, «Profundiza») | Funcionalidad | — | 03-03 | Pendiente |
+| 16 | Presentación de la Unidad 3 y sus pendientes (descargas, videos, «Profundiza») | Funcionalidad | — | 03-04 | Pendiente |
+| 17 | Presentación de la Unidad 4 y sus pendientes (descargas, videos, «Profundiza») | Funcionalidad | — | 03-05 | Pendiente |
+| 18 | Verificación final de rendimiento y accesibilidad en la URL publicada | Técnico | — | 04-03 | Pendiente |
 
 ## 4. Datos pendientes del cliente
 
@@ -53,8 +61,8 @@ Mientras falten, se usa `PENDIENTE_CLIENTE` donde corresponda.
 | Dato | Hallazgo | Necesario para | Estado |
 | :--- | :------- | :------------- | :----- |
 | Fechas de las 4 clases (define el hito de publicación) | — | Planificación de 03 y 04 | Pendiente |
-| Redacción del respaldo de Google a la formación, si se quiere mencionar en el sitio (sin logos de Google como sello) | — | 02-01 | Pendiente |
-| Autorización para publicar en un sitio público el kit de marca de GTD (HEX y tipografía aproximados) y el logo de GTD que usa la U2 | — | 03-03 | Pendiente |
+| Redacción del respaldo de Google a la formación, si se quiere mencionar en el sitio (sin logos de Google como sello) | — | Mención futura (la 02-01 no lo menciona) | Pendiente |
+| Autorización para publicar en un sitio público el kit de marca de GTD (HEX y tipografía aproximados) y el logo de GTD, que se muestra en el hero desde la 02-01 (riesgo asumido por el desarrollador) y que usan la U2, la U3 (prompt de estilo GTD) y la U4 (`gtd-visual`) | — | 02-01 y 03-03 a 03-05 | Pendiente |
 | HEX y tipografía oficiales de GTD, si se confirman antes de la clase 2 | — | 03-03 | Pendiente |
 
 ## 5. Decisiones por tomar
@@ -65,7 +73,9 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | :--- | :------------- | :---------- |
 | Texto de «Profundiza en tu tiempo» de cada bloque: el documento del curso lista los temas, pero no la teoría escrita | — | Desarrollador |
 | Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) | — | Desarrollador |
-| Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo y plantillas de skills de la U4 | — | Desarrollador |
+| Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 | — | Desarrollador |
+| Pegar los 6 SVG de `iconos-svg.txt` como archivos individuales en `src/assets/iconos/` antes de la 02-01 | — | Desarrollador |
+| Aplicar la propuesta P-005 en `DESIGN.md` (logos del hero e íconos de las redes) antes de la 02-01 | P-005 | Desarrollador |
 | Imagen de la insignia oficial de Gemini Certified Educator para la sección del instructor | — | Desarrollador |
 | Nombres completos de las certificaciones AWS y Anthropic, si se listan | — | Desarrollador |
 | Nombre del Worker (define la URL `nombre.subdominio.workers.dev`) y token de Web Analytics | RDA-005 | Desarrollador |
@@ -79,7 +89,7 @@ Ideas detectadas durante el trabajo que no forman parte de lo comprometido, incl
 | Propuesta | Origen | Fecha |
 | :-------- | :----- | :---- |
 | Guardar en el navegador las casillas marcadas de «Terminado cuando…» | Planificación inicial | 2026-11-17 |
-| Mostrar los logotipos de Capacita Tu Futuro y GTD en el pie, con autorización del cliente | Planificación inicial | 2026-11-17 |
+| Mostrar los logotipos de Capacita Tu Futuro y GTD en el pie, con autorización del cliente · Los logos de GTD y Capacita pasan al hero en la 02-01 (decisión del desarrollador); en el pie siguen siendo propuesta | Planificación inicial | 2026-11-17 |
 | Agregar `_planificacion/00_producto/unidades-del-curso.md` a la lista de documentos permitidos (hoy vive ahí sin estar en la lista), o indicar dónde debe estar · Aprobada: propuesta P-004 | Iteración 01-04 | 2026-11-17 |
 
 ## 7. Historial
@@ -101,3 +111,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | RDA-008: avance de las unidades en cuatro tramos iguales; sale de «Decisiones por tomar». Propuesta P-004: el documento de unidades pasa a la lista permitida. |
 | 2026-11-17 | Iteración 01-05 en revisión: revelado circular del cambio de modo con View Transitions; JS 852 B gzip. Cierre de la épica 01 preparado. [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-05.md) · [Cierre](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-cierre.md) |
 | 2026-11-17 | Iteración 01-05 terminada (revisión en navegador hecha por el desarrollador). Épica 01 cerrada; sus filas pasan a `registro-archivo.md`. Iteraciones de la épica 02 aprobadas, sin detallar. [Cierre](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-cierre.md) |
+| 2026-11-17 | Traspaso a la épica 02: 6 iteraciones generadas (02-01 a 02-06). La carga de las 4 unidades pasa a la épica 02 (un `.md` por bloque, RDA-009 por registrar en la 02-02) y la épica 03 queda solo para presentarlas y completar lo pendiente; backlog renumerado. |
+| 2026-11-17 | Se ajusta la 02-01: Gemini como logo principal, GTD y Capacita en segundo plano, Chrome y LinkedIn en las redes y recoloreo permitido salvo Gemini, Google y Chrome; propuesta P-005 pendiente. |

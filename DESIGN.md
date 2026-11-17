@@ -99,7 +99,7 @@ Reglas:
 | Componente | Descripción y reglas |
 | :--------- | :------------------- |
 | Encabezado | Navegación en píldoras sobre `--color-superficie-2` con enlaces a Ruta, Unidades (U1 a U4) e Instructor; la píldora de la sección visible se marca con `aria-current`. En móvil se pliega en un menú con botón (`aria-expanded`, `aria-controls`). Incluye el botón de modo. |
-| Portada (hero) | Título del curso (`h1`), una frase de propósito, el botón principal «Ver la ruta», los íconos SVG de Gemini y de Google, un círculo decorativo `--color-superficie` parcialmente fuera del marco y los enlaces de redes pequeños en la esquina inferior izquierda. |
+| Portada (hero) | Título del curso (`h1`), una frase de propósito (el lema del curso), el botón principal «Ver la ruta», el logo de Gemini como protagonista, el de Google como secundario, y en una fila aparte, mucho más pequeños y sin texto visible, los de GTD Telsur (cliente) y Capacita Tu Futuro (organizador); un círculo decorativo `--color-superficie` parcialmente fuera del marco y los enlaces de redes pequeños en la esquina inferior izquierda. |
 | Ruta del curso | Mosaico de cuatro bloques de color (sección 2.2), cada uno con su número, nombre, mini-proyecto y avance «0 % → 25 %», «25 % → 50 %», «50 % → 75 %», «75 % → 100 %», escrito en IBM Plex Mono. Cada bloque enlaza a su sección. |
 | Sección de unidad | Encabezado con el bloque de color de la unidad, objetivo, mini-proyecto, tabla de bloques con minutos, y por cada bloque: «Para la clase», prompts copiables, descargas y «Profundiza en tu tiempo» plegado. Cierra con la lista «Terminado cuando…». |
 | Bloque de prompt | Fondo `--color-superficie-2`, texto en IBM Plex Mono, botón «Copiar» en la esquina superior derecha. Al copiar, el botón cambia a «Copiado» por 2 s y lo anuncia con `aria-live="polite"`. El texto es seleccionable aunque no haya JavaScript. |
@@ -108,7 +108,7 @@ Reglas:
 | Tarjeta de descarga | Nombre del archivo, formato y peso (por ejemplo «CSV · 24 KB»), con botón de contorno «Descargar». |
 | Instructor | Nombre, títulos y trayectoria del documento del curso; certificación de Gemini destacada primero; enlaces a felipecuevas.dev y LinkedIn. |
 | Pie | Enlaces de redes, nombre del curso y aviso «Material de capacitación con datos ficticios o públicos». |
-| Redes | Texto visible exacto `www.felipecuevas.dev` (a `https://felipecuevas.dev/`) y `www.linkedin.com/in/ffelipecuevasc/` (a `https://www.linkedin.com/in/ffelipecuevasc/`); ícono y texto forman un solo enlace. Ícono web `#007EA7` y texto `#003B51` en claro; ícono web `#00B0E8` y texto `#E4F3FF` en oscuro. Van en la portada (pequeñas, abajo a la izquierda) y en el pie. |
+| Redes | Texto visible exacto `www.felipecuevas.dev` (a `https://felipecuevas.dev/`) y `www.linkedin.com/in/ffelipecuevasc/` (a `https://www.linkedin.com/in/ffelipecuevasc/`); ícono y texto forman un solo enlace. El enlace a felipecuevas.dev lleva el SVG de Chrome y el de LinkedIn lleva el SVG de LinkedIn (en claro con `--color-linkedin` y en oscuro con el glifo invertido, como en los tokens); texto `#003B51` en claro y `#E4F3FF` en oscuro. Van en la portada (pequeñas, abajo a la izquierda) y en el pie. |
 
 ### 5.1 Botones
 
@@ -122,8 +122,10 @@ Todos: forma de píldora, alto mínimo de 44 px, foco visible con `outline: 2px 
 ## 6. Íconos y logotipos
 
 - Íconos de interfaz: SVG de línea en línea, del mismo grosor, con `aria-hidden="true"` cuando el texto acompaña. Un botón que solo tiene ícono lleva `aria-label`.
-- Logotipos de Gemini y Google: se usan los SVG oficiales que entrega el desarrollador, tal cual, sin redibujarlos, recolorearlos ni deformarlos, en la portada y donde se nombre la herramienta. El SVG de Gemini usa `mask` y `filter` con identificadores propios: si aparece más de una vez en la página, cada copia lleva identificadores únicos. Van con `role="img"` y un `aria-label` («Gemini», «Google»).
-- Íconos de redes: los de la identidad de felipecuevas.dev, sin efectos.
+- Logotipos de Gemini, Google y Chrome: se usan los SVG que entrega el desarrollador, tal cual, sin redibujarlos, recolorearlos ni deformarlos. El de Gemini y el de Google van en la portada y donde se nombre la herramienta; el de Chrome, junto al enlace a felipecuevas.dev. El SVG de Gemini usa `mask` y `filter` con identificadores propios: si aparece más de una vez en la página, cada copia lleva identificadores únicos. Los logotipos de Gemini y Google van con `role="img"` y un `aria-label` («Gemini», «Google»).
+- Logotipos de GTD Telsur y Capacita Tu Futuro: SVG que entrega el desarrollador, solo en el hero, sin texto visible y con `role="img"` y `aria-label` («GTD Telsur», «Capacita Tu Futuro»). Se pueden recolorear con tokens para que se distingan en ambos modos, sin cambiar sus trazados ni sus proporciones.
+- Ícono de LinkedIn: el SVG que entrega el desarrollador, recoloreado con tokens (círculo `--color-linkedin`, glifo `--color-fondo`). Los íconos de redes no llevan efectos.
+- Los SVG viven como archivos individuales en `src/assets/iconos/`.
 
 ## 7. Movimiento
 

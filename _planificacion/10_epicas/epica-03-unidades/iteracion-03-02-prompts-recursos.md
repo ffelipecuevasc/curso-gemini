@@ -16,7 +16,8 @@ Mostrar los 24 prompts en su bloque con un botón «Copiar» que entrega el text
 - Los prompts viven en `prompts` de cada bloque (texto literal); el ID `deep-research` se repite en U2 · 2 y U3 · 1 (bitácora 02-06).
 - En U2 · 3, el paso 1 termina en «Ejemplo de estructura:» y su código es el prompt `identidad-visual-gtd` (`definicion-epica-03.md`).
 - 41 recursos en `recursos.yaml`; uno se titula «Colección comunitaria de prompts de presentaciones (no oficial)».
-- `dist/index.html` trae 3 scripts (856 B gzip juntos, bitácora 02-03): modo, menú móvil y transición de modo.
+- `dist/index.html` trae 3 etiquetas `<script>` con 2 comportamientos: el modo (script en línea del `<head>` en `Base.astro` y módulo de `BotonModo.astro`, que incluye la transición) y el menú móvil (`Encabezado.astro`). Línea base medida al cerrar la 03-01: 423 + 799 + 879 B, **882 B gzip** juntos.
+- **Cómo se mide:** se toman todas las etiquetas `<script>…</script>` de `dist/index.html` (incluido el en línea), se concatenan en orden y se comprimen juntas con `zlib.gzipSync` de Node; se informa el número de etiquetas, los bytes de cada una y el gzip total.
 
 ## Alcance y entregables
 
@@ -53,7 +54,7 @@ Mostrar los 24 prompts en su bloque con un botón «Copiar» que entrega el text
 - [ ] «Copiar» copia el texto exacto (prueba en el navegador: pegar en un editor y comparar) y anuncia «Copiado»; funciona con el teclado.
 - [ ] Sin JavaScript, el botón no aparece y el texto se puede seleccionar.
 - [ ] Los 41 recursos aparecen en su unidad (U1 20, U2 12, U3 8, U4 6, con los 5 compartidos en ambas): `target="_blank"`, `rel="noopener noreferrer"` y texto oculto en todos; «(no oficial)» visible en el de GitHub.
-- [ ] Regresiones en verde: `pnpm build` sin advertencias nuevas y `pnpm astro check` sin errores; 4 scripts; JS nuevo medido en gzip y menor que 1 KB; 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; sin desborde en 360 px; las comprobaciones de la 03-01 siguen pasando.
+- [ ] Regresiones en verde: `pnpm build` sin advertencias nuevas y `pnpm astro check` sin errores; 4 etiquetas `<script>` y 3 comportamientos (modo, menú y copiar); el gzip total, medido como dice el punto de partida, crece menos de 1 KB sobre los 882 B; 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; sin desborde en 360 px; las comprobaciones de la 03-01 siguen pasando.
 
 ## Riesgos
 

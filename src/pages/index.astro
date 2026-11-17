@@ -1,26 +1,26 @@
 ---
-// Página única: portada y secciones con su id y su h2. Las secciones
-// vacías reciben su contenido en las épicas 02 y 03.
+// Página única: portada, ruta, las 4 unidades y el instructor. Los títulos de
+// las unidades salen de sus fichas (src/content/unidades/), no de este archivo.
 import Base from "../layouts/Base.astro";
 import Portada from "../components/Portada.astro";
-// RutaCurso llama a obtenerUnidadesConBloques(): las comprobaciones de
-// unidades y bloques (RDA-009) corren en cada build a través de ella.
+// RutaCurso también llama a obtenerUnidadesConBloques(): las comprobaciones
+// de unidades, bloques y referencias (RDA-009) corren en cada build.
 import RutaCurso from "../components/RutaCurso.astro";
+import SeccionUnidad from "../components/SeccionUnidad.astro";
 import Instructor from "../components/Instructor.astro";
+import { obtenerUnidadesConBloques } from "../lib/unidades";
 
-const secciones = [
-  { id: "ruta", nav: "Ruta", titulo: "Ruta del curso" },
-  { id: "unidad-1", nav: "U1", titulo: "Unidad 1 · Fundamentos y prompts" },
-  { id: "unidad-2", nav: "U2", titulo: "Unidad 2 · Gemini" },
-  { id: "unidad-3", nav: "U3", titulo: "Unidad 3 · Gemini Notebook" },
-  { id: "unidad-4", nav: "U4", titulo: "Unidad 4 · Skills e integrador" },
-  { id: "instructor", nav: "Instructor", titulo: "Instructor" },
+const unidades = await obtenerUnidadesConBloques();
+
+// Etiquetas cortas de la navegación (interfaz, no contenido del curso).
+const enlaces = [
+  { href: "#ruta", texto: "Ruta" },
+  ...unidades.map(({ data }) => ({
+    href: `#unidad-${data.numero}`,
+    texto: `U${data.numero}`,
+  })),
+  { href: "#instructor", texto: "Instructor" },
 ];
-
-const enlaces = secciones.map(({ id, nav }) => ({
-  href: `#${id}`,
-  texto: nav,
-}));
 ---
 
 <Base
@@ -30,19 +30,8 @@ const enlaces = secciones.map(({ id, nav }) => ({
 >
   <Portada />
   <RutaCurso />
-
-  {secciones
-    .filter(({ id }) => id !== "ruta" && id !== "instructor")
-    .map(({ id, titulo }) => (
-      <section
-        id={id}
-        aria-labelledby={`titulo-${id}`}
-        class="mx-auto min-h-svh max-w-sitio border-t border-linea px-6 py-16"
-      >
-        <h2 id={`titulo-${id}`} class="text-3xl font-semibold">
-          {titulo}
-        </h2>
-      </section>
-    ))}
+  {unidades.map((unidad) => (
+    <SeccionUnidad unidad={unidad} />
+  ))}
   <Instructor />
 </Base>

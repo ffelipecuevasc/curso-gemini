@@ -1,0 +1,28 @@
+---
+// Un bloque de la clase dentro de su unidad (DESIGN.md, sección 5, «Sección
+// de unidad»): título como h3, minutos y el texto «Para la clase», que es el
+// cuerpo Markdown del archivo del bloque (RDA-009), renderizado con render().
+import { render } from "astro:content";
+import type { Bloque } from "../lib/unidades";
+
+interface Props {
+  bloque: Bloque;
+}
+
+const { bloque } = Astro.props;
+const { numero, titulo, minutos } = bloque.data;
+const { Content } = await render(bloque);
+
+const idTitulo = `bloque-${bloque.id.replace("/", "-")}`;
+---
+
+<article aria-labelledby={idTitulo} class="border-t border-linea pt-8">
+  <h3 id={idTitulo} class="text-2xl font-semibold wrap-break-word">
+    {numero !== undefined && <span>Bloque {numero} · </span>}
+    {titulo}
+  </h3>
+  <p class="mt-1 font-codigo text-sm text-texto-2">{minutos} min</p>
+  <div class="contenido-bloque mt-4">
+    <Content />
+  </div>
+</article>

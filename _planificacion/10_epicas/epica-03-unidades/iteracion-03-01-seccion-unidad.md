@@ -1,7 +1,7 @@
 # Iteración 03-01 · Sección de unidad y texto de los bloques
 
 - **Épica:** 03 · Unidades del curso
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/03-01-seccion-unidad
 - **Depende de:** 02-06
 - **Especificación:** —
@@ -29,12 +29,15 @@ Mostrar las 4 secciones de unidad con su ficha, la tabla de bloques y el texto �
 
 - 2026-11-17: un solo componente guiado por los datos para las 4 unidades; no hay iteraciones de presentación por unidad.
 - 2026-11-17: el `h2` de cada unidad es el título completo de su ficha, no el texto corto de hoy.
+- 2026-11-17: los apartados de la ficha («Objetivo», «Mini-proyecto», «Entregable», «Terminado cuando…») van en `h4`; los `h3` son uno por bloque.
+- 2026-11-17: tablas con CSS puro, con desplazamiento horizontal propio y probadas a 360 px; si el teclado no las recorre, se detiene y se consulta: no se agrega un plugin de `rehype`.
+- 2026-11-17: los cuerpos de los bloques siguen literales (RDA-009), sin marcadores.
 
 ## Plan técnico
 
 - `index.astro` obtiene las unidades una vez con `obtenerUnidadesConBloques()` y pasa cada una a `SeccionUnidad` (props tipadas con `UnidadConBloques`); `RutaCurso` sigue llamándola, así que las comprobaciones no dependen de una sola llamada.
 - «Terminado cuando…» va como lista simple: guardar casillas está fuera de alcance (propuesta registrada).
-- Tablas del cuerpo: el HTML de `render()` no se puede envolver tabla por tabla sin un plugin, así que el desplazamiento se da con CSS (`display: block; overflow-x: auto` en `table`) para que no desborden en 360 px. Se comprueba con el teclado si la tabla se puede desplazar (los navegadores actuales enfocan las zonas desplazables); si no alcanza, se anota y se propone en la bitácora un plugin de `rehype` que agregue un contenedor con `tabindex="0"` (es una dependencia y un cambio de configuración: requiere consulta).
+- Tablas del cuerpo: el HTML de `render()` no se puede envolver tabla por tabla sin un plugin, así que el desplazamiento se da con CSS (`display: block; overflow-x: auto` en `table`) para que no desborden en 360 px. Se comprueba con el teclado si la tabla se puede desplazar (los navegadores actuales enfocan las zonas desplazables); si no alcanza, se detiene y se consulta al desarrollador (decisión del 2026-11-17: sin plugin de `rehype`).
 - Etiquetas de interfaz («Objetivo», «Mini-proyecto», «Entregable», «Terminado cuando…», «Bloque», «min») no son contenido del curso.
 
 ## Tareas
@@ -50,12 +53,21 @@ Mostrar las 4 secciones de unidad con su ficha, la tabla de bloques y el texto �
 
 ## Criterios de aceptación
 
-- [ ] `dist/index.html`: 1 `h1`; 6 `h2`, y los de `#unidad-1` a `#unidad-4` son el título completo de su ficha; 31 `h3` (4 de la ruta, 26 bloques, 1 instructor).
-- [ ] Los 26 bloques aparecen en su unidad, en orden, con su texto: para cada bloque, una frase de su cuerpo está en `dist/index.html` (comando temporal: 26 de 26).
-- [ ] Cada tabla de bloques suma `duracionMin` (120) con la holgura; el build sigue fallando si no suma (prueba reversible).
-- [ ] Ningún texto del curso escrito a mano en `src/components` ni `src/pages` (`grep` de los títulos de las 4 unidades: 0 coincidencias).
+- [x] `dist/index.html`: 1 `h1`; 6 `h2`; 31 `h3`, uno por bloque (26) más los 4 de la ruta y el del instructor; los apartados de la ficha van en `h4` (4 por unidad: 16).
+- [x] Los 26 bloques aparecen en su unidad, en orden, con su texto: para cada bloque, una frase de su cuerpo está en `dist/index.html` (comando temporal: 26 de 26).
+- [x] Cada tabla de bloques suma `duracionMin` (120) con la holgura; el build sigue fallando si no suma (prueba reversible).
+- [x] Los `h2` de `#unidad-1` a `#unidad-4` salen de `src/content/unidades/*.yaml` (`«Unidad N · » + titulo`), no de texto escrito a mano en `index.astro` (comando temporal: 4 de 4; `index.astro` sin títulos de unidad).
 - [ ] Sin desborde horizontal en 360 px (`document.documentElement.scrollWidth === 360`), en ambos modos; las tablas se desplazan con el teclado.
-- [ ] Regresiones en verde: `pnpm build` sin advertencias nuevas (solo la de `descargas.yaml`) y `pnpm astro check` sin errores; 3 scripts y 0 B de JS nuevo; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; la prueba reversible de un bloque con unidad inexistente sigue fallando el build.
+- [x] Regresiones en verde: `pnpm build` sin advertencias nuevas (solo la de `descargas.yaml`) y `pnpm astro check` sin errores; 3 scripts y 0 B de JS nuevo; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; la prueba reversible de un bloque con unidad inexistente sigue fallando el build.
+
+Evidencia (detalle en [bitacora-03-01](bitacoras/bitacora-03-01.md)):
+
+- Títulos: 1 `h1`, 6 `h2`, 31 `h3`, 16 `h4`, 26 `article`; 0 IDs repetidos.
+- `h2` de unidad iguales a `«Unidad N · » + titulo` de la ficha: 4 de 4.
+- Cuerpos: la primera línea de texto de cada bloque está en `dist/index.html`: 26 de 26.
+- Totales de las 4 tablas de bloques: 120. Con `minutos: 16` en U2 · 1, el build falla con «La unidad «u2» suma 121 min entre bloques y holgura, pero «duracionMin» es 120»; revertido (`cmp`).
+- Regresiones: `astro check` 0/0/0; `pnpm build` solo con la advertencia de `descargas.yaml`; 3 etiquetas `<script>` con 882 B gzip, igual que antes; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; con `unidad: u9`, el build falla con «El bloque «u1/bloque-1» apunta a la unidad «u9»…»; revertido.
+- Sin marcar: 360 px y teclado en las tablas (sin navegador en esta sesión; pasos en la bitácora).
 
 ## Riesgos
 

@@ -184,6 +184,98 @@
 }
 
 /*
+ * Cuerpo Markdown de los bloques y tabla de bloques (iteración 03-01).
+ * Estilos escritos a mano con los tokens, sin @tailwindcss/typography.
+ * Las tablas se desplazan en horizontal dentro de su propio ancho, para que
+ * la página no se desborde en 360 px.
+ */
+@layer components {
+  .contenido-bloque {
+    max-width: 75ch;
+  }
+
+  .contenido-bloque > * + * {
+    margin-top: 1rem;
+  }
+
+  .contenido-bloque strong {
+    font-weight: 500;
+    color: var(--color-texto);
+  }
+
+  .contenido-bloque ul,
+  .contenido-bloque ol {
+    padding-left: 1.5rem;
+  }
+
+  .contenido-bloque ul {
+    list-style: disc;
+  }
+
+  .contenido-bloque ol {
+    list-style: decimal;
+  }
+
+  .contenido-bloque li + li,
+  .contenido-bloque li > ul,
+  .contenido-bloque li > ol {
+    margin-top: 0.375rem;
+  }
+
+  .contenido-bloque li > ul {
+    list-style: circle;
+  }
+
+  .contenido-bloque blockquote {
+    border-left: 4px solid var(--color-primario);
+    padding-left: 1rem;
+    color: var(--color-texto-2);
+  }
+
+  .contenido-bloque code {
+    font-family: var(--font-codigo);
+    font-size: 0.9em;
+    background-color: var(--color-superficie-2);
+    border-radius: var(--radius-esquina);
+    padding: 0.1em 0.35em;
+  }
+
+  .contenido-bloque table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 1rem;
+  }
+
+  .contenido-bloque caption {
+    text-align: left;
+    font-family: var(--font-display);
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+  }
+
+  .contenido-bloque th,
+  .contenido-bloque td {
+    border: 1px solid var(--color-superficie-2);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+    min-width: 8rem;
+  }
+
+  .contenido-bloque thead th {
+    background-color: var(--color-superficie-2);
+    font-weight: 500;
+  }
+
+  .contenido-bloque tbody th,
+  .contenido-bloque tfoot th {
+    font-weight: 500;
+  }
+}
+
+/*
  * 7. Movimiento · cambio de modo (iteración 01-05).
  * El modo nuevo se revela con un círculo difuminado que crece desde el centro;
  * el anterior queda quieto debajo. Con reducir movimiento no hay transición:

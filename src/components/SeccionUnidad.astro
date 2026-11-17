@@ -1,0 +1,140 @@
+---
+// Sección de una unidad (DESIGN.md, sección 5, «Sección de unidad»): encabezado
+// con el bloque de color de la unidad, ficha, tabla de bloques con minutos,
+// el texto «Para la clase» de cada bloque y, al final, «Terminado cuando…».
+// Todo el texto del curso sale de la ficha y de los bloques (RDA-003, RDA-009);
+// aquí solo hay etiquetas de interfaz. Los apartados de la ficha van en h4:
+// los h3 son uno por bloque (decisión del desarrollador, 2026-11-17).
+import type { UnidadConBloques } from "../lib/unidades";
+import BloqueClase from "./BloqueClase.astro";
+
+interface Props {
+  unidad: UnidadConBloques;
+}
+
+const { unidad } = Astro.props;
+const {
+  numero,
+  titulo,
+  clase,
+  duracionMin,
+  nivel,
+  avance,
+  objetivo,
+  miniProyecto,
+  entregable,
+  holguraMin,
+  terminadoCuando,
+} = unidad.data;
+
+// Clases completas por unidad para que Tailwind las detecte (como en
+// BloqueUnidad). La U3 lleva el borde de 1 px que pide DESIGN.md en oscuro.
+const colores: Record<number, string> = {
+  1: "bg-u1 text-sobre-u1",
+  2: "bg-u2 text-sobre-u2",
+  3: "bg-u3 text-sobre-u3 border border-borde-u3",
+  4: "bg-u4 text-sobre-u4",
+};
+
+const id = `unidad-${numero}`;
+const reparto = (b: UnidadConBloques["bloques"][number]) =>
+  b.data.tipo ??
+  `Microcharla ${b.data.microcharlaMin} min · práctica ${b.data.practicaMin} min`;
+---
+
+<section
+  id={id}
+  aria-labelledby={`titulo-${id}`}
+  class="mx-auto max-w-sitio border-t border-linea px-6 py-16"
+>
+  <header
+    class:list={[
+      "rounded-bloque rounded-bl-esquina p-6 sm:p-8",
+      colores[numero],
+    ]}
+  >
+    <h2 id={`titulo-${id}`} class="text-3xl font-semibold wrap-break-word">
+      Unidad {numero} · {titulo}
+    </h2>
+    <p class="mt-3">
+      Clase {clase} · {duracionMin} min · Nivel: {nivel}
+    </p>
+    <p class="mt-1 font-codigo">
+      <span class="sr-only">Avance del curso:</span>
+      {avance.desde}&nbsp;% → {avance.hasta}&nbsp;%
+    </p>
+  </header>
+
+  <div class="mt-10 grid max-w-prose gap-6">
+    <div>
+      <h4 class="font-display text-xl font-semibold">Objetivo</h4>
+      <p class="mt-2">{objetivo}</p>
+    </div>
+    <div>
+      <h4 class="font-display text-xl font-semibold">Mini-proyecto</h4>
+      <p class="mt-2 font-medium">{miniProyecto.titulo}</p>
+      <p class="mt-1">{miniProyecto.descripcion}</p>
+    </div>
+  </div>
+
+  <div class="contenido-bloque mt-10">
+    <table>
+      <caption>Bloques de la clase</caption>
+      <thead>
+        <tr>
+          <th scope="col">N.º</th>
+          <th scope="col">Bloque</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Min</th>
+        </tr>
+      </thead>
+      <tbody>
+        {unidad.bloques.map((b) => (
+          <tr>
+            <td>{b.data.numero ?? "—"}</td>
+            <th scope="row">{b.data.titulo}</th>
+            <td>{reparto(b)}</td>
+            <td class="font-codigo">{b.data.minutos}</td>
+          </tr>
+        ))}
+        {holguraMin !== undefined && (
+          <tr>
+            <td>—</td>
+            <th scope="row">Holgura</th>
+            <td>—</td>
+            <td class="font-codigo">{holguraMin}</td>
+          </tr>
+        )}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <th scope="row">Total</th>
+          <td></td>
+          <td class="font-codigo">{duracionMin}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="mt-10 grid gap-10">
+    {unidad.bloques.map((bloque) => (
+      <BloqueClase bloque={bloque} />
+    ))}
+  </div>
+
+  <div class="mt-12 grid max-w-prose gap-6 border-t border-linea pt-8">
+    <div>
+      <h4 class="font-display text-xl font-semibold">Entregable</h4>
+      <p class="mt-2">{entregable}</p>
+    </div>
+    <div>
+      <h4 class="font-display text-xl font-semibold">Terminado cuando…</h4>
+      <ul class="mt-2 list-disc space-y-2 pl-6">
+        {terminadoCuando.map((linea) => (
+          <li>{linea}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

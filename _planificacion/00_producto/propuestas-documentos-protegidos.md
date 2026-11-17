@@ -20,6 +20,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-004 | `AGENTS.md` · 3. Documentos permitidos y `.claude/hooks/documentos-permitidos.md` | Iteración 01-05 | 2026-11-17 | Aplicada |
 | P-005 | `DESIGN.md` · 5. Componentes (filas Portada y Redes) y 6. Íconos y logotipos | Planificación de la 02-01 | 2026-11-17 | Aplicada |
 | P-006 | `DESIGN.md` · 4. Espaciado, retícula y forma (Retícula) | Revisión de la 02-03 | 2026-11-17 | Aplicada (2026-11-17, commit 9c39f9b) |
+| P-007 | `AGENTS.md` · 8. Reglas de contenido, regla 5 | Auditoría previa a la 03-01 | 2026-11-17 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -146,4 +147,22 @@ En `.claude/hooks/documentos-permitidos.md`, sección «_planificacion/», agreg
 
 ```text
 - Retícula: móvil primero; mosaico de 1 columna en móvil, 2 desde 640 px y 4 desde 1024 px (la ruta tiene 4 unidades), siempre con `minmax(0, 1fr)`.
+```
+
+## P-007 · Excepción a la regla de nombres para `optimizador-prompts/SKILL.md`
+
+- **Documento:** `AGENTS.md`
+- **Sección:** 8. Reglas de contenido, regla 5
+- **Por qué:** la skill `optimizador-prompts` de la U4 se instala subiendo un archivo `SKILL.md`. El nombre en mayúsculas es parte del formato abierto de skills (fuentes oficiales del documento del curso, apartado «Skills (U4)»). La regla 5 exige minúsculas, y el esquema de descargas (`src/content.config.ts`) también, así que hoy ese archivo no se puede publicar. Si no se aplica, la 03-05 no publica `optimizador-prompts/SKILL.md`: habría que entregarlo dentro de un `.zip` o pedirle al participante que lo renombre.
+
+**Texto actual** (copiado literalmente de `AGENTS.md`):
+
+```text
+5. Nombres de archivo y carpeta en ASCII: minúsculas, guiones, sin tildes ni ñ.
+```
+
+**Texto propuesto:**
+
+```text
+5. Nombres de archivo y carpeta en ASCII: minúsculas, guiones, sin tildes ni ñ. Única excepción: `public/descargas/optimizador-prompts/SKILL.md`, porque el formato de skills exige ese nombre.
 ```

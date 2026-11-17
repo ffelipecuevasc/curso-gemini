@@ -32,7 +32,7 @@ Completar en la U3 y la U4 lo que quedó pendiente: «Profundiza» de cada bloqu
 1. Proponer en el chat la asignación de recursos de «Profundiza» por bloque de la U3 y la U4, según los temas de la bitácora 02-06, y esperar la aprobación.
 2. Cargar `profundiza.recursos` en los bloques aprobados.
 3. **Bloqueada hasta que el desarrollador entregue las URL:** cargar los videos de la U3 y la U4.
-4. **Bloqueada hasta que el desarrollador entregue los archivos:** cargar las descargas de la U3 y la U4 (incluido `optimizador-prompts/SKILL.md` en su carpeta dentro de `public/descargas/`).
+4. **Bloqueada hasta que el desarrollador entregue los archivos:** cargar las descargas de la U3 y la U4. `optimizador-prompts/SKILL.md` depende además de que el desarrollador aplique la [P-007](../../00_producto/propuestas-documentos-protegidos.md) (excepción a la regla de nombres en minúsculas de `AGENTS.md`); con la P-007 aplicada, en esta misma tarea se ajusta la regex de `archivo` en `src/content.config.ts` para aceptar solo `/descargas/optimizador-prompts/SKILL.md`, con su prueba reversible. Sin la P-007, ese archivo no se publica.
 5. Revisar en `pnpm preview` la U3 y la U4 completas en 360 px y escritorio, en ambos modos y con teclado.
 6. Ejecutar `pnpm build`, `pnpm astro check` y las regresiones.
 7. Escribir la bitácora y actualizar el registro.
@@ -69,3 +69,4 @@ Completar en la U3 y la U4 lo que quedó pendiente: «Profundiza» de cada bloqu
 ### Del desarrollador
 
 - URL de videos y archivos de descarga de la U3 y la U4 (tareas 3 y 4 bloqueadas hasta recibirlos).
+- Aplicar o descartar la P-007 antes de publicar `optimizador-prompts/SKILL.md`.

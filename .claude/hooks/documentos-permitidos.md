@@ -42,6 +42,7 @@ Fuera de estas carpetas (por ejemplo, el contenido del sitio en `src/content/`) 
 - `_planificacion/README.md`
 - `_planificacion/plantillas/*.md`
 - `_planificacion/00_producto/producto.md`
+- `_planificacion/00_producto/unidades-del-curso.md`
 - `_planificacion/00_producto/registro-pendientes.md`
 - `_planificacion/00_producto/registro-archivo.md`
 - `_planificacion/00_producto/decisiones.md`

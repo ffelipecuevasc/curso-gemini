@@ -32,7 +32,7 @@ En las zonas de documentación (la raíz, `_planificacion/`, `docs/` y `.claude/
 | :--- | :-------------------- |
 | Raíz | `AGENTS.md` · `DESIGN.md` · `README.md` |
 | .claude/ | `.claude/README.md` · `.claude/commands/*.md` · `.claude/hooks/documentos-permitidos.md` |
-| _planificacion/ | `_planificacion/README.md` · `_planificacion/plantillas/*.md` · `_planificacion/00_producto/producto.md` · `_planificacion/00_producto/registro-pendientes.md` · `_planificacion/00_producto/registro-archivo.md` · `_planificacion/00_producto/decisiones.md` · `_planificacion/00_producto/propuestas-documentos-protegidos.md` · `_planificacion/10_epicas/epica-*/definicion-epica-*.md` · `_planificacion/10_epicas/epica-*/iteracion-*.md` · `_planificacion/10_epicas/epica-*/bitacoras/bitacora-*.md` |
+| _planificacion/ | `_planificacion/README.md` · `_planificacion/plantillas/*.md` · `_planificacion/00_producto/producto.md` · `_planificacion/00_producto/unidades-del-curso.md` · `_planificacion/00_producto/registro-pendientes.md` · `_planificacion/00_producto/registro-archivo.md` · `_planificacion/00_producto/decisiones.md` · `_planificacion/00_producto/propuestas-documentos-protegidos.md` · `_planificacion/10_epicas/epica-*/definicion-epica-*.md` · `_planificacion/10_epicas/epica-*/iteracion-*.md` · `_planificacion/10_epicas/epica-*/bitacoras/bitacora-*.md` |
 
 `*` reemplaza cualquier texto dentro de un mismo nivel de carpeta. La lista completa vive en `.claude/hooks/documentos-permitidos.md`. Si crees que falta un documento, propónlo en «Propuestas fuera de alcance» de `registro-pendientes.md`; nunca lo crees. El contenido del curso en `src/content/` es contenido del sitio, no documentación: ahí sí se crean los `.md` que definan los esquemas de las colecciones.
 

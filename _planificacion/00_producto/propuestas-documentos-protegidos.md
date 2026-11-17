@@ -17,7 +17,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-001 | `DESIGN.md` · 7. Movimiento | Planificación de la 01-05 | — | Aplicada |
 | P-002 | `README.md` · 4. Organización del repositorio | Iteración 01-02 | 2026-11-17 | Aplicada |
 | P-003 | `DESIGN.md` · 5. Componentes (fila Encabezado) | Iteración 01-03 | 2026-11-17 | Aplicada |
-| P-004 | `AGENTS.md` · 3. Documentos permitidos y `.claude/hooks/documentos-permitidos.md` | Iteración 01-05 | 2026-11-17 | Pendiente |
+| P-004 | `AGENTS.md` · 3. Documentos permitidos y `.claude/hooks/documentos-permitidos.md` | Iteración 01-05 | 2026-11-17 | Aplicada |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 

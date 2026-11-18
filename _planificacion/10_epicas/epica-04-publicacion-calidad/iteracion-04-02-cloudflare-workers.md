@@ -1,7 +1,7 @@
 # Iteración 04-02 · Configuración de Cloudflare Workers y publicación desde GitHub
 
 - **Épica:** 04 · Publicación, medición y calidad
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/04-02-cloudflare-workers
 - **Depende de:** 04-01 (Terminada) y la P-008 aplicada en `AGENTS.md` (commit 6f5ff74)
 - **Especificación:** —
@@ -61,7 +61,7 @@ Se hacen **después** del merge de esta iteración a `main`, porque el Worker se
 - [x] `deploy --dry-run` termina sin errores, o la bitácora dice por qué no se ejecutó. Evidencia: tras `pnpm build`, «Read 21 files from the assets directory», «--dry-run: exiting now.», código 0, sin iniciar sesión.
 - [x] Ningún token ni secreto en el repositorio: búsqueda de `token`, `api_key` y `CLOUDFLARE_` en los archivos versionados sin resultados nuevos; `package.json` y `pnpm-lock.yaml` sin cambios. Evidencia: `git grep -iE` solo da tokens de diseño, tokens de LLM, paquetes `*-separated-tokens` del lockfile y textos de planificación; 0 `api_key`, 0 `CLOUDFLARE_`; `wrangler.jsonc` sin ninguno; `.wrangler/` y `.dev.vars` en `.gitignore`; `git diff --stat` de `package.json`, `pnpm-lock.yaml` y `astro.config.mjs` vacío.
 - [x] Regresiones: `pnpm build` sin advertencias con limpieza y guardia; `pnpm astro check` 0/0/0; 24 de 24 prompts; 4 etiquetas `<script>`; 1 `h1`; hash de `dist/index.html` igual al de la 04-01. Evidencia: build código 0 con 0 líneas `warn`, limpieza de 6 SVG (41030 B) y guardia con 0 marcadores; check 0/0/0; 24 de 24; 4; 1; SHA-256 `b5cf5104…69ce7b`, igual.
-- [ ] Primer despliegue desde `main` con Workers Builds y URL respondiendo 200 con el `h1` (dicho por el desarrollador, con fecha y URL). Sin marcar: lo hace el desarrollador después del merge a `main`.
+- [x] Primer despliegue desde `main` con Workers Builds y URL respondiendo 200 con el `h1` (dicho por el desarrollador, con fecha y URL). Evidencia: el desarrollador dijo el 2026-11-18 que el Worker está publicado en `https://curso-gemini.felipe-cuevas.workers.dev/`; ese día, en la 04-03, `curl` dio 200 y 1 `h1` (`titulo-inicio`).
 
 ## Riesgos
 

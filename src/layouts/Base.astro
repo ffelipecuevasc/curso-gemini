@@ -53,6 +53,12 @@ const { titulo, descripcion, enlaces } = Astro.props;
       type="font/woff2"
       crossorigin
     />
+    <!-- Cloudflare Web Analytics (RDA-005): único recurso de terceros, diferido y sin cookies. -->
+    <script
+      is:inline
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "cad688ac58b448e49a66968d08b06d34"}'></script>
   </head>
   <body class="bg-fondo text-base text-texto lg:text-lg">
     <a

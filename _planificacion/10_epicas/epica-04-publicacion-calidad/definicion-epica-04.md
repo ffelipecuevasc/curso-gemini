@@ -23,8 +23,8 @@
 | Iteración | Nombre | Estado |
 | :-------- | :----- | :----- |
 | 04-01 | [Guardia de marcadores y limpieza de la compilación](iteracion-04-01-guardia-marcadores.md) | Terminada |
-| 04-02 | [Configuración de Cloudflare Workers y publicación desde GitHub](iteracion-04-02-cloudflare-workers.md) | En revisión |
-| 04-03 | [Web Analytics y metadatos para compartir](iteracion-04-03-analytics-metadatos.md) | Pendiente |
+| 04-02 | [Configuración de Cloudflare Workers y publicación desde GitHub](iteracion-04-02-cloudflare-workers.md) | Terminada |
+| 04-03 | [Web Analytics y metadatos para compartir](iteracion-04-03-analytics-metadatos.md) | En revisión |
 | 04-04 | [Rendimiento, accesibilidad y verificación final](iteracion-04-04-verificacion-final.md) | Pendiente |
 
 > Iteraciones aprobadas y generadas el 2026-11-17 al cerrar la épica 03 ([bitacora-03-cierre](../epica-03-unidades/bitacoras/bitacora-03-cierre.md)): la configuración de Workers se separa de la guardia de marcadores, y la verificación final pasa a ser la 04-04. Desde el 2026-11-18 la publicación es continua: el desarrollador conecta el Worker al repositorio y cada merge a `main` publica.

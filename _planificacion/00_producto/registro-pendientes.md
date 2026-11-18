@@ -3,10 +3,10 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-18
-- **Iteración activa:** 04-02 (en revisión)
+- **Iteración activa:** 04-03 (en revisión)
 - **Próximo hito:** épica 04: sitio publicado en `workers.dev`, con Web Analytics y las metas de Lighthouse, antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
-- **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds (Worker `curso-gemini`)
+- **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
 
 > Cada campo del encabezado ocupa una sola línea. El detalle va en las bitácoras y el historial, no aquí.
 
@@ -19,8 +19,8 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
 | 04-01 | [Guardia de marcadores y limpieza de la compilación](../10_epicas/epica-04-publicacion-calidad/iteracion-04-01-guardia-marcadores.md) | 04 | Terminada | 03-05, corrección 15.1 | [bitacora-04-01](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-01.md) |
-| 04-02 | [Configuración de Cloudflare Workers y publicación desde GitHub](../10_epicas/epica-04-publicacion-calidad/iteracion-04-02-cloudflare-workers.md) | 04 | En revisión | 04-01, P-008 | [bitacora-04-02](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-02.md) |
-| 04-03 | [Web Analytics y metadatos para compartir](../10_epicas/epica-04-publicacion-calidad/iteracion-04-03-analytics-metadatos.md) | 04 | Pendiente | 04-02 | — |
+| 04-02 | [Configuración de Cloudflare Workers y publicación desde GitHub](../10_epicas/epica-04-publicacion-calidad/iteracion-04-02-cloudflare-workers.md) | 04 | Terminada | 04-01, P-008 | [bitacora-04-02](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-02.md) |
+| 04-03 | [Web Analytics y metadatos para compartir](../10_epicas/epica-04-publicacion-calidad/iteracion-04-03-analytics-metadatos.md) | 04 | En revisión | 04-02 | [bitacora-04-03](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-03.md) |
 | 04-04 | [Rendimiento, accesibilidad y verificación final](../10_epicas/epica-04-publicacion-calidad/iteracion-04-04-verificacion-final.md) | 04 | Pendiente | 04-03 | — |
 
 ## 2. Épicas cerradas
@@ -41,8 +41,8 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
 | 15.1 | Plantillas con el mismo nombre al descargar: ruta visible en la tarjeta (por ejemplo «analista-planillas/SKILL.md») y texto en la ficha de la U4 para guardar cada plantilla en su carpeta (texto aprobado por el desarrollador, campo opcional `notaDescargas` de la ficha) · Rama `correccion/plantillas-descargas`, antes de la 04-01 | Corrección | — | — | Terminada |
 | 16 | Guardia de marcadores `PENDIENTE_` y `VERIFICAR` en `pnpm build` (todos los archivos de texto de `dist/`) y limpieza de los SVG sin referencia en `dist/_astro/` | Técnico | — | 04-01 | Terminada |
-| 16.1 | Configuración de Cloudflare Workers (`wrangler.jsonc` del Worker `curso-gemini`, `pnpm dlx wrangler@4.164.0`) y publicación continua desde `main` con Workers Builds, conectada por el desarrollador después del merge | Técnico | — | 04-02 | En revisión |
-| 17 | Cloudflare Web Analytics, ícono, `robots.txt`, página 404 y licencia del contenido (sin canónica ni Open Graph) | Funcionalidad | — | 04-03 | Pendiente |
+| 16.1 | Configuración de Cloudflare Workers (`wrangler.jsonc` del Worker `curso-gemini`, `pnpm dlx wrangler@4.164.0`) y publicación continua desde `main` con Workers Builds, conectada por el desarrollador después del merge | Técnico | — | 04-02 | Terminada |
+| 17 | Cloudflare Web Analytics, ícono, `robots.txt`, página 404 y licencia del contenido (sin canónica ni Open Graph) · Ícono detenido: el desarrollador pidió el SVG de Gemini y eso contradice la regla 6 de `AGENTS.md` y la tarea 4 | Funcionalidad | — | 04-03 | En revisión |
 | 18 | Verificación final de rendimiento y accesibilidad en local y en la URL publicada | Técnico | — | 04-04 | Pendiente |
 
 ## 4. Datos pendientes del cliente
@@ -67,8 +67,7 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Publicados el dataset CSV (03-03) y su diccionario editado para participantes (03-04); de la U1 y la U2, el resto (`plantillas-alumnos.zip`, informe de Deep Research de respaldo) queda como ausencia acordada en la 03-04; en la 03-05 se publican las 4 plantillas de `plantillas-alumnos/` (U4) y quedan como ausencia acordada `optimizador-prompts/SKILL.md`, `gtd-visual.zip` y el paquete de fuentes de la U3 | — | Desarrollador |
 | Imagen de la insignia oficial de Gemini Certified Educator para la sección del instructor · La 02-04 se construyó sin ella; el campo `insignia` del esquema está listo para recibirla | 02-04 | Desarrollador |
 | Nombres completos de las certificaciones AWS y Anthropic, si se listan · La 02-04 publica solo el texto del documento, sin detallarlas | 02-04 | Desarrollador |
-| Token de Web Analytics, para la 04-03 | RDA-005 | Desarrollador |
-| Licencia del contenido del sitio (hoy «todos los derechos reservados»), para la 04-03 | — | Desarrollador |
+| Ícono del sitio: el SVG de Gemini que pidió el desarrollador contradice la regla 6 de `AGENTS.md` y la tarea 4 de la 04-03; hay que elegir otro ícono o registrar una propuesta para cambiar la regla | 04-03 | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U1 nombrados pero no escritos: el «Avanzado» completo de la escalera (bloque 4) y la ronda 3 del laboratorio (bloque 5) | 02-05 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U2 nombrados pero no escritos: «Prompt base» del dashboard (bloque 5), «Prompts base de cada hito» y los carriles extra de los bloques 1 a 5 | 02-05 | Desarrollador |
@@ -137,3 +136,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Iteración 04-01 en revisión: guardia de marcadores en todos los archivos de texto de `dist/` (4 de 4 pruebas fallan, `cmp` 0) y limpieza de los 6 SVG sin referencia (41 030 B) tras `astro build`; hash de `index.html` idéntico; P-008 pendiente. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-01.md) |
 | 2026-11-18 | Iteración 04-01 terminada: el desarrollador revisó 360 px en el navegador sin observaciones. P-008 aplicada por el desarrollador en `AGENTS.md` (commit 6f5ff74); sale de «Decisiones por tomar». |
 | 2026-11-18 | Iteración 04-02 en revisión: `wrangler.jsonc` del Worker `curso-gemini` (solo `dist/`), `pnpm dlx wrangler@4.164.0` y `deploy --dry-run` con código 0, 0 secretos, hash idéntico; salen la versión de Wrangler y el nombre del Worker; falta el primer despliegue del desarrollador. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-02.md) |
+| 2026-11-18 | Iteración 04-02 terminada: el desarrollador dijo que el Worker está publicado en `https://curso-gemini.felipe-cuevas.workers.dev/`; `curl` dio 200 y 1 `h1`. |
+| 2026-11-18 | Iteración 04-03 en revisión: beacon de Web Analytics con `defer` (único recurso externo), 404 con `not_found_handling`, `robots.txt` y la licencia «Todos los derechos reservados.» en el pie; salen el token y la licencia de las decisiones; el ícono queda detenido. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-03.md) |

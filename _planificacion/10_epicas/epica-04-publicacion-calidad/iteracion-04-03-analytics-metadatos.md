@@ -1,7 +1,7 @@
 # Iteración 04-03 · Web Analytics y metadatos para compartir
 
 - **Épica:** 04 · Publicación, medición y calidad
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/04-03-analytics-metadatos
 - **Depende de:** 04-02
 - **Especificación:** —
@@ -42,8 +42,8 @@ Medir las visitas con Cloudflare Web Analytics y dejar el sitio listo para los b
 - [x] `dist/robots.txt` y `dist/404.html` existen; la 404 tiene 1 `h1` y el enlace a la portada; `wrangler.jsonc` trae `not_found_handling` igual a `404-page`. Evidencia: los dos archivos existen; la 404 tiene 1 `h1`, `href="/"` y el salto al contenido; en `pnpm preview`, `/no-existe` responde 404 con «Página no encontrada».
 - [x] Ícono del sitio sin logos de Google ni de Gemini (regla 6 de `AGENTS.md`): glifo `school-outline` de Material Symbols Light en blanco sobre un círculo `#007EA7` (decisión del desarrollador, 2026-11-18). Evidencia: `dist/favicon.svg` idéntico a `public/favicon.svg` (`cmp`), no lo borra la limpieza; 1 `<link rel="icon" type="image/svg+xml" href="/favicon.svg">` en `index.html` y en `404.html`; rasterizado a 16 y 32 px con sharp, se distingue el birrete.
 - [x] La licencia del pie es la entregada por el desarrollador, copiada tal cual. Evidencia: «Todos los derechos reservados.» en el pie de las dos páginas.
-- [ ] El panel de Web Analytics registra visitas después de publicar (dicho por el desarrollador, con fecha). Sin marcar: se comprueba después del merge a `main`.
-- [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 4 etiquetas `<script>` propias más la de Web Analytics; ambos modos y 360 px. Sin marcar: falta revisar ambos modos y 360 px en el navegador. Medido: build código 0 con 0 `warn`, limpieza y guardia con 0 marcadores; check 0/0/0; 24 de 24 prompts; `index.html` con 5 `<script>` (4 propios y el beacon) y 1 `h1`.
+- [x] El panel de Web Analytics registra visitas después de publicar (dicho por el desarrollador, con fecha). Evidencia: el desarrollador dijo el 2026-11-18 que el panel registra visitas y que la 404 del sitio se ve en producción.
+- [x] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 4 etiquetas `<script>` propias más la de Web Analytics; ambos modos y 360 px. Evidencia: ambos modos y 360 px revisados por el desarrollador (dicho el 2026-11-18). Medido: build código 0 con 0 `warn`, limpieza y guardia con 0 marcadores; check 0/0/0; 24 de 24 prompts; `index.html` con 5 `<script>` (4 propios y el beacon) y 1 `h1`.
 
 ## Riesgos
 

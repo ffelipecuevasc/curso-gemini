@@ -1,7 +1,7 @@
 # Iteración 04-04 · Rendimiento, accesibilidad y verificación final
 
 - **Épica:** 04 · Publicación, medición y calidad
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/04-04-verificacion-final
 - **Depende de:** 04-03
 - **Especificación:** —
@@ -40,12 +40,12 @@ Comprobar con Lighthouse móvil, en local y en la URL publicada, que el sitio cu
 
 ## Criterios de aceptación
 
-- [ ] Lighthouse móvil en local: Rendimiento ≥ 95, Accesibilidad 100, Buenas prácticas 100 y SEO 100; LCP < 2,5 s y CLS < 0,1 (mediana de 3 corridas).
-- [ ] Lighthouse móvil sobre la URL publicada (desplegada desde `main` por Workers Builds) con las mismas metas.
-- [ ] Peso de `dist/index.html` y su gzip medidos y comparados con 249 616 B y 50 905 B, con la decisión anotada en la bitácora.
-- [ ] Salto de `h2` a `h4` evaluado con el resultado de Accesibilidad, con la decisión anotada.
-- [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 24 de 24 prompts; 1 `h1`; 360 px y ambos modos.
-- [ ] Criterio de término de la épica 04 comprobado en la bitácora de cierre.
+- [ ] Lighthouse móvil en local: Rendimiento ≥ 95, Accesibilidad 100, Buenas prácticas 100 y SEO 100; LCP < 2,5 s y CLS < 0,1 (mediana de 3 corridas). Sin marcar: la mediana es 98/98/96/100, con LCP 1,33 s y CLS 0. Accesibilidad no llega por `heading-order`. Buenas prácticas no llega por el error CORS del beacon en `localhost`; sin Web Analytics da 100.
+- [ ] Lighthouse móvil sobre la URL publicada (desplegada desde `main` por Workers Builds) con las mismas metas. Sin marcar: la mediana es 94/98/100/100, con LCP 1,58 s, CLS 0 y TBT 257 ms. Rendimiento queda bajo 95 por el TBT, y Accesibilidad por `heading-order`.
+- [x] Peso de `dist/index.html` y su gzip medidos y comparados con 249 616 B y 50 905 B, con la decisión anotada en la bitácora. Evidencia: 249 986 B (+370) y 51 439 B gzip (+534), por el beacon, el ícono y la licencia de la 04-03. El peso del HTML no es la causa del TBT (ver bitácora).
+- [ ] Salto de `h2` a `h4` evaluado con el resultado de Accesibilidad, con la decisión anotada. Sin marcar: evaluado (`heading-order` falla en los 4 «Objetivo» de las fichas y resta 2 puntos); la propuesta espera la decisión del desarrollador.
+- [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 24 de 24 prompts; 1 `h1`; 360 px y ambos modos. Sin marcar: falta revisar 360 px y ambos modos después de los ajustes. Medido: build código 0 con 0 `warn`, limpieza y guardia con 0 marcadores; check 0/0/0; 24 de 24; 1 `h1`; 5 `<script>` (4 propios y el beacon).
+- [ ] Criterio de término de la épica 04 comprobado en la bitácora de cierre. Sin marcar: el cierre de la épica va aparte.
 
 ## Riesgos
 

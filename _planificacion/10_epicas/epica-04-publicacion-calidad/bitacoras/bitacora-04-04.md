@@ -122,6 +122,21 @@ Se usó el mismo método: Lighthouse 13.6.0 con `pnpm dlx`, Chrome 157 del equip
 - Si la medición publicada después del merge sigue bajo 95, la opción que queda es más profunda: plegar o dividir el contenido de las unidades. Cambia la lectura y requiere una decisión nueva.
 - En local, la mediana con el ajuste 1 da 98.
 
+## Medición publicada después del merge (2026-11-18)
+
+- El desarrollador hizo el merge. `main` está en `e120465`, y la URL responde 200 con el HTML nuevo: 1 `h1`, 6 `h2`, 53 `h3` y 0 `h4`.
+- Mismo método: Lighthouse 13.6.0, Chrome 157 del equipo, móvil, 3 corridas y su mediana. El índice de referencia del equipo fue de 1675 a 1907, igual que en la primera pasada (1684 a 1894).
+
+| Caso | Notas (mediana) | Corridas de Rendimiento | LCP | CLS | TBT |
+| :--- | :-------------- | :---------------------- | :-- | :-- | :-- |
+| Publicada antes de los ajustes | 94 / 98 / 100 / 100 | 94, 94, 91 | 1,58 s | 0 | 257 ms |
+| Publicada con títulos en `h3` | 87 / **100 / 100 / 100** | 84, 95, 87 | 1,58 s | 0 | 496 ms |
+
+- Accesibilidad, Buenas prácticas y SEO llegan a 100. LCP y CLS cumplen.
+- **Rendimiento sigue bajo 95.** El TBT de las corridas fue de 245 a 503 ms, y estilo y layout tomaron de 707 a 1290 ms. Es la misma causa de la primera pasada: el layout de la página completa.
+- El cambio de títulos no agrega trabajo (el HTML mide lo mismo). La baja de 94 a 87 queda dentro de la variación que este equipo ya mostró: una corrida local dio 87 y otra 99 con el mismo HTML.
+- Queda la opción ya anotada: plegar o dividir el contenido de las unidades. Cambia la lectura, así que requiere una decisión nueva del desarrollador. Medir desde otro equipo o con PageSpeed Insights ayudaría a separar el ruido del equipo, y también lo decide el desarrollador.
+
 ## Decisiones tomadas
 
 - No se ajustó nada por cuenta propia, como pidió el desarrollador. En la segunda pasada solo se aplicaron los 2 ajustes aprobados.

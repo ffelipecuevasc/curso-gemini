@@ -1,0 +1,261 @@
+id_solicitud,fecha,mes,region,tipo_servicio,categoria,canal,prioridad,tiempo_resolucion_horas,resuelto_primer_contacto,nps,estado
+SOL-0043,2026-07-01,Julio,Los Lagos,Empresas,Cambio de plan,Sucursal virtual,Media,5.8,Sí,9,Cerrada
+SOL-0092,2026-07-01,Julio,Metropolitana,Fibra Hogar,Cambio de plan,WhatsApp,Baja,4.0,Sí,8,Cerrada
+SOL-0062,2026-07-02,Julio,Aysén,Fibra Hogar,Consulta comercial,Presencial,Media,2.2,Sí,9,Cerrada
+SOL-0216,2026-07-02,Julio,Metropolitana,Fibra Hogar,Cambio de plan,Presencial,Baja,5.2,No,6,Cerrada
+SOL-0061,2026-07-03,Julio,Los Ríos,TV,Facturación,Sucursal virtual,Media,7.3,Sí,10,Cerrada
+SOL-0089,2026-07-03,Julio,Biobío,Fibra Hogar,Cambio de plan,Teléfono,Baja,8.2,Sí,9,Cerrada
+SOL-0145,2026-07-04,Julio,La Araucanía,Fibra Hogar,Falla técnica,Presencial,Media,28.4,No,7,Cerrada
+SOL-0093,2026-07-05,Julio,Metropolitana,Empresas,Cambio de plan,Teléfono,Media,6.3,Sí,9,Cerrada
+SOL-0142,2026-07-05,Julio,Los Lagos,Fibra Hogar,Facturación,Chat web,Media,12.3,Sí,8,Cerrada
+SOL-0211,2026-07-05,Julio,La Araucanía,Empresas,Falla técnica,WhatsApp,Alta,17.2,Sí,8,Cerrada
+SOL-0045,2026-07-06,Julio,Los Lagos,Fibra Hogar,Consulta comercial,Teléfono,Media,3.6,Sí,8,Cerrada
+SOL-0213,2026-07-06,Julio,Metropolitana,Móvil,Cambio de plan,Teléfono,Media,9.0,Sí,7,Cerrada
+SOL-0022,2026-07-07,Julio,Biobío,TV,Falla técnica,Sucursal virtual,Media,29.3,No,4,Cerrada
+SOL-0251,2026-07-07,Julio,Aysén,Fibra Hogar,Facturación,Chat web,Media,7.1,Sí,7,Cerrada
+SOL-0059,2026-07-08,Julio,Los Lagos,TV,Falla técnica,Teléfono,Baja,15.5,No,7,Cerrada
+SOL-0120,2026-07-09,Julio,Biobío,Fibra Hogar,Facturación,Sucursal virtual,Baja,12.8,Sí,9,Cerrada
+SOL-0144,2026-07-09,Julio,Metropolitana,Fibra Hogar,Consulta comercial,Sucursal virtual,Media,4.6,Sí,9,Cerrada
+SOL-0182,2026-07-09,Julio,Metropolitana,Empresas,Facturación,WhatsApp,Media,6.1,Sí,10,Cerrada
+SOL-0228,2026-07-09,Julio,Los Lagos,Fibra Hogar,Consulta comercial,WhatsApp,Baja,4.0,Sí,9,Cerrada
+SOL-0051,2026-07-10,Julio,Valparaíso,Móvil,Instalación,Teléfono,Media,60.0,No,2,Cerrada
+SOL-0207,2026-07-10,Julio,Metropolitana,Fibra Hogar,Facturación,Teléfono,Media,9.2,Sí,8,Cerrada
+SOL-0015,2026-07-11,Julio,La Araucanía,Fibra Hogar,Falla técnica,WhatsApp,Baja,18.7,No,7,Cerrada
+SOL-0198,2026-07-11,Julio,Biobío,Fibra Hogar,Falla técnica,Teléfono,Media,13.8,No,6,Cerrada
+SOL-0226,2026-07-11,Julio,Los Lagos,Fibra Hogar,Falla técnica,WhatsApp,Baja,16.9,Sí,10,Cerrada
+SOL-0039,2026-07-12,Julio,Los Ríos,Móvil,Instalación,Presencial,Baja,42.6,No,5,Cerrada
+SOL-0095,2026-07-12,Julio,Metropolitana,Fibra Hogar,Falla técnica,WhatsApp,Baja,20.6,No,5,Cerrada
+SOL-0097,2026-07-12,Julio,Metropolitana,Fibra Hogar,Facturación,WhatsApp,Media,8.4,Sí,8,Cerrada
+SOL-0138,2026-07-12,Julio,Metropolitana,Fibra Hogar,Facturación,WhatsApp,Media,7.4,Sí,8,Cerrada
+SOL-0119,2026-07-13,Julio,Los Lagos,Móvil,Consulta comercial,Sucursal virtual,Media,1.9,Sí,10,Cerrada
+SOL-0180,2026-07-13,Julio,Metropolitana,Empresas,Facturación,Teléfono,Media,2.9,Sí,9,Cerrada
+SOL-0221,2026-07-13,Julio,Biobío,Fibra Hogar,Consulta comercial,WhatsApp,Baja,2.6,No,7,Cerrada
+SOL-0132,2026-07-14,Julio,Los Lagos,Fibra Hogar,Instalación,WhatsApp,Media,20.9,No,8,Cerrada
+SOL-0217,2026-07-14,Julio,Aysén,Empresas,Facturación,Sucursal virtual,Media,6.6,Sí,8,Cerrada
+SOL-0116,2026-07-15,Julio,Metropolitana,Fibra Hogar,Instalación,Sucursal virtual,Media,63.7,Sí,4,Cerrada
+SOL-0230,2026-07-15,Julio,Biobío,TV,Consulta comercial,Teléfono,Media,2.9,Sí,10,Cerrada
+SOL-0001,2026-07-16,Julio,Valparaíso,Empresas,Instalación,Presencial,Media,41.2,No,4,Cerrada
+SOL-0020,2026-07-16,Julio,Biobío,Móvil,Instalación,WhatsApp,Media,39.1,No,4,Cerrada
+SOL-0242,2026-07-16,Julio,Metropolitana,Móvil,Facturación,Teléfono,Baja,5.7,Sí,10,Cerrada
+SOL-0246,2026-07-16,Julio,Los Lagos,Empresas,Falla técnica,Teléfono,Alta,20.6,No,7,Cerrada
+SOL-0099,2026-07-17,Julio,Aysén,Móvil,Facturación,WhatsApp,Media,9.5,Sí,10,Cerrada
+SOL-0136,2026-07-17,Julio,Biobío,Fibra Hogar,Cambio de plan,Teléfono,Baja,4.0,Sí,10,Cerrada
+SOL-0161,2026-07-17,Julio,Metropolitana,Móvil,Cambio de plan,Sucursal virtual,Media,3.7,Sí,10,Cerrada
+SOL-0189,2026-07-17,Julio,Metropolitana,Empresas,Cambio de plan,Chat web,Media,6.2,Sí,9,Cerrada
+SOL-0197,2026-07-17,Julio,Los Ríos,Fibra Hogar,Instalación,WhatsApp,Media,29.7,No,5,Cerrada
+SOL-0232,2026-07-17,Julio,La Araucanía,Fibra Hogar,Instalación,Chat web,Media,49.7,No,4,Cerrada
+SOL-0179,2026-07-18,Julio,Los Lagos,Fibra Hogar,Falla técnica,Teléfono,Media,12.1,No,5,Cerrada
+SOL-0187,2026-07-18,Julio,La Araucanía,Fibra Hogar,Falla técnica,Teléfono,Media,14.6,No,8,Cerrada
+SOL-0188,2026-07-18,Julio,Los Ríos,Empresas,Facturación,Sucursal virtual,Baja,7.9,Sí,10,Cerrada
+SOL-0206,2026-07-18,Julio,La Araucanía,Empresas,Falla técnica,Presencial,Alta,15.9,No,6,Cerrada
+SOL-0005,2026-07-19,Julio,Los Lagos,TV,Instalación,WhatsApp,Baja,43.6,No,3,Cerrada
+SOL-0072,2026-07-19,Julio,Metropolitana,Empresas,Instalación,WhatsApp,Media,29.4,No,5,Cerrada
+SOL-0082,2026-07-19,Julio,Biobío,Empresas,Facturación,Sucursal virtual,Media,6.5,Sí,9,Cerrada
+SOL-0172,2026-07-19,Julio,Aysén,Empresas,Instalación,WhatsApp,Media,26.3,Sí,6,Cerrada
+SOL-0178,2026-07-19,Julio,Valparaíso,Fibra Hogar,Instalación,Chat web,Media,39.2,No,5,Cerrada
+SOL-0016,2026-07-20,Julio,Metropolitana,Móvil,Instalación,Presencial,Media,57.9,No,2,Cerrada
+SOL-0074,2026-07-20,Julio,Biobío,Móvil,Consulta comercial,Presencial,Media,2.5,Sí,10,Cerrada
+SOL-0105,2026-07-20,Julio,Valparaíso,Móvil,Facturación,WhatsApp,Baja,5.1,Sí,8,Cerrada
+SOL-0162,2026-07-20,Julio,Biobío,Empresas,Falla técnica,Teléfono,Alta,10.1,No,9,Cerrada
+SOL-0203,2026-07-20,Julio,Metropolitana,Fibra Hogar,Falla técnica,Teléfono,Baja,19.7,No,6,Cerrada
+SOL-0073,2026-07-23,Julio,Metropolitana,Empresas,Instalación,WhatsApp,Media,16.3,Sí,7,Cerrada
+SOL-0100,2026-07-23,Julio,Biobío,Fibra Hogar,Falla técnica,Teléfono,Alta,31.2,No,5,Cerrada
+SOL-0220,2026-07-23,Julio,Metropolitana,Móvil,Falla técnica,Teléfono,Baja,22.5,No,8,Cerrada
+SOL-0124,2026-07-24,Julio,Biobío,Fibra Hogar,Instalación,WhatsApp,Baja,34.2,No,7,Cerrada
+SOL-0118,2026-07-25,Julio,Los Lagos,Móvil,Facturación,Sucursal virtual,Baja,5.1,Sí,9,Cerrada
+SOL-0259,2026-07-25,Julio,La Araucanía,Fibra Hogar,Falla técnica,Teléfono,Media,14.7,Sí,8,Cerrada
+SOL-0066,2026-07-26,Julio,Valparaíso,Móvil,Cambio de plan,WhatsApp,Baja,5.8,No,8,Cerrada
+SOL-0098,2026-07-26,Julio,Biobío,Fibra Hogar,Falla técnica,Sucursal virtual,Media,13.7,Sí,7,Cerrada
+SOL-0215,2026-07-26,Julio,Los Lagos,Móvil,Consulta comercial,Sucursal virtual,Media,4.2,No,9,Cerrada
+SOL-0238,2026-07-26,Julio,Metropolitana,Fibra Hogar,Falla técnica,WhatsApp,Media,11.1,Sí,8,Cerrada
+SOL-0125,2026-07-27,Julio,La Araucanía,TV,Instalación,WhatsApp,Baja,47.5,No,3,Cerrada
+SOL-0204,2026-07-27,Julio,Metropolitana,Fibra Hogar,Facturación,Teléfono,Media,7.9,Sí,8,Cerrada
+SOL-0214,2026-07-27,Julio,Los Ríos,Fibra Hogar,Cambio de plan,Teléfono,Media,4.7,Sí,10,Cerrada
+SOL-0017,2026-07-29,Julio,Biobío,Fibra Hogar,Instalación,Sucursal virtual,Baja,32.8,No,7,Cerrada
+SOL-0146,2026-07-29,Julio,Metropolitana,Empresas,Instalación,Teléfono,Media,35.1,No,6,Cerrada
+SOL-0193,2026-07-30,Julio,Valparaíso,Fibra Hogar,Facturación,WhatsApp,Baja,7.7,Sí,9,Cerrada
+SOL-0229,2026-07-30,Julio,Metropolitana,Fibra Hogar,Cambio de plan,Sucursal virtual,Baja,8.4,Sí,10,Cerrada
+SOL-0257,2026-07-31,Julio,Los Ríos,Fibra Hogar,Falla técnica,Sucursal virtual,Media,11.8,No,9,Cerrada
+SOL-0102,2026-08-01,Agosto,Los Lagos,Móvil,Instalación,Presencial,Media,27.9,No,8,Cerrada
+SOL-0110,2026-08-01,Agosto,Metropolitana,Fibra Hogar,Cambio de plan,Chat web,Baja,5.0,Sí,8,Cerrada
+SOL-0038,2026-08-02,Agosto,Los Ríos,Fibra Hogar,Falla técnica,Teléfono,Baja,19.2,Sí,9,Cerrada
+SOL-0083,2026-08-02,Agosto,Aysén,Fibra Hogar,Facturación,Teléfono,Media,11.0,No,8,Cerrada
+SOL-0086,2026-08-02,Agosto,Metropolitana,Fibra Hogar,Consulta comercial,Sucursal virtual,Media,3.2,No,9,Cerrada
+SOL-0121,2026-08-02,Agosto,La Araucanía,Móvil,Facturación,Teléfono,Media,5.5,Sí,10,Cerrada
+SOL-0030,2026-08-03,Agosto,Metropolitana,Fibra Hogar,Consulta comercial,Presencial,Media,2.3,Sí,9,Cerrada
+SOL-0053,2026-08-03,Agosto,Los Ríos,Fibra Hogar,Falla técnica,Teléfono,Media,17.3,No,7,Cerrada
+SOL-0122,2026-08-03,Agosto,Los Ríos,Fibra Hogar,Falla técnica,WhatsApp,Media,25.9,No,6,Cerrada
+SOL-0130,2026-08-03,Agosto,Valparaíso,Empresas,Consulta comercial,WhatsApp,Media,1.3,Sí,9,Cerrada
+SOL-0143,2026-08-03,Agosto,Aysén,Empresas,Falla técnica,WhatsApp,Alta,9.9,No,9,Cerrada
+SOL-0056,2026-08-04,Agosto,Los Lagos,Fibra Hogar,Falla técnica,Sucursal virtual,Media,15.2,No,5,Cerrada
+SOL-0090,2026-08-04,Agosto,Los Ríos,Empresas,Instalación,Teléfono,Media,40.8,No,3,Cerrada
+SOL-0154,2026-08-04,Agosto,Metropolitana,Móvil,Falla técnica,Chat web,Alta,30.5,No,5,Cerrada
+SOL-0184,2026-08-04,Agosto,Metropolitana,Móvil,Falla técnica,Teléfono,Media,18.1,No,7,Cerrada
+SOL-0222,2026-08-04,Agosto,Aysén,Móvil,Cambio de plan,Teléfono,Baja,6.4,No,9,Cerrada
+SOL-0003,2026-08-06,Agosto,Los Ríos,Fibra Hogar,Cambio de plan,Sucursal virtual,Media,7.5,Sí,9,Cerrada
+SOL-0034,2026-08-06,Agosto,La Araucanía,Fibra Hogar,Consulta comercial,Chat web,Baja,1.9,Sí,10,Cerrada
+SOL-0047,2026-08-06,Agosto,Valparaíso,Empresas,Falla técnica,Sucursal virtual,Alta,7.1,Sí,9,Cerrada
+SOL-0081,2026-08-06,Agosto,Los Ríos,Fibra Hogar,Facturación,Teléfono,Baja,6.4,Sí,8,Cerrada
+SOL-0141,2026-08-06,Agosto,Los Ríos,TV,Falla técnica,Teléfono,Media,28.6,No,6,Cerrada
+SOL-0212,2026-08-06,Agosto,Biobío,Empresas,Instalación,Presencial,Media,71.7,No,3,Cerrada
+SOL-0057,2026-08-07,Agosto,Biobío,Móvil,Facturación,Teléfono,Baja,12.4,No,8,Cerrada
+SOL-0084,2026-08-07,Agosto,Metropolitana,Móvil,Falla técnica,Presencial,Baja,22.4,No,7,Cerrada
+SOL-0107,2026-08-07,Agosto,Los Lagos,Empresas,Falla técnica,Teléfono,Alta,10.2,No,6,Cerrada
+SOL-0137,2026-08-07,Agosto,Metropolitana,Fibra Hogar,Facturación,WhatsApp,Media,6.3,Sí,10,Cerrada
+SOL-0245,2026-08-07,Agosto,Metropolitana,Fibra Hogar,Cambio de plan,WhatsApp,Baja,5.5,No,6,Cerrada
+SOL-0050,2026-08-08,Agosto,Metropolitana,Fibra Hogar,Instalación,WhatsApp,Baja,53.8,Sí,7,Cerrada
+SOL-0237,2026-08-08,Agosto,Los Lagos,Móvil,Facturación,WhatsApp,Media,10.1,No,6,Cerrada
+SOL-0024,2026-08-09,Agosto,Metropolitana,Fibra Hogar,Facturación,Presencial,Baja,11.2,No,6,Cerrada
+SOL-0031,2026-08-09,Agosto,Metropolitana,TV,Instalación,Presencial,Baja,35.4,No,6,Cerrada
+SOL-0087,2026-08-09,Agosto,Los Lagos,Fibra Hogar,Cambio de plan,Teléfono,Media,4.6,Sí,10,Cerrada
+SOL-0117,2026-08-09,Agosto,Los Lagos,Fibra Hogar,Falla técnica,Teléfono,Media,13.3,No,7,Cerrada
+SOL-0164,2026-08-09,Agosto,Biobío,Fibra Hogar,Falla técnica,WhatsApp,Media,23.6,No,4,Cerrada
+SOL-0165,2026-08-09,Agosto,Metropolitana,Fibra Hogar,Consulta comercial,WhatsApp,Baja,2.4,No,8,Cerrada
+SOL-0192,2026-08-09,Agosto,Metropolitana,Móvil,Facturación,WhatsApp,Media,9.6,Sí,8,Cerrada
+SOL-0040,2026-08-10,Agosto,Metropolitana,Empresas,Instalación,WhatsApp,Media,13.4,No,8,Cerrada
+SOL-0054,2026-08-10,Agosto,Metropolitana,Empresas,Falla técnica,Sucursal virtual,Alta,12.4,No,7,Cerrada
+SOL-0171,2026-08-10,Agosto,Metropolitana,Fibra Hogar,Consulta comercial,Chat web,Baja,1.8,Sí,10,Cerrada
+SOL-0071,2026-08-11,Agosto,Valparaíso,Móvil,Facturación,Sucursal virtual,Media,5.7,Sí,10,Cerrada
+SOL-0128,2026-08-11,Agosto,Biobío,Fibra Hogar,Cambio de plan,Teléfono,Baja,9.6,Sí,7,Cerrada
+SOL-0210,2026-08-11,Agosto,Biobío,Móvil,Facturación,Teléfono,Baja,13.6,No,7,Cerrada
+SOL-0223,2026-08-11,Agosto,Metropolitana,Fibra Hogar,Consulta comercial,Teléfono,Baja,4.8,Sí,9,Cerrada
+SOL-0103,2026-08-13,Agosto,Los Lagos,Fibra Hogar,Facturación,WhatsApp,Media,8.4,Sí,9,Cerrada
+SOL-0147,2026-08-13,Agosto,Los Lagos,Fibra Hogar,Consulta comercial,Teléfono,Baja,3.2,Sí,10,Cerrada
+SOL-0166,2026-08-13,Agosto,Los Lagos,Fibra Hogar,Instalación,Presencial,Media,23.6,No,4,Cerrada
+SOL-0194,2026-08-13,Agosto,Biobío,TV,Falla técnica,Teléfono,Alta,54.7,No,4,Cerrada
+SOL-0239,2026-08-13,Agosto,Metropolitana,Móvil,Facturación,Teléfono,Baja,8.5,Sí,9,Cerrada
+SOL-0019,2026-08-14,Agosto,La Araucanía,Empresas,Consulta comercial,WhatsApp,Media,1.8,Sí,9,Cerrada
+SOL-0186,2026-08-14,Agosto,Metropolitana,Fibra Hogar,Consulta comercial,WhatsApp,Media,4.0,Sí,10,Cerrada
+SOL-0252,2026-08-14,Agosto,Metropolitana,Empresas,Facturación,WhatsApp,Media,7.5,Sí,8,Cerrada
+SOL-0004,2026-08-15,Agosto,Los Ríos,Empresas,Facturación,WhatsApp,Media,4.2,Sí,9,Cerrada
+SOL-0029,2026-08-15,Agosto,Los Ríos,Fibra Hogar,Instalación,Teléfono,Media,32.2,No,5,Cerrada
+SOL-0036,2026-08-15,Agosto,La Araucanía,Empresas,Falla técnica,Teléfono,Alta,8.9,Sí,9,Cerrada
+SOL-0052,2026-08-15,Agosto,La Araucanía,Móvil,Instalación,WhatsApp,Media,46.1,No,5,Cerrada
+SOL-0114,2026-08-16,Agosto,Los Lagos,Empresas,Instalación,Teléfono,Media,40.6,Sí,5,Cerrada
+SOL-0258,2026-08-16,Agosto,La Araucanía,Fibra Hogar,Instalación,WhatsApp,Media,50.6,Sí,4,Cerrada
+SOL-0091,2026-08-17,Agosto,Los Ríos,Móvil,Instalación,Teléfono,Media,55.5,No,3,Cerrada
+SOL-0235,2026-08-17,Agosto,Valparaíso,TV,Instalación,WhatsApp,Media,48.6,No,6,Cerrada
+SOL-0111,2026-08-18,Agosto,La Araucanía,TV,Instalación,Sucursal virtual,Media,55.2,No,3,Cerrada
+SOL-0046,2026-08-19,Agosto,Valparaíso,Fibra Hogar,Falla técnica,Sucursal virtual,Media,27.3,No,5,Cerrada
+SOL-0106,2026-08-19,Agosto,Los Lagos,Fibra Hogar,Facturación,Presencial,Baja,6.6,Sí,9,Cerrada
+SOL-0133,2026-08-19,Agosto,Metropolitana,Fibra Hogar,Cambio de plan,Sucursal virtual,Baja,8.0,Sí,9,Cerrada
+SOL-0195,2026-08-19,Agosto,Biobío,Móvil,Falla técnica,Sucursal virtual,Alta,54.5,No,2,Cerrada
+SOL-0253,2026-08-19,Agosto,Valparaíso,Fibra Hogar,Falla técnica,Chat web,Media,25.4,No,6,Cerrada
+SOL-0109,2026-08-20,Agosto,Metropolitana,Móvil,Consulta comercial,Teléfono,Baja,2.7,Sí,10,Cerrada
+SOL-0041,2026-08-21,Agosto,La Araucanía,Fibra Hogar,Cambio de plan,Teléfono,Media,4.8,Sí,9,Cerrada
+SOL-0108,2026-08-21,Agosto,Metropolitana,TV,Falla técnica,Chat web,Media,15.1,No,7,Cerrada
+SOL-0196,2026-08-21,Agosto,Los Ríos,Fibra Hogar,Cambio de plan,Chat web,Media,6.0,Sí,10,Cerrada
+SOL-0112,2026-08-22,Agosto,Metropolitana,TV,Consulta comercial,Chat web,Media,4.6,Sí,10,Cerrada
+SOL-0129,2026-08-22,Agosto,Biobío,Móvil,Consulta comercial,WhatsApp,Media,7.2,Sí,9,Cerrada
+SOL-0260,2026-08-22,Agosto,Biobío,Fibra Hogar,Facturación,Teléfono,Media,12.4,No,8,Cerrada
+SOL-0007,2026-08-23,Agosto,Biobío,Empresas,Facturación,Chat web,Media,11.4,No,9,Cerrada
+SOL-0037,2026-08-23,Agosto,La Araucanía,TV,Falla técnica,WhatsApp,Media,21.9,No,6,Cerrada
+SOL-0088,2026-08-23,Agosto,Metropolitana,Fibra Hogar,Falla técnica,WhatsApp,Baja,10.6,No,7,Cerrada
+SOL-0048,2026-08-24,Agosto,Valparaíso,TV,Cambio de plan,Chat web,Media,6.5,Sí,8,Cerrada
+SOL-0077,2026-08-24,Agosto,La Araucanía,Fibra Hogar,Consulta comercial,WhatsApp,Baja,3.1,Sí,8,Cerrada
+SOL-0078,2026-08-24,Agosto,Los Ríos,Móvil,Facturación,WhatsApp,Media,5.7,Sí,10,Cerrada
+SOL-0152,2026-08-25,Agosto,Metropolitana,Fibra Hogar,Consulta comercial,Chat web,Media,3.5,Sí,10,Cerrada
+SOL-0199,2026-08-25,Agosto,Metropolitana,Fibra Hogar,Instalación,Teléfono,Media,39.4,No,6,Cerrada
+SOL-0026,2026-08-28,Agosto,La Araucanía,Fibra Hogar,Cambio de plan,Chat web,Media,7.4,Sí,8,Cerrada
+SOL-0042,2026-08-28,Agosto,Biobío,Móvil,Cambio de plan,Sucursal virtual,Media,7.6,Sí,9,Cerrada
+SOL-0085,2026-08-28,Agosto,La Araucanía,Móvil,Falla técnica,WhatsApp,Baja,9.0,Sí,9,Cerrada
+SOL-0135,2026-08-28,Agosto,Aysén,Fibra Hogar,Facturación,Sucursal virtual,Media,5.3,Sí,10,Cerrada
+SOL-0155,2026-08-28,Agosto,Metropolitana,Fibra Hogar,Consulta comercial,Chat web,Media,2.5,Sí,9,Cerrada
+SOL-0075,2026-08-29,Agosto,La Araucanía,Fibra Hogar,Consulta comercial,WhatsApp,Baja,2.7,Sí,8,Cerrada
+SOL-0156,2026-08-29,Agosto,Valparaíso,Empresas,Cambio de plan,Chat web,Media,4.5,Sí,8,Cerrada
+SOL-0060,2026-08-30,Agosto,Los Lagos,Móvil,Falla técnica,Sucursal virtual,Media,24.0,No,5,Cerrada
+SOL-0025,2026-08-31,Agosto,Biobío,Móvil,Facturación,WhatsApp,Media,7.4,Sí,10,Cerrada
+SOL-0163,2026-08-31,Agosto,Biobío,Móvil,Cambio de plan,Chat web,Baja,16.9,No,8,Cerrada
+SOL-0065,2026-09-01,Septiembre,Los Lagos,Empresas,Falla técnica,Teléfono,Alta,7.3,No,8,Cerrada
+SOL-0068,2026-09-01,Septiembre,Valparaíso,Fibra Hogar,Falla técnica,Presencial,Media,29.0,No,7,Cerrada
+SOL-0115,2026-09-01,Septiembre,La Araucanía,Móvil,Cambio de plan,Teléfono,Media,4.3,Sí,10,Cerrada
+SOL-0153,2026-09-01,Septiembre,Metropolitana,Fibra Hogar,Cambio de plan,Sucursal virtual,Baja,8.3,Sí,10,Cerrada
+SOL-0169,2026-09-01,Septiembre,La Araucanía,Fibra Hogar,Facturación,Teléfono,Media,11.7,No,8,Cerrada
+SOL-0183,2026-09-01,Septiembre,Aysén,TV,Consulta comercial,Chat web,Media,1.7,Sí,10,Cerrada
+SOL-0012,2026-09-02,Septiembre,Los Ríos,Móvil,Consulta comercial,Chat web,Media,2.5,Sí,10,Cerrada
+SOL-0014,2026-09-02,Septiembre,Valparaíso,Fibra Hogar,Consulta comercial,WhatsApp,Media,3.8,Sí,10,Cerrada
+SOL-0058,2026-09-02,Septiembre,Los Lagos,Empresas,Consulta comercial,Sucursal virtual,Media,2.3,Sí,10,Cerrada
+SOL-0033,2026-09-03,Septiembre,La Araucanía,Empresas,Facturación,Presencial,Media,5.0,Sí,10,Cerrada
+SOL-0219,2026-09-03,Septiembre,La Araucanía,Empresas,Falla técnica,Sucursal virtual,Alta,12.1,No,8,Cerrada
+SOL-0013,2026-09-04,Septiembre,Metropolitana,Empresas,Falla técnica,Teléfono,Alta,18.2,No,7,Cerrada
+SOL-0064,2026-09-04,Septiembre,Aysén,Empresas,Consulta comercial,Sucursal virtual,Baja,1.8,Sí,10,Cerrada
+SOL-0067,2026-09-04,Septiembre,La Araucanía,TV,Falla técnica,Teléfono,Media,12.0,No,7,Cerrada
+SOL-0201,2026-09-04,Septiembre,Los Ríos,Fibra Hogar,Falla técnica,Teléfono,Alta,30.7,No,7,Cerrada
+SOL-0247,2026-09-04,Septiembre,Metropolitana,Fibra Hogar,Instalación,Teléfono,Baja,40.9,Sí,8,Cerrada
+SOL-0008,2026-09-05,Septiembre,Los Lagos,Fibra Hogar,Instalación,Teléfono,Media,41.2,No,3,Cerrada
+SOL-0023,2026-09-05,Septiembre,Los Lagos,Fibra Hogar,Instalación,WhatsApp,Media,27.2,No,4,Cerrada
+SOL-0254,2026-09-05,Septiembre,Los Lagos,Fibra Hogar,Cambio de plan,WhatsApp,Baja,6.6,Sí,8,Cerrada
+SOL-0069,2026-09-06,Septiembre,Biobío,Fibra Hogar,Falla técnica,Sucursal virtual,Baja,14.7,Sí,8,Cerrada
+SOL-0070,2026-09-06,Septiembre,Metropolitana,Fibra Hogar,Consulta comercial,Chat web,Media,3.9,Sí,10,Cerrada
+SOL-0208,2026-09-06,Septiembre,Metropolitana,TV,Falla técnica,Teléfono,Baja,26.4,Sí,8,Cerrada
+SOL-0241,2026-09-06,Septiembre,Metropolitana,Fibra Hogar,Consulta comercial,Chat web,Media,2.4,No,7,Cerrada
+SOL-0190,2026-09-07,Septiembre,Biobío,Fibra Hogar,Falla técnica,WhatsApp,Media,14.2,No,6,Cerrada
+SOL-0248,2026-09-07,Septiembre,Valparaíso,Fibra Hogar,Instalación,WhatsApp,Media,22.1,No,4,Cerrada
+SOL-0035,2026-09-08,Septiembre,Los Lagos,Fibra Hogar,Falla técnica,Presencial,Media,13.6,Sí,7,Cerrada
+SOL-0044,2026-09-08,Septiembre,Los Ríos,Fibra Hogar,Cambio de plan,Presencial,Media,3.1,No,7,Cerrada
+SOL-0049,2026-09-08,Septiembre,Metropolitana,Fibra Hogar,Falla técnica,Sucursal virtual,Media,25.5,No,4,Cerrada
+SOL-0185,2026-09-08,Septiembre,Metropolitana,Fibra Hogar,Falla técnica,WhatsApp,Media,9.9,No,6,Cerrada
+SOL-0244,2026-09-09,Septiembre,Los Lagos,Móvil,Falla técnica,WhatsApp,Baja,16.9,No,8,Cerrada
+SOL-0027,2026-09-10,Septiembre,La Araucanía,TV,Falla técnica,Sucursal virtual,Media,16.2,No,7,Cerrada
+SOL-0139,2026-09-10,Septiembre,Valparaíso,TV,Falla técnica,WhatsApp,Media,18.8,Sí,7,Cerrada
+SOL-0160,2026-09-10,Septiembre,La Araucanía,TV,Falla técnica,WhatsApp,Media,8.8,Sí,9,Cerrada
+SOL-0177,2026-09-10,Septiembre,Biobío,Fibra Hogar,Falla técnica,Teléfono,Media,21.8,Sí,9,Cerrada
+SOL-0227,2026-09-10,Septiembre,Biobío,Fibra Hogar,Instalación,Teléfono,Media,33.6,No,5,Cerrada
+SOL-0028,2026-09-11,Septiembre,Metropolitana,Móvil,Falla técnica,WhatsApp,Media,26.4,Sí,6,Cerrada
+SOL-0063,2026-09-11,Septiembre,Biobío,Móvil,Instalación,WhatsApp,Baja,18.1,Sí,9,Cerrada
+SOL-0101,2026-09-11,Septiembre,Valparaíso,Empresas,Falla técnica,Sucursal virtual,Alta,7.3,Sí,8,Cerrada
+SOL-0002,2026-09-12,Septiembre,Biobío,TV,Cambio de plan,Sucursal virtual,Media,6.9,Sí,8,Cerrada
+SOL-0123,2026-09-12,Septiembre,Los Ríos,Fibra Hogar,Facturación,Sucursal virtual,Media,9.1,Sí,10,Cerrada
+SOL-0006,2026-09-13,Septiembre,Biobío,Empresas,Facturación,Chat web,Baja,8.1,Sí,9,Cerrada
+SOL-0018,2026-09-14,Septiembre,Valparaíso,Fibra Hogar,Cambio de plan,Teléfono,Media,4.3,No,6,Cerrada
+SOL-0055,2026-09-14,Septiembre,Valparaíso,Fibra Hogar,Cambio de plan,Sucursal virtual,Baja,3.8,Sí,8,Cerrada
+SOL-0076,2026-09-14,Septiembre,Los Lagos,TV,Cambio de plan,Teléfono,Media,3.2,Sí,10,Cerrada
+SOL-0240,2026-09-14,Septiembre,Metropolitana,Fibra Hogar,Consulta comercial,Teléfono,Media,4.4,Sí,10,Cerrada
+SOL-0255,2026-09-14,Septiembre,Biobío,Fibra Hogar,Facturación,WhatsApp,Baja,3.4,No,9,Cerrada
+SOL-0011,2026-09-15,Septiembre,Aysén,Empresas,Consulta comercial,Teléfono,Media,1.5,Sí,10,Cerrada
+SOL-0021,2026-09-15,Septiembre,Metropolitana,TV,Instalación,WhatsApp,Media,41.2,Sí,7,Cerrada
+SOL-0170,2026-09-15,Septiembre,La Araucanía,Empresas,Consulta comercial,Presencial,Baja,2.6,No,8,Cerrada
+SOL-0079,2026-09-16,Septiembre,Biobío,Empresas,Falla técnica,WhatsApp,Alta,15.8,No,7,Cerrada
+SOL-0126,2026-09-16,Septiembre,Metropolitana,Empresas,Instalación,Teléfono,Media,23.8,Sí,7,Cerrada
+SOL-0032,2026-09-17,Septiembre,Metropolitana,Fibra Hogar,Instalación,Sucursal virtual,Media,38.7,No,6,Cerrada
+SOL-0113,2026-09-17,Septiembre,Biobío,Empresas,Facturación,Teléfono,Baja,4.2,Sí,9,Cerrada
+SOL-0158,2026-09-17,Septiembre,La Araucanía,Fibra Hogar,Falla técnica,WhatsApp,Baja,25.9,No,8,Cerrada
+SOL-0202,2026-09-17,Septiembre,Metropolitana,Móvil,Falla técnica,WhatsApp,Media,17.8,Sí,8,Cerrada
+SOL-0250,2026-09-18,Septiembre,Aysén,Fibra Hogar,Falla técnica,Chat web,Media,26.4,Sí,9,Cerrada
+SOL-0175,2026-09-19,Septiembre,Metropolitana,TV,Falla técnica,WhatsApp,Baja,12.7,No,5,Cerrada
+SOL-0148,2026-09-20,Septiembre,La Araucanía,TV,Falla técnica,Teléfono,Media,25.0,No,6,Cerrada
+SOL-0010,2026-09-21,Septiembre,Biobío,Móvil,Consulta comercial,Teléfono,Baja,2.5,Sí,8,Cerrada
+SOL-0127,2026-09-21,Septiembre,Biobío,Móvil,Facturación,WhatsApp,Baja,6.2,Sí,9,Cerrada
+SOL-0140,2026-09-21,Septiembre,Biobío,Fibra Hogar,Cambio de plan,Presencial,Media,6.1,Sí,10,Cerrada
+SOL-0150,2026-09-21,Septiembre,Metropolitana,Empresas,Facturación,Sucursal virtual,Media,3.5,No,6,Cerrada
+SOL-0151,2026-09-21,Septiembre,Metropolitana,Fibra Hogar,Instalación,WhatsApp,Baja,45.1,No,4,Cerrada
+SOL-0224,2026-09-21,Septiembre,Valparaíso,Fibra Hogar,Facturación,Chat web,Media,4.2,Sí,8,Cerrada
+SOL-0225,2026-09-22,Septiembre,Valparaíso,Móvil,Instalación,Sucursal virtual,Media,48.9,Sí,6,Cerrada
+SOL-0104,2026-09-23,Septiembre,Biobío,Fibra Hogar,Falla técnica,Teléfono,Baja,13.2,Sí,9,Cerrada
+SOL-0149,2026-09-23,Septiembre,Biobío,Fibra Hogar,Consulta comercial,Chat web,Baja,4.7,Sí,9,Cerrada
+SOL-0174,2026-09-23,Septiembre,Los Lagos,TV,Falla técnica,Teléfono,Media,29.6,No,5,Cerrada
+SOL-0209,2026-09-24,Septiembre,Metropolitana,TV,Instalación,WhatsApp,Baja,23.8,No,5,Cerrada
+SOL-0218,2026-09-24,Septiembre,Metropolitana,Fibra Hogar,Consulta comercial,WhatsApp,Media,3.0,No,8,Cerrada
+SOL-0234,2026-09-24,Septiembre,Metropolitana,Móvil,Instalación,Presencial,Baja,35.2,No,5,Cerrada
+SOL-0134,2026-09-25,Septiembre,Los Ríos,Fibra Hogar,Consulta comercial,Teléfono,Media,2.0,No,8,En curso
+SOL-0233,2026-09-25,Septiembre,Biobío,Fibra Hogar,Facturación,Teléfono,Baja,8.3,Sí,10,Cerrada
+SOL-0173,2026-09-26,Septiembre,Aysén,TV,Facturación,WhatsApp,Baja,10.8,No,6,En curso
+SOL-0176,2026-09-26,Septiembre,Los Ríos,Móvil,Facturación,Teléfono,Media,11.7,Sí,10,Cerrada
+SOL-0080,2026-09-27,Septiembre,Metropolitana,Fibra Hogar,Instalación,WhatsApp,Baja,52.5,Sí,8,Escalada
+SOL-0094,2026-09-27,Septiembre,Biobío,Empresas,Instalación,WhatsApp,Media,36.3,No,7,Cerrada
+SOL-0181,2026-09-27,Septiembre,Biobío,Móvil,Falla técnica,WhatsApp,Baja,10.9,No,9,En curso
+SOL-0191,2026-09-27,Septiembre,Valparaíso,TV,Falla técnica,Sucursal virtual,Media,19.5,No,5,Escalada
+SOL-0256,2026-09-27,Septiembre,Biobío,Empresas,Falla técnica,Chat web,Alta,12.7,Sí,8,Cerrada
+SOL-0009,2026-09-28,Septiembre,Biobío,Móvil,Consulta comercial,Presencial,Media,3.3,Sí,10,Cerrada
+SOL-0096,2026-09-28,Septiembre,Los Ríos,Fibra Hogar,Instalación,Sucursal virtual,Media,30.5,No,4,Cerrada
+SOL-0157,2026-09-28,Septiembre,La Araucanía,Fibra Hogar,Falla técnica,Chat web,Baja,15.4,No,8,Escalada
+SOL-0205,2026-09-28,Septiembre,Valparaíso,Empresas,Consulta comercial,Sucursal virtual,Baja,1.7,Sí,10,Escalada
+SOL-0231,2026-09-28,Septiembre,Valparaíso,Fibra Hogar,Falla técnica,WhatsApp,Media,26.8,Sí,9,Cerrada
+SOL-0236,2026-09-28,Septiembre,La Araucanía,Móvil,Instalación,Sucursal virtual,Media,42.1,Sí,8,Cerrada
+SOL-0243,2026-09-28,Septiembre,Aysén,Móvil,Falla técnica,Teléfono,Media,13.0,Sí,10,Cerrada
+SOL-0131,2026-09-29,Septiembre,Valparaíso,Empresas,Instalación,Teléfono,Media,34.8,No,6,Cerrada
+SOL-0167,2026-09-29,Septiembre,Metropolitana,Fibra Hogar,Instalación,Chat web,Baja,40.9,No,5,Cerrada
+SOL-0168,2026-09-29,Septiembre,La Araucanía,Fibra Hogar,Consulta comercial,WhatsApp,Media,3.7,Sí,8,Cerrada
+SOL-0249,2026-09-29,Septiembre,Metropolitana,Fibra Hogar,Facturación,WhatsApp,Media,9.5,Sí,10,Cerrada
+SOL-0159,2026-09-30,Septiembre,Aysén,Fibra Hogar,Instalación,WhatsApp,Media,27.0,Sí,10,Escalada
+SOL-0200,2026-09-30,Septiembre,La Araucanía,Fibra Hogar,Falla técnica,Chat web,Baja,21.4,No,4,Cerrada

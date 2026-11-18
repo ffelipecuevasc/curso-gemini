@@ -1,7 +1,7 @@
 # Iteración 03-05 · Pendientes de la Unidad 3 y la Unidad 4
 
 - **Épica:** 03 · Unidades del curso
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/03-05-pendientes-u3-u4
 - **Depende de:** 03-04
 - **Especificación:** —
@@ -49,9 +49,9 @@ Completar en la U3 y la U4 lo que quedó pendiente: «Profundiza» de cada bloqu
 ## Criterios de aceptación
 
 - [x] Asignación de «Profundiza» aprobada y anotada en la bitácora; cada bloque con `profundiza` muestra su `<details>` con sus recursos.
-- [ ] Cada video y cada descarga cargados cumplen lo mismo que en la 03-04, o la bitácora registra su ausencia acordada.
-- [ ] Regresiones en verde: `pnpm build` sin advertencias y `pnpm astro check` sin errores; 24 de 24 prompts iguales; 4 scripts; 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; sin desborde en 360 px.
-- [ ] El criterio de término de la épica 03 está comprobado con evidencia en la bitácora de cierre y la propuesta de la épica 04 está entregada sin generar archivos de iteración.
+- [x] Cada video y cada descarga cargados cumplen lo mismo que en la 03-04, o la bitácora registra su ausencia acordada.
+- [x] Regresiones en verde: `pnpm build` sin advertencias y `pnpm astro check` sin errores; 24 de 24 prompts iguales; 4 scripts; 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; sin desborde en 360 px.
+- [x] El criterio de término de la épica 03 está comprobado con evidencia en la bitácora de cierre y la propuesta de la épica 04 está entregada sin generar archivos de iteración.
 
 Evidencia (detalle en [bitacora-03-05](bitacoras/bitacora-03-05.md) y [bitacora-03-cierre](bitacoras/bitacora-03-cierre.md)):
 
@@ -59,6 +59,7 @@ Evidencia (detalle en [bitacora-03-05](bitacoras/bitacora-03-05.md) y [bitacora-
 - Video: `video-inside-notebooklm`, `https://`, 2 apariciones con `target="_blank"` y `rel="noopener noreferrer"`. Descargas: 6 de 6 tarjetas con su título y el peso igual a `fs.statSync` (las 4 plantillas: 1 903, 1 378, 2 099 y 727 B). Sin marcar: abrir el video y descargar en el navegador.
 - Regex: 4 pruebas reversibles fallan el build (otro nombre en mayúsculas en `plantillas-alumnos/<carpeta>/`, `SKILL.md` en otra carpeta, `SKILL.md` sin carpeta y mayúscula en un nombre común); `descargas.yaml` restaurado idéntico.
 - Regresiones medidas: `pnpm build` sin advertencias; `astro check` 0/0/0; 24 de 24 prompts; 4 etiquetas `<script>`, 1080 B gzip (0 B nuevos); 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0. Sin marcar: 360 px y ambos modos.
+- 2026-11-17, dicho por el desarrollador: probó en el navegador la U3 y la U4 en 360 px y escritorio, «Profundiza», el video de la U3 y las 4 plantillas, sin observaciones; con eso se marcan los tres criterios restantes.
 - Cierre de la épica: bitácora de cierre escrita y propuesta de la épica 04 entregada en el chat sin generar archivos. Sin marcar: el criterio de término incluye comprobaciones en el navegador de esta iteración (descargas y enlaces nuevos).
 
 ## Riesgos

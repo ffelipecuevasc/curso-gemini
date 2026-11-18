@@ -25,6 +25,16 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 02-05 | Bloques y prompts de la Unidad 1 y la Unidad 2 | 02 | Terminada | 02-04 | [bitacora-02-05](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-05.md) |
 | 02-06 | Bloques y prompts de la Unidad 3 y la Unidad 4 | 02 | Terminada | 02-05 | [bitacora-02-06](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-06.md) · [bitacora-02-cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |
 
+### Épica 03 · Unidades del curso (cerrada el 2026-11-17)
+
+| Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
+| :-------- | :----- | :---- | :----- | :--------- | :-------- |
+| 03-01 | Sección de unidad y texto de los bloques | 03 | Terminada | 02-06 | [bitacora-03-01](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-01.md) |
+| 03-02 | Prompts con «Copiar» y recursos externos | 03 | Terminada | 03-01 | [bitacora-03-02](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-02.md) |
+| 03-03 | Descargas y «Profundiza» | 03 | Terminada | 03-02 | [bitacora-03-03](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-03.md) |
+| 03-04 | Pendientes de la Unidad 1 y la Unidad 2 | 03 | Terminada | 03-03 | [bitacora-03-04](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-04.md) |
+| 03-05 | Pendientes de la Unidad 3 y la Unidad 4 | 03 | Terminada | 03-04 | [bitacora-03-05](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-05.md) · [bitacora-03-cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
+
 ## 2. Backlog terminado
 
 ### Épica 01
@@ -49,6 +59,16 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 8 | Sección del instructor | Funcionalidad | — | 02-04 | Terminada |
 | 9 | Texto «Para la clase», prompts y recursos de la Unidad 1 y la Unidad 2 | Funcionalidad | — | 02-05 | Terminada |
 | 10 | Texto «Para la clase», prompts y recursos de la Unidad 3 y la Unidad 4 | Funcionalidad | — | 02-06 | Terminada |
+
+### Épica 03
+
+| Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
+| :-------- | :------- | :--- | :------------- | :-------- | :----- |
+| 11 | Sección de unidad: ficha, tabla de bloques y texto «Para la clase» de las 4 unidades con un solo componente | Funcionalidad | — | 03-01 | Terminada |
+| 12 | Prompts con «Copiar» (IDs con unidad y bloque) y recursos externos de cada unidad | Funcionalidad | — | 03-02 | Terminada |
+| 13 | Descargas con formato y peso medidos del archivo (RDA-010) y «Profundiza» plegable | Funcionalidad | — | 03-03 | Terminada |
+| 14 | Pendientes de la Unidad 1 y la Unidad 2 (descargas, videos, «Profundiza») | Funcionalidad | — | 03-04 | Terminada |
+| 15 | Pendientes de la Unidad 3 y la Unidad 4 (descargas, videos, «Profundiza») | Funcionalidad | — | 03-05 | Terminada |
 
 ## 3. Historial archivado
 

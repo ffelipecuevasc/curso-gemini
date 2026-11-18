@@ -3,7 +3,7 @@
 - **Fecha:** 2026-11-17
 - **Agente:** Claude Code (Claude Opus 5.5)
 - **Rama:** iteracion/03-05-pendientes-u3-u4
-- **Estado final:** En revisión
+- **Estado final:** Cerrada (2026-11-17)
 
 ## Resumen
 
@@ -25,7 +25,7 @@ La página sigue con 4 etiquetas `<script>` (3 comportamientos) y el build termi
 | 03-02 | Prompts con «Copiar» y recursos externos | Terminada | [bitacora-03-02](bitacora-03-02.md) |
 | 03-03 | Descargas y «Profundiza» | Terminada | [bitacora-03-03](bitacora-03-03.md) |
 | 03-04 | Pendientes de la Unidad 1 y la Unidad 2 | Terminada | [bitacora-03-04](bitacora-03-04.md) |
-| 03-05 | Pendientes de la Unidad 3 y la Unidad 4 | En revisión | [bitacora-03-05](bitacora-03-05.md) |
+| 03-05 | Pendientes de la Unidad 3 y la Unidad 4 | Terminada | [bitacora-03-05](bitacora-03-05.md) |
 
 ## Criterio de término
 
@@ -33,7 +33,7 @@ La página sigue con 4 etiquetas `<script>` (3 comportamientos) y el build termi
 | :------- | :--------------- | :-------- |
 | Las 4 unidades están en la página sin marcadores `PENDIENTE_` visibles, o con su ausencia acordada | `dist/index.html`: 4 secciones con sus `h2` desde las fichas, 26 bloques con cuerpo, 0 `PENDIENTE_` y 0 `VERIFICAR`. Ausencias acordadas en el registro y en las bitácoras 03-04 y 03-05 | Cumple (medido) |
 | Cada prompt se copia con el botón y con el teclado, y el texto copiado es idéntico al del documento | 24 de 24 prompts idénticos a su archivo en el HTML (comando temporal de la 03-02, repetido en cada iteración); copiado con teclado y pegado comparado por el desarrollador en la 03-02 | Cumple (medido y dicho por el desarrollador) |
-| Cada descarga responde con su archivo y cada enlace externo abre la página indicada | 6 de 6 descargas con su archivo en `dist/` y el peso igual a `statSync`; cada enlace externo con `href` igual a la URL de su recurso, `target="_blank"` y `rel`. Probado en el navegador por el desarrollador hasta la 03-04; **las 4 plantillas y el video de la U3 (03-05) están pendientes de su prueba** | Cumple en lo medido; pendiente la prueba en el navegador de la 03-05 |
+| Cada descarga responde con su archivo y cada enlace externo abre la página indicada | 6 de 6 descargas con su archivo en `dist/` y el peso igual a `statSync`; cada enlace externo con `href` igual a la URL de su recurso, `target="_blank"` y `rel`. Probado en el navegador por el desarrollador hasta la 03-04; las 4 plantillas y el video de la U3 (03-05), probados por el desarrollador el 2026-11-17 sin observaciones | Cumple (medido y dicho por el desarrollador) |
 
 ## Hallazgos abiertos
 
@@ -53,7 +53,7 @@ Ninguno (proyecto de nivel pequeño, sin auditorías; RDA-001).
 
 ## Revisión al cierre
 
-- **Resultado frente al criterio de término:** cumplen 2 de 3, medidos o dichos por el desarrollador. El tercero cumple en lo medido y queda pendiente la prueba en el navegador de lo agregado en la 03-05.
+- **Resultado frente al criterio de término:** cumplen 3 de 3, medidos o dichos por el desarrollador (el tercero, desde la prueba en el navegador de la 03-05 del 2026-11-17).
 - **Revisión como experto (Astro 7, Tailwind v4, TypeScript):**
   - **Bien:**
     - Componentes pequeños con props tipadas (`SeccionUnidad`, `BloqueClase`, `Prompt`, `RecursoExterno`, `TarjetaDescarga`, `Profundiza`).
@@ -79,7 +79,7 @@ Ninguno (proyecto de nivel pequeño, sin auditorías; RDA-001).
 
 ## Propuesta de la épica siguiente
 
-Entregada en el chat el 2026-11-17 y **pendiente de aprobación**. No se generaron archivos de iteración ni se archivaron filas.
+Entregada en el chat el 2026-11-17 y **aprobada por el desarrollador el 2026-11-17** sin cambios en la lista. Las 4 iteraciones se generaron en `epica-04-publicacion-calidad/` y las filas de la épica 03 pasaron a `registro-archivo.md`.
 
 | Iteración | Nombre | Objetivo | Backlog | Datos que necesita |
 | :-------- | :----- | :------- | :------ | :----------------- |

@@ -22,6 +22,9 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-006 | `DESIGN.md` · 4. Espaciado, retícula y forma (Retícula) | Revisión de la 02-03 | 2026-11-17 | Aplicada|
 | P-007 | `AGENTS.md` · 8. Reglas de contenido, regla 5 | Auditoría previa a la 03-01 | 2026-11-17 | Aplicada |
 | P-008 | `AGENTS.md` · 8. Reglas de contenido, regla 3 (frente a 1. Contexto, «Cliente») | Iteración 04-01 | 2026-11-17 | Aplicada |
+| P-009 | `DESIGN.md` · 1. Concepto visual, 4. Forma, 5. Componentes, 5.1 Botones y 7. Movimiento | Planificación de la épica 05 | 2026-11-18 | Pendiente |
+| P-010 | `AGENTS.md` · 9. Reglas técnicas, regla 2 | Planificación de la épica 05 (RDA-011) | 2026-11-18 | Pendiente |
+| P-011 | `README.md` · párrafo sobre JavaScript | Planificación de la épica 05 (RDA-011) | 2026-11-18 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -187,3 +190,167 @@ En `.claude/hooks/documentos-permitidos.md`, sección «_planificacion/», agreg
 ```text
 3. Si falta un dato, usa un marcador explícito: `PENDIENTE_CLIENTE` para datos del cliente (Capacita Tu Futuro) o de la empresa de los participantes (GTD Telsur), y `PENDIENTE_DESARROLLADOR` para decisiones técnicas, de diseño o de contenido del curso. Regístralo en `registro-pendientes.md`. Nunca publiques un dato de relleno que parezca real. Antes de publicar, ningún marcador puede quedar visible en el sitio: `pnpm build` falla si encuentra `PENDIENTE_` o `VERIFICAR` en cualquier archivo de texto de `dist/`, incluidas las descargas.
 ```
+
+## P-009 · Sistema visual de la épica 05: síntesis, modales, profundidad y movimiento
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 1. Concepto visual (principios 1 y 3), 4. Espaciado, retícula y forma (Sombras), 5. Componentes (filas Portada, Ruta del curso, Sección de unidad, «Profundiza en tu tiempo» e Instructor, y filas nuevas), 5.1 Botones y 7. Movimiento
+- **Estado:** Pendiente
+- **Por qué:** la épica 05 (decisiones del desarrollador del 2026-11-18) pide que cada unidad quepa en una pantalla con el detalle en modales y un nivel de efectos «con propósito». Hoy `DESIGN.md` prohíbe sombras, degradados y apariciones al desplazarse, describe una sección de unidad con todo el texto abierto y define hovers que casi no se ven (`superficie-2` → `superficie`). Si no se aplica, las iteraciones 05-04, 05-05, 05-06 y 05-07 contradicen la fuente de verdad del diseño y no se pueden empezar. Se aplica antes de la 05-04; la paleta, las tipografías y los radios no cambian.
+
+**1 · Principio 1. Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+1. **Práctica primero.** Lo que el participante copia o descarga (prompts, plantillas, archivos) se ve antes que la teoría; «Profundiza en tu tiempo» queda plegado bajo cada bloque.
+```
+
+**Texto propuesto:**
+
+```text
+1. **Práctica primero, detalle a un clic.** Cada unidad cabe en una pantalla de escritorio: se ve qué harás en cada bloque y sus ideas clave, y los prompts, las descargas, la teoría y los recursos se abren en modales desde la tarjeta del bloque.
+```
+
+**2 · Principio 3. Texto actual:**
+
+```text
+3. **Ligero por diseño.** Bloques planos de color sólido, sin fotos, sin degradados y sin sombras: el diseño no le cuesta peso a la página.
+```
+
+**Texto propuesto:**
+
+```text
+3. **Ligero, con profundidad.** Bloques de color sólido y sin fotos. La profundidad viene de sombras teñidas con el color de cada unidad y de un brillo sutil que sigue al cursor; los degradados se usan solo en ese brillo y en la barra de avance de lectura. Ningún efecto agrega imágenes ni librerías.
+```
+
+**3 · Sección 4. Texto actual:**
+
+```text
+- Sombras: no se usan.
+```
+
+**Texto propuesto:**
+
+```text
+- Sombras: tokens `--sombra-u1` a `--sombra-u4` (color de la unidad mezclado con `color-mix()`) y `--sombra-neutra`. En reposo, sombra suave; en hover y foco, la tarjeta sube 4 px y la sombra se amplía. En modo oscuro, menos opacidad y un halo de 1 px del color de la unidad.
+```
+
+**4 · Sección 5, fila «Sección de unidad». Texto actual:**
+
+```text
+| Sección de unidad | Encabezado con el bloque de color de la unidad, objetivo, mini-proyecto, tabla de bloques con minutos, y por cada bloque: «Para la clase», prompts copiables, descargas y «Profundiza en tu tiempo» plegado. Cierra con la lista «Terminado cuando…». |
+```
+
+**Texto propuesto:**
+
+```text
+| Sección de unidad | Cabe en una pantalla de escritorio (1440 × 900 y 1366 × 657). Cabecera con el bloque de color de la unidad: clase y duración en IBM Plex Mono, título, objetivo breve, barra de avance del tramo, píldoras «Antes de empezar» y «Cierre» (si existen) y acciones «Sobre la unidad», «Recursos (n)» y «Descargas (n)». Debajo, una cuadrícula de 6 tarjetas (3 × 2 desde 1024 px, 2 columnas desde 640 px, 1 en móvil): una por bloque y una de «Terminado cuando…». Sin tabla de bloques. |
+| Tarjeta de bloque | Número y minutos en IBM Plex Mono, título (`h3`), «Qué harás» y hasta 2 claves; acciones «Ver detalle» y «Ver prompt» o «Prompts (n)». Superficie `--color-fondo` con borde de 1 px `--color-linea`, franja superior del color de la unidad y sombra de su unidad. |
+| Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, título, botón «Cerrar» de 44 px, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, y «Sobre la unidad». Sin JavaScript, su contenido se ve en la página. |
+```
+
+**5 · Sección 5, filas «Portada (hero)», «Ruta del curso» e «Instructor». Texto actual:**
+
+```text
+| Portada (hero) | Título del curso (`h1`), una frase de propósito (el lema del curso), el botón principal «Ver la ruta», el logo de Gemini como protagonista, el de Google como secundario, y en una fila aparte, mucho más pequeños y sin texto visible, los de GTD Telsur (cliente) y Capacita Tu Futuro (organizador); un círculo decorativo `--color-superficie` parcialmente fuera del marco y los enlaces de redes pequeños en la esquina inferior izquierda. |
+| Ruta del curso | Mosaico de cuatro bloques de color (sección 2.2), cada uno con su número, nombre, mini-proyecto y avance «0 % → 25 %», «25 % → 50 %», «50 % → 75 %», «75 % → 100 %», escrito en IBM Plex Mono. Cada bloque enlaza a su sección. |
+| Instructor | Nombre, títulos y trayectoria del documento del curso; certificación de Gemini destacada primero; enlaces a felipecuevas.dev y LinkedIn. |
+```
+
+**Texto propuesto** (reemplaza las tres filas):
+
+```text
+| Portada y ruta | Una sola sección en el primer pantallazo: a la izquierda, título (`h1`), lema, botón principal «Empezar por la Unidad 1» y redes; a la derecha, el logo de Gemini como protagonista y, en primer plano, las 4 tarjetas de unidad en mosaico 2 × 2 (número, nombre, mini-proyecto en 2 líneas y barra de avance con su texto en IBM Plex Mono), cada una enlazada a su sección. Logos de Google, GTD Telsur y Capacita Tu Futuro en una franja discreta al pie de la sección. La ruta conserva su `id="ruta"` y su `h2`. |
+| Instructor | Franja compacta: nombre, certificación de Gemini primero, resumen de la trayectoria tomado del documento del curso y botón «Ver trayectoria completa» (modal); enlaces a felipecuevas.dev y LinkedIn. |
+```
+
+**6 · Sección 5, fila «Profundiza en tu tiempo». Texto actual:**
+
+```text
+| «Profundiza en tu tiempo» | Elemento `<details>` nativo con `<summary>` visible; dentro, la teoría y los enlaces a documentación y videos oficiales de Google. |
+```
+
+**Texto propuesto:**
+
+```text
+| «Profundiza en tu tiempo» | Apartado al final del modal de detalle del bloque, con los enlaces a documentación y videos oficiales de Google. |
+```
+
+**7 · Sección 5.1, fila «Secundario (contorno)» y párrafo siguiente. Texto actual:**
+
+```text
+| Secundario (contorno) | Transparente, borde 1,5 px `--color-primario` | `--color-texto` | Fondo `--color-superficie` |
+
+Todos: forma de píldora, alto mínimo de 44 px, foco visible con `outline: 2px solid var(--color-foco); outline-offset: 3px`. Solo un botón principal por sección.
+```
+
+**Texto propuesto:**
+
+```text
+| Secundario (contorno) | Transparente, borde 1,5 px `--color-primario` | `--color-texto` | Fondo `--color-primario`, texto `--color-sobre-primario` |
+| Ícono (modo, menú, cerrar) | `--color-superficie-2` | `--color-texto` | Fondo `--color-hover-suave` y borde de 1,5 px `--color-primario`; el botón de modo muestra además un globo con su acción («Cambiar a modo oscuro» / «Cambiar a modo claro») |
+
+Todos: forma de píldora, alto mínimo de 44 px, `cursor: pointer`, foco visible con `outline: 2px solid var(--color-foco); outline-offset: 3px`, y al presionar `scale(0.97)` con fondo `--color-presionado`. El cambio entre reposo y hover tiene al menos 1,3:1 de diferencia de luminancia. Solo un botón principal por sección.
+```
+
+**8 · Sección 7. Texto actual:**
+
+```text
+- Transiciones de 150 a 300 ms en hover y foco; apertura de «Profundiza» sin animación de altura.
+```
+
+y
+
+```text
+- No se usan animaciones infinitas, parallax ni apariciones al desplazarse.
+- Con `prefers-reduced-motion: reduce`, se quitan las transiciones, el revelado del cambio de modo (el modo cambia al instante) y el desplazamiento suave a las anclas.
+```
+
+**Texto propuesto:**
+
+```text
+- Transiciones de 150 a 300 ms en hover y foco. Solo se animan `transform` y `opacity`.
+- Modales: al abrir desde una tarjeta, la tarjeta se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`; sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo.
+- Barra de avance de lectura de 3 px bajo el encabezado, guiada por el desplazamiento (`animation-timeline: scroll(root)`), con el color de la unidad visible.
+- Las tarjetas de cada unidad aparecen al entrar en la ventana (opacidad y 12 px, desfase de 40 ms) con `animation-timeline: view()`; sin soporte, se ven desde el inicio.
+- Brillo radial del color de la unidad al 12 % que sigue al cursor en las tarjetas, solo con puntero fino.
+- No se usan animaciones infinitas, parallax, fondos animados ni efectos sobre los logotipos.
+- Con `prefers-reduced-motion: reduce`, se quitan todas las transiciones y animaciones: el revelado del cambio de modo, la transición de los modales, la barra de avance, las apariciones, el brillo y el desplazamiento suave a las anclas.
+```
+
+## P-010 · Cuarto comportamiento con script: los modales
+
+- **Documento:** `AGENTS.md`
+- **Sección:** 9. Reglas técnicas, regla 2
+- **Estado:** Pendiente
+- **Por qué:** la RDA-011 (propuesta) agrega los modales como cuarto comportamiento con script, y la 05-07 agrega dos mejoras decorativas que necesitan script (brillo con el puntero y transición de tarjeta a modal). Si no se aplica, la 05-04 y la 05-07 contradicen una regla técnica de `AGENTS.md`.
+
+**Texto actual** (copiado literalmente de `AGENTS.md`):
+
+```text
+2. Cero JavaScript por defecto. Solo hay tres comportamientos con script: cambio de modo claro/oscuro, botón de copiar y menú de navegación móvil. Se escriben como scripts pequeños sin framework, empaquetados por Astro; ninguno es necesario para leer el contenido.
+```
+
+**Texto propuesto:**
+
+```text
+2. Cero JavaScript por defecto. Solo hay cuatro comportamientos con script: cambio de modo claro/oscuro, botón de copiar, menú de navegación móvil y apertura de modales (`<dialog>` nativo, RDA-011). Además se permiten dos mejoras decorativas que se pueden quitar sin perder nada: el brillo que sigue al cursor y la transición de tarjeta a modal. Se escriben como scripts pequeños sin framework, empaquetados por Astro, con un total de 3 KB gzip como máximo; ninguno es necesario para leer el contenido: sin JavaScript, el contenido de los modales se ve en la página.
+```
+
+## P-011 · El README menciona solo tres scripts
+
+- **Documento:** `README.md`
+- **Sección:** párrafo sobre JavaScript (línea que empieza con «La página funciona completa sin JavaScript»)
+- **Estado:** Pendiente
+- **Por qué:** con la RDA-011, los modales son el cuarto comportamiento con script. Si no se aplica, el README describe un sitio con menos scripts de los que tiene.
+
+**Texto actual** (copiado literalmente de `README.md`):
+
+```text
+La página funciona completa sin JavaScript. Solo tres cosas usan un script pequeño: cambiar entre modo claro y oscuro, copiar un prompt con un botón y abrir el menú en el celular.
+```
+
+**Texto propuesto:**
+
+```text
+La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pequeño: cambiar entre modo claro y oscuro, copiar un prompt con un botón, abrir el menú en el celular y abrir los modales con el detalle de cada bloque. Sin JavaScript, ese detalle se ve directamente en la página.
+

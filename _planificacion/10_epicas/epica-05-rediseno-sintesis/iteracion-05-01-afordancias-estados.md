@@ -1,0 +1,74 @@
+# Iteración 05-01 · Afordancias y estados de interacción
+
+- **Épica:** 05 · Rediseño visual y síntesis del contenido
+- **Estado:** Pendiente
+- **Rama sugerida:** iteracion/05-01-afordancias-estados
+- **Depende de:** cierre de la épica 04
+- **Especificación:** —
+- **RDA relacionadas:** RDA-004, RDA-007
+
+## Objetivo
+
+Que todo lo que se puede pinchar lo parezca antes de pincharlo: cursor de mano, un cambio de color perceptible al pasar el mouse, respuesta al presionar y foco visible, empezando por el botón de modo.
+
+## Punto de partida
+
+Verificar leyendo los archivos antes de escribir:
+
+- `src/styles/global.css` no define `cursor` para `button` ni `summary`; Tailwind v4 deja los botones con `cursor: default`. Solo `Profundiza.astro` usa `cursor-pointer`.
+- `BotonModo.astro`, el botón del menú (`Encabezado.astro`, línea del botón «Menú»), las píldoras de navegación y «Copiar» (`Prompt.astro`) cambian en hover de `superficie-2` (#ECF0FF) a `superficie` (#E4F3FF) o a `superficie` sobre un grupo `superficie-2`: el cambio no se distingue a simple vista.
+- El botón de modo solo dice «Modo oscuro» para lectores de pantalla (`sr-only`) y no tiene texto ni pista visible de su acción.
+- Las tarjetas de la ruta (`BloqueUnidad.astro`) solo subrayan el título en hover.
+
+## Alcance y entregables
+
+- Regla base en `global.css` (capa `base`): `cursor: pointer` para `button:not(:disabled)`, `[role="button"]`, `summary` y `label[for]`; `cursor: not-allowed` para los deshabilitados.
+- Estados de hover y presionado con contraste perceptible frente a su fondo (diferencia de luminancia relativa de al menos 1,3:1 entre reposo y hover, medida con los HEX de los tokens), definidos como tokens nuevos derivados de la paleta: `--color-hover-suave` y `--color-presionado` en claro y oscuro.
+- Botón de modo: etiqueta accesible que dice la acción («Cambiar a modo oscuro» / «Cambiar a modo claro»), sincronizada con el modo; indicación visible al pasar el mouse o enfocar (etiqueta flotante con `title` no basta: se usa un texto visible en un globo CSS posicionado, sin JavaScript nuevo); anillo de borde `primario` en hover; ícono que gira 20° en hover (sin movimiento con `prefers-reduced-motion`).
+- Píldoras de navegación: hover con fondo `superficie` sobre un grupo cuyo fondo pasa a ser `fondo` con borde de 1 px `linea`, o el contraste que dé el token nuevo; la píldora activa conserva `primario`.
+- «Copiar», «Descargar» y el botón secundario: hover que rellena con `primario` y texto `sobre-primario` (mismo patrón que el botón principal), y estado presionado con `scale(0.97)`.
+- Tarjetas de la ruta: hover que sube la tarjeta 4 px (`translate`) y subraya el título; la sombra queda para la 05-07.
+
+## Decisiones del desarrollador
+
+- 2026-11-18: el botón de modo debe sentirse como botón al pasar el mouse, sin necesidad de pincharlo (pedido del desarrollador al crear la épica).
+
+## Tareas
+
+1. Medir y anotar en la bitácora la diferencia de luminancia actual entre reposo y hover de cada control (línea base).
+2. Agregar los tokens `--color-hover-suave` y `--color-presionado` (claro y oscuro) en `@theme` y bajo `[data-modo="oscuro"]`, derivados de la paleta, y la regla base de `cursor`.
+3. Rehacer los estados de `BotonModo.astro`: etiqueta accesible sincronizada con el modo desde `src/scripts/modo.ts`, globo de texto visible en hover y foco, anillo y giro del ícono.
+4. Ajustar los estados de las píldoras y del botón «Menú» en `Encabezado.astro`.
+5. Ajustar «Copiar» (`Prompt.astro`), «Descargar» (`TarjetaDescarga.astro`) y el botón principal de la portada para que compartan los mismos estados de hover y presionado.
+6. Agregar el desplazamiento en hover de las tarjetas de la ruta (`BloqueUnidad.astro`).
+7. Ejecutar `pnpm build`, `pnpm astro check` y las regresiones; revisar con teclado y mouse en 360 px y escritorio, en ambos modos.
+8. Escribir la bitácora y actualizar el registro.
+
+## Criterios de aceptación
+
+- [ ] En `pnpm preview`, `getComputedStyle(el).cursor === "pointer"` para el botón de modo, «Menú», cada «Copiar», cada «Descargar», cada `<summary>` y cada tarjeta de la ruta (fragmento de consola anotado en la bitácora).
+- [ ] La diferencia de luminancia entre reposo y hover es de al menos 1,3:1 en el botón de modo, «Menú», las píldoras, «Copiar» y «Descargar», en ambos modos (tabla en la bitácora con los HEX y el cálculo).
+- [ ] El botón de modo muestra en hover y en foco un texto visible con su acción, y su nombre accesible dice «Cambiar a modo oscuro» en claro y «Cambiar a modo claro» en oscuro (árbol de accesibilidad de DevTools).
+- [ ] Con `prefers-reduced-motion: reduce` emulado, no hay giro, desplazamiento ni escala.
+- [ ] Contraste AA de todos los textos en sus estados de hover (tabla en la bitácora).
+- [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; JavaScript propio sin aumento mayor a 150 B gzip; 1 `h1`; navegación con teclado sin cambios.
+
+## Riesgos
+
+- Que el globo de texto del botón de modo tape la navegación en pantallas medianas: se posiciona debajo del botón y se prueba en 1024 px.
+- Que el giro del ícono choque con la transición circular del cambio de modo (01-05): el giro se quita al hacer clic.
+
+## Fuera de alcance
+
+- Sombras y brillo de las tarjetas (05-07).
+- Cambios de estructura de la portada o de la unidad (05-05 y 05-06).
+
+## Datos requeridos
+
+### Del cliente
+
+- Ninguno.
+
+### Del desarrollador
+
+- Ninguno. Si el texto visible del botón de modo debe ser otro que «Cambiar a modo oscuro» / «Cambiar a modo claro», se acuerda antes de empezar.

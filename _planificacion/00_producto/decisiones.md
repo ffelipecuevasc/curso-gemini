@@ -14,6 +14,8 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 | RDA-008 | Avance de cada unidad en cuatro tramos iguales | Aceptada |
 | RDA-009 | Un archivo `.md` por bloque, en su propia colección | Aceptada |
 | RDA-010 | Formato y peso de las descargas medidos del archivo al compilar | Aceptada |
+| RDA-011 | Modales sobre `<dialog>` nativo con script mínimo y respaldo sin JavaScript | Propuesta |
+| RDA-012 | Síntesis por bloque y por unidad en el modelo de contenido, con límites de palabras | Propuesta |
 
 ---
 
@@ -138,3 +140,28 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 **Alternativas consideradas:** mantener `formato` y `pesoKB` escritos a mano (se desactualizan y no detectan un archivo faltante); agregar `@types/node` (una dependencia para tres funciones); medir en el navegador con una petición `HEAD` (agrega JavaScript y no falla al compilar).
 **Consecuencias:** cambiar un archivo de descarga actualiza su peso en el siguiente build, sin tocar el contenido. Una extensión nueva se agrega a propósito al mapa. Como Astro copia `public/` a `dist/` sin cambios, el peso mostrado es el del archivo publicado. Si el proyecto llega a instalar `@types/node`, `node-minimo.d.ts` se borra.
 **Ratificación 2026-11-17:** el desarrollador ratificó `src/lib/node-minimo.d.ts` (tipos mínimos de Node sin `@types/node`).
+
+---
+
+## RDA-011 · Modales sobre `<dialog>` nativo con script mínimo y respaldo sin JavaScript
+
+- **Fecha:** 2026-11-18
+- **Estado:** Propuesta
+
+**Contexto:** la épica 05 necesita que cada unidad quepa en una pantalla de escritorio, así que el detalle de los bloques, los prompts, los recursos y las descargas tienen que mostrarse bajo demanda. `AGENTS.md` (regla técnica 2) permite solo tres comportamientos con script, y la RDA-007 exige que el sitio se lea sin JavaScript. El desarrollador delegó la elección técnica en la opción más profesional para el stack (2026-11-18).
+**Decisión:** un componente `Modal.astro` sobre `<dialog>` nativo, abierto con `showModal()` por un único oyente delegado en `src/scripts/modal.ts` (objetivo: menos de 1 KB gzip). El navegador aporta el foco atrapado, el fondo inerte y el cierre con Esc; el script agrega el cierre al hacer clic en el fondo donde no exista `closedby="any"` y la devolución del foco al botón que abrió. El bloqueo del desplazamiento de la página es CSS (`html:has(dialog[open])`). Los botones que abren se muestran solo con JavaScript (variante `js:`); sin JavaScript, o si el navegador no tiene `showModal`, el contenido de cada `<dialog>` se muestra en su lugar como un bloque normal. El contenido existe una sola vez en el HTML. Pasa a ser el cuarto comportamiento con script del sitio, y los efectos de la 05-07 (brillo con el puntero y transición de tarjeta a modal) se suman como mejoras decorativas, prescindibles y sin contenido (propuesta P-010).
+**Alternativas consideradas:** invocaciones declarativas (`<button commandfor command="show-modal">`), que abren sin JavaScript pero tienen soporte reciente en navegadores corporativos; se pueden agregar después sin cambiar el marcado. El atributo `popover`, que no es modal (no deja el fondo inerte ni atrapa el foco). Una librería de modales, que agrega una dependencia para algo que el navegador ya resuelve. Mantener todo en la página con `<details>`, que no resuelve el alto de la unidad.
+**Consecuencias:** el sitio pasa a tener cuatro comportamientos con script y un presupuesto total de 3 KB gzip para la épica 05. Ctrl+F no encuentra el texto de un modal cerrado; se compensa con la síntesis visible en las tarjetas. Hay que vigilar que todo `id` de modal sea único y que la jerarquía de encabezados sea correcta con y sin JavaScript.
+
+---
+
+## RDA-012 · Síntesis por bloque y por unidad en el modelo de contenido, con límites de palabras
+
+- **Fecha:** 2026-11-18
+- **Estado:** Propuesta
+
+**Contexto:** las 4 unidades suman unas 8.800 palabras en la página (diagnóstico de la épica 05), y la RDA-009 guarda solo el texto completo de cada bloque. Para que una unidad quepa en una pantalla, cada bloque necesita una versión corta, y esa versión no puede crecer sin control con el tiempo.
+**Decisión:** se agregan al esquema de `bloques` el objeto `sintesis` (`resumen` de hasta 25 palabras, que se ve en el modal; `haras`, verbo + producto, de hasta 12 palabras; y `claves`, 1 o 2 frases de hasta 10 palabras, que se ven en la tarjeta), al esquema de prompt el campo `descripcion` (hasta 30 palabras) y al de `unidades` el campo `objetivoBreve` (hasta 20 palabras). Un validador `maxPalabras(n)` hace fallar `pnpm build` con un mensaje en español si se pasa un límite. Los campos son opcionales durante la 05-02 y obligatorios desde la 05-03. El cuerpo Markdown de cada bloque se conserva como «detalle» y se muestra en su modal; el material de conducción de la clase se retira de él con la aprobación del desarrollador. Cada síntesis la redacta el agente solo con información del propio bloque o de la ficha, y se publica solo después de que el desarrollador la aprueba.
+**Alternativas consideradas:** recortar el texto de raíz (se pierde la teoría que los participantes pueden necesitar); generar el resumen automáticamente al compilar con las primeras frases (los primeros párrafos de los bloques son de contexto, no de acción); límites por caracteres (las palabras se entienden mejor al redactar y al revisar).
+**Consecuencias:** el texto visible por unidad queda acotado por esquema, y cada bloque nuevo necesita su síntesis para compilar. Se duplica en parte el contenido (síntesis y detalle), así que un cambio en el detalle obliga a revisar su síntesis; la bitácora de cada cambio de contenido debe decir si la revisó.
+

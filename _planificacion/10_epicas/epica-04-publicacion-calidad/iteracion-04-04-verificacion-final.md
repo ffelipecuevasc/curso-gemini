@@ -35,13 +35,13 @@ Comprobar con Lighthouse móvil, en local y en la URL publicada, que el sitio cu
 
 ## Tareas del desarrollador
 
-1. Publicar la versión con los ajustes y entregar la URL publicada.
+1. Hacer merge a `main` de la versión con los ajustes (Workers Builds publica) y confirmar el despliegue en el panel.
 2. Entregar las fechas de las clases, para fijar el hito de publicación.
 
 ## Criterios de aceptación
 
 - [ ] Lighthouse móvil en local: Rendimiento ≥ 95, Accesibilidad 100, Buenas prácticas 100 y SEO 100; LCP < 2,5 s y CLS < 0,1 (mediana de 3 corridas).
-- [ ] Lighthouse móvil sobre la URL publicada con las mismas metas.
+- [ ] Lighthouse móvil sobre la URL publicada (desplegada desde `main` por Workers Builds) con las mismas metas.
 - [ ] Peso de `dist/index.html` y su gzip medidos y comparados con 249 616 B y 50 905 B, con la decisión anotada en la bitácora.
 - [ ] Salto de `h2` a `h4` evaluado con el resultado de Accesibilidad, con la decisión anotada.
 - [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 24 de 24 prompts; 1 `h1`; 360 px y ambos modos.
@@ -66,5 +66,5 @@ Comprobar con Lighthouse móvil, en local y en la URL publicada, que el sitio cu
 
 ### Del desarrollador
 
-- URL publicada.
+- Confirmación del despliegue desde `main` de la versión medida.
 - Aprobación de los ajustes de peso o jerarquía, si la medición los exige.

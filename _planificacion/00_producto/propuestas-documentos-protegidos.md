@@ -21,7 +21,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-005 | `DESIGN.md` · 5. Componentes (filas Portada y Redes) y 6. Íconos y logotipos | Planificación de la 02-01 | 2026-11-17 | Aplicada |
 | P-006 | `DESIGN.md` · 4. Espaciado, retícula y forma (Retícula) | Revisión de la 02-03 | 2026-11-17 | Aplicada|
 | P-007 | `AGENTS.md` · 8. Reglas de contenido, regla 5 | Auditoría previa a la 03-01 | 2026-11-17 | Aplicada |
-| P-008 | `AGENTS.md` · 8. Reglas de contenido, regla 3 (frente a 1. Contexto, «Cliente») | Iteración 04-01 | 2026-11-17 | Pendiente |
+| P-008 | `AGENTS.md` · 8. Reglas de contenido, regla 3 (frente a 1. Contexto, «Cliente») | Iteración 04-01 | 2026-11-17 | Aplicada |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -173,7 +173,7 @@ En `.claude/hooks/documentos-permitidos.md`, sección «_planificacion/», agreg
 
 - **Documento:** `AGENTS.md`
 - **Sección:** 8. Reglas de contenido, regla 3 (en relación con 1. Contexto en 30 segundos, «Cliente»)
-- **Estado:** Pendiente
+- **Estado:** aplicada por el desarrollador en el commit 6f5ff74, con el «Texto propuesto» tal cual (comprobado en `AGENTS.md` el 2026-11-18).
 - **Por qué:** la sección 1 define como cliente solo a Capacita Tu Futuro, «para trabajadores de GTD Telsur», pero la regla 3 llama «datos del cliente» a los de Capacita Tu Futuro o GTD. Un agente puede dudar si un dato de GTD (por ejemplo, su kit de marca) se marca como `PENDIENTE_CLIENTE` y a quién se le pide. Además, la regla 3 dice que la guardia revisa «el HTML generado», y desde la 04-01 revisa todos los archivos de texto de `dist/`, incluidas las descargas `.md` y `.csv`. Si no se aplica, las dos secciones siguen diciendo cosas distintas y la regla describe una guardia más estrecha que la real.
 
 **Texto actual** (copiado literalmente de `AGENTS.md`):

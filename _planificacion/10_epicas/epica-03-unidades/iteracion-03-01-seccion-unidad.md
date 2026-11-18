@@ -1,7 +1,7 @@
 # Iteración 03-01 · Sección de unidad y texto de los bloques
 
 - **Épica:** 03 · Unidades del curso
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/03-01-seccion-unidad
 - **Depende de:** 02-06
 - **Especificación:** —
@@ -57,7 +57,7 @@ Mostrar las 4 secciones de unidad con su ficha, la tabla de bloques y el texto �
 - [x] Los 26 bloques aparecen en su unidad, en orden, con su texto: para cada bloque, una frase de su cuerpo está en `dist/index.html` (comando temporal: 26 de 26).
 - [x] Cada tabla de bloques suma `duracionMin` (120) con la holgura; el build sigue fallando si no suma (prueba reversible).
 - [x] Los `h2` de `#unidad-1` a `#unidad-4` salen de `src/content/unidades/*.yaml` (`«Unidad N · » + titulo`), no de texto escrito a mano en `index.astro` (comando temporal: 4 de 4; `index.astro` sin títulos de unidad).
-- [ ] Sin desborde horizontal en 360 px (`document.documentElement.scrollWidth === 360`), en ambos modos; las tablas se desplazan con el teclado.
+- [x] Sin desborde horizontal en 360 px (`document.documentElement.scrollWidth === 360`), en ambos modos; las tablas se desplazan con el teclado. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
 - [x] Regresiones en verde: `pnpm build` sin advertencias nuevas (solo la de `descargas.yaml`) y `pnpm astro check` sin errores; 3 scripts y 0 B de JS nuevo; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; la prueba reversible de un bloque con unidad inexistente sigue fallando el build.
 
 Evidencia (detalle en [bitacora-03-01](bitacoras/bitacora-03-01.md)):

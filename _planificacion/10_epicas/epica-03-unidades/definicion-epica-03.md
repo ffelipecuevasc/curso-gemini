@@ -18,8 +18,8 @@
 
 | Iteración | Nombre | Estado |
 | :-------- | :----- | :----- |
-| 03-01 | [Sección de unidad y texto de los bloques](iteracion-03-01-seccion-unidad.md) | En revisión |
-| 03-02 | [Prompts con «Copiar» y recursos externos](iteracion-03-02-prompts-recursos.md) | Pendiente |
+| 03-01 | [Sección de unidad y texto de los bloques](iteracion-03-01-seccion-unidad.md) | Terminada |
+| 03-02 | [Prompts con «Copiar» y recursos externos](iteracion-03-02-prompts-recursos.md) | En revisión |
 | 03-03 | [Descargas y «Profundiza»](iteracion-03-03-descargas-profundiza.md) | Pendiente |
 | 03-04 | [Pendientes de la Unidad 1 y la Unidad 2](iteracion-03-04-pendientes-u1-u2.md) | Pendiente |
 | 03-05 | [Pendientes de la Unidad 3 y la Unidad 4](iteracion-03-05-pendientes-u3-u4.md) | Pendiente |

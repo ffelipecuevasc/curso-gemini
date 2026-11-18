@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-17
-- **Iteración activa:** 03-01 (en revisión)
+- **Iteración activa:** 03-02 (en revisión)
 - **Próximo hito:** épica 03 (las 4 unidades presentadas en la página); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
@@ -18,8 +18,8 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
-| 03-01 | Sección de unidad y texto de los bloques | 03 | En revisión | 02-06 | [bitacora-03-01](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-01.md) |
-| 03-02 | Prompts con «Copiar» y recursos externos | 03 | Pendiente | 03-01 | — |
+| 03-01 | Sección de unidad y texto de los bloques | 03 | Terminada | 02-06 | [bitacora-03-01](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-01.md) |
+| 03-02 | Prompts con «Copiar» y recursos externos | 03 | En revisión | 03-01 | [bitacora-03-02](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-02.md) |
 | 03-03 | Descargas y «Profundiza» | 03 | Pendiente | 03-02 | — |
 | 03-04 | Pendientes de la Unidad 1 y la Unidad 2 | 03 | Pendiente | 03-03 | — |
 | 03-05 | Pendientes de la Unidad 3 y la Unidad 4 | 03 | Pendiente | 03-04 | — |
@@ -39,8 +39,8 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
-| 11 | Sección de unidad: ficha, tabla de bloques y texto «Para la clase» de las 4 unidades con un solo componente | Funcionalidad | — | 03-01 | En revisión |
-| 12 | Prompts con «Copiar» (IDs con unidad y bloque) y recursos externos de cada unidad | Funcionalidad | — | 03-02 | Pendiente |
+| 11 | Sección de unidad: ficha, tabla de bloques y texto «Para la clase» de las 4 unidades con un solo componente | Funcionalidad | — | 03-01 | Terminada |
+| 12 | Prompts con «Copiar» (IDs con unidad y bloque) y recursos externos de cada unidad | Funcionalidad | — | 03-02 | En revisión |
 | 13 | Descargas con formato y peso medidos del archivo (RDA-010) y «Profundiza» plegable | Funcionalidad | — | 03-03 | Pendiente |
 | 14 | Pendientes de la Unidad 1 y la Unidad 2 (descargas, videos, «Profundiza») | Funcionalidad | — | 03-04 | Pendiente |
 | 15 | Pendientes de la Unidad 3 y la Unidad 4 (descargas, videos, «Profundiza») | Funcionalidad | — | 03-05 | Pendiente |
@@ -126,3 +126,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Iteración 02-06 en revisión: bloques de U3 y U4 con 16 prompts (24 de 24 iguales en las 4 unidades) y 14 recursos; hash idéntico a HEAD; cierre de la épica 02 y propuesta de la 03 por aprobar. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-06.md) · [Cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |
 | 2026-11-17 | Iteración 02-06 terminada y épica 02 cerrada (aprobada por el desarrollador); sus filas pasan a `registro-archivo.md`. Épica 03: 5 iteraciones generadas (03-01 a 03-05); backlog renumerado (los antiguos 11, 12, 15, 16 y 17 pasan a 11 a 15; Cloudflare y la verificación final, a 16 a 18). [Cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |
 | 2026-11-17 | Iteración 03-01 en revisión: las 4 unidades muestran su ficha, la tabla de bloques y el texto de los 26 bloques con `render()`; h2 desde las fichas (4 de 4); 0 B de JS nuevo; se corrigen criterios de la 03-01, la línea base de la 03-02 y la 03-05; P-007 pendiente; falta revisión en navegador. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-01.md) |
+| 2026-11-17 | Iteración 03-01 terminada: el desarrollador revisó en el navegador 360 px y el teclado en las tablas, sin observaciones. |
+| 2026-11-17 | Iteración 03-02 en revisión: 24 prompts con «Copiar» (24 de 24 idénticos, IDs únicos), marcador de `identidad-visual-gtd` en U2 · 3 y 41 recursos por unidad; JS +198 B gzip (4 etiquetas); falta revisión en navegador. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-02.md) |

@@ -1,0 +1,77 @@
+---
+// Bloque de prompt (DESIGN.md, sección 5): título, texto literal en IBM Plex
+// Mono sobre superficie-2 y botón «Copiar» arriba a la derecha. Sin JavaScript
+// el botón no aparece (variante js:) y el texto sigue seleccionable. El script
+// copia el textContent del <code>, así que se copia exactamente lo que se ve.
+interface Props {
+  /** ID único en la página: prompt-<unidad>-<bloque>-<id>. */
+  id: string;
+  titulo: string;
+  texto: string;
+}
+
+const { id, titulo, texto } = Astro.props;
+---
+
+<figure
+  id={id}
+  aria-labelledby={`${id}-titulo`}
+  class="rounded-bloque rounded-bl-esquina bg-superficie-2 p-4 sm:p-6"
+>
+  <figcaption class="flex items-start justify-between gap-4">
+    <span
+      id={`${id}-titulo`}
+      class="font-display font-semibold wrap-break-word"
+    >
+      {titulo}
+    </span>
+    <button
+      type="button"
+      data-copiar={`${id}-texto`}
+      class="hidden js:inline-flex min-h-11 shrink-0 items-center rounded-pildora border-[1.5px] border-primario px-4 font-medium text-texto transition-colors duration-200 hover:bg-superficie motion-reduce:transition-none"
+    >
+      <span data-etiqueta>Copiar</span>
+      <span class="sr-only">el prompt «{titulo}»</span>
+    </button>
+  </figcaption>
+  <pre class="mt-3 font-codigo text-sm whitespace-pre-wrap wrap-break-word"><code id={`${id}-texto`}>{texto}</code></pre>
+  <p
+    data-aviso
+    aria-live="polite"
+    class="mt-2 min-h-6 text-sm text-texto-2"
+  ></p>
+</figure>
+
+<script>
+  // Tercer comportamiento con script permitido (AGENTS.md, regla técnica 2).
+  for (const boton of document.querySelectorAll<HTMLButtonElement>(
+    "[data-copiar]",
+  )) {
+    const codigo = document.getElementById(boton.dataset.copiar ?? "");
+    const figura = boton.closest("figure");
+    const aviso = figura?.querySelector<HTMLElement>("[data-aviso]");
+    const etiqueta = boton.querySelector<HTMLElement>("[data-etiqueta]");
+    if (!codigo || !aviso || !etiqueta) continue;
+    // Sin la API del portapapeles (contexto no seguro) el botón no sirve.
+    if (!navigator.clipboard) {
+      boton.remove();
+      continue;
+    }
+    let reinicio: ReturnType<typeof setTimeout> | undefined;
+    boton.addEventListener("click", async () => {
+      clearTimeout(reinicio);
+      try {
+        await navigator.clipboard.writeText(codigo.textContent ?? "");
+        etiqueta.textContent = "Copiado";
+        aviso.textContent = "Copiado";
+        reinicio = setTimeout(() => {
+          etiqueta.textContent = "Copiar";
+          aviso.textContent = "";
+        }, 2000);
+      } catch {
+        // El error queda a la vista hasta el próximo intento.
+        aviso.textContent = "No se pudo copiar; selecciona el texto";
+      }
+    });
+  }
+</script>

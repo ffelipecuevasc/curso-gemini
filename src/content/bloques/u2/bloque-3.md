@@ -30,6 +30,9 @@ prompts:
 
 **Práctica (17 min)**
 1. **Bloque de marca** (se prepara mientras corre Deep Research): un párrafo reutilizable, guardado en el documento de la plantilla de la U1. Ejemplo de estructura:
+
+<div data-prompt="identidad-visual-gtd"></div>
+
 2. **Camino A:** infografía de 5 datos clave del trimestre (dataset), con la paleta indicada en el prompt y sin logo. Revisar las cifras y la ortografía en la imagen.
 3. **Camino B:** la misma infografía en Canvas como página HTML con los HEX y el SVG oficial.
 4. Comparar ambas y quedarse con la que cumple la marca. Normalmente gana B para uso oficial y A para redes o borradores.

@@ -1,12 +1,15 @@
 ---
 // Sección de una unidad (DESIGN.md, sección 5, «Sección de unidad»): encabezado
 // con el bloque de color de la unidad, ficha, tabla de bloques con minutos,
-// el texto «Para la clase» de cada bloque y, al final, «Terminado cuando…».
+// el texto «Para la clase» de cada bloque con sus prompts, los recursos de la
+// unidad y, al final, «Entregable» y «Terminado cuando…».
 // Todo el texto del curso sale de la ficha y de los bloques (RDA-003, RDA-009);
 // aquí solo hay etiquetas de interfaz. Los apartados de la ficha van en h4:
 // los h3 son uno por bloque (decisión del desarrollador, 2026-11-17).
+import { getEntry } from "astro:content";
 import type { UnidadConBloques } from "../lib/unidades";
 import BloqueClase from "./BloqueClase.astro";
+import RecursoExterno from "./RecursoExterno.astro";
 
 interface Props {
   unidad: UnidadConBloques;
@@ -25,7 +28,13 @@ const {
   entregable,
   holguraMin,
   terminadoCuando,
+  recursos: referencias,
 } = unidad.data;
+
+// comprobarReferencias() ya garantiza al compilar que cada recurso existe.
+const recursos = await Promise.all(
+  referencias.map(async (ref) => (await getEntry(ref))!),
+);
 
 // Clases completas por unidad para que Tailwind las detecte (como en
 // BloqueUnidad). La U3 lleva el borde de 1 px que pide DESIGN.md en oscuro.
@@ -122,6 +131,17 @@ const reparto = (b: UnidadConBloques["bloques"][number]) =>
       <BloqueClase bloque={bloque} />
     ))}
   </div>
+
+  {recursos.length > 0 && (
+    <div class="mt-12 max-w-prose border-t border-linea pt-8">
+      <h4 class="font-display text-xl font-semibold">Recursos</h4>
+      <ul class="mt-2 grid gap-1">
+        {recursos.map((recurso) => (
+          <RecursoExterno recurso={recurso} />
+        ))}
+      </ul>
+    </div>
+  )}
 
   <div class="mt-12 grid max-w-prose gap-6 border-t border-linea pt-8">
     <div>

@@ -1,19 +1,38 @@
 ---
 // Un bloque de la clase dentro de su unidad (DESIGN.md, sección 5, «Sección
-// de unidad»): título como h3, minutos y el texto «Para la clase», que es el
-// cuerpo Markdown del archivo del bloque (RDA-009), renderizado con render().
+// de unidad»): título como h3, minutos, el texto «Para la clase» (cuerpo
+// Markdown del bloque, RDA-009) y sus prompts copiables. Un prompt va después
+// del cuerpo, salvo que el cuerpo tenga su marcador data-prompt: entonces va
+// en ese punto (src/lib/marcadores.ts). Sin marcador, el cuerpo se renderiza
+// con render(); con marcador, se parte el HTML que ya renderizó Astro.
 import { render } from "astro:content";
 import type { Bloque } from "../lib/unidades";
+import { partirEnMarcadores } from "../lib/marcadores";
+import Prompt from "./Prompt.astro";
 
 interface Props {
   bloque: Bloque;
 }
 
 const { bloque } = Astro.props;
-const { numero, titulo, minutos } = bloque.data;
-const { Content } = await render(bloque);
+const { numero, titulo, minutos, prompts } = bloque.data;
+const base = bloque.id.replace("/", "-");
+const idTitulo = `bloque-${base}`;
+const idPrompt = (id: string) => `prompt-${base}-${id}`;
 
-const idTitulo = `bloque-${bloque.id.replace("/", "-")}`;
+const html = bloque.rendered?.html ?? "";
+const tramos = partirEnMarcadores(
+  html,
+  prompts.map((p) => p.id),
+  bloque.id,
+);
+const conMarcador = tramos.length > 1;
+const enLinea = new Set(
+  tramos.flatMap((t) => (t.tipo === "prompt" ? [t.id] : [])),
+);
+const porId = new Map(prompts.map((p) => [p.id, p]));
+const alFinal = prompts.filter((p) => !enLinea.has(p.id));
+const { Content } = await render(bloque);
 ---
 
 <article aria-labelledby={idTitulo} class="border-t border-linea pt-8">
@@ -23,6 +42,21 @@ const idTitulo = `bloque-${bloque.id.replace("/", "-")}`;
   </h3>
   <p class="mt-1 font-codigo text-sm text-texto-2">{minutos} min</p>
   <div class="contenido-bloque mt-4">
-    <Content />
+    {conMarcador ? (
+      tramos.map((t) => {
+        if (t.tipo === "html") return <Fragment set:html={t.html} />;
+        const p = porId.get(t.id)!;
+        return <Prompt id={idPrompt(p.id)} titulo={p.titulo} texto={p.texto} />;
+      })
+    ) : (
+      <Content />
+    )}
   </div>
+  {alFinal.length > 0 && (
+    <div class="mt-6 grid gap-4">
+      {alFinal.map((p) => (
+        <Prompt id={idPrompt(p.id)} titulo={p.titulo} texto={p.texto} />
+      ))}
+    </div>
+  )}
 </article>

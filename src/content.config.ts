@@ -128,6 +128,9 @@ const unidad = z.strictObject({
   terminadoCuando: z.array(textoNoVacio).min(1),
   recursos: z.array(reference("recursos")).default([]),
   descargas: z.array(reference("descargas")).default([]),
+  // Indicación para los participantes antes de las tarjetas de descarga.
+  // Lo que va entre comillas invertidas se muestra como código.
+  notaDescargas: textoNoVacio.optional(),
 });
 
 const curso = z.strictObject({

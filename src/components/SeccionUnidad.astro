@@ -31,7 +31,11 @@ const {
   terminadoCuando,
   recursos: referencias,
   descargas: referenciasDescargas,
+  notaDescargas,
 } = unidad.data;
+
+// Tramos de la nota: los impares iban entre comillas invertidas (código).
+const tramosNota = notaDescargas?.split("`") ?? [];
 
 // comprobarReferencias() ya garantiza al compilar que cada recurso existe.
 const recursos = await Promise.all(
@@ -94,6 +98,17 @@ const reparto = (b: UnidadConBloques["bloques"][number]) =>
   {descargas.length > 0 && (
     <div class="mt-10 max-w-prose">
       <h4 class="font-display text-xl font-semibold">Descargas</h4>
+      {tramosNota.length > 0 && (
+        <p class="mt-2">
+          {tramosNota.map((tramo, i) =>
+            i % 2 === 1 ? (
+              <code class="font-codigo text-sm">{tramo}</code>
+            ) : (
+              tramo
+            ),
+          )}
+        </p>
+      )}
       <ul class="mt-3 grid gap-3">
         {descargas.map((descarga) => (
           <TarjetaDescarga descarga={descarga} />

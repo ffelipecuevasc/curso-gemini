@@ -11,7 +11,13 @@ interface Props {
 
 const { titulo, archivo } = Astro.props.descarga.data;
 const { formato, peso } = datosDescarga(archivo);
-const nombreArchivo = archivo.split("/").pop();
+// Se muestra la ruta desde la carpeta del archivo (por ejemplo
+// «analista-planillas/SKILL.md») cuando vive en una subcarpeta de
+// /descargas/, para distinguir archivos con el mismo nombre. El nombre que
+// guarda el navegador no cambia.
+const partes = archivo.split("/");
+const nombreArchivo =
+  partes.length > 3 ? partes.slice(-2).join("/") : partes.at(-1);
 ---
 
 <li class="flex flex-col gap-3 rounded-bloque rounded-bl-esquina bg-superficie p-4 sm:flex-row sm:items-center sm:justify-between sm:p-6">

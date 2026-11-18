@@ -31,3 +31,5 @@ descargas:
   - plantilla-resumen-ejecutivo
   - plantilla-mi-semana-laboral
   - plantilla-en-blanco
+# Texto aprobado por el desarrollador (corrección 15.1, 2026-11-17).
+notaDescargas: "Antes de descargar: las 4 plantillas se llaman `SKILL.md`. Crea en tu computador una carpeta con el nombre de cada plantilla (por ejemplo, `analista-planillas`) y guarda ahí su `SKILL.md`. Así no se mezclan y sabes cuál vas a subir a Gemini."

@@ -39,7 +39,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
-| 15.1 | Plantillas con el mismo nombre al descargar: ruta visible en la tarjeta (por ejemplo «analista-planillas/SKILL.md») y texto en la ficha de la U4 para guardar cada plantilla en su carpeta, con el texto por aprobar · Rama `correccion/plantillas-descargas`, antes de la 04-01 | Corrección | — | — | Pendiente |
+| 15.1 | Plantillas con el mismo nombre al descargar: ruta visible en la tarjeta (por ejemplo «analista-planillas/SKILL.md») y texto en la ficha de la U4 para guardar cada plantilla en su carpeta (texto aprobado por el desarrollador, campo opcional `notaDescargas` de la ficha) · Rama `correccion/plantillas-descargas`, antes de la 04-01 | Corrección | — | — | En revisión |
 | 16 | Guardia de marcadores `PENDIENTE_` y `VERIFICAR` en `pnpm build` y limpieza de los SVG sin referencia en `dist/_astro/` | Técnico | — | 04-01 | Pendiente |
 | 16 | Configuración de Cloudflare Workers (`wrangler.jsonc`) y primera publicación por el desarrollador | Técnico | — | 04-02 | Pendiente |
 | 17 | Cloudflare Web Analytics, metadatos para compartir, ícono, `robots.txt`, página 404 y licencia del contenido | Funcionalidad | — | 04-03 | Pendiente |
@@ -132,3 +132,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | P-007 aplicada por el desarrollador en `AGENTS.md` (commit bc70739), ampliada a los `SKILL.md` de `plantillas-alumnos/`; sale de «Decisiones por tomar». |
 | 2026-11-17 | Iteración 03-05 en revisión: «Profundiza» en 7 bloques de U3 y U4 (16 en la página), 1 video de la U3 y las 4 plantillas `SKILL.md` de la U4 con la regex de la P-007; cierre de la épica 03 y propuesta de la 04 por aprobar. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-05.md) · [Cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
 | 2026-11-17 | Iteración 03-05 terminada y épica 03 cerrada (prueba en navegador dicha por el desarrollador); sus filas pasan a `registro-archivo.md`. Épica 04: 4 iteraciones generadas (04-01 a 04-04) y corrección 15.1 registrada. [Cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
+| 2026-11-17 | Corrección 15.1 en revisión: las 4 plantillas muestran su ruta («analista-planillas/SKILL.md» y otras 3; las 2 tarjetas del dataset no cambian; pesos = `statSync`) y la U4 lleva la nota aprobada (campo `notaDescargas`, contraste 18,90:1 en ambos modos); build con 0 WARN, check sin errores, 24 de 24 prompts, 4 scripts, JS idéntico, 1 h1, 0 marcadores; falta revisión en navegador. |

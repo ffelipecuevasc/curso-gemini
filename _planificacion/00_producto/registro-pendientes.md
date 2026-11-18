@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-18
-- **Iteración activa:** 04-04 (en revisión, esperando la decisión de los ajustes de Lighthouse; después viene el cierre de la épica 04)
+- **Iteración activa:** 04-04 (en revisión: títulos en `h3` aplicados y `content-visibility` revertido; falta medir la URL publicada después del merge y luego cerrar la épica 04)
 - **Próximo hito:** épica 04: sitio publicado en `workers.dev`, con Web Analytics y las metas de Lighthouse, antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
@@ -43,7 +43,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | 16 | Guardia de marcadores `PENDIENTE_` y `VERIFICAR` en `pnpm build` (todos los archivos de texto de `dist/`) y limpieza de los SVG sin referencia en `dist/_astro/` | Técnico | — | 04-01 | Terminada |
 | 16.1 | Configuración de Cloudflare Workers (`wrangler.jsonc` del Worker `curso-gemini`, `pnpm dlx wrangler@4.164.0`) y publicación continua desde `main` con Workers Builds, conectada por el desarrollador después del merge | Técnico | — | 04-02 | Terminada |
 | 17 | Cloudflare Web Analytics, ícono, `robots.txt`, página 404 y licencia del contenido (sin canónica ni Open Graph) · Ícono: glifo `school-outline` de Material Symbols Light sobre `#007EA7` | Funcionalidad | — | 04-03 | Terminada |
-| 18 | Verificación final de rendimiento y accesibilidad en local y en la URL publicada · Medido: publicada 94/98/100/100; ajustes propuestos (niveles de títulos y `content-visibility`) a la espera de decisión | Técnico | — | 04-04 | En revisión |
+| 18 | Verificación final de rendimiento y accesibilidad en local y en la URL publicada · Antes de los ajustes, la publicada dio 94/98/100/100. Títulos en `h3`: local 98/100/96/100. `content-visibility` revertido, porque empeoró la medición (93/92). Falta la medición publicada después del merge | Técnico | — | 04-04 | En revisión |
 
 ## 4. Datos pendientes del cliente
 
@@ -67,7 +67,7 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Publicados el dataset CSV (03-03) y su diccionario editado para participantes (03-04); de la U1 y la U2, el resto (`plantillas-alumnos.zip`, informe de Deep Research de respaldo) queda como ausencia acordada en la 03-04; en la 03-05 se publican las 4 plantillas de `plantillas-alumnos/` (U4) y quedan como ausencia acordada `optimizador-prompts/SKILL.md`, `gtd-visual.zip` y el paquete de fuentes de la U3 | — | Desarrollador |
 | Imagen de la insignia oficial de Gemini Certified Educator para la sección del instructor · La 02-04 se construyó sin ella; el campo `insignia` del esquema está listo para recibirla | 02-04 | Desarrollador |
 | Nombres completos de las certificaciones AWS y Anthropic, si se listan · La 02-04 publica solo el texto del documento, sin detallarlas | 02-04 | Desarrollador |
-| Ajustes de la 04-04: (1) pasar de `h4` a `h3` los 6 subtítulos de `SeccionUnidad.astro` (Accesibilidad 98 por `heading-order`) y (2) `content-visibility: auto` en las secciones de unidad (Rendimiento publicado 94, TBT 257 ms por estilo y layout) | 04-04 | Desarrollador |
+| Rendimiento publicado bajo 95, si se repite en la medición posterior al merge: `content-visibility` se descartó por la medición; hay que elegir otra opción (por ejemplo, plegar o dividir el contenido de las unidades) | 04-04 | Desarrollador |
 | Cierre de la épica 04 (prompt aparte, después de la 04-04) | — | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U1 nombrados pero no escritos: el «Avanzado» completo de la escalera (bloque 4) y la ronda 3 del laboratorio (bloque 5) | 02-05 | Desarrollador |
@@ -142,3 +142,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-18 | Iteración 04-03: ícono del sitio con el glifo `school-outline` de Material Symbols Light (Apache-2.0) en blanco sobre `#007EA7`, enlazado 1 vez en `index.html` y `404.html`; sale la decisión del ícono; sigue en revisión. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-03.md) |
 | 2026-11-18 | Iteración 04-03 terminada: el desarrollador revisó 360 px y ambos modos, la 404 en producción y las visitas en Web Analytics. |
 | 2026-11-18 | Iteración 04-04 en revisión: Lighthouse 13.6.0 móvil (mediana de 3): local 98/98/96/100, sin Web Analytics 96/98/100/100, publicada 94/98/100/100; 2 ajustes propuestos a la espera de decisión; faltan el cierre de la épica 04 y las fechas de las clases del cliente. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-04.md) |
+| 2026-11-18 | Iteración 04-04: ajustes aprobados por el desarrollador. Títulos de las fichas en `h3`: 0 saltos y Accesibilidad local 100 (98/100/96/100). `content-visibility` aplicado, medido (93/92/96/100, TBT 302 ms) y revertido con `cmp`. Sigue en revisión hasta medir la URL publicada. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-04.md) |

@@ -85,11 +85,11 @@ const reparto = (b: UnidadConBloques["bloques"][number]) =>
 
   <div class="mt-10 grid max-w-prose gap-6">
     <div>
-      <h4 class="font-display text-xl font-semibold">Objetivo</h4>
+      <h3 class="font-display text-xl font-semibold">Objetivo</h3>
       <p class="mt-2">{objetivo}</p>
     </div>
     <div>
-      <h4 class="font-display text-xl font-semibold">Mini-proyecto</h4>
+      <h3 class="font-display text-xl font-semibold">Mini-proyecto</h3>
       <p class="mt-2 font-medium">{miniProyecto.titulo}</p>
       <p class="mt-1">{miniProyecto.descripcion}</p>
     </div>
@@ -97,7 +97,7 @@ const reparto = (b: UnidadConBloques["bloques"][number]) =>
 
   {descargas.length > 0 && (
     <div class="mt-10 max-w-prose">
-      <h4 class="font-display text-xl font-semibold">Descargas</h4>
+      <h3 class="font-display text-xl font-semibold">Descargas</h3>
       {tramosNota.length > 0 && (
         <p class="mt-2">
           {tramosNota.map((tramo, i) =>
@@ -165,7 +165,7 @@ const reparto = (b: UnidadConBloques["bloques"][number]) =>
 
   {recursos.length > 0 && (
     <div class="mt-12 max-w-prose border-t border-linea pt-8">
-      <h4 class="font-display text-xl font-semibold">Recursos</h4>
+      <h3 class="font-display text-xl font-semibold">Recursos</h3>
       <ul class="mt-2 grid gap-1">
         {recursos.map((recurso) => (
           <RecursoExterno recurso={recurso} />
@@ -176,11 +176,11 @@ const reparto = (b: UnidadConBloques["bloques"][number]) =>
 
   <div class="mt-12 grid max-w-prose gap-6 border-t border-linea pt-8">
     <div>
-      <h4 class="font-display text-xl font-semibold">Entregable</h4>
+      <h3 class="font-display text-xl font-semibold">Entregable</h3>
       <p class="mt-2">{entregable}</p>
     </div>
     <div>
-      <h4 class="font-display text-xl font-semibold">Terminado cuando…</h4>
+      <h3 class="font-display text-xl font-semibold">Terminado cuando…</h3>
       <ul class="mt-2 list-disc space-y-2 pl-6">
         {terminadoCuando.map((linea) => (
           <li>{linea}</li>

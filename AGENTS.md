@@ -94,7 +94,7 @@ En Claude Code, `.claude/settings.json` y sus hooks aplican estos límites; `.cl
 2. **No inventes datos.** El contenido del curso (bloques, minutos, prompts, rúbricas, entregables, enlaces oficiales) viene solo del documento de unidades del curso que entrega el desarrollador; la trayectoria del instructor, solo de ese mismo documento. Ninguna cifra, certificación, fecha ni enlace se completa por cuenta propia.
 3. Si falta un dato, usa un marcador explícito: `PENDIENTE_CLIENTE` para datos del cliente (Capacita Tu Futuro o GTD) y `PENDIENTE_DESARROLLADOR` para decisiones técnicas, de diseño o de contenido del curso. Regístralo en `registro-pendientes.md`. Nunca publiques un dato de relleno que parezca real. Antes de publicar, ningún marcador puede quedar visible en el sitio: `pnpm build` debe fallar si encuentra uno en el HTML generado.
 4. **No inventes resultados.** Una prueba que no ejecutaste, una medición que no hiciste o un estado que no comprobaste no se escriben como hechos.
-5. Nombres de archivo y carpeta en ASCII: minúsculas, guiones, sin tildes ni ñ.
+5. Nombres de archivo y carpeta en ASCII: minúsculas, guiones, sin tildes ni ñ. Única excepción: los archivos `SKILL.md` de `public/descargas/` (`optimizador-prompts/SKILL.md` y `plantillas-alumnos/<plantilla>/SKILL.md`), porque el formato de skills exige ese nombre.
 6. El sitio nunca afirma ni sugiere respaldo de Google, GTD o Capacita Tu Futuro más allá de la redacción que entregue el cliente. Los logotipos de Google y Gemini identifican las herramientas que se enseñan; no se modifican, no se recolorean y no se presentan como sello o alianza.
 
 ## 9. Reglas técnicas

@@ -12,6 +12,10 @@ prompts:
   - id: iterar-en-canvas
     titulo: "Iterar en Canvas"
     texto: "convierte la diapositiva 4 en un gráfico de barras"
+profundiza:
+  recursos:
+    - presentaciones-app-gemini
+    - canvas
 ---
 
 - Con Canvas activado, se pide «crea una presentación» y se adjunta la fuente (aquí, el informe de Deep Research y el resumen del dataset). Gemini genera las diapositivas con tema e imágenes, y se exportan a Google Presentaciones (o a PDF) para terminarlas y colaborar.

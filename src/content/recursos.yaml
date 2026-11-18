@@ -205,3 +205,28 @@
   titulo: "Crear skills en Gemini CLI"
   sitio: geminicli.com
   url: https://geminicli.com/docs/cli/creating-skills/
+- id: video-google-io-2024-keynote
+  tipo: video
+  titulo: "Google Keynote (Google I/O '24)"
+  sitio: www.youtube.com
+  url: https://www.youtube.com/watch?v=XEzRZ35urlk
+- id: video-gemini-multimodal
+  tipo: video
+  titulo: "The capabilities of multimodal AI | Gemini Demo"
+  sitio: www.youtube.com
+  url: https://www.youtube.com/watch?v=UIZAiXYceBI
+- id: video-gemini-15-pro-codigo
+  tipo: video
+  titulo: "Problem solving across 100,633 lines of code | Gemini 1.5 Pro Demo"
+  sitio: www.youtube.com
+  url: https://www.youtube.com/watch?v=SSnsmqIj1MI
+- id: video-project-astra
+  tipo: video
+  titulo: "Project Astra | Exploring the Capabilities of a Universal AI Assistant"
+  sitio: www.youtube.com
+  url: https://www.youtube.com/watch?v=JcDBFAm9PPI
+- id: video-gemini-workspace
+  tipo: video
+  titulo: "Gemini in Workspace: New Ways to Create Faster"
+  sitio: www.youtube.com
+  url: https://www.youtube.com/watch?v=8wtKHwlKMBQ

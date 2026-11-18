@@ -4,3 +4,6 @@
 - id: dataset-ficticio-solicitudes
   titulo: "Dataset ficticio del curso"
   archivo: /descargas/dataset-ficticio-solicitudes-gtd-t3-2026.csv
+- id: dataset-ficticio-diccionario
+  titulo: "Dataset ficticio · Solicitudes de soporte GTD · T3 2026"
+  archivo: /descargas/dataset-ficticio-diccionario.md

@@ -11,6 +11,10 @@ prompts:
   - id: intermedio
     titulo: "Intermedio"
     texto: "Soy coordinador de proyectos en una empresa de telecomunicaciones. Escribe un correo para mi gerente explicando que la entrega del módulo de reportes se retrasa dos semanas por un cambio de proveedor. El objetivo es que apruebe la nueva fecha."
+profundiza:
+  recursos:
+    - prompting-guide-101
+    - estrategias-diseno-prompts
 ---
 
 **4.1 Fundamentos (6 min)**

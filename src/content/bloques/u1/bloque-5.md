@@ -35,6 +35,11 @@ prompts:
 
         # Antes de responder
         Si te falta información, hazme hasta 3 preguntas antes de redactar.
+profundiza:
+  recursos:
+    - gemini-4-argon
+    - gemini-4-carbon
+    - gemini-4-hydrogen
 ---
 
 **5.1 Recorrido por la app (5 min)**

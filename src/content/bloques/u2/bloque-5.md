@@ -5,6 +5,9 @@ titulo: "Dashboard interactivo con marca en Canvas"
 minutos: 30
 microcharlaMin: 3
 practicaMin: 27
+profundiza:
+  recursos:
+    - canvas
 ---
 
 - Canvas puede crear **apps web** de una sola página (HTML, CSS y JavaScript) que se ejecutan en la misma ventana. Esto reemplaza dashboards estáticos de planilla por tableros con filtros e interactividad.

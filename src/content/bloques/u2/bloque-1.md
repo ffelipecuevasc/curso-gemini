@@ -9,6 +9,15 @@ prompts:
   - id: carril-base
     titulo: "Carril base"
     texto: "Identifica los 3 problemas principales del trimestre y propón una acción para cada uno, justificando con cifras"
+profundiza:
+  recursos:
+    - acerca-modelos-gemini
+    - gemini-4-argon
+    - gemini-4-carbon
+    - gemini-4-hydrogen
+    - google-ai-plus
+    - planes-google-ai-chile
+    - exportar-respuestas
 ---
 
 **Microcharla (3 min)**

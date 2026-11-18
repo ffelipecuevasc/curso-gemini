@@ -4,6 +4,23 @@ numero: 2
 titulo: "Fundamentos de IA generativa y uso responsable"
 minutos: 20
 tipo: "Exposición interactiva + mini-prueba"
+profundiza:
+  recursos:
+    - que-es-un-llm
+    - introducing-gemini
+    - bard-pasa-a-ser-gemini
+    - io-2024-100-anuncios
+    - tokens
+    - alucinaciones-ia
+    - principios-ia-google
+    - aviso-privacidad-apps-gemini
+    - privacy-hub-workspace
+    - verificar-respuestas
+    - google-ai-essentials
+    - video-google-io-2024-keynote
+    - video-gemini-multimodal
+    - video-gemini-15-pro-codigo
+    - video-project-astra
 ---
 
 **2.1 Qué es un LLM (4 min).** Un modelo estadístico de lenguaje entrenado con enormes cantidades de datos, que genera y traduce texto y otro contenido (definición de Google Cloud). Predice la continuación más probable a partir de patrones. Por eso escribe con fluidez, pero no «sabe» si lo que dice es cierto.

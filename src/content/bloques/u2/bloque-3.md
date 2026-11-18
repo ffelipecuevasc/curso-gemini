@@ -17,6 +17,11 @@ prompts:
         Logo: usa EXACTAMENTE este SVG sin modificarlo: <svg>…</svg>
         Estilo: corporativo, cercano, esquinas redondeadas, íconos lineales, mucho espacio en blanco.
         Contraste mínimo AA para todo texto. No inventes logos ni slogans.
+profundiza:
+  recursos:
+    - generar-editar-imagenes
+    - nano-banana-pro
+    - canvas
 ---
 
 **Microcharla (3 min):** hay dos caminos para una infografía, y la diferencia importa cuando hay una marca de por medio.

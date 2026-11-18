@@ -4,6 +4,13 @@ numero: 3
 titulo: "Gemini en el ecosistema de Google"
 minutos: 10
 tipo: "Demostración + verificación de cuenta"
+profundiza:
+  recursos:
+    - gemini-en-gmail
+    - workspace-studio
+    - planes-google-ai-chile
+    - google-ai-plus
+    - video-gemini-workspace
 ---
 
 **Mapa (5 min)**

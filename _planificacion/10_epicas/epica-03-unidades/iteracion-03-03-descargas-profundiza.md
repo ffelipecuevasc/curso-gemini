@@ -1,7 +1,7 @@
 # Iteración 03-03 · Descargas y «Profundiza»
 
 - **Épica:** 03 · Unidades del curso
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/03-03-descargas-profundiza
 - **Depende de:** 03-02
 - **Especificación:** —
@@ -49,11 +49,11 @@ Mostrar las descargas con el formato y el peso medidos del archivo real al compi
 ## Criterios de aceptación
 
 - [x] RDA-010 registrada y el índice de `decisiones.md` al día.
-- [ ] La tarjeta muestra el formato y el peso calculados: el peso en `dist/index.html` coincide con `fs.statSync` del archivo (comando y resultado en la bitácora); el enlace responde con el archivo en `pnpm preview`.
+- [x] La tarjeta muestra el formato y el peso calculados: el peso en `dist/index.html` coincide con `fs.statSync` del archivo (comando y resultado en la bitácora); el enlace responde con el archivo en `pnpm preview`. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
 - [x] `pnpm build` falla con un archivo inexistente, con una extensión fuera del mapa y con un recurso de «Profundiza» inexistente (3 pruebas reversibles).
-- [ ] «Profundiza» se abre y se cierra con el teclado (`Enter` y `Espacio`) sin JavaScript; cerrado por defecto.
+- [x] «Profundiza» se abre y se cierra con el teclado (`Enter` y `Espacio`) sin JavaScript; cerrado por defecto. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
 - [x] La advertencia de `descargas.yaml` desaparece; `pnpm build` termina sin advertencias.
-- [ ] Regresiones en verde: `pnpm astro check` sin errores; 4 scripts y 0 B de JS nuevo; 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; sin desborde en 360 px; las comprobaciones de la 03-01 y la 03-02 (24 de 24 prompts) siguen pasando.
+- [x] Regresiones en verde: `pnpm astro check` sin errores; 4 scripts y 0 B de JS nuevo; 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; sin desborde en 360 px; las comprobaciones de la 03-01 y la 03-02 (24 de 24 prompts) siguen pasando. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
 
 Evidencia (detalle en [bitacora-03-03](bitacoras/bitacora-03-03.md)):
 

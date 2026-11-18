@@ -9,6 +9,10 @@ prompts:
   - id: deep-research
     titulo: "Deep Research"
     texto: "Tendencias 2026 en adopción de fibra óptica y servicios digitales para pymes en Chile: datos públicos, regulación y oportunidades"
+profundiza:
+  recursos:
+    - deep-research
+    - exportar-respuestas
 ---
 
 **Microcharla (3 min)**

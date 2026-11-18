@@ -9,6 +9,9 @@ prompts:
   - id: resumen-en-audio
     titulo: "Resumen en audio"
     texto: "enfocado en lo que debe saber un ejecutivo de atención al cliente, en 10 minutos"
+profundiza:
+  recursos:
+    - nuevas-herramientas-estudio
 ---
 
 **Microcharla (3 min):** el panel Studio convierte las fuentes en productos que se generan en segundo plano.

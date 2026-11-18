@@ -26,14 +26,18 @@ const recurso = z.strictObject({
   url: urlSegura,
 });
 
+// Rutas de descarga: ASCII, minúsculas y guiones (AGENTS.md, regla de
+// contenido 5). Única excepción (P-007): SKILL.md en mayúsculas, solo en
+// /descargas/optimizador-prompts/ y /descargas/plantillas-alumnos/<carpeta>/.
+const rutaDescarga =
+  /^\/descargas\/(?:[a-z0-9-]+(?:\/[a-z0-9-]+)*\.[a-z0-9]+|(?:optimizador-prompts|plantillas-alumnos\/[a-z0-9-]+)\/SKILL\.md)$/;
+
 const descarga = z.strictObject({
   id: idEntrada,
-  archivo: z
-    .string()
-    .regex(/^\/descargas\/[a-z0-9-]+(\/[a-z0-9-]+)*\.[a-z0-9]+$/, {
-      error:
-        "El archivo debe vivir en /descargas/ con nombre en ASCII, minúsculas y guiones",
-    }),
+  archivo: z.string().regex(rutaDescarga, {
+    error:
+      "El archivo debe vivir en /descargas/ con nombre en ASCII, minúsculas y guiones (solo SKILL.md de optimizador-prompts/ y plantillas-alumnos/<carpeta>/ va en mayúsculas)",
+  }),
   // Formato y peso no se escriben: se miden del archivo al compilar (RDA-010,
   // src/lib/descargas.ts).
   titulo: textoNoVacio,

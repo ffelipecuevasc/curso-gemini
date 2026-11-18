@@ -21,6 +21,11 @@ prompts:
         artículo de la ley cuando corresponda.
         EVITAR: logotipos inventados, slogans, fotos de personas reales, degradados
         recargados, texto en párrafos largos.
+profundiza:
+  recursos:
+    - generar-presentacion-cuaderno
+    - cocreacion-presentaciones-videos
+    - coleccion-comunitaria-prompts-presentaciones
 ---
 
 **Microcharla (3 min)**

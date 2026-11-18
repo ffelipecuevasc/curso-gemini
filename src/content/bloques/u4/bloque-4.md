@@ -5,6 +5,10 @@ titulo: "Crea tu propia skill"
 minutos: 25
 microcharlaMin: 3
 practicaMin: 22
+profundiza:
+  recursos:
+    - formato-skill-md-gemini-enterprise
+    - crear-skills-gemini-cli
 ---
 
 **Microcharla (3 min)**

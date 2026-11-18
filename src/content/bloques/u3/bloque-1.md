@@ -12,6 +12,11 @@ prompts:
   - id: fast-research
     titulo: "Fast Research"
     texto: "guías oficiales de implementación de la Ley 21.719"
+profundiza:
+  recursos:
+    - crear-cuaderno
+    - agregar-descubrir-fuentes
+    - deep-research-tipos-fuentes
 ---
 
 **Microcharla (3 min)**

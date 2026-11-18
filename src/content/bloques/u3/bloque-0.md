@@ -5,6 +5,9 @@ titulo: "Repaso y brief del caso"
 minutos: 5
 microcharlaMin: 2
 practicaMin: 3
+profundiza:
+  recursos:
+    - video-inside-notebooklm
 ---
 
 **Enfoque de la herramienta:** en Gemini, el punto de partida es una pregunta. En Gemini Notebook, el punto de partida son **tus fuentes**: el chat responde solo con ellas y cita el pasaje exacto. Cada cuaderno es independiente; no puede consultar otro cuaderno al mismo tiempo.

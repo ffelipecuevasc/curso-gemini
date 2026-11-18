@@ -26,4 +26,8 @@ recursos:
   - anuncio-skills
   - formato-skill-md-gemini-enterprise
   - crear-skills-gemini-cli
-descargas: []
+descargas:
+  - plantilla-analista-planillas
+  - plantilla-resumen-ejecutivo
+  - plantilla-mi-semana-laboral
+  - plantilla-en-blanco

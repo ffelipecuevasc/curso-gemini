@@ -7,3 +7,15 @@
 - id: dataset-ficticio-diccionario
   titulo: "Dataset ficticio · Solicitudes de soporte GTD · T3 2026"
   archivo: /descargas/dataset-ficticio-diccionario.md
+- id: plantilla-analista-planillas
+  titulo: "Analista de planillas"
+  archivo: /descargas/plantillas-alumnos/analista-planillas/SKILL.md
+- id: plantilla-resumen-ejecutivo
+  titulo: "Resumen ejecutivo"
+  archivo: /descargas/plantillas-alumnos/resumen-ejecutivo/SKILL.md
+- id: plantilla-mi-semana-laboral
+  titulo: "Mi semana laboral"
+  archivo: /descargas/plantillas-alumnos/mi-semana-laboral/SKILL.md
+- id: plantilla-en-blanco
+  titulo: "Libre"
+  archivo: /descargas/plantillas-alumnos/plantilla-en-blanco/SKILL.md

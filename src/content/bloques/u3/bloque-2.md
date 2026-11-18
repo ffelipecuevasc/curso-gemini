@@ -32,6 +32,9 @@ prompts:
   - id: caso-aplicado
     titulo: "Caso aplicado (ficticio)"
     texto: "Un cliente pide por WhatsApp que eliminen sus datos. ¿Qué dice la ley y qué pasos debería seguir el ejecutivo?"
+profundiza:
+  recursos:
+    - usar-chat-cuaderno
 ---
 
 **Microcharla (3 min)**

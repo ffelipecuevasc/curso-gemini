@@ -5,6 +5,12 @@ titulo: "De Gems a Skills: qué son, por qué cambian y cómo se usan"
 minutos: 12
 microcharlaMin: 3
 practicaMin: 9
+profundiza:
+  recursos:
+    - crear-administrar-skills
+    - transicion-gems-skills
+    - skills-app-gemini-workspace
+    - anuncio-skills
 ---
 
 **Microcharla (3 min)**

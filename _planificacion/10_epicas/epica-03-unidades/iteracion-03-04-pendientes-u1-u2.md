@@ -1,7 +1,7 @@
 # Iteración 03-04 · Pendientes de la Unidad 1 y la Unidad 2
 
 - **Épica:** 03 · Unidades del curso
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/03-04-pendientes-u1-u2
 - **Depende de:** 03-03
 - **Especificación:** —
@@ -47,9 +47,9 @@ Completar en la U1 y la U2 lo que quedó pendiente: «Profundiza» de cada bloqu
 ## Criterios de aceptación
 
 - [x] Asignación de «Profundiza» aprobada y anotada en la bitácora; cada bloque con `profundiza` muestra su `<details>` con sus recursos (conteo en `dist/index.html` igual al de los archivos).
-- [ ] Cada video cargado tiene URL `https://` entregada por el desarrollador y abre en pestaña nueva; o la bitácora registra que no hay videos, con la decisión del desarrollador.
-- [ ] Cada descarga cargada muestra formato y peso medidos (RDA-010) y responde en `pnpm preview`; o la bitácora registra la ausencia acordada.
-- [ ] Regresiones en verde: `pnpm build` sin advertencias y `pnpm astro check` sin errores; 24 de 24 prompts iguales; 4 scripts; 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; sin desborde en 360 px.
+- [x] Cada video cargado tiene URL `https://` entregada por el desarrollador y abre en pestaña nueva; o la bitácora registra que no hay videos, con la decisión del desarrollador. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
+- [x] Cada descarga cargada muestra formato y peso medidos (RDA-010) y responde en `pnpm preview`; o la bitácora registra la ausencia acordada. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
+- [x] Regresiones en verde: `pnpm build` sin advertencias y `pnpm astro check` sin errores; 24 de 24 prompts iguales; 4 scripts; 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; sin desborde en 360 px. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
 
 Evidencia (detalle en [bitacora-03-04](bitacoras/bitacora-03-04.md)):
 

@@ -1,6 +1,6 @@
 # Épica 03 · Unidades del curso
 
-- **Estado:** En curso
+- **Estado:** En revisión (cierre por aprobar)
 - **Objetivo:** presentar en la página las cuatro unidades ya cargadas en las colecciones (épica 02), con sus bloques, prompts copiables y lista de terminado, y completar lo pendiente: descargas, videos oficiales de Google y textos de «Profundiza en tu tiempo».
 
 ## Alcance
@@ -21,8 +21,8 @@
 | 03-01 | [Sección de unidad y texto de los bloques](iteracion-03-01-seccion-unidad.md) | Terminada |
 | 03-02 | [Prompts con «Copiar» y recursos externos](iteracion-03-02-prompts-recursos.md) | Terminada |
 | 03-03 | [Descargas y «Profundiza»](iteracion-03-03-descargas-profundiza.md) | Terminada |
-| 03-04 | [Pendientes de la Unidad 1 y la Unidad 2](iteracion-03-04-pendientes-u1-u2.md) | En revisión |
-| 03-05 | [Pendientes de la Unidad 3 y la Unidad 4](iteracion-03-05-pendientes-u3-u4.md) | Pendiente |
+| 03-04 | [Pendientes de la Unidad 1 y la Unidad 2](iteracion-03-04-pendientes-u1-u2.md) | Terminada |
+| 03-05 | [Pendientes de la Unidad 3 y la Unidad 4](iteracion-03-05-pendientes-u3-u4.md) | En revisión |
 
 > Iteraciones aprobadas y generadas el 2026-11-17 al cerrar la épica 02 ([bitacora-02-cierre](../epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md)): un solo componente guiado por los datos presenta las 4 unidades, en lugar de una iteración de presentación por unidad, y lo pendiente se agrupa por pares de unidades.
 
@@ -44,4 +44,4 @@
 
 ## Cierre
 
-- **Bitácora de cierre:** —
+- **Bitácora de cierre:** [bitacora-03-cierre](bitacoras/bitacora-03-cierre.md)

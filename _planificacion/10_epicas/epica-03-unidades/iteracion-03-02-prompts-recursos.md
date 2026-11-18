@@ -1,7 +1,7 @@
 # Iteración 03-02 · Prompts con «Copiar» y recursos externos
 
 - **Épica:** 03 · Unidades del curso
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/03-02-prompts-recursos
 - **Depende de:** 03-01
 - **Especificación:** —
@@ -53,10 +53,10 @@ Mostrar los 24 prompts en su bloque con un botón «Copiar» que entrega el text
 
 - [x] 24 prompts en `dist/index.html`, con 24 IDs únicos `prompt-…` (incluidos los 2 `deep-research`); el texto de cada uno es idéntico al de su archivo (comando temporal: 24 de 24).
 - [x] `identidad-visual-gtd` aparece inmediatamente después de «Ejemplo de estructura:» en `#unidad-2`; un marcador con un ID inexistente hace fallar `pnpm build` (prueba reversible).
-- [ ] «Copiar» copia el texto exacto (prueba en el navegador: pegar en un editor y comparar) y anuncia «Copiado»; funciona con el teclado.
-- [ ] Sin JavaScript, el botón no aparece y el texto se puede seleccionar.
+- [x] «Copiar» copia el texto exacto (prueba en el navegador: pegar en un editor y comparar) y anuncia «Copiado»; funciona con el teclado. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
+- [x] Sin JavaScript, el botón no aparece y el texto se puede seleccionar. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
 - [x] Los 41 recursos aparecen en su unidad (U1 20, U2 12, U3 8, U4 6, con los 5 compartidos en ambas): `target="_blank"`, `rel="noopener noreferrer"` y texto oculto en todos; «(no oficial)» visible en el de GitHub.
-- [ ] Regresiones en verde: `pnpm build` sin advertencias nuevas y `pnpm astro check` sin errores; 4 etiquetas `<script>` y 3 comportamientos (modo, menú y copiar); el gzip total, medido como dice el punto de partida, crece menos de 1 KB sobre los 882 B; 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; sin desborde en 360 px; las comprobaciones de la 03-01 siguen pasando.
+- [x] Regresiones en verde: `pnpm build` sin advertencias nuevas y `pnpm astro check` sin errores; 4 etiquetas `<script>` y 3 comportamientos (modo, menú y copiar); el gzip total, medido como dice el punto de partida, crece menos de 1 KB sobre los 882 B; 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; sin desborde en 360 px; las comprobaciones de la 03-01 siguen pasando. (dicho por el desarrollador, 2026-11-17, revisión en navegador)
 
 Evidencia (detalle en [bitacora-03-02](bitacoras/bitacora-03-02.md)):
 

@@ -1,0 +1,34 @@
+---
+// «Profundiza en tu tiempo» (DESIGN.md, secciones 1 y 5): <details> nativo,
+// cerrado por defecto, sin JavaScript ni animación de altura (sección 7).
+// Dentro, el texto propio (opcional) y los recursos oficiales del bloque.
+import { getEntry } from "astro:content";
+import type { Bloque } from "../lib/unidades";
+import RecursoExterno from "./RecursoExterno.astro";
+
+interface Props {
+  profundiza: NonNullable<Bloque["data"]["profundiza"]>;
+}
+
+const { texto, recursos: referencias } = Astro.props.profundiza;
+// comprobarReferencias() ya garantiza al compilar que cada recurso existe.
+const recursos = await Promise.all(
+  referencias.map(async (ref) => (await getEntry(ref))!),
+);
+---
+
+<details class="mt-6 rounded-bloque rounded-bl-esquina bg-superficie">
+  <summary class="flex min-h-11 cursor-pointer items-center px-4 font-display font-semibold sm:px-6">
+    Profundiza en tu tiempo
+  </summary>
+  <div class="px-4 pb-4 sm:px-6 sm:pb-6">
+    {texto && <p class="max-w-prose">{texto}</p>}
+    {recursos.length > 0 && (
+      <ul class="mt-2 grid gap-1">
+        {recursos.map((recurso) => (
+          <RecursoExterno recurso={recurso} />
+        ))}
+      </ul>
+    )}
+  </div>
+</details>

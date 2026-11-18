@@ -1,0 +1,35 @@
+---
+// Tarjeta de descarga (DESIGN.md, sección 5): nombre, formato y peso
+// («CSV · 25,4 KB») y botón de contorno «Descargar» (sección 5.1). Formato y
+// peso se miden del archivo al compilar (RDA-010; AGENTS.md, regla técnica 7).
+import type { CollectionEntry } from "astro:content";
+import { datosDescarga } from "../lib/descargas";
+
+interface Props {
+  descarga: CollectionEntry<"descargas">;
+}
+
+const { titulo, archivo } = Astro.props.descarga.data;
+const { formato, peso } = datosDescarga(archivo);
+const nombreArchivo = archivo.split("/").pop();
+---
+
+<li class="flex flex-col gap-3 rounded-bloque rounded-bl-esquina bg-superficie p-4 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+  <div class="min-w-0">
+    <p class="font-display font-semibold wrap-break-word">{titulo}</p>
+    <p class="font-codigo text-sm text-texto-2 wrap-break-word">
+      {nombreArchivo} · {formato} · {peso}
+    </p>
+  </div>
+  <a
+    href={archivo}
+    download
+    class="inline-flex min-h-11 shrink-0 items-center self-start rounded-pildora border-[1.5px] border-primario px-4 font-medium text-texto no-underline transition-colors duration-200 hover:bg-fondo motion-reduce:transition-none sm:self-auto"
+  >
+    Descargar
+    <span class="sr-only">
+      {" "}
+      {titulo} ({formato}, {peso})
+    </span>
+  </a>
+</li>

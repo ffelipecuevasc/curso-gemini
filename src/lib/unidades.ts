@@ -33,6 +33,9 @@ export async function obtenerUnidadesConBloques(): Promise<UnidadConBloques[]> {
   for (const unidad of unidades) {
     await comprobarReferencias(unidad);
   }
+  for (const bloque of bloques) {
+    await comprobarProfundiza(bloque);
+  }
 
   return unidades
     .map((unidad) => {
@@ -52,6 +55,17 @@ async function comprobarReferencias(
     if ((await getEntry(referencia)) === undefined) {
       throw new Error(
         `La unidad «${unidad.id}» referencia «${referencia.id}», que no existe en src/content/${referencia.collection}.yaml`,
+      );
+    }
+  }
+}
+
+// Cada recurso de «Profundiza» de un bloque debe existir (03-03).
+async function comprobarProfundiza(bloque: Bloque): Promise<void> {
+  for (const referencia of bloque.data.profundiza?.recursos ?? []) {
+    if ((await getEntry(referencia)) === undefined) {
+      throw new Error(
+        `El bloque «${bloque.id}» referencia en «Profundiza» el recurso «${referencia.id}», que no existe en src/content/recursos.yaml`,
       );
     }
   }

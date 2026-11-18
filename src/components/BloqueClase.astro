@@ -9,13 +9,14 @@ import { render } from "astro:content";
 import type { Bloque } from "../lib/unidades";
 import { partirEnMarcadores } from "../lib/marcadores";
 import Prompt from "./Prompt.astro";
+import Profundiza from "./Profundiza.astro";
 
 interface Props {
   bloque: Bloque;
 }
 
 const { bloque } = Astro.props;
-const { numero, titulo, minutos, prompts } = bloque.data;
+const { numero, titulo, minutos, prompts, profundiza } = bloque.data;
 const base = bloque.id.replace("/", "-");
 const idTitulo = `bloque-${base}`;
 const idPrompt = (id: string) => `prompt-${base}-${id}`;
@@ -59,4 +60,5 @@ const { Content } = await render(bloque);
       ))}
     </div>
   )}
+  {profundiza && <Profundiza profundiza={profundiza} />}
 </article>

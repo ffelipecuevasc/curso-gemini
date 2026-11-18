@@ -13,6 +13,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 | RDA-007 | Sin JavaScript, el sitio se muestra en modo claro | Aceptada |
 | RDA-008 | Avance de cada unidad en cuatro tramos iguales | Aceptada |
 | RDA-009 | Un archivo `.md` por bloque, en su propia colección | Aceptada |
+| RDA-010 | Formato y peso de las descargas medidos del archivo al compilar | Aceptada |
 
 ---
 
@@ -49,6 +50,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 **Decisión:** el contenido vive en colecciones de contenido de Astro en `src/content/`, con un esquema Zod por tipo (unidad, bloque, prompt, recurso, descarga). Los componentes solo leen esas colecciones; no llevan textos del curso escritos a mano. Los prompts se guardan como texto literal, para copiarlos tal cual.
 **Alternativas consideradas:** escribir el contenido directo en los componentes (rápido al inicio, pero mezcla diseño y contenido y no valida nada); un CMS externo (agrega una integración y un servicio que el proyecto no necesita).
 **Consecuencias:** corregir un prompt o un enlace es editar un archivo de contenido. El esquema debe definirse antes de cargar las unidades, y un contenido que no cumple el esquema hace fallar la compilación.
+**Actualización 2026-11-17 (03-03):** los campos `formato` y `pesoKB` de la descarga los reemplaza la RDA-010; el esquema de descarga queda con `id`, `titulo` y `archivo`.
 
 ---
 
@@ -123,3 +125,15 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 **Decisión:** la colección `unidades` (YAML) guarda solo la ficha: título completo, clase, duración, nivel, avance (RDA-008), objetivo, mini-proyecto, entregable, `holguraMin` opcional, «Terminado cuando…», recursos y descargas. La colección nueva `bloques` usa el cargador `glob` sobre `src/content/bloques/<unidad>/bloque-<n>.md`: el frontmatter trae `unidad` (referencia), `numero`, `titulo`, `minutos`, `tipo` o `microcharlaMin` + `practicaMin`, `prompts` (texto literal) y `profundiza`; el cuerpo Markdown es el texto «Para la clase», que se muestra con `render()` sin dependencias nuevas. La fila de cierre de U2 a U4 («Vitrina y cierre», «Cierre del bootcamp») es `<unidad>/cierre.md`, con `cierre: true` y sin número; la holgura de U1 y U3 es `holguraMin` en la unidad, no un bloque. Los campos de texto simple se guardan sin `**` ni comillas invertidas. `src/lib/unidades.ts` resuelve cada unidad con `getEntry` y lanza un error si un bloque apunta a una unidad inexistente, si se repite un número de bloque, si hay más de un cierre, si una unidad queda sin bloques o si bloques + holgura no suman `duracionMin`; `index.astro` lo ejecuta al compilar.
 **Alternativas consideradas:** el texto de cada bloque como campo de varias líneas en el YAML de la unidad (un archivo enorme, sin resaltado de Markdown y con riesgo de errores de sangría); darle al cierre el número 6 (agrega un dato que el documento no trae); un campo `cierre` en la unidad (quedaría sin cuerpo para su texto); omitir la holgura (se pierde la comprobación de que los minutos suman 120).
 **Consecuencias:** cada bloque se edita en su archivo y la compilación detecta errores al traspasar las tablas. Las comprobaciones entre colecciones solo corren si una página llama a `obtenerUnidadesConBloques()`; si `index.astro` deja de hacerlo, se pierden. Mientras `recursos.yaml` y `descargas.yaml` estén vacíos, `pnpm build` emite dos advertencias `No items found`, aceptadas por el desarrollador hasta la épica 03.
+
+---
+
+## RDA-010 · Formato y peso de las descargas medidos del archivo al compilar
+
+- **Fecha:** 2026-11-17
+- **Estado:** Aceptada
+
+**Contexto:** `AGENTS.md` (regla técnica 7) exige que cada enlace de descarga muestre el formato y el peso del archivo. La RDA-003 los dejaba como campos escritos a mano (`formato`, `pesoKB`), que se desactualizan en cuanto el desarrollador cambia un archivo y no avisan si el archivo falta.
+**Decisión:** el esquema de descarga guarda solo `id`, `titulo` y `archivo` (ruta en `/descargas/`, ASCII y minúsculas). `src/lib/descargas.ts` calcula al compilar el formato (mapa de extensiones) y el peso (`fs.statSync` sobre `public/` más la ruta, 1 KB = 1024 B, con coma decimal: «25,4 KB»). Un archivo que no existe o una extensión fuera del mapa hacen fallar `pnpm build`. Los tipos de Node que usa van en `src/lib/node-minimo.d.ts`, sin agregar `@types/node`.
+**Alternativas consideradas:** mantener `formato` y `pesoKB` escritos a mano (se desactualizan y no detectan un archivo faltante); agregar `@types/node` (una dependencia para tres funciones); medir en el navegador con una petición `HEAD` (agrega JavaScript y no falla al compilar).
+**Consecuencias:** cambiar un archivo de descarga actualiza su peso en el siguiente build, sin tocar el contenido. Una extensión nueva se agrega a propósito al mapa. Como Astro copia `public/` a `dist/` sin cambios, el peso mostrado es el del archivo publicado. Si el proyecto llega a instalar `@types/node`, `node-minimo.d.ts` se borra.

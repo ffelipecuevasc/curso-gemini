@@ -19,8 +19,8 @@
 | Iteración | Nombre | Estado |
 | :-------- | :----- | :----- |
 | 03-01 | [Sección de unidad y texto de los bloques](iteracion-03-01-seccion-unidad.md) | Terminada |
-| 03-02 | [Prompts con «Copiar» y recursos externos](iteracion-03-02-prompts-recursos.md) | En revisión |
-| 03-03 | [Descargas y «Profundiza»](iteracion-03-03-descargas-profundiza.md) | Pendiente |
+| 03-02 | [Prompts con «Copiar» y recursos externos](iteracion-03-02-prompts-recursos.md) | Terminada |
+| 03-03 | [Descargas y «Profundiza»](iteracion-03-03-descargas-profundiza.md) | En revisión |
 | 03-04 | [Pendientes de la Unidad 1 y la Unidad 2](iteracion-03-04-pendientes-u1-u2.md) | Pendiente |
 | 03-05 | [Pendientes de la Unidad 3 y la Unidad 4](iteracion-03-05-pendientes-u3-u4.md) | Pendiente |
 
@@ -32,7 +32,7 @@
 - El texto «Para la clase» de cada bloque se muestra con `render()` de la colección `bloques` (RDA-009).
 - 2026-11-17: los prompts `identidad-visual-gtd` y `estilo-gtd` se muestran desde la 03-02 bajo responsabilidad del desarrollador, como el logo de GTD, sin campo de visibilidad; la autorización del cliente queda abierta en el registro como riesgo.
 - 2026-11-17: «Profundiza» usa solo los recursos oficiales ya cargados; el texto propio es opcional en el modelo y no bloquea nada.
-- 2026-11-17: el formato y el peso de las descargas se miden del archivo real al compilar (RDA-010, se registra en la 03-03).
+- 2026-11-17: el formato y el peso de las descargas se miden del archivo real al compilar (RDA-010, registrada en la 03-03).
 - Actualización 2026-11-17 (02-05): `comprobarReferencias()` de `src/lib/unidades.ts` ya valida al compilar los recursos y las descargas de cada ficha; la 03-01 no lo repite.
 - Actualización 2026-11-17 (02-05): en U2 · bloque 3, «Ejemplo de estructura:» queda sin el código, que es el prompt `identidad-visual-gtd`; la épica 03 debe mostrar ese prompt junto a ese paso.
 

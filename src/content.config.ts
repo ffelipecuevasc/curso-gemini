@@ -34,8 +34,9 @@ const descarga = z.strictObject({
       error:
         "El archivo debe vivir en /descargas/ con nombre en ASCII, minúsculas y guiones",
     }),
-  formato: textoNoVacio,
-  pesoKB: z.number().positive(),
+  // Formato y peso no se escriben: se miden del archivo al compilar (RDA-010,
+  // src/lib/descargas.ts).
+  titulo: textoNoVacio,
 });
 
 const profundiza = z.strictObject({

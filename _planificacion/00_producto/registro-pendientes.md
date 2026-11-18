@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-17
-- **Iteración activa:** 03-02 (en revisión)
+- **Iteración activa:** 03-03 (en revisión)
 - **Próximo hito:** épica 03 (las 4 unidades presentadas en la página); luego, sitio publicado con ruta, instructor y Unidad 1 antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
@@ -19,8 +19,8 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
 | 03-01 | Sección de unidad y texto de los bloques | 03 | Terminada | 02-06 | [bitacora-03-01](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-01.md) |
-| 03-02 | Prompts con «Copiar» y recursos externos | 03 | En revisión | 03-01 | [bitacora-03-02](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-02.md) |
-| 03-03 | Descargas y «Profundiza» | 03 | Pendiente | 03-02 | — |
+| 03-02 | Prompts con «Copiar» y recursos externos | 03 | Terminada | 03-01 | [bitacora-03-02](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-02.md) |
+| 03-03 | Descargas y «Profundiza» | 03 | En revisión | 03-02 | [bitacora-03-03](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-03.md) |
 | 03-04 | Pendientes de la Unidad 1 y la Unidad 2 | 03 | Pendiente | 03-03 | — |
 | 03-05 | Pendientes de la Unidad 3 y la Unidad 4 | 03 | Pendiente | 03-04 | — |
 
@@ -40,8 +40,8 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
 | 11 | Sección de unidad: ficha, tabla de bloques y texto «Para la clase» de las 4 unidades con un solo componente | Funcionalidad | — | 03-01 | Terminada |
-| 12 | Prompts con «Copiar» (IDs con unidad y bloque) y recursos externos de cada unidad | Funcionalidad | — | 03-02 | En revisión |
-| 13 | Descargas con formato y peso medidos del archivo (RDA-010) y «Profundiza» plegable | Funcionalidad | — | 03-03 | Pendiente |
+| 12 | Prompts con «Copiar» (IDs con unidad y bloque) y recursos externos de cada unidad | Funcionalidad | — | 03-02 | Terminada |
+| 13 | Descargas con formato y peso medidos del archivo (RDA-010) y «Profundiza» plegable | Funcionalidad | — | 03-03 | En revisión |
 | 14 | Pendientes de la Unidad 1 y la Unidad 2 (descargas, videos, «Profundiza») | Funcionalidad | — | 03-04 | Pendiente |
 | 15 | Pendientes de la Unidad 3 y la Unidad 4 (descargas, videos, «Profundiza») | Funcionalidad | — | 03-05 | Pendiente |
 | 16 | Configuración de Cloudflare Workers y guardia de marcadores `PENDIENTE_` | Técnico | — | 04-01 | Pendiente |
@@ -67,14 +67,13 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | :--- | :------------- | :---------- |
 | Texto de «Profundiza en tu tiempo» de cada bloque: el documento del curso lista los temas, pero no la teoría escrita · Opcional desde 2026-11-17: «Profundiza» usa los recursos oficiales ya cargados y el texto no bloquea nada | — | Desarrollador |
 | Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) · Bloquea la tarea 3 de la 03-04 y la 03-05 | — | Desarrollador |
-| Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Un primer archivo real es tarea del desarrollador en la 03-03; el resto bloquea la tarea 4 de la 03-04 y la 03-05 | — | Desarrollador |
+| Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · El dataset CSV ya está publicado (03-03); el resto bloquea la tarea 4 de la 03-04 y la 03-05 | — | Desarrollador |
 | Imagen de la insignia oficial de Gemini Certified Educator para la sección del instructor · La 02-04 se construyó sin ella; el campo `insignia` del esquema está listo para recibirla | 02-04 | Desarrollador |
 | Nombres completos de las certificaciones AWS y Anthropic, si se listan · La 02-04 publica solo el texto del documento, sin detallarlas | 02-04 | Desarrollador |
 | Aplicar o descartar la P-007 (excepción a la regla de nombres para `optimizador-prompts/SKILL.md`); sin ella, ese archivo no se publica en la 03-05 | P-007 | Desarrollador |
 | Nombre del Worker (define la URL `nombre.subdominio.workers.dev`) y token de Web Analytics | RDA-005 | Desarrollador |
 | Licencia del contenido del sitio (hoy «todos los derechos reservados») | — | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
-| Advertencias aceptadas del cargador `file`: la de `recursos.yaml` desapareció en la 02-05; la de `descargas.yaml` sigue hasta la épica 03 (primera descarga) | 02-02 · 02-05 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U1 nombrados pero no escritos: el «Avanzado» completo de la escalera (bloque 4) y la ronda 3 del laboratorio (bloque 5) | 02-05 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U2 nombrados pero no escritos: «Prompt base» del dashboard (bloque 5), «Prompts base de cada hito» y los carriles extra de los bloques 1 a 5 | 02-05 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U3 nombrados pero no escritos: los carriles extra de los bloques 1 a 5 (instrucciones sin texto de prompt) | 02-06 | Desarrollador |
@@ -128,3 +127,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Iteración 03-01 en revisión: las 4 unidades muestran su ficha, la tabla de bloques y el texto de los 26 bloques con `render()`; h2 desde las fichas (4 de 4); 0 B de JS nuevo; se corrigen criterios de la 03-01, la línea base de la 03-02 y la 03-05; P-007 pendiente; falta revisión en navegador. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-01.md) |
 | 2026-11-17 | Iteración 03-01 terminada: el desarrollador revisó en el navegador 360 px y el teclado en las tablas, sin observaciones. |
 | 2026-11-17 | Iteración 03-02 en revisión: 24 prompts con «Copiar» (24 de 24 idénticos, IDs únicos), marcador de `identidad-visual-gtd` en U2 · 3 y 41 recursos por unidad; JS +198 B gzip (4 etiquetas); falta revisión en navegador. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-02.md) |
+| 2026-11-17 | Iteración 03-02 terminada: el desarrollador probó en el navegador el copiado con teclado, el botón sin JavaScript y 360 px en ambos modos, sin observaciones. |
+| 2026-11-17 | Iteración 03-03 en revisión: RDA-010 (formato y peso medidos del archivo), tarjeta del dataset CSV en la U2 (25,4 KB = statSync), «Profundiza» con `<details>` y validación de sus recursos; desaparece la última advertencia del build; 0 B de JS nuevo. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-03.md) |

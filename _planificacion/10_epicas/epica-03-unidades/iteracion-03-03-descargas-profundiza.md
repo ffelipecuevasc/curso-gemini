@@ -1,7 +1,7 @@
 # Iteración 03-03 · Descargas y «Profundiza»
 
 - **Épica:** 03 · Unidades del curso
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/03-03-descargas-profundiza
 - **Depende de:** 03-02
 - **Especificación:** —
@@ -48,12 +48,24 @@ Mostrar las descargas con el formato y el peso medidos del archivo real al compi
 
 ## Criterios de aceptación
 
-- [ ] RDA-010 registrada y el índice de `decisiones.md` al día.
+- [x] RDA-010 registrada y el índice de `decisiones.md` al día.
 - [ ] La tarjeta muestra el formato y el peso calculados: el peso en `dist/index.html` coincide con `fs.statSync` del archivo (comando y resultado en la bitácora); el enlace responde con el archivo en `pnpm preview`.
-- [ ] `pnpm build` falla con un archivo inexistente, con una extensión fuera del mapa y con un recurso de «Profundiza» inexistente (3 pruebas reversibles).
+- [x] `pnpm build` falla con un archivo inexistente, con una extensión fuera del mapa y con un recurso de «Profundiza» inexistente (3 pruebas reversibles).
 - [ ] «Profundiza» se abre y se cierra con el teclado (`Enter` y `Espacio`) sin JavaScript; cerrado por defecto.
-- [ ] La advertencia de `descargas.yaml` desaparece; `pnpm build` termina sin advertencias.
+- [x] La advertencia de `descargas.yaml` desaparece; `pnpm build` termina sin advertencias.
 - [ ] Regresiones en verde: `pnpm astro check` sin errores; 4 scripts y 0 B de JS nuevo; 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; sin desborde en 360 px; las comprobaciones de la 03-01 y la 03-02 (24 de 24 prompts) siguen pasando.
+
+Evidencia (detalle en [bitacora-03-03](bitacoras/bitacora-03-03.md)):
+
+- RDA-010 en `decisiones.md`, con su fila en el índice y la nota en la RDA-003.
+- Peso: `fs.statSync` da 26 015 B → «25,4 KB»; `dist/index.html` muestra «dataset-ficticio-solicitudes-gtd-t3-2026.csv · CSV · 25,4 KB» (coincide); `dist/descargas/` trae el mismo archivo (26 015 B). Sin marcar el criterio completo: falta que el enlace responda en `pnpm preview` (navegador).
+- 3 pruebas reversibles, con «Command failed» y los archivos restaurados idénticos (`cmp`):
+  - archivo inexistente → «La descarga «…-no-existe.csv» no existe en public/descargas/…»;
+  - extensión `.xyz` → «… tiene la extensión «.xyz», que no está en el mapa de formatos…»;
+  - recurso inexistente en «Profundiza» → la validación de referencias de Astro («Invalid content reference … profundiza.recursos[1]»).
+- «Profundiza» temporal en U1 · 2 (revertido): 1 `<details>` sin `open`, con el `summary` «Profundiza en tu tiempo» y 2 recursos, dentro del bloque. Sin marcar: abrir y cerrar con el teclado (navegador).
+- `pnpm build` sin advertencias (0 líneas `WARN`).
+- Regresiones medidas: `astro check` 0/0/0; 4 etiquetas `<script>`, 1080 B gzip (0 B nuevos); 1 `h1`; `PENDIENTE_` y `VERIFICAR` en `dist/`: 0; 24 de 24 prompts idénticos. Sin marcar el criterio completo: falta 360 px (navegador).
 
 ## Riesgos
 

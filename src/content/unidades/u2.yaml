@@ -33,4 +33,5 @@ recursos:
   - generar-editar-imagenes
   - nano-banana-pro
   - deep-research
-descargas: []
+descargas:
+  - dataset-ficticio-solicitudes

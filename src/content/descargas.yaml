@@ -1,2 +1,6 @@
-# Descargas de public/descargas/. Se cargan en la épica 03.
-[]
+# Descargas de public/descargas/. El formato y el peso se miden del archivo al
+# compilar (RDA-010). El título sale del documento del curso (U2, «Materiales
+# que deben estar en el LMS antes de la clase», punto 2).
+- id: dataset-ficticio-solicitudes
+  titulo: "Dataset ficticio del curso"
+  archivo: /descargas/dataset-ficticio-solicitudes-gtd-t3-2026.csv

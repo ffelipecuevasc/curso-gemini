@@ -35,6 +35,15 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 03-04 | Pendientes de la Unidad 1 y la Unidad 2 | 03 | Terminada | 03-03 | [bitacora-03-04](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-04.md) |
 | 03-05 | Pendientes de la Unidad 3 y la Unidad 4 | 03 | Terminada | 03-04 | [bitacora-03-05](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-05.md) · [bitacora-03-cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
 
+### Épica 04 · Publicación, medición y calidad (cerrada el 2026-11-18)
+
+| Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
+| :-------- | :----- | :---- | :----- | :--------- | :-------- |
+| 04-01 | Guardia de marcadores y limpieza de la compilación | 04 | Terminada | 03-05, corrección 15.1 | [bitacora-04-01](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-01.md) |
+| 04-02 | Configuración de Cloudflare Workers y publicación desde GitHub | 04 | Terminada | 04-01, P-008 | [bitacora-04-02](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-02.md) |
+| 04-03 | Web Analytics y metadatos para compartir | 04 | Terminada | 04-02 | [bitacora-04-03](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-03.md) |
+| 04-04 | Rendimiento, accesibilidad y verificación final | 04 | Terminada | 04-03 | [bitacora-04-04](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-04.md) · [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) |
+
 ## 2. Backlog terminado
 
 ### Épica 01
@@ -70,8 +79,21 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 14 | Pendientes de la Unidad 1 y la Unidad 2 (descargas, videos, «Profundiza») | Funcionalidad | — | 03-04 | Terminada |
 | 15 | Pendientes de la Unidad 3 y la Unidad 4 (descargas, videos, «Profundiza») | Funcionalidad | — | 03-05 | Terminada |
 
+### Épica 04
+
+| Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
+| :-------- | :------- | :--- | :------------- | :-------- | :----- |
+| 15.1 | Plantillas con el mismo nombre al descargar: ruta visible en la tarjeta (por ejemplo «analista-planillas/SKILL.md») y texto en la ficha de la U4 para guardar cada plantilla en su carpeta (texto aprobado por el desarrollador, campo opcional `notaDescargas` de la ficha) · Rama `correccion/plantillas-descargas`, antes de la 04-01 | Corrección | — | — | Terminada |
+| 16 | Guardia de marcadores `PENDIENTE_` y `VERIFICAR` en `pnpm build` (todos los archivos de texto de `dist/`) y limpieza de los SVG sin referencia en `dist/_astro/` | Técnico | — | 04-01 | Terminada |
+| 16.1 | Configuración de Cloudflare Workers (`wrangler.jsonc` del Worker `curso-gemini`, `pnpm dlx wrangler@4.164.0`) y publicación continua desde `main` con Workers Builds, conectada por el desarrollador después del merge | Técnico | — | 04-02 | Terminada |
+| 17 | Cloudflare Web Analytics, ícono, `robots.txt`, página 404 y licencia del contenido (sin canónica ni Open Graph) · Ícono: glifo `school-outline` de Material Symbols Light sobre `#007EA7` | Funcionalidad | — | 04-03 | Terminada |
+| 18 | Verificación final de rendimiento y accesibilidad en local y en la URL publicada · Antes de los ajustes, la publicada dio 94/98/100/100. Títulos en `h3`: local 98/100/96/100. `content-visibility` revertido, porque empeoró la medición (93/92). Publicada después del merge: 87/100/100/100 (Rendimiento bajo 95 por TBT; excepción aceptada por el desarrollador el 2026-11-18, se atiende en la 05-08) | Técnico | — | 04-04 | Terminada |
+
 ## 3. Historial archivado
 
 | Fecha | Cambio |
 | :---- | :----- |
-| — | — |
+| 2026-11-17 | Creación de la documentación del proyecto: nivel pequeño, 4 épicas y 15 iteraciones previstas. |
+| 2026-11-17 | Iteración 01-01 en revisión: proyecto Astro + Tailwind v4 + PNPM estricto compilando; se agrega 01-05 al registro. [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-01.md) |
+| 2026-11-17 | Iteración 01-01 terminada, aprobada por el desarrollador. |
+| 2026-11-17 | Iteración 01-02 en revisión: tokens de `DESIGN.md` con modo oscuro y fuentes de Fontsource (RDA-006, propuesta P-002). [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-02.md) |

@@ -3,10 +3,10 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-18
-- **Iteración activa:** 04-02 (en revisión)
-- **Próximo hito:** épica 04: sitio publicado en `workers.dev`, con Web Analytics y las metas de Lighthouse, antes de la clase 1
+- **Iteración activa:** ninguna (épica 04 cerrada el 2026-11-18; la siguiente es la 05-01, pendiente)
+- **Próximo hito:** épica 05: rediseño visual y síntesis, con Rendimiento publicado ≥ 95 (05-08)
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
-- **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds (Worker `curso-gemini`)
+- **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
 
 > Cada campo del encabezado ocupa una sola línea. El detalle va en las bitácoras y el historial, no aquí.
 
@@ -18,10 +18,6 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
-| 04-01 | [Guardia de marcadores y limpieza de la compilación](../10_epicas/epica-04-publicacion-calidad/iteracion-04-01-guardia-marcadores.md) | 04 | Terminada | 03-05, corrección 15.1 | [bitacora-04-01](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-01.md) |
-| 04-02 | [Configuración de Cloudflare Workers y publicación desde GitHub](../10_epicas/epica-04-publicacion-calidad/iteracion-04-02-cloudflare-workers.md) | 04 | En revisión | 04-01, P-008 | [bitacora-04-02](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-02.md) |
-| 04-03 | [Web Analytics y metadatos para compartir](../10_epicas/epica-04-publicacion-calidad/iteracion-04-03-analytics-metadatos.md) | 04 | Pendiente | 04-02 | — |
-| 04-04 | [Rendimiento, accesibilidad y verificación final](../10_epicas/epica-04-publicacion-calidad/iteracion-04-04-verificacion-final.md) | 04 | Pendiente | 04-03 | — |
 | 05-01 | [Afordancias y estados de interacción](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-01-afordancias-estados.md) | 05 | Pendiente | cierre de la épica 04 | — |
 | 05-02 | [Modelo de síntesis y síntesis de U1 y U2](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-02-sintesis-u1-u2.md) | 05 | Pendiente | 05-01, RDA-012 | — |
 | 05-03 | [Síntesis de U3 y U4](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-03-sintesis-u3-u4.md) | 05 | Pendiente | 05-02 | — |
@@ -40,6 +36,7 @@ Una fila por épica cerrada, con enlace a su bitácora de cierre.
 | 01 | Fundación y sistema de diseño | 2026-11-17 | [bitacora-01-cierre](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-cierre.md) |
 | 02 | Portada, ruta del curso e instructor | 2026-11-17 | [bitacora-02-cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |
 | 03 | Unidades del curso | 2026-11-17 | [bitacora-03-cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
+| 04 | Publicación, medición y calidad | 2026-11-18 | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) |
 
 ## 3. Backlog
 
@@ -47,11 +44,6 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
-| 15.1 | Plantillas con el mismo nombre al descargar: ruta visible en la tarjeta (por ejemplo «analista-planillas/SKILL.md») y texto en la ficha de la U4 para guardar cada plantilla en su carpeta (texto aprobado por el desarrollador, campo opcional `notaDescargas` de la ficha) · Rama `correccion/plantillas-descargas`, antes de la 04-01 | Corrección | — | — | Terminada |
-| 16 | Guardia de marcadores `PENDIENTE_` y `VERIFICAR` en `pnpm build` (todos los archivos de texto de `dist/`) y limpieza de los SVG sin referencia en `dist/_astro/` | Técnico | — | 04-01 | Terminada |
-| 16.1 | Configuración de Cloudflare Workers (`wrangler.jsonc` del Worker `curso-gemini`, `pnpm dlx wrangler@4.164.0`) y publicación continua desde `main` con Workers Builds, conectada por el desarrollador después del merge | Técnico | — | 04-02 | En revisión |
-| 17 | Cloudflare Web Analytics, ícono, `robots.txt`, página 404 y licencia del contenido (sin canónica ni Open Graph) | Funcionalidad | — | 04-03 | Pendiente |
-| 18 | Verificación final de rendimiento y accesibilidad en local y en la URL publicada | Técnico | — | 04-04 | Pendiente |
 | 19 | Estados de interacción visibles: `cursor: pointer`, hover con contraste perceptible, botón de modo con su acción visible | Corrección | — | 05-01 | Pendiente |
 | 20 | Síntesis por bloque y por unidad con límites de palabras (RDA-012) y síntesis aprobada de U1 y U2; retiro del material de conducción de la clase | Funcionalidad | — | 05-02 | Pendiente |
 | 21 | Síntesis aprobada de U3 y U4 y campos de síntesis obligatorios | Funcionalidad | — | 05-03 | Pendiente |
@@ -67,7 +59,7 @@ Mientras falten, se usa `PENDIENTE_CLIENTE` donde corresponda.
 
 | Dato | Hallazgo | Necesario para | Estado |
 | :--- | :------- | :------------- | :----- |
-| Fechas de las 4 clases (define el hito de publicación) | — | Hito de la épica 04 (04-04) | Pendiente |
+| Fechas de las 4 clases (define el hito de publicación) | — | Hito de publicación y entrega comprometida (pasa de la épica 04 a la 05) | Pendiente |
 | Redacción del respaldo de Google a la formación, si se quiere mencionar en el sitio (sin logos de Google como sello) | — | Mención futura (la 02-01 no lo menciona) | Pendiente |
 | Autorización para publicar en un sitio público el kit de marca de GTD (HEX y tipografía aproximados) y el logo de GTD, que se muestra en el hero desde la 02-01 (riesgo asumido por el desarrollador) y que usan la U2, la U3 (prompt de estilo GTD) y la U4 (`gtd-visual`) | — | 02-01 y 03-02 a 03-05 (se muestra desde la 03-02 bajo responsabilidad del desarrollador; queda como riesgo) | Pendiente |
 | HEX y tipografía oficiales de GTD, si se confirman antes de la clase 2 | — | 03-02 | Pendiente |
@@ -83,8 +75,6 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Publicados el dataset CSV (03-03) y su diccionario editado para participantes (03-04); de la U1 y la U2, el resto (`plantillas-alumnos.zip`, informe de Deep Research de respaldo) queda como ausencia acordada en la 03-04; en la 03-05 se publican las 4 plantillas de `plantillas-alumnos/` (U4) y quedan como ausencia acordada `optimizador-prompts/SKILL.md`, `gtd-visual.zip` y el paquete de fuentes de la U3 | — | Desarrollador |
 | Imagen de la insignia oficial de Gemini Certified Educator para la sección del instructor · La 02-04 se construyó sin ella; el campo `insignia` del esquema está listo para recibirla | 02-04 | Desarrollador |
 | Nombres completos de las certificaciones AWS y Anthropic, si se listan · La 02-04 publica solo el texto del documento, sin detallarlas | 02-04 | Desarrollador |
-| Token de Web Analytics, para la 04-03 | RDA-005 | Desarrollador |
-| Licencia del contenido del sitio (hoy «todos los derechos reservados»), para la 04-03 | — | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U1 nombrados pero no escritos: el «Avanzado» completo de la escalera (bloque 4) y la ronda 3 del laboratorio (bloque 5) | 02-05 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U2 nombrados pero no escritos: «Prompt base» del dashboard (bloque 5), «Prompts base de cada hito» y los carriles extra de los bloques 1 a 5 | 02-05 | Desarrollador |
@@ -93,6 +83,8 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Aceptar o descartar la RDA-011 (modales sobre `<dialog>`) y la RDA-012 (síntesis con límites de palabras), antes de la 05-02 y la 05-04 | RDA-011, RDA-012 | Desarrollador |
 | Aplicar las propuestas P-009 (`DESIGN.md`), P-010 (`AGENTS.md`) y P-011 (`README.md`) antes de la 05-04 | P-009, P-010, P-011 | Desarrollador |
 | Aprobar la síntesis de cada bloque y el retiro del material de conducción de la clase («Pregunta para el grupo», «al azar», «semáforo», minutos por subpunto) | 05-02, 05-03 | Desarrollador |
+| Rendimiento publicado ≥ 95 en la épica 05 (05-08): la épica 04 cerró con 87 como excepción aceptada (línea base en la bitácora de cierre) | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) | Desarrollador |
+| Al abrir la épica 05, ajustar el criterio INP < 200 ms en su definición y en la 05-08: INP queda informativo, sin bloquear (Lighthouse de laboratorio no lo mide; la 04-04 usó TBT) | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) | Desarrollador |
 
 ## 6. Propuestas fuera de alcance
 
@@ -111,10 +103,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-17 | Creación de la documentación del proyecto: nivel pequeño, 4 épicas y 15 iteraciones previstas. |
-| 2026-11-17 | Iteración 01-01 en revisión: proyecto Astro + Tailwind v4 + PNPM estricto compilando; se agrega 01-05 al registro. [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-01.md) |
-| 2026-11-17 | Iteración 01-01 terminada, aprobada por el desarrollador. |
-| 2026-11-17 | Iteración 01-02 en revisión: tokens de `DESIGN.md` con modo oscuro y fuentes de Fontsource (RDA-006, propuesta P-002). [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-02.md) |
 | 2026-11-17 | Iteración 01-02 terminada, aprobada por el desarrollador. |
 | 2026-11-17 | Propuesta de `.gitattributes` aprobada: pasa al backlog como tarea 8 de la 01-03. |
 | 2026-11-17 | Iteración 01-03 en revisión: layout, navegación sin «Recursos» (P-003), menú móvil, botón de modo, pie con redes y `.gitattributes`; JS de 806 B gzip. [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-03.md) |
@@ -156,4 +144,13 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Iteración 04-01 en revisión: guardia de marcadores en todos los archivos de texto de `dist/` (4 de 4 pruebas fallan, `cmp` 0) y limpieza de los 6 SVG sin referencia (41 030 B) tras `astro build`; hash de `index.html` idéntico; P-008 pendiente. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-01.md) |
 | 2026-11-18 | Iteración 04-01 terminada: el desarrollador revisó 360 px en el navegador sin observaciones. P-008 aplicada por el desarrollador en `AGENTS.md` (commit 6f5ff74); sale de «Decisiones por tomar». |
 | 2026-11-18 | Iteración 04-02 en revisión: `wrangler.jsonc` del Worker `curso-gemini` (solo `dist/`), `pnpm dlx wrangler@4.164.0` y `deploy --dry-run` con código 0, 0 secretos, hash idéntico; salen la versión de Wrangler y el nombre del Worker; falta el primer despliegue del desarrollador. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-02.md) |
+| 2026-11-18 | Iteración 04-02 terminada: el desarrollador dijo que el Worker está publicado en `https://curso-gemini.felipe-cuevas.workers.dev/`; `curl` dio 200 y 1 `h1`. |
+| 2026-11-18 | Iteración 04-03 en revisión: beacon de Web Analytics con `defer` (único recurso externo), 404 con `not_found_handling`, `robots.txt` y la licencia «Todos los derechos reservados.» en el pie; salen el token y la licencia de las decisiones; el ícono queda detenido. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-03.md) |
+| 2026-11-18 | Iteración 04-03: ícono del sitio con el glifo `school-outline` de Material Symbols Light (Apache-2.0) en blanco sobre `#007EA7`, enlazado 1 vez en `index.html` y `404.html`; sale la decisión del ícono; sigue en revisión. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-03.md) |
+| 2026-11-18 | Iteración 04-03 terminada: el desarrollador revisó 360 px y ambos modos, la 404 en producción y las visitas en Web Analytics. |
+| 2026-11-18 | Iteración 04-04 en revisión: Lighthouse 13.6.0 móvil (mediana de 3): local 98/98/96/100, sin Web Analytics 96/98/100/100, publicada 94/98/100/100; 2 ajustes propuestos a la espera de decisión; faltan el cierre de la épica 04 y las fechas de las clases del cliente. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-04.md) |
+| 2026-11-18 | Iteración 04-04: ajustes aprobados por el desarrollador. Títulos de las fichas en `h3`: 0 saltos y Accesibilidad local 100 (98/100/96/100). `content-visibility` aplicado, medido (93/92/96/100, TBT 302 ms) y revertido con `cmp`. Sigue en revisión hasta medir la URL publicada. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-04.md) |
+| 2026-11-18 | Iteración 04-04: URL publicada medida después del merge (`main` e120465): 87/100/100/100, con LCP 1,58 s, CLS 0 y TBT 496 ms. Rendimiento sigue bajo 95 y espera decisión. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-04.md) |
 | 2026-11-18 | Épica 05 (rediseño visual y síntesis) planificada a pedido del desarrollador antes del cierre de la 04: definición, 8 iteraciones (05-01 a 05-08), RDA-011 y RDA-012 propuestas y propuestas P-009 a P-011; backlog 19 a 26. No se empieza hasta cerrar la épica 04. [Definición](../10_epicas/epica-05-rediseno-sintesis/definicion-epica-05.md) |
+| 2026-11-18 | Reconciliación del registro: se restauran desde d947746 los estados de la 04-02 a la 04-04, el backlog 16.1 a 18 y 7 filas de historial que fd81fc4 había pisado; se conserva lo de la épica 05. |
+| 2026-11-18 | Iteración 04-04 terminada y épica 04 cerrada con una excepción aceptada por el desarrollador: Rendimiento publicado 87 (meta 95), que se atiende en la 05-08; sus filas pasan a `registro-archivo.md` y las 4 filas más antiguas del historial también. [Cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) |

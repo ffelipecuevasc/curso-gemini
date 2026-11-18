@@ -1,7 +1,7 @@
 # Iteración 04-04 · Rendimiento, accesibilidad y verificación final
 
 - **Épica:** 04 · Publicación, medición y calidad
-- **Estado:** En revisión
+- **Estado:** Terminada (2026-11-18)
 - **Rama sugerida:** iteracion/04-04-verificacion-final
 - **Depende de:** 04-03
 - **Especificación:** —
@@ -45,7 +45,9 @@ Comprobar con Lighthouse móvil, en local y en la URL publicada, que el sitio cu
 - [x] Peso de `dist/index.html` y su gzip medidos y comparados con 249 616 B y 50 905 B, con la decisión anotada en la bitácora. Evidencia: 249 986 B (+370) y 51 439 B gzip (+534), por el beacon, el ícono y la licencia de la 04-03. El peso del HTML no es la causa del TBT (ver bitácora).
 - [x] Salto de `h2` a `h4` evaluado con el resultado de Accesibilidad, con la decisión anotada. Evidencia: `heading-order` fallaba en los 4 «Objetivo» y restaba 2 puntos. Con la aprobación del 2026-11-18 los 6 `h4` de `SeccionUnidad.astro` pasan a `h3` con las mismas clases: 0 saltos, recuento 1/6/53/0 (`h1`/`h2`/`h3`/`h4`) y Accesibilidad 100 en las 3 corridas locales.
 - [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 24 de 24 prompts; 1 `h1`; 360 px y ambos modos. Sin marcar: falta que el desarrollador revise 360 px y ambos modos. Medido después del ajuste de títulos y de revertir `content-visibility`: build código 0 con 0 `warn`, limpieza y guardia con 0 marcadores; check 0/0/0; 24 de 24; 1 `h1`; 5 `<script>` (4 propios y el beacon); `dist/index.html` 249 986 B (51 423 B gzip).
-- [ ] Criterio de término de la épica 04 comprobado en la bitácora de cierre. Sin marcar: el cierre de la épica va aparte.
+- [x] Criterio de término de la épica 04 comprobado en la bitácora de cierre. Evidencia: [bitacora-04-cierre](bitacoras/bitacora-04-cierre.md), con Rendimiento publicado 87 como excepción aceptada por el desarrollador el 2026-11-18.
+
+> Cerrada el 2026-11-18 por decisión del desarrollador con los criterios 1, 2 y 5 sin marcar: Rendimiento bajo 95 queda como excepción aceptada (se atiende en la 05-08), Buenas prácticas local se juzga en la URL publicada (100) y la revisión de 360 px y ambos modos de esta iteración no consta.
 
 ## Riesgos
 

@@ -9,12 +9,12 @@
 
 ## Objetivo
 
-Medir las visitas con Cloudflare Web Analytics y dejar el sitio listo para compartir y para los buscadores: metadatos Open Graph, ícono, `robots.txt`, página 404 y la licencia del contenido.
+Medir las visitas con Cloudflare Web Analytics y dejar el sitio listo para los buscadores: ícono, `robots.txt`, página 404 y la licencia del contenido. Sin URL canónica ni Open Graph (decisión del desarrollador, 2026-11-17).
 
 ## Alcance y entregables
 
 - Script de Web Analytics con `defer` y el token del sitio, una sola vez en el layout (RDA-005, única excepción a los recursos de terceros).
-- Metadatos de título, descripción, URL canónica y Open Graph en el layout, con la URL publicada de la 04-02.
+- Título y descripción del layout revisados (ya existen); sin canónica ni Open Graph.
 - Ícono del sitio en `public/`, `robots.txt` y una página 404 con el layout del sitio.
 - Licencia del contenido en el pie, con la redacción que entregue el desarrollador.
 
@@ -22,7 +22,7 @@ Medir las visitas con Cloudflare Web Analytics y dejar el sitio listo para compa
 
 1. Pedir al desarrollador el token de Web Analytics y la licencia del contenido.
 2. Agregar el script de Web Analytics al layout con `defer` y el token; comprobar que aparece una sola vez en `dist/index.html`.
-3. Agregar los metadatos de título, descripción, canónica y Open Graph, con textos tomados de `producto.md` o entregados por el desarrollador; proponer en el chat la imagen para compartir, si hace falta, y esperar la aprobación.
+3. Revisar que el título y la descripción del layout sigan tomados de `producto.md` o entregados por el desarrollador; no agregar canónica ni Open Graph.
 4. Agregar el ícono del sitio, respetando la regla 6 de contenido de `AGENTS.md` (los logotipos de Google y Gemini no se usan como ícono del sitio).
 5. Crear `public/robots.txt` y `src/pages/404.astro` con un `h1`, el salto al contenido y un enlace a la portada.
 6. Agregar la licencia del contenido al pie.
@@ -38,7 +38,7 @@ Medir las visitas con Cloudflare Web Analytics y dejar el sitio listo para compa
 ## Criterios de aceptación
 
 - [ ] El script de Web Analytics aparece 1 vez en cada HTML de `dist/`, con `defer` y el token entregado; es el único recurso de terceros (búsqueda de `src="http` y `href="http` en `<script>` y `<link>`).
-- [ ] `dist/index.html` trae `og:title`, `og:description`, `og:url`, `og:type` y la canónica con la URL publicada.
+- [ ] `dist/index.html` trae `lang`, `<title>` y `meta name="description"`, y ninguna etiqueta `og:` ni `rel="canonical"` (búsqueda con un comando).
 - [ ] `dist/robots.txt` y `dist/404.html` existen; la 404 tiene 1 `h1` y el enlace a la portada.
 - [ ] La licencia del pie es la entregada por el desarrollador, copiada tal cual.
 - [ ] El panel de Web Analytics registra visitas después de publicar (dicho por el desarrollador, con fecha).
@@ -47,7 +47,6 @@ Medir las visitas con Cloudflare Web Analytics y dejar el sitio listo para compa
 ## Riesgos
 
 - Que el script de Web Analytics baje la nota de Rendimiento: se mide en la 04-04 (RDA-005).
-- Que los metadatos queden con una URL distinta de la publicada: se toman de la 04-02.
 
 ## Fuera de alcance
 

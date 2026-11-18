@@ -21,6 +21,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-005 | `DESIGN.md` · 5. Componentes (filas Portada y Redes) y 6. Íconos y logotipos | Planificación de la 02-01 | 2026-11-17 | Aplicada |
 | P-006 | `DESIGN.md` · 4. Espaciado, retícula y forma (Retícula) | Revisión de la 02-03 | 2026-11-17 | Aplicada (2026-11-17, commit 9c39f9b) |
 | P-007 | `AGENTS.md` · 8. Reglas de contenido, regla 5 | Auditoría previa a la 03-01 | 2026-11-17 | Aplicada (2026-11-17, commit bc70739) |
+| P-008 | `AGENTS.md` · 8. Reglas de contenido, regla 3 (frente a 1. Contexto, «Cliente») | Iteración 04-01 | 2026-11-17 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -166,4 +167,23 @@ En `.claude/hooks/documentos-permitidos.md`, sección «_planificacion/», agreg
 
 ```text
 5. Nombres de archivo y carpeta en ASCII: minúsculas, guiones, sin tildes ni ñ. Única excepción: los archivos `SKILL.md` de `public/descargas/` (`optimizador-prompts/SKILL.md` y `plantillas-alumnos/<plantilla>/SKILL.md`), porque el formato de skills exige ese nombre.
+```
+
+## P-008 · Quién es el cliente en la regla de los marcadores
+
+- **Documento:** `AGENTS.md`
+- **Sección:** 8. Reglas de contenido, regla 3 (en relación con 1. Contexto en 30 segundos, «Cliente»)
+- **Estado:** Pendiente
+- **Por qué:** la sección 1 define como cliente solo a Capacita Tu Futuro, «para trabajadores de GTD Telsur», pero la regla 3 llama «datos del cliente» a los de Capacita Tu Futuro o GTD. Un agente puede dudar si un dato de GTD (por ejemplo, su kit de marca) se marca como `PENDIENTE_CLIENTE` y a quién se le pide. Además, la regla 3 dice que la guardia revisa «el HTML generado», y desde la 04-01 revisa todos los archivos de texto de `dist/`, incluidas las descargas `.md` y `.csv`. Si no se aplica, las dos secciones siguen diciendo cosas distintas y la regla describe una guardia más estrecha que la real.
+
+**Texto actual** (copiado literalmente de `AGENTS.md`):
+
+```text
+3. Si falta un dato, usa un marcador explícito: `PENDIENTE_CLIENTE` para datos del cliente (Capacita Tu Futuro o GTD) y `PENDIENTE_DESARROLLADOR` para decisiones técnicas, de diseño o de contenido del curso. Regístralo en `registro-pendientes.md`. Nunca publiques un dato de relleno que parezca real. Antes de publicar, ningún marcador puede quedar visible en el sitio: `pnpm build` debe fallar si encuentra uno en el HTML generado.
+```
+
+**Texto propuesto:**
+
+```text
+3. Si falta un dato, usa un marcador explícito: `PENDIENTE_CLIENTE` para datos del cliente (Capacita Tu Futuro) o de la empresa de los participantes (GTD Telsur), y `PENDIENTE_DESARROLLADOR` para decisiones técnicas, de diseño o de contenido del curso. Regístralo en `registro-pendientes.md`. Nunca publiques un dato de relleno que parezca real. Antes de publicar, ningún marcador puede quedar visible en el sitio: `pnpm build` falla si encuentra `PENDIENTE_` o `VERIFICAR` en cualquier archivo de texto de `dist/`, incluidas las descargas.
 ```

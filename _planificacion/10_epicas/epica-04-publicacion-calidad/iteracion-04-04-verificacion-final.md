@@ -13,7 +13,7 @@ Comprobar con Lighthouse móvil, en local y en la URL publicada, que el sitio cu
 
 ## Punto de partida
 
-- La épica 03 midió `dist/index.html` en 249 160 B (50 748 B gzip), frente a 61 892 B antes de la épica; no hay medición de Lighthouse.
+- La 04-01 midió `dist/index.html` en 249 616 B (50 905 B gzip), después de la corrección 15.1 (la épica 03 cerró con 249 160 B y 50 748 B; 61 892 B antes de la épica 03); no hay medición de Lighthouse.
 - Las fichas saltan de `h2` a `h4` (decisión aceptada en la 03-01), lo que puede restar en la auditoría de accesibilidad.
 
 ## Alcance y entregables
@@ -42,7 +42,7 @@ Comprobar con Lighthouse móvil, en local y en la URL publicada, que el sitio cu
 
 - [ ] Lighthouse móvil en local: Rendimiento ≥ 95, Accesibilidad 100, Buenas prácticas 100 y SEO 100; LCP < 2,5 s y CLS < 0,1 (mediana de 3 corridas).
 - [ ] Lighthouse móvil sobre la URL publicada con las mismas metas.
-- [ ] Peso de `dist/index.html` y su gzip medidos y comparados con 249 160 B y 50 748 B, con la decisión anotada en la bitácora.
+- [ ] Peso de `dist/index.html` y su gzip medidos y comparados con 249 616 B y 50 905 B, con la decisión anotada en la bitácora.
 - [ ] Salto de `h2` a `h4` evaluado con el resultado de Accesibilidad, con la decisión anotada.
 - [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 24 de 24 prompts; 1 `h1`; 360 px y ambos modos.
 - [ ] Criterio de término de la épica 04 comprobado en la bitácora de cierre.

@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/limpiar-svg.mjs && node scripts/guardia-marcadores.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write ."

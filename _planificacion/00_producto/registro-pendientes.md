@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-17
-- **Iteración activa:** ninguna (siguen la corrección 15.1 y la 04-01, pendientes)
+- **Iteración activa:** 04-01 (en revisión)
 - **Próximo hito:** épica 04: sitio publicado en `workers.dev`, con Web Analytics y las metas de Lighthouse, antes de la clase 1
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador
@@ -18,7 +18,7 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
-| 04-01 | [Guardia de marcadores y limpieza de la compilación](../10_epicas/epica-04-publicacion-calidad/iteracion-04-01-guardia-marcadores.md) | 04 | Pendiente | 03-05, corrección 15.1 | — |
+| 04-01 | [Guardia de marcadores y limpieza de la compilación](../10_epicas/epica-04-publicacion-calidad/iteracion-04-01-guardia-marcadores.md) | 04 | En revisión | 03-05, corrección 15.1 | [bitacora-04-01](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-01.md) |
 | 04-02 | [Configuración de Cloudflare Workers](../10_epicas/epica-04-publicacion-calidad/iteracion-04-02-cloudflare-workers.md) | 04 | Pendiente | 04-01 | — |
 | 04-03 | [Web Analytics y metadatos para compartir](../10_epicas/epica-04-publicacion-calidad/iteracion-04-03-analytics-metadatos.md) | 04 | Pendiente | 04-02 | — |
 | 04-04 | [Rendimiento, accesibilidad y verificación final](../10_epicas/epica-04-publicacion-calidad/iteracion-04-04-verificacion-final.md) | 04 | Pendiente | 04-03 | — |
@@ -39,10 +39,10 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
-| 15.1 | Plantillas con el mismo nombre al descargar: ruta visible en la tarjeta (por ejemplo «analista-planillas/SKILL.md») y texto en la ficha de la U4 para guardar cada plantilla en su carpeta (texto aprobado por el desarrollador, campo opcional `notaDescargas` de la ficha) · Rama `correccion/plantillas-descargas`, antes de la 04-01 | Corrección | — | — | En revisión |
-| 16 | Guardia de marcadores `PENDIENTE_` y `VERIFICAR` en `pnpm build` y limpieza de los SVG sin referencia en `dist/_astro/` | Técnico | — | 04-01 | Pendiente |
-| 16 | Configuración de Cloudflare Workers (`wrangler.jsonc`) y primera publicación por el desarrollador | Técnico | — | 04-02 | Pendiente |
-| 17 | Cloudflare Web Analytics, metadatos para compartir, ícono, `robots.txt`, página 404 y licencia del contenido | Funcionalidad | — | 04-03 | Pendiente |
+| 15.1 | Plantillas con el mismo nombre al descargar: ruta visible en la tarjeta (por ejemplo «analista-planillas/SKILL.md») y texto en la ficha de la U4 para guardar cada plantilla en su carpeta (texto aprobado por el desarrollador, campo opcional `notaDescargas` de la ficha) · Rama `correccion/plantillas-descargas`, antes de la 04-01 | Corrección | — | — | Terminada |
+| 16 | Guardia de marcadores `PENDIENTE_` y `VERIFICAR` en `pnpm build` (todos los archivos de texto de `dist/`) y limpieza de los SVG sin referencia en `dist/_astro/` | Técnico | — | 04-01 | En revisión |
+| 16.1 | Configuración de Cloudflare Workers (`wrangler.jsonc`, Wrangler con `pnpm dlx` y versión fija) y primera publicación por el desarrollador | Técnico | — | 04-02 | Pendiente |
+| 17 | Cloudflare Web Analytics, ícono, `robots.txt`, página 404 y licencia del contenido (sin canónica ni Open Graph) | Funcionalidad | — | 04-03 | Pendiente |
 | 18 | Verificación final de rendimiento y accesibilidad en local y en la URL publicada | Técnico | — | 04-04 | Pendiente |
 
 ## 4. Datos pendientes del cliente
@@ -68,7 +68,8 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Imagen de la insignia oficial de Gemini Certified Educator para la sección del instructor · La 02-04 se construyó sin ella; el campo `insignia` del esquema está listo para recibirla | 02-04 | Desarrollador |
 | Nombres completos de las certificaciones AWS y Anthropic, si se listan · La 02-04 publica solo el texto del documento, sin detallarlas | 02-04 | Desarrollador |
 | Nombre del Worker (define la URL `nombre.subdominio.workers.dev`), para la 04-02, y token de Web Analytics, para la 04-03 | RDA-005 | Desarrollador |
-| Cómo ejecutar Wrangler sin `npx`: dependencia de desarrollo con RDA nueva o `pnpm dlx` (se propone en la 04-02) | RDA-002 | Desarrollador |
+| Versión fija de Wrangler para `pnpm dlx` (la forma se decidió el 2026-11-17; la versión se confirma en la 04-02) | RDA-002 | Desarrollador |
+| P-008: aplicar o descartar el texto propuesto para la regla de contenido 3 de `AGENTS.md` | P-008 | Desarrollador |
 | Licencia del contenido del sitio (hoy «todos los derechos reservados»), para la 04-03 | — | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U1 nombrados pero no escritos: el «Avanzado» completo de la escalera (bloque 4) y la ronda 3 del laboratorio (bloque 5) | 02-05 | Desarrollador |
@@ -133,3 +134,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-17 | Iteración 03-05 en revisión: «Profundiza» en 7 bloques de U3 y U4 (16 en la página), 1 video de la U3 y las 4 plantillas `SKILL.md` de la U4 con la regex de la P-007; cierre de la épica 03 y propuesta de la 04 por aprobar. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-05.md) · [Cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
 | 2026-11-17 | Iteración 03-05 terminada y épica 03 cerrada (prueba en navegador dicha por el desarrollador); sus filas pasan a `registro-archivo.md`. Épica 04: 4 iteraciones generadas (04-01 a 04-04) y corrección 15.1 registrada. [Cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
 | 2026-11-17 | Corrección 15.1 en revisión: las 4 plantillas muestran su ruta («analista-planillas/SKILL.md» y otras 3; las 2 tarjetas del dataset no cambian; pesos = `statSync`) y la U4 lleva la nota aprobada (campo `notaDescargas`, contraste 18,90:1 en ambos modos); build con 0 WARN, check sin errores, 24 de 24 prompts, 4 scripts, JS idéntico, 1 h1, 0 marcadores; falta revisión en navegador. |
+| 2026-11-17 | Corrección 15.1 terminada (dicho por el desarrollador; commit 6a31229 en `main`). Decisiones de la épica 04: Wrangler con `pnpm dlx` y versión fija, 04-03 sin canónica ni Open Graph, prioridades 16 (04-01) y 16.1 (04-02). |
+| 2026-11-17 | Iteración 04-01 en revisión: guardia de marcadores en todos los archivos de texto de `dist/` (4 de 4 pruebas fallan, `cmp` 0) y limpieza de los 6 SVG sin referencia (41 030 B) tras `astro build`; hash de `index.html` idéntico; P-008 pendiente. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-01.md) |

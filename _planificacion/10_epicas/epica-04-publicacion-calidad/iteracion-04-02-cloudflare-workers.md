@@ -5,7 +5,7 @@
 - **Rama sugerida:** iteracion/04-02-cloudflare-workers
 - **Depende de:** 04-01
 - **Especificación:** —
-- **RDA relacionadas:** RDA-002 · RDA nueva si Wrangler entra como dependencia de desarrollo
+- **RDA relacionadas:** RDA-002
 
 ## Objetivo
 
@@ -19,13 +19,17 @@ Dejar `wrangler.jsonc` listo para publicar `dist/` como recursos estáticos de C
 ## Alcance y entregables
 
 - `wrangler.jsonc` con el nombre del Worker, `compatibility_date` y `assets.directory` apuntando a `./dist`, sin código de Worker.
-- La forma de ejecutar Wrangler decidida por el desarrollador y, si es dependencia de desarrollo, su RDA.
+- Wrangler se ejecuta con `pnpm dlx wrangler@<versión>`, con versión fija y sin dependencia nueva (decisión del desarrollador, 2026-11-17).
 - Los pasos de publicación para el desarrollador en la bitácora.
+
+## Decisiones del desarrollador
+
+- 2026-11-17: Wrangler con `pnpm dlx` y versión fija, sin dependencia de desarrollo ni RDA nueva. La versión exacta se confirma en esta iteración. Referencia medida en la 04-01: `pnpm view wrangler` dio 4.164.0, que pide Node `>=22.12.0`, compatible con `engines` (`>=24.16.0`).
 
 ## Tareas
 
-1. Proponer en el chat cómo ejecutar Wrangler sin `npx`: Wrangler como dependencia de desarrollo con versión fija (peso, RDA nueva, script `pnpm` en `package.json`) o `pnpm dlx wrangler@<versión>` sin dependencia; esperar la decisión.
-2. Si se elige dependencia de desarrollo: registrar la RDA e instalarla con `pnpm add -D` con versión exacta, con aprobación.
+1. Confirmar con el desarrollador la versión exacta de Wrangler para `pnpm dlx wrangler@<versión>` y comprobar que su `engines` es compatible con el de `package.json`.
+2. Anotar la versión confirmada en la bitácora y en los pasos de publicación.
 3. Pedir al desarrollador el nombre del Worker y escribir `wrangler.jsonc` (cambio de configuración, con aprobación).
 4. Revisar que el repositorio no tenga tokens ni secretos (`wrangler.jsonc`, `package.json`, `git diff`) y que `.dev.vars` y `.wrangler/` estén en `.gitignore`.
 5. Comprobar la configuración sin publicar, con la validación local que ofrezca Wrangler (por ejemplo `wrangler deploy --dry-run`), si el desarrollador lo autoriza.
@@ -35,13 +39,13 @@ Dejar `wrangler.jsonc` listo para publicar `dist/` como recursos estáticos de C
 
 ## Tareas del desarrollador
 
-1. Decidir cómo se ejecuta Wrangler (tarea 1).
+1. Confirmar la versión de Wrangler (tarea 1).
 2. Entregar el nombre del Worker.
 3. Iniciar sesión en Wrangler y hacer la primera publicación (`wrangler deploy`); avisar la URL publicada.
 
 ## Criterios de aceptación
 
-- [ ] Decisión sobre Wrangler registrada (en la bitácora y, si es dependencia, en su RDA).
+- [ ] Versión fija de Wrangler para `pnpm dlx` confirmada y anotada en la bitácora, con su `engines` compatible.
 - [ ] `wrangler.jsonc` con `assets.directory` igual a `./dist` y el nombre entregado por el desarrollador; sin `main` ni código de Worker.
 - [ ] Ningún token ni secreto en el repositorio: búsqueda de `token`, `api_key` y `CLOUDFLARE_` en los archivos versionados sin resultados nuevos.
 - [ ] La validación local de Wrangler termina sin errores, o la bitácora dice por qué no se ejecutó.
@@ -54,7 +58,7 @@ Dejar `wrangler.jsonc` listo para publicar `dist/` como recursos estáticos de C
 
 ## Despliegue
 
-- Lo ejecuta solo el desarrollador: `pnpm build` y luego `wrangler deploy` con la forma decidida en la tarea 1.
+- Lo ejecuta solo el desarrollador: `pnpm build` y luego `pnpm dlx wrangler@<versión> deploy` con la versión confirmada en la tarea 1.
 - Después de publicar: la URL `workers.dev` responde 200 con el `h1` de la página.
 - Para revertir: `wrangler rollback` a la versión anterior, o borrar el Worker desde el panel.
 
@@ -71,6 +75,6 @@ Dejar `wrangler.jsonc` listo para publicar `dist/` como recursos estáticos de C
 
 ### Del desarrollador
 
-- Forma de ejecutar Wrangler (dependencia de desarrollo con RDA o `pnpm dlx`).
+- Versión fija de Wrangler para `pnpm dlx`.
 - Nombre del Worker (define la URL `nombre.subdominio.workers.dev`).
 - La primera publicación y la URL resultante.

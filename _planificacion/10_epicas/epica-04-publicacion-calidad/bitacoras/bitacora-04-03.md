@@ -9,7 +9,7 @@
 
 - El layout carga una sola vez el script de Cloudflare Web Analytics, con `defer` y el token del sitio. Es el único recurso de terceros (RDA-005).
 - Hay una página 404 con el layout del sitio, que Cloudflare sirve con `not_found_handling: "404-page"`. También hay `robots.txt`, y el pie lleva la licencia.
-- El ícono **no se agregó**. El desarrollador pidió el SVG de Gemini y eso contradice la regla 6 de `AGENTS.md` y la tarea 4 de esta iteración. Queda en «Decisiones por tomar».
+- El ícono del sitio es `public/favicon.svg`: el glifo `school-outline` de Material Symbols Light en blanco sobre un círculo `#007EA7`, sin logos de Google ni de Gemini. Se agregó en una segunda pasada, después de que se descartara el SVG de Gemini por la regla 6.
 - No hay dependencias nuevas, y `package.json`, `pnpm-lock.yaml` y `astro.config.mjs` no cambian.
 
 **Precondición:** rama `iteracion/04-03-analytics-metadatos` sobre `b30d648` (04-02 integrada), con el árbol limpio.
@@ -18,7 +18,8 @@
 
 | Archivo | Cambio |
 | :------ | :----- |
-| `src/layouts/Base.astro` | Script de Web Analytics con `is:inline`, `defer` y `data-cf-beacon`, al final del `head` |
+| `src/layouts/Base.astro` | Script de Web Analytics con `is:inline`, `defer` y `data-cf-beacon`, al final del `head`; `<link rel="icon" type="image/svg+xml" href="/favicon.svg" />` después de la descripción |
+| `public/favicon.svg` | Nuevo: ícono del sitio (533 B) |
 | `src/components/Pie.astro` | Línea de licencia |
 | `src/pages/404.astro` | Nuevo: `h1` «Página no encontrada», texto y botón «Volver a la portada» (`/`) |
 | `public/robots.txt` | Nuevo: `User-agent: *` y `Allow: /` |
@@ -44,7 +45,13 @@ Va como una línea aparte después de «Material de capacitación con datos fict
 
 - El script lleva `is:inline` para que Astro no intente empaquetar un archivo externo.
 - La navegación de la 404 tiene un solo enlace, «Portada» (`/`), porque las anclas de la página única no existen en la 404.
-- **Ícono detenido.** La regla 6 de `AGENTS.md` dice que los logotipos de Google y Gemini identifican las herramientas que se enseñan y no se presentan como sello. La tarea 4 de la 04-03 dice que no se usan como ícono del sitio. Un favicon de Gemini haría que la pestaña pareciera un sitio de Google. La recomendación es un `favicon.svg` propio, por ejemplo un círculo con `#007EA7` y «G&G» en blanco. Si el desarrollador mantiene el de Gemini, primero hay que cambiar la tarea 4 y registrar una propuesta para la regla 6.
+- **Ícono, primera pasada:** se detuvo, porque el SVG de Gemini que se pidió contradice la regla 6 de `AGENTS.md` y la tarea 4.
+- **Ícono, segunda pasada (decisión del desarrollador, 2026-11-18):** glifo `school-outline` de la colección `material-symbols-light` de Iconify, en blanco (`#FFFFFF`) sobre un círculo `#007EA7` (primario de `DESIGN.md`).
+  - El trazo se descargó tal cual con `curl https://api.iconify.design/material-symbols-light/school-outline.svg`, con respuesta 200 y `viewBox` 0 0 24 24. Solo se cambió el relleno y se aplicó una transformación.
+  - El `viewBox` es cuadrado (0 0 24 24), con un círculo de radio 12. El glifo va centrado en su caja (3,08 a 20,92 × 4,15 a 18,69) y escalado a 0,9, con un margen de unos 3,5 unidades hasta el borde del círculo.
+  - No lleva texto ni fuentes. Lleva un comentario con el nombre del glifo, el autor y la licencia.
+- **Licencia de la colección:** según la información de la colección en Iconify (`api.iconify.design/collection?prefix=material-symbols-light&info=true`), Material Symbols Light es de Google, con licencia Apache 2.0 (`Apache-2.0`, https://github.com/google/material-design-icons/blob/master/LICENSE). Apache 2.0 pide conservar el aviso de licencia al redistribuir, no una atribución visible en el sitio ni en un documento. El aviso va dentro del propio `favicon.svg`, así que no hace falta la P-009.
+- **Regla 6:** el glifo es un birrete genérico de una colección de íconos, no un logotipo de Google ni de Gemini. No identifica ninguna herramienta ni sugiere respaldo.
 
 ## Verificación
 
@@ -57,15 +64,25 @@ Va como una línea aparte después de «Material de capacitación con datos fict
 - `medir.mjs` (scratchpad): 24 de 24 prompts, 0 marcadores.
 - `pnpm preview` en el puerto 4329: `/no-existe` responde 404 con «Página no encontrada» y `/robots.txt` responde 200. Después se apagó el servidor (comprobado: conexión rechazada).
 - El hash de `dist/index.html` cambia a propósito, por el beacon y la licencia.
-- **No verificado:** ambos modos y 360 px en un navegador.
+- **Ícono (segunda pasada):**
+  - `pnpm build`: código 0, 0 `warn`, limpieza con 6 SVG (los mismos 41030 B de `dist/_astro/`) y guardia con 0 marcadores. `pnpm astro check`: 0/0/0.
+  - `dist/favicon.svg` existe y es idéntico a `public/favicon.svg` (`cmp`). La limpieza no lo toca, porque solo revisa `dist/_astro/`.
+  - 1 `<link rel="icon" type="image/svg+xml" href="/favicon.svg">` en `index.html` y otro en `404.html`.
+  - Sigue habiendo 1 solo recurso externo (el beacon), con 0 `og:` y 0 `canonical`. 24 de 24 prompts, 1 `h1` en cada página, 5 `<script>` en `index.html` y 4 en `404.html`.
+  - `git diff --stat` de `package.json`, `pnpm-lock.yaml` y `astro.config.mjs` vacío.
+- **Legibilidad del ícono:** `rasterizar.mjs` (scratchpad) rasteriza el SVG con el sharp que ya trae Astro, a 16 y a 32 px, y lo amplía sin suavizado para mirarlo.
+  - Con la escala 0,78 de la primera prueba, el trazo «Light» casi desaparecía a 16 px. Por eso se subió a 0,9.
+  - A 32 px el birrete se lee con nitidez: el tablero, el cuerpo y la borla.
+  - A 16 px se distingue la silueta del birrete blanco sobre el círculo, con un trazo de alrededor de 1 px.
+- **No verificado:** ambos modos y 360 px en un navegador, y el ícono en la pestaña de un navegador real.
 
 ## Criterios de aceptación
 
-Ver la iteración: 4 de 6 marcados con evidencia. Quedan sin marcar las visitas en el panel (del desarrollador, después del merge) y las regresiones, porque falta la revisión en el navegador.
+Ver la iteración: 5 de 7 marcados con evidencia (en la segunda pasada se agregó el criterio del ícono). Quedan sin marcar las visitas en el panel (del desarrollador, después del merge) y las regresiones, porque falta la revisión en el navegador.
 
 ## Pasos del desarrollador
 
-1. Decidir el ícono (ver «Decisiones tomadas»).
+1. Mirar el ícono en la pestaña del navegador, en tema claro y oscuro.
 2. En `pnpm preview`, revisar la portada y la 404 en 360 px y en escritorio, en ambos modos, y la línea de licencia del pie.
 3. Hacer merge a `main`. Workers Builds publica.
 4. Abrir `https://curso-gemini.felipe-cuevas.workers.dev/no-existe` y comprobar que se ve la 404 del sitio, con «Volver a la portada».
@@ -78,16 +95,17 @@ Ver la iteración: 4 de 6 marcados con evidencia. Quedan sin marcar las visitas 
 
 ## Pendientes y riesgos
 
-- El ícono, detenido por la regla 6.
+- Algunos navegadores y buscadores piden `/favicon.ico`, que no existe y devuelve la 404. Los navegadores actuales usan el `<link rel="icon">` SVG. Agregar un `.ico` quedaría como propuesta.
 - El beacon podría bajar la nota de Rendimiento. Se mide en la 04-04 (RDA-005).
 - El enlace de la marca del encabezado apunta a `#inicio`, que no existe en la 404. Es menor, y en la 404 la vuelta a la portada la da el botón.
 
 ## Revisión
 
-- **Resultado frente al objetivo:** cumplido salvo el ícono, y medido en local. Faltan el navegador y la comprobación en producción.
+- **Resultado frente al objetivo:** cumplido, ícono incluido, y medido en local. Faltan el navegador y la comprobación en producción.
 - **Qué aprendimos:** `astro preview` ya sirve `404.html` en las rutas inexistentes, así que la 404 se puede probar sin Wrangler.
-- **Qué cambia para lo que sigue:** la 04-04 mide Lighthouse con el beacon incluido y debe partir con el ícono resuelto.
+- **Qué cambia para lo que sigue:** la 04-04 mide Lighthouse con el beacon incluido y con el ícono ya resuelto.
 
 ## Commit sugerido
 
-`Épica 4 - Iteración 04-03: agrega Web Analytics con defer, la página 404 con not_found_handling, robots.txt y la licencia del pie; el ícono queda detenido por la regla 6`
+- Primera pasada (commit 20df10a): `Épica 4 - Iteración 04-03: agrega Web Analytics con defer, la página 404 con not_found_handling, robots.txt y la licencia del pie; el ícono queda detenido por la regla 6`
+- Segunda pasada: `Épica 4 - Iteración 04-03: agrega el favicon.svg con el glifo school-outline de Material Symbols Light (Apache-2.0) sobre #007EA7, enlazado en el layout`

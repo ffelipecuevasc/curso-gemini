@@ -22,6 +22,7 @@ const { titulo, descripcion, enlaces } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{titulo}</title>
     <meta name="description" content={descripcion} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- Aplica el modo antes de pintar: elección guardada o, si no hay, el del sistema. -->
     <script is:inline>
       (function () {

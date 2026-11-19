@@ -100,10 +100,10 @@ En Claude Code, `.claude/settings.json` y sus hooks aplican estos límites; `.cl
 ## 9. Reglas técnicas
 
 1. HTML semántico, un solo `h1` en la página, cada `section` con `aria-labelledby` y un enlace «Saltar al contenido principal» como primer elemento enfocable.
-2. Cero JavaScript por defecto. Solo hay tres comportamientos con script: cambio de modo claro/oscuro, botón de copiar y menú de navegación móvil. Se escriben como scripts pequeños sin framework, empaquetados por Astro; ninguno es necesario para leer el contenido.
+2. Cero JavaScript por defecto. Solo hay cuatro comportamientos con script: cambio de modo claro/oscuro, botón de copiar, menú de navegación móvil y apertura de modales (`<dialog>` nativo, RDA-011). Además se permiten dos mejoras decorativas que se pueden quitar sin perder nada: el brillo que sigue al cursor y la transición de tarjeta a modal. Se escriben como scripts pequeños sin framework, empaquetados por Astro, con un total de 3 KB gzip como máximo; ninguno es necesario para leer el contenido: sin JavaScript, el contenido de los modales se ve en la página.
 3. Sin recursos de terceros en tiempo de ejecución: fuentes autoalojadas en `woff2`, íconos SVG en línea y videos de YouTube solo como enlaces, nunca incrustados. La única excepción es el script de Cloudflare Web Analytics, que no usa cookies.
 4. Accesibilidad WCAG 2.2 AA: contrastes de `DESIGN.md`, foco visible, objetivos táctiles de 44 × 44 px como mínimo, todo operable con teclado y `prefers-reduced-motion` respetado.
-5. Metas de rendimiento en móvil: Lighthouse con 95 o más en Rendimiento y 100 en Accesibilidad, Buenas prácticas y SEO; LCP menor a 2,5 s, CLS menor a 0,1 e INP menor a 200 ms.
+5. Metas de rendimiento en móvil: Lighthouse con 95 o más en Rendimiento y 100 en Accesibilidad, Buenas prácticas y SEO; LCP menor a 2,5 s y CLS menor a 0,1. El INP es informativo y no bloquea: Lighthouse de laboratorio no lo mide y se usa el TBT como referencia.
 6. El contenido de las unidades vive en colecciones de contenido de Astro (`src/content/`) con esquema validado; los componentes no llevan textos del curso escritos a mano.
 7. Las descargas viven en `public/descargas/` con nombres en ASCII, y cada enlace de descarga muestra el formato y el peso del archivo.
 8. Los enlaces externos abren en una pestaña nueva con `rel="noopener noreferrer"` y lo anuncian al lector de pantalla.

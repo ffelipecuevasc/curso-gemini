@@ -33,7 +33,7 @@ La página tiene estas secciones:
 
 Todo el contenido del curso vive como datos estructurados dentro del repositorio. Al compilar, Astro lee esos datos, los valida y arma una sola página con sus secciones. El resultado es un conjunto de archivos estáticos (HTML, CSS, fuentes, íconos y las descargas) que Cloudflare Workers entrega tal cual, sin servidor de aplicación ni base de datos.
 
-La página funciona completa sin JavaScript. Solo tres cosas usan un script pequeño: cambiar entre modo claro y oscuro, copiar un prompt con un botón y abrir el menú en el celular.
+La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pequeño: cambiar entre modo claro y oscuro, copiar un prompt con un botón, abrir el menú en el celular y abrir los modales con el detalle de cada bloque. Sin JavaScript, ese detalle se ve directamente en la página.
 
 ## 4. Organización del repositorio
 

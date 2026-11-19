@@ -10,9 +10,9 @@ Fuente única de verdad del diseño del proyecto. Aplica la identidad visual de 
 
 Principios:
 
-1. **Práctica primero.** Lo que el participante copia o descarga (prompts, plantillas, archivos) se ve antes que la teoría; «Profundiza en tu tiempo» queda plegado bajo cada bloque.
+1. **Práctica primero, detalle a un clic.** Cada unidad cabe en una pantalla de escritorio: se ve qué harás en cada bloque y sus ideas clave, y los prompts, las descargas, la teoría y los recursos se abren en modales desde la tarjeta del bloque.
 2. **Un color por unidad, nunca como única señal.** El color ayuda a ubicarse, pero cada bloque también lleva su número, su nombre y su porcentaje de avance escritos.
-3. **Ligero por diseño.** Bloques planos de color sólido, sin fotos, sin degradados y sin sombras: el diseño no le cuesta peso a la página.
+3. **Ligero, con profundidad.** Bloques de color sólido y sin fotos. La profundidad viene de sombras teñidas con el color de cada unidad y de un brillo sutil que sigue al cursor; los degradados se usan solo en ese brillo y en la barra de avance de lectura. Ningún efecto agrega imágenes ni librerías.
 
 ## 2. Color
 
@@ -92,21 +92,22 @@ Reglas:
 - Contenedor: ancho máximo de 1100 px, márgenes laterales de 1,5 rem en móvil.
 - Retícula: móvil primero; mosaico de 1 columna en móvil, 2 desde 640 px y 4 desde 1024 px (la ruta tiene 4 unidades), siempre con `minmax(0, 1fr)`.
 - Radios: 24 a 32 px en bloques, con esquina asimétrica en los bloques destacados (`28px 28px 28px 6px`); píldoras con radio completo.
-- Sombras: no se usan.
+- Sombras: tokens `--sombra-u1` a `--sombra-u4` (color de la unidad mezclado con `color-mix()`) y `--sombra-neutra`. En reposo, sombra suave; en hover y foco, la tarjeta sube 4 px y la sombra se amplía. En modo oscuro, menos opacidad y un halo de 1 px del color de la unidad.
 
 ## 5. Componentes
 
 | Componente | Descripción y reglas |
 | :--------- | :------------------- |
 | Encabezado | Navegación en píldoras sobre `--color-superficie-2` con enlaces a Ruta, Unidades (U1 a U4) e Instructor; la píldora de la sección visible se marca con `aria-current`. En móvil se pliega en un menú con botón (`aria-expanded`, `aria-controls`). Incluye el botón de modo. |
-| Portada (hero) | Título del curso (`h1`), una frase de propósito (el lema del curso), el botón principal «Ver la ruta», el logo de Gemini como protagonista, el de Google como secundario, y en una fila aparte, mucho más pequeños y sin texto visible, los de GTD Telsur (cliente) y Capacita Tu Futuro (organizador); un círculo decorativo `--color-superficie` parcialmente fuera del marco y los enlaces de redes pequeños en la esquina inferior izquierda. |
-| Ruta del curso | Mosaico de cuatro bloques de color (sección 2.2), cada uno con su número, nombre, mini-proyecto y avance «0 % → 25 %», «25 % → 50 %», «50 % → 75 %», «75 % → 100 %», escrito en IBM Plex Mono. Cada bloque enlaza a su sección. |
-| Sección de unidad | Encabezado con el bloque de color de la unidad, objetivo, mini-proyecto, tabla de bloques con minutos, y por cada bloque: «Para la clase», prompts copiables, descargas y «Profundiza en tu tiempo» plegado. Cierra con la lista «Terminado cuando…». |
+| Portada y ruta | Una sola sección en el primer pantallazo: a la izquierda, título (`h1`), lema, botón principal «Empezar por la Unidad 1» y redes; a la derecha, el logo de Gemini como protagonista y, en primer plano, las 4 tarjetas de unidad en mosaico 2 × 2 (número, nombre, mini-proyecto en 2 líneas y barra de avance con su texto en IBM Plex Mono), cada una enlazada a su sección. Logos de Google, GTD Telsur y Capacita Tu Futuro en una franja discreta al pie de la sección. La ruta conserva su `id="ruta"` y su `h2`. |
+| Sección de unidad | Cabe en una pantalla de escritorio (1440 × 900 y 1366 × 657). Cabecera con el bloque de color de la unidad: clase y duración en IBM Plex Mono, título, objetivo breve, barra de avance del tramo, píldoras «Antes de empezar» y «Cierre» (si existen) y acciones «Sobre la unidad», «Recursos (n)» y «Descargas (n)». Debajo, una cuadrícula de 6 tarjetas (3 × 2 desde 1024 px, 2 columnas desde 640 px, 1 en móvil): una por bloque y una de «Terminado cuando…». Sin tabla de bloques. |
+| Tarjeta de bloque | Número y minutos en IBM Plex Mono, título (`h3`), «Qué harás» y hasta 2 claves; acciones «Ver detalle» y «Ver prompt» o «Prompts (n)». Superficie `--color-fondo` con borde de 1 px `--color-linea`, franja superior del color de la unidad y sombra de su unidad. |
+| Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, título, botón «Cerrar» de 44 px, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, y «Sobre la unidad». Sin JavaScript, su contenido se ve en la página. |
 | Bloque de prompt | Fondo `--color-superficie-2`, texto en IBM Plex Mono, botón «Copiar» en la esquina superior derecha. Al copiar, el botón cambia a «Copiado» por 2 s y lo anuncia con `aria-live="polite"`. El texto es seleccionable aunque no haya JavaScript. |
-| «Profundiza en tu tiempo» | Elemento `<details>` nativo con `<summary>` visible; dentro, la teoría y los enlaces a documentación y videos oficiales de Google. |
+| «Profundiza en tu tiempo» | Apartado al final del modal de detalle del bloque, con los enlaces a documentación y videos oficiales de Google. |
 | Enlace a recurso externo | Ícono de línea que dice el tipo (documento o video), el nombre del recurso y el sitio de destino; abre en pestaña nueva y lo anuncia con texto oculto «(se abre en una pestaña nueva)». |
 | Tarjeta de descarga | Nombre del archivo, formato y peso (por ejemplo «CSV · 24 KB»), con botón de contorno «Descargar». |
-| Instructor | Nombre, títulos y trayectoria del documento del curso; certificación de Gemini destacada primero; enlaces a felipecuevas.dev y LinkedIn. |
+| Instructor | Franja compacta: nombre, certificación de Gemini primero, resumen de la trayectoria tomado del documento del curso y botón «Ver trayectoria completa» (modal); enlaces a felipecuevas.dev y LinkedIn. |
 | Pie | Enlaces de redes, nombre del curso y aviso «Material de capacitación con datos ficticios o públicos». |
 | Redes | Texto visible exacto `www.felipecuevas.dev` (a `https://felipecuevas.dev/`) y `www.linkedin.com/in/ffelipecuevasc/` (a `https://www.linkedin.com/in/ffelipecuevasc/`); ícono y texto forman un solo enlace. El enlace a felipecuevas.dev lleva el SVG de Chrome y el de LinkedIn lleva el SVG de LinkedIn (en claro con `--color-linkedin` y en oscuro con el glifo invertido, como en los tokens); texto `#003B51` en claro y `#E4F3FF` en oscuro. Van en la portada (pequeñas, abajo a la izquierda) y en el pie. |
 
@@ -115,9 +116,10 @@ Reglas:
 | Variante | Fondo | Texto | Hover |
 | :------- | :---- | :---- | :---- |
 | Principal | `--color-primario` | `--color-sobre-primario` | Claro: `#00678A`; oscuro: `#5DC9FF` |
-| Secundario (contorno) | Transparente, borde 1,5 px `--color-primario` | `--color-texto` | Fondo `--color-superficie` |
+| Secundario (contorno) | Transparente, borde 1,5 px `--color-primario` | `--color-texto` | Fondo `--color-primario`, texto `--color-sobre-primario` |
+| Ícono (modo, menú, cerrar) | `--color-superficie-2` | `--color-texto` | Fondo `--color-hover-suave` y borde de 1,5 px `--color-primario`; el botón de modo muestra además un globo con su acción («Cambiar a modo oscuro» / «Cambiar a modo claro») |
 
-Todos: forma de píldora, alto mínimo de 44 px, foco visible con `outline: 2px solid var(--color-foco); outline-offset: 3px`. Solo un botón principal por sección.
+Todos: forma de píldora, alto mínimo de 44 px, `cursor: pointer`, foco visible con `outline: 2px solid var(--color-foco); outline-offset: 3px`, y al presionar `scale(0.97)` con fondo `--color-presionado`. El cambio entre reposo y hover tiene al menos 1,3:1 de diferencia de luminancia. Solo un botón principal por sección.
 
 ## 6. Íconos y logotipos
 
@@ -129,10 +131,14 @@ Todos: forma de píldora, alto mínimo de 44 px, foco visible con `outline: 2px 
 
 ## 7. Movimiento
 
-- Transiciones de 150 a 300 ms en hover y foco; apertura de «Profundiza» sin animación de altura.
+- Transiciones de 150 a 300 ms en hover y foco. Solo se animan `transform` y `opacity`.
 - Cambio de modo: el modo nuevo se revela con un círculo de borde difuminado que crece desde el centro de la pantalla hasta cubrirla, en 1 s, con la curva `--ease-expo-out` (`cubic-bezier(0.16, 1, 0.3, 1)`). Se hace con la API View Transitions (`document.startViewTransition`); el modo anterior queda quieto debajo. En navegadores sin esa API, el modo cambia al instante.
-- No se usan animaciones infinitas, parallax ni apariciones al desplazarse.
-- Con `prefers-reduced-motion: reduce`, se quitan las transiciones, el revelado del cambio de modo (el modo cambia al instante) y el desplazamiento suave a las anclas.
+- Modales: al abrir desde una tarjeta, la tarjeta se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`; sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo.
+- Barra de avance de lectura de 3 px bajo el encabezado, guiada por el desplazamiento (`animation-timeline: scroll(root)`), con el color de la unidad visible.
+- Las tarjetas de cada unidad aparecen al entrar en la ventana (opacidad y 12 px, desfase de 40 ms) con `animation-timeline: view()`; sin soporte, se ven desde el inicio.
+- Brillo radial del color de la unidad al 12 % que sigue al cursor en las tarjetas, solo con puntero fino.
+- No se usan animaciones infinitas, parallax, fondos animados ni efectos sobre los logotipos.
+- Con `prefers-reduced-motion: reduce`, se quitan todas las transiciones y animaciones: el revelado del cambio de modo, la transición de los modales, la barra de avance, las apariciones, el brillo y el desplazamiento suave a las anclas.
 
 ## 8. Implementación de los tokens
 

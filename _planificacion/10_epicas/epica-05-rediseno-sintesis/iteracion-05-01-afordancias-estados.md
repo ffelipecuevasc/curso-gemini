@@ -89,5 +89,4 @@ Verificar leyendo los archivos antes de escribir:
 ### Qué necesita del desarrollador
 
 1. **Dato:** confirmación visual en el navegador con `pnpm preview` (360 px, 1024 px y escritorio, en modo claro y oscuro, con mouse y teclado) · **Para qué criterio:** revisión visual de los estados de hover/presionado, posición del globo del botón de modo en 1024 px y ausencia de choque entre el giro del ícono y el revelado circular del cambio de modo · **Cómo obtenerlo:** ejecutar `pnpm preview`, recorrer con `Tab` y con el puntero el encabezado (píldoras, botón de modo, botón «Menú» en 360 px), el botón «Ver la ruta», las 4 tarjetas de la ruta, un botón «Copiar» y un botón «Descargar» en ambos modos.
-   - **Respuesta:**
-
+   - **Respuesta:** Todo funcionó perfectamente, probé en el navegador con `pnpm preview` (360 px, 1024 px y escritorio, en modo claro y oscuro, con mouse y teclado) y los estados hover/presionado se ven perfectos, la posición del globo del botón de modo en 1024 px se ve perfectamente y la ausencia de choque entre el giro del ícono y el revelado circular del cambio de modo se ve excelente.

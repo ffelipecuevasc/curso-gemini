@@ -67,7 +67,7 @@ Orden y dependencias:
 - 2026-11-18: la documentación de la épica se genera antes del cierre de la 04; la ejecución empieza después del cierre (decisión del desarrollador).
 - 2026-11-18: nivel de efectos «con propósito»: sombras teñidas por unidad, transición de tarjeta a modal con View Transitions, barra de avance por desplazamiento, aparición escalonada sutil y brillo que sigue al cursor en las tarjetas. Sin parallax, sin fondos animados y sin efectos sobre logotipos (decisión del desarrollador).
 - 2026-11-18: síntesis «resumen visible + detalle en modal»: el agente redacta el resumen (va en el modal), «Qué harás» y las claves (van en la tarjeta) de cada bloque; el texto completo se conserva en el modal «Ver detalle»; el desarrollador aprueba cada síntesis antes de publicarla (decisión del desarrollador).
-- 2026-11-18: modales sobre `<dialog>` nativo con un script mínimo y respaldo sin JavaScript, según RDA-011 (propuesta). El desarrollador delega la elección técnica en la opción más profesional para el stack y se encarga de editar `AGENTS.md`, `DESIGN.md` y `README.md` (propuestas P-009 y P-010).
+- 2026-11-18: modales sobre `<dialog>` nativo con un script mínimo y respaldo sin JavaScript, según RDA-011 (propuesta). El desarrollador delega la elección técnica en la opción más profesional para el stack y se encarga de editar `AGENTS.md`, `DESIGN.md` y `README.md` (propuestas P-009, P-010 y P-011: P-009 antes de la 05-01; las otras dos antes de la 05-04).
 - La verificación de Lighthouse de la 04-04 queda como línea base; la 05-08 la repite sobre el sitio rediseñado y la compara.
 
 ## Reglas comunes de la épica

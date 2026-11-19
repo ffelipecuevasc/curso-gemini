@@ -51,7 +51,7 @@ Comprobar con mediciones que el rediseño cumple el criterio de término de la �
 ## Riesgos
 
 - Que la nota de Rendimiento baje por los efectos: se quita primero el efecto de menor valor (brillo que sigue al cursor) y se vuelve a medir.
-- Que Lighthouse solo se mida sobre la URL publicada en esta iteración (sin medición temprana en las iteraciones previas): si Rendimiento no llega a 95, recién se sabrá al final de la épica.
+- Que no haya medición de Lighthouse al cerrar la 05-05, cuando la unidad ya cabe en una pantalla: la primera lectura local es la de la 05-06 (LCP) y la línea base de la 05-07, y la publicada es la de esta iteración. Si Rendimiento no llega a 95, se sabrá recién en la 05-07 o la 05-08.
 
 ## Fuera de alcance
 

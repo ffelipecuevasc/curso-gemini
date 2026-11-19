@@ -7,40 +7,41 @@
 
 ## Resumen
 
-Corrección documental de la épica 05 previa a iniciar la iteración 05-01, sin cambios en código ni en documentos protegidos. Se reemplaza el criterio «INP < 200 ms» por «INP informativo, sin bloquear; referencia: TBT» en la definición y en las iteraciones 05-07 y 05-08; se adelanta la aplicación de P-009 a antes de la 05-01; se suma P-011 a la 05-04; se explicita en la 05-04 que el cuerpo del bloque vive solo en el modal «Ver detalle» dejando `BloqueClase` temporalmente austero hasta la 05-05; y se agrega en la 05-08 el riesgo de medir Lighthouse sobre la URL publicada solo al cierre.
+Corrección documental de la épica 05 previa a iniciar la iteración 05-01, sin cambios en código ni en documentos protegidos. Se reemplaza el criterio «INP < 200 ms» por «INP informativo, sin bloquear; referencia: TBT» en la definición y en las iteraciones 05-07 y 05-08; se adelanta la aplicación de P-009 a antes de la 05-01; se suma P-011 a la 05-04; se explicita en la 05-04 que el cuerpo del bloque vive solo en el modal «Ver detalle» dejando `BloqueClase` temporalmente austero hasta la 05-05; se agrega en la 05-08 el riesgo de no medir Lighthouse al cerrar la 05-05 (manteniendo las lecturas locales de 05-06 y 05-07); y en la segunda pasada se registra la propuesta P-012 (`AGENTS.md`, regla 5).
 
 ## Archivos creados o modificados
 
 | Archivo | Cambio |
 | :------ | :----- |
-| `_planificacion/10_epicas/epica-05-rediseno-sintesis/definicion-epica-05.md` | Precondiciones (P-009 antes de la 05-01; P-010 y P-011 antes de la 05-04) y criterio de término (INP informativo, sin bloquear; referencia: TBT). |
-| `_planificacion/10_epicas/epica-05-rediseno-sintesis/iteracion-05-01-afordancias-estados.md` | Agrega «P-009 aplicada» a «Depende de». |
-| `_planificacion/10_epicas/epica-05-rediseno-sintesis/iteracion-05-04-modales.md` | Agrega P-011 a «Depende de» y «Tareas del desarrollador»; reescribe la afirmación «una sola vez» y la línea 37 (cuerpo solo en modal, página austera hasta la 05-05); agrega el riesgo de la vista austera temporal. |
+| `_planificacion/10_epicas/epica-05-rediseno-sintesis/definicion-epica-05.md` | Decisiones de la épica (P-009, P-010 y P-011), Precondiciones (P-009 antes de la 05-01; P-010 y P-011 antes de la 05-04) y criterio de término (INP informativo, sin bloquear; referencia: TBT). |
+| `_planificacion/10_epicas/epica-05-rediseno-sintesis/iteracion-05-01-afordancias-estados.md` | Agrega «P-009 aplicada» a «Depende de» y «Aplicar la P-009 en `DESIGN.md` antes de empezar» en «Datos requeridos · Del desarrollador». |
+| `_planificacion/10_epicas/epica-05-rediseno-sintesis/iteracion-05-04-modales.md` | Agrega P-011 a «Depende de», «Tareas del desarrollador» y «Datos requeridos · Del desarrollador»; reescribe la afirmación «una sola vez», la línea 37 (cuerpo solo en modal, página austera hasta la 05-05) y el riesgo de altura con/sin JS; agrega el riesgo de la vista austera temporal. |
 | `_planificacion/10_epicas/epica-05-rediseno-sintesis/iteracion-05-07-efectos.md` | Criterio de aceptación: cambia «INP < 200 ms en Lighthouse» a «INP informativo, sin bloquear; referencia: TBT». |
-| `_planificacion/10_epicas/epica-05-rediseno-sintesis/iteracion-05-08-verificacion.md` | Punto de partida y criterio de aceptación con «INP informativo, sin bloquear; referencia: TBT»; riesgo de medir Lighthouse solo en la 05-08. |
-| `_planificacion/00_producto/registro-pendientes.md` | Dependencia de 05-01 (`cierre de la épica 04, P-009`), fila `18.1` de tipo `Corrección` en `En revisión`, actualización de P-009/P-010/P-011 y retiro del ajuste INP de «Decisiones por tomar», e historial del 2026-11-19. |
-| `_planificacion/10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-00-correccion-documental.md` | Esta bitácora breve con las decisiones del desarrollador y los antes/después. |
+| `_planificacion/10_epicas/epica-05-rediseno-sintesis/iteracion-05-08-verificacion.md` | Punto de partida y criterio de aceptación con «INP informativo, sin bloquear; referencia: TBT»; riesgo de no medir Lighthouse al cerrar la 05-05 (manteniendo 05-06 y 05-07 locales). |
+| `_planificacion/00_producto/propuestas-documentos-protegidos.md` | Ajusta `P-009` («Se aplica antes de la 05-01») y registra `P-012` (`AGENTS.md`, sección 9, regla 5: INP informativo y referencia TBT, antes de la 05-08). |
+| `_planificacion/00_producto/registro-pendientes.md` | Dependencia de 05-01 (`cierre de la épica 04, P-009`), fila `18.1` de tipo `Corrección` en `En revisión`, actualización de P-009/P-010/P-011, alta de P-012 y retiro del ajuste INP de «Decisiones por tomar», y dos filas de historial del 2026-11-19. |
+| `_planificacion/10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-00-correccion-documental.md` | Esta bitácora breve con las decisiones del desarrollador, los antes/después y la segunda pasada. |
 
 ## Verificación
 
-- `Select-String -Path "_planificacion\10_epicas\epica-05*\*.*" -Pattern "INP < 200"`: 0 coincidencias.
+- `Select-String -Path "_planificacion\10_epicas\epica-05*\*.*" -Pattern "INP < 200"` (excluyendo bitácoras): 0 coincidencias.
 - `Select-String -Path "_planificacion\10_epicas\epica-05*\*.*" -Pattern "INP"`: 4 coincidencias en los documentos de la épica (definición l. 95, 05-07 l. 51, 05-08 l. 16 y l. 45), todas con «INP informativo, sin bloquear; referencia: TBT».
 - `git status --short`: ningún documento protegido (`AGENTS.md`, `DESIGN.md`, `README.md`, `_planificacion/README.md`, `_planificacion/plantillas/`, `.claude/`) ni `registro-archivo.md` modificado.
 
 ## Criterios de aceptación
 
-- [x] «INP < 200 ms» reemplazado por «INP informativo, sin bloquear; referencia: TBT» en `definicion-epica-05.md` (l. 95), `iteracion-05-07-efectos.md` (l. 51) e `iteracion-05-08-verificacion.md` (l. 16 y l. 45).
-- [x] P-011 agregada a «Depende de» (l. 6) y a «Tareas del desarrollador» (l. 56) de `iteracion-05-04-modales.md`.
-- [x] P-009 requerida antes de la 05-01 en `iteracion-05-01-afordancias-estados.md` (l. 6), `definicion-epica-05.md` (l. 84) y `registro-pendientes.md` (fila 05-01).
-- [x] `iteracion-05-04-modales.md` explicita en las líneas 31 y 37 que el cuerpo completo vive solo dentro del modal «Ver detalle» y que `BloqueClase` deja la página temporalmente austera hasta la 05-05, con su riesgo (l. 74).
-- [x] `iteracion-05-08-verificacion.md` incluye el riesgo de que Lighthouse se mida sobre la URL publicada solo en esa iteración (l. 54).
+- [x] «INP < 200 ms» reemplazado por «INP informativo, sin bloquear; referencia: TBT» en `definicion-epica-05.md` (l. 95), `iteracion-05-07-efectos.md` (l. 51) e `iteracion-05-08-verificacion.md` (l. 16 y l. 45), y registrada la propuesta `P-012` para `AGENTS.md` (regla 5).
+- [x] P-011 agregada a «Depende de» (l. 6), «Tareas del desarrollador» (l. 56) y «Datos requeridos · Del desarrollador» (l. 89) de `iteracion-05-04-modales.md`, y a «Decisiones de la épica» (l. 70) de `definicion-epica-05.md`.
+- [x] P-009 requerida antes de la 05-01 en `iteracion-05-01-afordancias-estados.md` (l. 6 y l. 74), `definicion-epica-05.md` (l. 70 y l. 84), `propuestas-documentos-protegidos.md` (l. 200) y `registro-pendientes.md` (fila 05-01 y «Decisiones por tomar»).
+- [x] `iteracion-05-04-modales.md` explicita en las líneas 31 y 37 que el cuerpo completo vive solo dentro del modal «Ver detalle» y que `BloqueClase` deja la página temporalmente austera hasta la 05-05, con sus riesgos de altura con/sin JS (l. 73) y vista austera (l. 74).
+- [x] `iteracion-05-08-verificacion.md` incluye el riesgo de no medir Lighthouse al cerrar la 05-05, manteniendo las lecturas locales de 05-06 y 05-07 y la publicada en la 05-08 (l. 54).
 
 ## Decisiones tomadas
 
 - **2026-11-18 / 2026-11-19 (desarrollador) · INP informativo:** Lighthouse de laboratorio no mide INP; se usa TBT como referencia y el criterio pasa a «INP informativo, sin bloquear; referencia: TBT».
 - **2026-11-19 (desarrollador) · P-009 completa antes de la 05-01:** la propuesta P-009 (`DESIGN.md`) se aplica completa antes de iniciar la 05-01 (porque la 05-01 ya introduce los estados de botones y tokens de hover/presionado de la sección 5.1 de `DESIGN.md`), y P-010 y P-011 antes de la 05-04.
 - **2026-11-19 (desarrollador) · Cuerpo del bloque en la 05-04:** desde la 05-04 el cuerpo completo del bloque vive únicamente dentro del modal «Ver detalle»; `BloqueClase` deja de mostrarlo en la página, que queda temporalmente austera (título, minutos y botones) hasta que la 05-05 incorpore las tarjetas con la síntesis.
-- **2026-11-19 (desarrollador) · Medición de Lighthouse en la 05-08:** sin medición temprana obligatoria sobre la URL publicada antes de la 05-08; si Rendimiento no llega a 95, se detectará al final.
+- **2026-11-19 (desarrollador) · Medición de Lighthouse en la 05-08 (aclarada en segunda pasada):** no se mide Lighthouse al cerrar la 05-05; se mantienen las mediciones locales de la 05-06 (LCP) y la 05-07 (línea base y ≥ 95), y la medición sobre la URL publicada en la 05-08.
 
 ### Antes y después por archivo
 
@@ -76,25 +77,46 @@ Corrección documental de la épica 05 previa a iniciar la iteración 05-01, sin
 - **`iteracion-05-08-verificacion.md` (l. 45):**
   - Antes: `- [ ] Lighthouse móvil sobre la URL publicada: Rendimiento ≥ 95; Accesibilidad, Buenas prácticas y SEO = 100; LCP < 2,5 s, CLS < 0,1 e INP < 200 ms; tabla comparada con la 04-04.`
   - Después: `- [ ] Lighthouse móvil sobre la URL publicada: Rendimiento ≥ 95; Accesibilidad, Buenas prácticas y SEO = 100; LCP < 2,5 s, CLS < 0,1 e INP informativo, sin bloquear; referencia: TBT; tabla comparada con la 04-04.`
-- **`iteracion-05-08-verificacion.md` (l. 54, nueva):**
-  - Después: `- Que Lighthouse solo se mida sobre la URL publicada en esta iteración (sin medición temprana en las iteraciones previas): si Rendimiento no llega a 95, recién se sabrá al final de la épica.`
+- **`iteracion-05-08-verificacion.md` (l. 54, nueva; reescrita en segunda pasada):**
+  - Primera pasada: `- Que Lighthouse solo se mida sobre la URL publicada en esta iteración (sin medición temprana en las iteraciones previas): si Rendimiento no llega a 95, recién se sabrá al final de la épica.`
+  - Segunda pasada: `- Que no haya medición de Lighthouse al cerrar la 05-05, cuando la unidad ya cabe en una pantalla: la primera lectura local es la de la 05-06 (LCP) y la línea base de la 05-07, y la publicada es la de esta iteración. Si Rendimiento no llega a 95, se sabrá recién en la 05-07 o la 05-08.`
+
+## Segunda pasada
+
+En la misma rama `correccion/epica-05-ajustes-documentales` (sobre el commit `bfc3b7c`), se cierran los 6 hallazgos detectados en la primera pasada y se aclara el alcance del riesgo de Lighthouse:
+
+1. **`definicion-epica-05.md` (l. 70, «Decisiones de la épica»):**
+   - Antes: `- 2026-11-18: modales sobre `<dialog>` nativo con un script mínimo y respaldo sin JavaScript, según RDA-011 (propuesta). El desarrollador delega la elección técnica en la opción más profesional para el stack y se encarga de editar `AGENTS.md`, `DESIGN.md` y `README.md` (propuestas P-009 y P-010).`
+   - Después: `- 2026-11-18: modales sobre `<dialog>` nativo con un script mínimo y respaldo sin JavaScript, según RDA-011 (propuesta). El desarrollador delega la elección técnica en la opción más profesional para el stack y se encarga de editar `AGENTS.md`, `DESIGN.md` y `README.md` (propuestas P-009, P-010 y P-011: P-009 antes de la 05-01; las otras dos antes de la 05-04).`
+2. **`iteracion-05-04-modales.md` (l. 89, «Datos requeridos · Del desarrollador»):**
+   - Antes: `- Aceptación de la RDA-011 y aplicación de P-009 y P-010.`
+   - Después: `- Aceptación de la RDA-011 y aplicación de P-009, P-010 y P-011.`
+3. **`iteracion-05-04-modales.md` (l. 73, «Riesgos»):**
+   - Antes: `- Que la página quede muy alta mientras la 05-05 no reubique el contenido: es esperable en esta iteración; el alto se mide al cerrar la 05-05.`
+   - Después: `- Con el cuerpo solo en el modal, la página queda más corta y austera con JavaScript; solo sin JavaScript se ve alta mientras los `<dialog>` se muestran en su lugar como bloques normales: el alto en escritorio se mide al cerrar la 05-05.`
+4. **`iteracion-05-01-afordancias-estados.md` (l. 74, «Datos requeridos · Del desarrollador»):**
+   - Antes: `- Ninguno. Si el texto visible del botón de modo debe ser otro que «Cambiar a modo oscuro» / «Cambiar a modo claro», se acuerda antes de empezar.`
+   - Después: `- Aplicar la P-009 en `DESIGN.md` antes de empezar. Si el texto visible del botón de modo debe ser otro que «Cambiar a modo oscuro» / «Cambiar a modo claro», se acuerda antes de empezar.`
+5. **`propuestas-documentos-protegidos.md` (l. 200, `P-009 · Por qué`):**
+   - Antes: `…Se aplica antes de la 05-04; la paleta, las tipografías y los radios no cambian.`
+   - Después: `…Se aplica antes de la 05-01; la paleta, las tipografías y los radios no cambian.`
+6. **`iteracion-05-08-verificacion.md` (l. 54, «Riesgos»):**
+   - Antes: `- Que Lighthouse solo se mida sobre la URL publicada en esta iteración (sin medición temprana en las iteraciones previas): si Rendimiento no llega a 95, recién se sabrá al final de la épica.`
+   - Después: `- Que no haya medición de Lighthouse al cerrar la 05-05, cuando la unidad ya cabe en una pantalla: la primera lectura local es la de la 05-06 (LCP) y la línea base de la 05-07, y la publicada es la de esta iteración. Si Rendimiento no llega a 95, se sabrá recién en la 05-07 o la 05-08.`
+7. **`propuestas-documentos-protegidos.md` (l. 28 y l. 356–373, nueva `P-012`) y `registro-pendientes.md` (l. 86, «Decisiones por tomar»):**
+   - Se registra `P-012` (`AGENTS.md`, sección 9, regla 5, `Pendiente`, para aplicar antes de la 05-08), reemplazando `LCP menor a 2,5 s, CLS menor a 0,1 e INP menor a 200 ms.` por `LCP menor a 2,5 s y CLS menor a 0,1. El INP es informativo y no bloquea: Lighthouse de laboratorio no lo mide y se usa el TBT como referencia.`, y se agrega su fila en «Decisiones por tomar».
 
 ## Pendientes y riesgos
 
-- Hallazgos menores en secciones no solicitadas para editar:
-  1. `definicion-epica-05.md` (l. 70) menciona `(propuestas P-009 y P-010)` al hablar de editar `AGENTS.md`, `DESIGN.md` y `README.md` (omite P-011).
-  2. `iteracion-05-04-modales.md` (l. 88, sección «Datos requeridos · Del desarrollador») dice `Aceptación de la RDA-011 y aplicación de P-009 y P-010` (omite P-011), y la línea 73 en «Riesgos» conserva «Que la página quede muy alta mientras la 05-05 no reubique el contenido», aunque al retirar el cuerpo de `BloqueClase` en la 05-04 la página ya no será tan alta con JavaScript activo (sí lo será sin JavaScript).
-  3. `iteracion-05-01-afordancias-estados.md` (l. 74, «Datos requeridos · Del desarrollador») sigue diciendo «Ninguno», aunque «Depende de» ahora exige «P-009 aplicada».
-  4. `propuestas-documentos-protegidos.md` (l. 199, texto de P-009) dice «Se aplica antes de la 05-04», mientras que ahora P-009 se aplica antes de la 05-01.
-  5. `iteracion-05-06-portada-ruta.md` (l. 59) e `iteracion-05-07-efectos.md` (l. 37, 43 y 53) siguen pidiendo Lighthouse móvil local sobre `pnpm preview`, en convivencia con el riesgo de la 05-08 sobre medir Lighthouse solo al final.
-  6. `AGENTS.md` (l. 106, documento protegido) sigue listando «e INP menor a 200 ms» en la regla técnica 5.
+- Todos los hallazgos de la primera pasada quedaron cerrados. Queda pendiente que el desarrollador aplique la `P-009` en `DESIGN.md` antes de abrir la `05-01`, `P-010` y `P-011` antes de la `05-04`, y `P-012` antes de la `05-08`.
 
 ## Revisión
 
-- **Resultado frente al objetivo:** los 5 puntos de corrección documental quedaron aplicados exactamente en los archivos indicados y reflejados en `registro-pendientes.md`.
-- **Qué aprendimos:** adelantar P-009 a la 05-01 evita que los nuevos estilos de botones contradigan `DESIGN.md`, y retirar el cuerpo de `BloqueClase` desde la 05-04 garantiza que el HTML no duplique contenido ni siquiera en el paso intermedio.
-- **Qué cambia para lo que sigue:** antes de abrir la 05-01, el desarrollador debe aplicar la P-009 en `DESIGN.md`.
+- **Resultado frente al objetivo:** la planificación de la épica 05 y el registro de propuestas a documentos protegidos quedaron internamente consistentes de punta a punta.
+- **Qué aprendimos:** distinguir entre las lecturas locales de Lighthouse (05-06 y 05-07) y la ausencia de lectura al cerrar la 05-05 evita contradicciones entre las tareas de la 05-06/05-07 y los riesgos de la 05-08.
+- **Qué cambia para lo que sigue:** antes de abrir la 05-01, el desarrollador aplica P-009 en `DESIGN.md`; antes de la 05-08, aplica P-012 en `AGENTS.md`.
 
 ## Commit sugerido
 
-`Corrección: ajusta definición e iteraciones 05-01, 05-04, 05-07 y 05-08 de la épica 05 (INP informativo, P-009 antes de 05-01, P-011 y cuerpo en modal en 05-04, riesgo en 05-08)`
+`Corrección: segunda pasada documental de épica 05 (P-011 en definición y 05-04, P-009 en 05-01 y P-009, riesgos de altura en 05-04 y de Lighthouse sin 05-05 en 05-08, y P-012 de INP en AGENTS.md)`
+

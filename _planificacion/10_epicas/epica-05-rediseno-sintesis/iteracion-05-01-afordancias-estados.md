@@ -1,7 +1,7 @@
 # Iteración 05-01 · Afordancias y estados de interacción
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** En revisión (2026-11-19)
+- **Estado:** Terminada (2026-11-19)
 - **Rama sugerida:** iteracion/05-01-afordancias-estados
 - **Depende de:** cierre de la épica 04 y P-009 aplicada
 - **Bitácora:** [bitacora-05-01](bitacoras/bitacora-05-01.md)

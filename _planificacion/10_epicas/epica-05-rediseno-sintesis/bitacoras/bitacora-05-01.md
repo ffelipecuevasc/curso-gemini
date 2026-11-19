@@ -125,6 +125,7 @@ Luminancias relativas $L$:
 - **Resultado frente al objetivo:** todos los controles interactivos tienen `cursor: pointer`, estados de hover con razón de luminancia ≥ 1,34:1, respuesta `:active` con `scale(0.97)` y `--color-presionado`, y el botón de modo anuncia y muestra su acción en un globo CSS debajo del botón.
 - **Qué aprendimos:** las utilidades `scale-*`, `rotate-*` y `translate-*` de Tailwind v4 escriben sobre las propiedades individuales de CSS (`scale`, `rotate`, `translate`) y no sobre `transform`; por eso las listas `transition-[...]` deben incluir `scale` (o usar `transition-transform`) para animar el estado presionado.
 - **Qué cambia para lo que sigue:** los tokens `--color-hover-suave` y `--color-presionado` y las tres variantes de botón de `DESIGN.md` 5.1 quedan listos para reutilizarse en los botones de apertura y cierre de modales (`05-04`) y en las tarjetas de unidad (`05-05` y `05-06`).
+- Terminada el 2026-11-19 tras la confirmación visual del desarrollador.
 
 ## Commit sugerido
 

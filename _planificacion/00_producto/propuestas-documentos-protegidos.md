@@ -25,6 +25,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-009 | `DESIGN.md` · 1. Concepto visual, 4. Forma, 5. Componentes, 5.1 Botones y 7. Movimiento | Planificación de la épica 05 | 2026-11-18 | Pendiente |
 | P-010 | `AGENTS.md` · 9. Reglas técnicas, regla 2 | Planificación de la épica 05 (RDA-011) | 2026-11-18 | Pendiente |
 | P-011 | `README.md` · párrafo sobre JavaScript | Planificación de la épica 05 (RDA-011) | 2026-11-18 | Pendiente |
+| P-012 | `AGENTS.md` · 9. Reglas técnicas, regla 5 | Corrección documental de la épica 05 | 2026-11-19 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -196,7 +197,7 @@ En `.claude/hooks/documentos-permitidos.md`, sección «_planificacion/», agreg
 - **Documento:** `DESIGN.md`
 - **Sección:** 1. Concepto visual (principios 1 y 3), 4. Espaciado, retícula y forma (Sombras), 5. Componentes (filas Portada, Ruta del curso, Sección de unidad, «Profundiza en tu tiempo» e Instructor, y filas nuevas), 5.1 Botones y 7. Movimiento
 - **Estado:** Pendiente
-- **Por qué:** la épica 05 (decisiones del desarrollador del 2026-11-18) pide que cada unidad quepa en una pantalla con el detalle en modales y un nivel de efectos «con propósito». Hoy `DESIGN.md` prohíbe sombras, degradados y apariciones al desplazarse, describe una sección de unidad con todo el texto abierto y define hovers que casi no se ven (`superficie-2` → `superficie`). Si no se aplica, las iteraciones 05-04, 05-05, 05-06 y 05-07 contradicen la fuente de verdad del diseño y no se pueden empezar. Se aplica antes de la 05-04; la paleta, las tipografías y los radios no cambian.
+- **Por qué:** la épica 05 (decisiones del desarrollador del 2026-11-18) pide que cada unidad quepa en una pantalla con el detalle en modales y un nivel de efectos «con propósito». Hoy `DESIGN.md` prohíbe sombras, degradados y apariciones al desplazarse, describe una sección de unidad con todo el texto abierto y define hovers que casi no se ven (`superficie-2` → `superficie`). Si no se aplica, las iteraciones 05-01, 05-04, 05-05, 05-06 y 05-07 contradicen la fuente de verdad del diseño y no se pueden empezar. Se aplica antes de la 05-01; la paleta, las tipografías y los radios no cambian.
 
 **1 · Principio 1. Texto actual** (copiado literalmente de `DESIGN.md`):
 
@@ -353,4 +354,24 @@ La página funciona completa sin JavaScript. Solo tres cosas usan un script pequ
 
 ```text
 La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pequeño: cambiar entre modo claro y oscuro, copiar un prompt con un botón, abrir el menú en el celular y abrir los modales con el detalle de cada bloque. Sin JavaScript, ese detalle se ve directamente en la página.
+```
+
+## P-012 · INP informativo en las metas de rendimiento en móvil
+
+- **Documento:** `AGENTS.md`
+- **Sección:** 9. Reglas técnicas, regla 5
+- **Estado:** Pendiente
+- **Por qué:** dice «INP menor a 200 ms» y contradice la decisión del desarrollador del 2026-11-18 (INP informativo, sin bloquear; referencia: TBT, porque Lighthouse de laboratorio no mide INP). Si no se aplica antes de la 05-08, la regla técnica de `AGENTS.md` exige una métrica que Lighthouse de laboratorio no entrega y discrepa con el criterio de término de la épica 05. Se aplica antes de la 05-08.
+
+**Texto actual** (copiado literalmente de `AGENTS.md`):
+
+```text
+5. Metas de rendimiento en móvil: Lighthouse con 95 o más en Rendimiento y 100 en Accesibilidad, Buenas prácticas y SEO; LCP menor a 2,5 s, CLS menor a 0,1 e INP menor a 200 ms.
+```
+
+**Texto propuesto:**
+
+```text
+5. Metas de rendimiento en móvil: Lighthouse con 95 o más en Rendimiento y 100 en Accesibilidad, Buenas prácticas y SEO; LCP menor a 2,5 s y CLS menor a 0,1. El INP es informativo y no bloquea: Lighthouse de laboratorio no lo mide y se usa el TBT como referencia.
+```
 

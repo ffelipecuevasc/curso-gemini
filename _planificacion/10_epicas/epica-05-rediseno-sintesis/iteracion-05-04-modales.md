@@ -70,7 +70,7 @@ Que el detalle de cada bloque, cada prompt, los recursos y las descargas de una 
 ## Riesgos
 
 - Que un navegador corporativo antiguo no soporte `<dialog>` (soportado desde 2022 en Chrome, Edge, Firefox y Safari): sin `HTMLDialogElement.prototype.showModal`, el script no marca el botón como funcional y el contenido se lee en la página como sin JavaScript.
-- Que la página quede muy alta mientras la 05-05 no reubique el contenido: es esperable en esta iteración; el alto se mide al cerrar la 05-05.
+- Con el cuerpo solo en el modal, la página queda más corta y austera con JavaScript; solo sin JavaScript se ve alta mientras los `<dialog>` se muestran en su lugar como bloques normales: el alto en escritorio se mide al cerrar la 05-05.
 - Que entre la 05-04 y la 05-05 cada bloque en la página se vea temporalmente austero (solo título, minutos y botones, sin cuerpo visible ni síntesis en tarjeta): es un estado intermedio acordado para no duplicar el cuerpo en el HTML; la 05-05 agrega la síntesis visible en las tarjetas.
 
 ## Fuera de alcance
@@ -86,4 +86,4 @@ Que el detalle de cada bloque, cada prompt, los recursos y las descargas de una 
 
 ### Del desarrollador
 
-- Aceptación de la RDA-011 y aplicación de P-009 y P-010.
+- Aceptación de la RDA-011 y aplicación de P-009, P-010 y P-011.

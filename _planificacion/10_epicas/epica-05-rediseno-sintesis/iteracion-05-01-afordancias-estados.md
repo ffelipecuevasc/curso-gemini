@@ -71,4 +71,4 @@ Verificar leyendo los archivos antes de escribir:
 
 ### Del desarrollador
 
-- Ninguno. Si el texto visible del botón de modo debe ser otro que «Cambiar a modo oscuro» / «Cambiar a modo claro», se acuerda antes de empezar.
+- Aplicar la P-009 en `DESIGN.md` antes de empezar. Si el texto visible del botón de modo debe ser otro que «Cambiar a modo oscuro» / «Cambiar a modo claro», se acuerda antes de empezar.

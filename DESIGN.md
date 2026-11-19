@@ -131,7 +131,7 @@ Todos: forma de píldora, alto mínimo de 44 px, `cursor: pointer`, foco visible
 
 ## 7. Movimiento
 
-- Transiciones de 150 a 300 ms en hover y foco. Solo se animan `transform` y `opacity`.
+- Transiciones de 150 a 300 ms en hover y foco. Se animan sobre todo `transform` y `opacity`; los cambios de color de fondo y de sombra en hover no superan los 200 ms.
 - Cambio de modo: el modo nuevo se revela con un círculo de borde difuminado que crece desde el centro de la pantalla hasta cubrirla, en 1 s, con la curva `--ease-expo-out` (`cubic-bezier(0.16, 1, 0.3, 1)`). Se hace con la API View Transitions (`document.startViewTransition`); el modo anterior queda quieto debajo. En navegadores sin esa API, el modo cambia al instante.
 - Modales: al abrir desde una tarjeta, la tarjeta se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`; sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo.
 - Barra de avance de lectura de 3 px bajo el encabezado, guiada por el desplazamiento (`animation-timeline: scroll(root)`), con el color de la unidad visible.

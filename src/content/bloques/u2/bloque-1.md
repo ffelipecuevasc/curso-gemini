@@ -5,9 +5,16 @@ titulo: "Modelos y niveles de razonamiento → planilla"
 minutos: 15
 microcharlaMin: 3
 practicaMin: 12
+sintesis:
+  resumen: "Compara Flash-Lite e Hydrogen con niveles de razonamiento bajo, medio y alto sobre el CSV ficticio y exporta la tabla comparativa a Hojas de cálculo."
+  haras: "Compararás tres configuraciones de modelo y exportarás la tabla a planilla."
+  claves:
+    - "Rápido para redactar; profundo para analizar, calcular o decidir."
+    - "Verifica las cifras contra el CSV antes de exportar."
 prompts:
   - id: carril-base
     titulo: "Carril base"
+    descripcion: "Pide identificar en el CSV ficticio los tres problemas principales del trimestre y proponer una acción justificada con cifras para comparar modelos y niveles."
     texto: "Identifica los 3 problemas principales del trimestre y propón una acción para cada uno, justificando con cifras"
 profundiza:
   recursos:
@@ -20,7 +27,7 @@ profundiza:
     - exportar-respuestas
 ---
 
-**Microcharla (3 min)**
+**Conceptos clave**
 - **Selector de modelo:** con Google AI Plus aparecen **Flash-Lite** (rápido y eficiente, para respuestas breves y tareas livianas) e **Hydrogen** (equilibra desempeño y rapidez para el trabajo habitual). Argon, Pro y Carbon son para tareas más complejas y están en Pro y Ultra.
 - **Niveles de razonamiento:**
   - **Bajo:** respuestas rápidas y concisas.
@@ -31,7 +38,7 @@ profundiza:
 - **Selección automática:** Gemini puede elegir modelo y nivel por ti. Hoy la apagamos para comparar.
 - **Regla práctica:** rápido para redactar o reformular; profundo para analizar, calcular o decidir.
 
-**Práctica (12 min, carril base):**
+**Práctica (carril base):**
 1. Subir el CSV ficticio y pedir: «Identifica los 3 problemas principales del trimestre y propón una acción para cada uno, justificando con cifras».
 2. Correr el mismo prompt en tres configuraciones: Flash-Lite / bajo, Hydrogen / bajo e Hydrogen / alto.
 3. Pedirle a Gemini una **tabla comparativa** de las tres respuestas: tiempo aproximado, precisión de las cifras (verificadas contra el CSV) y profundidad del análisis.

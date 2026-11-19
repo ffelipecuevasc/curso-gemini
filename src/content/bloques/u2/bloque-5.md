@@ -5,6 +5,12 @@ titulo: "Dashboard interactivo con marca en Canvas"
 minutos: 30
 microcharlaMin: 3
 practicaMin: 27
+sintesis:
+  resumen: "Construye en Canvas un dashboard web de una página con el CSV, indicadores, gráficos y filtros interactivos, verifica tres cifras y aplica la marca GTD."
+  haras: "Construirás un dashboard interactivo en Canvas con filtros y marca GTD."
+  claves:
+    - "Incluye el rótulo de datos ficticios y comprueba tres cifras."
+    - "No cargues datos reales en una app con enlace público."
 profundiza:
   recursos:
     - canvas
@@ -13,7 +19,7 @@ profundiza:
 - Canvas puede crear **apps web** de una sola página (HTML, CSS y JavaScript) que se ejecutan en la misma ventana. Esto reemplaza dashboards estáticos de planilla por tableros con filtros e interactividad.
 - **Precaución al compartir:** cualquiera con el enlace público de una app puede ver y editar los datos asociados a ella. Con los datos ficticios del curso no hay riesgo, pero en el trabajo real la regla es cuidar qué datos se cargan en una app que se va a compartir.
 
-**Práctica (27 min)**
+**Práctica**
 1. **Prompt base** (en el LMS), pidiendo explícitamente:
    - una sola página con los datos del CSV adjunto;
    - 4 indicadores clave arriba;

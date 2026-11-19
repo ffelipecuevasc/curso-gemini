@@ -5,7 +5,7 @@
 - **Rama sugerida:** iteracion/05-03-sintesis-u3-u4
 - **Depende de:** 05-02
 - **Especificación:** —
-- **RDA relacionadas:** RDA-009, RDA-012 (propuesta)
+- **RDA relacionadas:** RDA-009, RDA-012
 
 ## Objetivo
 

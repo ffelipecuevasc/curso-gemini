@@ -8,6 +8,7 @@ avance:
   desde: 25
   hasta: 50
 objetivo: "que cada participante domine las capacidades clave de la app de Gemini y las use para producir, en una sola clase, los recursos de comunicación que más pide el trabajo diario: modelos y niveles de razonamiento, Deep Research y Canvas para documentos, planillas, infografías, presentaciones y dashboards. Todo debe respetar la identidad visual de GTD."
+objetivoBreve: "Domina modelos, Deep Research y Canvas en Gemini para producir seis piezas de comunicación con la identidad visual de GTD."
 miniProyecto:
   titulo: "Kit de comunicación GTD"
   descripcion: "Un mismo caso atraviesa toda la clase. Cada participante es analista de un área de GTD y debe presentar a su gerencia los resultados de un trimestre ficticio, más un contexto de mercado basado en información pública. Termina con seis piezas conectadas entre sí, cinco de ellas con la marca GTD."

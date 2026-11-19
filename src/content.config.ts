@@ -6,6 +6,21 @@ import { file, glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 const textoNoVacio = z.string().trim().min(1);
+
+const contarPalabras = (texto: string) =>
+  texto.trim().split(/\s+/).filter(Boolean).length;
+
+const maxPalabras = (max: number, campo: string) =>
+  textoNoVacio.superRefine((texto, ctx) => {
+    const conteo = contarPalabras(texto);
+    if (conteo > max) {
+      ctx.addIssue({
+        code: "custom",
+        message: `«${campo}» supera el límite de ${max} palabras (tiene ${conteo})`,
+      });
+    }
+  });
+
 // El cargador `file` deja el `id` de cada entrada dentro de sus datos.
 const idEntrada = z.string().regex(/^[a-z0-9-]+$/, {
   error: "El id va en minúsculas, números y guiones",
@@ -51,8 +66,18 @@ const profundiza = z.strictObject({
 const prompt = z.strictObject({
   id: idEntrada,
   titulo: textoNoVacio,
+  descripcion: maxPalabras(30, "prompt.descripcion").optional(),
   // Texto literal: se copia tal cual, sin recortar espacios ni saltos.
   texto: z.string().min(1),
+});
+
+const sintesisBloque = z.strictObject({
+  resumen: maxPalabras(25, "sintesis.resumen"),
+  haras: maxPalabras(12, "sintesis.haras"),
+  claves: z
+    .array(maxPalabras(10, "sintesis.claves"))
+    .min(1, { error: "«sintesis.claves» debe tener entre 1 y 2 frases" })
+    .max(2, { error: "«sintesis.claves» debe tener entre 1 y 2 frases" }),
 });
 
 // Un archivo `.md` por bloque (RDA-009): los datos van en el frontmatter y
@@ -70,6 +95,7 @@ const bloque = z
     tipo: textoNoVacio.optional(),
     microcharlaMin: z.number().int().min(0).optional(),
     practicaMin: z.number().int().min(0).optional(),
+    sintesis: sintesisBloque.optional(),
     prompts: z.array(prompt).default([]),
     profundiza: profundiza.optional(),
   })
@@ -118,6 +144,7 @@ const unidad = z.strictObject({
       error: "«avance.desde» debe ser menor que «avance.hasta»",
     }),
   objetivo: textoNoVacio,
+  objetivoBreve: maxPalabras(20, "objetivoBreve").optional(),
   miniProyecto: z.strictObject({
     titulo: textoNoVacio,
     descripcion: textoNoVacio,

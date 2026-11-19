@@ -16,7 +16,7 @@ Diagnóstico del 2026-11-18, hecho con la skill Impeccable sobre el sitio public
 ## Alcance
 
 1. Estados de interacción visibles en todos los controles: cursor, hover, presionado y foco, con un cambio de color perceptible y el botón de modo con su acción visible.
-2. Modelo de contenido con síntesis por bloque (`sintesis`: resumen, «Qué harás» y hasta 2 claves) y por unidad (`objetivoBreve`), con límites de palabras validados por Zod al compilar (RDA-012, propuesta).
+2. Modelo de contenido con síntesis por bloque (`sintesis`: resumen, «Qué harás» y hasta 2 claves) y por unidad (`objetivoBreve`), con límites de palabras validados por Zod al compilar (RDA-012).
 3. Síntesis de los 26 bloques de U1 a U4, redactada por el agente y aprobada por el desarrollador, y retiro del material de conducción de la clase del texto publicado.
 4. Sistema de modales sobre `<dialog>` nativo (RDA-011, propuesta): prompt con descripción y copiado en un clic, detalle completo del bloque, recursos de la unidad y descargas.
 5. Sección de unidad en una pantalla: cabecera de color y cuadrícula de tarjetas de bloque con botones que abren los modales.
@@ -38,7 +38,7 @@ Diagnóstico del 2026-11-18, hecho con la skill Impeccable sobre el sitio public
 | Iteración | Nombre | Estado |
 | :-------- | :----- | :----- |
 | 05-01 | [Afordancias y estados de interacción](iteracion-05-01-afordancias-estados.md) | Terminada |
-| 05-02 | [Modelo de síntesis y síntesis de U1 y U2](iteracion-05-02-sintesis-u1-u2.md) | Pendiente |
+| 05-02 | [Modelo de síntesis y síntesis de U1 y U2](iteracion-05-02-sintesis-u1-u2.md) | En revisión |
 | 05-03 | [Síntesis de U3 y U4](iteracion-05-03-sintesis-u3-u4.md) | Pendiente |
 | 05-04 | [Sistema de modales](iteracion-05-04-modales.md) | Pendiente |
 | 05-05 | [La unidad en una pantalla](iteracion-05-05-unidad-una-pantalla.md) | Pendiente |

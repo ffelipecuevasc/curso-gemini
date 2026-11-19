@@ -15,7 +15,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 | RDA-009 | Un archivo `.md` por bloque, en su propia colección | Aceptada |
 | RDA-010 | Formato y peso de las descargas medidos del archivo al compilar | Aceptada |
 | RDA-011 | Modales sobre `<dialog>` nativo con script mínimo y respaldo sin JavaScript | Aceptada |
-| RDA-012 | Síntesis por bloque y por unidad en el modelo de contenido, con límites de palabras | Propuesta |
+| RDA-012 | Síntesis por bloque y por unidad en el modelo de contenido, con límites de palabras | Aceptada |
 
 ---
 
@@ -158,7 +158,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 ## RDA-012 · Síntesis por bloque y por unidad en el modelo de contenido, con límites de palabras
 
 - **Fecha:** 2026-11-18
-- **Estado:** Propuesta
+- **Estado:** Aceptada
 
 **Contexto:** las 4 unidades suman unas 8.800 palabras en la página (diagnóstico de la épica 05), y la RDA-009 guarda solo el texto completo de cada bloque. Para que una unidad quepa en una pantalla, cada bloque necesita una versión corta, y esa versión no puede crecer sin control con el tiempo.
 **Decisión:** se agregan al esquema de `bloques` el objeto `sintesis` (`resumen` de hasta 25 palabras, que se ve en el modal; `haras`, verbo + producto, de hasta 12 palabras; y `claves`, 1 o 2 frases de hasta 10 palabras, que se ven en la tarjeta), al esquema de prompt el campo `descripcion` (hasta 30 palabras) y al de `unidades` el campo `objetivoBreve` (hasta 20 palabras). Un validador `maxPalabras(n)` hace fallar `pnpm build` con un mensaje en español si se pasa un límite. Los campos son opcionales durante la 05-02 y obligatorios desde la 05-03. El cuerpo Markdown de cada bloque se conserva como «detalle» y se muestra en su modal; el material de conducción de la clase se retira de él con la aprobación del desarrollador. Cada síntesis la redacta el agente solo con información del propio bloque o de la ficha, y se publica solo después de que el desarrollador la aprueba.

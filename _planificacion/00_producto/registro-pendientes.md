@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-19
-- **Iteración activa:** ninguna (05-01 terminada el 2026-11-19; la siguiente es la 05-02, pendiente, sin iniciar)
+- **Iteración activa:** 05-02 · Modelo de síntesis y síntesis de U1 y U2 (`En revisión`)
 - **Próximo hito:** épica 05: rediseño visual y síntesis, con Rendimiento publicado ≥ 95 (05-08)
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
@@ -19,7 +19,7 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
 | 05-01 | [Afordancias y estados de interacción](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-01-afordancias-estados.md) | 05 | Terminada | cierre de la épica 04, P-009 | [bitacora-05-01](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-01.md) |
-| 05-02 | [Modelo de síntesis y síntesis de U1 y U2](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-02-sintesis-u1-u2.md) | 05 | Pendiente | 05-01, RDA-012 | — |
+| 05-02 | [Modelo de síntesis y síntesis de U1 y U2](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-02-sintesis-u1-u2.md) | 05 | En revisión | 05-01, RDA-012 | [bitacora-05-02](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-02.md) |
 | 05-03 | [Síntesis de U3 y U4](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-03-sintesis-u3-u4.md) | 05 | Pendiente | 05-02 | — |
 | 05-04 | [Sistema de modales](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-04-modales.md) | 05 | Pendiente | 05-03, RDA-011, P-009, P-010, P-011 | — |
 | 05-05 | [La unidad en una pantalla](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-05-unidad-una-pantalla.md) | 05 | Pendiente | 05-04 | — |
@@ -47,7 +47,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | 18.1 | Ajustes documentales de la épica 05 antes de abrir la 05-01: INP informativo (referencia: TBT) en definición, 05-07 y 05-08, y propuesta P-012 (`AGENTS.md`); P-009 antes de la 05-01; P-011 y cuerpo del bloque solo en el modal «Ver detalle» (página temporalmente austera con JS hasta la 05-05) en la 05-04; riesgo de no medir Lighthouse al cerrar la 05-05 en la 05-08 · Rama `correccion/epica-05-ajustes-documentales` | Corrección | — | — | Terminada |
 | 18.2 | Cierre documental de P-009 a P-012 y RDA-011 aceptada · Rama `correccion/epica-05-cierre-propuestas` | Corrección | — | — | Terminada |
 | 19 | Estados de interacción visibles: `cursor: pointer`, hover con contraste perceptible, botón de modo con su acción visible | Corrección | — | 05-01 | Terminada |
-| 20 | Síntesis por bloque y por unidad con límites de palabras (RDA-012) y síntesis aprobada de U1 y U2; retiro del material de conducción de la clase | Funcionalidad | — | 05-02 | Pendiente |
+| 20 | Síntesis por bloque y por unidad con límites de palabras (RDA-012) y síntesis aprobada de U1 y U2; retiro del material de conducción de la clase | Funcionalidad | — | 05-02 | En revisión |
 | 21 | Síntesis aprobada de U3 y U4 y campos de síntesis obligatorios | Funcionalidad | — | 05-03 | Pendiente |
 | 22 | Modales sobre `<dialog>` nativo para prompts, detalle, recursos y descargas (RDA-011) | Funcionalidad | — | 05-04 | Pendiente |
 | 23 | Sección de unidad en una pantalla de escritorio con tarjetas de bloque | Funcionalidad | — | 05-05 | Pendiente |
@@ -82,7 +82,6 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U2 nombrados pero no escritos: «Prompt base» del dashboard (bloque 5), «Prompts base de cada hito» y los carriles extra de los bloques 1 a 5 | 02-05 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U3 nombrados pero no escritos: los carriles extra de los bloques 1 a 5 (instrucciones sin texto de prompt) | 02-06 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U4 nombrados pero no escritos: los carriles extra de los bloques 2 a 5 (el contenido de las skills y plantillas son descargas de la épica 03) | 02-06 | Desarrollador |
-| Aceptar o descartar la RDA-012 (síntesis con límites de palabras), antes de la 05-02 | RDA-012 | Desarrollador |
 | Aprobar la síntesis de cada bloque y el retiro del material de conducción de la clase («Pregunta para el grupo», «al azar», «semáforo», minutos por subpunto) | 05-02, 05-03 | Desarrollador |
 | Rendimiento publicado ≥ 95 en la épica 05 (05-08): la épica 04 cerró con 87 como excepción aceptada (línea base en la bitácora de cierre) | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) | Desarrollador |
 | Aplicar la propuesta P-013 (`DESIGN.md`, secciones 2.1, 2.3 y 5: tokens `--color-hover-suave` y `--color-presionado` con sus HEX, contrastes y hover de las píldoras), antes de la 05-04 | P-013 | Desarrollador |
@@ -104,14 +103,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-17 | Iteración 01-02 terminada, aprobada por el desarrollador. |
-| 2026-11-17 | Propuesta de `.gitattributes` aprobada: pasa al backlog como tarea 8 de la 01-03. |
-| 2026-11-17 | Iteración 01-03 en revisión: layout, navegación sin «Recursos» (P-003), menú móvil, botón de modo, pie con redes y `.gitattributes`; JS de 806 B gzip. [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-03.md) |
-| 2026-11-17 | Iteración 01-03 terminada: el desarrollador comprobó en el navegador los cinco criterios pendientes. RDA-007: sin JavaScript, modo claro. |
-| 2026-11-17 | Iteración 01-04 en revisión: 4 colecciones con esquemas Zod estrictos y contenido de prueba; 0 B de JS nuevo. [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-04.md) |
-| 2026-11-17 | Iteración 01-04 terminada, aprobada por el desarrollador (commit y push hechos). |
-| 2026-11-17 | RDA-008: avance de las unidades en cuatro tramos iguales; sale de «Decisiones por tomar». Propuesta P-004: el documento de unidades pasa a la lista permitida. |
-| 2026-11-17 | Iteración 01-05 en revisión: revelado circular del cambio de modo con View Transitions; JS 852 B gzip. Cierre de la épica 01 preparado. [Bitácora](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-05.md) · [Cierre](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-cierre.md) |
 | 2026-11-17 | Iteración 01-05 terminada (revisión en navegador hecha por el desarrollador). Épica 01 cerrada; sus filas pasan a `registro-archivo.md`. Iteraciones de la épica 02 aprobadas, sin detallar. [Cierre](../10_epicas/epica-01-fundacion/bitacoras/bitacora-01-cierre.md) |
 | 2026-11-17 | Traspaso a la épica 02: 6 iteraciones generadas (02-01 a 02-06). La carga de las 4 unidades pasa a la épica 02 (un `.md` por bloque, RDA-009 por registrar en la 02-02) y la épica 03 queda solo para presentarlas y completar lo pendiente; backlog renumerado. |
 | 2026-11-17 | Se ajusta la 02-01: Gemini como logo principal, GTD y Capacita en segundo plano, Chrome y LinkedIn en las redes y recoloreo permitido salvo Gemini, Google y Chrome; propuesta P-005 pendiente. |
@@ -161,3 +152,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-19 | Corrección 18.2 en revisión: cierre documental tras aplicar P-009 a P-012 (salen de «Decisiones por tomar» y se alinea la primera viñeta del punto 8 de la P-009 con `DESIGN.md`) y RDA-011 aceptada en `decisiones.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-00-correccion-documental.md) |
 | 2026-11-19 | Iteración 05-01 en revisión: tokens `--color-hover-suave` y `--color-presionado`, regla base de `cursor: pointer`, estados de botones (principal, secundario e ícono), botón de modo sin `aria-pressed` con nombre accesible sincronizado, globo CSS y giro de 20°, tarjetas de la ruta con `-translate-y-1`, JS +68 B gzip y propuesta P-013 pendiente. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-01.md) |
 | 2026-11-19 | Iteración 05-01 terminada: el desarrollador confirmó en `pnpm preview` (360 px, 1024 px y escritorio, ambos modos, mouse y teclado) los estados, el globo del botón de modo y el revelado circular; correcciones 18.1 y 18.2 terminadas en `main`; P-013 queda para antes de la 05-04. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-01.md) |
+| 2026-11-19 | Iteración 05-02 en revisión: RDA-012 aceptada, validador `maxPalabras` y campos opcionales `sintesis`, `prompt.descripcion` y `unidad.objetivoBreve` en el esquema, síntesis aprobada cargada en los 12 bloques y 2 fichas de U1 y U2, retiro del material de conducción (M-01 a M-17) y título «Cierre» en U2; 0 B de JS nuevo; se archivan las 8 filas más antiguas del historial. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-02.md) |

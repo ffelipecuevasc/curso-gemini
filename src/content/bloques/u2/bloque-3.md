@@ -5,9 +5,16 @@ titulo: "Infografía con marca: imagen vs. código"
 minutos: 20
 microcharlaMin: 3
 practicaMin: 17
+sintesis:
+  resumen: "Compara crear una infografía como imagen con Nano Banana o en código HTML y SVG con Canvas, aplicando la paleta GTD sin inventar el logotipo."
+  haras: "Crearás una infografía del trimestre con la paleta GTD y cifras revisadas."
+  claves:
+    - "La IA nunca genera el logo: usa el SVG oficial."
+    - "En Canvas con código obtienes colores HEX exactos y editables."
 prompts:
   - id: identidad-visual-gtd
     titulo: "Identidad visual GTD (usar siempre)"
+    descripcion: "Bloque reutilizable de identidad visual GTD con paleta HEX, tipografía Montserrat, código SVG oficial del logo, estilo y contraste AA para pegar en tus prompts."
     texto: |-
         # Identidad visual GTD (usar siempre)
         Paleta: azul marca #375D9D, azul intenso #2959AD, azul marino #204175 (texto),
@@ -24,7 +31,7 @@ profundiza:
     - canvas
 ---
 
-**Microcharla (3 min):** hay dos caminos para una infografía, y la diferencia importa cuando hay una marca de por medio.
+**Dos caminos para una infografía** (la diferencia importa cuando hay una marca de por medio):
 
 | Camino | Cómo | Ventaja | Límite |
 |---|---|---|---|
@@ -33,7 +40,7 @@ profundiza:
 
 **Regla de marca del curso:** el logotipo nunca lo genera la IA. Se inserta el archivo oficial, ya sea pegando el SVG en Canvas o agregándolo después en Presentaciones.
 
-**Práctica (17 min)**
+**Práctica**
 1. **Bloque de marca** (se prepara mientras corre Deep Research): un párrafo reutilizable, guardado en el documento de la plantilla de la U1. Ejemplo de estructura:
 
 <div data-prompt="identidad-visual-gtd"></div>

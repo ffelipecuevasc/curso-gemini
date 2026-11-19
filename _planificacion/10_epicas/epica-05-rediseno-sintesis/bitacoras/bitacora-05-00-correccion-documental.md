@@ -116,16 +116,41 @@ En la misma rama `correccion/epica-05-ajustes-documentales` (sobre el commit `5b
 2. **Verificación de `antes de la 05-04` en `propuestas-documentos-protegidos.md`:** `0` coincidencias (no queda ninguna en `P-009` ni en el resto del archivo).
 3. **Verificación `grep -niE "INP.{0,20}200|sin medición temprana|solo se mide"` sobre `_planificacion/`:** todas las coincidencias corresponden a menciones históricas o legítimas (el campo «Por qué» y el «Texto actual» de la `P-012`, la bitácora cerrada `bitacora-04-cierre.md` y las citas de «Antes» / «Primera pasada» en esta bitácora); `0` restos por corregir en la definición o en las iteraciones de la épica 05.
 
+## Cierre de propuestas
+
+Tras la aplicación por el desarrollador de las propuestas `P-009`, `P-010`, `P-011` y `P-012` en los documentos protegidos (`DESIGN.md`, `AGENTS.md` y `README.md`, commits `93b3acb` y `440910c`), se registra el cierre documental correspondiente (corrección `18.2`, rama prevista `correccion/epica-05-cierre-propuestas`):
+
+1. **`decisiones.md` (l. 17, tabla índice, y l. 149, sección `RDA-011`):**
+   - Antes (l. 17): `| RDA-011 | Modales sobre `<dialog>` nativo con script mínimo y respaldo sin JavaScript | Propuesta |`
+   - Después (l. 17): `| RDA-011 | Modales sobre `<dialog>` nativo con script mínimo y respaldo sin JavaScript | Aceptada |`
+   - Antes (l. 149): `- **Estado:** Propuesta`
+   - Después (l. 149): `- **Estado:** Aceptada` (se mantiene `- **Fecha:** 2026-11-18`; `RDA-012` sigue en `Propuesta`).
+2. **`registro-pendientes.md` (sección 5 «Decisiones por tomar», antiguas l. 84–86):**
+   - Antes:
+     - `| Aceptar o descartar la RDA-011 (modales sobre `<dialog>`) y la RDA-012 (síntesis con límites de palabras), antes de la 05-02 y la 05-04 | RDA-011, RDA-012 | Desarrollador |`
+     - `| Aplicar las propuestas P-009 (`DESIGN.md`) antes de la 05-01, y P-010 (`AGENTS.md`) y P-011 (`README.md`) antes de la 05-04 | P-009, P-010, P-011 | Desarrollador |`
+     - `| Aplicar la propuesta P-012 (`AGENTS.md`, regla técnica 5: INP informativo y referencia TBT) antes de la 05-08 | P-012 | Desarrollador |`
+   - Después:
+     - `| Aceptar o descartar la RDA-012 (síntesis con límites de palabras), antes de la 05-02 | RDA-012 | Desarrollador |` (se retiran las dos filas de `P-009` a `P-012`, ya aplicadas).
+3. **`propuestas-documentos-protegidos.md` (l. 312, `P-009`, punto 8 «Texto propuesto», primera viñeta):**
+   - Comprobado en `DESIGN.md` (l. 134, sección 7) que la primera viñeta aplicada es literal: `- Transiciones de 150 a 300 ms en hover y foco. Se animan sobre todo `transform` y `opacity`; los cambios de color de fondo y de sombra en hover no superan los 200 ms.`
+   - Antes: `- Transiciones de 150 a 300 ms en hover y foco. Solo se animan `transform` y `opacity`.`
+   - Después: `- Transiciones de 150 a 300 ms en hover y foco. Se animan sobre todo `transform` y `opacity`; los cambios de color de fondo y de sombra en hover no superan los 200 ms.`
+4. **`registro-pendientes.md` (sección 3 «Backlog» y sección 7 «Historial»):**
+   - Se agrega la fila `18.2` (`Cierre documental de P-009 a P-012 y RDA-011 aceptada · Rama correccion/epica-05-cierre-propuestas`, tipo `Corrección`, estado `En revisión`) y su fila de historial del `2026-11-19`. La fila `18.1` se mantiene sin mover (sus commits aún no están en `main`, que sigue en `70a2340`, y las secciones 4.3, 4.5 y 5.2 de `_planificacion/README.md` mantienen los ítems del backlog en la tabla hasta el cierre de la épica).
+
 ## Pendientes y riesgos
 
-- Todos los hallazgos quedaron cerrados. Queda pendiente que el desarrollador aplique la `P-009` en `DESIGN.md` antes de abrir la `05-01`, `P-010` y `P-011` antes de la `05-04`, y `P-012` antes de la `05-08`.
+- Queda pendiente que el desarrollador acepte o descarte la `RDA-012` antes de la `05-02` y apruebe la síntesis de cada bloque en las iteraciones `05-02` y `05-03`.
+- En el cuerpo de la `RDA-011` (`decisiones.md`, l. 151–152) y en los documentos de la épica 05 (`definicion-epica-05.md` e iteraciones `05-04`, `05-05`, `05-07` y `05-08`) quedan menciones históricas a la regla 2 de `AGENTS.md` antes de `P-010`, a `(propuesta P-010)` y a `RDA-011 (propuesta)`, que se reportan sin reescribir.
 
 ## Revisión
 
-- **Resultado frente al objetivo:** la planificación de la épica 05 y el registro de propuestas a documentos protegidos quedaron internamente consistentes de punta a punta.
-- **Qué aprendimos:** distinguir entre las lecturas locales de Lighthouse (05-06 y 05-07) y la ausencia de lectura al cerrar la 05-05 evita contradicciones entre las tareas de la 05-06/05-07 y los riesgos de la 05-08, e incluir la 05-01 en el «Por qué» de la P-009 alinea la lista de iteraciones afectadas con el adelanto de su aplicación.
-- **Qué cambia para lo que sigue:** antes de abrir la 05-01, el desarrollador aplica P-009 en `DESIGN.md`; antes de la 05-08, aplica P-012 en `AGENTS.md`.
+- **Resultado frente al objetivo:** la planificación de la épica 05, el registro de decisiones (`RDA-011` aceptada) y el registro de propuestas a documentos protegidos (`P-009` a `P-012` aplicadas) quedaron alineados con los documentos protegidos ya editados por el desarrollador.
+- **Qué aprendimos:** verificar literalmente el texto aplicado en `DESIGN.md` antes de cerrar la propuesta deja trazabilidad exacta entre el documento protegido y el registro de propuestas.
+- **Qué cambia para lo que sigue:** la iteración `05-01` puede iniciarse sin bloqueos de documentos protegidos; antes de la `05-02` solo resta decidir sobre la `RDA-012`.
 
 ## Commit sugerido
 
-`Corrección: incluye la 05-01 entre las iteraciones que requieren la P-009 en propuestas-documentos-protegidos.md y registra la tercera pasada documental de la épica 05`
+`Corrección: cierra propuestas P-009 a P-012 en el registro, alinea el punto 8 de P-009 con DESIGN.md y marca la RDA-011 como aceptada`
+

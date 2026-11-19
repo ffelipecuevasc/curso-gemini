@@ -309,7 +309,7 @@ y
 **Texto propuesto:**
 
 ```text
-- Transiciones de 150 a 300 ms en hover y foco. Solo se animan `transform` y `opacity`.
+- Transiciones de 150 a 300 ms en hover y foco. Se animan sobre todo `transform` y `opacity`; los cambios de color de fondo y de sombra en hover no superan los 200 ms.
 - Modales: al abrir desde una tarjeta, la tarjeta se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`; sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo.
 - Barra de avance de lectura de 3 px bajo el encabezado, guiada por el desplazamiento (`animation-timeline: scroll(root)`), con el color de la unidad visible.
 - Las tarjetas de cada unidad aparecen al entrar en la ventana (opacidad y 12 px, desfase de 40 ms) con `animation-timeline: view()`; sin soporte, se ven desde el inicio.

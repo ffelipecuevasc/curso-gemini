@@ -45,6 +45,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
 | 18.1 | Ajustes documentales de la épica 05 antes de abrir la 05-01: INP informativo (referencia: TBT) en definición, 05-07 y 05-08, y propuesta P-012 (`AGENTS.md`); P-009 antes de la 05-01; P-011 y cuerpo del bloque solo en el modal «Ver detalle» (página temporalmente austera con JS hasta la 05-05) en la 05-04; riesgo de no medir Lighthouse al cerrar la 05-05 en la 05-08 · Rama `correccion/epica-05-ajustes-documentales` | Corrección | — | — | En revisión |
+| 18.2 | Cierre documental de P-009 a P-012 y RDA-011 aceptada · Rama `correccion/epica-05-cierre-propuestas` | Corrección | — | — | En revisión |
 | 19 | Estados de interacción visibles: `cursor: pointer`, hover con contraste perceptible, botón de modo con su acción visible | Corrección | — | 05-01 | Pendiente |
 | 20 | Síntesis por bloque y por unidad con límites de palabras (RDA-012) y síntesis aprobada de U1 y U2; retiro del material de conducción de la clase | Funcionalidad | — | 05-02 | Pendiente |
 | 21 | Síntesis aprobada de U3 y U4 y campos de síntesis obligatorios | Funcionalidad | — | 05-03 | Pendiente |
@@ -81,9 +82,7 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U2 nombrados pero no escritos: «Prompt base» del dashboard (bloque 5), «Prompts base de cada hito» y los carriles extra de los bloques 1 a 5 | 02-05 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U3 nombrados pero no escritos: los carriles extra de los bloques 1 a 5 (instrucciones sin texto de prompt) | 02-06 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U4 nombrados pero no escritos: los carriles extra de los bloques 2 a 5 (el contenido de las skills y plantillas son descargas de la épica 03) | 02-06 | Desarrollador |
-| Aceptar o descartar la RDA-011 (modales sobre `<dialog>`) y la RDA-012 (síntesis con límites de palabras), antes de la 05-02 y la 05-04 | RDA-011, RDA-012 | Desarrollador |
-| Aplicar las propuestas P-009 (`DESIGN.md`) antes de la 05-01, y P-010 (`AGENTS.md`) y P-011 (`README.md`) antes de la 05-04 | P-009, P-010, P-011 | Desarrollador |
-| Aplicar la propuesta P-012 (`AGENTS.md`, regla técnica 5: INP informativo y referencia TBT) antes de la 05-08 | P-012 | Desarrollador |
+| Aceptar o descartar la RDA-012 (síntesis con límites de palabras), antes de la 05-02 | RDA-012 | Desarrollador |
 | Aprobar la síntesis de cada bloque y el retiro del material de conducción de la clase («Pregunta para el grupo», «al azar», «semáforo», minutos por subpunto) | 05-02, 05-03 | Desarrollador |
 | Rendimiento publicado ≥ 95 en la épica 05 (05-08): la épica 04 cerró con 87 como excepción aceptada (línea base en la bitácora de cierre) | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) | Desarrollador |
 
@@ -158,3 +157,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-19 | Corrección 18.1 en revisión: ajustes documentales de la épica 05 (INP informativo con referencia TBT en definición, 05-07 y 05-08; P-009 antes de 05-01; P-011 y cuerpo solo en modal en 05-04; riesgo de Lighthouse en 05-08); sale el ajuste INP de «Decisiones por tomar». [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-00-correccion-documental.md) |
 | 2026-11-19 | Corrección 18.1 (segunda pasada): cierra hallazgos en definición, 05-01, 05-04, 05-08 (sin Lighthouse al cerrar la 05-05; se mantienen las lecturas locales de 05-06 y 05-07) y P-009, y registra la propuesta P-012 (`AGENTS.md`, regla 5). [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-00-correccion-documental.md) |
 | 2026-11-19 | Corrección 18.1 (tercera pasada): incluye la 05-01 en las iteraciones que contradicen `DESIGN.md` sin la P-009 (`propuestas-documentos-protegidos.md`, sección P-009) y verifica con `grep` que no quedan restos de «antes de la 05-04», «INP < 200» ni «sin medición temprana». [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-00-correccion-documental.md) |
+| 2026-11-19 | Corrección 18.2 en revisión: cierre documental tras aplicar P-009 a P-012 (salen de «Decisiones por tomar» y se alinea la primera viñeta del punto 8 de la P-009 con `DESIGN.md`) y RDA-011 aceptada en `decisiones.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-00-correccion-documental.md) |

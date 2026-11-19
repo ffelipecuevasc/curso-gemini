@@ -14,7 +14,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 | RDA-008 | Avance de cada unidad en cuatro tramos iguales | Aceptada |
 | RDA-009 | Un archivo `.md` por bloque, en su propia colección | Aceptada |
 | RDA-010 | Formato y peso de las descargas medidos del archivo al compilar | Aceptada |
-| RDA-011 | Modales sobre `<dialog>` nativo con script mínimo y respaldo sin JavaScript | Propuesta |
+| RDA-011 | Modales sobre `<dialog>` nativo con script mínimo y respaldo sin JavaScript | Aceptada |
 | RDA-012 | Síntesis por bloque y por unidad en el modelo de contenido, con límites de palabras | Propuesta |
 
 ---
@@ -146,7 +146,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 ## RDA-011 · Modales sobre `<dialog>` nativo con script mínimo y respaldo sin JavaScript
 
 - **Fecha:** 2026-11-18
-- **Estado:** Propuesta
+- **Estado:** Aceptada
 
 **Contexto:** la épica 05 necesita que cada unidad quepa en una pantalla de escritorio, así que el detalle de los bloques, los prompts, los recursos y las descargas tienen que mostrarse bajo demanda. `AGENTS.md` (regla técnica 2) permite solo tres comportamientos con script, y la RDA-007 exige que el sitio se lea sin JavaScript. El desarrollador delegó la elección técnica en la opción más profesional para el stack (2026-11-18).
 **Decisión:** un componente `Modal.astro` sobre `<dialog>` nativo, abierto con `showModal()` por un único oyente delegado en `src/scripts/modal.ts` (objetivo: menos de 1 KB gzip). El navegador aporta el foco atrapado, el fondo inerte y el cierre con Esc; el script agrega el cierre al hacer clic en el fondo donde no exista `closedby="any"` y la devolución del foco al botón que abrió. El bloqueo del desplazamiento de la página es CSS (`html:has(dialog[open])`). Los botones que abren se muestran solo con JavaScript (variante `js:`); sin JavaScript, o si el navegador no tiene `showModal`, el contenido de cada `<dialog>` se muestra en su lugar como un bloque normal. El contenido existe una sola vez en el HTML. Pasa a ser el cuarto comportamiento con script del sitio, y los efectos de la 05-07 (brillo con el puntero y transición de tarjeta a modal) se suman como mejoras decorativas, prescindibles y sin contenido (propuesta P-010).

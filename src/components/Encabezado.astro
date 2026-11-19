@@ -39,7 +39,7 @@ const { enlaces } = Astro.props;
           <li>
             <a
               href={href}
-              class="flex min-h-11 min-w-11 items-center justify-center rounded-pildora px-4 font-medium text-texto no-underline transition-colors duration-200 hover:bg-superficie motion-reduce:transition-none aria-[current=true]:bg-primario aria-[current=true]:text-sobre-primario max-lg:justify-start"
+              class="flex min-h-11 min-w-11 items-center justify-center rounded-pildora px-4 font-medium text-texto no-underline transition-[background-color,color,scale] duration-200 hover:bg-hover-suave active:scale-[0.97] active:bg-presionado motion-reduce:transition-none motion-reduce:active:scale-100 aria-[current=true]:bg-primario aria-[current=true]:text-sobre-primario aria-[current=true]:hover:bg-primario aria-[current=true]:active:bg-primario max-lg:justify-start"
             >
               {texto}
             </a>
@@ -55,7 +55,7 @@ const { enlaces } = Astro.props;
       data-boton-menu
       aria-expanded="false"
       aria-controls="menu-principal"
-      class="hidden min-h-11 items-center gap-2 rounded-pildora bg-superficie-2 px-4 font-medium text-texto transition-colors duration-200 hover:bg-superficie motion-reduce:transition-none js:max-lg:inline-flex"
+      class="hidden min-h-11 items-center gap-2 rounded-pildora border-[1.5px] border-transparent bg-superficie-2 px-4 font-medium text-texto transition-[background-color,border-color,scale] duration-200 hover:border-primario hover:bg-hover-suave active:scale-[0.97] active:bg-presionado motion-reduce:transition-none motion-reduce:active:scale-100 js:max-lg:inline-flex"
     >
       <svg
         class="size-5"

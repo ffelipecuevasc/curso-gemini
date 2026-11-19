@@ -29,7 +29,7 @@ const base = `ruta-u${numero}`;
     aria-labelledby={`${base}-numero ${base}-titulo`}
     aria-describedby={`${base}-proyecto ${base}-avance`}
     class:list={[
-      "group flex w-full flex-col gap-4 rounded-bloque rounded-bl-esquina p-6 no-underline sm:p-8",
+      "group flex w-full flex-col gap-4 rounded-bloque rounded-bl-esquina p-6 no-underline transition-transform duration-200 hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-8",
       colores[numero],
     ]}
   >
@@ -43,8 +43,7 @@ const base = `ruta-u${numero}`;
       {titulo}
     </h3>
     <p id={`${base}-proyecto`} class="wrap-break-word">
-      <span class="font-medium">Mini-proyecto:</span>{" "}
-      {miniProyecto.titulo}
+      <span class="font-medium">Mini-proyecto:</span> {miniProyecto.titulo}
     </p>
     <p id={`${base}-avance`} class="mt-auto font-codigo">
       <span class="sr-only">Avance del curso: </span>

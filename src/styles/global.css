@@ -94,6 +94,8 @@
   --color-superficie: #e4f3ff;
   --color-superficie-2: #ecf0ff;
   --color-linea: #e4f3ff;
+  --color-hover-suave: #b1d4e9;
+  --color-presionado: #99c8e0;
 
   /* 2.2 Acento y texto */
   --color-texto: #00131d;
@@ -139,6 +141,8 @@
   --color-superficie: #00212f;
   --color-superficie-2: #003b51;
   --color-linea: #003b51;
+  --color-hover-suave: #005877;
+  --color-presionado: #006486;
   --color-texto: #ffffff;
   --color-texto-2: #e4f3ff;
   --color-primario: #00b0e8;
@@ -180,6 +184,19 @@
   a {
     color: var(--color-enlace);
     text-underline-offset: 0.2em;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  summary,
+  label[for] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [role="button"]:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
   }
 }
 

@@ -25,8 +25,12 @@ export function hayEleccionGuardada(): boolean {
  */
 export function switchTheme(modo: Modo, guardar = true): void {
   document.documentElement.dataset.modo = modo;
+  const accion =
+    modo === "oscuro" ? "Cambiar a modo claro" : "Cambiar a modo oscuro";
   for (const boton of document.querySelectorAll("[data-boton-modo]")) {
-    boton.setAttribute("aria-pressed", String(modo === "oscuro"));
+    boton.setAttribute("aria-label", accion);
+    const etiqueta = boton.querySelector("[data-etiqueta-modo]");
+    if (etiqueta) etiqueta.textContent = accion;
   }
   if (!guardar) return;
   try {

@@ -1,6 +1,6 @@
 # Épica 05 · Rediseño visual y síntesis del contenido
 
-- **Estado:** Pendiente (empieza cuando se cierre la épica 04)
+- **Estado:** En curso
 - **Objetivo:** que cada unidad quepa en una pantalla de escritorio (incluido un notebook corporativo de 1366 × 768), con lo esencial a la vista y el detalle en modales, y que el sitio dé un salto de calidad visual (estados de interacción claros, profundidad y movimiento con propósito) sin salir de la paleta ni de las tipografías de felipecuevas.dev (RDA-004).
 
 ## Por qué existe esta épica
@@ -37,7 +37,7 @@ Diagnóstico del 2026-11-18, hecho con la skill Impeccable sobre el sitio public
 
 | Iteración | Nombre | Estado |
 | :-------- | :----- | :----- |
-| 05-01 | [Afordancias y estados de interacción](iteracion-05-01-afordancias-estados.md) | Pendiente |
+| 05-01 | [Afordancias y estados de interacción](iteracion-05-01-afordancias-estados.md) | En revisión |
 | 05-02 | [Modelo de síntesis y síntesis de U1 y U2](iteracion-05-02-sintesis-u1-u2.md) | Pendiente |
 | 05-03 | [Síntesis de U3 y U4](iteracion-05-03-sintesis-u3-u4.md) | Pendiente |
 | 05-04 | [Sistema de modales](iteracion-05-04-modales.md) | Pendiente |

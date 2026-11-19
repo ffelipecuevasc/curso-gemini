@@ -26,6 +26,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-010 | `AGENTS.md` · 9. Reglas técnicas, regla 2 | Planificación de la épica 05 (RDA-011) | 2026-11-18 | Aplicada |
 | P-011 | `README.md` · párrafo sobre JavaScript | Planificación de la épica 05 (RDA-011) | 2026-11-18 | Aplicada |
 | P-012 | `AGENTS.md` · 9. Reglas técnicas, regla 5 | Corrección documental de la épica 05 | 2026-11-19 | Aplicada |
+| P-013 | `DESIGN.md` · 2.1 Superficies, 2.3 Contraste y 5. Componentes (fila Encabezado) | Iteración 05-01 | 2026-11-19 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -373,4 +374,64 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 
 ```text
 5. Metas de rendimiento en móvil: Lighthouse con 95 o más en Rendimiento y 100 en Accesibilidad, Buenas prácticas y SEO; LCP menor a 2,5 s y CLS menor a 0,1. El INP es informativo y no bloquea: Lighthouse de laboratorio no lo mide y se usa el TBT como referencia.
+```
+
+## P-013 · Tokens `--color-hover-suave` y `--color-presionado` en 2.1 y 2.3, y hover de las píldoras en 5
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 2.1 Superficies, 2.3 Contraste y 5. Componentes (fila «Encabezado»)
+- **Por qué:** la sección 5.1 de `DESIGN.md` (aplicada con la P-009) ya nombra `--color-hover-suave` y `--color-presionado`, pero la sección 2.1 no registra sus HEX en modo claro y oscuro, la sección 2.3 no incluye sus contrastes de texto verificados en la iteración 05-01, y la fila «Encabezado» de la sección 5 no explicita que el hover de cada píldora de navegación inactiva usa `--color-hover-suave` mientras la activa conserva `--color-primario`. Si no se aplica, `DESIGN.md` usa dos tokens en 5.1 cuyos valores y contrastes solo existen en `src/styles/global.css` y en la bitácora 05-01, y deja sin especificar en la tabla de componentes el estado hover de las píldoras.
+
+**1 · Sección 2.1 Superficies. Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Token | Claro | Oscuro | Uso |
+| :---- | :---- | :----- | :-- |
+| `--color-fondo` | `#FFFFFF` | `#00131D` | Fondo general |
+| `--color-superficie` | `#E4F3FF` | `#00212F` | Círculos decorativos, paneles suaves, fondo de «Profundiza» |
+| `--color-superficie-2` | `#ECF0FF` | `#003B51` | Grupo de la navegación en píldoras, chips, bloques de código |
+| `--color-linea` | `#E4F3FF` | `#003B51` | Separadores de 1 px |
+```
+
+**Texto propuesto:**
+
+```text
+| Token | Claro | Oscuro | Uso |
+| :---- | :---- | :----- | :-- |
+| `--color-fondo` | `#FFFFFF` | `#00131D` | Fondo general |
+| `--color-superficie` | `#E4F3FF` | `#00212F` | Círculos decorativos, paneles suaves, fondo de «Profundiza» |
+| `--color-superficie-2` | `#ECF0FF` | `#003B51` | Grupo de la navegación en píldoras, chips, bloques de código |
+| `--color-linea` | `#E4F3FF` | `#003B51` | Separadores de 1 px |
+| `--color-hover-suave` | `#B1D4E9` | `#005877` | Hover de botones de ícono (modo, menú, cerrar) y píldoras de navegación |
+| `--color-presionado` | `#99C8E0` | `#006486` | Fondo al presionar botones y píldoras (`:active`) |
+```
+
+**2 · Sección 2.3 Contraste. Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| `#00B0E8` sobre `#003B51` | 4,80:1 | AA justo: texto de 16 px o más |
+| `#007EA7` sobre `#E4F3FF` | 4,09:1 | Falla para texto normal: solo íconos y texto grande |
+```
+
+**Texto propuesto:**
+
+```text
+| `#00B0E8` sobre `#003B51` | 4,80:1 | AA justo: texto de 16 px o más |
+| `#007EA7` sobre `#E4F3FF` | 4,09:1 | Falla para texto normal: solo íconos y texto grande |
+| `#00131D` sobre `#B1D4E9` | 12,12:1 | AAA, texto sobre `--color-hover-suave` (claro) |
+| `#00131D` sobre `#99C8E0` | 10,53:1 | AAA, texto sobre `--color-presionado` (claro) |
+| `#FFFFFF` sobre `#005877` | 7,89:1 | AAA, texto sobre `--color-hover-suave` (oscuro) |
+| `#FFFFFF` sobre `#006486` | 6,63:1 | AA, texto sobre `--color-presionado` (oscuro) |
+```
+
+**3 · Sección 5. Componentes, fila «Encabezado». Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Encabezado | Navegación en píldoras sobre `--color-superficie-2` con enlaces a Ruta, Unidades (U1 a U4) e Instructor; la píldora de la sección visible se marca con `aria-current`. En móvil se pliega en un menú con botón (`aria-expanded`, `aria-controls`). Incluye el botón de modo. |
+```
+
+**Texto propuesto:**
+
+```text
+| Encabezado | Navegación en píldoras sobre `--color-superficie-2` con enlaces a Ruta, Unidades (U1 a U4) e Instructor; el hover de cada píldora usa `--color-hover-suave` y la píldora de la sección visible (`aria-current`) conserva `--color-primario` con texto `--color-sobre-primario`. En móvil se pliega en un menú con botón (`aria-expanded`, `aria-controls`). Incluye el botón de modo. |
 ```

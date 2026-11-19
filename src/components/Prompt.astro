@@ -28,7 +28,7 @@ const { id, titulo, texto } = Astro.props;
     <button
       type="button"
       data-copiar={`${id}-texto`}
-      class="hidden js:inline-flex min-h-11 shrink-0 items-center rounded-pildora border-[1.5px] border-primario px-4 font-medium text-texto transition-colors duration-200 hover:bg-superficie motion-reduce:transition-none"
+      class="hidden js:inline-flex min-h-11 shrink-0 items-center rounded-pildora border-[1.5px] border-primario px-4 font-medium text-texto transition-[background-color,color,scale] duration-200 hover:bg-primario hover:text-sobre-primario active:scale-[0.97] active:bg-presionado active:text-texto motion-reduce:transition-none motion-reduce:active:scale-100"
     >
       <span data-etiqueta>Copiar</span>
       <span class="sr-only">el prompt «{titulo}»</span>

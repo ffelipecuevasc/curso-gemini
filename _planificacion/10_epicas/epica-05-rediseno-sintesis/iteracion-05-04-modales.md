@@ -3,7 +3,7 @@
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
 - **Estado:** Pendiente
 - **Rama sugerida:** iteracion/05-04-modales
-- **Depende de:** 05-01, 05-03, RDA-011 aceptada y propuestas P-009 y P-010 aplicadas
+- **Depende de:** 05-01, 05-03, RDA-011 aceptada y propuestas P-009, P-010 y P-011 aplicadas
 - **Especificación:** —
 - **RDA relacionadas:** RDA-007, RDA-011 (propuesta), RDA-012 (propuesta)
 
@@ -28,13 +28,13 @@ Que el detalle de cada bloque, cada prompt, los recursos y las descargas de una 
   - Atributo `closedby="any"` como mejora (cierre al tocar fuera donde el navegador lo soporte).
 - Botón que abre: `<button type="button" data-abrir-modal="<id>" aria-haspopup="dialog" aria-controls="<id>">`, visible solo con JavaScript (`js:`).
 - Script único y pequeño (`src/scripts/modal.ts`, cuarto comportamiento con script, RDA-011): un solo oyente delegado que llama a `showModal()`, cierra al hacer clic en el fondo donde `closedby` no exista y devuelve el foco al botón que abrió. El bloqueo del desplazamiento de la página es CSS (`html:has(dialog[open]) { overflow: hidden }`, con `scrollbar-gutter: stable` en `html` para que la página no salte), sin script.
-- Sin JavaScript: CSS `html:not([data-js]) dialog[data-modal]` muestra el contenido en su lugar como un bloque normal (`display: block; position: static`), sin el botón «Cerrar». El contenido existe una sola vez en el HTML: no se duplica.
+- Sin JavaScript: CSS `html:not([data-js]) dialog[data-modal]` muestra el contenido en su lugar como un bloque normal (`display: block; position: static`), sin el botón «Cerrar». Desde esta iteración el cuerpo completo del bloque, sus prompts, «Profundiza», los recursos y las descargas viven solo dentro de su `<dialog>` y se renderizan una sola vez en el HTML (no se duplican fuera del modal).
 - Cuatro variantes, todas desde el mismo componente:
   1. **Prompts del bloque:** un modal por bloque que tenga prompts; por cada prompt, su título, su `descripcion` (RDA-012) y el texto en un cuadro de IBM Plex Mono con su botón «Copiar» grande (reutiliza el script de `Prompt.astro`) y confirmación «Copiado» con cambio de ícono por 2 s.
   2. **Detalle del bloque:** `resumen`, minutos, el cuerpo con `render()` (ya sin material de conducción) y los recursos de «Profundiza».
   3. **Recursos de la unidad:** documentos y videos en dos grupos con su cantidad, con `RecursoExterno.astro`.
   4. **Descargas de la unidad:** las tarjetas de `TarjetaDescarga.astro` y la `notaDescargas`, si existe.
-- En esta iteración los botones que abren se ubican en la estructura actual de la sección (junto a cada bloque y al final de la unidad); la 05-05 los reubica en las tarjetas.
+- En esta iteración el cuerpo completo vive solo dentro del modal «Ver detalle»; `BloqueClase` deja de mostrarlo en la página, que queda temporalmente austera (título, minutos y botones que abren los modales, ubicados en la estructura actual junto a cada bloque y al final de la unidad) hasta que la 05-05 incorpore las tarjetas con la síntesis.
 
 ## Decisiones del desarrollador
 
@@ -53,7 +53,7 @@ Que el detalle de cada bloque, cada prompt, los recursos y las descargas de una 
 
 ## Tareas del desarrollador
 
-1. Aceptar la RDA-011 y aplicar las propuestas P-009 (`DESIGN.md`) y P-010 (`AGENTS.md`) antes de empezar.
+1. Aceptar la RDA-011 y aplicar las propuestas P-009 (`DESIGN.md`), P-010 (`AGENTS.md`) y P-011 (`README.md`) antes de empezar.
 2. Probar los modales en el navegador corporativo de los participantes, si tiene acceso a uno.
 
 ## Criterios de aceptación
@@ -71,6 +71,7 @@ Que el detalle de cada bloque, cada prompt, los recursos y las descargas de una 
 
 - Que un navegador corporativo antiguo no soporte `<dialog>` (soportado desde 2022 en Chrome, Edge, Firefox y Safari): sin `HTMLDialogElement.prototype.showModal`, el script no marca el botón como funcional y el contenido se lee en la página como sin JavaScript.
 - Que la página quede muy alta mientras la 05-05 no reubique el contenido: es esperable en esta iteración; el alto se mide al cerrar la 05-05.
+- Que entre la 05-04 y la 05-05 cada bloque en la página se vea temporalmente austero (solo título, minutos y botones, sin cuerpo visible ni síntesis en tarjeta): es un estado intermedio acordado para no duplicar el cuerpo en el HTML; la 05-05 agrega la síntesis visible en las tarjetas.
 
 ## Fuera de alcance
 

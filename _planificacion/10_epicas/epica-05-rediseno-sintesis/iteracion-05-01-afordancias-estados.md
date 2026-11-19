@@ -3,7 +3,7 @@
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
 - **Estado:** Pendiente
 - **Rama sugerida:** iteracion/05-01-afordancias-estados
-- **Depende de:** cierre de la épica 04
+- **Depende de:** cierre de la épica 04 y P-009 aplicada
 - **Especificación:** —
 - **RDA relacionadas:** RDA-004, RDA-007
 

@@ -2,7 +2,7 @@
 
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
-- **Última actualización:** 2026-11-18
+- **Última actualización:** 2026-11-19
 - **Iteración activa:** ninguna (épica 04 cerrada el 2026-11-18; la siguiente es la 05-01, pendiente)
 - **Próximo hito:** épica 05: rediseño visual y síntesis, con Rendimiento publicado ≥ 95 (05-08)
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
@@ -18,7 +18,7 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
-| 05-01 | [Afordancias y estados de interacción](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-01-afordancias-estados.md) | 05 | Pendiente | cierre de la épica 04 | — |
+| 05-01 | [Afordancias y estados de interacción](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-01-afordancias-estados.md) | 05 | Pendiente | cierre de la épica 04, P-009 | — |
 | 05-02 | [Modelo de síntesis y síntesis de U1 y U2](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-02-sintesis-u1-u2.md) | 05 | Pendiente | 05-01, RDA-012 | — |
 | 05-03 | [Síntesis de U3 y U4](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-03-sintesis-u3-u4.md) | 05 | Pendiente | 05-02 | — |
 | 05-04 | [Sistema de modales](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-04-modales.md) | 05 | Pendiente | 05-03, RDA-011, P-009, P-010, P-011 | — |
@@ -44,6 +44,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
+| 18.1 | Ajustes documentales de la épica 05 antes de abrir la 05-01: INP informativo (referencia: TBT) en definición, 05-07 y 05-08; P-009 antes de la 05-01; P-011 y cuerpo del bloque solo en el modal «Ver detalle» (página temporalmente austera hasta la 05-05) en la 05-04; riesgo de medir Lighthouse solo al final en la 05-08 · Rama `correccion/epica-05-ajustes-documentales` | Corrección | — | — | En revisión |
 | 19 | Estados de interacción visibles: `cursor: pointer`, hover con contraste perceptible, botón de modo con su acción visible | Corrección | — | 05-01 | Pendiente |
 | 20 | Síntesis por bloque y por unidad con límites de palabras (RDA-012) y síntesis aprobada de U1 y U2; retiro del material de conducción de la clase | Funcionalidad | — | 05-02 | Pendiente |
 | 21 | Síntesis aprobada de U3 y U4 y campos de síntesis obligatorios | Funcionalidad | — | 05-03 | Pendiente |
@@ -81,10 +82,9 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U3 nombrados pero no escritos: los carriles extra de los bloques 1 a 5 (instrucciones sin texto de prompt) | 02-06 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U4 nombrados pero no escritos: los carriles extra de los bloques 2 a 5 (el contenido de las skills y plantillas son descargas de la épica 03) | 02-06 | Desarrollador |
 | Aceptar o descartar la RDA-011 (modales sobre `<dialog>`) y la RDA-012 (síntesis con límites de palabras), antes de la 05-02 y la 05-04 | RDA-011, RDA-012 | Desarrollador |
-| Aplicar las propuestas P-009 (`DESIGN.md`), P-010 (`AGENTS.md`) y P-011 (`README.md`) antes de la 05-04 | P-009, P-010, P-011 | Desarrollador |
+| Aplicar las propuestas P-009 (`DESIGN.md`) antes de la 05-01, y P-010 (`AGENTS.md`) y P-011 (`README.md`) antes de la 05-04 | P-009, P-010, P-011 | Desarrollador |
 | Aprobar la síntesis de cada bloque y el retiro del material de conducción de la clase («Pregunta para el grupo», «al azar», «semáforo», minutos por subpunto) | 05-02, 05-03 | Desarrollador |
 | Rendimiento publicado ≥ 95 en la épica 05 (05-08): la épica 04 cerró con 87 como excepción aceptada (línea base en la bitácora de cierre) | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) | Desarrollador |
-| Al abrir la épica 05, ajustar el criterio INP < 200 ms en su definición y en la 05-08: INP queda informativo, sin bloquear (Lighthouse de laboratorio no lo mide; la 04-04 usó TBT) | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) | Desarrollador |
 
 ## 6. Propuestas fuera de alcance
 
@@ -154,3 +154,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-18 | Épica 05 (rediseño visual y síntesis) planificada a pedido del desarrollador antes del cierre de la 04: definición, 8 iteraciones (05-01 a 05-08), RDA-011 y RDA-012 propuestas y propuestas P-009 a P-011; backlog 19 a 26. No se empieza hasta cerrar la épica 04. [Definición](../10_epicas/epica-05-rediseno-sintesis/definicion-epica-05.md) |
 | 2026-11-18 | Reconciliación del registro: se restauran desde d947746 los estados de la 04-02 a la 04-04, el backlog 16.1 a 18 y 7 filas de historial que fd81fc4 había pisado; se conserva lo de la épica 05. |
 | 2026-11-18 | Iteración 04-04 terminada y épica 04 cerrada con una excepción aceptada por el desarrollador: Rendimiento publicado 87 (meta 95), que se atiende en la 05-08; sus filas pasan a `registro-archivo.md` y las 4 filas más antiguas del historial también. [Cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) |
+| 2026-11-19 | Corrección 18.1 en revisión: ajustes documentales de la épica 05 (INP informativo con referencia TBT en definición, 05-07 y 05-08; P-009 antes de 05-01; P-011 y cuerpo solo en modal en 05-04; riesgo de Lighthouse en 05-08); sale el ajuste INP de «Decisiones por tomar». [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-00-correccion-documental.md) |

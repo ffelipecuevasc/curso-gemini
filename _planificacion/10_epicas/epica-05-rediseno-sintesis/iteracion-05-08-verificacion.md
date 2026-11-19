@@ -13,7 +13,7 @@ Comprobar con mediciones que el rediseño cumple el criterio de término de la �
 
 ## Punto de partida
 
-- Mediciones de la 04-04 (línea base de Lighthouse, LCP, CLS e INP sobre la URL publicada).
+- Mediciones de la 04-04 (línea base de Lighthouse, LCP, CLS y TBT sobre la URL publicada; INP informativo, sin bloquear; referencia: TBT).
 - Bitácoras 05-01 a 05-07 con sus mediciones parciales.
 
 ## Alcance y entregables
@@ -42,7 +42,7 @@ Comprobar con mediciones que el rediseño cumple el criterio de término de la �
 ## Criterios de aceptación
 
 - [ ] Cada criterio de término de `definicion-epica-05.md` está marcado con su medición, su comando o su captura en la bitácora.
-- [ ] Lighthouse móvil sobre la URL publicada: Rendimiento ≥ 95; Accesibilidad, Buenas prácticas y SEO = 100; LCP < 2,5 s, CLS < 0,1 e INP < 200 ms; tabla comparada con la 04-04.
+- [ ] Lighthouse móvil sobre la URL publicada: Rendimiento ≥ 95; Accesibilidad, Buenas prácticas y SEO = 100; LCP < 2,5 s, CLS < 0,1 e INP informativo, sin bloquear; referencia: TBT; tabla comparada con la 04-04.
 - [ ] El detector de Impeccable no informa hallazgos sin resolver o sin justificar.
 - [ ] Sin JavaScript, la página se lee completa en modo claro (RDA-007) y no hay botones que no funcionen.
 - [ ] `DESIGN.md` describe el sitio publicado, o hay una propuesta pendiente para cada diferencia.
@@ -51,6 +51,7 @@ Comprobar con mediciones que el rediseño cumple el criterio de término de la �
 ## Riesgos
 
 - Que la nota de Rendimiento baje por los efectos: se quita primero el efecto de menor valor (brillo que sigue al cursor) y se vuelve a medir.
+- Que Lighthouse solo se mida sobre la URL publicada en esta iteración (sin medición temprana en las iteraciones previas): si Rendimiento no llega a 95, recién se sabrá al final de la épica.
 
 ## Fuera de alcance
 

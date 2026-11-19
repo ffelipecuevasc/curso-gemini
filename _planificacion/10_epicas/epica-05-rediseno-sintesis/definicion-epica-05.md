@@ -81,7 +81,7 @@ Orden y dependencias:
 ## Precondiciones
 
 - Épica 04 cerrada (04-02, 04-03 y 04-04 `Terminada`).
-- Propuestas P-009 (`DESIGN.md`), P-010 (`AGENTS.md`) y P-011 (`README.md`) aplicadas por el desarrollador antes de la iteración que las necesita: las tres antes de la 05-04 (la P-009 también rige la 05-05, la 05-06 y la 05-07).
+- Propuestas P-009 (`DESIGN.md`), P-010 (`AGENTS.md`) y P-011 (`README.md`) aplicadas por el desarrollador antes de la iteración que las necesita: P-009 se aplica antes de la 05-01 y P-010 y P-011 antes de la 05-04.
 - RDA-011 y RDA-012 aceptadas por el desarrollador antes de la 05-02 (RDA-012) y la 05-04 (RDA-011).
 
 ## Criterio de término
@@ -92,7 +92,7 @@ Orden y dependencias:
 - Cero textos de conducción de la clase en `dist/index.html` (búsqueda de «al azar», «Pregunta para el grupo», «semáforo» y del patrón `\(\d+ min\)` dentro de los textos de bloque).
 - Todos los botones y enlaces muestran `cursor: pointer` y un cambio de estado visible al pasar el mouse.
 - JavaScript propio total ≤ 3 KB gzip.
-- Lighthouse móvil sobre la URL publicada: 95 o más en Rendimiento y 100 en Accesibilidad, Buenas prácticas y SEO; CLS < 0,1 e INP < 200 ms.
+- Lighthouse móvil sobre la URL publicada: 95 o más en Rendimiento y 100 en Accesibilidad, Buenas prácticas y SEO; CLS < 0,1 e INP informativo, sin bloquear; referencia: TBT.
 
 ## Cierre
 

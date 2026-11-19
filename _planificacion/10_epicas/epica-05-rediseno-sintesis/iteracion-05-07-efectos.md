@@ -48,7 +48,7 @@ Cada efecto se activa solo donde el navegador lo soporta (`@supports` o detecci�
 - [ ] Con `prefers-reduced-motion: reduce` emulado no hay ninguna animación ni transición (Panel de Animaciones de DevTools vacío al recorrer la página y abrir un modal).
 - [ ] En un navegador sin `animation-timeline` (o desactivando la regla `@supports` en DevTools para simularlo), todas las tarjetas se ven desde el inicio y no hay barra de avance rota (captura).
 - [ ] CLS = 0 al pasar el mouse, abrir y cerrar modales y desplazarse (grabación de Rendimiento de DevTools).
-- [ ] Ningún cuadro largo por los efectos: la grabación de Rendimiento con 10 s de movimiento del puntero sobre las tarjetas no muestra tareas de más de 50 ms; INP < 200 ms en Lighthouse.
+- [ ] Ningún cuadro largo por los efectos: la grabación de Rendimiento con 10 s de movimiento del puntero sobre las tarjetas no muestra tareas de más de 50 ms; INP informativo, sin bloquear; referencia: TBT.
 - [ ] JavaScript propio total ≤ 3 KB gzip.
 - [ ] Lighthouse móvil sobre `pnpm preview`: Rendimiento ≥ 95 y sin bajar más de 2 puntos respecto de la línea base.
 - [ ] Las sombras y el brillo usan solo colores de la paleta (búsqueda de HEX nuevos en `global.css` y componentes: solo los de `DESIGN.md`).

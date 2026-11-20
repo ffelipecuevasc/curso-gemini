@@ -1,35 +1,70 @@
 ---
-// Bloque de prompt (DESIGN.md, sección 5): título, texto literal en IBM Plex
-// Mono sobre superficie-2 y botón «Copiar» arriba a la derecha. Sin JavaScript
-// el botón no aparece (variante js:) y el texto sigue seleccionable. El script
-// copia el textContent del <code>, así que se copia exactamente lo que se ve.
+// Bloque de prompt (DESIGN.md, sección 5): título, descripción (RDA-012), texto
+// literal en IBM Plex Mono sobre superficie-2 y botón «Copiar» grande. Vive
+// dentro del modal de prompts de su bloque. Sin JavaScript el botón no aparece
+// (variante js:) y el texto sigue seleccionable. El script copia el
+// textContent del <code>, así que se copia exactamente lo que se ve.
 interface Props {
   /** ID único en la página: prompt-<unidad>-<bloque>-<id>. */
   id: string;
   titulo: string;
+  descripcion: string;
   texto: string;
 }
 
-const { id, titulo, texto } = Astro.props;
+const { id, titulo, descripcion, texto } = Astro.props;
 ---
 
 <figure
   id={id}
   aria-labelledby={`${id}-titulo`}
+  aria-describedby={`${id}-desc`}
   class="rounded-bloque rounded-bl-esquina bg-superficie-2 p-4 sm:p-6"
 >
-  <figcaption class="flex items-start justify-between gap-4">
-    <span
-      id={`${id}-titulo`}
-      class="font-display font-semibold wrap-break-word"
-    >
-      {titulo}
-    </span>
+  <figcaption class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+    <div class="min-w-0">
+      <span
+        id={`${id}-titulo`}
+        class="font-display font-semibold wrap-break-word"
+      >
+        {titulo}
+      </span>
+      <p id={`${id}-desc`} class="mt-1 text-texto-2">
+        {descripcion}
+      </p>
+    </div>
     <button
       type="button"
       data-copiar={`${id}-texto`}
-      class="hidden js:inline-flex min-h-11 shrink-0 items-center rounded-pildora border-[1.5px] border-primario px-4 font-medium text-texto transition-[background-color,color,scale] duration-200 hover:bg-primario hover:text-sobre-primario active:scale-[0.97] active:bg-presionado active:text-texto motion-reduce:transition-none motion-reduce:active:scale-100"
+      class="boton-contorno group/copiar hidden js:inline-flex min-h-12 shrink-0 gap-2 self-start px-6"
     >
+      <svg
+        class="size-5 group-data-copiado/copiar:hidden"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+        <path d="M5 15V6a2 2 0 0 1 2-2h9"></path>
+      </svg>
+      <svg
+        class="hidden size-5 group-data-copiado/copiar:block"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="m5 12.5 4.5 4.5L19 7.5"></path>
+      </svg>
       <span data-etiqueta>Copiar</span>
       <span class="sr-only">el prompt «{titulo}»</span>
     </button>
@@ -64,9 +99,11 @@ const { id, titulo, texto } = Astro.props;
         await navigator.clipboard.writeText(codigo.textContent ?? "");
         etiqueta.textContent = "Copiado";
         aviso.textContent = "Copiado";
+        boton.toggleAttribute("data-copiado", true);
         reinicio = setTimeout(() => {
           etiqueta.textContent = "Copiar";
           aviso.textContent = "";
+          boton.toggleAttribute("data-copiado", false);
         }, 2000);
       } catch {
         // El error queda a la vista hasta el próximo intento.

@@ -1,7 +1,7 @@
 # Iteración 05-04 · Sistema de modales
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/05-04-modales
 - **Depende de:** 05-01, 05-03 y P-013 aplicada
 - **Especificación:** —
@@ -36,10 +36,20 @@ Que el detalle de cada bloque, cada prompt, los recursos y las descargas de una 
   4. **Descargas de la unidad:** las tarjetas de `TarjetaDescarga.astro` y la `notaDescargas`, si existe.
 - En esta iteración el cuerpo completo vive solo dentro del modal «Ver detalle»; `BloqueClase` deja de mostrarlo en la página, que queda temporalmente austera (título, minutos y botones que abren los modales, ubicados en la estructura actual junto a cada bloque y al final de la unidad) hasta que la 05-05 incorpore las tarjetas con la síntesis.
 
+## Contenido aprobado (copiar tal cual)
+
+> Aprobado por el desarrollador el 2026-11-19. Cambio al cuerpo de un bloque en la página.
+
+- **`u2/bloque-3.md` (único bloque con marcador `data-prompt`):** en el modal de detalle, el marcador `<div data-prompt="identidad-visual-gtd"></div>` se reemplaza por esta línea, sin cambios: «El prompt «Identidad visual GTD (usar siempre)» está en la sección de prompts de este bloque.». El prompt vive solo en el modal de prompts de ese bloque. El `.md` no cambia; el reemplazo lo hace `BloqueClase.astro` con el título del prompt.
+- **Títulos de los modales:** «Detalle · <título del bloque>», «Prompts · <título del bloque>», «Recursos de la unidad» y «Descargas de la unidad».
+
 ## Decisiones del desarrollador
 
 - 2026-11-18: base técnica de los modales delegada en «la opción más profesional para el stack»: `<dialog>` nativo con script mínimo y respaldo sin JavaScript (RDA-011). Se descartan las invocaciones declarativas (`commandfor`) como mecanismo principal porque su soporte en navegadores corporativos es reciente; se pueden agregar después como mejora sin cambiar el marcado.
 - 2026-11-19: se acepta publicar en main el estado intermedio austero entre la 05-04 y la 05-05, porque no hay clases próximas.
+- 2026-11-19: «Profundiza» se mantiene como `<details>` al final del modal de detalle; «Sobre la unidad» queda fuera de esta iteración (05-05); los botones llevan las etiquetas de la 05-05 («Ver detalle», «Ver prompt», «Prompts (n)», «Recursos (n)», «Descargas (n)»); se aprueba el patrón de `id` sin sufijo por prompt.
+- 2026-11-19: se aprueba el respaldo `data-sin-dialogo`: sin `showModal`, `modal.ts` marca `<html data-sin-dialogo>` y el CSS muestra el contenido como sin JavaScript.
+- 2026-11-19: los íconos de «Copiar» y «Copiado» son SVG de línea en línea, como el resto de la interfaz; sin dependencias nuevas.
 
 ## Tareas
 
@@ -58,14 +68,14 @@ Que el detalle de cada bloque, cada prompt, los recursos y las descargas de una 
 
 ## Criterios de aceptación
 
-- [ ] `dist/index.html` tiene un modal de prompts por cada bloque con prompts (24 prompts en total), 26 de detalle, 4 de recursos y los de descargas de las unidades que tienen descargas; ningún `id` repetido (comando anotado en la bitácora).
+- [x] `dist/index.html` tiene un modal de prompts por cada bloque con prompts (24 prompts en total), 26 de detalle, 4 de recursos y los de descargas de las unidades que tienen descargas; ningún `id` repetido (comando anotado en la bitácora). Medido: 45 `<dialog>` (26 + 13 + 4 + 2), 284 `id`, 0 repetidos.
 - [ ] Con teclado: Tab llega al botón, Enter abre, el foco queda dentro del modal, Esc cierra y el foco vuelve al botón que abrió (comprobado en Chrome y en Firefox o Safari).
-- [ ] «Copiar» dentro del modal copia el prompt exacto (24 de 24 iguales a la fuente) y anuncia «Copiado».
-- [ ] Con JavaScript desactivado, todo el contenido de los modales se lee en la página, no aparece ningún botón que no funcione y no hay contenido duplicado.
+- [ ] «Copiar» dentro del modal copia el prompt exacto (24 de 24 iguales a la fuente) y anuncia «Copiado». Medido: el texto de los 24 `<code>` de `dist/index.html` es idéntico a su fuente; el clic y el anuncio quedan para la prueba del desarrollador.
+- [x] Con JavaScript desactivado, todo el contenido de los modales se lee en la página, no aparece ningún botón que no funcione y no hay contenido duplicado. Comprobado por script sobre el HTML y el CSS compilados (45 botones que abren y 24 de copiar con `hidden`; reglas sin `data-js`); la lectura en pantalla la confirma el desarrollador.
 - [ ] Con un modal abierto, la página de fondo no se desplaza y no hay salto de diseño al abrir o cerrar (CLS 0 en la grabación de Rendimiento de DevTools).
-- [ ] JavaScript nuevo ≤ 1 KB gzip; JavaScript propio total ≤ 2,2 KB gzip.
+- [x] JavaScript nuevo ≤ 1 KB gzip; JavaScript propio total ≤ 2,2 KB gzip. Medido: +176 B gzip nuevos (`modal.ts` 274 B solo) y 1295 B gzip en total.
 - [ ] Contraste AA del contenido del modal y del fondo en ambos modos.
-- [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 1 `h1`; 5 etiquetas `<script>` propias más la de Web Analytics.
+- [x] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 1 `h1`; 5 etiquetas `<script>` propias más la de Web Analytics. Medido: build sin advertencias y guardia en 0; check 0/0/0; 1 `h1`; 5 propias + 1 de Web Analytics.
 
 ## Riesgos
 

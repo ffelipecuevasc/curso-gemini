@@ -162,6 +162,12 @@
     font-family: var(--font-texto);
     line-height: var(--leading-texto);
     accent-color: var(--color-primario);
+    /* Con un modal abierto la página no se desplaza ni salta (RDA-011). */
+    scrollbar-gutter: stable;
+  }
+
+  html:has(dialog[open]) {
+    overflow: hidden;
   }
 
   h1,
@@ -197,6 +203,35 @@
   [role="button"]:disabled,
   [aria-disabled="true"] {
     cursor: not-allowed;
+  }
+}
+
+/*
+ * Modales y botones de contorno (iteración 05-04, DESIGN.md sección 5 y 5.1).
+ * Se repiten en 45 modales y 24 prompts: viven aquí para no repetir las
+ * utilidades en el HTML. Los tokens salen de @theme.
+ */
+@layer components {
+  .boton-contorno {
+    align-items: center;
+    min-height: 2.75rem;
+    @apply rounded-pildora border-[1.5px] border-primario px-4 font-medium text-texto transition-[background-color,color,scale] duration-200 hover:bg-primario hover:text-sobre-primario active:scale-[0.97] active:bg-presionado active:text-texto motion-reduce:transition-none motion-reduce:active:scale-100;
+  }
+
+  .boton-icono {
+    @apply inline-flex size-11 items-center justify-center rounded-pildora border-[1.5px] border-transparent bg-superficie-2 text-texto transition-[background-color,border-color,scale] duration-200 hover:border-primario hover:bg-hover-suave active:scale-[0.97] active:bg-presionado motion-reduce:transition-none motion-reduce:active:scale-100;
+  }
+
+  .modal {
+    @apply m-auto max-h-[calc(100dvh-2rem)] w-[min(720px,calc(100%-2rem))] max-w-none flex-col overflow-hidden rounded-bloque rounded-bl-esquina border border-linea bg-fondo p-0 text-texto open:flex backdrop:bg-fondo/70 backdrop:backdrop-blur-[4px] max-sm:mx-0 max-sm:mb-0 max-sm:w-full max-sm:rounded-b-none;
+  }
+
+  .modal-cabecera {
+    @apply flex shrink-0 items-start justify-between gap-4 border-t-[10px] px-4 py-4 sm:px-6;
+  }
+
+  .modal-cuerpo {
+    @apply max-h-[min(85dvh,760px)] min-h-0 overflow-y-auto overscroll-contain px-4 pb-6 sm:px-6;
   }
 }
 
@@ -325,4 +360,34 @@
   to {
     mask-size: 200vmax;
   }
+}
+
+/*
+ * Modales sin JavaScript (iteración 05-04, RDA-011). Sin el script en línea de
+ * Base.astro (sin data-js) o sin showModal (data-sin-dialogo, lo marca
+ * modal.ts), cada <dialog> se muestra en su lugar como un bloque normal: sin
+ * botón que abre, sin «Cerrar» y sin desplazamiento propio. Va fuera de las
+ * capas para ganarle a las utilidades de Modal.astro.
+ */
+html:not([data-js]) dialog[data-modal],
+html[data-sin-dialogo] dialog[data-modal] {
+  display: block;
+  position: static;
+  inset: auto;
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 1rem 0 0;
+}
+
+html:not([data-js]) [data-modal-cuerpo],
+html[data-sin-dialogo] [data-modal-cuerpo] {
+  max-height: none;
+  overflow: visible;
+}
+
+html:not([data-js]) [data-cerrar],
+html[data-sin-dialogo] [data-cerrar],
+html[data-sin-dialogo] [data-abrir-modal] {
+  display: none;
 }

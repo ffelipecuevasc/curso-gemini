@@ -1,22 +1,26 @@
 ---
-// Un bloque de la clase dentro de su unidad (DESIGN.md, sección 5, «Sección
-// de unidad»): título como h3, minutos, el texto «Para la clase» (cuerpo
-// Markdown del bloque, RDA-009) y sus prompts copiables. Un prompt va después
-// del cuerpo, salvo que el cuerpo tenga su marcador data-prompt: entonces va
-// en ese punto (src/lib/marcadores.ts). Sin marcador, el cuerpo se renderiza
-// con render(); con marcador, se parte el HTML que ya renderizó Astro.
+// Un bloque de la clase dentro de su unidad (DESIGN.md, sección 5): título como
+// h3, minutos y los botones que abren sus modales (RDA-011): «Ver detalle»
+// (resumen, cuerpo Markdown del bloque con render() —RDA-009— y «Profundiza») y
+// «Ver prompt» o «Prompts (n)» si el bloque tiene prompts. El cuerpo y los
+// prompts viven solo dentro de sus modales; la página queda austera hasta la
+// 05-05. Si el cuerpo trae el marcador data-prompt (src/lib/marcadores.ts), en
+// su lugar va una línea que remite a la sección de prompts del bloque.
 import { render } from "astro:content";
 import type { Bloque } from "../lib/unidades";
 import { partirEnMarcadores } from "../lib/marcadores";
+import Modal from "./Modal.astro";
 import Prompt from "./Prompt.astro";
 import Profundiza from "./Profundiza.astro";
 
 interface Props {
   bloque: Bloque;
+  /** Número de la unidad, para el color de la franja de sus modales. */
+  unidad: number;
 }
 
-const { bloque } = Astro.props;
-const { numero, titulo, minutos, prompts, profundiza } = bloque.data;
+const { bloque, unidad } = Astro.props;
+const { numero, titulo, minutos, sintesis, prompts, profundiza } = bloque.data;
 const base = bloque.id.replace("/", "-");
 const idTitulo = `bloque-${base}`;
 const idPrompt = (id: string) => `prompt-${base}-${id}`;
@@ -28,11 +32,7 @@ const tramos = partirEnMarcadores(
   bloque.id,
 );
 const conMarcador = tramos.length > 1;
-const enLinea = new Set(
-  tramos.flatMap((t) => (t.tipo === "prompt" ? [t.id] : [])),
-);
 const porId = new Map(prompts.map((p) => [p.id, p]));
-const alFinal = prompts.filter((p) => !enLinea.has(p.id));
 const { Content } = await render(bloque);
 ---
 
@@ -42,23 +42,55 @@ const { Content } = await render(bloque);
     {titulo}
   </h3>
   <p class="mt-1 font-codigo text-sm text-texto-2">{minutos} min</p>
-  <div class="contenido-bloque mt-4">
-    {conMarcador ? (
-      tramos.map((t) => {
-        if (t.tipo === "html") return <Fragment set:html={t.html} />;
-        const p = porId.get(t.id)!;
-        return <Prompt id={idPrompt(p.id)} titulo={p.titulo} texto={p.texto} />;
-      })
-    ) : (
-      <Content />
+  <div class="mt-4 flex flex-wrap items-start gap-3">
+    <Modal
+      id={`modal-${base}-detalle`}
+      titulo={`Detalle · ${titulo}`}
+      unidad={unidad}
+      etiqueta="Ver detalle"
+      contexto={`de «${titulo}»`}
+      descripcion={sintesis.resumen}
+    >
+      <p class="mb-4 font-codigo text-sm text-texto-2">{minutos} min</p>
+      <div class="contenido-bloque">
+        {conMarcador ? (
+          tramos.map((t) => {
+            if (t.tipo === "html") return <Fragment set:html={t.html} />;
+            const p = porId.get(t.id)!;
+            return (
+              <p>
+                El prompt «{p.titulo}» está en la sección de prompts de este
+                bloque.
+              </p>
+            );
+          })
+        ) : (
+          <Content />
+        )}
+      </div>
+      {profundiza && <Profundiza profundiza={profundiza} />}
+    </Modal>
+    {prompts.length > 0 && (
+      <Modal
+        id={`modal-${base}-prompts`}
+        titulo={`Prompts · ${titulo}`}
+        unidad={unidad}
+        etiqueta={
+          prompts.length === 1 ? "Ver prompt" : `Prompts (${prompts.length})`
+        }
+        contexto={`de «${titulo}»`}
+      >
+        <div class="grid gap-4">
+          {prompts.map((p) => (
+            <Prompt
+              id={idPrompt(p.id)}
+              titulo={p.titulo}
+              descripcion={p.descripcion}
+              texto={p.texto}
+            />
+          ))}
+        </div>
+      </Modal>
     )}
   </div>
-  {alFinal.length > 0 && (
-    <div class="mt-6 grid gap-4">
-      {alFinal.map((p) => (
-        <Prompt id={idPrompt(p.id)} titulo={p.titulo} texto={p.texto} />
-      ))}
-    </div>
-  )}
-  {profundiza && <Profundiza profundiza={profundiza} />}
 </article>

@@ -9,6 +9,7 @@
 import { getEntry } from "astro:content";
 import type { UnidadConBloques } from "../lib/unidades";
 import BloqueClase from "./BloqueClase.astro";
+import Modal from "./Modal.astro";
 import RecursoExterno from "./RecursoExterno.astro";
 import TarjetaDescarga from "./TarjetaDescarga.astro";
 
@@ -44,6 +45,18 @@ const recursos = await Promise.all(
 const descargas = await Promise.all(
   referenciasDescargas.map(async (ref) => (await getEntry(ref))!),
 );
+
+// Los recursos del modal van en dos grupos, cada uno con su cantidad.
+const gruposRecursos = [
+  { tipo: "documentos", titulo: "Documentos", tipoRecurso: "documento" },
+  { tipo: "videos", titulo: "Videos", tipoRecurso: "video" },
+]
+  .map(({ tipo, titulo, tipoRecurso }) => ({
+    tipo,
+    titulo,
+    recursos: recursos.filter((r) => r.data.tipo === tipoRecurso),
+  }))
+  .filter((grupo) => grupo.recursos.length > 0);
 
 // Clases completas por unidad para que Tailwind las detecte (como en
 // BloqueUnidad). La U3 lleva el borde de 1 px que pide DESIGN.md en oscuro.
@@ -96,24 +109,31 @@ const reparto = (b: UnidadConBloques["bloques"][number]) =>
   </div>
 
   {descargas.length > 0 && (
-    <div class="mt-10 max-w-prose">
-      <h3 class="font-display text-xl font-semibold">Descargas</h3>
-      {tramosNota.length > 0 && (
-        <p class="mt-2">
-          {tramosNota.map((tramo, i) =>
-            i % 2 === 1 ? (
-              <code class="font-codigo text-sm">{tramo}</code>
-            ) : (
-              tramo
-            ),
-          )}
-        </p>
-      )}
-      <ul class="mt-3 grid gap-3">
-        {descargas.map((descarga) => (
-          <TarjetaDescarga descarga={descarga} />
-        ))}
-      </ul>
+    <div class="mt-10 flex flex-wrap items-start gap-3">
+      <Modal
+        id={`modal-u${numero}-descargas`}
+        titulo="Descargas de la unidad"
+        unidad={numero}
+        nivel={3}
+        etiqueta={`Descargas (${descargas.length})`}
+      >
+        {tramosNota.length > 0 && (
+          <p class="mb-3 max-w-prose">
+            {tramosNota.map((tramo, i) =>
+              i % 2 === 1 ? (
+                <code class="font-codigo text-sm">{tramo}</code>
+              ) : (
+                tramo
+              ),
+            )}
+          </p>
+        )}
+        <ul class="grid gap-3">
+          {descargas.map((descarga) => (
+            <TarjetaDescarga descarga={descarga} />
+          ))}
+        </ul>
+      </Modal>
     </div>
   )}
 
@@ -159,18 +179,35 @@ const reparto = (b: UnidadConBloques["bloques"][number]) =>
 
   <div class="mt-10 grid gap-10">
     {unidad.bloques.map((bloque) => (
-      <BloqueClase bloque={bloque} />
+      <BloqueClase bloque={bloque} unidad={numero} />
     ))}
   </div>
 
   {recursos.length > 0 && (
-    <div class="mt-12 max-w-prose border-t border-linea pt-8">
-      <h3 class="font-display text-xl font-semibold">Recursos</h3>
-      <ul class="mt-2 grid gap-1">
-        {recursos.map((recurso) => (
-          <RecursoExterno recurso={recurso} />
+    <div class="mt-12 flex flex-wrap items-start gap-3 border-t border-linea pt-8">
+      <Modal
+        id={`modal-u${numero}-recursos`}
+        titulo="Recursos de la unidad"
+        unidad={numero}
+        nivel={3}
+        etiqueta={`Recursos (${recursos.length})`}
+      >
+        {gruposRecursos.map((grupo) => (
+          <section aria-labelledby={`modal-u${numero}-recursos-${grupo.tipo}`}>
+            <h4
+              id={`modal-u${numero}-recursos-${grupo.tipo}`}
+              class="mt-2 font-display text-lg font-semibold"
+            >
+              {grupo.titulo} ({grupo.recursos.length})
+            </h4>
+            <ul class="mt-1 grid gap-1">
+              {grupo.recursos.map((recurso) => (
+                <RecursoExterno recurso={recurso} />
+              ))}
+            </ul>
+          </section>
         ))}
-      </ul>
+      </Modal>
     </div>
   )}
 

@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-19
-- **Iteración activa:** 05-04 · Sistema de modales (en revisión)
+- **Iteración activa:** 05-05 · La unidad en una pantalla (en revisión)
 - **Próximo hito:** épica 05: rediseño visual y síntesis, con Rendimiento publicado ≥ 95 (05-08)
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
@@ -21,8 +21,8 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | 05-01 | [Afordancias y estados de interacción](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-01-afordancias-estados.md) | 05 | Terminada | cierre de la épica 04, P-009 | [bitacora-05-01](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-01.md) |
 | 05-02 | [Modelo de síntesis y síntesis de U1 y U2](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-02-sintesis-u1-u2.md) | 05 | Terminada | 05-01, RDA-012 | [bitacora-05-02](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-02.md) |
 | 05-03 | [Síntesis de U3 y U4](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-03-sintesis-u3-u4.md) | 05 | Terminada | 05-02 | [bitacora-05-03](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-03.md) |
-| 05-04 | [Sistema de modales](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-04-modales.md) | 05 | En revisión | 05-03 | [bitacora-05-04](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-04.md) |
-| 05-05 | [La unidad en una pantalla](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-05-unidad-una-pantalla.md) | 05 | Pendiente | 05-04 | — |
+| 05-04 | [Sistema de modales](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-04-modales.md) | 05 | Terminada | 05-03 | [bitacora-05-04](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-04.md) |
+| 05-05 | [La unidad en una pantalla](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-05-unidad-una-pantalla.md) | 05 | En revisión | 05-04 | [bitacora-05-05](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) |
 | 05-06 | [Portada y ruta en un pantallazo](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-06-portada-ruta.md) | 05 | Pendiente | 05-01, P-009 | — |
 | 05-07 | [Capa de efectos con propósito](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-07-efectos.md) | 05 | Pendiente | 05-05, 05-06 | — |
 | 05-08 | [Pulido y verificación final del rediseño](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-08-verificacion.md) | 05 | Pendiente | 05-07 | — |
@@ -46,12 +46,12 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
 | 18.1 | Ajustes documentales de la épica 05 antes de abrir la 05-01: INP informativo (referencia: TBT) en definición, 05-07 y 05-08, y propuesta P-012 (`AGENTS.md`); P-009 antes de la 05-01; P-011 y cuerpo del bloque solo en el modal «Ver detalle» (página temporalmente austera con JS hasta la 05-05) en la 05-04; riesgo de no medir Lighthouse al cerrar la 05-05 en la 05-08 · Rama `correccion/epica-05-ajustes-documentales` | Corrección | — | — | Terminada |
 | 18.2 | Cierre documental de P-009 a P-012 y RDA-011 aceptada · Rama `correccion/epica-05-cierre-propuestas` | Corrección | — | — | Terminada |
-| 18.3 | Corrección documental previa a la 05-04: cierre de la 05-03, P-013 aplicada, menciones obsoletas de RDA-011 y RDA-012 y tareas ya cumplidas de la 05-04, y decisión del estado intermedio austero · Rama `correccion/epica-05-previa-05-04` | Corrección | — | — | En revisión |
+| 18.3 | Corrección documental previa a la 05-04: cierre de la 05-03, P-013 aplicada, menciones obsoletas de RDA-011 y RDA-012 y tareas ya cumplidas de la 05-04, y decisión del estado intermedio austero · Rama `correccion/epica-05-previa-05-04` | Corrección | — | — | Terminada |
 | 19 | Estados de interacción visibles: `cursor: pointer`, hover con contraste perceptible, botón de modo con su acción visible | Corrección | — | 05-01 | Terminada |
 | 20 | Síntesis por bloque y por unidad con límites de palabras (RDA-012) y síntesis aprobada de U1 y U2; retiro del material de conducción de la clase | Funcionalidad | — | 05-02 | Terminada |
 | 21 | Síntesis aprobada de U3 y U4 y campos de síntesis obligatorios | Funcionalidad | — | 05-03 | Terminada |
-| 22 | Modales sobre `<dialog>` nativo para prompts, detalle, recursos y descargas (RDA-011) | Funcionalidad | — | 05-04 | En revisión |
-| 23 | Sección de unidad en una pantalla de escritorio con tarjetas de bloque | Funcionalidad | — | 05-05 | Pendiente |
+| 22 | Modales sobre `<dialog>` nativo para prompts, detalle, recursos y descargas (RDA-011) | Funcionalidad | — | 05-04 | Terminada |
+| 23 | Sección de unidad en una pantalla de escritorio con tarjetas de bloque | Funcionalidad | — | 05-05 | En revisión |
 | 24 | Portada y ruta en el primer pantallazo e instructor compacto | Funcionalidad | — | 05-06 | Pendiente |
 | 25 | Efectos con propósito: sombras teñidas, transición de tarjeta a modal, barra de avance, aparición escalonada y brillo | Funcionalidad | — | 05-07 | Pendiente |
 | 26 | Verificación final del rediseño en local y en la URL publicada, comparada con la 04-04 | Técnico | — | 05-08 | Pendiente |
@@ -84,6 +84,8 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U3 nombrados pero no escritos: los carriles extra de los bloques 1 a 5 (instrucciones sin texto de prompt) | 02-06 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U4 nombrados pero no escritos: los carriles extra de los bloques 2 a 5 (el contenido de las skills y plantillas son descargas de la épica 03) | 02-06 | Desarrollador |
 | Rendimiento publicado ≥ 95 en la épica 05 (05-08): la épica 04 cerró con 87 como excepción aceptada (línea base en la bitácora de cierre) | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) | Desarrollador |
+| Aplicar la propuesta P-014 (`DESIGN.md`, secciones 5 y 5.1: variante «Terminado cuando…» del modal, sexta tarjeta con modal y botón sobre el color de la unidad) | P-014 | Desarrollador |
+| Qué hacer con el alto de la unidad (no cabe en una pantalla según el agente) y con las 6 palabras de más de la U1, tras medir en el navegador (ver opciones en la bitácora 05-05) | [bitacora-05-05](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) | Desarrollador |
 
 ## 6. Propuestas fuera de alcance
 
@@ -102,8 +104,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-17 | Iteración 02-01 terminada: el desarrollador revisó la portada en el navegador (teclado, 360 px y escritorio, ambos modos, logo de GTD) sin observaciones. |
-| 2026-11-17 | Iteración 02-02 en revisión: 4 fichas y 26 bloques `.md` (RDA-009) validados al compilar; sin contenido de prueba; 2 advertencias de cargador vacío aceptadas hasta la 03. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-02.md) |
 | 2026-11-17 | Iteración 02-02 terminada: aprobada por el desarrollador; 2 advertencias del cargador file aceptadas hasta que haya contenido. |
 | 2026-11-17 | Iteración 02-03 en revisión: mosaico de las 4 unidades en `#ruta` desde las colecciones; la validación RDA-009 pasa a `RutaCurso`; 0 B de JS nuevo; falta revisión en navegador. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-03.md) |
 | 2026-11-17 | Iteración 02-03 terminada: el desarrollador revisó la ruta en el navegador (teclado, foco, borde de la U3, 360/640/1024 px, ambos modos) sin observaciones; acepta la esquina asimétrica en los 4 bloques. |
@@ -152,3 +152,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-19 | Iteración 05-03 en revisión: síntesis aprobada cargada en los 14 bloques, 16 prompts y 2 fichas de U3 y U4, retiro del material de conducción (M-01 a M-20, incluidos «Vitrina» en U3 y «Demo Day» en U4) y campos `sintesis`, `objetivoBreve` y `prompt.descripcion` obligatorios en el esquema; sale de «Decisiones por tomar» la aprobación de síntesis; 0 B de JS nuevo; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-03.md) |
 | 2026-11-19 | Corrección 18.3 en revisión: 05-03 terminada (aprobada por el desarrollador en `main`, `c3fe114`), P-013 aplicada (comprobada con `grep` en `DESIGN.md`) y fuera de «Decisiones por tomar», retiro de «(propuesta)» de RDA-011 y RDA-012 y de las tareas ya cumplidas de la 05-04, 05-05 y 05-07, y decisión de publicar el estado intermedio austero entre la 05-04 y la 05-05; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-00-correccion-previa-05-04.md) |
 | 2026-11-19 | Iteración 05-04 en revisión: `Modal.astro` y `modal.ts` (+176 B gzip de JS, 1295 B en total), 45 `<dialog>` (26 detalle, 13 prompts, 4 recursos y 2 descargas) con 0 `id` repetidos y 24 de 24 prompts idénticos, «Copiar» con descripción e ícono, respaldo sin JavaScript (`data-sin-dialogo`) y HTML de 255 659 B a 327 567 B; falta la prueba en navegador; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-04.md) |
+| 2026-11-19 | Iteración 05-04 terminada (`ff80db4` en `main`) y corrección 18.3 terminada: el desarrollador probó los modales en el navegador sin observaciones (dicho por él, no verificado por el agente); la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-04.md) |
+| 2026-11-20 | Iteración 05-05 en revisión: cabecera, 6 tarjetas y 53 modales (con «Sobre la unidad» y «Terminado cuando…»), `Modal.astro` sin botón, `BotonModal.astro`, `ModalesBloque.astro` y `--alto-encabezado` de 77 px; 0 B de JS nuevo y HTML +11 KB; **no cabe en una pantalla** (986 a 1090 px contra 823 en 1440 × 900) y la U1 pasa de 300 palabras (306), según el agente; P-014 pendiente; falta la medición del desarrollador; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) |

@@ -1,56 +1,28 @@
 ---
-// Modal (DESIGN.md, sección 5; RDA-011): el botón que lo abre y su <dialog>
-// nativo, con franja del color de la unidad, título, «Cerrar» de 44 px y un
-// cuerpo con desplazamiento propio. El contenido va una sola vez, en el slot.
-// Sin JavaScript (o sin showModal) el botón no se ve y el <dialog> se muestra
-// en su lugar como un bloque normal (global.css, «Modales sin JavaScript»).
+// Modal (DESIGN.md, sección 5; RDA-011): el <dialog> nativo con franja del
+// color de la unidad, título, «Cerrar» de 44 px y un cuerpo con desplazamiento
+// propio. El contenido va una sola vez, en el slot. Lo abre un BotonModal con
+// el mismo `id`; sin JavaScript (o sin showModal) ese botón no se ve y el
+// <dialog> se muestra en su lugar como un bloque normal (global.css,
+// «Modales sin JavaScript»).
+import { franjaModal } from "../lib/colores-unidad";
+
 interface Props {
-  /** ID único en la página: modal-<unidad>-<bloque>-<tipo> o modal-u<N>-<tipo>. */
+  /** ID único en la página (src/lib/modales.ts). */
   id: string;
   /** Título del modal (h3 o h4 según `nivel`). */
   titulo: string;
   /** Número de la unidad, para el color de la franja. */
   unidad: number;
-  /** Texto del botón que abre el modal. */
-  etiqueta: string;
-  /** Continuación del nombre accesible del botón, solo para lectores de pantalla. */
-  contexto?: string;
   /** Texto corto bajo el título; el modal lo declara con aria-describedby. */
   descripcion?: string;
   /** Nivel del encabezado: 3 en la unidad, 4 dentro de un bloque. */
   nivel?: 3 | 4;
 }
 
-const {
-  id,
-  titulo,
-  unidad,
-  etiqueta,
-  contexto,
-  descripcion,
-  nivel = 4,
-} = Astro.props;
+const { id, titulo, unidad, descripcion, nivel = 4 } = Astro.props;
 const Titulo = `h${nivel}` as "h3" | "h4";
-
-// Clases completas por unidad para que Tailwind las detecte.
-const franjas: Record<number, string> = {
-  1: "border-u1",
-  2: "border-u2",
-  3: "border-u3",
-  4: "border-u4",
-};
 ---
-
-<button
-  type="button"
-  data-abrir-modal={id}
-  aria-haspopup="dialog"
-  aria-controls={id}
-  class="boton-contorno hidden js:inline-flex"
->
-  {etiqueta}
-  {contexto && <span class="sr-only"> {contexto}</span>}
-</button>
 
 <dialog
   id={id}
@@ -60,7 +32,7 @@ const franjas: Record<number, string> = {
   aria-describedby={descripcion ? `${id}-desc` : undefined}
   class="modal"
 >
-  <div class:list={["modal-cabecera", franjas[unidad]]}>
+  <div class:list={["modal-cabecera", franjaModal[unidad]]}>
     <Titulo
       id={`${id}-titulo`}
       class="font-display text-xl font-semibold wrap-break-word"

@@ -1,7 +1,7 @@
 # Iteración 05-04 · Sistema de modales
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/05-04-modales
 - **Depende de:** 05-01, 05-03 y P-013 aplicada
 - **Especificación:** —
@@ -69,12 +69,12 @@ Que el detalle de cada bloque, cada prompt, los recursos y las descargas de una 
 ## Criterios de aceptación
 
 - [x] `dist/index.html` tiene un modal de prompts por cada bloque con prompts (24 prompts en total), 26 de detalle, 4 de recursos y los de descargas de las unidades que tienen descargas; ningún `id` repetido (comando anotado en la bitácora). Medido: 45 `<dialog>` (26 + 13 + 4 + 2), 284 `id`, 0 repetidos.
-- [ ] Con teclado: Tab llega al botón, Enter abre, el foco queda dentro del modal, Esc cierra y el foco vuelve al botón que abrió (comprobado en Chrome y en Firefox o Safari).
-- [ ] «Copiar» dentro del modal copia el prompt exacto (24 de 24 iguales a la fuente) y anuncia «Copiado». Medido: el texto de los 24 `<code>` de `dist/index.html` es idéntico a su fuente; el clic y el anuncio quedan para la prueba del desarrollador.
+- [x] Con teclado: Tab llega al botón, Enter abre, el foco queda dentro del modal, Esc cierra y el foco vuelve al botón que abrió (comprobado en Chrome y en Firefox o Safari). Dicho por el desarrollador (2026-11-19): probó los modales en el navegador sin observaciones; no lo verificó el agente.
+- [x] «Copiar» dentro del modal copia el prompt exacto (24 de 24 iguales a la fuente) y anuncia «Copiado». Medido: el texto de los 24 `<code>` de `dist/index.html` es idéntico a su fuente; el clic y el anuncio, dicho por el desarrollador (2026-11-19, sin observaciones).
 - [x] Con JavaScript desactivado, todo el contenido de los modales se lee en la página, no aparece ningún botón que no funcione y no hay contenido duplicado. Comprobado por script sobre el HTML y el CSS compilados (45 botones que abren y 24 de copiar con `hidden`; reglas sin `data-js`); la lectura en pantalla la confirma el desarrollador.
-- [ ] Con un modal abierto, la página de fondo no se desplaza y no hay salto de diseño al abrir o cerrar (CLS 0 en la grabación de Rendimiento de DevTools).
+- [x] Con un modal abierto, la página de fondo no se desplaza y no hay salto de diseño al abrir o cerrar (CLS 0 en la grabación de Rendimiento de DevTools). Dicho por el desarrollador (2026-11-19, sin observaciones); no lo verificó el agente.
 - [x] JavaScript nuevo ≤ 1 KB gzip; JavaScript propio total ≤ 2,2 KB gzip. Medido: +176 B gzip nuevos (`modal.ts` 274 B solo) y 1295 B gzip en total.
-- [ ] Contraste AA del contenido del modal y del fondo en ambos modos.
+- [x] Contraste AA del contenido del modal y del fondo en ambos modos. Dicho por el desarrollador (2026-11-19, sin observaciones); no lo verificó el agente.
 - [x] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 1 `h1`; 5 etiquetas `<script>` propias más la de Web Analytics. Medido: build sin advertencias y guardia en 0; check 0/0/0; 1 `h1`; 5 propias + 1 de Web Analytics.
 
 ## Riesgos

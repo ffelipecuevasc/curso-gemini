@@ -1,0 +1,91 @@
+---
+// Cabecera de una unidad (DESIGN.md, sección 5, «Sección de unidad»): bloque
+// con el color de la unidad, con clase y duración en IBM Plex Mono, título
+// (h2), objetivo breve (RDA-012), barra del tramo de avance (RDA-008) y los
+// botones que abren los modales de la unidad: «Antes de empezar» y «Cierre»
+// (bloques sin tarjeta, si existen), «Sobre la unidad», «Recursos (n)» y
+// «Descargas (n)». Los botones solo se ven con JavaScript (BotonModal.astro).
+import type { UnidadConBloques } from "../lib/unidades";
+import { bloqueUnidad } from "../lib/colores-unidad";
+import { idModalDetalle, idModalUnidad } from "../lib/modales";
+import BotonModal from "./BotonModal.astro";
+
+interface Props {
+  unidad: UnidadConBloques;
+  /** Cantidad de recursos y de descargas de la ficha (0 = sin botón). */
+  recursos: number;
+  descargas: number;
+}
+
+const { unidad, recursos, descargas } = Astro.props;
+const { numero, titulo, clase, duracionMin, avance, objetivoBreve } =
+  unidad.data;
+
+// Los bloques «0» (repaso) y de cierre no tienen tarjeta: van como píldoras.
+const antes = unidad.bloques.find((b) => b.data.numero === 0);
+const cierre = unidad.bloques.find((b) => b.data.cierre);
+const idTitulo = `titulo-unidad-${numero}`;
+---
+
+<header class:list={["cabecera-unidad", bloqueUnidad[numero]]}>
+  <div class="min-w-0">
+    <p class="font-codigo">
+      Unidad {numero} · Clase {clase} · {duracionMin} min
+    </p>
+    <h2 id={idTitulo} class="titulo-unidad mt-1 wrap-break-word">
+      {titulo}
+    </h2>
+    <p class="mt-2">{objetivoBreve}</p>
+  </div>
+  <div class="min-w-0 self-start">
+    <div
+      aria-hidden="true"
+      class="h-2 rounded-pildora bg-current/25 [&>span]:block [&>span]:h-full [&>span]:rounded-pildora [&>span]:bg-current"
+    >
+      <span
+        style={`margin-left: ${avance.desde}%; width: ${avance.hasta - avance.desde}%`}
+      ></span>
+    </div>
+    <p class="mt-2 font-codigo">
+      <span class="sr-only">Avance del curso:</span>
+      {avance.desde}&nbsp;% → {avance.hasta}&nbsp;%
+    </p>
+  </div>
+  <div class="flex flex-wrap gap-2 empty:hidden lg:col-span-2">
+    {antes && (
+      <BotonModal
+        variante="sobre-color"
+        id={idModalDetalle(antes)}
+        etiqueta={`Antes de empezar · ${antes.data.minutos} min`}
+        contexto={`(${antes.data.titulo})`}
+      />
+    )}
+    {cierre && (
+      <BotonModal
+        variante="sobre-color"
+        id={idModalDetalle(cierre)}
+        etiqueta={`Cierre · ${cierre.data.minutos} min`}
+        contexto={`(${cierre.data.titulo})`}
+      />
+    )}
+    <BotonModal
+      variante="sobre-color"
+      id={idModalUnidad(numero, "sobre")}
+      etiqueta="Sobre la unidad"
+    />
+    {recursos > 0 && (
+      <BotonModal
+        variante="sobre-color"
+        id={idModalUnidad(numero, "recursos")}
+        etiqueta={`Recursos (${recursos})`}
+      />
+    )}
+    {descargas > 0 && (
+      <BotonModal
+        variante="sobre-color"
+        id={idModalUnidad(numero, "descargas")}
+        etiqueta={`Descargas (${descargas})`}
+      />
+    )}
+  </div>
+</header>

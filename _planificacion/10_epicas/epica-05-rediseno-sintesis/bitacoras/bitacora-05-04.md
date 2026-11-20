@@ -3,7 +3,7 @@
 - **Fecha:** 2026-11-19
 - **Agente:** Claude Code (Sonnet 5.5)
 - **Rama:** iteracion/05-04-modales
-- **Estado final:** En revisión
+- **Estado final:** Terminada
 
 ## Resumen
 
@@ -51,6 +51,10 @@ Script `verificar.mjs` sobre `dist/index.html` (en el directorio temporal de la 
 - [x] JavaScript nuevo +176 B gzip (≤ 1 KB) y total 1295 B gzip (≤ 2,2 KB).
 - [ ] Contraste AA del contenido del modal y del fondo (lo prueba el desarrollador).
 - [x] Regresiones: build sin advertencias con la guardia, check 0/0/0, 1 `h1` y 5 `<script>` propios más el de Web Analytics.
+
+## Prueba del desarrollador
+
+Dicho por el desarrollador el 2026-11-19: probó los modales en el navegador y no tuvo observaciones. No lo verificó el agente. Con eso se marcan los criterios de teclado, copiado, fondo fijo y CLS, y contraste, y la iteración queda `Terminada` (commit `ff80db4`, ya en `main`).
 
 ## Procedimiento para el desarrollador (`pnpm preview`, no verificado por el agente)
 

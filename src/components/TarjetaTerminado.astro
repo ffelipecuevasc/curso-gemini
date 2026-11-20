@@ -1,0 +1,33 @@
+---
+// Sexta tarjeta de la unidad (DESIGN.md, sección 5, «Sección de unidad»):
+// el entregable y el botón que abre «Terminado cuando…» en un modal. Sin color
+// de unidad: no es un bloque de la clase. La lista vive en el modal
+// (SeccionUnidad.astro) y su texto sale de la ficha de la unidad.
+import { idModalUnidad } from "../lib/modales";
+import BotonModal from "./BotonModal.astro";
+
+interface Props {
+  numero: number;
+  entregable: string;
+  /** Cantidad de líneas de «Terminado cuando…». */
+  cantidad: number;
+}
+
+const { numero, entregable, cantidad } = Astro.props;
+const idTitulo = `tarjeta-u${numero}-terminado`;
+---
+
+<article aria-labelledby={idTitulo} class="tarjeta border-t-linea">
+  <h3 id={idTitulo} class="text-lg leading-snug font-semibold">
+    Terminado cuando…
+  </h3>
+  <p>
+    <span class="font-medium">Entregable:</span> {entregable}
+  </p>
+  <div class="mt-auto flex flex-wrap gap-2 pt-1 empty:hidden">
+    <BotonModal
+      id={idModalUnidad(numero, "terminado")}
+      etiqueta={`Terminado cuando… (${cantidad})`}
+    />
+  </div>
+</article>

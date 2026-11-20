@@ -27,6 +27,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-011 | `README.md` · párrafo sobre JavaScript | Planificación de la épica 05 (RDA-011) | 2026-11-18 | Aplicada |
 | P-012 | `AGENTS.md` · 9. Reglas técnicas, regla 5 | Corrección documental de la épica 05 | 2026-11-19 | Aplicada |
 | P-013 | `DESIGN.md` · 2.1 Superficies, 2.3 Contraste y 5. Componentes (fila Encabezado) | Iteración 05-01 | 2026-11-19 | Aplicada |
+| P-014 | `DESIGN.md` · 5. Componentes (filas Sección de unidad y Modal) y 5.1 Botones | Iteración 05-05 | 2026-11-20 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -435,4 +436,47 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 
 ```text
 | Encabezado | Navegación en píldoras sobre `--color-superficie-2` con enlaces a Ruta, Unidades (U1 a U4) e Instructor; el hover de cada píldora usa `--color-hover-suave` y la píldora de la sección visible (`aria-current`) conserva `--color-primario` con texto `--color-sobre-primario`. En móvil se pliega en un menú con botón (`aria-expanded`, `aria-controls`). Incluye el botón de modo. |
+```
+
+## P-014 · Variante «Terminado cuando…» del modal, botón sobre el color de la unidad y sexta tarjeta con modal
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 5. Componentes (filas «Sección de unidad» y «Modal») y 5.1 Botones
+- **Por qué:** en la 05-05 la sexta tarjeta no puede llevar la lista «Terminado cuando…» abierta: con 5 a 7 ítems de 44 px de alto agrega unas 100 palabras por unidad (se pasa del máximo de 300 palabras visibles fuera de los modales) y la tarjeta sería la más alta de la cuadrícula. El desarrollador decidió el 2026-11-20 que la tarjeta muestre el entregable y un botón que abre la lista en un modal. Además, los botones de la cabecera de la unidad van sobre el color de la unidad, y el contorno y el hover de `DESIGN.md` 5.1 (`--color-primario`) no se ven sobre la U1 (`#007EA7`) ni sobre la U3. Si no se aplica, `DESIGN.md` describe una sexta tarjeta y un conjunto de modales distintos de los construidos.
+
+**1 · Sección 5. Componentes, fila «Sección de unidad». Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Sección de unidad | Cabe en una pantalla de escritorio (1440 × 900 y 1366 × 657). Cabecera con el bloque de color de la unidad: clase y duración en IBM Plex Mono, título, objetivo breve, barra de avance del tramo, píldoras «Antes de empezar» y «Cierre» (si existen) y acciones «Sobre la unidad», «Recursos (n)» y «Descargas (n)». Debajo, una cuadrícula de 6 tarjetas (3 × 2 desde 1024 px, 2 columnas desde 640 px, 1 en móvil): una por bloque y una de «Terminado cuando…». Sin tabla de bloques. |
+```
+
+**Texto propuesto:**
+
+```text
+| Sección de unidad | Cabe en una pantalla de escritorio (1440 × 900 y 1366 × 657). Cabecera con el bloque de color de la unidad: clase y duración en IBM Plex Mono, título, objetivo breve, barra de avance del tramo, píldoras «Antes de empezar» y «Cierre» (si existen) y acciones «Sobre la unidad», «Recursos (n)» y «Descargas (n)». Debajo, una cuadrícula de 6 tarjetas (3 × 2 desde 1024 px, 2 columnas desde 640 px, 1 en móvil): una por bloque y una de «Terminado cuando…», que muestra el entregable y un botón «Terminado cuando… (n)» que abre la lista en un modal. Sin tabla de bloques. |
+```
+
+**2 · Sección 5. Componentes, fila «Modal». Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, título, botón «Cerrar» de 44 px, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, y «Sobre la unidad». Sin JavaScript, su contenido se ve en la página. |
+```
+
+**Texto propuesto:**
+
+```text
+| Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, título, botón «Cerrar» de 44 px, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
+```
+
+**3 · Sección 5.1 Botones, fila nueva después de «Secundario (contorno)». Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Secundario (contorno) | Transparente, borde 1,5 px `--color-primario` | `--color-texto` | Fondo `--color-primario`, texto `--color-sobre-primario` |
+```
+
+**Texto propuesto:**
+
+```text
+| Secundario (contorno) | Transparente, borde 1,5 px `--color-primario` | `--color-texto` | Fondo `--color-primario`, texto `--color-sobre-primario` |
+| Secundario sobre el color de la unidad | Transparente, borde 1,5 px del color del texto del bloque (`--color-sobre-uN`) | Color del texto del bloque | Colores invertidos: fondo del color del texto y texto del color del bloque; el foco usa el color del texto del bloque |
 ```

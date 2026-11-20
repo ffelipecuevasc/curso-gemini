@@ -1,0 +1,31 @@
+---
+// Botón que abre un modal (RDA-011). Solo se ve con JavaScript (variante js:):
+// sin él, el contenido del <dialog> se lee en la página. El nombre accesible
+// es `etiqueta` más `contexto`, que solo oyen los lectores de pantalla.
+// `sobre-color` es para botones sobre el bloque de color de la unidad.
+interface Props {
+  /** El mismo `id` del <dialog> que abre (src/lib/modales.ts). */
+  id: string;
+  /** Texto visible del botón. */
+  etiqueta: string;
+  /** Continuación del nombre accesible, solo para lectores de pantalla. */
+  contexto?: string;
+  variante?: "contorno" | "sobre-color";
+}
+
+const { id, etiqueta, contexto, variante = "contorno" } = Astro.props;
+---
+
+<button
+  type="button"
+  data-abrir-modal={id}
+  aria-haspopup="dialog"
+  aria-controls={id}
+  class:list={[
+    variante === "contorno" ? "boton-contorno" : "boton-sobre-color",
+    "hidden js:inline-flex",
+  ]}
+>
+  {etiqueta}
+  {contexto && <span class="sr-only"> {contexto}</span>}
+</button>

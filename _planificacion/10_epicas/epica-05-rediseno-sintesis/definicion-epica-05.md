@@ -40,8 +40,8 @@ Diagnóstico del 2026-11-18, hecho con la skill Impeccable sobre el sitio public
 | 05-01 | [Afordancias y estados de interacción](iteracion-05-01-afordancias-estados.md) | Terminada |
 | 05-02 | [Modelo de síntesis y síntesis de U1 y U2](iteracion-05-02-sintesis-u1-u2.md) | Terminada |
 | 05-03 | [Síntesis de U3 y U4](iteracion-05-03-sintesis-u3-u4.md) | Terminada |
-| 05-04 | [Sistema de modales](iteracion-05-04-modales.md) | En revisión |
-| 05-05 | [La unidad en una pantalla](iteracion-05-05-unidad-una-pantalla.md) | Pendiente |
+| 05-04 | [Sistema de modales](iteracion-05-04-modales.md) | Terminada |
+| 05-05 | [La unidad en una pantalla](iteracion-05-05-unidad-una-pantalla.md) | En revisión |
 | 05-06 | [Portada y ruta en un pantallazo](iteracion-05-06-portada-ruta.md) | Pendiente |
 | 05-07 | [Capa de efectos con propósito](iteracion-05-07-efectos.md) | Pendiente |
 | 05-08 | [Pulido y verificación final del rediseño](iteracion-05-08-verificacion.md) | Pendiente |

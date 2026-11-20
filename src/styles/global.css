@@ -164,6 +164,10 @@
     accent-color: var(--color-primario);
     /* Con un modal abierto la página no se desplaza ni salta (RDA-011). */
     scrollbar-gutter: stable;
+    /* Alto del encabezado fijo (77 px medidos con la navegación en píldoras en
+       escritorio): la sección de una unidad lo descuenta de la pantalla y las
+       anclas se detienen bajo él. */
+    --alto-encabezado: 4.8125rem;
   }
 
   html:has(dialog[open]) {
@@ -232,6 +236,83 @@
 
   .modal-cuerpo {
     @apply max-h-[min(85dvh,760px)] min-h-0 overflow-y-auto overscroll-contain px-4 pb-6 sm:px-6;
+  }
+}
+
+/*
+ * La unidad en una pantalla (iteración 05-05, DESIGN.md sección 5). La cabecera
+ * y la cuadrícula de tarjetas se repiten en 4 unidades y 26 tarjetas: viven
+ * aquí para no repetir las utilidades en el HTML.
+ */
+@layer components {
+  .seccion-unidad {
+    @apply mx-auto max-w-sitio border-t border-linea px-6 py-10;
+  }
+
+  .cabecera-unidad {
+    @apply grid gap-4 rounded-bloque rounded-bl-esquina p-5 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-x-8;
+  }
+
+  /* El título de la U1 es largo: el tamaño baja en pantallas angostas. */
+  .titulo-unidad {
+    font-size: clamp(1.5rem, 1.1rem + 1vw, 1.75rem);
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  .cuadricula-bloques {
+    @apply mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .tarjeta {
+    @apply flex flex-col gap-2 rounded-bloque rounded-bl-esquina border border-t-[6px] border-linea bg-fondo p-4 text-base;
+  }
+
+  /* Botón de contorno sobre el bloque de color de la unidad: el contorno y el
+     texto son los del bloque; al pasar el puntero se invierten con --bloque y
+     --sobre-bloque (src/lib/colores-unidad.ts). */
+  .boton-sobre-color {
+    align-items: center;
+    min-height: 2.75rem;
+    border: 1.5px solid var(--sobre-bloque);
+    @apply rounded-pildora px-4 font-medium transition-[background-color,color,scale] duration-200 active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100;
+  }
+
+  .boton-sobre-color:focus-visible {
+    outline-color: var(--sobre-bloque);
+  }
+
+  .boton-sobre-color:active {
+    background-color: color-mix(
+      in oklab,
+      var(--sobre-bloque) 85%,
+      var(--bloque)
+    );
+    color: var(--bloque);
+  }
+
+  @media (hover: hover) {
+    .boton-sobre-color:hover {
+      background-color: var(--sobre-bloque);
+      color: var(--bloque);
+    }
+  }
+}
+
+/* Con JavaScript, en escritorio (1024 px de ancho y 640 px de alto o más) cada
+   unidad ocupa una pantalla: la sección mide como mínimo el alto de la ventana
+   menos el encabezado, y la cuadrícula reparte el espacio sobrante. Sin
+   JavaScript los modales se leen debajo y la regla no aplica. */
+@media (min-width: 64rem) and (min-height: 40rem) {
+  html[data-js] .seccion-unidad {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100dvh - var(--alto-encabezado));
+    padding-block: 1.25rem;
+  }
+
+  html[data-js] .cuadricula-bloques {
+    flex: 1;
   }
 }
 

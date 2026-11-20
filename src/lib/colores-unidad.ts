@@ -1,0 +1,29 @@
+// Clases por unidad (DESIGN.md, secciones 2.2 y 5). Van escritas completas
+// para que Tailwind las detecte. La U3 lleva el borde de 1 px del token
+// `borde-u3` (transparente en claro y #00B0E8 en oscuro). Los bloques de color
+// publican `--bloque` y `--sobre-bloque` para que sus botones (global.css,
+// `.boton-sobre-color`) inviertan los colores de su unidad al pasar el puntero.
+
+/** Bloque de color de la unidad (cabecera). */
+export const bloqueUnidad: Record<number, string> = {
+  1: "bg-u1 text-sobre-u1 [--bloque:var(--color-u1)] [--sobre-bloque:var(--color-sobre-u1)]",
+  2: "bg-u2 text-sobre-u2 [--bloque:var(--color-u2)] [--sobre-bloque:var(--color-sobre-u2)]",
+  3: "bg-u3 text-sobre-u3 border border-borde-u3 [--bloque:var(--color-u3)] [--sobre-bloque:var(--color-sobre-u3)]",
+  4: "bg-u4 text-sobre-u4 [--bloque:var(--color-u4)] [--sobre-bloque:var(--color-sobre-u4)]",
+};
+
+/** Franja de 10 px de la cabecera de un modal. */
+export const franjaModal: Record<number, string> = {
+  1: "border-u1",
+  2: "border-u2",
+  3: "border-u3",
+  4: "border-u4",
+};
+
+/** Franja superior de una tarjeta de bloque. En modo oscuro, la U3 usa su borde claro. */
+export const franjaTarjeta: Record<number, string> = {
+  1: "border-t-u1",
+  2: "border-t-u2",
+  3: "border-t-u3 oscuro:border-t-borde-u3",
+  4: "border-t-u4",
+};

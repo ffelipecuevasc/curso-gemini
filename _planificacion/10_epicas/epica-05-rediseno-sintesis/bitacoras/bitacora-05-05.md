@@ -95,6 +95,27 @@ Cada fragmento se pega en la consola del navegador. Resultado esperado = lo que 
 - **P-014 pendiente** de aplicar en `DESIGN.md`.
 - Las secciones dejaron de ser largas: puede cambiar qué píldora marca el observador del encabezado; se revisa en el procedimiento (punto 9).
 
+## Ajuste de alto (2026-11-20, segundo commit)
+
+Decisión del desarrollador: tres palancas en orden, midiendo tras cada una. Altos medidos por el agente en Edge headless (no probados en tu navegador); disponible = `innerHeight` − 77 px del encabezado. Claro y oscuro dieron lo mismo en todas las mediciones.
+
+| Paso | 1440 × 900 (U1/U2/U3/U4), claro y oscuro | Disponible | ¿Caben? | 1366 × 657 (U1/U2/U3/U4) | Disponible |
+| :--- | :--------------------------------------- | :--------- | :------ | :----------------------- | :--------- |
+| Inicio | 1090 / 1056 / 986 / 1007 | 823 | No | 1090 / 1056 / 986 / 1007 | 580 |
+| 1. Espaciado | 1010 / 976 / 906 / 927 | 823 | No | 1010 / 976 / 906 / 927 | 580 |
+| 2. + ancho hasta 1280 px | 904 / 904 / 906 / 879 | 823 | No | 904 / 904 / 906 / 879 | 580 |
+| 3. + una clave | 823 / 823 / 823 / 823 (alto natural 783 a 810; la sección toma el mínimo de 823) | 823 | **Sí**, 0 botones fuera | 808 / 808 / 810 / 783 | 580 |
+
+- **Palanca 1:** cabecera `px-5 py-4` y `gap-3`; cuadrícula `mt-3 gap-3`; tarjeta `gap-1.5`, `pt-3 pb-4`, sin `space-y-1` en las claves ni `pt-1` en los botones; sección `padding-block: 0.75rem`. La interlínea del texto sigue en 1,6 (`DESIGN.md`, sección 3); los `h3` ya usaban `leading-snug`. Texto mínimo 16 px y botones de 44 px sin cambios.
+- **Palanca 2:** `.seccion-unidad` con `xl:max-w-[1280px]` (desde 1280 px de ancho). Contradice `DESIGN.md` §4: propuesta **P-015**, pendiente.
+- **Palanca 3:** `TarjetaBloque.astro` muestra solo `sintesis.claves[0]`. **La segunda clave no se borró del contenido, pero hoy no se ve en ningún lugar**: no está en el modal de detalle (que muestra `resumen`, cuerpo y «Profundiza») y no se tocaron los modales. Afecta la síntesis aprobada en la 05-03 (U3 y U4) y en la 05-02 (U1 y U2), donde cada bloque tiene 2 claves, y la RDA-012 («1 o 2 frases… que se ven en la tarjeta»). Si quieres que se vea, la opción es mostrarla en el modal de detalle (cambio de modal, requiere tu aprobación). P-015 incluye la fila «Tarjeta de bloque».
+- **Palabras:** U1 261, U2 235, U3 236, U4 226 (script); 260, 235, 236, 225 en Edge headless. Todas bajo 300: no hacen falta recortes.
+- **Regresiones:** build sin advertencias, guardia en 0; `astro check` 0/0/0; 53 `<dialog>`, 298 `id` sin repetir; 24 de 24 prompts idénticos; 1 `h1`, 0 saltos; JS 1295 B gzip (0 B nuevos); diff sin `DESIGN.md`, `AGENTS.md` ni `README.md`.
+- **Peso:** `dist/index.html` 338 599 B → 336 990 B (60 517 → 60 086 B gzip).
+- **Margen:** en 1440 × 900 el alto natural deja 13 a 40 px libres; un título de bloque o una clave más larga puede volver a romperlo.
+
+Los fragmentos de consola del procedimiento (puntos 1 a 5) siguen vigentes; esperado ahora en 1440 × 900: `cabe: true` y `botonesFuera: 0` en las 4 unidades.
+
 ## Revisión de la 05-06 (sin editar): lo que choca con lo construido
 
 1. **Mini-proyecto completo «en la sección de la unidad»** (Riesgos): ya no está en la página; solo vive en el modal «Sobre la unidad». El `line-clamp` de la tarjeta de ruta lo deja sin versión completa visible.

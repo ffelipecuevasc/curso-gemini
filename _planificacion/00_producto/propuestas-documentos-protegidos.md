@@ -28,6 +28,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-012 | `AGENTS.md` · 9. Reglas técnicas, regla 5 | Corrección documental de la épica 05 | 2026-11-19 | Aplicada |
 | P-013 | `DESIGN.md` · 2.1 Superficies, 2.3 Contraste y 5. Componentes (fila Encabezado) | Iteración 05-01 | 2026-11-19 | Aplicada |
 | P-014 | `DESIGN.md` · 5. Componentes (filas Sección de unidad y Modal) y 5.1 Botones | Iteración 05-05 | 2026-11-20 | Pendiente |
+| P-015 | `DESIGN.md` · 4. Espaciado, retícula y forma (Contenedor) y 5. Componentes (fila Tarjeta de bloque) | Iteración 05-05 (ajuste de alto) | 2026-11-20 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -479,4 +480,34 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 ```text
 | Secundario (contorno) | Transparente, borde 1,5 px `--color-primario` | `--color-texto` | Fondo `--color-primario`, texto `--color-sobre-primario` |
 | Secundario sobre el color de la unidad | Transparente, borde 1,5 px del color del texto del bloque (`--color-sobre-uN`) | Color del texto del bloque | Colores invertidos: fondo del color del texto y texto del color del bloque; el foco usa el color del texto del bloque |
+```
+
+## P-015 · Sección de unidad de hasta 1280 px y una sola clave por tarjeta
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 4. Espaciado, retícula y forma (Contenedor) y 5. Componentes (fila «Tarjeta de bloque»)
+- **Por qué:** con el contenedor de 1100 px y dos claves por tarjeta, cada unidad medía de 986 a 1090 px en 1440 × 900, con 823 px disponibles (bitácora 05-05). El desarrollador aprobó el 2026-11-20 tres palancas en orden (espaciado, ancho hasta 1280 px y una sola clave); solo con las tres las 4 unidades caben. Si no se aplica, `DESIGN.md` describe un contenedor y una tarjeta distintos de los construidos. Se aplica antes del merge de la 05-05.
+
+**1 · Sección 4, Contenedor. Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+- Contenedor: ancho máximo de 1100 px, márgenes laterales de 1,5 rem en móvil.
+```
+
+**Texto propuesto:**
+
+```text
+- Contenedor: ancho máximo de 1100 px, márgenes laterales de 1,5 rem en móvil; la sección de cada unidad llega a 1280 px desde 1280 px de ancho de ventana, para que quepa en una pantalla de escritorio.
+```
+
+**2 · Sección 5, fila «Tarjeta de bloque». Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Tarjeta de bloque | Número y minutos en IBM Plex Mono, título (`h3`), «Qué harás» y hasta 2 claves; acciones «Ver detalle» y «Ver prompt» o «Prompts (n)». Superficie `--color-fondo` con borde de 1 px `--color-linea`, franja superior del color de la unidad y sombra de su unidad. |
+```
+
+**Texto propuesto:**
+
+```text
+| Tarjeta de bloque | Número y minutos en IBM Plex Mono, título (`h3`), «Qué harás» y la primera clave; acciones «Ver detalle» y «Ver prompt» o «Prompts (n)». Superficie `--color-fondo` con borde de 1 px `--color-linea`, franja superior del color de la unidad y sombra de su unidad. |
 ```

@@ -1,7 +1,7 @@
 ---
 // Tarjeta de un bloque numerado (DESIGN.md, sección 5, «Tarjeta de bloque»):
-// número y minutos en IBM Plex Mono, título (h3), «Qué harás», hasta 2 claves
-// y los botones que abren sus modales. El texto sale de `sintesis` (RDA-012);
+// número y minutos en IBM Plex Mono, título (h3), «Qué harás», la primera clave
+// (decisión del desarrollador del 2026-11-20, para que la unidad quepa) y los botones que abren sus modales. El texto sale de `sintesis` (RDA-012);
 // el cuerpo completo vive en el modal de detalle (ModalesBloque.astro).
 import type { Bloque } from "../lib/unidades";
 import { franjaTarjeta } from "../lib/colores-unidad";
@@ -39,12 +39,12 @@ const contexto = `de «${titulo}»`;
     <span class="sr-only">Qué harás: </span>
     {sintesis.haras}
   </p>
-  <ul class="list-disc space-y-1 pl-5 text-texto-2">
-    {sintesis.claves.map((clave) => (
+  <ul class="list-disc pl-5 text-texto-2">
+    {sintesis.claves.slice(0, 1).map((clave) => (
       <li>{clave}</li>
     ))}
   </ul>
-  <div class="mt-auto flex flex-wrap gap-2 pt-1 empty:hidden">
+  <div class="mt-auto flex flex-wrap gap-2 empty:hidden">
     <BotonModal
       id={idModalDetalle(bloque)}
       etiqueta="Ver detalle"

@@ -44,6 +44,8 @@ Que cada unidad se vea completa en una pantalla de escritorio: una cabecera de c
 - 2026-11-20: no se agrega una regla de compactación para pantallas de 700 px de alto o menos; se mide primero en el navegador y el desarrollador decide con datos.
 - 2026-11-20: `scroll-pt-24` de `<html>` pasa a `scroll-pt-[var(--alto-encabezado)]` en lugar de un `scroll-margin-top` por sección; se aprueban además `BotonModal.astro`, la estructura de `CabeceraUnidad` y `TarjetaBloque`, las píldoras de los bloques 0 y cierre con los `id` existentes, el `id` `modal-u<N>-sobre` y la clase `.boton-sobre-color` con colores invertidos al pasar el puntero.
 
+- 2026-11-20 (ajuste de alto): con 986 a 1090 px contra 823 disponibles en 1440 × 900, se aprueban tres palancas en orden, midiendo tras cada una y parando en la primera que haga caber las 4 unidades: (1) espaciado interno menor de tarjetas y cabecera, sin bajar de 16 px ni de 44 px y con la interlínea de 1,6 de `DESIGN.md`; (2) sección de unidad de hasta 1280 px desde pantallas anchas (propuesta P-015); (3) una sola clave por tarjeta, la primera. Sin compactación para pantallas bajas. **Se usaron las tres**: las dos primeras no bastaron (906 a 1010 px y 879 a 906 px).
+
 ## Tareas
 
 1. Medir y anotar en la bitácora el alto actual de cada sección de unidad en 1440 × 900 y 1366 × 657 (línea base).
@@ -57,10 +59,10 @@ Que cada unidad se vea completa en una pantalla de escritorio: una cabecera de c
 
 ## Criterios de aceptación
 
-- [ ] En 1440 × 900 y en 1366 × 657, cada `section` de unidad mide como máximo `innerHeight − alto del encabezado` y todos sus botones están dentro de la ventana al navegar a su ancla (fragmento de consola con `getBoundingClientRect()` anotado en la bitácora, en ambos modos). **No cumple en la medición del agente** (Edge headless, solo modo claro): las secciones miden entre 986 y 1090 px contra 823 y 580 disponibles; la medición oficial y la decisión son del desarrollador.
+- [ ] En 1440 × 900 y en 1366 × 657, cada `section` de unidad mide como máximo `innerHeight − alto del encabezado` y todos sus botones están dentro de la ventana al navegar a su ancla (fragmento de consola con `getBoundingClientRect()` anotado en la bitácora, en ambos modos). Tras el ajuste de alto, medido por el agente en Edge headless (no probado en tu navegador): en 1440 × 900 las 4 unidades miden 823 px de 823 disponibles, en ambos modos, con 0 botones fuera de la ventana. **1366 × 657: se registra el alto real (783 a 810 px contra 580); decisión pendiente con la medición.**
 - [ ] En 360 × 740, cada unidad mide como máximo 4 alturas de ventana. Medición del agente a 500 × 740 (mínimo de Edge headless): 2279 a 2402 px (3,1 a 3,2 ventanas); falta la prueba a 360 px.
 - [ ] Cada tarjeta muestra título, minutos, «Qué harás» y sus claves, y abre su modal de detalle; los 24 prompts siguen alcanzables y copiables desde sus modales. Medido por script: 26 tarjetas con sus textos, 53 botones con su `<dialog>` y 24 de 24 prompts idénticos a su fuente; el clic lo prueba el desarrollador.
-- [ ] Las palabras visibles por unidad fuera de los modales, títulos incluidos, son como máximo 300 (fragmento de consola que cuenta el texto de la sección excluyendo `dialog` y el texto solo para lectores de pantalla). **No cumple en la U1**: 306 de 300 (U2 283, U3 283, U4 268), por script sobre `dist/index.html`; el recuento en el navegador (Edge headless) dio 305, 283, 283 y 267.
+- [ ] Las palabras visibles por unidad fuera de los modales, títulos incluidos, son como máximo 300 (fragmento de consola que cuenta el texto de la sección excluyendo `dialog` y el texto solo para lectores de pantalla). Tras el ajuste de alto: U1 261, U2 235, U3 236, U4 226 por script sobre `dist/index.html` (Edge headless: 260, 235, 236, 225); falta tu recuento en el navegador.
 - [x] Texto del cuerpo ≥ 16 px y objetivos táctiles ≥ 44 px en todas las tarjetas. Tamaño mínimo medido en Edge headless: 16 px en las 4 unidades; el alto táctil sale de `min-height: 2.75rem` en los botones y `min-h-11` en las casillas.
 - [x] Sin JavaScript, todo el contenido de la unidad se puede leer y no aparece ningún botón que no funcione. Por script sobre el HTML y el CSS compilados: los 53 botones que abren y los 24 de copiar llevan `hidden`, los `<dialog>` se muestran como bloques bajo la cuadrícula y no hay texto duplicado.
 - [x] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 1 `h1`; 0 B de JavaScript nuevo (1295 B gzip, igual que al cerrar la 05-04); navegación de la ruta y del encabezado a cada unidad sin cambios (ids `unidad-1` a `unidad-4` intactos). Peso de `dist/index.html`: 327 567 B → 338 599 B (58 780 → 60 517 B gzip).
@@ -86,5 +88,6 @@ Que cada unidad se vea completa en una pantalla de escritorio: una cabecera de c
 
 ### Del desarrollador
 
+- Aplicar la propuesta P-015 en `DESIGN.md` (sección de unidad de hasta 1280 px y una sola clave por tarjeta) antes del merge.
 - Aplicar la propuesta P-014 en `DESIGN.md` (variante «Terminado cuando…» del modal, sexta tarjeta con modal y botón sobre el color de la unidad).
 - Medir en el navegador el alto de las secciones (1440 × 900 y 1366 × 657, ambos modos), las palabras visibles, el alto real del encabezado y 360 px, con los fragmentos de la bitácora, y decidir qué hacer con lo que no cabe.

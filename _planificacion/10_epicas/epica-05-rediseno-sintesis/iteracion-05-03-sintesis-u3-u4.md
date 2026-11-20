@@ -1,7 +1,7 @@
 # Iteración 05-03 · Síntesis de U3 y U4
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/05-03-sintesis-u3-u4
 - **Depende de:** 05-02
 - **Especificación:** —

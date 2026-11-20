@@ -3,9 +3,9 @@
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
 - **Estado:** Pendiente
 - **Rama sugerida:** iteracion/05-04-modales
-- **Depende de:** 05-01, 05-03, RDA-011 aceptada y propuestas P-009, P-010 y P-011 aplicadas
+- **Depende de:** 05-01, 05-03 y P-013 aplicada
 - **Especificación:** —
-- **RDA relacionadas:** RDA-007, RDA-011 (propuesta), RDA-012 (propuesta)
+- **RDA relacionadas:** RDA-007, RDA-011, RDA-012
 
 ## Objetivo
 
@@ -39,6 +39,7 @@ Que el detalle de cada bloque, cada prompt, los recursos y las descargas de una 
 ## Decisiones del desarrollador
 
 - 2026-11-18: base técnica de los modales delegada en «la opción más profesional para el stack»: `<dialog>` nativo con script mínimo y respaldo sin JavaScript (RDA-011). Se descartan las invocaciones declarativas (`commandfor`) como mecanismo principal porque su soporte en navegadores corporativos es reciente; se pueden agregar después como mejora sin cambiar el marcado.
+- 2026-11-19: se acepta publicar en main el estado intermedio austero entre la 05-04 y la 05-05, porque no hay clases próximas.
 
 ## Tareas
 
@@ -53,8 +54,7 @@ Que el detalle de cada bloque, cada prompt, los recursos y las descargas de una 
 
 ## Tareas del desarrollador
 
-1. Aceptar la RDA-011 y aplicar las propuestas P-009 (`DESIGN.md`), P-010 (`AGENTS.md`) y P-011 (`README.md`) antes de empezar.
-2. Probar los modales en el navegador corporativo de los participantes, si tiene acceso a uno.
+1. Probar los modales en el navegador corporativo de los participantes, si tiene acceso a uno.
 
 ## Criterios de aceptación
 
@@ -86,4 +86,4 @@ Que el detalle de cada bloque, cada prompt, los recursos y las descargas de una 
 
 ### Del desarrollador
 
-- Aceptación de la RDA-011 y aplicación de P-009, P-010 y P-011.
+- Ninguno.

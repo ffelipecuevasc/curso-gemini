@@ -5,7 +5,7 @@
 - **Rama sugerida:** iteracion/05-05-unidad-una-pantalla
 - **Depende de:** 05-04 y propuesta P-009 aplicada
 - **Especificación:** —
-- **RDA relacionadas:** RDA-004, RDA-009, RDA-011 (propuesta), RDA-012 (propuesta)
+- **RDA relacionadas:** RDA-004, RDA-009, RDA-011, RDA-012
 
 ## Objetivo
 
@@ -66,4 +66,4 @@ Que cada unidad se vea completa en una pantalla de escritorio: una cabecera de c
 
 ### Del desarrollador
 
-- Aplicación de la P-009 (componente «Sección de unidad» nuevo en `DESIGN.md`).
+- Ninguno.

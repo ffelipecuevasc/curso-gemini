@@ -5,7 +5,7 @@
 - **Rama sugerida:** iteracion/05-08-verificacion
 - **Depende de:** 05-07
 - **Especificación:** —
-- **RDA relacionadas:** RDA-004, RDA-005, RDA-007, RDA-011 (propuesta), RDA-012 (propuesta)
+- **RDA relacionadas:** RDA-004, RDA-005, RDA-007, RDA-011, RDA-012
 
 ## Objetivo
 

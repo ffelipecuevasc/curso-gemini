@@ -5,7 +5,7 @@
 - **Rama sugerida:** iteracion/05-07-efectos
 - **Depende de:** 05-05, 05-06 y propuestas P-009 y P-010 aplicadas
 - **Especificación:** —
-- **RDA relacionadas:** RDA-004, RDA-007, RDA-011 (propuesta)
+- **RDA relacionadas:** RDA-004, RDA-007, RDA-011
 
 ## Objetivo
 
@@ -73,4 +73,4 @@ Cada efecto se activa solo donde el navegador lo soporta (`@supports` o detecci�
 
 ### Del desarrollador
 
-- Aplicación de P-009 y P-010.
+- Ninguno.

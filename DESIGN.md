@@ -26,6 +26,8 @@ Los colores son los oficiales de la identidad de felipecuevas.dev. No se agregan
 | `--color-superficie` | `#E4F3FF` | `#00212F` | Círculos decorativos, paneles suaves, fondo de «Profundiza» |
 | `--color-superficie-2` | `#ECF0FF` | `#003B51` | Grupo de la navegación en píldoras, chips, bloques de código |
 | `--color-linea` | `#E4F3FF` | `#003B51` | Separadores de 1 px |
+| `--color-hover-suave` | `#B1D4E9` | `#005877` | Hover de botones de ícono (modo, menú, cerrar) y píldoras de navegación |
+| `--color-presionado` | `#99C8E0` | `#006486` | Fondo al presionar botones y píldoras (`:active`) |
 
 ### 2.2 Acento y texto
 
@@ -68,6 +70,10 @@ Contrastes según WCAG 2.2, tomados de la paleta verificada de la identidad:
 | `#00B0E8` sobre `#00131D` | 7,54:1 | AAA, botones y enlaces |
 | `#00B0E8` sobre `#003B51` | 4,80:1 | AA justo: texto de 16 px o más |
 | `#007EA7` sobre `#E4F3FF` | 4,09:1 | Falla para texto normal: solo íconos y texto grande |
+| `#00131D` sobre `#B1D4E9` | 12,12:1 | AAA, texto sobre `--color-hover-suave` (claro) |
+| `#00131D` sobre `#99C8E0` | 10,53:1 | AAA, texto sobre `--color-presionado` (claro) |
+| `#FFFFFF` sobre `#005877` | 7,89:1 | AAA, texto sobre `--color-hover-suave` (oscuro) |
+| `#FFFFFF` sobre `#006486` | 6,63:1 | AA, texto sobre `--color-presionado` (oscuro) |
 
 Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre fondo claro, el texto de color se escribe en `#00678A` o más oscuro. El contraste de `#E4F3FF` sobre `#003B51` y de `#5DC9FF` sobre `#00131D` se mide en la iteración de tokens y se agrega a esta tabla antes de usarlos en texto pequeño.
 
@@ -98,7 +104,7 @@ Reglas:
 
 | Componente | Descripción y reglas |
 | :--------- | :------------------- |
-| Encabezado | Navegación en píldoras sobre `--color-superficie-2` con enlaces a Ruta, Unidades (U1 a U4) e Instructor; la píldora de la sección visible se marca con `aria-current`. En móvil se pliega en un menú con botón (`aria-expanded`, `aria-controls`). Incluye el botón de modo. |
+| Encabezado | Navegación en píldoras sobre `--color-superficie-2` con enlaces a Ruta, Unidades (U1 a U4) e Instructor; el hover de cada píldora usa `--color-hover-suave` y la píldora de la sección visible (`aria-current`) conserva `--color-primario` con texto `--color-sobre-primario`. En móvil se pliega en un menú con botón (`aria-expanded`, `aria-controls`). Incluye el botón de modo. |
 | Portada y ruta | Una sola sección en el primer pantallazo: a la izquierda, título (`h1`), lema, botón principal «Empezar por la Unidad 1» y redes; a la derecha, el logo de Gemini como protagonista y, en primer plano, las 4 tarjetas de unidad en mosaico 2 × 2 (número, nombre, mini-proyecto en 2 líneas y barra de avance con su texto en IBM Plex Mono), cada una enlazada a su sección. Logos de Google, GTD Telsur y Capacita Tu Futuro en una franja discreta al pie de la sección. La ruta conserva su `id="ruta"` y su `h2`. |
 | Sección de unidad | Cabe en una pantalla de escritorio (1440 × 900 y 1366 × 657). Cabecera con el bloque de color de la unidad: clase y duración en IBM Plex Mono, título, objetivo breve, barra de avance del tramo, píldoras «Antes de empezar» y «Cierre» (si existen) y acciones «Sobre la unidad», «Recursos (n)» y «Descargas (n)». Debajo, una cuadrícula de 6 tarjetas (3 × 2 desde 1024 px, 2 columnas desde 640 px, 1 en móvil): una por bloque y una de «Terminado cuando…». Sin tabla de bloques. |
 | Tarjeta de bloque | Número y minutos en IBM Plex Mono, título (`h3`), «Qué harás» y hasta 2 claves; acciones «Ver detalle» y «Ver prompt» o «Prompts (n)». Superficie `--color-fondo` con borde de 1 px `--color-linea`, franja superior del color de la unidad y sombra de su unidad. |

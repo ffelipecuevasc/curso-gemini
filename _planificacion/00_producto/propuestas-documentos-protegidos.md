@@ -26,7 +26,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-010 | `AGENTS.md` · 9. Reglas técnicas, regla 2 | Planificación de la épica 05 (RDA-011) | 2026-11-18 | Aplicada |
 | P-011 | `README.md` · párrafo sobre JavaScript | Planificación de la épica 05 (RDA-011) | 2026-11-18 | Aplicada |
 | P-012 | `AGENTS.md` · 9. Reglas técnicas, regla 5 | Corrección documental de la épica 05 | 2026-11-19 | Aplicada |
-| P-013 | `DESIGN.md` · 2.1 Superficies, 2.3 Contraste y 5. Componentes (fila Encabezado) | Iteración 05-01 | 2026-11-19 | Pendiente |
+| P-013 | `DESIGN.md` · 2.1 Superficies, 2.3 Contraste y 5. Componentes (fila Encabezado) | Iteración 05-01 | 2026-11-19 | Aplicada |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -324,7 +324,7 @@ y
 - **Documento:** `AGENTS.md`
 - **Sección:** 9. Reglas técnicas, regla 2
 - **Estado:** aplicada por el desarrollador el 2026-11-19, con el «Texto propuesto» tal cual.
-- **Por qué:** la RDA-011 (propuesta) agrega los modales como cuarto comportamiento con script, y la 05-07 agrega dos mejoras decorativas que necesitan script (brillo con el puntero y transición de tarjeta a modal). Si no se aplica, la 05-04 y la 05-07 contradicen una regla técnica de `AGENTS.md`.
+- **Por qué:** la RDA-011 agrega los modales como cuarto comportamiento con script, y la 05-07 agrega dos mejoras decorativas que necesitan script (brillo con el puntero y transición de tarjeta a modal). Si no se aplica, la 05-04 y la 05-07 contradicen una regla técnica de `AGENTS.md`.
 
 **Texto actual** (copiado literalmente de `AGENTS.md`):
 
@@ -380,6 +380,7 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 2.1 Superficies, 2.3 Contraste y 5. Componentes (fila «Encabezado»)
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-19 con `grep` en `DESIGN.md` (2.1, 2.3 y fila «Encabezado»), con el «Texto propuesto» tal cual.
 - **Por qué:** la sección 5.1 de `DESIGN.md` (aplicada con la P-009) ya nombra `--color-hover-suave` y `--color-presionado`, pero la sección 2.1 no registra sus HEX en modo claro y oscuro, la sección 2.3 no incluye sus contrastes de texto verificados en la iteración 05-01, y la fila «Encabezado» de la sección 5 no explicita que el hover de cada píldora de navegación inactiva usa `--color-hover-suave` mientras la activa conserva `--color-primario`. Si no se aplica, `DESIGN.md` usa dos tokens en 5.1 cuyos valores y contrastes solo existen en `src/styles/global.css` y en la bitácora 05-01, y deja sin especificar en la tabla de componentes el estado hover de las píldoras.
 
 **1 · Sección 2.1 Superficies. Texto actual** (copiado literalmente de `DESIGN.md`):

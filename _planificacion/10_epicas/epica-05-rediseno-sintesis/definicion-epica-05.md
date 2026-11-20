@@ -18,7 +18,7 @@ Diagnóstico del 2026-11-18, hecho con la skill Impeccable sobre el sitio public
 1. Estados de interacción visibles en todos los controles: cursor, hover, presionado y foco, con un cambio de color perceptible y el botón de modo con su acción visible.
 2. Modelo de contenido con síntesis por bloque (`sintesis`: resumen, «Qué harás» y hasta 2 claves) y por unidad (`objetivoBreve`), con límites de palabras validados por Zod al compilar (RDA-012).
 3. Síntesis de los 26 bloques de U1 a U4, redactada por el agente y aprobada por el desarrollador, y retiro del material de conducción de la clase del texto publicado.
-4. Sistema de modales sobre `<dialog>` nativo (RDA-011, propuesta): prompt con descripción y copiado en un clic, detalle completo del bloque, recursos de la unidad y descargas.
+4. Sistema de modales sobre `<dialog>` nativo (RDA-011): prompt con descripción y copiado en un clic, detalle completo del bloque, recursos de la unidad y descargas.
 5. Sección de unidad en una pantalla: cabecera de color y cuadrícula de tarjetas de bloque con botones que abren los modales.
 6. Portada y ruta del curso en un solo pantallazo, e instructor compacto.
 7. Capa de efectos «con propósito»: sombras teñidas por unidad, transición de tarjeta a modal con View Transitions, barra de avance guiada por el desplazamiento, aparición escalonada sutil y brillo que sigue al cursor en las tarjetas; todo con `prefers-reduced-motion`.
@@ -39,7 +39,7 @@ Diagnóstico del 2026-11-18, hecho con la skill Impeccable sobre el sitio public
 | :-------- | :----- | :----- |
 | 05-01 | [Afordancias y estados de interacción](iteracion-05-01-afordancias-estados.md) | Terminada |
 | 05-02 | [Modelo de síntesis y síntesis de U1 y U2](iteracion-05-02-sintesis-u1-u2.md) | Terminada |
-| 05-03 | [Síntesis de U3 y U4](iteracion-05-03-sintesis-u3-u4.md) | En revisión |
+| 05-03 | [Síntesis de U3 y U4](iteracion-05-03-sintesis-u3-u4.md) | Terminada |
 | 05-04 | [Sistema de modales](iteracion-05-04-modales.md) | Pendiente |
 | 05-05 | [La unidad en una pantalla](iteracion-05-05-unidad-una-pantalla.md) | Pendiente |
 | 05-06 | [Portada y ruta en un pantallazo](iteracion-05-06-portada-ruta.md) | Pendiente |
@@ -67,7 +67,7 @@ Orden y dependencias:
 - 2026-11-18: la documentación de la épica se genera antes del cierre de la 04; la ejecución empieza después del cierre (decisión del desarrollador).
 - 2026-11-18: nivel de efectos «con propósito»: sombras teñidas por unidad, transición de tarjeta a modal con View Transitions, barra de avance por desplazamiento, aparición escalonada sutil y brillo que sigue al cursor en las tarjetas. Sin parallax, sin fondos animados y sin efectos sobre logotipos (decisión del desarrollador).
 - 2026-11-18: síntesis «resumen visible + detalle en modal»: el agente redacta el resumen (va en el modal), «Qué harás» y las claves (van en la tarjeta) de cada bloque; el texto completo se conserva en el modal «Ver detalle»; el desarrollador aprueba cada síntesis antes de publicarla (decisión del desarrollador).
-- 2026-11-18: modales sobre `<dialog>` nativo con un script mínimo y respaldo sin JavaScript, según RDA-011 (propuesta). El desarrollador delega la elección técnica en la opción más profesional para el stack y se encarga de editar `AGENTS.md`, `DESIGN.md` y `README.md` (propuestas P-009, P-010 y P-011: P-009 antes de la 05-01; las otras dos antes de la 05-04).
+- 2026-11-18: modales sobre `<dialog>` nativo con un script mínimo y respaldo sin JavaScript, según RDA-011. El desarrollador delega la elección técnica en la opción más profesional para el stack y se encarga de editar `AGENTS.md`, `DESIGN.md` y `README.md` (propuestas P-009, P-010 y P-011: P-009 antes de la 05-01; las otras dos antes de la 05-04).
 - La verificación de Lighthouse de la 04-04 queda como línea base; la 05-08 la repite sobre el sitio rediseñado y la compara.
 
 ## Reglas comunes de la épica

@@ -8,10 +8,11 @@ avance:
   desde: 75
   hasta: 100
 objetivo: "que cada participante entienda qué son las skills y por qué reemplazan a los Gems, las use y combine, instale dos skills del curso, cree una propia y cierre el bootcamp con un proyecto integrador que use todo lo aprendido."
+objetivoBreve: "Comprender por qué las skills reemplazan a los Gems, instalar dos skills, crear una propia y resolver el proyecto integrador."
 miniProyecto:
-  titulo: "Mi caja de herramientas IA + Demo Day"
+  titulo: "Mi caja de herramientas IA"
   descripcion: "Cada participante termina con al menos 3 skills activas en su cuenta: optimizador-prompts, gtd-visual y una propia. Con ellas resuelve una tarea real de punta a punta."
-entregable: "Skills optimizador-prompts, gtd-visual y una propia instaladas y probadas; proyecto integrador presentado"
+entregable: "Skills optimizador-prompts, gtd-visual y una propia instaladas y probadas; proyecto integrador terminado"
 terminadoCuando:
   - "Puedo explicar en 2 frases qué es una skill y por qué reemplaza a los Gems."
   - "optimizador-prompts está instalada; la probé con 3 prompts y la personalicé con una regla propia."

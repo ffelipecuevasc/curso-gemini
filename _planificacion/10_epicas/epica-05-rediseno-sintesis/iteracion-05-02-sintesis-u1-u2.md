@@ -1,7 +1,7 @@
 # Iteración 05-02 · Modelo de síntesis y síntesis de U1 y U2
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/05-02-sintesis-u1-u2
 - **Depende de:** 05-01 y RDA-012 aceptada
 - **Especificación:** —

@@ -5,9 +5,16 @@ titulo: "Configurar el chat y conversar con el cuaderno"
 minutos: 20
 microcharlaMin: 3
 practicaMin: 17
+sintesis:
+  resumen: "Configura el estilo y la longitud del chat, prueba prompts sobre la ley y verifica las respuestas abriendo la cita en el pasaje original."
+  haras: "Configura el chat, prueba al menos cuatro prompts y verifica dos citas."
+  claves:
+    - "El chat solo usa tus fuentes."
+    - "Haz clic en una cita para ir al pasaje original."
 prompts:
   - id: plantilla-estilo-personalizado
     titulo: "Plantilla para el estilo Personalizado"
+    descripcion: "Plantilla para el estilo Personalizado: define el rol de tutor en cumplimiento normativo, el objetivo y el estilo de las respuestas del chat."
     texto: |-
         ROL: Eres un tutor experto en cumplimiento normativo que capacita a trabajadores
         de una empresa de telecomunicaciones en Chile.
@@ -19,25 +26,30 @@ prompts:
         ley que respalda cada afirmación. Si las fuentes no responden algo, dilo.
   - id: sintesis-por-audiencia
     titulo: "Síntesis por audiencia"
+    descripcion: "Pide explicar en cinco puntos qué cambia la ley para un ejecutivo de atención al cliente."
     texto: "Explica en 5 puntos qué cambia la ley para un ejecutivo de atención al cliente"
   - id: pregunta-precisa
     titulo: "Pregunta precisa"
+    descripcion: "Pregunta qué derechos tiene un titular de datos y en qué artículos de la ley están."
     texto: "¿Qué derechos tiene un titular de datos y en qué artículos están?"
   - id: comparacion-entre-fuentes
     titulo: "Comparación entre fuentes"
+    descripcion: "Compara lo que dice el informe de Deep Research con el texto de la ley sobre sanciones y busca diferencias."
     texto: "Compara lo que dice el informe de Deep Research con el texto de la ley sobre sanciones. ¿Hay diferencias?"
   - id: vacios-y-contradicciones
     titulo: "Vacíos y contradicciones"
+    descripcion: "Pregunta qué temas importantes para una empresa de telecomunicaciones no quedan claros en las fuentes del cuaderno."
     texto: "¿Qué temas importantes para una empresa de telecomunicaciones no quedan claros en estas fuentes?"
   - id: caso-aplicado
     titulo: "Caso aplicado (ficticio)"
+    descripcion: "Caso ficticio: un cliente pide por WhatsApp que eliminen sus datos; consulta qué dice la ley y qué pasos debería seguir el ejecutivo."
     texto: "Un cliente pide por WhatsApp que eliminen sus datos. ¿Qué dice la ley y qué pasos debería seguir el ejecutivo?"
 profundiza:
   recursos:
     - usar-chat-cuaderno
 ---
 
-**Microcharla (3 min)**
+**Conceptos clave**
 - **Configurar chat**, en el panel central:
   - **Estilo:** Predeterminado (investigación general y lluvia de ideas), Guía de aprendizaje (para estudiar conceptos) o **Personalizado** (se escriben rol, objetivo y estilo).
   - **Longitud de respuesta:** Predeterminada, Más larga o Más corta.
@@ -45,9 +57,9 @@ profundiza:
 - Con la **casilla de cada fuente** se incluyen o excluyen fuentes de la respuesta.
 - El chat **solo usa las fuentes**. Si se le pide algo creativo fuera de ellas, puede responder que no puede contestar.
 
-**Práctica (17 min)**
+**Práctica**
 1. Pegar la plantilla en Personalizado y elegir la longitud **Predeterminada**.
-2. **Banco de prompts** (cada participante usa al menos 4):
+2. **Banco de prompts** (usa al menos 4):
    - *Síntesis por audiencia:* «Explica en 5 puntos qué cambia la ley para un ejecutivo de atención al cliente».
    - *Pregunta precisa:* «¿Qué derechos tiene un titular de datos y en qué artículos están?».
    - *Comparación entre fuentes:* «Compara lo que dice el informe de Deep Research con el texto de la ley sobre sanciones. ¿Hay diferencias?».

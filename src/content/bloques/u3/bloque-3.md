@@ -5,16 +5,23 @@ titulo: "Studio: transformar fuentes en recursos de estudio"
 minutos: 20
 microcharlaMin: 3
 practicaMin: 17
+sintesis:
+  resumen: "Recorre los recursos del panel Studio y genera un resumen en audio, un mapa mental, un informe interactivo y un cuestionario sobre la ley."
+  haras: "Genera audio, mapa mental, informe interactivo y cuestionario."
+  claves:
+    - "Studio genera los recursos en segundo plano."
+    - "Revisa que cada respuesta del cuestionario esté en las fuentes."
 prompts:
   - id: resumen-en-audio
     titulo: "Resumen en audio"
+    descripcion: "Instrucción para el resumen en audio, enfocada en lo que debe saber un ejecutivo de atención al cliente, en diez minutos."
     texto: "enfocado en lo que debe saber un ejecutivo de atención al cliente, en 10 minutos"
 profundiza:
   recursos:
     - nuevas-herramientas-estudio
 ---
 
-**Microcharla (3 min):** el panel Studio convierte las fuentes en productos que se generan en segundo plano.
+**Conceptos clave:** el panel Studio convierte las fuentes en productos que se generan en segundo plano.
 
 | Recurso | Para qué sirve en una capacitación |
 |---|---|
@@ -28,9 +35,9 @@ profundiza:
 | **Presentación** | Ver el hito 4 |
 | **Tabla de datos** | Extraer datos de las fuentes en filas y columnas |
 
-Los límites de uso dependen del plan y Google los ajusta con el tiempo, así que hoy se prioriza.
+Los límites de uso dependen de tu plan y Google los ajusta con el tiempo: prioriza los recursos que más te sirvan.
 
-**Práctica (17 min)**
+**Práctica**
 1. **Lanzar el resumen en audio** con una instrucción, por ejemplo: «enfocado en lo que debe saber un ejecutivo de atención al cliente, en 10 minutos». Queda generándose.
 2. **Mapa mental** de la ley: revisarlo y detectar 3 temas para los módulos del curso.
 3. **Informe → formato Interactivo** (guía o resumen de aprendizaje) sobre los derechos de los titulares de datos.

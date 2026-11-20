@@ -66,7 +66,7 @@ const profundiza = z.strictObject({
 const prompt = z.strictObject({
   id: idEntrada,
   titulo: textoNoVacio,
-  descripcion: maxPalabras(30, "prompt.descripcion").optional(),
+  descripcion: maxPalabras(30, "prompt.descripcion"),
   // Texto literal: se copia tal cual, sin recortar espacios ni saltos.
   texto: z.string().min(1),
 });
@@ -95,7 +95,7 @@ const bloque = z
     tipo: textoNoVacio.optional(),
     microcharlaMin: z.number().int().min(0).optional(),
     practicaMin: z.number().int().min(0).optional(),
-    sintesis: sintesisBloque.optional(),
+    sintesis: sintesisBloque,
     prompts: z.array(prompt).default([]),
     profundiza: profundiza.optional(),
   })
@@ -144,7 +144,7 @@ const unidad = z.strictObject({
       error: "«avance.desde» debe ser menor que «avance.hasta»",
     }),
   objetivo: textoNoVacio,
-  objetivoBreve: maxPalabras(20, "objetivoBreve").optional(),
+  objetivoBreve: maxPalabras(20, "objetivoBreve"),
   miniProyecto: z.strictObject({
     titulo: textoNoVacio,
     descripcion: textoNoVacio,

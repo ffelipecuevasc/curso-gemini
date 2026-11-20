@@ -5,9 +5,16 @@ titulo: "Del cuaderno al curso interno: crear archivos desde el chat"
 minutos: 20
 microcharlaMin: 2
 practicaMin: 18
+sintesis:
+  resumen: "Pide desde el chat el guion de un curso interno de 45 minutos y un banco de 15 preguntas, y revisa sus citas."
+  haras: "Genera el guion y el banco de preguntas, y arma tu kit."
+  claves:
+    - "Desde el chat puedes pedir archivos que quedan en Studio."
+    - "Contrasta tres mensajes clave del guion con sus citas."
 prompts:
   - id: guion-curso-interno
     titulo: "Guion del curso interno"
+    descripcion: "Pide en el chat el guion en Markdown de un curso interno de 45 minutos, con módulos, actividades, mensajes clave con artículo y una evaluación final."
     texto: |-
         Con base solo en las fuentes, crea un archivo Markdown con el guion de un curso
         interno de 45 minutos sobre la Ley 21.719 para ejecutivos de atención al cliente
@@ -16,12 +23,13 @@ prompts:
         el artículo de respaldo y una evaluación final de 5 preguntas con respuestas.
   - id: banco-de-preguntas
     titulo: "Banco de preguntas"
+    descripcion: "Pide un banco de 15 preguntas de selección múltiple con la respuesta correcta y el artículo que la respalda."
     texto: "banco de 15 preguntas de selección múltiple con la respuesta correcta y el artículo que la respalda"
 ---
 
-**Microcharla (2 min):** desde el chat también se pueden pedir recursos (informes, resúmenes, cuestionarios o archivos de texto y Markdown). Quedan alojados en Studio y se pueden descargar, sin pasar por los botones prefijados. Es la forma más flexible de obtener exactamente el formato que necesitas.
+**Conceptos clave:** desde el chat también se pueden pedir recursos (informes, resúmenes, cuestionarios o archivos de texto y Markdown). Quedan alojados en Studio y se pueden descargar, sin pasar por los botones prefijados. Es la forma más flexible de obtener exactamente el formato que necesitas.
 
-**Práctica (18 min)**
+**Práctica**
 1. Prompt en el chat:
 2. Verificar que el archivo quedó en Studio y **descargarlo**.
 3. Pedir un segundo archivo: «banco de 15 preguntas de selección múltiple con la respuesta correcta y el artículo que la respalda».

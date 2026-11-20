@@ -5,6 +5,12 @@ titulo: "Repaso y brief del caso"
 minutos: 5
 microcharlaMin: 2
 practicaMin: 3
+sintesis:
+  resumen: "Descubre que en Gemini Notebook trabajas solo con tus fuentes y conoce el caso de la Ley 21.719 y las cinco piezas del kit."
+  haras: "Revisa el caso y las cinco piezas del kit."
+  claves:
+    - "El chat responde solo con las fuentes que tú eliges."
+    - "Usa solo fuentes públicas; el kit no es asesoría legal."
 profundiza:
   recursos:
     - video-inside-notebooklm

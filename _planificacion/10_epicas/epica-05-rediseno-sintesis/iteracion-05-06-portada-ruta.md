@@ -3,7 +3,7 @@
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
 - **Estado:** Pendiente
 - **Rama sugerida:** iteracion/05-06-portada-ruta
-- **Depende de:** 05-01 y propuesta P-009 aplicada
+- **Depende de:** 05-01, 05-05 (reutiliza su barra de avance, `src/lib/colores-unidad.ts`, `Modal.astro` y `BotonModal.astro`) y propuesta P-009 aplicada
 - **Especificación:** —
 - **RDA relacionadas:** RDA-004, RDA-008
 
@@ -16,6 +16,19 @@ Que el primer pantallazo muestre el curso completo: título, lema y las 4 unidad
 - `Portada.astro`: título (`h1`), lema, botón «Ver la ruta», logo de Gemini y de Google sobre un círculo `superficie`, logos de GTD y Capacita Tu Futuro aparte, y las redes abajo a la izquierda. En 1440 × 900 la ruta queda bajo el pliegue (captura del 2026-11-18).
 - `RutaCurso.astro` y `BloqueUnidad.astro`: mosaico de 4 bloques de color con número, título, mini-proyecto y avance en texto.
 - `Instructor.astro`: sección propia con nombre, títulos, trayectoria y redes.
+
+## Ajustes tras la 05-05 (2026-11-20)
+
+> Choques detectados en la bitácora 05-05 con lo ya construido. No cambian las decisiones de esta iteración.
+
+1. **Mini-proyecto completo:** ya no está en la sección de la unidad; vive en el modal «Sobre la unidad». El riesgo de `line-clamp` remite ahí.
+2. **Barra de avance:** `CabeceraUnidad.astro` ya tiene una (pista `aria-hidden`, segmento con `margin-left` y `width` en %, texto `sr-only`); se extrae a `BarraAvance.astro` y la usan la cabecera y `BloqueUnidad.astro`.
+3. **Colores por unidad:** `BloqueUnidad.astro` importa `bloqueUnidad` de `src/lib/colores-unidad.ts` en lugar de su mapa propio.
+4. **Modal del instructor:** `Modal.astro` exige `unidad` para la franja; hace falta una franja neutra (prop opcional). El botón es `BotonModal.astro` y el `id` va en `src/lib/modales.ts`.
+5. **Objetivo de 7 pantallas:** con las unidades ya ajustadas se mide de nuevo en la tarea 1 (antes de la 05-05 la página medía 7,8 pantallas en 1440 × 900); en 1366 × 657 cada unidad ocupa ≈ 1,4 pantallas.
+6. **Alto del encabezado:** `--alto-encabezado` (77 px) ya existe; la sección fusionada lo descuenta de `100dvh`. El script de medición en Edge headless de la 05-05 sirve para la tarea 1.
+7. **Dependencias:** se suma la 05-05 a «Depende de».
+8. **Navegación:** con secciones de unidad más cortas, la tarea 6 revisa también `aria-current` de las píldoras al pasar por `#ruta`, `#unidad-N` e `#instructor`.
 
 ## Alcance y entregables
 

@@ -116,6 +116,23 @@ Decisión del desarrollador: tres palancas en orden, midiendo tras cada una. Alt
 
 Los fragmentos de consola del procedimiento (puntos 1 a 5) siguen vigentes; esperado ahora en 1440 × 900: `cabe: true` y `botonesFuera: 0` en las 4 unidades.
 
+## Cierre de la revisión (2026-11-20, tercer commit)
+
+- **Segunda clave:** `ModalesBloque.astro` la muestra en el modal de detalle, tras el resumen, en un párrafo con «Otra idea clave:» (25 de 26 bloques; el que tiene una sola clave no muestra nada). La primera sigue solo en la tarjeta: sin JavaScript no hay texto duplicado.
+- **1366 × 657:** se documenta como ≈ 1,4 pantallas (decisión del desarrollador); sin más compactación.
+- **P-014 y P-015 siguen `Pendiente`:** `grep` en `DESIGN.md` de esta rama (`a7f6b56`, árbol limpio) no encuentra «1280», «primera clave», la variante «Terminado cuando…» del modal ni la fila «Secundario sobre el color de la unidad». El `DESIGN.md` con las propuestas aplicadas no está en la rama.
+- **Verificación:** build sin advertencias, guardia en 0; `astro check` 0/0/0; 53 `<dialog>`, 298 `id` sin repetir; 24 de 24 prompts idénticos; 1 `h1`, 0 saltos con y sin JavaScript; texto repetido solo en enlaces de recursos; JS 1295 B gzip (0 B nuevos).
+- **Peso:** `dist/index.html` 336 990 B → 340 390 B (60 086 → 60 536 B gzip).
+- **Alto en 1440 × 900** (Edge headless, medido por el agente): sin cambios, porque la clave nueva está dentro de un modal.
+
+| Modo | U1 / U2 / U3 / U4 | Disponible | Botones fuera |
+| :--- | :---------------- | :--------- | :------------ |
+| Claro | 823 / 823 / 823 / 823 | 823 | 0 |
+| Oscuro | 823 / 823 / 823 / 823 | 823 | 0 |
+
+- **Iteración 05-06:** se agregó la sección «Ajustes tras la 05-05» con los 8 choques y se sumó la 05-05 a «Depende de».
+- **RDA-012:** actualización con la consecuencia (primera clave en la tarjeta, segunda en el modal de detalle).
+
 ## Revisión de la 05-06 (sin editar): lo que choca con lo construido
 
 1. **Mini-proyecto completo «en la sección de la unidad»** (Riesgos): ya no está en la página; solo vive en el modal «Sobre la unidad». El `line-clamp` de la tarjeta de ruta lo deja sin versión completa visible.

@@ -46,6 +46,9 @@ Que cada unidad se vea completa en una pantalla de escritorio: una cabecera de c
 
 - 2026-11-20 (ajuste de alto): con 986 a 1090 px contra 823 disponibles en 1440 × 900, se aprueban tres palancas en orden, midiendo tras cada una y parando en la primera que haga caber las 4 unidades: (1) espaciado interno menor de tarjetas y cabecera, sin bajar de 16 px ni de 44 px y con la interlínea de 1,6 de `DESIGN.md`; (2) sección de unidad de hasta 1280 px desde pantallas anchas (propuesta P-015); (3) una sola clave por tarjeta, la primera. Sin compactación para pantallas bajas. **Se usaron las tres**: las dos primeras no bastaron (906 a 1010 px y 879 a 906 px).
 
+- 2026-11-20 (cierre de la revisión): en 1366 × 657 se documenta la realidad, sin más compactación: la unidad cabe en 1440 × 900 y en 1366 × 657 ocupa algo más de una pantalla (≈ 1,4).
+- 2026-11-20 (cierre de la revisión): la segunda clave se muestra en el modal de detalle, tras el resumen, con la etiqueta «Otra idea clave:» y solo la segunda (la primera ya está en la tarjeta); si el bloque tiene una sola clave, no se muestra nada. Es un párrafo, no un encabezado.
+
 ## Tareas
 
 1. Medir y anotar en la bitácora el alto actual de cada sección de unidad en 1440 × 900 y 1366 × 657 (línea base).
@@ -59,7 +62,7 @@ Que cada unidad se vea completa en una pantalla de escritorio: una cabecera de c
 
 ## Criterios de aceptación
 
-- [ ] En 1440 × 900 y en 1366 × 657, cada `section` de unidad mide como máximo `innerHeight − alto del encabezado` y todos sus botones están dentro de la ventana al navegar a su ancla (fragmento de consola con `getBoundingClientRect()` anotado en la bitácora, en ambos modos). Tras el ajuste de alto, medido por el agente en Edge headless (no probado en tu navegador): en 1440 × 900 las 4 unidades miden 823 px de 823 disponibles, en ambos modos, con 0 botones fuera de la ventana. **1366 × 657: se registra el alto real (783 a 810 px contra 580); decisión pendiente con la medición.**
+- [ ] En 1440 × 900 cada `section` de unidad mide como máximo `innerHeight − alto del encabezado`; en 1366 × 657 ocupa algo más de una pantalla (≈ 1,4) y se documenta así (decisión del 2026-11-20). En 1440 × 900, todos sus botones están dentro de la ventana al navegar a su ancla (fragmento de consola de la bitácora, en ambos modos). Medido por el agente en Edge headless (no probado en tu navegador): en 1440 × 900 las 4 unidades miden 823 px de 823 disponibles, en ambos modos, con 0 botones fuera; en 1366 × 657, 783 a 810 px contra 580 (≈ 1,4 pantallas). Falta tu medición.
 - [ ] En 360 × 740, cada unidad mide como máximo 4 alturas de ventana. Medición del agente a 500 × 740 (mínimo de Edge headless): 2279 a 2402 px (3,1 a 3,2 ventanas); falta la prueba a 360 px.
 - [ ] Cada tarjeta muestra título, minutos, «Qué harás» y sus claves, y abre su modal de detalle; los 24 prompts siguen alcanzables y copiables desde sus modales. Medido por script: 26 tarjetas con sus textos, 53 botones con su `<dialog>` y 24 de 24 prompts idénticos a su fuente; el clic lo prueba el desarrollador.
 - [ ] Las palabras visibles por unidad fuera de los modales, títulos incluidos, son como máximo 300 (fragmento de consola que cuenta el texto de la sección excluyendo `dialog` y el texto solo para lectores de pantalla). Tras el ajuste de alto: U1 261, U2 235, U3 236, U4 226 por script sobre `dist/index.html` (Edge headless: 260, 235, 236, 225); falta tu recuento en el navegador.

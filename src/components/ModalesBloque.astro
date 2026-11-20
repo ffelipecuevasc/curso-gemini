@@ -2,7 +2,8 @@
 // Los modales de un bloque (DESIGN.md, sección 5, «Modal»; RDA-011): «Detalle»
 // (resumen, cuerpo Markdown del bloque con render() —RDA-009— y «Profundiza») y
 // «Prompts» si el bloque los tiene. Solo dibuja los <dialog>; los botones que
-// los abren viven en la tarjeta del bloque o en la cabecera de la unidad
+// los abren viven en la tarjeta (que muestra la primera clave; la segunda va
+// aquí, tras el resumen, decisión del 2026-11-20) del bloque o en la cabecera de la unidad
 // (src/lib/modales.ts da los mismos `id` a ambos lados). El cuerpo y los
 // prompts existen una sola vez, aquí dentro. Si el cuerpo trae el marcador
 // data-prompt (src/lib/marcadores.ts), en su lugar va una línea que remite a
@@ -40,6 +41,11 @@ const { Content } = await render(bloque);
   unidad={unidad}
   descripcion={sintesis.resumen}
 >
+  {sintesis.claves[1] && (
+    <p class="mb-4 max-w-prose">
+      <span class="font-medium">Otra idea clave:</span> {sintesis.claves[1]}
+    </p>
+  )}
   <p class="mb-4 font-codigo text-sm text-texto-2">{minutos} min</p>
   <div class="contenido-bloque">
     {conMarcador ? (

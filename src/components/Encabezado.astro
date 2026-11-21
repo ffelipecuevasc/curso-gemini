@@ -15,7 +15,7 @@ interface Props {
 const { enlaces } = Astro.props;
 ---
 
-<header class="sticky top-0 z-10 border-b border-linea bg-fondo">
+<header class="encabezado-sitio sticky top-0 z-10 border-b border-linea bg-fondo">
   <div
     data-encabezado
     class="group mx-auto flex max-w-sitio flex-wrap items-center gap-3 px-6 py-3 lg:flex-nowrap"
@@ -97,6 +97,9 @@ const { enlaces } = Astro.props;
     });
 
     // Píldora de la sección visible (sin script, la navegación funciona igual).
+    // También marca <html data-unidad="N"> para el color de la barra de
+    // lectura (global.css); fuera de una unidad, el atributo se quita.
+    const raizHtml = document.documentElement;
     const enlaces = new Map<string, HTMLAnchorElement>();
     for (const a of menu.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')) {
       enlaces.set(a.hash.slice(1), a);
@@ -106,7 +109,10 @@ const { enlaces } = Astro.props;
         for (const entrada of entradas) {
           if (!entrada.isIntersecting) continue;
           for (const a of enlaces.values()) a.removeAttribute("aria-current");
-          enlaces.get(entrada.target.id)?.setAttribute("aria-current", "true");
+          const id = entrada.target.id;
+          enlaces.get(id)?.setAttribute("aria-current", "true");
+          if (id.startsWith("unidad-")) raizHtml.dataset.unidad = id.slice(7);
+          else delete raizHtml.dataset.unidad;
         }
       },
       { rootMargin: "-45% 0px -50% 0px" },

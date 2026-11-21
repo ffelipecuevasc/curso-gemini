@@ -3,7 +3,7 @@
 - **Fecha:** 2026-11-20
 - **Agente:** Claude Code (Opus 5.5)
 - **Rama:** iteracion/05-06-portada-ruta
-- **Estado final:** En revisión
+- **Estado final:** Terminada (2026-11-20: el desarrollador hizo los 7 pasos de prueba sin observaciones; dicho por él, no verificado por el agente)
 
 ## Resumen
 
@@ -64,7 +64,7 @@ El observador marca la sección que cruza la franja del 45 al 50 % del alto de l
 
 ## Pendientes y riesgos
 
-- P-016 pendiente (franja neutra del modal).
+- P-016 aplicada el 2026-11-20 (franja neutra del modal).
 - 1366 × 657: probablemente no caben las 4 tarjetas completas en el primer pantallazo, y la página pasa de 7 pantallas por las unidades (≈ 1,4 cada una). Se documenta la realidad.
 - El mini-proyecto de la U3 se corta con `line-clamp-2`.
 

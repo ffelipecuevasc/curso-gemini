@@ -63,15 +63,22 @@
       boton.setAttribute("data-girando", "");
       const cambiar = () =>
         switchTheme(modoActual() === "oscuro" ? "claro" : "oscuro");
-      // Sin la API View Transitions o con reducir movimiento: cambio al instante.
+      // Sin la API View Transitions, con reducir movimiento o con otra
+      // transición en curso (la del modal): cambio al instante. La marca
+      // data-transicion="modo" acota el revelado circular (global.css).
+      const raiz = document.documentElement;
       if (
         !document.startViewTransition ||
-        matchMedia("(prefers-reduced-motion: reduce)").matches
+        matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        raiz.dataset.transicion
       ) {
         cambiar();
         return;
       }
-      document.startViewTransition(cambiar);
+      raiz.dataset.transicion = "modo";
+      document
+        .startViewTransition(cambiar)
+        .finished.finally(() => delete raiz.dataset.transicion);
     });
   }
 

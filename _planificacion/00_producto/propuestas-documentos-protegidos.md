@@ -29,7 +29,8 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-013 | `DESIGN.md` · 2.1 Superficies, 2.3 Contraste y 5. Componentes (fila Encabezado) | Iteración 05-01 | 2026-11-19 | Aplicada |
 | P-014 | `DESIGN.md` · 5. Componentes (filas Sección de unidad y Modal) y 5.1 Botones | Iteración 05-05 | 2026-11-20 | Aplicada |
 | P-015 | `DESIGN.md` · 4. Espaciado, retícula y forma (Contenedor) y 5. Componentes (fila Tarjeta de bloque) | Iteración 05-05 (ajuste de alto) | 2026-11-20 | Aplicada |
-| P-016 | `DESIGN.md` · 5. Componentes (fila Modal) | Iteración 05-06 | 2026-11-20 | Pendiente |
+| P-016 | `DESIGN.md` · 5. Componentes (fila Modal) | Iteración 05-06 | 2026-11-20 | Aplicada |
+| P-017 | `DESIGN.md` · 7. Movimiento (Modales) | Iteración 05-07 | 2026-11-20 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -519,6 +520,7 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 5. Componentes (fila «Modal»)
+- **Estado:** aplicada por el desarrollador con el «Texto propuesto» tal cual, comprobada el 2026-11-20 con `grep` en `DESIGN.md` de la rama 05-07.
 - **Por qué:** la 05-06 abre «Trayectoria completa» del instructor en un modal (decisión del desarrollador del 2026-11-20), y la fila «Modal» solo contempla la franja del color de una unidad. El componente usa `--color-primario` cuando el modal no tiene unidad. Si no se aplica, `DESIGN.md` no describe el modal del instructor.
 
 **Texto actual** (copiado literalmente de `DESIGN.md`):
@@ -531,4 +533,22 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 
 ```text
 | Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, o `--color-primario` si el modal no pertenece a una unidad, como la trayectoria del instructor, título, botón «Cerrar» de 44 px, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
+```
+
+## P-017 · Origen de la transición al modal cuando no hay tarjeta
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 7. Movimiento (viñeta «Modales»)
+- **Por qué:** los modales también se abren desde la cabecera de cada unidad («Sobre la unidad», «Recursos», «Descargas») y desde el instructor («Ver trayectoria completa»), donde no hay tarjeta. El desarrollador decidió el 2026-11-20 que en esos casos el origen de la transición es el propio botón. Si no se aplica, `DESIGN.md` no describe qué se anima en esos modales.
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+- Modales: al abrir desde una tarjeta, la tarjeta se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`; sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo.
+```
+
+**Texto propuesto:**
+
+```text
+- Modales: al abrir desde una tarjeta o, si no la hay, desde el botón, ese origen se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`, y vuelve a él al cerrar; sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo.
 ```

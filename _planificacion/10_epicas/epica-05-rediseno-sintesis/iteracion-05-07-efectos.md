@@ -1,7 +1,7 @@
 # Iteración 05-07 · Capa de efectos con propósito
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/05-07-efectos
 - **Depende de:** 05-05, 05-06 y propuestas P-009 y P-010 aplicadas
 - **Especificación:** —
@@ -31,6 +31,7 @@ Cada efecto se activa solo donde el navegador lo soporta (`@supports` o detecci�
 ## Decisiones del desarrollador
 
 - 2026-11-18: nivel de efectos «con propósito»; sin parallax, sin fondos animados y sin efectos sobre los logotipos (decisión del desarrollador al crear la épica).
+- 2026-11-20: la unidad visible se marca en `<html data-unidad>` desde el observador del encabezado; el origen de la transición es la tarjeta o, si no hay, el botón (P-017, pendiente); brillo en `.tarjeta` y `.tarjeta-ruta` solo con puntero fino; ambas tarjetas suben 4 px (riesgo de falsa afordancia anotado para la 05-08).
 
 ## Tareas
 

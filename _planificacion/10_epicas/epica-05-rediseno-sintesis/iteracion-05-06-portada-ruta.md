@@ -1,7 +1,7 @@
 # Iteración 05-06 · Portada y ruta en un pantallazo
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/05-06-portada-ruta
 - **Depende de:** 05-01, 05-05 (reutiliza su barra de avance, `src/lib/colores-unidad.ts`, `Modal.astro` y `BotonModal.astro`) y propuesta P-009 aplicada
 - **Especificación:** —

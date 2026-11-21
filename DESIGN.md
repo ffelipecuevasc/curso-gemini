@@ -74,8 +74,9 @@ Contrastes según WCAG 2.2, tomados de la paleta verificada de la identidad:
 | `#00131D` sobre `#99C8E0` | 10,53:1 | AAA, texto sobre `--color-presionado` (claro) |
 | `#FFFFFF` sobre `#005877` | 7,89:1 | AAA, texto sobre `--color-hover-suave` (oscuro) |
 | `#FFFFFF` sobre `#006486` | 6,63:1 | AA, texto sobre `--color-presionado` (oscuro) |
+| `#5DC9FF` sobre `#00131D` | 10,14:1 | AAA, enlaces de texto y hover del botón principal (oscuro) |
 
-Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre fondo claro, el texto de color se escribe en `#00678A` o más oscuro. El contraste de `#E4F3FF` sobre `#003B51` y de `#5DC9FF` sobre `#00131D` se mide en la iteración de tokens y se agrega a esta tabla antes de usarlos en texto pequeño.
+Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre fondo claro, el texto de color se escribe en `#00678A` o más oscuro. El contraste es simétrico: `#E4F3FF` sobre `#003B51` es el mismo 10,64:1 de `#003B51` sobre `#E4F3FF`.
 
 ## 3. Tipografía
 
@@ -89,14 +90,14 @@ Fallbacks: `system-ui, sans-serif` para Sora y Work Sans; `ui-monospace, monospa
 
 Reglas:
 
-1. Cuerpo de 16 px como mínimo (18 px en escritorio), interlínea de 1,6.
+1. Cuerpo de 16 px como mínimo (18 px en escritorio), interlínea de 1,6. Excepción: el texto de las tarjetas de bloque se queda en 16 px también en escritorio, para que cada unidad quepa en una pantalla; el cuerpo corrido y los modales siguen en 18 px.
 2. Un solo `h1` (el título del curso en la portada); cada sección abre con un `h2` y cada bloque de unidad con un `h3`.
 3. Ninguna otra familia tipográfica.
 
 ## 4. Espaciado, retícula y forma
 
 - Contenedor: ancho máximo de 1100 px, márgenes laterales de 1,5 rem en móvil; la sección de cada unidad llega a 1280 px desde 1280 px de ancho de ventana, para que quepa en una pantalla de escritorio.
-- Retícula: móvil primero; mosaico de 1 columna en móvil, 2 desde 640 px y 4 desde 1024 px (la ruta tiene 4 unidades), siempre con `minmax(0, 1fr)`.
+- Retícula: móvil primero, siempre con `minmax(0, 1fr)`. La ruta va en 1 columna en móvil y en mosaico 2 × 2 desde 640 px; las tarjetas de cada unidad, en 1 columna en móvil, 2 desde 640 px y 3 desde 1024 px.
 - Radios: 24 a 32 px en bloques, con esquina asimétrica en los bloques destacados (`28px 28px 28px 6px`); píldoras con radio completo.
 - Sombras: tokens de color `--sombra-u1` a `--sombra-u4` (color de la unidad mezclado con `color-mix()`) y `--sombra-neutra` (tarjetas sin unidad); la forma de la sombra la pone la tarjeta. En reposo, sombra suave; en hover y con foco de teclado (`:focus-visible`, no con un clic), la tarjeta sube 4 px y la sombra se amplía. En modo oscuro, menos opacidad y un halo de 1 px con los tokens `--halo-u1` a `--halo-u4` (transparentes en claro). La U3 usa `--color-borde-u3` en oscuro para la sombra, el halo, el brillo y la barra de avance, porque `#003B51` no se ve sobre `#00131D`.
 
@@ -109,12 +110,12 @@ Reglas:
 | Sección de unidad | Cabe en una pantalla de escritorio de 1440 × 900; en 1366 × 657 ocupa algo más de una pantalla (unos 1,4 de alto). Cabecera con el bloque de color de la unidad: clase y duración en IBM Plex Mono, título, objetivo breve, barra de avance del tramo, píldoras «Antes de empezar» y «Cierre» (si existen) y acciones «Sobre la unidad», «Recursos (n)» y «Descargas (n)». Debajo, una cuadrícula de 6 tarjetas (3 × 2 desde 1024 px, 2 columnas desde 640 px, 1 en móvil): una por bloque y una de «Terminado cuando…», que muestra el entregable y un botón «Terminado cuando… (n)» que abre la lista en un modal. Sin tabla de bloques. |
 | Tarjeta de bloque | Número y minutos en IBM Plex Mono, título (`h3`), «Qué harás» y la primera clave; acciones «Ver detalle» y «Ver prompt» o «Prompts (n)». Superficie `--color-fondo` con borde de 1 px `--color-linea`, franja superior del color de la unidad y sombra de su unidad. |
 | Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, o `--color-primario` si el modal no pertenece a una unidad, como la trayectoria del instructor, título, botón «Cerrar» de 44 px, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
-| Bloque de prompt | Fondo `--color-superficie-2`, texto en IBM Plex Mono, botón «Copiar» en la esquina superior derecha. Al copiar, el botón cambia a «Copiado» por 2 s y lo anuncia con `aria-live="polite"`. El texto es seleccionable aunque no haya JavaScript. |
+| Bloque de prompt | Fondo `--color-superficie-2`, texto en IBM Plex Mono de 14 px (excepción a la regla 1 de la sección 3, como bloque de código), botón «Copiar» en la esquina superior derecha desde 640 px y bajo el título y la descripción en móvil. Al copiar, el botón cambia a «Copiado» por 2 s y lo anuncia con `aria-live="polite"`. El texto es seleccionable aunque no haya JavaScript. |
 | «Profundiza en tu tiempo» | Apartado al final del modal de detalle del bloque, con los enlaces a documentación y videos oficiales de Google. |
 | Enlace a recurso externo | Ícono de línea que dice el tipo (documento o video), el nombre del recurso y el sitio de destino; abre en pestaña nueva y lo anuncia con texto oculto «(se abre en una pestaña nueva)». |
 | Tarjeta de descarga | Nombre del archivo, formato y peso (por ejemplo «CSV · 24 KB»), con botón de contorno «Descargar». |
 | Instructor | Franja compacta: nombre, certificación de Gemini primero, resumen de la trayectoria tomado del documento del curso y botón «Ver trayectoria completa» (modal); enlaces a felipecuevas.dev y LinkedIn. |
-| Pie | Enlaces de redes, nombre del curso y aviso «Material de capacitación con datos ficticios o públicos». |
+| Pie | Nombre del curso, enlaces de redes, aviso «Material de capacitación con datos ficticios o públicos» y licencia «Todos los derechos reservados.». |
 | Redes | Texto visible exacto `www.felipecuevas.dev` (a `https://felipecuevas.dev/`) y `www.linkedin.com/in/ffelipecuevasc/` (a `https://www.linkedin.com/in/ffelipecuevasc/`); ícono y texto forman un solo enlace. El enlace a felipecuevas.dev lleva el SVG de Chrome y el de LinkedIn lleva el SVG de LinkedIn (en claro con `--color-linkedin` y en oscuro con el glifo invertido, como en los tokens); texto `#003B51` en claro y `#E4F3FF` en oscuro. Van en la portada (pequeñas, abajo a la izquierda) y en el pie. |
 
 ### 5.1 Botones

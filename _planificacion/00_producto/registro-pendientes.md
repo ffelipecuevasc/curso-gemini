@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-19
-- **Iteración activa:** 05-05 · La unidad en una pantalla (en revisión)
+- **Iteración activa:** 05-06 · Portada y ruta en un pantallazo (en revisión)
 - **Próximo hito:** épica 05: rediseño visual y síntesis, con Rendimiento publicado ≥ 95 (05-08)
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
@@ -22,8 +22,8 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | 05-02 | [Modelo de síntesis y síntesis de U1 y U2](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-02-sintesis-u1-u2.md) | 05 | Terminada | 05-01, RDA-012 | [bitacora-05-02](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-02.md) |
 | 05-03 | [Síntesis de U3 y U4](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-03-sintesis-u3-u4.md) | 05 | Terminada | 05-02 | [bitacora-05-03](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-03.md) |
 | 05-04 | [Sistema de modales](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-04-modales.md) | 05 | Terminada | 05-03 | [bitacora-05-04](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-04.md) |
-| 05-05 | [La unidad en una pantalla](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-05-unidad-una-pantalla.md) | 05 | En revisión | 05-04 | [bitacora-05-05](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) |
-| 05-06 | [Portada y ruta en un pantallazo](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-06-portada-ruta.md) | 05 | Pendiente | 05-01, P-009 | — |
+| 05-05 | [La unidad en una pantalla](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-05-unidad-una-pantalla.md) | 05 | Terminada | 05-04 | [bitacora-05-05](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) |
+| 05-06 | [Portada y ruta en un pantallazo](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-06-portada-ruta.md) | 05 | En revisión | 05-01, 05-05, P-009 | [bitacora-05-06](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-06.md) |
 | 05-07 | [Capa de efectos con propósito](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-07-efectos.md) | 05 | Pendiente | 05-05, 05-06 | — |
 | 05-08 | [Pulido y verificación final del rediseño](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-08-verificacion.md) | 05 | Pendiente | 05-07 | — |
 
@@ -51,8 +51,8 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | 20 | Síntesis por bloque y por unidad con límites de palabras (RDA-012) y síntesis aprobada de U1 y U2; retiro del material de conducción de la clase | Funcionalidad | — | 05-02 | Terminada |
 | 21 | Síntesis aprobada de U3 y U4 y campos de síntesis obligatorios | Funcionalidad | — | 05-03 | Terminada |
 | 22 | Modales sobre `<dialog>` nativo para prompts, detalle, recursos y descargas (RDA-011) | Funcionalidad | — | 05-04 | Terminada |
-| 23 | Sección de unidad en una pantalla de escritorio con tarjetas de bloque | Funcionalidad | — | 05-05 | En revisión |
-| 24 | Portada y ruta en el primer pantallazo e instructor compacto | Funcionalidad | — | 05-06 | Pendiente |
+| 23 | Sección de unidad en una pantalla de escritorio con tarjetas de bloque | Funcionalidad | — | 05-05 | Terminada |
+| 24 | Portada y ruta en el primer pantallazo e instructor compacto | Funcionalidad | — | 05-06 | En revisión |
 | 25 | Efectos con propósito: sombras teñidas, transición de tarjeta a modal, barra de avance, aparición escalonada y brillo | Funcionalidad | — | 05-07 | Pendiente |
 | 26 | Verificación final del rediseño en local y en la URL publicada, comparada con la 04-04 | Técnico | — | 05-08 | Pendiente |
 
@@ -84,8 +84,7 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U3 nombrados pero no escritos: los carriles extra de los bloques 1 a 5 (instrucciones sin texto de prompt) | 02-06 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U4 nombrados pero no escritos: los carriles extra de los bloques 2 a 5 (el contenido de las skills y plantillas son descargas de la épica 03) | 02-06 | Desarrollador |
 | Rendimiento publicado ≥ 95 en la épica 05 (05-08): la épica 04 cerró con 87 como excepción aceptada (línea base en la bitácora de cierre) | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) | Desarrollador |
-| Aplicar la propuesta P-014 (`DESIGN.md`, secciones 5 y 5.1: variante «Terminado cuando…» del modal, sexta tarjeta con modal y botón sobre el color de la unidad) | P-014 | Desarrollador |
-| Aplicar la propuesta P-015 (`DESIGN.md`: sección de unidad de hasta 1280 px y una sola clave por tarjeta) antes del merge de la 05-05, y decidir el alto en 1366 × 657 con la medición del desarrollador | [bitacora-05-05](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) | Desarrollador |
+| Aplicar la propuesta P-016 (`DESIGN.md`, fila «Modal»: franja `--color-primario` en modales que no pertenecen a una unidad) | P-016 | Desarrollador |
 
 ## 6. Propuestas fuera de alcance
 
@@ -104,8 +103,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-17 | Iteración 02-03 terminada: el desarrollador revisó la ruta en el navegador (teclado, foco, borde de la U3, 360/640/1024 px, ambos modos) sin observaciones; acepta la esquina asimétrica en los 4 bloques. |
-| 2026-11-17 | Corrección: la ruta pasa a 4 columnas desde 1024 px (`lg:grid-cols-4`), según la P-006 aplicada en `DESIGN.md` (commit 9c39f9b); `pnpm build` y `astro check` sin cambios en advertencias; falta revisión en navegador. |
 | 2026-11-17 | Corrección de la ruta en 4 columnas terminada: dicho por el desarrollador, revisión en navegador sin observaciones. |
 | 2026-11-17 | Iteración 02-04 en revisión: `#instructor` desde la colección `instructor`, certificación de Gemini primero, sin insignia (no está en el repo); 0 B de JS nuevo; falta revisión en navegador. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-04.md) |
 | 2026-11-17 | Iteración 02-04 terminada: el desarrollador revisó el instructor en el navegador sin observaciones; corregido el comentario de RutaCurso.astro (4 columnas). |
@@ -154,3 +151,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-20 | Iteración 05-05 en revisión: cabecera, 6 tarjetas y 53 modales (con «Sobre la unidad» y «Terminado cuando…»), `Modal.astro` sin botón, `BotonModal.astro`, `ModalesBloque.astro` y `--alto-encabezado` de 77 px; 0 B de JS nuevo y HTML +11 KB; **no cabe en una pantalla** (986 a 1090 px contra 823 en 1440 × 900) y la U1 pasa de 300 palabras (306), según el agente; P-014 pendiente; falta la medición del desarrollador; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) |
 | 2026-11-20 | Iteración 05-05, ajuste de alto (decisión del desarrollador): con las 3 palancas aprobadas (espaciado, sección de hasta 1280 px y una sola clave por tarjeta) las 4 unidades caben en 1440 × 900 (823 de 823 px, medido por el agente en Edge headless); en 1366 × 657 miden 783 a 810 px (decisión pendiente); U1 baja a 261 palabras; propuesta P-015; sigue en revisión; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) |
 | 2026-11-20 | Iteración 05-05, cierre de la revisión: segunda clave en el modal de detalle («Otra idea clave:», 25 bloques), 1366 × 657 documentado como ≈ 1,4 pantallas, RDA-012 actualizada y 05-06 ajustada con 8 choques; P-014 y P-015 siguen pendientes porque `DESIGN.md` de la rama no las tiene; sigue en revisión; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) |
+| 2026-11-20 | Iteración 05-05 terminada (`f4d1f26` en `main`): el desarrollador la probó en su navegador sin observaciones (dicho por él, no verificado por el agente). P-014 y P-015 siguen pendientes: el `DESIGN.md` de `main` y de la rama 05-06 no las tiene; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) |
+| 2026-11-20 | Iteración 05-06 en revisión: P-014 y P-015 aplicadas (comprobadas con `grep`; P-014 con una frase de más sobre 1366 × 657); portada y ruta fusionadas (`#ruta` anidada con su `h2`, 2 × 2), `BarraAvance.astro`, botón «Empezar por la Unidad 1», instructor compacto con modal «Trayectoria completa» (franja neutra, P-016 pendiente); 54 `<dialog>`, 0 B de JS nuevo, HTML 340 390 → 341 888 B; falta la medición del desarrollador; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-06.md) |

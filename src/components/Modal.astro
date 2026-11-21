@@ -12,8 +12,8 @@ interface Props {
   id: string;
   /** Título del modal (h3 o h4 según `nivel`). */
   titulo: string;
-  /** Número de la unidad, para el color de la franja. */
-  unidad: number;
+  /** Número de la unidad, para el color de la franja; sin unidad (instructor), la franja es --color-primario. */
+  unidad?: number;
   /** Texto corto bajo el título; el modal lo declara con aria-describedby. */
   descripcion?: string;
   /** Nivel del encabezado: 3 en la unidad, 4 dentro de un bloque. */
@@ -32,7 +32,12 @@ const Titulo = `h${nivel}` as "h3" | "h4";
   aria-describedby={descripcion ? `${id}-desc` : undefined}
   class="modal"
 >
-  <div class:list={["modal-cabecera", franjaModal[unidad]]}>
+  <div
+    class:list={[
+      "modal-cabecera",
+      unidad ? franjaModal[unidad] : "border-primario",
+    ]}
+  >
     <Titulo
       id={`${id}-titulo`}
       class="font-display text-xl font-semibold wrap-break-word"

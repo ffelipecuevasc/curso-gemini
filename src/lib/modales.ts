@@ -24,3 +24,6 @@ export const idModalUnidad = (numero: number, tipo: TipoModalUnidad) =>
 /** «Ver prompt» si el bloque tiene uno; «Prompts (n)» si tiene más. */
 export const etiquetaPrompts = (cantidad: number) =>
   cantidad === 1 ? "Ver prompt" : `Prompts (${cantidad})`;
+
+/** Modal «Trayectoria completa» del instructor (05-06). */
+export const idModalInstructor = "modal-instructor-trayectoria";

@@ -299,6 +299,22 @@
   }
 }
 
+/*
+ * Portada y ruta (iteración 05-06): tarjetas de la ruta en mosaico 2 × 2.
+ */
+@layer components {
+  .tarjeta-ruta {
+    @apply flex w-full flex-col gap-2 rounded-bloque rounded-bl-esquina p-4 no-underline transition-transform duration-200 hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-5;
+  }
+
+  /* El título de la U1 es largo: baja de tamaño en tarjetas angostas. */
+  .titulo-ruta {
+    font-size: clamp(1.125rem, 0.95rem + 0.6vw, 1.375rem);
+    line-height: 1.2;
+    font-weight: 600;
+  }
+}
+
 /* Con JavaScript, en escritorio (1024 px de ancho y 640 px de alto o más) cada
    unidad ocupa una pantalla: la sección mide como mínimo el alto de la ventana
    menos el encabezado, y la cuadrícula reparte el espacio sobrante. Sin

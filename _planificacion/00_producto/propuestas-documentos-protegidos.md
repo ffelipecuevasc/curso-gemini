@@ -27,8 +27,9 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-011 | `README.md` · párrafo sobre JavaScript | Planificación de la épica 05 (RDA-011) | 2026-11-18 | Aplicada |
 | P-012 | `AGENTS.md` · 9. Reglas técnicas, regla 5 | Corrección documental de la épica 05 | 2026-11-19 | Aplicada |
 | P-013 | `DESIGN.md` · 2.1 Superficies, 2.3 Contraste y 5. Componentes (fila Encabezado) | Iteración 05-01 | 2026-11-19 | Aplicada |
-| P-014 | `DESIGN.md` · 5. Componentes (filas Sección de unidad y Modal) y 5.1 Botones | Iteración 05-05 | 2026-11-20 | Pendiente |
-| P-015 | `DESIGN.md` · 4. Espaciado, retícula y forma (Contenedor) y 5. Componentes (fila Tarjeta de bloque) | Iteración 05-05 (ajuste de alto) | 2026-11-20 | Pendiente |
+| P-014 | `DESIGN.md` · 5. Componentes (filas Sección de unidad y Modal) y 5.1 Botones | Iteración 05-05 | 2026-11-20 | Aplicada |
+| P-015 | `DESIGN.md` · 4. Espaciado, retícula y forma (Contenedor) y 5. Componentes (fila Tarjeta de bloque) | Iteración 05-05 (ajuste de alto) | 2026-11-20 | Aplicada |
+| P-016 | `DESIGN.md` · 5. Componentes (fila Modal) | Iteración 05-06 | 2026-11-20 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -443,6 +444,7 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 5. Componentes (filas «Sección de unidad» y «Modal») y 5.1 Botones
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-20 con `grep` en `DESIGN.md` de la rama 05-06. Además del texto propuesto, el desarrollador cambió el inicio de la fila «Sección de unidad» a «Cabe en una pantalla de escritorio de 1440 × 900; en 1366 × 657 ocupa algo más de una pantalla (unos 1,4 de alto).», que va más allá de la propuesta.
 - **Por qué:** en la 05-05 la sexta tarjeta no puede llevar la lista «Terminado cuando…» abierta: con 5 a 7 ítems de 44 px de alto agrega unas 100 palabras por unidad (se pasa del máximo de 300 palabras visibles fuera de los modales) y la tarjeta sería la más alta de la cuadrícula. El desarrollador decidió el 2026-11-20 que la tarjeta muestre el entregable y un botón que abre la lista en un modal. Además, los botones de la cabecera de la unidad van sobre el color de la unidad, y el contorno y el hover de `DESIGN.md` 5.1 (`--color-primario`) no se ven sobre la U1 (`#007EA7`) ni sobre la U3. Si no se aplica, `DESIGN.md` describe una sexta tarjeta y un conjunto de modales distintos de los construidos.
 
 **1 · Sección 5. Componentes, fila «Sección de unidad». Texto actual** (copiado literalmente de `DESIGN.md`):
@@ -486,6 +488,7 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 4. Espaciado, retícula y forma (Contenedor) y 5. Componentes (fila «Tarjeta de bloque»)
+- **Estado:** aplicada por el desarrollador con el «Texto propuesto» tal cual, comprobada el 2026-11-20 con `grep` en `DESIGN.md` de la rama 05-06.
 - **Por qué:** con el contenedor de 1100 px y dos claves por tarjeta, cada unidad medía de 986 a 1090 px en 1440 × 900, con 823 px disponibles (bitácora 05-05). El desarrollador aprobó el 2026-11-20 tres palancas en orden (espaciado, ancho hasta 1280 px y una sola clave); solo con las tres las 4 unidades caben. Si no se aplica, `DESIGN.md` describe un contenedor y una tarjeta distintos de los construidos. Se aplica antes del merge de la 05-05.
 
 **1 · Sección 4, Contenedor. Texto actual** (copiado literalmente de `DESIGN.md`):
@@ -510,4 +513,22 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 
 ```text
 | Tarjeta de bloque | Número y minutos en IBM Plex Mono, título (`h3`), «Qué harás» y la primera clave; acciones «Ver detalle» y «Ver prompt» o «Prompts (n)». Superficie `--color-fondo` con borde de 1 px `--color-linea`, franja superior del color de la unidad y sombra de su unidad. |
+```
+
+## P-016 · Franja neutra para modales fuera de una unidad
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 5. Componentes (fila «Modal»)
+- **Por qué:** la 05-06 abre «Trayectoria completa» del instructor en un modal (decisión del desarrollador del 2026-11-20), y la fila «Modal» solo contempla la franja del color de una unidad. El componente usa `--color-primario` cuando el modal no tiene unidad. Si no se aplica, `DESIGN.md` no describe el modal del instructor.
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, título, botón «Cerrar» de 44 px, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
+```
+
+**Texto propuesto:**
+
+```text
+| Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, o `--color-primario` si el modal no pertenece a una unidad, como la trayectoria del instructor, título, botón «Cerrar» de 44 px, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
 ```

@@ -8,6 +8,7 @@
 import type { UnidadConBloques } from "../lib/unidades";
 import { bloqueUnidad } from "../lib/colores-unidad";
 import { idModalDetalle, idModalUnidad } from "../lib/modales";
+import BarraAvance from "./BarraAvance.astro";
 import BotonModal from "./BotonModal.astro";
 
 interface Props {
@@ -37,20 +38,7 @@ const idTitulo = `titulo-unidad-${numero}`;
     </h2>
     <p class="mt-1">{objetivoBreve}</p>
   </div>
-  <div class="min-w-0 self-start">
-    <div
-      aria-hidden="true"
-      class="h-2 rounded-pildora bg-current/25 [&>span]:block [&>span]:h-full [&>span]:rounded-pildora [&>span]:bg-current"
-    >
-      <span
-        style={`margin-left: ${avance.desde}%; width: ${avance.hasta - avance.desde}%`}
-      ></span>
-    </div>
-    <p class="mt-2 font-codigo">
-      <span class="sr-only">Avance del curso:</span>
-      {avance.desde}&nbsp;% → {avance.hasta}&nbsp;%
-    </p>
-  </div>
+  <BarraAvance desde={avance.desde} hasta={avance.hasta} class="self-start" />
   <div class="flex flex-wrap gap-2 empty:hidden lg:col-span-2">
     {antes && (
       <BotonModal

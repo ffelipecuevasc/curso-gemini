@@ -1,7 +1,7 @@
 # Iteración 05-06 · Portada y ruta en un pantallazo
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/05-06-portada-ruta
 - **Depende de:** 05-01, 05-05 (reutiliza su barra de avance, `src/lib/colores-unidad.ts`, `Modal.astro` y `BotonModal.astro`) y propuesta P-009 aplicada
 - **Especificación:** —
@@ -44,7 +44,17 @@ Que el primer pantallazo muestre el curso completo: título, lema y las 4 unidad
 
 > Se completa durante la iteración con el texto del botón y el resumen de la trayectoria que apruebe el desarrollador.
 
-- …
+> Aprobado por el desarrollador el 2026-11-20, tal cual.
+
+- Botón principal: «Empezar por la Unidad 1» (enlaza a `#unidad-1`; cita de `DESIGN.md:108`).
+- Resumen visible de la trayectoria: líneas 18 y 20 de `src/content/instructor.yaml`, literales: «Más de 12 años en docencia y formación técnica. Docente universitario en IPLACEX (2024 a la fecha) y antes en INACAP (2012–2020), Duoc UC e IACC.» e «Instructor certificado de IA con Gemini en programas corporativos para Capacita Tu Futuro (más de 50 ejecutivos y colaboradores, octubre de 2026) y Skillnest (junio a agosto de 2026).».
+- Modal «Trayectoria completa» (botón «Ver trayectoria completa», de `DESIGN.md`, fila «Instructor»): formación, certificación con descripción, fechas, enlace e insignia (si existe), el resto de la trayectoria y «Fundador de la comunidad Pulso Devs.».
+
+## Decisiones del desarrollador
+
+- 2026-11-20: textos aprobados tal cual (arriba); la certificación de Gemini consta en las fuentes y se muestra primero.
+- 2026-11-20: `unidad` opcional en `Modal.astro`; sin ella la franja usa `--color-primario`. Propuesta P-016 (`DESIGN.md`, fila «Modal»), pendiente.
+- 2026-11-20: P-014 y P-015 aplicadas en `DESIGN.md` (comprobado con `grep`).
 
 ## Tareas
 
@@ -66,9 +76,9 @@ Que el primer pantallazo muestre el curso completo: título, lema y las 4 unidad
 
 - [ ] En 1440 × 900 y 1366 × 657, el título, el lema, el botón principal y las 4 tarjetas de unidad completas se ven sin desplazarse (captura en la bitácora).
 - [ ] La sección del instructor mide como máximo una altura de ventana en 1440 × 900.
-- [ ] Los logotipos de Google, Gemini y Chrome conservan sus SVG originales sin cambios (comparación de los archivos y del marcado con `git diff`).
+- [x] Medido: `git diff --stat -- src/assets` vacío; los SVG no cambian (solo su ubicación y tamaño en `Portada.astro`). Los logotipos de Google, Gemini y Chrome conservan sus SVG originales sin cambios (comparación de los archivos y del marcado con `git diff`).
 - [ ] Las anclas `#inicio`, `#ruta`, `#unidad-1` a `#unidad-4` e `#instructor` siguen funcionando desde el encabezado.
-- [ ] 1 `h1`; cada `section` con `aria-labelledby`; contraste AA de las tarjetas sobre su color.
+- [ ] 1 `h1`; cada `section` con `aria-labelledby`; contraste AA de las tarjetas sobre su color. Medido por script: 1 `h1`, 7 `section` con `aria-labelledby`, 0 saltos de nivel; el contraste no cambia (mismos pares de color de la 02-03), pero lo confirma el desarrollador.
 - [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 0 B de JavaScript nuevo; LCP sin empeorar respecto de la medición de la 04-04 (Lighthouse móvil sobre `pnpm preview`).
 
 ## Riesgos

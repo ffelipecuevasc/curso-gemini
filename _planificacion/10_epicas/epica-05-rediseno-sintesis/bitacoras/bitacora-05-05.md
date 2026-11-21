@@ -3,7 +3,7 @@
 - **Fecha:** 2026-11-20
 - **Agente:** Claude Code (Sonnet 5.5)
 - **Rama:** iteracion/05-05-unidad-una-pantalla
-- **Estado final:** En revisión
+- **Estado final:** Terminada (el desarrollador la probó en su navegador el 2026-11-20 sin observaciones; dicho por él, no verificado por el agente)
 
 ## Resumen
 

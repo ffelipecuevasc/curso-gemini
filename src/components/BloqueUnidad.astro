@@ -1,8 +1,11 @@
 ---
-// Un bloque del mosaico de la ruta (DESIGN.md, secciones 2.2, 4 y 5).
-// Todo el texto del curso viene de la ficha de la unidad; el avance se
-// escribe con los tramos de la RDA-008 guardados en `avance`.
+// Una tarjeta del mosaico de la ruta (DESIGN.md, secciones 2.2, 4 y 5):
+// número, nombre, mini-proyecto en 2 líneas y barra de avance (RDA-008),
+// enlazada a la sección de su unidad. Todo el texto viene de la ficha; el
+// mini-proyecto completo está en el modal «Sobre la unidad».
 import type { CollectionEntry } from "astro:content";
+import { bloqueUnidad } from "../lib/colores-unidad";
+import BarraAvance from "./BarraAvance.astro";
 
 interface Props {
   unidad: CollectionEntry<"unidades">;
@@ -10,16 +13,6 @@ interface Props {
 
 const { unidad } = Astro.props;
 const { numero, titulo, miniProyecto, avance } = unidad.data;
-
-// Clases completas por unidad para que Tailwind las detecte. La U3 lleva
-// borde de 1 px, transparente en claro y #00B0E8 en oscuro (token).
-const colores: Record<number, string> = {
-  1: "bg-u1 text-sobre-u1",
-  2: "bg-u2 text-sobre-u2",
-  3: "bg-u3 text-sobre-u3 border border-borde-u3",
-  4: "bg-u4 text-sobre-u4",
-};
-
 const base = `ruta-u${numero}`;
 ---
 
@@ -28,26 +21,26 @@ const base = `ruta-u${numero}`;
     href={`#unidad-${numero}`}
     aria-labelledby={`${base}-numero ${base}-titulo`}
     aria-describedby={`${base}-proyecto ${base}-avance`}
-    class:list={[
-      "group flex w-full flex-col gap-4 rounded-bloque rounded-bl-esquina p-6 no-underline transition-transform duration-200 hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-8",
-      colores[numero],
-    ]}
+    class:list={["tarjeta-ruta group", bloqueUnidad[numero]]}
   >
     <p id={`${base}-numero`} class="font-display font-semibold">
       Unidad {numero}
     </p>
     <h3
       id={`${base}-titulo`}
-      class="text-2xl leading-tight font-semibold wrap-break-word group-hover:underline"
+      class="titulo-ruta wrap-break-word group-hover:underline"
     >
       {titulo}
     </h3>
-    <p id={`${base}-proyecto`} class="wrap-break-word">
-      <span class="font-medium">Mini-proyecto:</span> {miniProyecto.titulo}
+    <p id={`${base}-proyecto`} class="line-clamp-2 wrap-break-word">
+      <span class="font-medium">Mini-proyecto:</span>{" "}
+      {miniProyecto.titulo}
     </p>
-    <p id={`${base}-avance`} class="mt-auto font-codigo">
-      <span class="sr-only">Avance del curso: </span>
-      {`${avance.desde} % → ${avance.hasta} %`}
-    </p>
+    <BarraAvance
+      id={`${base}-avance`}
+      desde={avance.desde}
+      hasta={avance.hasta}
+      class="mt-auto"
+    />
   </a>
 </li>

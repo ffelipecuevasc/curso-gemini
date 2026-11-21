@@ -1,7 +1,7 @@
 # Iteración 05-05 · La unidad en una pantalla
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** En revisión
+- **Estado:** Terminada (prueba en navegador dicha por el desarrollador el 2026-11-20, sin observaciones)
 - **Rama sugerida:** iteracion/05-05-unidad-una-pantalla
 - **Depende de:** 05-04 (Terminada) y P-009 aplicada
 - **Especificación:** —

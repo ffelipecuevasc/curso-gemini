@@ -1,0 +1,28 @@
+---
+// Barra del tramo de avance de una unidad (RDA-008; DESIGN.md, sección 5):
+// pista decorativa con el segmento `desde`–`hasta` y el texto en IBM Plex
+// Mono. Toma el color del texto de su contenedor (currentColor), así sirve
+// sobre cualquier bloque de color. La usan CabeceraUnidad y BloqueUnidad.
+interface Props {
+  desde: number;
+  hasta: number;
+  /** `id` del párrafo, si otro elemento lo referencia (aria-describedby). */
+  id?: string;
+  class?: string;
+}
+
+const { desde, hasta, id, class: clase } = Astro.props;
+---
+
+<div class:list={["min-w-0", clase]}>
+  <div
+    aria-hidden="true"
+    class="h-2 rounded-pildora bg-current/25 [&>span]:block [&>span]:h-full [&>span]:rounded-pildora [&>span]:bg-current"
+  >
+    <span style={`margin-left: ${desde}%; width: ${hasta - desde}%`}></span>
+  </div>
+  <p id={id} class="mt-2 font-codigo">
+    <span class="sr-only">Avance del curso:</span>
+    {desde}&nbsp;% → {hasta}&nbsp;%
+  </p>
+</div>

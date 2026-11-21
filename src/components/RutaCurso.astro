@@ -1,6 +1,7 @@
 ---
-// Sección «Ruta del curso» (DESIGN.md, secciones 4 y 5): mosaico de las
-// 4 unidades, de 1 columna en móvil, 2 desde 640 px y 4 desde 1024 px.
+// «Ruta del curso» (DESIGN.md, sección 5, «Portada y ruta»): va dentro de la
+// portada, como sección anidada con su `id="ruta"` y su h2, y muestra las
+// 4 unidades en mosaico de 1 columna en móvil y 2 × 2 desde 640 px.
 // Usa obtenerUnidadesConBloques() para que las comprobaciones entre
 // unidades y bloques (RDA-009) corran en cada build.
 import { obtenerUnidadesConBloques } from "../lib/unidades";
@@ -9,15 +10,11 @@ import BloqueUnidad from "./BloqueUnidad.astro";
 const unidades = await obtenerUnidadesConBloques();
 ---
 
-<section
-  id="ruta"
-  aria-labelledby="titulo-ruta"
-  class="mx-auto min-h-svh max-w-sitio border-t border-linea px-6 py-16"
->
-  <h2 id="titulo-ruta" class="text-3xl font-semibold">
+<section id="ruta" aria-labelledby="titulo-ruta" class="relative">
+  <h2 id="titulo-ruta" class="text-2xl font-semibold">
     Ruta del curso
   </h2>
-  <ol class="mt-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-4">
+  <ol class="mt-4 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2">
     {unidades.map((unidad) => (
       <BloqueUnidad unidad={unidad} />
     ))}

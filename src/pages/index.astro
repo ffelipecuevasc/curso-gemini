@@ -3,9 +3,6 @@
 // las unidades salen de sus fichas (src/content/unidades/), no de este archivo.
 import Base from "../layouts/Base.astro";
 import Portada from "../components/Portada.astro";
-// RutaCurso también llama a obtenerUnidadesConBloques(): las comprobaciones
-// de unidades, bloques y referencias (RDA-009) corren en cada build.
-import RutaCurso from "../components/RutaCurso.astro";
 import SeccionUnidad from "../components/SeccionUnidad.astro";
 import Instructor from "../components/Instructor.astro";
 import { obtenerUnidadesConBloques } from "../lib/unidades";
@@ -29,7 +26,6 @@ const enlaces = [
   enlaces={enlaces}
 >
   <Portada />
-  <RutaCurso />
   {unidades.map((unidad) => (
     <SeccionUnidad unidad={unidad} />
   ))}

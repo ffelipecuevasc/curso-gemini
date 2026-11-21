@@ -30,7 +30,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-014 | `DESIGN.md` · 5. Componentes (filas Sección de unidad y Modal) y 5.1 Botones | Iteración 05-05 | 2026-11-20 | Aplicada |
 | P-015 | `DESIGN.md` · 4. Espaciado, retícula y forma (Contenedor) y 5. Componentes (fila Tarjeta de bloque) | Iteración 05-05 (ajuste de alto) | 2026-11-20 | Aplicada |
 | P-016 | `DESIGN.md` · 5. Componentes (fila Modal) | Iteración 05-06 | 2026-11-20 | Aplicada |
-| P-017 | `DESIGN.md` · 7. Movimiento (Modales) | Iteración 05-07 | 2026-11-20 | Pendiente |
+| P-017 | `DESIGN.md` · 4. Forma (Sombras) y 7. Movimiento | Iteración 05-07 | 2026-11-20 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -535,13 +535,37 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 | Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, o `--color-primario` si el modal no pertenece a una unidad, como la trayectoria del instructor, título, botón «Cerrar» de 44 px, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
 ```
 
-## P-017 · Origen de la transición al modal cuando no hay tarjeta
+## P-017 · Efectos de la 05-07: origen del modal, tokens y decisiones que no están en `DESIGN.md`
 
 - **Documento:** `DESIGN.md`
-- **Sección:** 7. Movimiento (viñeta «Modales»)
-- **Por qué:** los modales también se abren desde la cabecera de cada unidad («Sobre la unidad», «Recursos», «Descargas») y desde el instructor («Ver trayectoria completa»), donde no hay tarjeta. El desarrollador decidió el 2026-11-20 que en esos casos el origen de la transición es el propio botón. Si no se aplica, `DESIGN.md` no describe qué se anima en esos modales.
+- **Sección:** 4. Espaciado, retícula y forma (viñeta «Sombras») y 7. Movimiento (viñetas «Transiciones», «Modales», «Barra de avance», «Aparición» y «Brillo»)
+- **Por qué:** los modales también se abren desde la cabecera de cada unidad («Sobre la unidad», «Recursos», «Descargas») y desde el instructor («Ver trayectoria completa»), donde no hay tarjeta. El desarrollador decidió el 2026-11-20 que en esos casos el origen de la transición es el propio botón. Además, la 05-07 creó tokens y reglas que `DESIGN.md` no nombra: `--halo-u1` a `--halo-u4`, `--tinte`, `--duracion-hover` y `--duracion-modal`; los tokens de sombra son colores; la U3 usa `--color-borde-u3` en oscuro; la subida con foco es solo con teclado; el desfase es por columna; el fondo del modal no se funde durante la View Transition; el brillo de la ruta usa el color del texto del bloque. Si no se aplica, `DESIGN.md` no describe lo construido y otro agente podría «corregirlo» hacia el texto actual. Ampliada el 2026-11-20 en la medición de la 05-07.
 
-**Texto actual** (copiado literalmente de `DESIGN.md`):
+**1 · Sección 4, «Sombras». Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+- Sombras: tokens `--sombra-u1` a `--sombra-u4` (color de la unidad mezclado con `color-mix()`) y `--sombra-neutra`. En reposo, sombra suave; en hover y foco, la tarjeta sube 4 px y la sombra se amplía. En modo oscuro, menos opacidad y un halo de 1 px del color de la unidad.
+```
+
+**Texto propuesto:**
+
+```text
+- Sombras: tokens de color `--sombra-u1` a `--sombra-u4` (color de la unidad mezclado con `color-mix()`) y `--sombra-neutra` (tarjetas sin unidad); la forma de la sombra la pone la tarjeta. En reposo, sombra suave; en hover y con foco de teclado (`:focus-visible`, no con un clic), la tarjeta sube 4 px y la sombra se amplía. En modo oscuro, menos opacidad y un halo de 1 px con los tokens `--halo-u1` a `--halo-u4` (transparentes en claro). La U3 usa `--color-borde-u3` en oscuro para la sombra, el halo, el brillo y la barra de avance, porque `#003B51` no se ve sobre `#00131D`.
+```
+
+**2 · Sección 7, primera viñeta. Texto actual:**
+
+```text
+- Transiciones de 150 a 300 ms en hover y foco. Se animan sobre todo `transform` y `opacity`; los cambios de color de fondo y de sombra en hover no superan los 200 ms.
+```
+
+**Texto propuesto:**
+
+```text
+- Transiciones de 150 a 300 ms en hover y foco. Se animan sobre todo `transform` y `opacity`; los cambios de color de fondo y de sombra en hover no superan los 200 ms. Duraciones en tokens: `--duracion-hover` (200 ms) y `--duracion-modal` (350 ms).
+```
+
+**3 · Sección 7, «Modales». Texto actual:**
 
 ```text
 - Modales: al abrir desde una tarjeta, la tarjeta se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`; sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo.
@@ -550,5 +574,21 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 **Texto propuesto:**
 
 ```text
-- Modales: al abrir desde una tarjeta o, si no la hay, desde el botón, ese origen se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`, y vuelve a él al cerrar; sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo.
+- Modales: al abrir desde una tarjeta o, si no la hay, desde el botón, ese origen se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`, y vuelve a él al cerrar; la página queda quieta y el fondo del modal aparece sin fundido. No se inicia si hay otra transición en curso (el cambio de modo). Sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo; el cierre es inmediato.
+```
+
+**4 · Sección 7, barra, aparición y brillo. Texto actual:**
+
+```text
+- Barra de avance de lectura de 3 px bajo el encabezado, guiada por el desplazamiento (`animation-timeline: scroll(root)`), con el color de la unidad visible.
+- Las tarjetas de cada unidad aparecen al entrar en la ventana (opacidad y 12 px, desfase de 40 ms) con `animation-timeline: view()`; sin soporte, se ven desde el inicio.
+- Brillo radial del color de la unidad al 12 % que sigue al cursor en las tarjetas, solo con puntero fino.
+```
+
+**Texto propuesto:**
+
+```text
+- Barra de avance de lectura de 3 px bajo el encabezado del sitio, guiada por el desplazamiento (`animation-timeline: scroll(root)`), con el color de la unidad visible (`<html data-unidad>`, que pone el script del encabezado); fuera de una unidad, `--color-primario`.
+- Las tarjetas de cada unidad aparecen al entrar en la ventana (opacidad y 12 px) con `animation-timeline: view()`, con un desfase según la columna (8 % del tramo de entrada por columna, el equivalente de unos 40 ms); sin soporte, se ven desde el inicio.
+- Brillo radial al 12 % que sigue al cursor en las tarjetas, solo con puntero fino: del color de la unidad (`--tinte`) en las tarjetas de bloque y del color del texto del bloque en las de la ruta, porque van sobre el color de la unidad.
 ```

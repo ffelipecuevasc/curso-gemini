@@ -11,7 +11,50 @@ Paso 0: 05-06 `Terminada` (los 7 pasos de prueba sin observaciones, dicho por el
 
 ## Línea base del desarrollador (dicha por él, no verificada por el agente)
 
-El pedido de la Fase 2 trajo los campos vacíos: Rendimiento __, LCP __ (elemento: __), CLS __, TBT __, tareas > 50 ms: __. **La línea base no se entregó.** Hay que medirla sobre `main` (sin efectos) antes de comparar con el paso 6 del procedimiento.
+El pedido de la Fase 2 trajo los campos vacíos: Rendimiento __, LCP __ (elemento: __), CLS __, TBT __, tareas > 50 ms: __. **La línea base no se entregó.** Hay que medirla sobre `main` (sin efectos) antes de comparar con el paso 6 del procedimiento. Actualización del 2026-11-20: el desarrollador pidió que la midiera el agente; está en «Mediciones».
+
+## Mediciones (agente, 2026-11-20)
+
+**Método** (el de la bitácora 04-04, con los scripts rehechos porque los del scratchpad ya no existían):
+- Equipo: Windows 10 Pro 10.0.19045, Node 24.16.0 y PNPM 12.21.0.
+- Navegador y herramienta: Google Chrome 157.0.8103.79 sin interfaz (`--headless=new`, con `CHROME_PATH`) y Lighthouse 13.6.0 con `pnpm dlx` (no se agregó al repositorio).
+- Perfil móvil por defecto (CPU ×4, RTT 150 ms y 1,6 Mbps). En cada caso se hicieron 3 corridas y se tomó la mediana.
+- Orden alternado A, B, A sin beacon, B sin beacon, repetido 3 veces. benchmarkIndex de las 12 corridas: de 1425 a 2142.
+
+**Casos:**
+- **A** es `main` en `8c75807` (05-06). Se exportó con `git archive` a una carpeta del scratchpad (el worktree fue denegado), con `pnpm install --frozen-lockfile` y `pnpm build`, y se sirvió con `pnpm preview` en el puerto 4331.
+- **B** es la rama (`21e6c18`), servida con `pnpm preview` en el puerto 4332.
+- Antes de medir se comprobó que cada puerto servía su versión: solo B tiene `encabezado-sitio`. Al terminar, los dos puertos rechazan la conexión (`curl` 7) y `netstat` no muestra ningún proceso escuchando.
+
+**Corridas individuales** (Rendimiento · LCP s · TBT ms; benchmarkIndex entre paréntesis):
+
+| Caso | Corrida 1 | Corrida 2 | Corrida 3 |
+| :--- | :-------- | :-------- | :-------- |
+| A con beacon | 99 · 2,00 · 64 (1618) | 98 · 1,23 · 158 (1425) | 98 · 1,22 · 160 (2100) |
+| B con beacon | 99 · 1,20 · 103 (1614) | 100 · 1,17 · 68 (1862) | 98 · 1,26 · 155 (2037) |
+| A sin beacon | 99 · 1,98 · 98 (1912) | 98 · 1,98 · 113 (1837) | 100 · 1,08 · 42 (1878) |
+| B sin beacon | 96 · 1,98 · 200 (1653) | 100 · 1,19 · 80 (1951) | 99 · 1,98 · 104 (2143) |
+
+**Medianas** (Rendimiento / Accesibilidad / Buenas prácticas / SEO; LCP; CLS; TBT):
+
+| Caso | Notas | LCP | CLS | TBT |
+| :--- | :---- | :-- | :-- | :-- |
+| A (05-06) con beacon | 98 / 100 / 96 / 100 | 1,23 s | 0,0002 | 158 ms |
+| B (05-07) con beacon | 99 / 100 / 96 / 100 | 1,20 s | 0,0002 | 103 ms |
+| A (05-06) sin beacon | 99 / 100 / 100 / 100 | 1,98 s | 0,0002 | 98 ms |
+| B (05-07) sin beacon | 99 / 100 / 100 / 100 | 1,98 s | 0,0002 | 104 ms |
+
+- **Elemento LCP:** el `h1` («Gemini & Google Suite en el Entorno Laboral») en las 12 corridas.
+- **LCP bimodal:** el LCP es de unos 1,2 s o de unos 1,98 s, con el mismo elemento, y pasa en A y en B por igual. Es ruido del equipo, no de la rama.
+- **Buenas prácticas en 96** con beacon: es el error CORS del beacon en localhost, igual que en la 04-04. Sin beacon da 100.
+- **Diferencia B − A:** Rendimiento +1 con beacon y 0 sin beacon. TBT −55 ms con beacon y +6 ms sin beacon, dentro del ruido (en A va de 42 a 160 ms entre corridas).
+- **Criterio de la 05-07** (no bajar más de 2 puntos): **se cumple**. La rama no baja frente a `main`, así que no hay una causa que investigar.
+
+**PageSpeed Insights** (API v5 `runPagespeed`, strategy=mobile, sobre la URL publicada, que corresponde a `main`, es decir, la 05-06 y no la 05-07): la primera llamada respondió **HTTP 429** («Queries per day» agotada) y no se insistió. **No medido.** Sería una lectura del laboratorio de Google, no la del equipo.
+
+**Límites de esta medición:** Lighthouse no carga la página con reducir movimiento, no desplaza ni pasa el puntero, y no abre modales. Por eso no mide la barra de lectura, la aparición escalonada, el CLS al interactuar ni los cuadros largos con el puntero sobre las tarjetas; tampoco mide INP (la referencia es TBT). Todo eso queda para el desarrollador en los pasos 1 a 5, 7 y 8 del procedimiento.
+
+**Riesgo para la meta de ≥ 95 de la 05-08:** en local la rama da 99, pero en la 04-04 la URL publicada dio 94 con Lighthouse del equipo y 87 después del merge (TBT 496 ms). La diferencia entre local y publicado viene del beacon y de la red real, y esta iteración no la mide. La meta publicada sigue en riesgo hasta la medición de la 05-08.
 
 ## Archivos creados o modificados
 
@@ -57,7 +100,7 @@ El pedido de la Fase 2 trajo los campos vacíos: Rendimiento __, LCP __ (element
 - [ ] CLS = 0: lo mide el desarrollador (paso 3). Por construcción solo se animan `translate`, `transform`, `opacity` y `stroke-dashoffset`.
 - [ ] Sin tareas > 50 ms: lo mide el desarrollador (paso 4).
 - [x] JavaScript propio ≤ 3 KB gzip: 1774 B.
-- [ ] Lighthouse ≥ 95 y a no más de 2 puntos de la línea base: falta la línea base y la medición (paso 6).
+- [x] Lighthouse ≥ 95 y a no más de 2 puntos de la línea base: rama 99 contra `main` 98 con beacon, y 99 contra 99 sin beacon (mediana de 3, medido por el agente; ver «Mediciones»).
 - [x] Solo colores de la paleta: 0 HEX nuevos fuera de un comentario; todo con `color-mix()` sobre tokens.
 - [ ] Regresiones: build sin advertencias, check 0/0/0 y 1 `h1` verificados por el agente; el teclado y el foco los confirma el desarrollador (paso 8).
 
@@ -76,7 +119,8 @@ El pedido de la Fase 2 trajo los campos vacíos: Rendimiento __, LCP __ (element
 - La P-017 está pendiente en `DESIGN.md`.
 - Si `cancel` no se puede cancelar (por ejemplo, un segundo Esc sin activación del usuario), el modal cierra sin transición.
 - El `::backdrop` aparece de golpe durante la View Transition (la raíz queda quieta a propósito).
-- Línea base de Lighthouse sin entregar.
+- La línea base de Lighthouse la midió el agente (ver «Mediciones»). PageSpeed Insights no se midió (HTTP 429).
+- La P-017 se amplió con `--halo-uN`, `--tinte`, las duraciones, la U3 en oscuro, la subida solo con foco de teclado, el desfase por columna, el fondo del modal sin fundido durante la transición y la barra de lectura.
 
 ## Revisión
 

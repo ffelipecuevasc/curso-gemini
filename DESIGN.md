@@ -98,7 +98,7 @@ Reglas:
 - Contenedor: ancho máximo de 1100 px, márgenes laterales de 1,5 rem en móvil; la sección de cada unidad llega a 1280 px desde 1280 px de ancho de ventana, para que quepa en una pantalla de escritorio.
 - Retícula: móvil primero; mosaico de 1 columna en móvil, 2 desde 640 px y 4 desde 1024 px (la ruta tiene 4 unidades), siempre con `minmax(0, 1fr)`.
 - Radios: 24 a 32 px en bloques, con esquina asimétrica en los bloques destacados (`28px 28px 28px 6px`); píldoras con radio completo.
-- Sombras: tokens `--sombra-u1` a `--sombra-u4` (color de la unidad mezclado con `color-mix()`) y `--sombra-neutra`. En reposo, sombra suave; en hover y foco, la tarjeta sube 4 px y la sombra se amplía. En modo oscuro, menos opacidad y un halo de 1 px del color de la unidad.
+- Sombras: tokens de color `--sombra-u1` a `--sombra-u4` (color de la unidad mezclado con `color-mix()`) y `--sombra-neutra` (tarjetas sin unidad); la forma de la sombra la pone la tarjeta. En reposo, sombra suave; en hover y con foco de teclado (`:focus-visible`, no con un clic), la tarjeta sube 4 px y la sombra se amplía. En modo oscuro, menos opacidad y un halo de 1 px con los tokens `--halo-u1` a `--halo-u4` (transparentes en claro). La U3 usa `--color-borde-u3` en oscuro para la sombra, el halo, el brillo y la barra de avance, porque `#003B51` no se ve sobre `#00131D`.
 
 ## 5. Componentes
 
@@ -138,12 +138,12 @@ Todos: forma de píldora, alto mínimo de 44 px, `cursor: pointer`, foco visible
 
 ## 7. Movimiento
 
-- Transiciones de 150 a 300 ms en hover y foco. Se animan sobre todo `transform` y `opacity`; los cambios de color de fondo y de sombra en hover no superan los 200 ms.
+- Transiciones de 150 a 300 ms en hover y foco. Se animan sobre todo `transform` y `opacity`; los cambios de color de fondo y de sombra en hover no superan los 200 ms. Duraciones en tokens: `--duracion-hover` (200 ms) y `--duracion-modal` (350 ms).
 - Cambio de modo: el modo nuevo se revela con un círculo de borde difuminado que crece desde el centro de la pantalla hasta cubrirla, en 1 s, con la curva `--ease-expo-out` (`cubic-bezier(0.16, 1, 0.3, 1)`). Se hace con la API View Transitions (`document.startViewTransition`); el modo anterior queda quieto debajo. En navegadores sin esa API, el modo cambia al instante.
-- Modales: al abrir desde una tarjeta, la tarjeta se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`; sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo.
-- Barra de avance de lectura de 3 px bajo el encabezado, guiada por el desplazamiento (`animation-timeline: scroll(root)`), con el color de la unidad visible.
-- Las tarjetas de cada unidad aparecen al entrar en la ventana (opacidad y 12 px, desfase de 40 ms) con `animation-timeline: view()`; sin soporte, se ven desde el inicio.
-- Brillo radial del color de la unidad al 12 % que sigue al cursor en las tarjetas, solo con puntero fino.
+- Modales: al abrir desde una tarjeta o, si no la hay, desde el botón, ese origen se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`, y vuelve a él al cerrar; la página queda quieta y el fondo del modal aparece sin fundido. No se inicia si hay otra transición en curso (el cambio de modo). Sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo; el cierre es inmediato.
+- Barra de avance de lectura de 3 px bajo el encabezado del sitio, guiada por el desplazamiento (`animation-timeline: scroll(root)`), con el color de la unidad visible (`<html data-unidad>`, que pone el script del encabezado); fuera de una unidad, `--color-primario`.
+- Las tarjetas de cada unidad aparecen al entrar en la ventana (opacidad y 12 px) con `animation-timeline: view()`, con un desfase según la columna (8 % del tramo de entrada por columna, el equivalente de unos 40 ms); sin soporte, se ven desde el inicio.
+- Brillo radial al 12 % que sigue al cursor en las tarjetas, solo con puntero fino: del color de la unidad (`--tinte`) en las tarjetas de bloque y del color del texto del bloque en las de la ruta, porque van sobre el color de la unidad.
 - No se usan animaciones infinitas, parallax, fondos animados ni efectos sobre los logotipos.
 - Con `prefers-reduced-motion: reduce`, se quitan todas las transiciones y animaciones: el revelado del cambio de modo, la transición de los modales, la barra de avance, las apariciones, el brillo y el desplazamiento suave a las anclas.
 

@@ -1,7 +1,7 @@
 # Iteración 05-08 · Pulido y verificación final del rediseño
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/05-08-verificacion
 - **Depende de:** 05-07
 - **Especificación:** —
@@ -22,6 +22,10 @@ Comprobar con mediciones que el rediseño cumple el criterio de término de la �
 - Revisión con el detector de la skill Impeccable (`impeccable detect --json`) sobre los componentes tocados en la épica, y corrección de sus hallazgos o justificación en la bitácora.
 - Lista de diferencias entre `DESIGN.md` y la implementación; si las hay, propuestas en `propuestas-documentos-protegidos.md`.
 - Bitácora de cierre de la épica 05.
+
+## Decisiones del desarrollador
+
+- 2026-11-20: detector de Impeccable autorizado solo como `pnpm dlx impeccable@<versión fija>` y solo `detect --json`, con la salida fuera del repositorio; las tarjetas de bloque se quedan en 16 px y se documentan como excepción (P-020); la definición se actualiza sin cambiar los criterios de término; la épica no se cierra hasta la revisión en notebook y teléfono.
 
 ## Tareas
 

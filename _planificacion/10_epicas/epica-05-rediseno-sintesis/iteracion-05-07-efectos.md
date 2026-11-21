@@ -1,7 +1,7 @@
 # Iteración 05-07 · Capa de efectos con propósito
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/05-07-efectos
 - **Depende de:** 05-05, 05-06 y propuestas P-009 y P-010 aplicadas
 - **Especificación:** —

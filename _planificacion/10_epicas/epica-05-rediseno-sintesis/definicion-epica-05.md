@@ -1,7 +1,7 @@
 # Épica 05 · Rediseño visual y síntesis del contenido
 
 - **Estado:** En curso
-- **Objetivo:** que cada unidad quepa en una pantalla de escritorio (incluido un notebook corporativo de 1366 × 768), con lo esencial a la vista y el detalle en modales, y que el sitio dé un salto de calidad visual (estados de interacción claros, profundidad y movimiento con propósito) sin salir de la paleta ni de las tipografías de felipecuevas.dev (RDA-004).
+- **Objetivo:** que cada unidad quepa en una pantalla de escritorio (incluido un notebook corporativo de 1366 × 768; actualización del 2026-11-20: cumplido en 1440 × 900; en 1366 × 657 no (decisión del desarrollador)), con lo esencial a la vista y el detalle en modales, y que el sitio dé un salto de calidad visual (estados de interacción claros, profundidad y movimiento con propósito) sin salir de la paleta ni de las tipografías de felipecuevas.dev (RDA-004).
 
 ## Por qué existe esta épica
 
@@ -16,7 +16,7 @@ Diagnóstico del 2026-11-18, hecho con la skill Impeccable sobre el sitio public
 ## Alcance
 
 1. Estados de interacción visibles en todos los controles: cursor, hover, presionado y foco, con un cambio de color perceptible y el botón de modo con su acción visible.
-2. Modelo de contenido con síntesis por bloque (`sintesis`: resumen, «Qué harás» y hasta 2 claves) y por unidad (`objetivoBreve`), con límites de palabras validados por Zod al compilar (RDA-012).
+2. Modelo de contenido con síntesis por bloque (`sintesis`: resumen, «Qué harás» y 1 clave en la tarjeta; la segunda, si existe, va al modal de detalle; actualizado el 2026-11-20 según RDA-012, 05-05) y por unidad (`objetivoBreve`), con límites de palabras validados por Zod al compilar (RDA-012).
 3. Síntesis de los 26 bloques de U1 a U4, redactada por el agente y aprobada por el desarrollador, y retiro del material de conducción de la clase del texto publicado.
 4. Sistema de modales sobre `<dialog>` nativo (RDA-011): prompt con descripción y copiado en un clic, detalle completo del bloque, recursos de la unidad y descargas.
 5. Sección de unidad en una pantalla: cabecera de color y cuadrícula de tarjetas de bloque con botones que abren los modales.
@@ -43,8 +43,8 @@ Diagnóstico del 2026-11-18, hecho con la skill Impeccable sobre el sitio public
 | 05-04 | [Sistema de modales](iteracion-05-04-modales.md) | Terminada |
 | 05-05 | [La unidad en una pantalla](iteracion-05-05-unidad-una-pantalla.md) | Terminada |
 | 05-06 | [Portada y ruta en un pantallazo](iteracion-05-06-portada-ruta.md) | Terminada |
-| 05-07 | [Capa de efectos con propósito](iteracion-05-07-efectos.md) | En revisión |
-| 05-08 | [Pulido y verificación final del rediseño](iteracion-05-08-verificacion.md) | Pendiente |
+| 05-07 | [Capa de efectos con propósito](iteracion-05-07-efectos.md) | Terminada |
+| 05-08 | [Pulido y verificación final del rediseño](iteracion-05-08-verificacion.md) | En revisión |
 
 > Iteraciones generadas el 2026-11-18 a pedido del desarrollador, antes del cierre de la épica 04, para que el trabajo continúe sin pausa cuando esta termine. Ninguna se empieza mientras la épica 04 tenga iteraciones abiertas.
 
@@ -76,7 +76,7 @@ Orden y dependencias:
 - Todo efecto tiene una versión sin movimiento con `prefers-reduced-motion: reduce`, y todo comportamiento con script tiene una versión que se puede leer sin JavaScript (RDA-007).
 - Cada texto de síntesis se publica solo después de la aprobación del desarrollador y se registra en la sección «Contenido aprobado» de su iteración.
 - Ninguna iteración agrega dependencias.
-- Presupuesto de JavaScript propio de la épica: 3 KB gzip en total (hoy, unos 1,05 KB gzip: 852 B en la bitácora 01-05 más 198 B en la 03-02).
+- Presupuesto de JavaScript propio de la épica: 3 KB gzip en total (al 2026-11-20, después de la 05-07: 1774 B gzip, medidos en la bitácora 05-07).
 
 ## Precondiciones
 
@@ -96,4 +96,4 @@ Orden y dependencias:
 
 ## Cierre
 
-- **Bitácora de cierre:** —
+- **Bitácora de cierre:** [bitacora-05-cierre](bitacoras/bitacora-05-cierre.md) (en revisión; la épica se cierra con la confirmación del desarrollador en notebook y teléfono)

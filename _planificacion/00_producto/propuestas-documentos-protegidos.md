@@ -30,7 +30,12 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-014 | `DESIGN.md` · 5. Componentes (filas Sección de unidad y Modal) y 5.1 Botones | Iteración 05-05 | 2026-11-20 | Aplicada |
 | P-015 | `DESIGN.md` · 4. Espaciado, retícula y forma (Contenedor) y 5. Componentes (fila Tarjeta de bloque) | Iteración 05-05 (ajuste de alto) | 2026-11-20 | Aplicada |
 | P-016 | `DESIGN.md` · 5. Componentes (fila Modal) | Iteración 05-06 | 2026-11-20 | Aplicada |
-| P-017 | `DESIGN.md` · 4. Forma (Sombras) y 7. Movimiento | Iteración 05-07 | 2026-11-20 | Pendiente |
+| P-017 | `DESIGN.md` · 4. Forma (Sombras) y 7. Movimiento | Iteración 05-07 | 2026-11-20 | Aplicada |
+| P-018 | `DESIGN.md` · 2.3 Contraste (tabla y regla práctica) | Iteración 05-08 | 2026-11-20 | Pendiente |
+| P-019 | `DESIGN.md` · 5. Componentes (fila Pie) | Iteración 05-08 | 2026-11-20 | Pendiente |
+| P-020 | `DESIGN.md` · 3. Tipografía, regla 1 | Iteración 05-08 | 2026-11-20 | Pendiente |
+| P-021 | `DESIGN.md` · 4. Espaciado, retícula y forma (Retícula) | Iteración 05-08 | 2026-11-20 | Pendiente |
+| P-022 | `DESIGN.md` · 5. Componentes (fila Bloque de prompt) | Iteración 05-08 | 2026-11-20 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -539,6 +544,7 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 4. Espaciado, retícula y forma (viñeta «Sombras») y 7. Movimiento (viñetas «Transiciones», «Modales», «Barra de avance», «Aparición» y «Brillo»)
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-20 con `grep` en `DESIGN.md` de la rama 05-08 («`--halo-u1` a `--halo-u4`» y «desde el botón»).
 - **Por qué:** los modales también se abren desde la cabecera de cada unidad («Sobre la unidad», «Recursos», «Descargas») y desde el instructor («Ver trayectoria completa»), donde no hay tarjeta. El desarrollador decidió el 2026-11-20 que en esos casos el origen de la transición es el propio botón. Además, la 05-07 creó tokens y reglas que `DESIGN.md` no nombra: `--halo-u1` a `--halo-u4`, `--tinte`, `--duracion-hover` y `--duracion-modal`; los tokens de sombra son colores; la U3 usa `--color-borde-u3` en oscuro; la subida con foco es solo con teclado; el desfase es por columna; el fondo del modal no se funde durante la View Transition; el brillo de la ruta usa el color del texto del bloque. Si no se aplica, `DESIGN.md` no describe lo construido y otro agente podría «corregirlo» hacia el texto actual. Ampliada el 2026-11-20 en la medición de la 05-07.
 
 **1 · Sección 4, «Sombras». Texto actual** (copiado literalmente de `DESIGN.md`):
@@ -591,4 +597,113 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 - Barra de avance de lectura de 3 px bajo el encabezado del sitio, guiada por el desplazamiento (`animation-timeline: scroll(root)`), con el color de la unidad visible (`<html data-unidad>`, que pone el script del encabezado); fuera de una unidad, `--color-primario`.
 - Las tarjetas de cada unidad aparecen al entrar en la ventana (opacidad y 12 px) con `animation-timeline: view()`, con un desfase según la columna (8 % del tramo de entrada por columna, el equivalente de unos 40 ms); sin soporte, se ven desde el inicio.
 - Brillo radial al 12 % que sigue al cursor en las tarjetas, solo con puntero fino: del color de la unidad (`--tinte`) en las tarjetas de bloque y del color del texto del bloque en las de la ruta, porque van sobre el color de la unidad.
+```
+
+## P-018 · Contraste de `#5DC9FF` sobre `#00131D` en la tabla 2.3
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 2.3 Contraste (tabla y regla práctica)
+- **Estado:** Pendiente (2026-11-20, iteración 05-08).
+- **Por qué:** `#5DC9FF` es `--color-enlace` y el hover del botón principal en modo oscuro, y la regla práctica dice que su contraste «se mide… y se agrega a esta tabla antes de usarlos en texto pequeño», pero la fila nunca se agregó. El par `#E4F3FF` sobre `#003B51` que nombra la misma frase ya está en la tabla, porque el contraste es simétrico (`#003B51` sobre `#E4F3FF`, 10,64:1). Si no se aplica, la tabla no respalda un color que se usa en texto de párrafo en oscuro.
+- **Cálculo** (WCAG 2.2, agente, 2026-11-20, con Node): luminancia relativa L = 0,2126 R + 0,7152 G + 0,0722 B, donde cada canal c = v/12,92 si v ≤ 0,04045 o ((v + 0,055)/1,055)^2,4 en otro caso (v = valor/255); ratio = (L₁ + 0,05)/(L₂ + 0,05). L(`#5DC9FF`) = 0,51320 y L(`#00131D`) = 0,00554, así que el ratio es **10,14:1**, igual al cálculo del desarrollador (10,14:1). Control con el mismo código: `#00B0E8` sobre `#00131D` da 7,54 y `#00678A` sobre `#FFFFFF` da 6,35, como en la tabla.
+
+**1 · Tabla. Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| `#FFFFFF` sobre `#006486` | 6,63:1 | AA, texto sobre `--color-presionado` (oscuro) |
+```
+
+**Texto propuesto:**
+
+```text
+| `#FFFFFF` sobre `#006486` | 6,63:1 | AA, texto sobre `--color-presionado` (oscuro) |
+| `#5DC9FF` sobre `#00131D` | 10,14:1 | AAA, enlaces de texto y hover del botón principal (oscuro) |
+```
+
+**2 · Regla práctica. Texto actual:**
+
+```text
+Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre fondo claro, el texto de color se escribe en `#00678A` o más oscuro. El contraste de `#E4F3FF` sobre `#003B51` y de `#5DC9FF` sobre `#00131D` se mide en la iteración de tokens y se agrega a esta tabla antes de usarlos en texto pequeño.
+```
+
+**Texto propuesto:**
+
+```text
+Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre fondo claro, el texto de color se escribe en `#00678A` o más oscuro. El contraste es simétrico: `#E4F3FF` sobre `#003B51` es el mismo 10,64:1 de `#003B51` sobre `#E4F3FF`.
+```
+
+## P-019 · Licencia en la fila «Pie»
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 5. Componentes (fila «Pie»)
+- **Estado:** Pendiente (2026-11-20, iteración 05-08).
+- **Por qué:** desde la 04-03 el pie muestra «Todos los derechos reservados.» (licencia decidida por el desarrollador), y la fila «Pie» no lo nombra. Si no se aplica, `DESIGN.md` no describe el pie publicado.
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Pie | Enlaces de redes, nombre del curso y aviso «Material de capacitación con datos ficticios o públicos». |
+```
+
+**Texto propuesto:**
+
+```text
+| Pie | Nombre del curso, enlaces de redes, aviso «Material de capacitación con datos ficticios o públicos» y licencia «Todos los derechos reservados.». |
+```
+
+## P-020 · Excepción de 16 px en las tarjetas de bloque
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 3. Tipografía, regla 1
+- **Estado:** Pendiente (2026-11-20, iteración 05-08).
+- **Por qué:** las tarjetas de bloque usan 16 px también en escritorio (`.tarjeta`, `text-base`) para que la unidad quepa en una pantalla de 1440 × 900 (05-05). El desarrollador decidió el 2026-11-20 mantenerlo y documentarlo como excepción; el cuerpo corrido y los modales siguen en 18 px. Si no se aplica, la regla 1 contradice las tarjetas.
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+1. Cuerpo de 16 px como mínimo (18 px en escritorio), interlínea de 1,6.
+```
+
+**Texto propuesto:**
+
+```text
+1. Cuerpo de 16 px como mínimo (18 px en escritorio), interlínea de 1,6. Excepción: el texto de las tarjetas de bloque se queda en 16 px también en escritorio, para que cada unidad quepa en una pantalla; el cuerpo corrido y los modales siguen en 18 px.
+```
+
+## P-021 · Retícula: la ruta en 2 × 2 y la unidad en 3 columnas
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 4. Espaciado, retícula y forma (viñeta «Retícula»)
+- **Estado:** Pendiente (2026-11-20, iteración 05-08).
+- **Por qué:** la viñeta sigue diciendo «4 desde 1024 px (la ruta tiene 4 unidades)», de la épica 02. Desde la 05-06 la ruta es un mosaico 2 × 2 (`RutaCurso.astro`: `grid-cols-1 sm:grid-cols-2`) y desde la 05-05 las tarjetas de la unidad van en 3 columnas desde 1024 px (`.cuadricula-bloques`: `sm:grid-cols-2 lg:grid-cols-3`), como ya dicen las filas «Portada y ruta» y «Sección de unidad». Si no se aplica, la sección 4 contradice a la sección 5 y al sitio.
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+- Retícula: móvil primero; mosaico de 1 columna en móvil, 2 desde 640 px y 4 desde 1024 px (la ruta tiene 4 unidades), siempre con `minmax(0, 1fr)`.
+```
+
+**Texto propuesto:**
+
+```text
+- Retícula: móvil primero, siempre con `minmax(0, 1fr)`. La ruta va en 1 columna en móvil y en mosaico 2 × 2 desde 640 px; las tarjetas de cada unidad, en 1 columna en móvil, 2 desde 640 px y 3 desde 1024 px.
+```
+
+## P-022 · Bloque de prompt: botón en móvil y texto de 14 px
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 5. Componentes (fila «Bloque de prompt»)
+- **Estado:** Pendiente (2026-11-20, iteración 05-08).
+- **Por qué:** en `Prompt.astro`, «Copiar» va en la esquina superior derecha solo desde 640 px; en móvil queda bajo el título y la descripción (`flex-col`), para que no comprima el texto. Además, el prompt se escribe en IBM Plex Mono de 14 px (`text-sm`) en todos los anchos desde la 03-02, por debajo de los 16 px de la sección 3, regla 1. Si no se aplica, la fila no describe el bloque publicado; si el desarrollador prefiere 16 px, es un cambio de código que se mide contra el alto de los modales.
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Bloque de prompt | Fondo `--color-superficie-2`, texto en IBM Plex Mono, botón «Copiar» en la esquina superior derecha. Al copiar, el botón cambia a «Copiado» por 2 s y lo anuncia con `aria-live="polite"`. El texto es seleccionable aunque no haya JavaScript. |
+```
+
+**Texto propuesto:**
+
+```text
+| Bloque de prompt | Fondo `--color-superficie-2`, texto en IBM Plex Mono de 14 px (excepción a la regla 1 de la sección 3, como bloque de código), botón «Copiar» en la esquina superior derecha desde 640 px y bajo el título y la descripción en móvil. Al copiar, el botón cambia a «Copiado» por 2 s y lo anuncia con `aria-live="polite"`. El texto es seleccionable aunque no haya JavaScript. |
 ```

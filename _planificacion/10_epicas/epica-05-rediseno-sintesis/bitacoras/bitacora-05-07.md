@@ -3,7 +3,7 @@
 - **Fecha:** 2026-11-20
 - **Agente:** Claude Code (Opus 5.5)
 - **Rama:** iteracion/05-07-efectos
-- **Estado final:** En revisión
+- **Estado final:** Terminada (2026-11-20: el desarrollador hizo las pruebas manuales sin observaciones y aceptó que el fondo del modal aparezca sin fundido en la transición; dicho por él, no verificado por el agente)
 
 ## Resumen
 

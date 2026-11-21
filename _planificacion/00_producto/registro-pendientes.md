@@ -3,7 +3,7 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-20
-- **Iteración activa:** 05-07 · Capa de efectos con propósito (en revisión)
+- **Iteración activa:** 05-08 · Pulido y verificación final del rediseño (en revisión)
 - **Próximo hito:** épica 05: rediseño visual y síntesis, con Rendimiento publicado ≥ 95 (05-08)
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
@@ -24,8 +24,8 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | 05-04 | [Sistema de modales](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-04-modales.md) | 05 | Terminada | 05-03 | [bitacora-05-04](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-04.md) |
 | 05-05 | [La unidad en una pantalla](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-05-unidad-una-pantalla.md) | 05 | Terminada | 05-04 | [bitacora-05-05](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) |
 | 05-06 | [Portada y ruta en un pantallazo](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-06-portada-ruta.md) | 05 | Terminada | 05-01, 05-05, P-009 | [bitacora-05-06](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-06.md) |
-| 05-07 | [Capa de efectos con propósito](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-07-efectos.md) | 05 | En revisión | 05-05, 05-06 | [bitacora-05-07](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-07.md) |
-| 05-08 | [Pulido y verificación final del rediseño](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-08-verificacion.md) | 05 | Pendiente | 05-07 | — |
+| 05-07 | [Capa de efectos con propósito](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-07-efectos.md) | 05 | Terminada | 05-05, 05-06 | [bitacora-05-07](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-07.md) |
+| 05-08 | [Pulido y verificación final del rediseño](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-08-verificacion.md) | 05 | En revisión | 05-07 | [bitacora-05-08](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-08.md) · [cierre](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-cierre.md) |
 
 ## 2. Épicas cerradas
 
@@ -53,8 +53,8 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | 22 | Modales sobre `<dialog>` nativo para prompts, detalle, recursos y descargas (RDA-011) | Funcionalidad | — | 05-04 | Terminada |
 | 23 | Sección de unidad en una pantalla de escritorio con tarjetas de bloque | Funcionalidad | — | 05-05 | Terminada |
 | 24 | Portada y ruta en el primer pantallazo e instructor compacto | Funcionalidad | — | 05-06 | Terminada |
-| 25 | Efectos con propósito: sombras teñidas, transición de tarjeta a modal, barra de avance, aparición escalonada y brillo | Funcionalidad | — | 05-07 | En revisión |
-| 26 | Verificación final del rediseño en local y en la URL publicada, comparada con la 04-04 | Técnico | — | 05-08 | Pendiente |
+| 25 | Efectos con propósito: sombras teñidas, transición de tarjeta a modal, barra de avance, aparición escalonada y brillo | Funcionalidad | — | 05-07 | Terminada |
+| 26 | Verificación final del rediseño en local y en la URL publicada, comparada con la 04-04 | Técnico | — | 05-08 | En revisión |
 
 ## 4. Datos pendientes del cliente
 
@@ -84,7 +84,7 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U3 nombrados pero no escritos: los carriles extra de los bloques 1 a 5 (instrucciones sin texto de prompt) | 02-06 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U4 nombrados pero no escritos: los carriles extra de los bloques 2 a 5 (el contenido de las skills y plantillas son descargas de la épica 03) | 02-06 | Desarrollador |
 | Rendimiento publicado ≥ 95 en la épica 05 (05-08): la épica 04 cerró con 87 como excepción aceptada (línea base en la bitácora de cierre) | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) | Desarrollador |
-| Aplicar la propuesta P-017 (`DESIGN.md`, sección 7, «Modales»: origen de la transición en la tarjeta o, si no la hay, en el botón) | P-017 | Desarrollador |
+| Aplicar o descartar las propuestas P-018 a P-022 (`DESIGN.md`: contraste de `#5DC9FF`, pie, 16 px en tarjetas, retícula y bloque de prompt) | P-018 a P-022 | Desarrollador |
 
 ## 6. Propuestas fuera de alcance
 
@@ -96,6 +96,7 @@ Ideas detectadas durante el trabajo que no forman parte de lo comprometido, incl
 | Mostrar los logotipos de Capacita Tu Futuro y GTD en el pie, con autorización del cliente · Los logos de GTD y Capacita pasan al hero en la 02-01 (decisión del desarrollador); en el pie siguen siendo propuesta | Planificación inicial | 2026-11-17 |
 | Agregar `_planificacion/00_producto/unidades-del-curso.md` a la lista de documentos permitidos (hoy vive ahí sin estar en la lista), o indicar dónde debe estar · Aprobada: propuesta P-004 | Iteración 01-04 | 2026-11-17 |
 | Preview Builds de Workers Builds para las ramas · Bloqueadas: Cloudflare exige que el comando de vista previa llame a `npx`, y el proyecto usa solo PNPM | Iteración 04-02 | 2026-11-18 |
+| `text-wrap: pretty` en el cuerpo para evitar palabras solas en la última línea (6 avisos `straggler` del detector de Impeccable), medido contra el alto de las unidades en 1440 × 900 | Iteración 05-08 | 2026-11-20 |
 
 ## 7. Historial
 
@@ -103,7 +104,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-17 | Iteración 02-05 en revisión: cuerpos de los 13 bloques de U1 y U2, 8 prompts literales (8 de 8 iguales) y 27 recursos; las fichas fallan al compilar si referencian un recurso inexistente; falta comparar el hash con HEAD. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-05.md) |
 | 2026-11-17 | Iteración 02-05 terminada: el desarrollador comprobó el hash de dist/index.html (idéntico a HEAD); se elimina sh.exe.stackdump y se agrega *.stackdump a .gitignore. |
 | 2026-11-17 | Iteración 02-06 en revisión: bloques de U3 y U4 con 16 prompts (24 de 24 iguales en las 4 unidades) y 14 recursos; hash idéntico a HEAD; cierre de la épica 02 y propuesta de la 03 por aprobar. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-06.md) · [Cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |
 | 2026-11-17 | Iteración 02-06 terminada y épica 02 cerrada (aprobada por el desarrollador); sus filas pasan a `registro-archivo.md`. Épica 03: 5 iteraciones generadas (03-01 a 03-05); backlog renumerado (los antiguos 11, 12, 15, 16 y 17 pasan a 11 a 15; Cloudflare y la verificación final, a 16 a 18). [Cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |
@@ -153,3 +153,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-20 | Iteración 05-06 terminada: el desarrollador hizo los 7 pasos de prueba de la bitácora sin observaciones (dicho por él, no verificado por el agente). P-016 aplicada (comprobada con `grep` en `DESIGN.md` de la rama 05-07) y fuera de «Decisiones por tomar»; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-06.md) |
 | 2026-11-20 | Iteración 05-07 en revisión: sombras teñidas (`--sombra-uN`, `--halo-uN`), subida de 4 px, brillo, transición de tarjeta o botón a modal, barra de lectura, aparición escalonada y visto de copiado; revelado de modo acotado; JS 1295 → 1774 B gzip, HTML 341 888 → 346 277 B; P-017 pendiente; falta la línea base y la medición del desarrollador; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-07.md) |
 | 2026-11-20 | Iteración 05-07, medición del agente (Lighthouse 13.6.0 móvil, mediana de 3, alternando): `main` 05-06 98/100/96/100 y la rama 99/100/96/100 con beacon; 99 y 99 sin beacon; LCP en el `h1`, CLS 0,0002; no baja más de 2 puntos. PSI no medido (HTTP 429). P-017 ampliada; sigue en revisión; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-07.md) |
+| 2026-11-20 | Iteración 05-07 terminada: el desarrollador hizo las pruebas manuales de la bitácora sin observaciones y aceptó el fondo del modal sin fundido durante la transición (dicho por él, no verificado por el agente). P-017 aplicada (comprobada con `grep` en `DESIGN.md` de la rama 05-08) y fuera de «Decisiones por tomar»; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-07.md) |
+| 2026-11-20 | Iteración 05-08 en revisión: 05-07 terminada y P-017 aplicada (Paso 0); Lighthouse móvil publicado 98/100/100/100 (LCP 1,51 s, CLS 0, TBT 165 ms; 04-04: 94 y 87); Impeccable 4.10.0 con 6 avisos justificados; 0 textos de conducción; 24 de 24 prompts idénticos a su fuente; JS 1774 B; P-018 a P-022 pendientes; bitácora de cierre en revisión; historial en 51 filas hasta el cierre. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-08.md) |

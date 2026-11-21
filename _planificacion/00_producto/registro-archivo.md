@@ -44,6 +44,19 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 04-03 | Web Analytics y metadatos para compartir | 04 | Terminada | 04-02 | [bitacora-04-03](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-03.md) |
 | 04-04 | Rendimiento, accesibilidad y verificación final | 04 | Terminada | 04-03 | [bitacora-04-04](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-04.md) · [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) |
 
+### Épica 05 · Rediseño visual y síntesis del contenido (cerrada el 2026-11-21)
+
+| Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
+| :-------- | :----- | :---- | :----- | :--------- | :-------- |
+| 05-01 | [Afordancias y estados de interacción](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-01-afordancias-estados.md) | 05 | Terminada | cierre de la épica 04, P-009 | [bitacora-05-01](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-01.md) |
+| 05-02 | [Modelo de síntesis y síntesis de U1 y U2](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-02-sintesis-u1-u2.md) | 05 | Terminada | 05-01, RDA-012 | [bitacora-05-02](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-02.md) |
+| 05-03 | [Síntesis de U3 y U4](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-03-sintesis-u3-u4.md) | 05 | Terminada | 05-02 | [bitacora-05-03](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-03.md) |
+| 05-04 | [Sistema de modales](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-04-modales.md) | 05 | Terminada | 05-03 | [bitacora-05-04](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-04.md) |
+| 05-05 | [La unidad en una pantalla](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-05-unidad-una-pantalla.md) | 05 | Terminada | 05-04 | [bitacora-05-05](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-05.md) |
+| 05-06 | [Portada y ruta en un pantallazo](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-06-portada-ruta.md) | 05 | Terminada | 05-01, 05-05, P-009 | [bitacora-05-06](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-06.md) |
+| 05-07 | [Capa de efectos con propósito](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-07-efectos.md) | 05 | Terminada | 05-05, 05-06 | [bitacora-05-07](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-07.md) |
+| 05-08 | [Pulido y verificación final del rediseño](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-08-verificacion.md) | 05 | Terminada | 05-07 | [bitacora-05-08](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-08.md) · [bitacora-05-cierre](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-cierre.md) |
+
 ## 2. Backlog terminado
 
 ### Épica 01
@@ -89,6 +102,22 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 17 | Cloudflare Web Analytics, ícono, `robots.txt`, página 404 y licencia del contenido (sin canónica ni Open Graph) · Ícono: glifo `school-outline` de Material Symbols Light sobre `#007EA7` | Funcionalidad | — | 04-03 | Terminada |
 | 18 | Verificación final de rendimiento y accesibilidad en local y en la URL publicada · Antes de los ajustes, la publicada dio 94/98/100/100. Títulos en `h3`: local 98/100/96/100. `content-visibility` revertido, porque empeoró la medición (93/92). Publicada después del merge: 87/100/100/100 (Rendimiento bajo 95 por TBT; excepción aceptada por el desarrollador el 2026-11-18, se atiende en la 05-08) | Técnico | — | 04-04 | Terminada |
 
+### Épica 05
+
+| Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
+| :-------- | :------- | :--- | :------------- | :-------- | :----- |
+| 18.1 | Ajustes documentales de la épica 05 antes de abrir la 05-01: INP informativo (referencia: TBT) en definición, 05-07 y 05-08, y propuesta P-012 (`AGENTS.md`); P-009 antes de la 05-01; P-011 y cuerpo del bloque solo en el modal «Ver detalle» (página temporalmente austera con JS hasta la 05-05) en la 05-04; riesgo de no medir Lighthouse al cerrar la 05-05 en la 05-08 · Rama `correccion/epica-05-ajustes-documentales` | Corrección | — | — | Terminada |
+| 18.2 | Cierre documental de P-009 a P-012 y RDA-011 aceptada · Rama `correccion/epica-05-cierre-propuestas` | Corrección | — | — | Terminada |
+| 18.3 | Corrección documental previa a la 05-04: cierre de la 05-03, P-013 aplicada, menciones obsoletas de RDA-011 y RDA-012 y tareas ya cumplidas de la 05-04, y decisión del estado intermedio austero · Rama `correccion/epica-05-previa-05-04` | Corrección | — | — | Terminada |
+| 19 | Estados de interacción visibles: `cursor: pointer`, hover con contraste perceptible, botón de modo con su acción visible | Corrección | — | 05-01 | Terminada |
+| 20 | Síntesis por bloque y por unidad con límites de palabras (RDA-012) y síntesis aprobada de U1 y U2; retiro del material de conducción de la clase | Funcionalidad | — | 05-02 | Terminada |
+| 21 | Síntesis aprobada de U3 y U4 y campos de síntesis obligatorios | Funcionalidad | — | 05-03 | Terminada |
+| 22 | Modales sobre `<dialog>` nativo para prompts, detalle, recursos y descargas (RDA-011) | Funcionalidad | — | 05-04 | Terminada |
+| 23 | Sección de unidad en una pantalla de escritorio con tarjetas de bloque | Funcionalidad | — | 05-05 | Terminada |
+| 24 | Portada y ruta en el primer pantallazo e instructor compacto | Funcionalidad | — | 05-06 | Terminada |
+| 25 | Efectos con propósito: sombras teñidas, transición de tarjeta a modal, barra de avance, aparición escalonada y brillo | Funcionalidad | — | 05-07 | Terminada |
+| 26 | Verificación final del rediseño en local y en la URL publicada, comparada con la 04-04 | Técnico | — | 05-08 | Terminada |
+
 ## 3. Historial archivado
 
 | Fecha | Cambio |
@@ -119,3 +148,5 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 2026-11-17 | Iteración 02-04 en revisión: `#instructor` desde la colección `instructor`, certificación de Gemini primero, sin insignia (no está en el repo); 0 B de JS nuevo; falta revisión en navegador. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-04.md) |
 | 2026-11-17 | Iteración 02-04 terminada: el desarrollador revisó el instructor en el navegador sin observaciones; corregido el comentario de RutaCurso.astro (4 columnas). |
 | 2026-11-17 | Iteración 02-05 en revisión: cuerpos de los 13 bloques de U1 y U2, 8 prompts literales (8 de 8 iguales) y 27 recursos; las fichas fallan al compilar si referencian un recurso inexistente; falta comparar el hash con HEAD. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-05.md) |
+| 2026-11-17 | Iteración 02-05 terminada: el desarrollador comprobó el hash de dist/index.html (idéntico a HEAD); se elimina sh.exe.stackdump y se agrega *.stackdump a .gitignore. |
+| 2026-11-17 | Iteración 02-06 en revisión: bloques de U3 y U4 con 16 prompts (24 de 24 iguales en las 4 unidades) y 14 recursos; hash idéntico a HEAD; cierre de la épica 02 y propuesta de la 03 por aprobar. [Bitácora](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-06.md) · [Cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |

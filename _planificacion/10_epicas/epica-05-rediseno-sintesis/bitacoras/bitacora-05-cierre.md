@@ -3,9 +3,9 @@
 - **Fecha:** 2026-11-20
 - **Agente:** Claude Code (Opus 5.5)
 - **Rama:** iteracion/05-08-verificacion
-- **Estado final:** En revisión
+- **Estado final:** Cerrada (2026-11-21, rama `correccion/epica-05-cierre`)
 
-> La épica **no está cerrada**. El desarrollador la cierra después de revisar el sitio en su notebook y en un teléfono. Hasta entonces, las filas de la épica siguen en `registro-pendientes.md`.
+> Cerrada el 2026-11-21 después de la confirmación del desarrollador del 2026-11-20: hizo las mediciones C1 a C9 de la bitácora 05-08 y revisó el sitio en su notebook y en un teléfono, sin observaciones (dicho por él, no verificado por el agente). Las filas de la épica pasaron a `registro-archivo.md`.
 
 ## Resumen
 
@@ -22,7 +22,7 @@ La épica dejó cada unidad en una pantalla de 1440 × 900, con cabecera de colo
 | 05-05 | La unidad en una pantalla | Terminada | [bitacora-05-05](bitacora-05-05.md) |
 | 05-06 | Portada y ruta en un pantallazo | Terminada | [bitacora-05-06](bitacora-05-06.md) |
 | 05-07 | Capa de efectos con propósito | Terminada | [bitacora-05-07](bitacora-05-07.md) |
-| 05-08 | Pulido y verificación final del rediseño | En revisión | [bitacora-05-08](bitacora-05-08.md) |
+| 05-08 | Pulido y verificación final del rediseño | Terminada | [bitacora-05-08](bitacora-05-08.md) |
 
 Correcciones documentales de la épica: [bitacora-05-00-correccion-documental](bitacora-05-00-correccion-documental.md) y [bitacora-05-00-correccion-previa-05-04](bitacora-05-00-correccion-previa-05-04.md).
 
@@ -30,11 +30,11 @@ Correcciones documentales de la épica: [bitacora-05-00-correccion-documental](b
 
 | Criterio | Cómo se comprobó | Resultado |
 | :------- | :--------------- | :-------- |
-| Cada unidad mide como máximo la ventana menos el encabezado (1440 × 900 y 1366 × 657, ambos modos) | 05-05: 823 de 823 px en 1440 × 900, medido por el agente en Edge headless. Repetición con el fragmento C1 de la bitácora 05-08: lo hace el desarrollador | Cumplido en 1440 × 900; en 1366 × 657 no (decisión del desarrollador). Falta la confirmación con C1 |
-| Página completa ≤ 7 alturas en 1440 × 900 | 05-06: ≈ 6, medido por el desarrollador. Fragmento C2 | Cumplido en 1440 × 900; en 1366 × 657 no (decisión del desarrollador). Falta la confirmación con C2 |
-| ≤ 300 palabras por unidad fuera de los modales | 05-05: U1 261 palabras (agente). Fragmento C3 para las 4 unidades | Por confirmar (C3) |
+| Cada unidad mide como máximo la ventana menos el encabezado (1440 × 900 y 1366 × 657, ambos modos) | 05-05: 823 de 823 px en 1440 × 900, medido por el agente en Edge headless. Fragmento C1 de la bitácora 05-08: cumplido, dicho por el desarrollador (2026-11-20) | Cumplido en 1440 × 900; en 1366 × 657 no (decisión del desarrollador) |
+| Página completa ≤ 7 alturas en 1440 × 900 | 05-06: ≈ 6, medido por el desarrollador. Fragmento C2: cumplido, dicho por el desarrollador (2026-11-20) | Cumplido en 1440 × 900; en 1366 × 657 no (decisión del desarrollador) |
+| ≤ 300 palabras por unidad fuera de los modales | 05-05: U1 261 palabras (agente). Fragmento C3 para las 4 unidades: cumplido, dicho por el desarrollador (2026-11-20) | Cumple (dicho por el desarrollador) |
 | Cero textos de conducción en `dist/index.html` | Búsqueda en 05-08: «al azar», «Pregunta para el grupo», «semáforo», «Vitrina», «Demo Day» y `\(\d+ min\)`: 0 | Cumple |
-| `cursor: pointer` y cambio visible al pasar el mouse | Regla base en el CSS compilado (1 vez, 05-08); fragmento C4 y revisión visual del desarrollador | Regla presente; falta la confirmación con C4 |
+| `cursor: pointer` y cambio visible al pasar el mouse | Regla base en el CSS compilado (1 vez, 05-08, agente); fragmento C4 y revisión visual: cumplido, dicho por el desarrollador (2026-11-20) | Cumple |
 | JavaScript propio ≤ 3 KB gzip | Etiquetas en línea concatenadas, gzip nivel 9 (05-08) | Cumple: 1774 B |
 | Lighthouse móvil publicado: Rendimiento ≥ 95; Accesibilidad, Buenas prácticas y SEO = 100; CLS < 0,1; INP informativo (referencia: TBT) | Lighthouse 13.6.0, mediana de 3, sobre `https://curso-gemini.felipe-cuevas.workers.dev/` en `47b063b` (05-08) | Cumple: 98 / 100 / 100 / 100, LCP 1,51 s, CLS 0, TBT 165 ms |
 
@@ -42,7 +42,7 @@ Correcciones documentales de la épica: [bitacora-05-00-correccion-documental](b
 
 | Hallazgo | Severidad | Decisión |
 | :------- | :-------- | :------- |
-| P-018 a P-022: diferencias entre `DESIGN.md` y el sitio | Baja (documental) | Pendientes de aplicar por el desarrollador |
+| P-018 a P-022: diferencias entre `DESIGN.md` y el sitio | Baja (documental) | Resuelto: aplicadas por el desarrollador y comprobadas con `grep` (2026-11-21); P-022 deja los 14 px del prompt como excepción |
 | 6 avisos `straggler` de Impeccable (palabra sola en la última línea) | Advisory | Justificados en la bitácora 05-08; `text-wrap: pretty` como propuesta fuera de alcance |
 | Falsa afordancia de `.tarjeta` (sube sin ser clicable) | Baja | Riesgo aceptado por el desarrollador (2026-11-20, bitácora 05-07); se revisa en notebook |
 | 1366 × 657: unidad de ≈ 1,4 pantallas y página de más de 7 | Media | Decisión del desarrollador (05-05): documentar la realidad |
@@ -55,10 +55,11 @@ Correcciones documentales de la épica: [bitacora-05-00-correccion-documental](b
 - 2026-11-20 (05-06): modal «Trayectoria completa» con franja `--color-primario` (P-016).
 - 2026-11-20 (05-07): origen de la transición en la tarjeta o el botón (P-017); ambas tarjetas suben 4 px; fondo del modal sin fundido durante la transición.
 - 2026-11-20 (05-08): detector de Impeccable con versión fija y solo `detect`; 16 px en las tarjetas como excepción (P-020).
+- 2026-11-20 (para el cierre): mediciones C1 a C9 y revisión en notebook y teléfono sin observaciones; el prompt de 14 px se documenta como excepción (P-022) y no se cambia el código.
 
 ## Revisión al cierre
 
-- **Resultado frente al criterio de término:** los criterios que mide el agente se cumplen en la URL publicada (Rendimiento 98, que antes era 87). Los de alto y palabras se cumplen en 1440 × 900 según las mediciones de la 05-05 y la 05-06, y falta repetirlos con C1 a C4. En 1366 × 657 no se cumplen, por decisión del desarrollador.
+- **Resultado frente al criterio de término:** los criterios que mide el agente se cumplen en la URL publicada (Rendimiento 98, que antes era 87). Los de alto, palabras y cursor se cumplen en 1440 × 900 según las mediciones de la 05-05 y la 05-06 y la confirmación del desarrollador con C1 a C4 (2026-11-20, dicha por él). En 1366 × 657, alto y páginas no se cumplen, por decisión del desarrollador.
 - **Qué aprendimos:**
   - Partir el contenido en síntesis y modales resolvió a la vez el alto de las unidades y el rendimiento: el TBT publicado bajó de 496 a 165 ms.
   - Hay que revisar el CSS compilado, porque el minificador convirtió `animation-timeline` en una declaración inválida (05-07).
@@ -67,13 +68,12 @@ Correcciones documentales de la épica: [bitacora-05-00-correccion-documental](b
 
 ## Propuesta de la épica siguiente
 
-No hay épica 06 definida. La propuesta se presenta cuando el desarrollador confirme el cierre, según la sección 4.4 de `_planificacion/README.md`. Candidatos que salen del registro: prompts pendientes de U1 a U4 (cuando el desarrollador los entregue), descargas en ausencia acordada y, si se aprueba, el ajuste tipográfico con `text-wrap: pretty` medido contra el alto de las unidades.
+No hay épica 06 definida y esta corrección no la abre: la siguiente épica se define con el desarrollador, según la sección 4.4 de `_planificacion/README.md`. Candidatos que salen del registro, sin compromiso: prompts pendientes de U1 a U4 (cuando el desarrollador los entregue), descargas en ausencia acordada y, si se aprueba, el ajuste tipográfico con `text-wrap: pretty` medido contra el alto de las unidades.
 
 ## Pendientes y riesgos
 
-- Confirmación del desarrollador en notebook y teléfono, con fecha, y mediciones C1 a C9 de la bitácora 05-08.
-- Aplicar o descartar P-018 a P-022.
-- Al cerrar: mover las filas de la épica a `registro-archivo.md`, dejar la épica en «Épicas cerradas» y archivar la fila de historial que sobra (hoy son 51).
+- Hecho en el cierre (2026-11-21): confirmación del desarrollador en notebook y teléfono y C1 a C9; P-018 a P-022 aplicadas; filas de la épica en `registro-archivo.md`, épica en «Épicas cerradas» e historial de nuevo en 50 filas.
+- Sigue abierto: datos pendientes del cliente y decisiones por tomar de `registro-pendientes.md` (secciones 4 y 5), y el margen fino de Rendimiento móvil.
 
 ## Commit sugerido
 

@@ -1,6 +1,6 @@
 # Épica 05 · Rediseño visual y síntesis del contenido
 
-- **Estado:** En curso
+- **Estado:** Cerrada (2026-11-21)
 - **Objetivo:** que cada unidad quepa en una pantalla de escritorio (incluido un notebook corporativo de 1366 × 768; actualización del 2026-11-20: cumplido en 1440 × 900; en 1366 × 657 no (decisión del desarrollador)), con lo esencial a la vista y el detalle en modales, y que el sitio dé un salto de calidad visual (estados de interacción claros, profundidad y movimiento con propósito) sin salir de la paleta ni de las tipografías de felipecuevas.dev (RDA-004).
 
 ## Por qué existe esta épica
@@ -44,7 +44,7 @@ Diagnóstico del 2026-11-18, hecho con la skill Impeccable sobre el sitio public
 | 05-05 | [La unidad en una pantalla](iteracion-05-05-unidad-una-pantalla.md) | Terminada |
 | 05-06 | [Portada y ruta en un pantallazo](iteracion-05-06-portada-ruta.md) | Terminada |
 | 05-07 | [Capa de efectos con propósito](iteracion-05-07-efectos.md) | Terminada |
-| 05-08 | [Pulido y verificación final del rediseño](iteracion-05-08-verificacion.md) | En revisión |
+| 05-08 | [Pulido y verificación final del rediseño](iteracion-05-08-verificacion.md) | Terminada |
 
 > Iteraciones generadas el 2026-11-18 a pedido del desarrollador, antes del cierre de la épica 04, para que el trabajo continúe sin pausa cuando esta termine. Ninguna se empieza mientras la épica 04 tenga iteraciones abiertas.
 
@@ -96,4 +96,4 @@ Orden y dependencias:
 
 ## Cierre
 
-- **Bitácora de cierre:** [bitacora-05-cierre](bitacoras/bitacora-05-cierre.md) (en revisión; la épica se cierra con la confirmación del desarrollador en notebook y teléfono)
+- **Bitácora de cierre:** [bitacora-05-cierre](bitacoras/bitacora-05-cierre.md) (épica cerrada el 2026-11-21, con la confirmación del desarrollador del 2026-11-20 en notebook y teléfono)

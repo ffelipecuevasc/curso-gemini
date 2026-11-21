@@ -1,7 +1,7 @@
 # Iteración 05-08 · Pulido y verificación final del rediseño
 
 - **Épica:** 05 · Rediseño visual y síntesis del contenido
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/05-08-verificacion
 - **Depende de:** 05-07
 - **Especificación:** —

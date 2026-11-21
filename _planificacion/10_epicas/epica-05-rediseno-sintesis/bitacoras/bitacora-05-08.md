@@ -3,7 +3,7 @@
 - **Fecha:** 2026-11-20
 - **Agente:** Claude Code (Opus 5.5)
 - **Rama:** iteracion/05-08-verificacion (desde `main` en `47b063b`)
-- **Estado final:** En revisión
+- **Estado final:** Terminada (2026-11-20: el desarrollador hizo las mediciones C1 a C9 y la revisión del sitio en su notebook y en un teléfono, sin observaciones; dicho por él, no verificado por el agente)
 
 ## Resumen
 
@@ -139,12 +139,14 @@ La regla base `button:not(:disabled),[role=button]:not(:disabled),summary,label[
 
 **C9 · Notebook y teléfono.** Revisión del sitio publicado, en claro y en oscuro, con la fecha.
 
+**Resultado del procedimiento (2026-11-20):** C1 a C9: cumplido, dicho por el desarrollador, sin observaciones y sin cifras entregadas; incluye la revisión en notebook y en teléfono. C1 y C2 se cumplen en 1440 × 900; en 1366 × 657 no (decisión del desarrollador). No verificado por el agente.
+
 ## Criterios de aceptación de la iteración
 
-- [ ] Cada criterio de término marcado con su evidencia: los del agente están en la bitácora de cierre; C1 a C4 los mide el desarrollador.
+- [x] Cada criterio de término marcado con su evidencia: los del agente, con su medición, en la bitácora de cierre; C1 a C4: cumplido, dicho por el desarrollador (2026-11-20, sin cifras entregadas), en 1440 × 900 (en 1366 × 657, C1 y C2 no se cumplen por decisión del desarrollador).
 - [x] Lighthouse móvil publicado: 98/100/100/100, LCP 1,51 s, CLS 0, TBT 165 ms (mediana de 3); tabla comparada con la 04-04.
 - [x] Detector de Impeccable sin hallazgos sin resolver o sin justificar: 6 advisory, todos justificados.
-- [ ] Sin JavaScript, la página se lee completa en modo claro: lo comprueba el desarrollador (C7).
+- [x] Sin JavaScript, la página se lee completa en modo claro: cumplido, dicho por el desarrollador (C7, 2026-11-20).
 - [x] `DESIGN.md` describe el sitio o hay una propuesta pendiente por diferencia: P-018 a P-022.
 - [x] Regresiones: build sin advertencias, check 0/0/0, 24 de 24 prompts idénticos a su fuente y 1 `h1`.
 
@@ -155,9 +157,9 @@ La regla base `button:not(:disabled),[role=button]:not(:disabled),summary,label[
 
 ## Pendientes y riesgos
 
-- P-018 a P-022 pendientes de aplicar en `DESIGN.md`.
+- P-018 a P-022 aplicadas por el desarrollador (comprobadas con `grep` el 2026-11-21, en la corrección de cierre de la épica); P-022 deja los 14 px del prompt como excepción.
 - El margen de Rendimiento móvil es fino: la peor corrida publicada dio 95, y en local, con el equipo cargado, hubo una de 91. Si baja de 95, la palanca que proponen los datos es el peso del HTML y el estilo de los 54 modales antes que el brillo (cuyo costo es solo al mover el puntero).
-- El historial del registro queda con 51 filas: el desarrollador pidió no mover filas a `registro-archivo.md` hasta su confirmación, y la regla del registro pide 50. Se archiva la más antigua al cerrar la épica.
+- El historial del registro quedó con 51 filas hasta el cierre de la épica; la corrección de cierre archivó la más antigua.
 - Falsa afordancia de `.tarjeta` (ver la comparación de `DESIGN.md`).
 
 ## Revisión

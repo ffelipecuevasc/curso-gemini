@@ -31,11 +31,11 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-015 | `DESIGN.md` · 4. Espaciado, retícula y forma (Contenedor) y 5. Componentes (fila Tarjeta de bloque) | Iteración 05-05 (ajuste de alto) | 2026-11-20 | Aplicada |
 | P-016 | `DESIGN.md` · 5. Componentes (fila Modal) | Iteración 05-06 | 2026-11-20 | Aplicada |
 | P-017 | `DESIGN.md` · 4. Forma (Sombras) y 7. Movimiento | Iteración 05-07 | 2026-11-20 | Aplicada |
-| P-018 | `DESIGN.md` · 2.3 Contraste (tabla y regla práctica) | Iteración 05-08 | 2026-11-20 | Pendiente |
-| P-019 | `DESIGN.md` · 5. Componentes (fila Pie) | Iteración 05-08 | 2026-11-20 | Pendiente |
-| P-020 | `DESIGN.md` · 3. Tipografía, regla 1 | Iteración 05-08 | 2026-11-20 | Pendiente |
-| P-021 | `DESIGN.md` · 4. Espaciado, retícula y forma (Retícula) | Iteración 05-08 | 2026-11-20 | Pendiente |
-| P-022 | `DESIGN.md` · 5. Componentes (fila Bloque de prompt) | Iteración 05-08 | 2026-11-20 | Pendiente |
+| P-018 | `DESIGN.md` · 2.3 Contraste (tabla y regla práctica) | Iteración 05-08 | 2026-11-20 | Aplicada |
+| P-019 | `DESIGN.md` · 5. Componentes (fila Pie) | Iteración 05-08 | 2026-11-20 | Aplicada |
+| P-020 | `DESIGN.md` · 3. Tipografía, regla 1 | Iteración 05-08 | 2026-11-20 | Aplicada |
+| P-021 | `DESIGN.md` · 4. Espaciado, retícula y forma (Retícula) | Iteración 05-08 | 2026-11-20 | Aplicada |
+| P-022 | `DESIGN.md` · 5. Componentes (fila Bloque de prompt) | Iteración 05-08 | 2026-11-20 | Aplicada |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -603,7 +603,7 @@ La página funciona completa sin JavaScript. Solo cuatro cosas usan un script pe
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 2.3 Contraste (tabla y regla práctica)
-- **Estado:** Pendiente (2026-11-20, iteración 05-08).
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-21 con `grep` en `DESIGN.md` de la rama `correccion/epica-05-cierre`.
 - **Por qué:** `#5DC9FF` es `--color-enlace` y el hover del botón principal en modo oscuro, y la regla práctica dice que su contraste «se mide… y se agrega a esta tabla antes de usarlos en texto pequeño», pero la fila nunca se agregó. El par `#E4F3FF` sobre `#003B51` que nombra la misma frase ya está en la tabla, porque el contraste es simétrico (`#003B51` sobre `#E4F3FF`, 10,64:1). Si no se aplica, la tabla no respalda un color que se usa en texto de párrafo en oscuro.
 - **Cálculo** (WCAG 2.2, agente, 2026-11-20, con Node): luminancia relativa L = 0,2126 R + 0,7152 G + 0,0722 B, donde cada canal c = v/12,92 si v ≤ 0,04045 o ((v + 0,055)/1,055)^2,4 en otro caso (v = valor/255); ratio = (L₁ + 0,05)/(L₂ + 0,05). L(`#5DC9FF`) = 0,51320 y L(`#00131D`) = 0,00554, así que el ratio es **10,14:1**, igual al cálculo del desarrollador (10,14:1). Control con el mismo código: `#00B0E8` sobre `#00131D` da 7,54 y `#00678A` sobre `#FFFFFF` da 6,35, como en la tabla.
 
@@ -636,7 +636,7 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 5. Componentes (fila «Pie»)
-- **Estado:** Pendiente (2026-11-20, iteración 05-08).
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-21 con `grep` en `DESIGN.md` de la rama `correccion/epica-05-cierre`.
 - **Por qué:** desde la 04-03 el pie muestra «Todos los derechos reservados.» (licencia decidida por el desarrollador), y la fila «Pie» no lo nombra. Si no se aplica, `DESIGN.md` no describe el pie publicado.
 
 **Texto actual** (copiado literalmente de `DESIGN.md`):
@@ -655,7 +655,7 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 3. Tipografía, regla 1
-- **Estado:** Pendiente (2026-11-20, iteración 05-08).
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-21 con `grep` en `DESIGN.md` de la rama `correccion/epica-05-cierre`.
 - **Por qué:** las tarjetas de bloque usan 16 px también en escritorio (`.tarjeta`, `text-base`) para que la unidad quepa en una pantalla de 1440 × 900 (05-05). El desarrollador decidió el 2026-11-20 mantenerlo y documentarlo como excepción; el cuerpo corrido y los modales siguen en 18 px. Si no se aplica, la regla 1 contradice las tarjetas.
 
 **Texto actual** (copiado literalmente de `DESIGN.md`):
@@ -674,7 +674,7 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 4. Espaciado, retícula y forma (viñeta «Retícula»)
-- **Estado:** Pendiente (2026-11-20, iteración 05-08).
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-21 con `grep` en `DESIGN.md` de la rama `correccion/epica-05-cierre`.
 - **Por qué:** la viñeta sigue diciendo «4 desde 1024 px (la ruta tiene 4 unidades)», de la épica 02. Desde la 05-06 la ruta es un mosaico 2 × 2 (`RutaCurso.astro`: `grid-cols-1 sm:grid-cols-2`) y desde la 05-05 las tarjetas de la unidad van en 3 columnas desde 1024 px (`.cuadricula-bloques`: `sm:grid-cols-2 lg:grid-cols-3`), como ya dicen las filas «Portada y ruta» y «Sección de unidad». Si no se aplica, la sección 4 contradice a la sección 5 y al sitio.
 
 **Texto actual** (copiado literalmente de `DESIGN.md`):
@@ -693,7 +693,7 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 5. Componentes (fila «Bloque de prompt»)
-- **Estado:** Pendiente (2026-11-20, iteración 05-08).
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-21 con `grep` en `DESIGN.md` de la rama `correccion/epica-05-cierre`.
 - **Por qué:** en `Prompt.astro`, «Copiar» va en la esquina superior derecha solo desde 640 px; en móvil queda bajo el título y la descripción (`flex-col`), para que no comprima el texto. Además, el prompt se escribe en IBM Plex Mono de 14 px (`text-sm`) en todos los anchos desde la 03-02, por debajo de los 16 px de la sección 3, regla 1. Si no se aplica, la fila no describe el bloque publicado; si el desarrollador prefiere 16 px, es un cambio de código que se mide contra el alto de los modales.
 
 **Texto actual** (copiado literalmente de `DESIGN.md`):

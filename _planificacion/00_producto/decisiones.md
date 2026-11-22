@@ -16,6 +16,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 | RDA-010 | Formato y peso de las descargas medidos del archivo al compilar | Aceptada |
 | RDA-011 | Modales sobre `<dialog>` nativo con script mínimo y respaldo sin JavaScript | Aceptada |
 | RDA-012 | Síntesis por bloque y por unidad en el modelo de contenido, con límites de palabras | Aceptada |
+| RDA-013 | Sin barras de avance: la ruta y las unidades muestran su lugar en el curso | Propuesta |
 
 ---
 
@@ -116,6 +117,8 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 
 **Actualización 2026-11-17:** el contenido de prueba se reemplazó en la 02-02, no en la épica 03. Los tramos ya están cargados en `src/content/unidades/u1.yaml` a `u4.yaml`.
 
+**Actualización 2026-11-21:** la RDA-013 (propuesta) deja de mostrar los tramos de la RDA-008 como barras; los tramos siguen en el esquema y en los YAML de las unidades, sin mostrarse.
+
 ---
 
 ## RDA-009 · Un archivo `.md` por bloque, en su propia colección
@@ -167,3 +170,14 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 **Consecuencias:** el texto visible por unidad queda acotado por esquema, y cada bloque nuevo necesita su síntesis para compilar. Se duplica en parte el contenido (síntesis y detalle), así que un cambio en el detalle obliga a revisar su síntesis; la bitácora de cada cambio de contenido debe decir si la revisó.
 **Actualización 2026-11-20 (05-05):** para que la unidad quepa en una pantalla, la tarjeta muestra solo la primera clave; la segunda se muestra en el modal de detalle, tras el resumen, con la etiqueta «Otra idea clave:» (decisión del desarrollador). El esquema sigue aceptando 1 o 2 claves.
 
+---
+
+## RDA-013 · Sin barras de avance: la ruta y las unidades muestran su lugar en el curso
+
+- **Fecha:** 2026-11-21
+- **Estado:** Propuesta
+
+**Contexto:** la crítica de diseño del 2026-11-21 (skill Impeccable) mostró que las barras «0 % → 25 %» de la ruta y de las cabeceras de unidad (RDA-008, 05-06) se leen como el avance del participante, pero son el tramo fijo de cada unidad y el sitio no guarda ningún estado. Es la única señal de estado de la página y no se cumple.
+**Decisión:** se quitan las barras de avance de la ruta y de las cabeceras de unidad, y se borra `BarraAvance.astro`. En su lugar, cada tarjeta de la ruta y cada cabecera muestran «Clase n de 4 · 120 min» en IBM Plex Mono, con el número de clases tomado de `curso.yaml`, y el número de la unidad en grande. El campo `avance` (RDA-008) se conserva en el esquema y en los YAML, sin mostrarse. La barra de lectura de 3 px bajo el encabezado se conserva, porque sí refleja el desplazamiento real.
+**Alternativas consideradas:** guardar el avance por bloque en `localStorage` (da un estado real, pero agrega JavaScript, casillas que el participante debe marcar y un caso borde por navegador; queda como propuesta fuera de alcance, junto con las casillas de «Terminado cuando…»); dejar las barras con otro texto («25 % del curso»), que sigue pareciendo progreso; borrar también el campo `avance` del esquema (cambio de esquema sin beneficio visible; se puede hacer después).
+**Consecuencias:** la página deja de prometer un estado que no tiene. Se pierde la lectura visual de «cuarto del curso»; la compensa el número grande de cada unidad y «Clase n de 4». El campo `avance` queda sin uso visible: si en el futuro se guarda el avance del participante, esta RDA se reemplaza.

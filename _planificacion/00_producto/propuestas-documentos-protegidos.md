@@ -36,6 +36,11 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-020 | `DESIGN.md` · 3. Tipografía, regla 1 | Iteración 05-08 | 2026-11-20 | Aplicada |
 | P-021 | `DESIGN.md` · 4. Espaciado, retícula y forma (Retícula) | Iteración 05-08 | 2026-11-20 | Aplicada |
 | P-022 | `DESIGN.md` · 5. Componentes (fila Bloque de prompt) | Iteración 05-08 | 2026-11-20 | Aplicada |
+| P-023 | `DESIGN.md` · 1. Concepto visual (principio 3) y 2.1 Superficies | Épica 06 (06-01) | 2026-11-21 | Pendiente |
+| P-024 | `DESIGN.md` · 5. Componentes (fila Portada y ruta) | Épica 06 (06-02) | 2026-11-21 | Pendiente |
+| P-025 | `DESIGN.md` · 5. Componentes (fila Sección de unidad) | Épica 06 (06-03) | 2026-11-21 | Pendiente |
+| P-026 | `DESIGN.md` · 5. Componentes (fila Tarjeta de bloque) | Épica 06 (06-04) | 2026-11-21 | Pendiente |
+| P-027 | `DESIGN.md` · 5. Componentes (fila Modal) | Épica 06 (06-05) | 2026-11-21 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -706,4 +711,116 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 ```text
 | Bloque de prompt | Fondo `--color-superficie-2`, texto en IBM Plex Mono de 14 px (excepción a la regla 1 de la sección 3, como bloque de código), botón «Copiar» en la esquina superior derecha desde 640 px y bajo el título y la descripción en móvil. Al copiar, el botón cambia a «Copiado» por 2 s y lo anuncia con `aria-live="polite"`. El texto es seleccionable aunque no haya JavaScript. |
+```
+
+## P-023 · Trama de puntos del fondo
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 1. Concepto visual (principio 3) y 2.1 Superficies (tabla)
+- **Estado:** pendiente.
+- **Por qué:** el desarrollador aprobó el 2026-11-21 una trama de puntos como fondo de todo el sitio (épica 06, 06-01). Se dibuja con `radial-gradient()`, y el principio 3 limita los degradados al brillo y a la barra de lectura; además, el token `--color-puntos` no está en la tabla de superficies. Si no se aplica, la 06-01 contradice `DESIGN.md` y un agente podría quitar la trama por regla.
+
+**En la sección 1, principio 3:**
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+3. **Ligero, con profundidad.** Bloques de color sólido y sin fotos. La profundidad viene de sombras teñidas con el color de cada unidad y de un brillo sutil que sigue al cursor; los degradados se usan solo en ese brillo y en la barra de avance de lectura. Ningún efecto agrega imágenes ni librerías.
+```
+
+**Texto propuesto:**
+
+```text
+3. **Ligero, con profundidad.** Bloques de color sólido y sin fotos. La profundidad viene de sombras teñidas con el color de cada unidad y de un brillo sutil que sigue al cursor; los degradados se usan solo en ese brillo, en la barra de avance de lectura y en la trama de puntos del fondo. Ningún efecto agrega imágenes ni librerías.
+```
+
+**En la tabla 2.1, después de la fila de `--color-presionado` (se agrega una fila):**
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| `--color-presionado` | `#99C8E0` | `#006486` | Fondo al presionar botones y píldoras (`:active`) |
+```
+
+**Texto propuesto:**
+
+```text
+| `--color-presionado` | `#99C8E0` | `#006486` | Fondo al presionar botones y píldoras (`:active`) |
+| `--color-puntos` | `#003B51` al 17 % | `#005877` al 55 % | Trama de puntos del fondo: 1 px cada 22 px en el `<body>`, sin animación y sin trama al imprimir |
+```
+
+## P-024 · Portada y ruta sin barras de avance y con la ficha del curso
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 5. Componentes (fila «Portada y ruta»)
+- **Estado:** pendiente.
+- **Por qué:** la 06-02 quita las barras de avance (RDA-013), agrega la ficha del curso y el número grande de cada unidad, pasa la estrella de Gemini junto al `h2` de la ruta y los logos bajo las redes. Si no se aplica, la fila pide barras de avance y una franja de logos al pie que ya no existen.
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Portada y ruta | Una sola sección en el primer pantallazo: a la izquierda, título (`h1`), lema, botón principal «Empezar por la Unidad 1» y redes; a la derecha, el logo de Gemini como protagonista y, en primer plano, las 4 tarjetas de unidad en mosaico 2 × 2 (número, nombre, mini-proyecto en 2 líneas y barra de avance con su texto en IBM Plex Mono), cada una enlazada a su sección. Logos de Google, GTD Telsur y Capacita Tu Futuro en una franja discreta al pie de la sección. La ruta conserva su `id="ruta"` y su `h2`. |
+```
+
+**Texto propuesto:**
+
+```text
+| Portada y ruta | Una sola sección en el primer pantallazo: a la izquierda, título (`h1`), lema en Sora 600 y `--color-primario`, la ficha del curso en IBM Plex Mono («4 clases · 8 horas · 20 bloques · 24 prompts», calculada del contenido), botón principal «Empezar por la Unidad 1», redes y, bajo una línea de 1 px, los logos de Google, GTD Telsur y Capacita Tu Futuro; a la derecha, la ruta: su `h2` con el logo de Gemini junto a él y las 4 tarjetas de unidad en mosaico 2 × 2 (número de la unidad en Sora 700, nombre, mini-proyecto completo y «Clase n de 4 · 120 min» en IBM Plex Mono), cada una enlazada a su sección. La ruta conserva su `id="ruta"` y su `h2`. Sin barras de avance (RDA-013). |
+```
+
+## P-025 · Cabecera de unidad con número grande y sin barra
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 5. Componentes (fila «Sección de unidad»)
+- **Estado:** pendiente.
+- **Por qué:** la 06-03 cambia la línea de clase y duración sobre el título por el número de la unidad a la izquierda y «Clase n de 4 · 120 min» bajo el objetivo, y quita la barra de avance del tramo (RDA-013). Si no se aplica, la fila describe una cabecera con barra que ya no existe.
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Sección de unidad | Cabe en una pantalla de escritorio de 1440 × 900; en 1366 × 657 ocupa algo más de una pantalla (unos 1,4 de alto). Cabecera con el bloque de color de la unidad: clase y duración en IBM Plex Mono, título, objetivo breve, barra de avance del tramo, píldoras «Antes de empezar» y «Cierre» (si existen) y acciones «Sobre la unidad», «Recursos (n)» y «Descargas (n)». Debajo, una cuadrícula de 6 tarjetas (3 × 2 desde 1024 px, 2 columnas desde 640 px, 1 en móvil): una por bloque y una de «Terminado cuando…», que muestra el entregable y un botón «Terminado cuando… (n)» que abre la lista en un modal. Sin tabla de bloques. |
+```
+
+**Texto propuesto:**
+
+```text
+| Sección de unidad | Cabe en una pantalla de escritorio de 1440 × 900; en 1366 × 657 ocupa algo más de una pantalla (unos 1,4 de alto). Cabecera con el bloque de color de la unidad: a la izquierda, el número de la unidad en Sora 700; a la derecha, título, objetivo breve y «Clase n de 4 · 120 min» en IBM Plex Mono (sin barra de avance, RDA-013), píldoras «Antes de empezar» y «Cierre» (si existen) y acciones «Sobre la unidad», «Recursos (n)» y «Descargas (n)». Debajo, una cuadrícula de 6 tarjetas (3 × 2 desde 1024 px, 2 columnas desde 640 px, 1 en móvil): una por bloque y una de «Terminado cuando…», que muestra el entregable y un botón «Terminado cuando… (n)» que abre la lista en un modal. Sin tabla de bloques. |
+```
+
+## P-026 · Tarjeta de bloque clicable y ticket de entrega
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 5. Componentes (fila «Tarjeta de bloque»)
+- **Estado:** pendiente.
+- **Por qué:** la 06-04 cambia la franja superior por una marca recta, hace que toda la tarjeta abra el detalle, deja un solo botón visible y da a «Terminado cuando…» la forma de ticket. Si no se aplica, la fila sigue pidiendo la franja superior y las dos acciones como botones.
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Tarjeta de bloque | Número y minutos en IBM Plex Mono, título (`h3`), «Qué harás» y la primera clave; acciones «Ver detalle» y «Ver prompt» o «Prompts (n)». Superficie `--color-fondo` con borde de 1 px `--color-linea`, franja superior del color de la unidad y sombra de su unidad. |
+```
+
+**Texto propuesto:**
+
+```text
+| Tarjeta de bloque | Marca de 40 × 6 px del color de la unidad, número y minutos en IBM Plex Mono, título (`h3`), «Qué harás» y la primera clave; la tarjeta entera abre el detalle con el enlace «Ver detalle» y su flecha, y el único botón visible es «Ver prompt» o «Prompts (n)». Superficie `--color-fondo` con borde de 1 px `--color-linea` y sombra de su unidad. La tarjeta «Terminado cuando…» va como ticket: borde discontinuo de 1,5 px, fondo `--color-superficie` y sin sombra. |
+```
+
+## P-027 · Modal con línea de datos y entradilla
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 5. Componentes (fila «Modal»)
+- **Estado:** pendiente.
+- **Por qué:** la 06-05 agrega bajo el título una línea de datos en IBM Plex Mono y muestra el resumen del bloque como entradilla; el título del detalle deja de llevar «Detalle ·». Si no se aplica, la fila no describe el modal publicado.
+
+**Texto actual** (copiado literalmente de `DESIGN.md`):
+
+```text
+| Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, o `--color-primario` si el modal no pertenece a una unidad, como la trayectoria del instructor, título, botón «Cerrar» de 44 px, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
+```
+
+**Texto propuesto:**
+
+```text
+| Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, o `--color-primario` si el modal no pertenece a una unidad, como la trayectoria del instructor, título, una línea de datos en IBM Plex Mono («Bloque n · m min · Unidad n»), botón «Cerrar» de 44 px, resumen del bloque como entradilla, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
 ```

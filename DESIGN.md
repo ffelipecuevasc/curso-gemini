@@ -12,7 +12,7 @@ Principios:
 
 1. **Práctica primero, detalle a un clic.** Cada unidad cabe en una pantalla de escritorio: se ve qué harás en cada bloque y sus ideas clave, y los prompts, las descargas, la teoría y los recursos se abren en modales desde la tarjeta del bloque.
 2. **Un color por unidad, nunca como única señal.** El color ayuda a ubicarse, pero cada bloque también lleva su número, su nombre y su porcentaje de avance escritos.
-3. **Ligero, con profundidad.** Bloques de color sólido y sin fotos. La profundidad viene de sombras teñidas con el color de cada unidad y de un brillo sutil que sigue al cursor; los degradados se usan solo en ese brillo y en la barra de avance de lectura. Ningún efecto agrega imágenes ni librerías.
+3. **Ligero, con profundidad.** Bloques de color sólido y sin fotos. La profundidad viene de sombras teñidas con el color de cada unidad y de un brillo sutil que sigue al cursor; los degradados se usan solo en ese brillo, en la barra de avance de lectura y en la trama de puntos del fondo. Ningún efecto agrega imágenes ni librerías.
 
 ## 2. Color
 
@@ -28,6 +28,7 @@ Los colores son los oficiales de la identidad de felipecuevas.dev. No se agregan
 | `--color-linea` | `#E4F3FF` | `#003B51` | Separadores de 1 px |
 | `--color-hover-suave` | `#B1D4E9` | `#005877` | Hover de botones de ícono (modo, menú, cerrar) y píldoras de navegación |
 | `--color-presionado` | `#99C8E0` | `#006486` | Fondo al presionar botones y píldoras (`:active`) |
+| `--color-puntos` | `#003B51` al 17 % | `#005877` al 55 % | Trama de puntos del fondo: 1 px cada 22 px en el `<body>`, sin animación y sin trama al imprimir |
 
 ### 2.2 Acento y texto
 

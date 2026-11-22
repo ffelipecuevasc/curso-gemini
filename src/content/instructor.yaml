@@ -11,12 +11,13 @@
     descripcion: Certifica las habilidades, competencias y conocimientos para usar la IA de Google en la educación.
     emision: 13-10-2026
     vigencia: 13-10-2029
+    insignia: ../assets/instructor/gemini-certified-educator.png
     enlace:
-      titulo: Certificaciones Gemini de Google for Education
-      url: https://blog.google/products-and-platforms/products/education/gemini-certifications-education/
+      titulo: Ver mi credencial de Educador certificado de Gemini
+      url: https://edu.google.accredible.com/a5f1f0d4-168f-40a8-9725-8a8d14f45ca9
   trayectoria:
     - Más de 12 años en docencia y formación técnica. Docente universitario en IPLACEX (2024 a la fecha) y antes en INACAP (2012–2020), Duoc UC e IACC.
     - Más de 300 profesionales formados en bootcamps de reconversión laboral (Talento Digital para Chile, SENCE). Según felipecuevas.dev, suma más de 2.000 estudiantes formados y más de 150 módulos aprobados como relator REUF.
     - Instructor certificado de IA con Gemini en programas corporativos para Capacita Tu Futuro (más de 50 ejecutivos y colaboradores, octubre de 2026) y Skillnest (junio a agosto de 2026).
-    - "Más de 10 certificaciones profesionales vigentes de Oracle, AWS, Python Institute y Anthropic. Entre ellas: OCI AI Associate, OCI AI Agents Associate, OCI Developer Professional, Oracle Cloud Essentials (Oracle Cloud Infrastructure) y Python PCEP."
+    - Certificaciones profesionales vigentes en Oracle, AWS, Anthropic y Python. Más detalles en felipecuevas.dev.
   comunidad: Fundador de la comunidad Pulso Devs.

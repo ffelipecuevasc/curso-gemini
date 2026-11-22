@@ -71,10 +71,10 @@ const resto = trayectoria.filter((_, i) => !visibles.has(i));
         {certificacion.insignia && (
           <Image
             src={certificacion.insignia}
-            width={120}
-            height={120}
+            width={160}
+            height={121}
             alt="Insignia de Gemini Certified Educator"
-            class="size-30 shrink-0"
+            class="h-auto w-40 shrink-0"
           />
         )}
         <div>
@@ -84,7 +84,6 @@ const resto = trayectoria.filter((_, i) => !visibles.has(i));
             {certificacion.vigencia}.
           </p>
           <p class="mt-2">
-            Enlace oficial de la certificación:{" "}
             <a
               href={certificacion.enlace.url}
               target="_blank"

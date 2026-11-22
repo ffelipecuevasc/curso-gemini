@@ -36,7 +36,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-020 | `DESIGN.md` · 3. Tipografía, regla 1 | Iteración 05-08 | 2026-11-20 | Aplicada |
 | P-021 | `DESIGN.md` · 4. Espaciado, retícula y forma (Retícula) | Iteración 05-08 | 2026-11-20 | Aplicada |
 | P-022 | `DESIGN.md` · 5. Componentes (fila Bloque de prompt) | Iteración 05-08 | 2026-11-20 | Aplicada |
-| P-023 | `DESIGN.md` · 1. Concepto visual (principio 3) y 2.1 Superficies | Épica 06 (06-01) | 2026-11-21 | Pendiente |
+| P-023 | `DESIGN.md` · 1. Concepto visual (principio 3) y 2.1 Superficies | Épica 06 (06-01) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-024 | `DESIGN.md` · 5. Componentes (fila Portada y ruta) | Épica 06 (06-02) | 2026-11-21 | Pendiente |
 | P-025 | `DESIGN.md` · 5. Componentes (fila Sección de unidad) | Épica 06 (06-03) | 2026-11-21 | Pendiente |
 | P-026 | `DESIGN.md` · 5. Componentes (fila Tarjeta de bloque) | Épica 06 (06-04) | 2026-11-21 | Pendiente |
@@ -717,7 +717,7 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 1. Concepto visual (principio 3) y 2.1 Superficies (tabla)
-- **Estado:** pendiente.
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-22 con `grep` en `DESIGN.md` de la rama `correccion/instructor-insignia` (`--color-puntos` en 2.1 Superficies).
 - **Por qué:** el desarrollador aprobó el 2026-11-21 una trama de puntos como fondo de todo el sitio (épica 06, 06-01). Se dibuja con `radial-gradient()`, y el principio 3 limita los degradados al brillo y a la barra de lectura; además, el token `--color-puntos` no está en la tabla de superficies. Si no se aplica, la 06-01 contradice `DESIGN.md` y un agente podría quitar la trama por regla.
 
 **En la sección 1, principio 3:**

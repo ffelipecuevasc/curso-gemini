@@ -4,7 +4,7 @@
 
 - **Última actualización:** 2026-11-22
 - **Iteración activa:** ninguna
-- **Próximo hito:** épica 06 · Pulido de identidad (06-01 a 06-06), tras aplicar la P-023
+- **Próximo hito:** épica 06 · Pulido de identidad (06-01 a 06-06); P-023 aplicada
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
 
@@ -48,6 +48,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
 | 26.1 | Corrección documental de la épica 06 sin la vista previa: RDA-013 aceptada, cifras de la vista previa como referencia histórica y criterio de Lighthouse con mediana de 3 y tolerancia de 2 puntos · Rama `correccion/epica-06-sin-parche` | Corrección | — | — | En revisión |
+| 26.2 | Insignia de Gemini Certified Educator (160 × 121) y enlace a la credencial en Accredible en el modal del instructor; 4.ª línea de trayectoria sin certificaciones concretas · Rama `correccion/instructor-insignia` | Corrección | — | — | En revisión |
 | 27 | Trama de puntos de fondo en ambos modos | Diseño | — | 06-01 | Pendiente |
 | 28 | Portada con ficha del curso y ruta con número grande, sin barras de avance (RDA-013) | Diseño | — | 06-02 | Pendiente |
 | 29 | Cabecera de unidad con número grande; borrar `BarraAvance.astro` | Diseño | — | 06-03 | Pendiente |
@@ -72,12 +73,10 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 
 | Tema | RDA o hallazgo | Responsable |
 | :--- | :------------- | :---------- |
-| Aplicar las propuestas P-023 a P-027 antes de su iteración (P-023 antes de la 06-01) | P-023 a P-027 | Desarrollador |
+| Aplicar las propuestas P-024 a P-027 antes de su iteración | P-024 a P-027 | Desarrollador |
 | Texto de «Profundiza en tu tiempo» de cada bloque: el documento del curso lista los temas, pero no la teoría escrita · Opcional desde 2026-11-17: «Profundiza» usa los recursos oficiales ya cargados y el texto no bloquea nada | — | Desarrollador |
 | Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) · U1: 5 videos cargados en la 03-04; U2: sin videos (ausencia acordada); U3: 1 video cargado en la 03-05; U4: sin videos (ausencia acordada) | — | Desarrollador |
 | Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Publicados el dataset CSV (03-03) y su diccionario editado para participantes (03-04); de la U1 y la U2, el resto (`plantillas-alumnos.zip`, informe de Deep Research de respaldo) queda como ausencia acordada en la 03-04; en la 03-05 se publican las 4 plantillas de `plantillas-alumnos/` (U4) y quedan como ausencia acordada `optimizador-prompts/SKILL.md`, `gtd-visual.zip` y el paquete de fuentes de la U3 | — | Desarrollador |
-| Imagen de la insignia oficial de Gemini Certified Educator para la sección del instructor · La 02-04 se construyó sin ella; el campo `insignia` del esquema está listo para recibirla | 02-04 | Desarrollador |
-| Nombres completos de las certificaciones AWS y Anthropic, si se listan · La 02-04 publica solo el texto del documento, sin detallarlas | 02-04 | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U1 nombrados pero no escritos: el «Avanzado» completo de la escalera (bloque 4) y la ronda 3 del laboratorio (bloque 5) | 02-05 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U2 nombrados pero no escritos: «Prompt base» del dashboard (bloque 5), «Prompts base de cada hito» y los carriles extra de los bloques 1 a 5 | 02-05 | Desarrollador |
@@ -104,7 +103,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-17 | Iteración 03-01 terminada: el desarrollador revisó en el navegador 360 px y el teclado en las tablas, sin observaciones. |
 | 2026-11-17 | Iteración 03-02 en revisión: 24 prompts con «Copiar» (24 de 24 idénticos, IDs únicos), marcador de `identidad-visual-gtd` en U2 · 3 y 41 recursos por unidad; JS +198 B gzip (4 etiquetas); falta revisión en navegador. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-02.md) |
 | 2026-11-17 | Iteración 03-02 terminada: el desarrollador probó en el navegador el copiado con teclado, el botón sin JavaScript y 360 px en ambos modos, sin observaciones. |
 | 2026-11-17 | Iteración 03-03 en revisión: RDA-010 (formato y peso medidos del archivo), tarjeta del dataset CSV en la U2 (25,4 KB = statSync), «Profundiza» con `<details>` y validación de sus recursos; desaparece la última advertencia del build; 0 B de JS nuevo. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-03.md) |
@@ -154,3 +152,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-21 | Corrección: cierre de la 05-08 y de la épica 05. C1 a C9 y revisión en notebook y teléfono sin observaciones (dicho por el desarrollador el 2026-11-20); P-018 a P-022 aplicadas (comprobadas con `grep`; P-022 deja los 14 px como excepción); salen de «Decisiones por tomar» esas propuestas y el Rendimiento publicado ≥ 95 (98 en la 05-08); filas de la épica (8 iteraciones, correcciones 18.1 a 18.3 y prioridades 19 a 26) y las 2 filas más antiguas del historial pasan a `registro-archivo.md`, para no pasar de 50; sin iteración activa. [Cierre](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-cierre.md) |
 | 2026-11-21 | Épica 06 (pulido de identidad) planificada tras la crítica de Impeccable (24 de 36) y la vista previa aprobada con trama de puntos: definición, 6 iteraciones (06-01 a 06-06), RDA-013 propuesta y propuestas P-023 a P-027; backlog 27 a 32. [Definición](../10_epicas/epica-06-pulido-identidad/definicion-epica-06.md) |
 | 2026-11-22 | Corrección documental de la épica 06 sin la vista previa: RDA-013 aceptada (dicho por el desarrollador); la rama y el parche dejan de ser fuente y sus cifras (823; 816, 816, 818, 791; +8 px) pasan a referencia histórica que se vuelve a medir en la Fase 1 de la 06-02 y la 06-03; Lighthouse de la 06-06 con mediana de 3 y tolerancia de 2 puntos; P-023 a P-027 siguen pendientes; las 2 filas más antiguas del historial pasan a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-00-correccion-sin-parche.md) |
+| 2026-11-22 | Corrección 26.2 en revisión: insignia de Gemini Certified Educator (PNG del desarrollador, 160 × 121, sin alterar) y enlace a la credencial en Accredible en el modal del instructor, sin el prefijo «Enlace oficial de la certificación:»; 4.ª línea de trayectoria sin certificaciones concretas; P-023 aplicada (comprobada con `grep`); salen de «Decisiones por tomar» la insignia, los nombres AWS y Anthropic (descartado) y la P-023; JS 1774 B sin cambios; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-00-correccion-insignia.md) |

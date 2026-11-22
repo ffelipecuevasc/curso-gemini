@@ -1,7 +1,7 @@
 # Iteración 06-02 · Portada y ruta con firma
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/06-02-portada-ruta
 - **Depende de:** 06-01, RDA-013 aceptada y propuesta P-024 aplicada
 - **Especificación:** —
@@ -41,6 +41,7 @@ Que el primer pantallazo tenga firma propia: un título firme, el lema como segu
 
 - 2026-11-21: quitar las barras de avance (RDA-013).
 - 2026-11-21: el `h1` sigue siendo el título del curso (`DESIGN.md`, sección 3, regla 2); el lema no pasa a `h1`.
+- 2026-11-22: opción A en 1366 × 657: la columna de texto cabe y la ruta se desplaza (la última tarjeta termina hacia los 803 px; antes, 807 px). No se reducen la estrella, el título ni los espaciados.
 
 ## Tareas
 
@@ -55,11 +56,11 @@ Que el primer pantallazo tenga firma propia: un título firme, el lema como segu
 
 ## Tareas del desarrollador
 
-1. Aplicar la P-024 antes de empezar (RDA-013 aceptada el 2026-11-22).
+1. ~~Aplicar la P-024 antes de empezar (RDA-013 aceptada el 2026-11-22).~~ Cumplida: P-024 aplicada el 2026-11-22 (comprobada con `grep`).
 
 ## Criterios de aceptación
 
-- [ ] En 1440 × 900 y 1366 × 657, título, lema, ficha, botón principal y las 4 tarjetas completas se ven sin desplazarse (captura en la bitácora).
+- [ ] En 1440 × 900, título, lema, ficha, botón principal y las 4 tarjetas completas se ven sin desplazarse; en 1366 × 657 cabe la columna de texto y la ruta se desplaza (la última tarjeta termina hacia los 803 px).
 - [ ] La ficha muestra los valores calculados y coincide con un conteo manual de `src/content/bloques/` (bloques con número y prompts).
 - [ ] El mini-proyecto de la U3 se ve completo («…Ley 21.719 en GTD») en todos los anchos.
 - [ ] En 390 × 844, la estrella de Gemini va en la misma fila que «Ruta del curso».

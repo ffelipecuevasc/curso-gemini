@@ -1,18 +1,19 @@
 ---
-// Una tarjeta del mosaico de la ruta (DESIGN.md, secciones 2.2, 4 y 5):
-// número, nombre, mini-proyecto en 2 líneas y barra de avance (RDA-008),
-// enlazada a la sección de su unidad. Todo el texto viene de la ficha; el
-// mini-proyecto completo está en el modal «Sobre la unidad».
+// Una tarjeta del mosaico de la ruta (DESIGN.md, secciones 2.2, 4 y 5; P-024):
+// número de la unidad en grande («Unidad» solo para lectores de pantalla),
+// nombre, mini-proyecto completo y «Clase n de N · min» al pie, enlazada a la
+// sección de su unidad. Sin barra de avance (RDA-013). Todo el texto viene de
+// la ficha de la unidad.
 import type { CollectionEntry } from "astro:content";
 import { bloqueUnidad } from "../lib/colores-unidad";
-import BarraAvance from "./BarraAvance.astro";
 
 interface Props {
   unidad: CollectionEntry<"unidades">;
+  clases: number;
 }
 
-const { unidad } = Astro.props;
-const { numero, titulo, miniProyecto, avance } = unidad.data;
+const { unidad, clases } = Astro.props;
+const { numero, titulo, miniProyecto, clase, duracionMin } = unidad.data;
 const base = `ruta-u${numero}`;
 ---
 
@@ -20,11 +21,11 @@ const base = `ruta-u${numero}`;
   <a
     href={`#unidad-${numero}`}
     aria-labelledby={`${base}-numero ${base}-titulo`}
-    aria-describedby={`${base}-proyecto ${base}-avance`}
+    aria-describedby={`${base}-proyecto ${base}-clase`}
     class:list={["tarjeta-ruta group", bloqueUnidad[numero]]}
   >
-    <p id={`${base}-numero`} class="font-display font-semibold">
-      Unidad {numero}
+    <p id={`${base}-numero`} class="numero-ruta">
+      <span class="sr-only">Unidad </span>{numero}
     </p>
     <h3
       id={`${base}-titulo`}
@@ -32,15 +33,12 @@ const base = `ruta-u${numero}`;
     >
       {titulo}
     </h3>
-    <p id={`${base}-proyecto`} class="line-clamp-2 wrap-break-word">
+    <p id={`${base}-proyecto`} class="wrap-break-word">
       <span class="font-medium">Mini-proyecto:</span>{" "}
       {miniProyecto.titulo}
     </p>
-    <BarraAvance
-      id={`${base}-avance`}
-      desde={avance.desde}
-      hasta={avance.hasta}
-      class="mt-auto"
-    />
+    <p id={`${base}-clase`} class="mt-auto font-codigo text-sm">
+      Clase {clase} de {clases} · {duracionMin} min
+    </p>
   </a>
 </li>

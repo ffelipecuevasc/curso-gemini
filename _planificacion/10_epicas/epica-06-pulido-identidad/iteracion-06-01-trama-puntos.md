@@ -1,7 +1,7 @@
 # Iteración 06-01 · Trama de puntos de fondo
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/06-01-trama-puntos
 - **Depende de:** cierre de la épica 05 y propuesta P-023 aplicada
 - **Especificación:** —

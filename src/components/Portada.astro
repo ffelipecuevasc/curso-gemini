@@ -1,21 +1,40 @@
 ---
-// Portada y ruta en un pantallazo (DESIGN.md, secciones 5 y 6): a la
-// izquierda, título (h1), lema, botón principal y redes; a la derecha, el
-// logo de Gemini como protagonista y, en primer plano, la ruta del curso
-// (sección anidada con `id="ruta"` y su h2). Logos de Google, GTD Telsur y
-// Capacita Tu Futuro en una franja discreta al pie. Los SVG se usan tal cual.
+// Portada y ruta en un pantallazo (DESIGN.md, secciones 5 y 6; P-024): a la
+// izquierda, título (h1), lema, la ficha del curso calculada del contenido,
+// botón principal, redes y, bajo una línea de 1 px, los logos de Google,
+// GTD Telsur y Capacita Tu Futuro; a la derecha, la ruta del curso (sección
+// anidada con `id="ruta"` y su h2, con el logo de Gemini). Los SVG se usan
+// tal cual.
 import { getEntry } from "astro:content";
-import Gemini from "../assets/iconos/gemini.svg";
 import Google from "../assets/iconos/google.svg";
 import GtdTelsur from "../assets/iconos/gtd-telsur.svg";
 import CapacitaTuFuturo from "../assets/iconos/capacita-tu-futuro.svg";
+import { obtenerUnidadesConBloques } from "../lib/unidades";
 import Redes from "./Redes.astro";
 import RutaCurso from "./RutaCurso.astro";
 
 const curso = await getEntry("curso", "curso");
 if (!curso)
   throw new Error("Falta la entrada «curso» en src/content/curso.yaml");
-const { titulo, lema } = curso.data;
+const { titulo, lema, clases, duracionTotalMin } = curso.data;
+
+// Ficha del curso: clases y horas de curso.yaml; bloques (con número mayor
+// que 0) y prompts contados de las colecciones al compilar.
+const horas = duracionTotalMin / 60;
+if (!Number.isInteger(horas)) {
+  throw new Error(
+    `«duracionTotalMin» (${duracionTotalMin}) no da horas enteras: revisa el texto de la ficha del curso`,
+  );
+}
+const bloques = (await obtenerUnidadesConBloques()).flatMap((u) => u.bloques);
+const numerados = bloques.filter((b) => (b.data.numero ?? 0) > 0).length;
+const prompts = bloques.reduce((total, b) => total + b.data.prompts.length, 0);
+const ficha = [
+  `${clases} clases`,
+  `${horas} horas`,
+  `${numerados} bloques`,
+  `${prompts} prompts`,
+];
 ---
 
 <section
@@ -29,13 +48,11 @@ const { titulo, lema } = curso.data;
   ></div>
   <div class="mx-auto grid max-w-sitio grid-cols-1 items-center gap-8 px-6 pt-10 pb-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-10 lg:pt-8">
     <div class="flex flex-col items-start gap-5">
-      <h1
-        id="titulo-inicio"
-        class="text-4xl leading-tight font-bold sm:text-5xl"
-      >
-        {titulo}
-      </h1>
-      <p class="text-xl text-texto-2 lg:text-2xl">{lema}</p>
+      <h1 id="titulo-inicio" class="titulo-portada">{titulo}</h1>
+      <p class="lema-portada">{lema}</p>
+      <ul aria-label="El curso en cifras" class="ficha-curso">
+        {ficha.map((dato) => <li>{dato}</li>)}
+      </ul>
       <a
         href="#unidad-1"
         class="inline-flex min-h-11 items-center rounded-pildora bg-primario px-6 py-3 font-medium text-sobre-primario no-underline transition-[background-color,color,scale] duration-200 hover:bg-primario-hover active:scale-[0.97] active:bg-presionado active:text-texto motion-reduce:transition-none motion-reduce:active:scale-100"
@@ -43,33 +60,24 @@ const { titulo, lema } = curso.data;
         Empezar por la Unidad 1
       </a>
       <Redes class="text-sm" />
-    </div>
-    <div class="relative">
-      <Gemini
-        role="img"
-        aria-label="Gemini"
-        class="absolute -top-4 right-0 -z-10 aspect-[296/298] h-28 w-auto sm:h-36"
-      />
-      <div class="pt-20 sm:pt-24">
-        <RutaCurso />
+      <div class="flex w-full flex-wrap items-center gap-6 border-t border-linea pt-4 text-texto">
+        <Google
+          role="img"
+          aria-label="Google"
+          class="aspect-[512/168] h-6 w-auto"
+        />
+        <GtdTelsur
+          role="img"
+          aria-label="GTD Telsur"
+          class="aspect-[525/380] h-7 w-auto"
+        />
+        <CapacitaTuFuturo
+          role="img"
+          aria-label="Capacita Tu Futuro"
+          class="aspect-[1184/442] h-6 w-auto"
+        />
       </div>
     </div>
-  </div>
-  <div class="mx-auto flex max-w-sitio flex-wrap items-center gap-6 px-6 pb-6 text-texto">
-    <Google
-      role="img"
-      aria-label="Google"
-      class="aspect-[512/168] h-6 w-auto"
-    />
-    <GtdTelsur
-      role="img"
-      aria-label="GTD Telsur"
-      class="aspect-[525/380] h-7 w-auto"
-    />
-    <CapacitaTuFuturo
-      role="img"
-      aria-label="Capacita Tu Futuro"
-      class="aspect-[1184/442] h-6 w-auto"
-    />
+    <RutaCurso />
   </div>
 </section>

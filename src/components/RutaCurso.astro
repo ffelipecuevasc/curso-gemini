@@ -1,22 +1,35 @@
 ---
-// «Ruta del curso» (DESIGN.md, sección 5, «Portada y ruta»): va dentro de la
-// portada, como sección anidada con su `id="ruta"` y su h2, y muestra las
-// 4 unidades en mosaico de 1 columna en móvil y 2 × 2 desde 640 px.
+// «Ruta del curso» (DESIGN.md, sección 5, «Portada y ruta»; P-024): va dentro
+// de la portada, como sección anidada con su `id="ruta"` y su h2, con el logo
+// de Gemini junto al título (el SVG se usa tal cual) y las 4 unidades en
+// mosaico de 1 columna en móvil y 2 × 2 desde 640 px.
 // Usa obtenerUnidadesConBloques() para que las comprobaciones entre
 // unidades y bloques (RDA-009) corran en cada build.
+import { getEntry } from "astro:content";
+import Gemini from "../assets/iconos/gemini.svg";
 import { obtenerUnidadesConBloques } from "../lib/unidades";
 import BloqueUnidad from "./BloqueUnidad.astro";
 
+const curso = await getEntry("curso", "curso");
+if (!curso)
+  throw new Error("Falta la entrada «curso» en src/content/curso.yaml");
 const unidades = await obtenerUnidadesConBloques();
 ---
 
 <section id="ruta" aria-labelledby="titulo-ruta" class="relative">
-  <h2 id="titulo-ruta" class="text-2xl font-semibold">
-    Ruta del curso
-  </h2>
+  <div class="flex items-center justify-between gap-4">
+    <h2 id="titulo-ruta" class="text-2xl font-semibold">
+      Ruta del curso
+    </h2>
+    <Gemini
+      role="img"
+      aria-label="Gemini"
+      class="aspect-[296/298] h-14 w-auto shrink-0 sm:h-24 lg:h-28"
+    />
+  </div>
   <ol class="mt-4 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2">
     {unidades.map((unidad) => (
-      <BloqueUnidad unidad={unidad} />
+      <BloqueUnidad unidad={unidad} clases={curso.data.clases} />
     ))}
   </ol>
 </section>

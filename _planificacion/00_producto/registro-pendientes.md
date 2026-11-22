@@ -3,8 +3,8 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-22
-- **Iteración activa:** 06-01 · Trama de puntos de fondo (En revisión)
-- **Próximo hito:** épica 06 · 06-02 Portada y ruta con firma, tras aplicar la P-024
+- **Iteración activa:** 06-02 · Portada y ruta con firma (En revisión)
+- **Próximo hito:** épica 06 · 06-03 Cabecera de unidad sin barra de avance, tras aplicar la P-025
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
 
@@ -20,8 +20,8 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
-| 06-01 | Trama de puntos de fondo | 06 | En revisión | P-023 | [bitacora-06-01](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-01.md) |
-| 06-02 | Portada y ruta con firma | 06 | Pendiente | 06-01, RDA-013, P-024 | — |
+| 06-01 | Trama de puntos de fondo | 06 | Terminada | P-023 | [bitacora-06-01](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-01.md) |
+| 06-02 | Portada y ruta con firma | 06 | En revisión | 06-01, RDA-013, P-024 | [bitacora-06-02](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-02.md) |
 | 06-03 | Cabecera de unidad sin barra de avance | 06 | Pendiente | 06-02, P-025 | — |
 | 06-04 | Tarjetas de bloque y ticket de entrega | 06 | Pendiente | 06-03, P-026 | — |
 | 06-05 | Modales y citas | 06 | Pendiente | 06-01, P-027 | — |
@@ -49,8 +49,8 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
 | 26.1 | Corrección documental de la épica 06 sin la vista previa: RDA-013 aceptada, cifras de la vista previa como referencia histórica y criterio de Lighthouse con mediana de 3 y tolerancia de 2 puntos · Rama `correccion/epica-06-sin-parche` | Corrección | — | — | En revisión |
 | 26.2 | Insignia de Gemini Certified Educator (160 × 121) y enlace a la credencial en Accredible en el modal del instructor; 4.ª línea de trayectoria sin certificaciones concretas · Rama `correccion/instructor-insignia` | Corrección | — | — | Terminada |
-| 27 | Trama de puntos de fondo en ambos modos | Diseño | — | 06-01 | En revisión |
-| 28 | Portada con ficha del curso y ruta con número grande, sin barras de avance (RDA-013) | Diseño | — | 06-02 | Pendiente |
+| 27 | Trama de puntos de fondo en ambos modos | Diseño | — | 06-01 | Terminada |
+| 28 | Portada con ficha del curso y ruta con número grande, sin barras de avance (RDA-013) | Diseño | — | 06-02 | En revisión |
 | 29 | Cabecera de unidad con número grande; borrar `BarraAvance.astro` | Diseño | — | 06-03 | Pendiente |
 | 30 | Tarjeta de bloque clicable con un solo botón y ticket de «Terminado cuando…» | Diseño | — | 06-04 | Pendiente |
 | 31 | Modal con línea de datos y entradilla; cita sin borde lateral | Diseño | — | 06-05 | Pendiente |
@@ -103,7 +103,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-17 | Iteración 03-03 en revisión: RDA-010 (formato y peso medidos del archivo), tarjeta del dataset CSV en la U2 (25,4 KB = statSync), «Profundiza» con `<details>` y validación de sus recursos; desaparece la última advertencia del build; 0 B de JS nuevo. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-03.md) |
 | 2026-11-17 | Iteración 03-03 terminada: el desarrollador probó en el navegador la descarga, «Profundiza» con teclado y 360 px, sin observaciones; ratificó `src/lib/node-minimo.d.ts` (RDA-010). |
 | 2026-11-17 | Iteración 03-04 en revisión: «Profundiza» en 9 bloques de U1 y U2 (40 enlaces), 5 videos de la U1, diccionario del dataset publicado sin los patrones del instructor; U2 sin videos (ausencia acordada); 0 B de JS nuevo. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-04.md) |
 | 2026-11-17 | Iteración 03-04 terminada: el desarrollador probó en el navegador videos, descargas y 360 px, sin observaciones; ratificó el recorte del diccionario. |
@@ -153,3 +152,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-22 | Corrección 26.2 en revisión: insignia de Gemini Certified Educator (PNG del desarrollador, 160 × 121, sin alterar) y enlace a la credencial en Accredible en el modal del instructor, sin el prefijo «Enlace oficial de la certificación:»; 4.ª línea de trayectoria sin certificaciones concretas; P-023 aplicada (comprobada con `grep`); salen de «Decisiones por tomar» la insignia, los nombres AWS y Anthropic (descartado) y la P-023; JS 1774 B sin cambios; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-00-correccion-insignia.md) |
 | 2026-11-22 | Corrección 26.2 terminada: el desarrollador la revisó en `pnpm preview` y confirmó que la credencial de Accredible es pública (dicho por él, no verificado por el agente); la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-00-correccion-insignia.md) |
 | 2026-11-22 | Iteración 06-01 en revisión: token `--color-puntos` (claro `--color-texto-2` al 17 %, oscuro `--color-hover-suave` al 55 %) y trama en el `<body>` (1 px cada 22 px, sin `fixed`, sin animación, sin trama al imprimir); HTML idéntico salvo el hash del CSS, JS 1774 B; en oscuro, #5DC9FF y #00B0E8 bajan de AAA a AA sobre el centro del punto (6,63 y 4,93:1), excepción aceptada por el desarrollador; P-024 sigue pendiente; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-01.md) |
+| 2026-11-22 | Iteración 06-01 terminada (revisión visual sin observaciones, dicho por el desarrollador). P-024 aplicada (comprobada con `grep`). Iteración 06-02 en revisión: `h1` y lema con firma, ficha «4 clases · 8 horas · 20 bloques · 24 prompts» calculada, logos bajo línea de 1 px, estrella junto al `h2` de la ruta, número grande, mini-proyecto completo y «Clase n de 4 · 120 min», sin barras; 1440 × 900 cabe; en 1366 × 657 la ruta se desplaza (803 px, antes 807; opción A del desarrollador); JS 1774 B; P-025 sigue pendiente; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-02.md) |

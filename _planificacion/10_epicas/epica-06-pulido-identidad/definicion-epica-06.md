@@ -39,8 +39,8 @@ La vista previa con todos los cambios se armó en una rama local y el desarrolla
 
 | Iteración | Nombre | Estado |
 | :-------- | :----- | :----- |
-| 06-01 | [Trama de puntos de fondo](iteracion-06-01-trama-puntos.md) | En revisión |
-| 06-02 | [Portada y ruta con firma](iteracion-06-02-portada-ruta.md) | Pendiente |
+| 06-01 | [Trama de puntos de fondo](iteracion-06-01-trama-puntos.md) | Terminada |
+| 06-02 | [Portada y ruta con firma](iteracion-06-02-portada-ruta.md) | En revisión |
 | 06-03 | [Cabecera de unidad sin barra de avance](iteracion-06-03-cabecera-unidad.md) | Pendiente |
 | 06-04 | [Tarjetas de bloque y ticket de entrega](iteracion-06-04-tarjetas-bloque.md) | Pendiente |
 | 06-05 | [Modales y citas](iteracion-06-05-modales.md) | Pendiente |
@@ -70,6 +70,8 @@ Orden y dependencias:
 - 2026-11-22: RDA-013 aceptada (decisión del desarrollador).
 - 2026-11-22: la rama y el parche de la vista previa ya no existen; ninguna iteración depende de ellos (dicho por el desarrollador).
 - 2026-11-22: el criterio de Lighthouse pasa a «mediana de 3 corridas, con tolerancia de 2 puntos por categoría respecto del cierre de la épica 05; CLS < 0,1» (decisión del desarrollador).
+- 2026-11-22: 06-01 terminada; revisión visual sin observaciones (dicho por el desarrollador).
+- 2026-11-22: opción A para la portada en 1366 × 657: la columna de texto cabe y la ruta se desplaza (la última tarjeta termina hacia los 803 px; antes de la 06-02, 807 px). No se reducen la estrella, el título ni los espaciados (decisión del desarrollador).
 
 ## Reglas comunes de la épica
 
@@ -90,6 +92,7 @@ Orden y dependencias:
 ## Criterio de término
 
 - Trama de puntos visible en ambos modos, quieta al desplazarse y ausente al imprimir; ningún texto baja de su contraste de la tabla 2.3 de `DESIGN.md` (medido sobre un punto y entre puntos).
+- En 1440 × 900, título, lema, ficha, botón principal y las 4 tarjetas completas se ven sin desplazarse; en 1366 × 657 cabe la columna de texto y la ruta se desplaza (la última tarjeta termina hacia los 803 px).
 - 0 barras de avance en `dist/index.html` (`grep -c "Avance del curso" dist/index.html` = 0) y `BarraAvance.astro` borrado; el tramo de la barra de lectura de 3 px se conserva.
 - En 1440 × 900, cada `section` de unidad mide como máximo el alto de la ventana menos el encabezado (`getBoundingClientRect()`, ambos modos); en 1366 × 657, como máximo 8 px más que al cierre de la 05 (vista previa: +8 px; referencia histórica, no reproducible: se vuelve a medir en la Fase 1 de la 06-02 y la 06-03).
 - Botones de contorno visibles en las tarjetas de bloque: como máximo 1 por tarjeta (conteo con `document.querySelectorAll('.tarjeta .boton-contorno')`).

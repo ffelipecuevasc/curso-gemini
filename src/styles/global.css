@@ -338,6 +338,44 @@
     line-height: 1.2;
     font-weight: 600;
   }
+
+  /* Portada con firma (iteración 06-02, P-024). */
+  .titulo-portada {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 1.5rem + 3.2vw, 4rem);
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+  }
+
+  .lema-portada {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 1rem + 0.9vw, 1.625rem);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-primario);
+  }
+
+  /* Ficha del curso: 2 columnas en móvil; en fila con «·» desde 640 px. El
+     separador lleva texto alternativo vacío para el lector de pantalla. */
+  .ficha-curso {
+    @apply m-0 grid list-none grid-cols-2 gap-x-6 gap-y-1 p-0 font-codigo text-base text-texto-2 sm:flex sm:flex-wrap sm:gap-x-0;
+  }
+
+  @media (min-width: 40rem) {
+    .ficha-curso li + li::before {
+      content: "·" / "";
+      margin-inline: 0.5em;
+    }
+  }
+
+  .numero-ruta {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 2rem + 2vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
 }
 
 /* Con JavaScript, en escritorio (1024 px de ancho y 640 px de alto o más) cada

@@ -37,7 +37,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-021 | `DESIGN.md` · 4. Espaciado, retícula y forma (Retícula) | Iteración 05-08 | 2026-11-20 | Aplicada |
 | P-022 | `DESIGN.md` · 5. Componentes (fila Bloque de prompt) | Iteración 05-08 | 2026-11-20 | Aplicada |
 | P-023 | `DESIGN.md` · 1. Concepto visual (principio 3) y 2.1 Superficies | Épica 06 (06-01) | 2026-11-21 | Aplicada 2026-11-22 |
-| P-024 | `DESIGN.md` · 5. Componentes (fila Portada y ruta) | Épica 06 (06-02) | 2026-11-21 | Pendiente |
+| P-024 | `DESIGN.md` · 5. Componentes (fila Portada y ruta) | Épica 06 (06-02) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-025 | `DESIGN.md` · 5. Componentes (fila Sección de unidad) | Épica 06 (06-03) | 2026-11-21 | Pendiente |
 | P-026 | `DESIGN.md` · 5. Componentes (fila Tarjeta de bloque) | Épica 06 (06-04) | 2026-11-21 | Pendiente |
 | P-027 | `DESIGN.md` · 5. Componentes (fila Modal) | Épica 06 (06-05) | 2026-11-21 | Pendiente |
@@ -753,7 +753,7 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 5. Componentes (fila «Portada y ruta»)
-- **Estado:** pendiente.
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-22 con `grep` en `DESIGN.md` de la rama `iteracion/06-02-portada-ruta` (ficha del curso en la fila «Portada y ruta»).
 - **Por qué:** la 06-02 quita las barras de avance (RDA-013), agrega la ficha del curso y el número grande de cada unidad, pasa la estrella de Gemini junto al `h2` de la ruta y los logos bajo las redes. Si no se aplica, la fila pide barras de avance y una franja de logos al pie que ya no existen.
 
 **Texto actual** (copiado literalmente de `DESIGN.md`):

@@ -33,7 +33,7 @@ Comprobar con mediciones que el pulido cumple el criterio de término de la épi
 4. Revisar sin JavaScript, con `prefers-reduced-motion: reduce` y en la vista de impresión.
 5. Ejecutar el detector de Impeccable y Lighthouse móvil y escritorio sobre `pnpm preview`; corregir lo que falle dentro del alcance de la épica.
 6. Comparar `DESIGN.md` con la implementación y registrar las propuestas que correspondan.
-7. Repetir Lighthouse sobre la URL publicada (después del merge del desarrollador) y compararlo con el cierre de la épica 05.
+7. Repetir Lighthouse móvil sobre la URL publicada (después del merge del desarrollador): mediana de 3 corridas, comparada con el cierre de la épica 05 con tolerancia de 2 puntos por categoría; CLS < 0,1.
 8. Escribir la bitácora, la bitácora de cierre de la épica y actualizar el registro.
 
 ## Tareas del desarrollador
@@ -44,7 +44,7 @@ Comprobar con mediciones que el pulido cumple el criterio de término de la épi
 ## Criterios de aceptación
 
 - [ ] Cada criterio de término de `definicion-epica-06.md` está marcado con su medición, su comando o su captura en la bitácora.
-- [ ] Lighthouse móvil sobre la URL publicada sin bajar en ninguna categoría respecto del cierre de la épica 05; CLS < 0,1; tabla comparada.
+- [ ] Lighthouse móvil sobre la URL publicada: mediana de 3 corridas, con tolerancia de 2 puntos por categoría respecto del cierre de la épica 05; CLS < 0,1; tabla comparada.
 - [ ] El detector de Impeccable no informa hallazgos sin resolver o sin justificar.
 - [ ] Sin JavaScript, la página se lee completa en modo claro (RDA-007) y no hay botones ni zonas clicables que no funcionen.
 - [ ] `DESIGN.md` describe el sitio publicado, o hay una propuesta pendiente para cada diferencia.

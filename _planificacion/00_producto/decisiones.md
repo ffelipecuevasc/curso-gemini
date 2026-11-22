@@ -16,7 +16,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 | RDA-010 | Formato y peso de las descargas medidos del archivo al compilar | Aceptada |
 | RDA-011 | Modales sobre `<dialog>` nativo con script mínimo y respaldo sin JavaScript | Aceptada |
 | RDA-012 | Síntesis por bloque y por unidad en el modelo de contenido, con límites de palabras | Aceptada |
-| RDA-013 | Sin barras de avance: la ruta y las unidades muestran su lugar en el curso | Propuesta |
+| RDA-013 | Sin barras de avance: la ruta y las unidades muestran su lugar en el curso | Aceptada |
 
 ---
 
@@ -117,7 +117,7 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 
 **Actualización 2026-11-17:** el contenido de prueba se reemplazó en la 02-02, no en la épica 03. Los tramos ya están cargados en `src/content/unidades/u1.yaml` a `u4.yaml`.
 
-**Actualización 2026-11-21:** la RDA-013 (propuesta) deja de mostrar los tramos de la RDA-008 como barras; los tramos siguen en el esquema y en los YAML de las unidades, sin mostrarse.
+**Actualización 2026-11-21:** la RDA-013 deja de mostrar los tramos de la RDA-008 como barras; los tramos siguen en el esquema y en los YAML de las unidades, sin mostrarse.
 
 ---
 
@@ -175,7 +175,8 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 ## RDA-013 · Sin barras de avance: la ruta y las unidades muestran su lugar en el curso
 
 - **Fecha:** 2026-11-21
-- **Estado:** Propuesta
+- **Estado:** Aceptada
+- **Fecha de aceptación:** 2026-11-22
 
 **Contexto:** la crítica de diseño del 2026-11-21 (skill Impeccable) mostró que las barras «0 % → 25 %» de la ruta y de las cabeceras de unidad (RDA-008, 05-06) se leen como el avance del participante, pero son el tramo fijo de cada unidad y el sitio no guarda ningún estado. Es la única señal de estado de la página y no se cumple.
 **Decisión:** se quitan las barras de avance de la ruta y de las cabeceras de unidad, y se borra `BarraAvance.astro`. En su lugar, cada tarjeta de la ruta y cada cabecera muestran «Clase n de 4 · 120 min» en IBM Plex Mono, con el número de clases tomado de `curso.yaml`, y el número de la unidad en grande. El campo `avance` (RDA-008) se conserva en el esquema y en los YAML, sin mostrarse. La barra de lectura de 3 px bajo el encabezado se conserva, porque sí refleja el desplazamiento real.

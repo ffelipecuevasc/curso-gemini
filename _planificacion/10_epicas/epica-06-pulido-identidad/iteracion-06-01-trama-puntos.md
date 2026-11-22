@@ -38,7 +38,7 @@ Que toda la página tenga como fondo una trama de puntos fina y elegante, en cla
 ## Tareas
 
 1. Tomar capturas de 1440 × 900 y 390 × 844 en ambos modos antes del cambio (línea base en la bitácora).
-2. Agregar el token y la trama al final de `src/styles/global.css`, sin capa, como en el parche de la vista previa.
+2. Agregar el token y la trama al final de `src/styles/global.css`, sin capa, con los valores de «Alcance y entregables».
 3. Medir el contraste del texto más débil de cada modo sobre un punto y entre puntos: `--color-texto-2` y `--color-enlace` en claro, `--color-texto-2` y `--color-enlace` en oscuro.
 4. Revisar que la trama no se vea a través del encabezado fijo, de las tarjetas ni del modal.
 5. Revisar la vista de impresión del navegador (sin trama).

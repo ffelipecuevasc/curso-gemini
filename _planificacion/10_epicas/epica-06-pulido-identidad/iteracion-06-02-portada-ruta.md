@@ -16,7 +16,7 @@ Que el primer pantallazo tenga firma propia: un título firme, el lema como segu
 - `Portada.astro`: título (`h1`, `text-4xl`/`text-5xl`), lema en `text-texto-2`, botón «Empezar por la Unidad 1», redes, estrella de Gemini en posición absoluta sobre la ruta y logos de Google, GTD y Capacita en una franja al pie de la sección.
 - `RutaCurso.astro` y `BloqueUnidad.astro`: mosaico 2 × 2 con «Unidad n», título, mini-proyecto en 2 líneas (`line-clamp-2`) y `BarraAvance.astro`.
 - `src/content/curso.yaml`: `titulo`, `lema`, `clases: 4`, `duracionTotalMin: 480`.
-- Medición de la vista previa (2026-11-21): 20 bloques con número y 24 prompts en todo el curso.
+- Conteo hecho en la vista previa (2026-11-21): 20 bloques con número y 24 prompts en todo el curso. Sale del contenido y no del parche, pero es referencia histórica: se vuelve a contar en la Fase 1 (tarea 1) y lo comprueba el criterio de la ficha.
 
 ## Alcance y entregables
 
@@ -44,7 +44,7 @@ Que el primer pantallazo tenga firma propia: un título firme, el lema como segu
 
 ## Tareas
 
-1. Medir y anotar el alto de la portada en 1440 × 900, 1366 × 657 y 390 × 844 (línea base).
+1. Fase 1 (línea base, antes de tocar el código): medir y anotar el alto de la portada en 1440 × 900, 1366 × 657 y 390 × 844, el alto de cada unidad en 1440 × 900 y 1366 × 657 (fragmento de la 05-08) y contar en `src/content/bloques/` los bloques con número y los prompts.
 2. Rehacer la columna de texto de `Portada.astro` con la ficha calculada (`obtenerUnidadesConBloques()`, bloques con `numero > 0` y suma de `prompts.length`).
 3. Mover la estrella de Gemini a `RutaCurso.astro`, junto al `h2`, sin tocar el SVG.
 4. Rehacer `BloqueUnidad.astro` con el número grande, el mini-proyecto completo y «Clase n de 4»; recibir `clases` desde `RutaCurso.astro`.
@@ -55,7 +55,7 @@ Que el primer pantallazo tenga firma propia: un título firme, el lema como segu
 
 ## Tareas del desarrollador
 
-1. Aceptar la RDA-013 y aplicar la P-024 antes de empezar.
+1. Aplicar la P-024 antes de empezar (RDA-013 aceptada el 2026-11-22).
 
 ## Criterios de aceptación
 
@@ -85,4 +85,4 @@ Que el primer pantallazo tenga firma propia: un título firme, el lema como segu
 
 ### Del desarrollador
 
-- Aceptación de la RDA-013 y aplicación de la P-024.
+- Aplicación de la P-024 (RDA-013 aceptada el 2026-11-22).

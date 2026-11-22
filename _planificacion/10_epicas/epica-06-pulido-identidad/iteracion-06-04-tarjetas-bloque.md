@@ -18,7 +18,7 @@ Que cada tarjeta de bloque tenga una sola acción visible además de abrirse ent
 - `TarjetaTerminado.astro`: misma `.tarjeta` con `border-t-linea`, el entregable y el botón «Terminado cuando… (n)».
 - Profundidad, subida y brillo (05-07): `.tarjeta::before` (brillo) y `::after` (sombra amplia) ya ocupados; la subida con teclado depende de `.tarjeta:has(:focus-visible)`.
 - Script de modales (05-04): abre cualquier `[data-abrir-modal]` y hace la transición desde la tarjeta de origen.
-- Conteo de la vista previa: de 2 botones de contorno por tarjeta con prompts a 1.
+- Conteo de la vista previa: de 2 botones de contorno por tarjeta con prompts a 1 (referencia histórica, no reproducible: se vuelve a contar en la Fase 1, tarea 1).
 
 ## Alcance y entregables
 
@@ -37,7 +37,7 @@ Que cada tarjeta de bloque tenga una sola acción visible además de abrirse ent
 
 ## Tareas
 
-1. Medir el alto de cada unidad en 1440 × 900 y 1366 × 657 y contar los botones de contorno visibles (línea base).
+1. Fase 1 (línea base, antes de tocar el código): medir el alto de cada unidad en 1440 × 900 y 1366 × 657 y contar los botones de contorno visibles.
 2. Rehacer el pie de `TarjetaBloque.astro` con el enlace, la capa clicable y el botón de prompts.
 3. Agregar la marca de la unidad y quitar el borde superior grueso; `franjaTarjeta` (`src/lib/colores-unidad.ts`) conserva `--tinte`, `--sombra` y `--halo`, y se quitan las clases `border-t-uN` que ya no se usan.
 4. Aplicar `.tarjeta-entrega` en `TarjetaTerminado.astro`.

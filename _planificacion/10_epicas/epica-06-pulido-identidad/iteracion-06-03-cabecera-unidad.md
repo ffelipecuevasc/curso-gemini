@@ -16,7 +16,7 @@ Que la cabecera de cada unidad se reconozca por su número grande, con el títul
 - `CabeceraUnidad.astro`: línea «Unidad n · Clase n · 120 min» en IBM Plex Mono sobre el título (una etiqueta encima del encabezado), título (`h2`), objetivo breve, `BarraAvance` en la columna derecha (`lg:grid-cols-[minmax(0,1fr)_16rem]`) y botones de la unidad.
 - `.cabecera-unidad` en `global.css` (05-05): `px-5 py-4`, `gap-3`.
 - `BarraAvance.astro`: después de la 06-02 solo la usa la cabecera.
-- Medición de la vista previa (2026-11-21, con la 06-04 incluida): en 1440 × 900 cada unidad mide 823 px (= 900 − 77 del encabezado); en 1366 × 657, 816, 816, 818 y 791 px (antes 808, 808, 810 y 783).
+- Medición de la vista previa (2026-11-21, con la 06-04 incluida): en 1440 × 900 cada unidad mide 823 px (= 900 − 77 del encabezado); en 1366 × 657, 816, 816, 818 y 791 px (antes 808, 808, 810 y 783). Son referencia histórica, no reproducible: se vuelve a medir en la Fase 1 de la 06-02 y la 06-03; los criterios se comparan contra la línea base de la tarea 1, no contra estas cifras.
 
 ## Alcance y entregables
 
@@ -25,7 +25,7 @@ Que la cabecera de cada unidad se reconozca por su número grande, con el títul
 - Botones de la unidad bajo el texto: en móvil ocupan las 2 columnas; desde 1024 px se alinean con el título.
 - Desde 1024 px, la cabecera usa `padding-block: 1rem` y `row-gap: 0.625rem` para no sumar alto.
 - `BarraAvance.astro` se borra; el texto «Avance del curso» deja de existir en `dist/`.
-- El número de clases sale de `curso.yaml` (`clases`), no se escribe «4» en el componente (la vista previa lo dejó fijo).
+- El número de clases sale de `curso.yaml` (`clases`), no se escribe «4» fijo en el componente.
 
 ## Contenido aprobado (copiar tal cual)
 
@@ -36,7 +36,7 @@ Que la cabecera de cada unidad se reconozca por su número grande, con el títul
 
 ## Tareas
 
-1. Medir el alto de cada unidad en 1440 × 900 y 1366 × 657 en ambos modos (línea base, con el fragmento de la 05-08).
+1. Fase 1 (línea base, antes de tocar el código): medir el alto de cada unidad en 1440 × 900 y 1366 × 657 en ambos modos, con el fragmento de la 05-08.
 2. Rehacer `CabeceraUnidad.astro` con la retícula nueva y el número de clases desde `curso.yaml`.
 3. Actualizar `.cabecera-unidad` y agregar `.numero-unidad` en `global.css`.
 4. Borrar `BarraAvance.astro` y comprobar con `grep -rn BarraAvance src` que no quedan usos.

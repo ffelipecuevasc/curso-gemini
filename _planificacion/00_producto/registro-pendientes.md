@@ -2,9 +2,9 @@
 
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
-- **Última actualización:** 2026-11-21
+- **Última actualización:** 2026-11-22
 - **Iteración activa:** ninguna
-- **Próximo hito:** épica 06 · Pulido de identidad (06-01 a 06-06), tras aceptar la RDA-013 y aplicar la P-023
+- **Próximo hito:** épica 06 · Pulido de identidad (06-01 a 06-06), tras aplicar la P-023
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
 
@@ -47,6 +47,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
+| 26.1 | Corrección documental de la épica 06 sin la vista previa: RDA-013 aceptada, cifras de la vista previa como referencia histórica y criterio de Lighthouse con mediana de 3 y tolerancia de 2 puntos · Rama `correccion/epica-06-sin-parche` | Corrección | — | — | En revisión |
 | 27 | Trama de puntos de fondo en ambos modos | Diseño | — | 06-01 | Pendiente |
 | 28 | Portada con ficha del curso y ruta con número grande, sin barras de avance (RDA-013) | Diseño | — | 06-02 | Pendiente |
 | 29 | Cabecera de unidad con número grande; borrar `BarraAvance.astro` | Diseño | — | 06-03 | Pendiente |
@@ -71,7 +72,7 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 
 | Tema | RDA o hallazgo | Responsable |
 | :--- | :------------- | :---------- |
-| Aceptar la RDA-013 (sin barras de avance) antes de la 06-02 y aplicar las propuestas P-023 a P-027 antes de su iteración | RDA-013 | Desarrollador |
+| Aplicar las propuestas P-023 a P-027 antes de su iteración (P-023 antes de la 06-01) | P-023 a P-027 | Desarrollador |
 | Texto de «Profundiza en tu tiempo» de cada bloque: el documento del curso lista los temas, pero no la teoría escrita · Opcional desde 2026-11-17: «Profundiza» usa los recursos oficiales ya cargados y el texto no bloquea nada | — | Desarrollador |
 | Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) · U1: 5 videos cargados en la 03-04; U2: sin videos (ausencia acordada); U3: 1 video cargado en la 03-05; U4: sin videos (ausencia acordada) | — | Desarrollador |
 | Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Publicados el dataset CSV (03-03) y su diccionario editado para participantes (03-04); de la U1 y la U2, el resto (`plantillas-alumnos.zip`, informe de Deep Research de respaldo) queda como ausencia acordada en la 03-04; en la 03-05 se publican las 4 plantillas de `plantillas-alumnos/` (U4) y quedan como ausencia acordada `optimizador-prompts/SKILL.md`, `gtd-visual.zip` y el paquete de fuentes de la U3 | — | Desarrollador |
@@ -103,8 +104,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-17 | Iteración 02-06 terminada y épica 02 cerrada (aprobada por el desarrollador); sus filas pasan a `registro-archivo.md`. Épica 03: 5 iteraciones generadas (03-01 a 03-05); backlog renumerado (los antiguos 11, 12, 15, 16 y 17 pasan a 11 a 15; Cloudflare y la verificación final, a 16 a 18). [Cierre](../10_epicas/epica-02-portada-ruta-instructor/bitacoras/bitacora-02-cierre.md) |
-| 2026-11-17 | Iteración 03-01 en revisión: las 4 unidades muestran su ficha, la tabla de bloques y el texto de los 26 bloques con `render()`; h2 desde las fichas (4 de 4); 0 B de JS nuevo; se corrigen criterios de la 03-01, la línea base de la 03-02 y la 03-05; P-007 pendiente; falta revisión en navegador. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-01.md) |
 | 2026-11-17 | Iteración 03-01 terminada: el desarrollador revisó en el navegador 360 px y el teclado en las tablas, sin observaciones. |
 | 2026-11-17 | Iteración 03-02 en revisión: 24 prompts con «Copiar» (24 de 24 idénticos, IDs únicos), marcador de `identidad-visual-gtd` en U2 · 3 y 41 recursos por unidad; JS +198 B gzip (4 etiquetas); falta revisión en navegador. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-02.md) |
 | 2026-11-17 | Iteración 03-02 terminada: el desarrollador probó en el navegador el copiado con teclado, el botón sin JavaScript y 360 px en ambos modos, sin observaciones. |
@@ -154,3 +153,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-20 | Iteración 05-08 en revisión: 05-07 terminada y P-017 aplicada (Paso 0); Lighthouse móvil publicado 98/100/100/100 (LCP 1,51 s, CLS 0, TBT 165 ms; 04-04: 94 y 87); Impeccable 4.10.0 con 6 avisos justificados; 0 textos de conducción; 24 de 24 prompts idénticos a su fuente; JS 1774 B; P-018 a P-022 pendientes; bitácora de cierre en revisión; historial en 51 filas hasta el cierre. [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-08.md) |
 | 2026-11-21 | Corrección: cierre de la 05-08 y de la épica 05. C1 a C9 y revisión en notebook y teléfono sin observaciones (dicho por el desarrollador el 2026-11-20); P-018 a P-022 aplicadas (comprobadas con `grep`; P-022 deja los 14 px como excepción); salen de «Decisiones por tomar» esas propuestas y el Rendimiento publicado ≥ 95 (98 en la 05-08); filas de la épica (8 iteraciones, correcciones 18.1 a 18.3 y prioridades 19 a 26) y las 2 filas más antiguas del historial pasan a `registro-archivo.md`, para no pasar de 50; sin iteración activa. [Cierre](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-cierre.md) |
 | 2026-11-21 | Épica 06 (pulido de identidad) planificada tras la crítica de Impeccable (24 de 36) y la vista previa aprobada con trama de puntos: definición, 6 iteraciones (06-01 a 06-06), RDA-013 propuesta y propuestas P-023 a P-027; backlog 27 a 32. [Definición](../10_epicas/epica-06-pulido-identidad/definicion-epica-06.md) |
+| 2026-11-22 | Corrección documental de la épica 06 sin la vista previa: RDA-013 aceptada (dicho por el desarrollador); la rama y el parche dejan de ser fuente y sus cifras (823; 816, 816, 818, 791; +8 px) pasan a referencia histórica que se vuelve a medir en la Fase 1 de la 06-02 y la 06-03; Lighthouse de la 06-06 con mediana de 3 y tolerancia de 2 puntos; P-023 a P-027 siguen pendientes; las 2 filas más antiguas del historial pasan a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-00-correccion-sin-parche.md) |

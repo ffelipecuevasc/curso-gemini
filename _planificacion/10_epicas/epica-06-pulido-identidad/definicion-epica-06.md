@@ -14,7 +14,7 @@ Diagnóstico del 2026-11-21, hecho con la skill Impeccable (crítica de diseño 
 5. **Modal plano.** El resumen se escribe en `--color-texto-2` a 18 px y se lee como enlace, «5 min» queda suelto en medio del texto y el título repite «Detalle ·» en todos los modales.
 6. **Detalles de acabado.** El borde superior de color sobre la tarjeta redondeada forma una curva («sonrisa»); la cita (`blockquote`) usa un borde izquierdo de 4 px, el único hallazgo del detector (`side-tab`, `global.css:404`).
 
-La vista previa con todos los cambios se armó en una rama local (`vista-previa-epica-06`, sin publicar) y el desarrollador la aprobó el 2026-11-21 con un ajuste: una trama de puntos elegante como fondo. El parche de esa vista previa (`vista-previa-epica-06.patch`) es la referencia de implementación de cada iteración; no se aplica de una vez.
+La vista previa con todos los cambios se armó en una rama local y el desarrollador la aprobó el 2026-11-21 con un ajuste: una trama de puntos elegante como fondo. Esa rama y su parche ya no existen (dicho por el desarrollador el 2026-11-22) y no son fuente de implementación: cada iteración implementa desde su propio «Alcance y entregables» y mide su línea base en su Fase 1 (la tarea 1 de línea base). Las cifras medidas en la vista previa que citan estos documentos son referencia histórica, no reproducible.
 
 ## Alcance
 
@@ -64,9 +64,12 @@ Orden y dependencias:
 ## Decisiones de la épica
 
 - 2026-11-21: alcance «refinar dentro de `DESIGN.md`»: mismos tokens, tipografías y componentes, con mejor jerarquía y detalle (decisión del desarrollador, sobre la crítica de Impeccable).
-- 2026-11-21: las barras de avance se quitan y se reemplazan por «Clase n de 4 · 120 min»; el sitio no guarda avance (decisión del desarrollador; RDA-013 propuesta).
+- 2026-11-21: las barras de avance se quitan y se reemplazan por «Clase n de 4 · 120 min»; el sitio no guarda avance (decisión del desarrollador; RDA-013 propuesta ese día y aceptada el 2026-11-22).
 - 2026-11-21: vista previa aprobada con un ajuste: trama de puntos elegante como fondo (decisión del desarrollador).
 - 2026-11-21: prioridad de trabajo de la crítica: primero portada y modales; las tarjetas de bloque van dentro de la épica, pero sin cambiar la cuadrícula 3 × 2 (decisión del desarrollador).
+- 2026-11-22: RDA-013 aceptada (decisión del desarrollador).
+- 2026-11-22: la rama y el parche de la vista previa ya no existen; ninguna iteración depende de ellos (dicho por el desarrollador).
+- 2026-11-22: el criterio de Lighthouse pasa a «mediana de 3 corridas, con tolerancia de 2 puntos por categoría respecto del cierre de la épica 05; CLS < 0,1» (decisión del desarrollador).
 
 ## Reglas comunes de la épica
 
@@ -76,22 +79,23 @@ Orden y dependencias:
 - Cada cambio de interfaz que contradiga `DESIGN.md` se implementa solo con su propuesta aplicada por el desarrollador (P-023 a P-027).
 - La unidad sigue cabiendo en 1440 × 900 (criterio de la épica 05); toda iteración que toque la unidad mide su alto con el fragmento de la 05-08.
 - Los textos de interfaz nuevos son los de «Contenido aprobado» de cada iteración, copiados tal cual.
+- Ninguna iteración usa la vista previa como fuente: implementa desde su «Alcance y entregables» y mide su línea base en su Fase 1 (tarea 1), antes de tocar el código.
 
 ## Precondiciones
 
 - Épica 05 cerrada (2026-11-21).
-- RDA-013 aceptada por el desarrollador antes de la 06-02.
+- RDA-013 aceptada por el desarrollador antes de la 06-02 (aceptada el 2026-11-22).
 - Propuestas aplicadas por el desarrollador antes de la iteración que las necesita: P-023 antes de la 06-01; P-024 antes de la 06-02; P-025 antes de la 06-03; P-026 antes de la 06-04; P-027 antes de la 06-05.
 
 ## Criterio de término
 
 - Trama de puntos visible en ambos modos, quieta al desplazarse y ausente al imprimir; ningún texto baja de su contraste de la tabla 2.3 de `DESIGN.md` (medido sobre un punto y entre puntos).
 - 0 barras de avance en `dist/index.html` (`grep -c "Avance del curso" dist/index.html` = 0) y `BarraAvance.astro` borrado; el tramo de la barra de lectura de 3 px se conserva.
-- En 1440 × 900, cada `section` de unidad mide como máximo el alto de la ventana menos el encabezado (`getBoundingClientRect()`, ambos modos); en 1366 × 657, como máximo 8 px más que al cierre de la 05 (vista previa: +8 px).
+- En 1440 × 900, cada `section` de unidad mide como máximo el alto de la ventana menos el encabezado (`getBoundingClientRect()`, ambos modos); en 1366 × 657, como máximo 8 px más que al cierre de la 05 (vista previa: +8 px; referencia histórica, no reproducible: se vuelve a medir en la Fase 1 de la 06-02 y la 06-03).
 - Botones de contorno visibles en las tarjetas de bloque: como máximo 1 por tarjeta (conteo con `document.querySelectorAll('.tarjeta .boton-contorno')`).
 - Detector de Impeccable sin hallazgos sin resolver ni justificar (hoy: 1, `side-tab`).
 - JavaScript propio sin cambios respecto del cierre de la 05 (1774 B gzip).
-- Lighthouse móvil sobre la URL publicada: sin bajar respecto del cierre de la épica 05 en ninguna de las 4 categorías; CLS < 0,1.
+- Lighthouse móvil sobre la URL publicada: mediana de 3 corridas, con tolerancia de 2 puntos por categoría respecto del cierre de la épica 05; CLS < 0,1.
 
 ## Cierre
 

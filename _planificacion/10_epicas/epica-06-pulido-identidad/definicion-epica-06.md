@@ -1,6 +1,6 @@
 # Épica 06 · Pulido de identidad: portada, unidades y modales
 
-- **Estado:** Pendiente
+- **Estado:** En curso
 - **Objetivo:** que el sitio se vea propio y no de plantilla: una portada con firma, unidades con jerarquía clara entre lo que se lee y lo que se hace, modales que se leen como contenido, y una trama de puntos de fondo que une todo. Sin salir de la paleta, las tipografías ni los radios de felipecuevas.dev (RDA-004) y sin perder la unidad en una pantalla de la épica 05.
 
 ## Por qué existe esta épica
@@ -39,7 +39,7 @@ La vista previa con todos los cambios se armó en una rama local y el desarrolla
 
 | Iteración | Nombre | Estado |
 | :-------- | :----- | :----- |
-| 06-01 | [Trama de puntos de fondo](iteracion-06-01-trama-puntos.md) | Pendiente |
+| 06-01 | [Trama de puntos de fondo](iteracion-06-01-trama-puntos.md) | En revisión |
 | 06-02 | [Portada y ruta con firma](iteracion-06-02-portada-ruta.md) | Pendiente |
 | 06-03 | [Cabecera de unidad sin barra de avance](iteracion-06-03-cabecera-unidad.md) | Pendiente |
 | 06-04 | [Tarjetas de bloque y ticket de entrega](iteracion-06-04-tarjetas-bloque.md) | Pendiente |

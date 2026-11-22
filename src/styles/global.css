@@ -776,3 +776,37 @@ html[data-sin-dialogo] [data-cerrar],
 html[data-sin-dialogo] [data-abrir-modal] {
   display: none;
 }
+
+/*
+ * Trama de puntos del fondo (iteración 06-01, P-023): un punto de 1 px de
+ * radio, con borde suave hasta 1,5 px, cada 22 px. Va en el <body>, que se
+ * desplaza con la página (sin background-attachment: fixed) y no se anima.
+ * Las superficies (encabezado, tarjetas, cabeceras de unidad, pie, modales y
+ * el círculo de la portada) tienen fondo propio y siguen lisas. Fuera de las
+ * capas para ganarle a la utilidad bg-fondo del <body>, que queda de color
+ * base bajo la trama. El alto mínimo hace que la trama llegue al final de la
+ * ventana aunque el contenido sea corto, porque <html> pinta su propio fondo.
+ */
+:root {
+  --color-puntos: color-mix(in oklab, var(--color-texto-2) 17%, transparent);
+}
+
+[data-modo="oscuro"] {
+  --color-puntos: color-mix(in oklab, var(--color-hover-suave) 55%, transparent);
+}
+
+body {
+  min-height: 100dvh;
+  background-image: radial-gradient(
+    circle,
+    var(--color-puntos) 1px,
+    transparent 1.5px
+  );
+  background-size: 22px 22px;
+}
+
+@media print {
+  body {
+    background-image: none;
+  }
+}

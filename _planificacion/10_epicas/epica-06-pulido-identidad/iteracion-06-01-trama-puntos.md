@@ -1,7 +1,7 @@
 # Iteración 06-01 · Trama de puntos de fondo
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/06-01-trama-puntos
 - **Depende de:** cierre de la épica 05 y propuesta P-023 aplicada
 - **Especificación:** —
@@ -47,7 +47,7 @@ Que toda la página tenga como fondo una trama de puntos fina y elegante, en cla
 
 ## Tareas del desarrollador
 
-1. Aplicar la P-023 en `DESIGN.md` antes de empezar.
+1. ~~Aplicar la P-023 en `DESIGN.md` antes de empezar.~~ Cumplida: P-023 aplicada el 2026-11-22 (comprobada con `grep`).
 2. Mirar la trama en su notebook y en un teléfono, y confirmar la intensidad.
 
 ## Criterios de aceptación

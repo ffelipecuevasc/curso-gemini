@@ -96,6 +96,10 @@
   --color-linea: #e4f3ff;
   --color-hover-suave: #b1d4e9;
   --color-presionado: #99c8e0;
+  /* 06-07: la placa de la insignia es blanca en ambos modos; la línea fuerte
+     se mezcla del texto secundario del modo, así que no se redefine. */
+  --color-placa: #ffffff;
+  --color-linea-fuerte: color-mix(in oklab, var(--color-texto-2) 18%, transparent);
 
   /* 2.2 Acento y texto */
   --color-texto: #00131d;
@@ -143,6 +147,13 @@
   --halo-u3: transparent;
   --halo-u4: transparent;
 
+  /* 2.2 Salas de las unidades (06-07): el color de la unidad mezclado con el
+     fondo; en oscuro solo cambian los porcentajes. */
+  --color-sala-u1: color-mix(in oklab, var(--color-u1) 9%, var(--color-fondo));
+  --color-sala-u2: color-mix(in oklab, var(--color-u2) 9%, var(--color-fondo));
+  --color-sala-u3: color-mix(in oklab, var(--color-u3) 9%, var(--color-fondo));
+  --color-sala-u4: color-mix(in oklab, var(--color-u4) 14%, var(--color-fondo));
+
   /* 7. Movimiento */
   --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duracion-hover: 200ms;
@@ -177,6 +188,11 @@
   --halo-u2: color-mix(in oklab, var(--color-u2) 45%, transparent);
   --halo-u3: color-mix(in oklab, var(--color-borde-u3) 45%, transparent);
   --halo-u4: color-mix(in oklab, var(--color-u4) 45%, transparent);
+  /* Salas (06-07): la U3 usa su borde claro, como su sombra y su halo. */
+  --color-sala-u1: color-mix(in oklab, var(--color-u1) 16%, var(--color-fondo));
+  --color-sala-u2: color-mix(in oklab, var(--color-u2) 16%, var(--color-fondo));
+  --color-sala-u3: color-mix(in oklab, var(--color-borde-u3) 16%, var(--color-fondo));
+  --color-sala-u4: color-mix(in oklab, var(--color-u4) 12%, var(--color-fondo));
 }
 
 @layer base {
@@ -193,6 +209,9 @@
        escritorio): la sección de una unidad lo descuenta de la pantalla y las
        anclas se detienen bajo él. */
     --alto-encabezado: 4.8125rem;
+    /* Espacio antes de cada unidad (06-07): unos 64 px en móvil y 96 px en
+       escritorio. Va fuera de la sección y no cuenta para «una pantalla». */
+    --espacio-unidades: clamp(4rem, 2.5rem + 4vw, 6rem);
   }
 
   html:has(dialog[open]) {
@@ -241,6 +260,12 @@
  * utilidades en el HTML. Los tokens salen de @theme.
  */
 @layer components {
+  /* Botón principal (5.1): uno por sección; lo usan la portada y la
+     credencial del instructor (06-07). */
+  .boton-principal {
+    @apply inline-flex min-h-11 items-center rounded-pildora bg-primario px-6 py-3 font-medium text-sobre-primario no-underline transition-[background-color,color,scale] duration-200 hover:bg-primario-hover active:scale-[0.97] active:bg-presionado active:text-texto motion-reduce:transition-none motion-reduce:active:scale-100;
+  }
+
   .boton-contorno {
     align-items: center;
     min-height: 2.75rem;
@@ -282,7 +307,19 @@
  */
 @layer components {
   .seccion-unidad {
-    @apply mx-auto max-w-sitio border-t border-linea px-6 py-10 xl:max-w-[1280px];
+    margin-top: var(--espacio-unidades);
+    @apply mx-auto max-w-sitio px-6 py-10 xl:max-w-[1280px];
+  }
+
+  /* La última unidad deja el mismo espacio antes del pie. */
+  .seccion-unidad:last-of-type {
+    margin-bottom: var(--espacio-unidades);
+  }
+
+  /* Sala de la unidad (06-07, P-029): reúne la cabecera y la cuadrícula sobre
+     el tinte de la unidad (salaUnidad en src/lib/colores-unidad.ts). */
+  .sala-unidad {
+    @apply rounded-bloque rounded-bl-esquina p-2 sm:p-2.5;
   }
 
   .cabecera-unidad {
@@ -307,7 +344,7 @@
   }
 
   .cuadricula-bloques {
-    @apply mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3;
+    @apply mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3;
   }
 
   .tarjeta {
@@ -387,18 +424,48 @@
 }
 
 /*
- * Portada y ruta (iteración 05-06): tarjetas de la ruta en mosaico 2 × 2.
+ * Portada y ruta (05-06; índice de la ruta en la 06-07, RDA-014, P-029).
  */
 @layer components {
-  .tarjeta-ruta {
-    @apply flex w-full flex-col gap-2 rounded-bloque rounded-bl-esquina p-4 no-underline sm:p-5;
+  /* Índice de la ruta: 4 filas de una columna en todos los anchos, separadas
+     por líneas de 1 px (arriba de cada fila y abajo de la última). */
+  .indice-ruta {
+    @apply mt-4 list-none border-b border-linea-fuerte p-0;
   }
 
-  /* El título de la U1 es largo: baja de tamaño en tarjetas angostas. */
-  .titulo-ruta {
-    font-size: clamp(1.125rem, 0.95rem + 0.6vw, 1.375rem);
-    line-height: 1.2;
+  .indice-ruta > li {
+    @apply border-t border-linea-fuerte;
+  }
+
+  /* La fila entera es el enlace; el color queda solo en el cuadrado. */
+  .fila-ruta {
+    @apply grid grid-cols-[2.75rem_minmax(0,1fr)_auto] items-center gap-x-4 px-3 py-3 text-texto no-underline transition-[background-color] duration-200 hover:bg-superficie focus-visible:bg-superficie motion-reduce:transition-none;
+  }
+
+  .cuadro-ruta {
+    @apply grid size-11 place-items-center rounded-[12px_12px_12px_3px];
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .cuadro-ruta {
+      transition: translate var(--duracion-hover) var(--ease-expo-out);
+    }
+
+    .fila-ruta:hover .cuadro-ruta,
+    .fila-ruta:focus-visible .cuadro-ruta {
+      translate: 0 -2px;
+    }
+  }
+
+  .titulo-fila-ruta {
+    font-size: clamp(1rem, 0.92rem + 0.3vw, 1.125rem);
     font-weight: 600;
+    line-height: 1.25;
   }
 
   /* Portada con firma (iteración 06-02, P-024). */
@@ -430,20 +497,85 @@
       margin-inline: 0.5em;
     }
   }
+}
 
-  .numero-ruta {
+/*
+ * Credencial del instructor (iteración 06-07, DESIGN.md sección 5, P-029):
+ * superficie con la esquina asimétrica, círculo decorativo que sale del marco
+ * arriba a la derecha y las 3 cifras a todo el ancho al pie (margen negativo
+ * igual al relleno).
+ */
+@layer components {
+  .credencial {
+    --relleno: 1.5rem;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: var(--relleno);
+    @apply rounded-bloque rounded-bl-esquina bg-superficie oscuro:border oscuro:border-superficie-2 sm:[--relleno:2rem];
+  }
+
+  .credencial::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -5rem;
+    right: -4rem;
+    width: 14rem;
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    background-color: var(--color-fondo);
+    opacity: 0.85;
+    pointer-events: none;
+  }
+
+  .placa-insignia {
+    padding: 10px;
+    border-radius: 20px 20px 20px 4px;
+    background-color: var(--color-placa);
+  }
+
+  .etiqueta-credencial {
+    @apply font-codigo text-sm font-medium tracking-[0.08em] text-enlace uppercase;
+  }
+
+  .nombre-instructor {
     font-family: var(--font-display);
-    font-size: clamp(2.75rem, 2rem + 2vw, 3.5rem);
+    font-size: clamp(1.75rem, 1.25rem + 1.6vw, 2.25rem);
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  .cifras-credencial {
+    margin: var(--relleno) calc(var(--relleno) * -1) calc(var(--relleno) * -1);
+    @apply grid list-none grid-cols-1 border-t border-linea-fuerte p-0 sm:grid-cols-3;
+  }
+
+  .cifras-credencial > li {
+    padding: 1rem var(--relleno);
+  }
+
+  .cifras-credencial > li + li {
+    @apply border-t border-linea-fuerte sm:border-t-0 sm:border-l;
+  }
+
+  .valor-cifra {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 1.4rem + 1vw, 2rem);
+    font-weight: 700;
+    line-height: 1.1;
     font-variant-numeric: tabular-nums;
+    color: var(--color-texto);
   }
 }
 
 /* Con JavaScript, en escritorio (1024 px de ancho y 640 px de alto o más) cada
    unidad ocupa una pantalla: la sección mide como mínimo el alto de la ventana
-   menos el encabezado, y la cuadrícula reparte el espacio sobrante. Sin
-   JavaScript los modales se leen debajo y la regla no aplica. */
+   menos el encabezado; la sala la llena (06-07) y la cuadrícula reparte el
+   espacio sobrante. Sin JavaScript los modales se leen debajo y la regla no
+   aplica. */
 @media (min-width: 64rem) and (min-height: 40rem) {
   html[data-js] .seccion-unidad {
     display: flex;
@@ -452,8 +584,22 @@
     padding-block: 0.75rem;
   }
 
+  html[data-js] .sala-unidad {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
   html[data-js] .cuadricula-bloques {
     flex: 1;
+  }
+}
+
+/* Sin color-mix(), las salas usan la superficie (como las sombras de la
+   05-07). Fuera de las capas para ganarle a la utilidad bg-sala-uN. */
+@supports not (color: color-mix(in oklab, white 50%, transparent)) {
+  .sala-unidad {
+    background-color: var(--color-superficie);
   }
 }
 
@@ -567,25 +713,14 @@
  * (:has(:focus-visible)), no con un clic de ratón.
  */
 @layer components {
-  .tarjeta,
-  .tarjeta-ruta {
+  .tarjeta {
     position: relative;
     isolation: isolate;
-  }
-
-  .tarjeta {
     --brillo: var(--tinte, var(--color-primario));
   }
 
-  /* Sobre el bloque de color, el brillo usa el color del texto del bloque. */
-  .tarjeta-ruta {
-    --brillo: var(--sobre-bloque);
-  }
-
   .tarjeta::before,
-  .tarjeta-ruta::before,
-  .tarjeta::after,
-  .tarjeta-ruta::after {
+  .tarjeta::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -594,61 +729,51 @@
     opacity: 0;
   }
 
-  .tarjeta::before,
-  .tarjeta-ruta::before {
+  .tarjeta::before {
     inset: 0;
   }
 
-  .tarjeta::after,
-  .tarjeta-ruta::after {
+  .tarjeta::after {
     inset: -1px;
   }
 }
 
 @supports (color: color-mix(in oklab, white 50%, transparent)) {
-  .tarjeta,
-  .tarjeta-ruta {
+  .tarjeta {
     box-shadow:
       0 0 0 1px var(--halo, transparent),
       0 2px 8px -2px var(--sombra, var(--sombra-neutra));
   }
 
-  .tarjeta::after,
-  .tarjeta-ruta::after {
+  .tarjeta::after {
     box-shadow: 0 16px 32px -12px var(--sombra, var(--sombra-neutra));
   }
 
-  .tarjeta:has(:focus-visible)::after,
-  .tarjeta-ruta:focus-visible::after {
+  .tarjeta:has(:focus-visible)::after {
     opacity: 1;
   }
 
   @media (hover: hover) {
-    .tarjeta:hover::after,
-    .tarjeta-ruta:hover::after {
+    .tarjeta:hover::after {
       opacity: 1;
     }
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .tarjeta,
-    .tarjeta-ruta {
+    .tarjeta {
       transition: translate var(--duracion-hover) var(--ease-expo-out);
     }
 
-    .tarjeta::after,
-    .tarjeta-ruta::after {
+    .tarjeta::after {
       transition: opacity var(--duracion-hover) ease-out;
     }
 
-    .tarjeta:has(:focus-visible),
-    .tarjeta-ruta:focus-visible {
+    .tarjeta:has(:focus-visible) {
       translate: 0 -4px;
     }
 
     @media (hover: hover) {
-      .tarjeta:hover,
-      .tarjeta-ruta:hover {
+      .tarjeta:hover {
         translate: 0 -4px;
       }
     }
@@ -656,8 +781,7 @@
 
   /* Brillo que sigue al cursor (src/scripts/efectos.ts pone --x y --y). */
   @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-    .tarjeta::before,
-    .tarjeta-ruta::before {
+    .tarjeta::before {
       background: radial-gradient(
         16rem circle at var(--x, 50%) var(--y, 50%),
         color-mix(in oklab, var(--brillo) 12%, transparent),
@@ -666,8 +790,7 @@
       transition: opacity var(--duracion-hover) ease-out;
     }
 
-    .tarjeta:hover::before,
-    .tarjeta-ruta:hover::before {
+    .tarjeta:hover::before {
       opacity: 1;
     }
   }
@@ -705,7 +828,7 @@ html[data-unidad="4"] {
  * 7 · Aparición escalonada de las tarjetas de cada unidad (05-07). El
  * desfase (unos 40 ms de desplazamiento por columna) depende de la posición
  * en la fila: 1 columna en móvil, 2 desde 640 px y 3 desde 1024 px. Las
- * tarjetas de la ruta (primer pantallazo, LCP) no aparecen así. Fuera de
+ * filas de la ruta (primer pantallazo, LCP) no aparecen así. Fuera de
  * @supports no hay estado inicial invisible.
  */
 @keyframes aparecer {
@@ -909,5 +1032,14 @@ body {
 @media print {
   body {
     background-image: none;
+  }
+
+  /* 06-07: sin el círculo decorativo de la credencial y salas sin fondo. */
+  .credencial::before {
+    display: none;
+  }
+
+  .sala-unidad {
+    background: none;
   }
 }

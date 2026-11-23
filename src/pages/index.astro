@@ -1,6 +1,7 @@
 ---
-// Página única: portada, ruta, las 4 unidades y el instructor. Los títulos de
-// las unidades salen de sus fichas (src/content/unidades/), no de este archivo.
+// Página única (RDA-014): portada con la ruta, el instructor y las 4
+// unidades. Los títulos de las unidades salen de sus fichas
+// (src/content/unidades/), no de este archivo.
 import Base from "../layouts/Base.astro";
 import Portada from "../components/Portada.astro";
 import SeccionUnidad from "../components/SeccionUnidad.astro";
@@ -9,14 +10,15 @@ import { obtenerUnidadesConBloques } from "../lib/unidades";
 
 const unidades = await obtenerUnidadesConBloques();
 
-// Etiquetas cortas de la navegación (interfaz, no contenido del curso).
+// Etiquetas cortas de la navegación, en el orden de la página (interfaz, no
+// contenido del curso).
 const enlaces = [
   { href: "#ruta", texto: "Ruta" },
+  { href: "#instructor", texto: "Instructor" },
   ...unidades.map(({ data }) => ({
     href: `#unidad-${data.numero}`,
     texto: `U${data.numero}`,
   })),
-  { href: "#instructor", texto: "Instructor" },
 ];
 ---
 
@@ -26,8 +28,8 @@ const enlaces = [
   enlaces={enlaces}
 >
   <Portada />
+  <Instructor />
   {unidades.map((unidad) => (
     <SeccionUnidad unidad={unidad} />
   ))}
-  <Instructor />
 </Base>

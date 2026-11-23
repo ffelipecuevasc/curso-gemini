@@ -3,9 +3,9 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-23
-- **Iteración activa:** 07-01 (En revisión)
-- **Próximo hito:** Revisión de la 07-01 por el desarrollador; luego preparar la 07-02 (Unidad 2)
-- **Métricas vigentes:** Lighthouse móvil publicado 99/100/100/100 (LCP 1,43 s, CLS 0, TBT 71 ms; medido antes de la 07-01); JS propio 1774 B gzip (sin cambios en la 07-01); 55 `<dialog>`; 25 de 25 prompts; palabras U1 297
+- **Iteración activa:** 06-07 (En revisión; épica 06 reabierta); 07-01 sigue En revisión
+- **Próximo hito:** Revisión de la 06-07 y merge; fase B (Lighthouse publicado y cierre de la épica 06 reabierta); luego la 07-01 y la preparación de la 07-02 (Unidad 2)
+- **Métricas vigentes:** Lighthouse móvil publicado 99/100/100/100 (antes de la 07-01 y la 06-07); local 06-07 98/100/96/100; JS propio 1767 B gzip; 55 `<dialog>`; 25 de 25 prompts; U1 en 1440 × 900 818,6 de 823 px
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
 
@@ -19,6 +19,7 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
+| 06-07 | [Recorrido de la página: instructor primero, ruta como índice, unidades en salas y firma del OTEC](../10_epicas/epica-06-pulido-identidad/iteracion-06-07-recorrido-instructor-ruta-salas.md) | 06 (reabierta) | En revisión | cierre de la épica 06, P-029 | [bitacora-06-07](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-07.md) |
 | 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](../10_epicas/epica-07-ajustes-unidades/iteracion-07-01-unidad-1.md) | 07 | En revisión | cierre de la épica 06 | [bitacora-07-01](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) |
 | 07-02 | Unidad 2 (se redacta tras su preparación) | 07 | Sin redactar | 07-01 | — |
 | 07-03 | Unidad 3 (se redacta tras su preparación) | 07 | Sin redactar | 07-02 | — |
@@ -35,7 +36,7 @@ Una fila por épica cerrada, con enlace a su bitácora de cierre.
 | 03 | Unidades del curso | 2026-11-17 | [bitacora-03-cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
 | 04 | Publicación, medición y calidad | 2026-11-18 | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) |
 | 05 | Rediseño visual y síntesis del contenido | 2026-11-21 | [bitacora-05-cierre](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-cierre.md) |
-| 06 | Pulido de identidad: portada, unidades y modales | 2026-11-22 | [bitacora-06-cierre](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md) |
+| 06 | Pulido de identidad: portada, unidades y modales · Reabierta el 2026-11-23 para la 06-07 | 2026-11-22 | [bitacora-06-cierre](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md) |
 
 ## 3. Backlog
 
@@ -45,6 +46,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
+| 35 | Recorrido de la página (RDA-014): instructor como credencial tras la portada, ruta como índice, unidades en salas y pie con la firma del OTEC | Diseño | [Iteración 06-07](../10_epicas/epica-06-pulido-identidad/iteracion-06-07-recorrido-instructor-ruta-salas.md) | 06-07 | En revisión |
 | 33 | Bajar U2, U3 y U4 a 300 palabras o menos (RDA-012); F3 del cierre de la 06, medido con `innerText`: 294 / 316 / 354 / 305 · Desviación aceptada por el desarrollador; fuera del alcance de la épica 06 · Se evalúa dentro de 07-02 a 07-04 | Contenido | — | — | Sin asignar |
 
 > El backlog 34 (F7) quedó terminado y pasó a `registro-archivo.md` (2026-11-22).
@@ -69,6 +71,7 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Texto de «Profundiza en tu tiempo» de cada bloque: el documento del curso lista los temas, pero no la teoría escrita · Opcional desde 2026-11-17: «Profundiza» usa los recursos oficiales ya cargados y el texto no bloquea nada | — | Desarrollador |
 | Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) · U1: 5 videos cargados en la 03-04; U2: sin videos (ausencia acordada); U3: 1 video cargado en la 03-05; U4: sin videos (ausencia acordada) | — | Desarrollador |
 | Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Publicados el dataset CSV (03-03) y su diccionario editado para participantes (03-04); de la U1 y la U2, el resto (`plantillas-alumnos.zip`, informe de Deep Research de respaldo) queda como ausencia acordada en la 03-04; en la 03-05 se publican las 4 plantillas de `plantillas-alumnos/` (U4) y quedan como ausencia acordada `optimizador-prompts/SKILL.md`, `gtd-visual.zip` y el paquete de fuentes de la U3 | — | Desarrollador |
+| P-030 · `DESIGN.md`, fila «Portada y ruta»: en 1366 × 657 la columna de texto se desplaza (desviación aceptada en la 06-07) | 06-07 | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
 | Selector de la cuenta empresarial del curso: qué modelos muestra y si «Verificar respuesta» (*Double-check*) está disponible (tarea del desarrollador de la 07-01) | 07-01 | Desarrollador |
 | Enlace oficial del anuncio de Neon, si se quiere sumar a los recursos de la U1 (`gemini-4-neon`) | 07-01 | Desarrollador |
@@ -89,6 +92,7 @@ Ideas detectadas durante el trabajo que no forman parte de lo comprometido, incl
 | `text-wrap: pretty` en el cuerpo para evitar palabras solas en la última línea (6 avisos `straggler` del detector de Impeccable), medido contra el alto de las unidades en 1440 × 900 | Iteración 05-08 | 2026-11-20 |
 | Avance real del participante por bloque en `localStorage` (alternativa descartada en la RDA-013) | Crítica de diseño de la épica 06 | 2026-11-21 |
 | Mosaico de tarjetas proporcional a los minutos, línea de metro en la ruta, buscador de prompts y «Copiar prompt» directo en la tarjeta | Crítica de diseño de la épica 06 | 2026-11-21 |
+| Logo de GTD en modo oscuro: con sus colores originales (`#5F7EBA`, `#43649C`) se ve apagado sobre `#00131D`; recolorearlo requiere autorización del cliente | Iteración 06-07 | 2026-11-23 |
 
 ## 7. Historial
 
@@ -96,7 +100,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-17 | Iteración 04-01 en revisión: guardia de marcadores en todos los archivos de texto de `dist/` (4 de 4 pruebas fallan, `cmp` 0) y limpieza de los 6 SVG sin referencia (41 030 B) tras `astro build`; hash de `index.html` idéntico; P-008 pendiente. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-01.md) |
 | 2026-11-18 | Iteración 04-01 terminada: el desarrollador revisó 360 px en el navegador sin observaciones. P-008 aplicada por el desarrollador en `AGENTS.md` (commit 6f5ff74); sale de «Decisiones por tomar». |
 | 2026-11-18 | Iteración 04-02 en revisión: `wrangler.jsonc` del Worker `curso-gemini` (solo `dist/`), `pnpm dlx wrangler@4.164.0` y `deploy --dry-run` con código 0, 0 secretos, hash idéntico; salen la versión de Wrangler y el nombre del Worker; falta el primer despliegue del desarrollador. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-02.md) |
 | 2026-11-18 | Iteración 04-02 terminada: el desarrollador dijo que el Worker está publicado en `https://curso-gemini.felipe-cuevas.workers.dev/`; `curl` dio 200 y 1 `h1`. |
@@ -146,3 +149,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-22 | Corrección: F7 (teclado y lector) verificado por el desarrollador, sin observaciones; backlog 34 y corrección 26.1 terminados (dicho por él); épica 07 adoptada (07-01 pendiente; 07-02 a 07-04 sin redactar) y backlog 33 a evaluar en la 07-02 a la 07-04; la fila más antigua del historial pasa a `registro-archivo.md`. [Cierre 06](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md) · [Definición 07](../10_epicas/epica-07-ajustes-unidades/definicion-epica-07.md) |
 | 2026-11-23 | Iteración 07-01 en curso en `iteracion/07-01-unidad-1`: corrección documental a 6 pasos en la tabla 5.2; línea base U1 294 palabras (`innerText`), 823 px en 1440 × 900, 54 `<dialog>`, 24 de 24 prompts; 3 candidatos del prompt avanzado a la espera de la elección del desarrollador. [Bitácora](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) |
 | 2026-11-23 | Iteración 07-01 en revisión: U1 con cuenta del curso, modelos Auto/Hydrogen/Neon/Carbon, privacidad 2.4, prompt avanzado B (9 puntos), tabla 5.2 de 6 pasos (60 min), Mapa, Banco y Revisión en 3 pasos, 4 descargas; 25 prompts, 55 `<dialog>`, U1 297 palabras; cierra los pendientes del avanzado y de la ronda 3. [Bitácora](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) |
+| 2026-11-23 | Épica 06 reabierta. Iteración 06-07 en revisión: instructor como credencial tras la portada, ruta como índice, unidades en salas y pie con la firma del OTEC; RDA-014, P-029 aplicada y P-030 pendiente; 1366 × 657 con 2 desviaciones aceptadas; JS 1767 B, Lighthouse local 98; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-07.md) |

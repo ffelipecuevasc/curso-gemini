@@ -1,0 +1,50 @@
+---
+// Una fila del índice de la ruta (DESIGN.md, secciones 4, 5 y 7; RDA-014,
+// P-029): cuadrado de 44 px con el color y el número de la unidad («Unidad»
+// solo para lectores de pantalla), nombre (h3), mini-proyecto completo y
+// «Clase n» («de N» solo para lectores). La fila entera enlaza a la sección de
+// su unidad. Todo el texto viene de la ficha de la unidad.
+import type { CollectionEntry } from "astro:content";
+import { bloqueUnidad } from "../lib/colores-unidad";
+
+interface Props {
+  unidad: CollectionEntry<"unidades">;
+  clases: number;
+}
+
+const { unidad, clases } = Astro.props;
+const { numero, titulo, miniProyecto, clase } = unidad.data;
+const base = `ruta-u${numero}`;
+---
+
+<li>
+  <a
+    href={`#unidad-${numero}`}
+    aria-labelledby={`${base}-numero ${base}-titulo`}
+    aria-describedby={`${base}-proyecto ${base}-clase`}
+    class="fila-ruta"
+  >
+    <span
+      id={`${base}-numero`}
+      class:list={["cuadro-ruta", bloqueUnidad[numero]]}
+    >
+      <span class="sr-only">Unidad </span>
+      {numero}
+    </span>
+    <div class="min-w-0">
+      <h3 id={`${base}-titulo`} class="titulo-fila-ruta wrap-break-word">
+        {titulo}
+      </h3>
+      <p id={`${base}-proyecto`} class="text-sm text-texto-2 wrap-break-word">
+        Mini-proyecto: {miniProyecto.titulo}
+      </p>
+    </div>
+    <p
+      id={`${base}-clase`}
+      class="font-codigo text-sm whitespace-nowrap text-texto-2"
+    >
+      Clase {clase}
+      <span class="sr-only"> de {clases}</span>
+    </p>
+  </a>
+</li>

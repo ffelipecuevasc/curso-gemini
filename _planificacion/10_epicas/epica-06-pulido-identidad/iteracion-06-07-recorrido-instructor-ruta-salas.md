@@ -1,7 +1,7 @@
 # Iteración 06-07 · Recorrido de la página: instructor primero, ruta como índice, unidades en salas y firma del OTEC
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales (reabierta el 2026-11-23 para esta iteración)
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/06-07-recorrido-instructor-ruta-salas
 - **Depende de:** cierre de la épica 06 (2026-11-22), P-029 aplicada por el desarrollador y RDA-014 registrada (tarea 1)
 - **Especificación:** —
@@ -137,6 +137,7 @@ En `@theme` (modo claro) y redefinidos bajo `[data-modo="oscuro"]`, según `DESI
 - 2026-11-23: el logo de Capacita Tu Futuro va en `--color-primario` en la portada y en el pie, monocromo y sin dividir el trazado, con la etiqueta «Organismo Técnico de Capacitación» en el pie.
 - 2026-11-23: el logo de GTD conserva sus colores originales.
 - 2026-11-23: los 4 cambios van en una sola iteración, a pedido del desarrollador. El tamaño se acepta como excepción al máximo de la sección 3 de `_planificacion/README.md`, con 8 tareas y una revisión visual por bloque. Si la definición de preparada lo objeta, el agente avisa y propone partirla en 06-07 a 06-10 (un bloque del alcance por iteración) antes de empezar.
+- 2026-11-23: se aceptan como desviaciones la portada en 1366 × 657 (la columna de texto termina en 756 px; la ruta sí cabe) y la U1 en 1366 × 657 (+39 px contra +24, por una línea más en la tarjeta del bloque 2); se mantiene el relleno de la sala en 0,625 rem. Evidencia en la [bitácora 06-07](bitacoras/bitacora-06-07.md).
 
 ## Plan técnico
 
@@ -190,47 +191,47 @@ En `@theme` (modo claro) y redefinidos bajo `[data-modo="oscuro"]`, según `DESI
 
 ### Estructura y navegación
 
-- [ ] En `dist/index.html`, el orden de las secciones es `#inicio` (con `#ruta` dentro) → `#instructor` → `#unidad-1` … `#unidad-4`.
-- [ ] La navegación muestra Ruta, Instructor, U1, U2, U3, U4. La píldora activa (`aria-current`) sigue a la sección visible al recorrer la página de arriba abajo.
-- [ ] El botón principal de la portada dice «Conoce a tu instructor» y lleva a `#instructor`; el de la credencial dice «Empezar por la Unidad 1» y lleva a `#unidad-1`. Hay un solo botón principal por sección.
-- [ ] Hay 1 `h1` y los encabezados siguen el árbol del plan técnico, sin saltos (árbol de accesibilidad).
+- [x] En `dist/index.html`, el orden de las secciones es `#inicio` (con `#ruta` dentro) → `#instructor` → `#unidad-1` … `#unidad-4`.
+- [x] La navegación muestra Ruta, Instructor, U1, U2, U3, U4. La píldora activa (`aria-current`) sigue a la sección visible al recorrer la página de arriba abajo.
+- [x] El botón principal de la portada dice «Conoce a tu instructor» y lleva a `#instructor`; el de la credencial dice «Empezar por la Unidad 1» y lleva a `#unidad-1`. Hay un solo botón principal por sección.
+- [x] Hay 1 `h1` y los encabezados siguen el árbol del plan técnico, sin saltos (árbol de accesibilidad).
 
 ### Portada y ruta
 
-- [ ] La ruta es un `<ol>` de 4 filas enlazadas, cada una con su cuadrado de color y número, nombre, mini-proyecto completo (también «…Ley 21.719 en GTD») y «Clase n», más la nota «Cada clase · 120 min».
-- [ ] El build falla con un mensaje claro si se cambia el `duracionMin` de una sola unidad (prueba local, revertida).
-- [ ] En 1440 × 900 y en 1366 × 657 (ambos modos), el título, el lema, la ficha, el botón, las redes, los logos y las 4 filas con la nota se ven sin desplazarse: el `bottom` del último elemento de `#inicio` es ≤ alto de la ventana.
-- [ ] En 390 × 844, el logo de Gemini queda en la misma fila que «Ruta del curso» y ninguna fila se desborda en horizontal.
-- [ ] `grep -c "tarjeta-ruta" dist/index.html` = 0, y en el CSS compilado no quedan reglas `.tarjeta-ruta`.
+- [x] La ruta es un `<ol>` de 4 filas enlazadas, cada una con su cuadrado de color y número, nombre, mini-proyecto completo (también «…Ley 21.719 en GTD») y «Clase n», más la nota «Cada clase · 120 min».
+- [x] El build falla con un mensaje claro si se cambia el `duracionMin` de una sola unidad (prueba local, revertida).
+- [ ] En 1440 × 900 y en 1366 × 657 (ambos modos), el título, el lema, la ficha, el botón, las redes, los logos y las 4 filas con la nota se ven sin desplazarse: el `bottom` del último elemento de `#inicio` es ≤ alto de la ventana. · **No se cumple en 1366 × 657** (755,8 > 657; en 1440 × 900, 755,8 ≤ 900): desviación aceptada por el desarrollador el 2026-11-23 (P-030).
+- [x] En 390 × 844, el logo de Gemini queda en la misma fila que «Ruta del curso» y ninguna fila se desborda en horizontal.
+- [x] `grep -c "tarjeta-ruta" dist/index.html` = 0, y en el CSS compilado no quedan reglas `.tarjeta-ruta`.
 
 ### Instructor
 
-- [ ] La credencial muestra la insignia sobre la placa blanca en ambos modos, «Vigente hasta 13-10-2029», la etiqueta «INSTRUCTOR» (texto «Instructor» en el HTML), el nombre, la certificación, las 2 líneas de trayectoria, las 3 acciones y las 3 cifras con el texto aprobado. Las cifras salen de `instructor.yaml`: `grep -c "+300" src/components/Instructor.astro` = 0.
-- [ ] El modal «Trayectoria completa» abre y cierra igual que antes y ya no tiene la imagen de la insignia: hay 1 sola `img` de la insignia en `dist/index.html`.
-- [ ] En 360 px, la insignia va arriba, las cifras se apilan y nada se desborda.
+- [x] La credencial muestra la insignia sobre la placa blanca en ambos modos, «Vigente hasta 13-10-2029», la etiqueta «INSTRUCTOR» (texto «Instructor» en el HTML), el nombre, la certificación, las 2 líneas de trayectoria, las 3 acciones y las 3 cifras con el texto aprobado. Las cifras salen de `instructor.yaml`: `grep -c "+300" src/components/Instructor.astro` = 0.
+- [x] El modal «Trayectoria completa» abre y cierra igual que antes y ya no tiene la imagen de la insignia: hay 1 sola `img` de la insignia en `dist/index.html`.
+- [x] En 360 px, la insignia va arriba, las cifras se apilan y nada se desborda.
 
 ### Unidades
 
-- [ ] Cada unidad está dentro de su `.sala-unidad` con `--color-sala-uN`, y el color calculado cambia con el modo (`getComputedStyle`).
-- [ ] Entre el borde inferior de una sala y el superior de la siguiente hay ≥ 96 px en 1440 × 900 y ≥ 64 px en 390 × 844.
-- [ ] Una unidad en una pantalla: en 1440 × 900 (ambos modos), cada `.seccion-unidad` mide ≤ 823 px y su alto natural (sin `flex`) también es ≤ 823 px. En 1366 × 657, cada unidad mide como máximo 24 px más que en la línea base de la tarea 1.
-- [ ] Al imprimir, las salas van sin fondo y la trama no aparece.
+- [x] Cada unidad está dentro de su `.sala-unidad` con `--color-sala-uN`, y el color calculado cambia con el modo (`getComputedStyle`).
+- [x] Entre el borde inferior de una sala y el superior de la siguiente hay ≥ 96 px en 1440 × 900 y ≥ 64 px en 390 × 844.
+- [ ] Una unidad en una pantalla: en 1440 × 900 (ambos modos), cada `.seccion-unidad` mide ≤ 823 px y su alto natural (sin `flex`) también es ≤ 823 px. En 1366 × 657, cada unidad mide como máximo 24 px más que en la línea base de la tarea 1. · En 1440 × 900 se cumple (máximo 818,6); **en 1366 × 657 la U1 crece +39** (U2 a U4, +15): desviación aceptada por el desarrollador el 2026-11-23.
+- [x] Al imprimir, las salas van sin fondo y la trama no aparece.
 
 ### Pie y logos
 
-- [ ] El logo de Capacita se ve en `--color-primario` en la portada y en el pie, en ambos modos (`getComputedStyle(svg).color`), y `git diff --stat -- src/assets` está vacío.
-- [ ] Desde 1024 px, el pie tiene dos zonas con la línea vertical; la etiqueta «Organismo Técnico de Capacitación» va sobre el logo de 48 px, alineada a la derecha. En móvil, la zona del logo va debajo y alineada a la izquierda.
-- [ ] El logo de GTD conserva `#5F7EBA` y `#43649C`.
+- [x] El logo de Capacita se ve en `--color-primario` en la portada y en el pie, en ambos modos (`getComputedStyle(svg).color`), y `git diff --stat -- src/assets` está vacío.
+- [x] Desde 1024 px, el pie tiene dos zonas con la línea vertical; la etiqueta «Organismo Técnico de Capacitación» va sobre el logo de 48 px, alineada a la derecha. En móvil, la zona del logo va debajo y alineada a la izquierda.
+- [x] El logo de GTD conserva `#5F7EBA` y `#43649C`.
 
 ### Accesibilidad y regresiones
 
-- [ ] Los contrastes de las filas nuevas de `DESIGN.md` 2.3 se cumplen, medidos en el navegador en ambos modos. Los separadores `--color-linea-fuerte` son decorativos y no se exigen.
-- [ ] Con teclado: cada fila de la ruta y cada acción de la credencial reciben foco visible. En la fila, el foco muestra el fondo `--color-superficie` y la subida del cuadrado; con reducir movimiento, sin subida.
-- [ ] Sin JavaScript, en modo claro, la página se lee completa y no queda ningún botón sin función.
-- [ ] `pnpm build` sin advertencias y con la guardia en 0 marcadores; `pnpm astro check` 0/0/0; 24 de 24 prompts; 54 `<dialog>`; 0 `id` repetidos.
-- [ ] JavaScript propio ≤ 1774 B gzip, sin JavaScript nuevo.
-- [ ] Impeccable: `[]`, o cada hallazgo justificado en la bitácora.
-- [ ] Lighthouse móvil publicado, mediana de 3: cada categoría a 2 puntos o menos de 99/100/100/100; CLS < 0,1; el elemento LCP sigue siendo el `h1`.
+- [x] Los contrastes de las filas nuevas de `DESIGN.md` 2.3 se cumplen, medidos en el navegador en ambos modos. Los separadores `--color-linea-fuerte` son decorativos y no se exigen.
+- [x] Con teclado: cada fila de la ruta y cada acción de la credencial reciben foco visible. En la fila, el foco muestra el fondo `--color-superficie` y la subida del cuadrado; con reducir movimiento, sin subida.
+- [x] Sin JavaScript, en modo claro, la página se lee completa y no queda ningún botón sin función.
+- [x] `pnpm build` sin advertencias y con la guardia en 0 marcadores; `pnpm astro check` 0/0/0; 24 de 24 prompts; 54 `<dialog>`; 0 `id` repetidos.
+- [x] JavaScript propio ≤ 1774 B gzip, sin JavaScript nuevo.
+- [x] Impeccable: `[]`, o cada hallazgo justificado en la bitácora.
+- [ ] Lighthouse móvil publicado, mediana de 3: cada categoría a 2 puntos o menos de 99/100/100/100; CLS < 0,1; el elemento LCP sigue siendo el `h1`. · Fase B, después del merge.
 
 ## RDA-014 (texto para `decisiones.md`)
 

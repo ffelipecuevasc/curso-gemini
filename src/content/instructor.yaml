@@ -20,4 +20,13 @@
     - Más de 300 profesionales formados en bootcamps de reconversión laboral (Talento Digital para Chile, SENCE). Según felipecuevas.dev, suma más de 2.000 estudiantes formados y más de 150 módulos aprobados como relator REUF.
     - Instructor certificado de IA con Gemini en programas corporativos para Capacita Tu Futuro (más de 50 ejecutivos y colaboradores, octubre de 2026) y Skillnest (junio a agosto de 2026).
     - Certificaciones profesionales vigentes en Oracle, AWS, Anthropic y Python. Más detalles en felipecuevas.dev.
+  # Cifras de la credencial (06-07), tomadas de `trayectoria` y aprobadas por
+  # el desarrollador el 2026-11-22.
+  cifras:
+    - valor: "+12"
+      texto: años en docencia y formación técnica
+    - valor: "+300"
+      texto: profesionales formados en bootcamps
+    - valor: "+50"
+      texto: ejecutivos formados con Capacita Tu Futuro
   comunidad: Fundador de la comunidad Pulso Devs.

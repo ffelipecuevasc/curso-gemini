@@ -42,6 +42,7 @@ Las unidades 2 a 4 tendrán su propia preparación y sumarán una iteración cad
 ## Precondiciones
 
 - **La épica 06 debe estar cerrada:** Cumplida: épica 06 cerrada el 2026-11-22 ([bitacora-06-cierre](../epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md)).
+- 2026-11-23: la épica 06 se reabrió para la 06-07; la 07-01 espera su cierre.
 - Para la 07-01: los dos PDF de la U1 (Mapa de oportunidades y Banco de tareas) deben existir en `public/descargas/`. Comprobado el 2026-11-22: existen `u1-mapa-oportunidades.pdf` (197 560 B) y `u1-banco-tareas.pdf` (378 890 B).
 
 ## Decisiones de la épica

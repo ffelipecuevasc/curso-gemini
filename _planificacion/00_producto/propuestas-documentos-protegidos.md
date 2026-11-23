@@ -42,6 +42,8 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-026 | `DESIGN.md` · 5. Componentes (fila Tarjeta de bloque) | Épica 06 (06-04) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-027 | `DESIGN.md` · 5. Componentes (fila Modal) | Épica 06 (06-05) | 2026-11-21 | Aplicada |
 | P-028 | `DESIGN.md` · 2.3 Contraste (regla práctica) y 5. Componentes (filas Portada y ruta, Tarjeta de bloque y Modal) | Iteración 06-06 | 2026-11-22 | Aplicada 2026-11-22 |
+| P-029 | `DESIGN.md` · 1, 2, 4, 5, 6, 7 y 8 | Diseño de la 06-07 | 2026-11-23 | Aplicada 2026-11-23 |
+| P-030 | `DESIGN.md` · 5. Componentes (fila Portada y ruta) | Iteración 06-07 | 2026-11-23 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -887,4 +889,34 @@ Excepción sobre la trama de puntos (modo oscuro): sobre el centro de un punto (
 
 ```text
 | Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, o `--color-primario` si el modal no pertenece a una unidad, como la trayectoria del instructor, título, una línea de datos en IBM Plex Mono («Bloque n · m min · Unidad n»; «Antes de empezar · m min · Unidad n» en el bloque 0 y «Cierre · m min · Unidad n» en el cierre), botón «Cerrar» de 44 px, resumen del bloque como entradilla, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
+```
+
+**Hallazgo del 2026-11-23 (06-07):** ninguno de los 4 textos propuestos estaba en el `DESIGN.md` de `main` antes de la P-029. Comprobado con `git show d50ccdb:DESIGN.md`: «Excepción sobre la trama», «la ruta se desplaza», «escala 1» y «Antes de empezar · m min» dan 0 coincidencias. La comprobación del 2026-11-22 con «6,63:1» fue un falso positivo, porque esa cifra ya estaba en otra fila de la tabla 2.3. El estado de esta propuesta no se cambia: la P-029 incorpora sus puntos 1, 3 y 4 y reemplaza su punto 2.
+
+## P-029 · Recorrido de la página: instructor, ruta como índice, salas, pie con la firma del OTEC y tokens nuevos
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 1. Concepto visual (recorrido), 2.1 Superficies (`--color-linea-fuerte`, `--color-placa`), 2.2 (salas de las unidades), 2.3 Contraste (filas de la credencial, el pie y las salas, y la excepción sobre la trama), 4. Espaciado (`--espacio-unidades`, sala, credencial, radios), 5. Componentes (Encabezado, Portada y ruta, Sección de unidad, Tarjeta de bloque, Modal, Instructor y Pie), 6. Íconos y logotipos (Capacita en `--color-primario`, GTD solo en el hero, insignia en la placa), 7. Movimiento (filas de la ruta) y 8. Implementación de los tokens.
+- **Origen:** diseño de la 06-07 (sesión con vistas previas y la skill Impeccable, 2026-11-22 y 2026-11-23).
+- **Estado:** aplicada por el desarrollador el 2026-11-23 en `main` (`e489e64`). Comprobada con `grep` en `DESIGN.md`: «--color-sala-u1» (2), «Conoce a tu instructor» (1), «Organismo Técnico de Capacitación» (2) y «Excepción sobre la trama» (1).
+- **Por qué:** la 06-07 cambia el orden de la página, el formato de la ruta, el instructor, las unidades y el pie (RDA-014). Sin la propuesta, `DESIGN.md` seguiría describiendo el mosaico 2 × 2, el instructor al final y las unidades sin sala, y la iteración lo contradiría.
+- **Relación con la P-028:** reemplaza su punto 2 (fila «Portada y ruta», que ahora describe el índice y que la portada cabe también en 1366 × 657) e incorpora sus puntos 1 (excepción sobre la trama en 2.3), 3 (meta del bloque 0 y del cierre en la fila «Modal») y 4 (borde del ticket a escala 1 en la fila «Tarjeta de bloque»), que no estaban en `main`.
+- **Texto actual y propuesto:** el desarrollador reemplazó el documento completo por la versión entregada en la sesión de diseño, así que los pares de texto se leen en el diff del commit: `git diff d50ccdb e489e64 -- DESIGN.md` (43 líneas agregadas y 15 quitadas).
+
+## P-030 · La portada no cabe completa en 1366 × 657
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 5. Componentes, fila «Portada y ruta» (última frase)
+- **Por qué:** en la 06-07 se midió que, en 1366 × 657, la ruta como índice cabe (termina en 643 px), pero la columna de texto no: el `h1` ocupa 4 líneas, las redes 2 filas y los logos terminan en 756 px (en `main` terminaban en 779). El desarrollador lo aceptó como desviación el 2026-11-23. Si no se aplica, `DESIGN.md` promete algo que el sitio no cumple, y la próxima iteración que toque la portada lo tomará como criterio.
+
+**Texto actual** (copiado literalmente):
+
+```text
+En 1440 × 900 y en 1366 × 657, la portada completa se ve sin desplazarse. |
+```
+
+**Texto propuesto:**
+
+```text
+En 1440 × 900, la portada completa se ve sin desplazarse; en 1366 × 657 cabe la ruta completa y la columna de texto se desplaza (las redes y los logos quedan bajo el primer pantallazo). |
 ```

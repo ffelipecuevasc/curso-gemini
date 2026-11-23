@@ -16,7 +16,8 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 | RDA-010 | Formato y peso de las descargas medidos del archivo al compilar | Aceptada |
 | RDA-011 | Modales sobre `<dialog>` nativo con script mínimo y respaldo sin JavaScript | Aceptada |
 | RDA-012 | Síntesis por bloque y por unidad en el modelo de contenido, con límites de palabras | Aceptada |
-| RDA-013 | Sin barras de avance: la ruta y las unidades muestran su lugar en el curso | Aceptada |
+| RDA-013 | Sin barras de avance: la ruta y las unidades muestran su lugar en el curso | Aceptada (reemplazada parcialmente por RDA-014) |
+| RDA-014 | Recorrido de la página: instructor antes de las unidades, ruta como índice y unidades en salas | Aceptada |
 
 ---
 
@@ -182,3 +183,19 @@ Consolidado de las decisiones técnicas del proyecto. Reglas en `_planificacion/
 **Decisión:** se quitan las barras de avance de la ruta y de las cabeceras de unidad, y se borra `BarraAvance.astro`. En su lugar, cada tarjeta de la ruta y cada cabecera muestran «Clase n de 4 · 120 min» en IBM Plex Mono, con el número de clases tomado de `curso.yaml`, y el número de la unidad en grande. El campo `avance` (RDA-008) se conserva en el esquema y en los YAML, sin mostrarse. La barra de lectura de 3 px bajo el encabezado se conserva, porque sí refleja el desplazamiento real.
 **Alternativas consideradas:** guardar el avance por bloque en `localStorage` (da un estado real, pero agrega JavaScript, casillas que el participante debe marcar y un caso borde por navegador; queda como propuesta fuera de alcance, junto con las casillas de «Terminado cuando…»); dejar las barras con otro texto («25 % del curso»), que sigue pareciendo progreso; borrar también el campo `avance` del esquema (cambio de esquema sin beneficio visible; se puede hacer después).
 **Consecuencias:** la página deja de prometer un estado que no tiene. Se pierde la lectura visual de «cuarto del curso»; la compensa el número grande de cada unidad y «Clase n de 4». El campo `avance` queda sin uso visible: si en el futuro se guarda el avance del participante, esta RDA se reemplaza.
+
+Reemplazada parcialmente por RDA-014 (formato de la ruta).
+
+---
+
+## RDA-014 · Recorrido de la página: instructor antes de las unidades, ruta como índice y unidades en salas
+
+- **Fecha:** 2026-11-23
+- **Estado:** Aceptada
+- **Reemplaza parcialmente:** RDA-013 (formato de la ruta: «Clase n de 4 · 120 min» en cada tarjeta)
+
+**Contexto:** en la revisión de diseño del 2026-11-22 y 2026-11-23 (skill Impeccable, con vistas previas aprobadas por el desarrollador), el instructor estaba al final de la página y los participantes llegaban al contenido sin saber quién dicta el curso. Además, la ruta de 4 tarjetas de color sólido (694 px de los 750 px de la portada) le quitaba el protagonismo al título, y las unidades quedaban pegadas entre sí (unos 25 px) y sin una superficie propia.
+**Decisión:** el orden de la página pasa a portada → instructor → unidades → pie, y la navegación lo sigue. El botón principal de la portada lleva al instructor y el de la credencial del instructor lleva a la Unidad 1. La ruta pasa a un índice de 4 filas con el color solo en el cuadrado del número; cada fila muestra «Clase n» y una nota única dice «Cada clase · 120 min». Cada unidad vive en una sala teñida con su color (tokens `--color-sala-uN`), con `--espacio-unidades` entre una y otra. El campo nuevo `cifras` de `instructor.yaml` alimenta las 3 cifras de la credencial.
+**Alternativas consideradas:** para el instructor, una franja oscura a todo el ancho y un mosaico de 3 bloques; para la ruta, un mosaico 2 × 2 compacto y una franja de 4 capítulos al pie de la portada; para las unidades, una franja teñida a todo el ancho y un marco de color sólido. El detalle está en la iteración 06-07.
+**Consecuencias:** la portada cabe completa también en 1366 × 657. El instructor gana peso y se lee antes del curso. Cada unidad suma unos 20 px de relleno (la sala) que deben caber en los ~41 px libres de «una unidad en una pantalla». En modo oscuro, las salas de la U2 y la U3 se parecen y las distingue su cabecera. El esquema de `instructor` suma un campo obligatorio.
+**Actualización 2026-11-23 (06-07):** medido en 1366 × 657, cabe la ruta completa, pero no la portada completa: la columna de texto termina en 756 px. Además, la U1 crece +39 px y no +24, por una línea más en una tarjeta. En 1440 × 900 cabe todo, y la U1 mide 818,6 de 823. Las dos diferencias son desviaciones aceptadas por el desarrollador (P-030 para `DESIGN.md`; detalle en la bitácora 06-07).

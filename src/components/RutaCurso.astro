@@ -1,19 +1,31 @@
 ---
-// «Ruta del curso» (DESIGN.md, sección 5, «Portada y ruta»; P-024): va dentro
-// de la portada, como sección anidada con su `id="ruta"` y su h2, con el logo
-// de Gemini junto al título (el SVG se usa tal cual) y las 4 unidades en
-// mosaico de 1 columna en móvil y 2 × 2 desde 640 px.
+// «Ruta del curso» como índice (DESIGN.md, sección 5, «Portada y ruta»;
+// RDA-014, P-029): va dentro de la portada, como sección anidada con su
+// `id="ruta"` y su h2, con el logo de Gemini junto al título (el SVG se usa
+// tal cual), 4 filas de una columna en todos los anchos y la nota «Cada clase
+// · n min» al pie, calculada de las fichas.
 // Usa obtenerUnidadesConBloques() para que las comprobaciones entre
 // unidades y bloques (RDA-009) corran en cada build.
 import { getEntry } from "astro:content";
 import Gemini from "../assets/iconos/gemini.svg";
 import { obtenerUnidadesConBloques } from "../lib/unidades";
-import BloqueUnidad from "./BloqueUnidad.astro";
+import FilaRuta from "./FilaRuta.astro";
 
 const curso = await getEntry("curso", "curso");
 if (!curso)
   throw new Error("Falta la entrada «curso» en src/content/curso.yaml");
 const unidades = await obtenerUnidadesConBloques();
+
+// La nota única solo vale si todas las clases duran lo mismo.
+const duraciones = new Set(unidades.map((u) => u.data.duracionMin));
+if (duraciones.size !== 1) {
+  throw new Error(
+    `La nota «Cada clase · … min» de la ruta necesita que las 4 unidades tengan el mismo «duracionMin» (hoy: ${unidades
+      .map((u) => `U${u.data.numero} ${u.data.duracionMin}`)
+      .join(", ")}): revisa src/content/unidades/`,
+  );
+}
+const [duracionMin] = duraciones;
 ---
 
 <section id="ruta" aria-labelledby="titulo-ruta" class="relative">
@@ -24,12 +36,15 @@ const unidades = await obtenerUnidadesConBloques();
     <Gemini
       role="img"
       aria-label="Gemini"
-      class="aspect-[296/298] h-14 w-auto shrink-0 sm:h-24 lg:h-28"
+      class="aspect-[296/298] h-12 w-auto shrink-0 sm:h-14"
     />
   </div>
-  <ol class="mt-4 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2">
+  <ol class="indice-ruta">
     {unidades.map((unidad) => (
-      <BloqueUnidad unidad={unidad} clases={curso.data.clases} />
+      <FilaRuta unidad={unidad} clases={curso.data.clases} />
     ))}
   </ol>
+  <p class="mt-3 text-right font-codigo text-sm text-texto-2">
+    Cada clase · {duracionMin} min
+  </p>
 </section>

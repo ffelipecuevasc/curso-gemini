@@ -8,12 +8,20 @@
 // global.css) para su profundidad teñida; las de bloque, `--tinte`, el color de
 // su brillo (en oscuro, la U3 usa su borde claro, porque #003B51 no se ve).
 
-/** Bloque de color de la unidad (cabecera y tarjeta de la ruta). */
+/** Bloque de color de la unidad (cabecera y cuadrado del índice de la ruta). */
 export const bloqueUnidad: Record<number, string> = {
   1: "bg-u1 text-sobre-u1 [--bloque:var(--color-u1)] [--sobre-bloque:var(--color-sobre-u1)] [--sombra:var(--sombra-u1)] [--halo:var(--halo-u1)]",
   2: "bg-u2 text-sobre-u2 [--bloque:var(--color-u2)] [--sobre-bloque:var(--color-sobre-u2)] [--sombra:var(--sombra-u2)] [--halo:var(--halo-u2)]",
   3: "bg-u3 text-sobre-u3 border border-borde-u3 [--bloque:var(--color-u3)] [--sobre-bloque:var(--color-sobre-u3)] [--sombra:var(--sombra-u3)] [--halo:var(--halo-u3)]",
   4: "bg-u4 text-sobre-u4 [--bloque:var(--color-u4)] [--sobre-bloque:var(--color-sobre-u4)] [--sombra:var(--sombra-u4)] [--halo:var(--halo-u4)]",
+};
+
+/** Fondo teñido de la sala de cada unidad (06-07, tokens `--color-sala-uN`). */
+export const salaUnidad: Record<number, string> = {
+  1: "bg-sala-u1",
+  2: "bg-sala-u2",
+  3: "bg-sala-u3",
+  4: "bg-sala-u4",
 };
 
 /** Franja de 10 px de la cabecera de un modal. */

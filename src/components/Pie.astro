@@ -1,16 +1,38 @@
 ---
+// Pie con la firma del OTEC (DESIGN.md, secciones 5 y 6; RDA-014, P-029).
+// Zona superior: a la izquierda, el nombre del curso y las redes; a la
+// derecha (desde 1024 px, tras una línea vertical), la etiqueta «Organismo
+// Técnico de Capacitación» y el logo de Capacita Tu Futuro en
+// --color-primario por currentColor (el SVG no se edita). Zona inferior: el
+// aviso y la licencia. La etiqueta describe qué es Capacita Tu Futuro y no
+// sugiere respaldo (AGENTS.md, regla de contenido 6).
+import CapacitaTuFuturo from "../assets/iconos/capacita-tu-futuro.svg";
 import Redes from "./Redes.astro";
 ---
 
 <footer class="border-t border-linea bg-superficie">
-  <div class="mx-auto flex max-w-sitio flex-col gap-4 px-6 py-10 text-texto-2">
-    <p class="font-display font-semibold text-texto">
-      Gemini & Google Suite en el Entorno Laboral
-    </p>
-    <Redes />
-    <p class="text-sm">
-      Material de capacitación con datos ficticios o públicos
-    </p>
-    <p class="text-sm">Todos los derechos reservados.</p>
+  <div class="mx-auto max-w-sitio px-6 py-10 text-texto-2">
+    <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-0">
+      <div class="flex flex-col gap-4">
+        <p class="font-display font-semibold text-texto">
+          Gemini & Google Suite en el Entorno Laboral
+        </p>
+        <Redes />
+      </div>
+      <div class="flex flex-col items-start gap-3 border-t border-linea-fuerte pt-6 lg:items-end lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
+        <p class="font-codigo text-sm tracking-[0.06em] uppercase">
+          Organismo Técnico de Capacitación
+        </p>
+        <CapacitaTuFuturo
+          role="img"
+          aria-label="Capacita Tu Futuro"
+          class="aspect-[1184/442] h-12 w-auto text-primario"
+        />
+      </div>
+    </div>
+    <div class="mt-8 flex flex-col gap-1 border-t border-linea-fuerte pt-6 text-sm sm:flex-row sm:justify-between sm:gap-4">
+      <p>Material de capacitación con datos ficticios o públicos</p>
+      <p>Todos los derechos reservados.</p>
+    </div>
   </div>
 </footer>

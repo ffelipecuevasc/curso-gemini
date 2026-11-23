@@ -16,9 +16,7 @@ if (
   document.addEventListener(
     "pointermove",
     (e) => {
-      tarjeta = (e.target as Element).closest<HTMLElement>(
-        ".tarjeta, .tarjeta-ruta",
-      );
+      tarjeta = (e.target as Element).closest<HTMLElement>(".tarjeta");
       x = e.clientX;
       y = e.clientY;
       if (!tarjeta || pendiente) return;

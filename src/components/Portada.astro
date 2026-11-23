@@ -1,10 +1,11 @@
 ---
-// Portada y ruta en un pantallazo (DESIGN.md, secciones 5 y 6; P-024): a la
-// izquierda, título (h1), lema, la ficha del curso calculada del contenido,
-// botón principal, redes y, bajo una línea de 1 px, los logos de Google,
-// GTD Telsur y Capacita Tu Futuro; a la derecha, la ruta del curso (sección
-// anidada con `id="ruta"` y su h2, con el logo de Gemini). Los SVG se usan
-// tal cual.
+// Portada y ruta en un pantallazo (DESIGN.md, secciones 5 y 6; P-024, P-029):
+// a la izquierda, título (h1), lema, la ficha del curso calculada del
+// contenido, botón principal «Conoce a tu instructor» (RDA-014), redes y, bajo
+// una línea de 1 px, los logos de Google, GTD Telsur y Capacita Tu Futuro (este
+// en --color-primario por currentColor); a la derecha, la ruta del curso como
+// índice (sección anidada con `id="ruta"` y su h2, con el logo de Gemini). Los
+// SVG no se editan.
 import { getEntry } from "astro:content";
 import Google from "../assets/iconos/google.svg";
 import GtdTelsur from "../assets/iconos/gtd-telsur.svg";
@@ -54,10 +55,10 @@ const ficha = [
         {ficha.map((dato) => <li>{dato}</li>)}
       </ul>
       <a
-        href="#unidad-1"
-        class="inline-flex min-h-11 items-center rounded-pildora bg-primario px-6 py-3 font-medium text-sobre-primario no-underline transition-[background-color,color,scale] duration-200 hover:bg-primario-hover active:scale-[0.97] active:bg-presionado active:text-texto motion-reduce:transition-none motion-reduce:active:scale-100"
+        href="#instructor"
+        class="boton-principal"
       >
-        Empezar por la Unidad 1
+        Conoce a tu instructor
       </a>
       <Redes class="text-sm" />
       <div class="flex w-full flex-wrap items-center gap-6 border-t border-linea pt-4 text-texto">
@@ -74,7 +75,7 @@ const ficha = [
         <CapacitaTuFuturo
           role="img"
           aria-label="Capacita Tu Futuro"
-          class="aspect-[1184/442] h-6 w-auto"
+          class="aspect-[1184/442] h-6 w-auto text-primario"
         />
       </div>
     </div>

@@ -170,7 +170,8 @@ const curso = z.strictObject({
 
 // Presentación del instructor (Unidad 1, bloque 1, del documento del curso).
 // Las fechas se guardan como texto literal del documento. La insignia es
-// opcional: si falta, la sección se arma sin imagen.
+// opcional: si falta, la sección se arma sin imagen. `cifras` son las 3 de la
+// credencial (06-07, RDA-014), tomadas de `trayectoria`.
 const instructor = ({ image }: SchemaContext) =>
   z.strictObject({
     id: idEntrada,
@@ -187,6 +188,9 @@ const instructor = ({ image }: SchemaContext) =>
       insignia: image().optional(),
     }),
     trayectoria: z.array(textoNoVacio).min(1),
+    cifras: z
+      .array(z.strictObject({ valor: textoNoVacio, texto: textoNoVacio }))
+      .length(3),
     comunidad: textoNoVacio,
   });
 

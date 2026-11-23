@@ -1,8 +1,8 @@
 ---
-// Sección de una unidad (DESIGN.md, sección 5, «Sección de unidad»): cabecera
-// con el color de la unidad y una cuadrícula de 6 tarjetas (una por bloque
-// numerado y la de «Terminado cuando…»), que cabe en una pantalla de
-// escritorio. Todo el detalle va en modales (RDA-011): los de cada bloque
+// Sección de una unidad (DESIGN.md, sección 5, «Sección de unidad»): una sala
+// teñida con el color de la unidad (06-07, RDA-014) reúne la cabecera y una
+// cuadrícula de 6 tarjetas (una por bloque numerado y la de «Terminado
+// cuando…»), que cabe en una pantalla de escritorio. Todo el detalle va en modales (RDA-011): los de cada bloque
 // (ModalesBloque.astro) y los de la unidad —«Sobre la unidad», «Recursos»,
 // «Descargas» y «Terminado cuando…»—. Los botones que los abren están en la
 // cabecera y en las tarjetas; sin JavaScript, los <dialog> se leen debajo de
@@ -12,6 +12,7 @@
 import { getEntry } from "astro:content";
 import type { UnidadConBloques } from "../lib/unidades";
 import { idModalUnidad } from "../lib/modales";
+import { salaUnidad } from "../lib/colores-unidad";
 import CabeceraUnidad from "./CabeceraUnidad.astro";
 import Modal from "./Modal.astro";
 import ModalesBloque from "./ModalesBloque.astro";
@@ -66,21 +67,23 @@ const id = `unidad-${numero}`;
 ---
 
 <section id={id} aria-labelledby={`titulo-${id}`} class="seccion-unidad">
-  <CabeceraUnidad
-    unidad={unidad}
-    recursos={recursos.length}
-    descargas={descargas.length}
-  />
-
-  <div class="cuadricula-bloques">
-    {conTarjeta.map((bloque) => (
-      <TarjetaBloque bloque={bloque} unidad={numero} />
-    ))}
-    <TarjetaTerminado
-      numero={numero}
-      entregable={entregable}
-      cantidad={terminadoCuando.length}
+  <div class:list={["sala-unidad", salaUnidad[numero]]}>
+    <CabeceraUnidad
+      unidad={unidad}
+      recursos={recursos.length}
+      descargas={descargas.length}
     />
+
+    <div class="cuadricula-bloques">
+      {conTarjeta.map((bloque) => (
+        <TarjetaBloque bloque={bloque} unidad={numero} />
+      ))}
+      <TarjetaTerminado
+        numero={numero}
+        entregable={entregable}
+        cantidad={terminadoCuando.length}
+      />
+    </div>
   </div>
 
   <div>

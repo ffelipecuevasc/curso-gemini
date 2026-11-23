@@ -1,6 +1,6 @@
 # Épica 06 · Pulido de identidad: portada, unidades y modales
 
-- **Estado:** Cerrada (2026-11-22)
+- **Estado:** Reabierta (2026-11-23) para la 06-07; cerrada antes el 2026-11-22
 - **Objetivo:** que el sitio se vea propio y no de plantilla: una portada con firma, unidades con jerarquía clara entre lo que se lee y lo que se hace, modales que se leen como contenido, y una trama de puntos de fondo que une todo. Sin salir de la paleta, las tipografías ni los radios de felipecuevas.dev (RDA-004) y sin perder la unidad en una pantalla de la épica 05.
 
 ## Por qué existe esta épica
@@ -45,8 +45,9 @@ La vista previa con todos los cambios se armó en una rama local y el desarrolla
 | 06-04 | [Tarjetas de bloque y ticket de entrega](iteracion-06-04-tarjetas-bloque.md) | Terminada |
 | 06-05 | [Modales y citas](iteracion-06-05-modales.md) | Terminada |
 | 06-06 | [Verificación final del pulido](iteracion-06-06-verificacion.md) | Terminada |
+| 06-07 | [Recorrido de la página: instructor primero, ruta como índice, unidades en salas y firma del OTEC](iteracion-06-07-recorrido-instructor-ruta-salas.md) | En revisión |
 
-> Iteraciones generadas el 2026-11-21 a pedido del desarrollador, después del cierre de la épica 05 y de aprobar la vista previa.
+> Iteraciones 06-01 a 06-06 generadas el 2026-11-21 a pedido del desarrollador, después del cierre de la épica 05 y de aprobar la vista previa. La 06-07 se agregó el 2026-11-23, al reabrir la épica (RDA-014, P-029).
 
 Orden y dependencias:
 
@@ -76,6 +77,8 @@ Orden y dependencias:
 - 2026-11-22: en la 06-05, el bloque 0 («Antes de empezar», U2 a U4) muestra «Bloque 0 · m min · Unidad u», según el texto aprobado; queda como duda para el desarrollador.
 - 2026-11-22: 06-05 terminada (revisión sin observaciones, dicho por el desarrollador). La meta del bloque 0 pasa a «Antes de empezar · {minutos} min · Unidad {unidad}» (decisión del desarrollador; aplicada en la 06-06).
 - 2026-11-22: la trama se queda y se juzga con la medición publicada (99/100/100/100); F3 (palabras de U2 a U4 sobre 300) queda como desviación aceptada; épica cerrada (decisiones del desarrollador).
+- 2026-11-23: la épica se reabre para la 06-07 (recorrido de la página): instructor como credencial después de la portada, ruta como índice, unidades en salas y pie con la firma del OTEC, en una sola iteración de 8 tareas como excepción de tamaño (decisiones del desarrollador; RDA-014 y P-029, aplicada en `main` en `e489e64`).
+- 2026-11-23: en la 06-07 se aceptan como desviaciones la portada en 1366 × 657 (cabe la ruta, no la columna de texto) y la U1 en 1366 × 657 (+39 px) (decisiones del desarrollador; P-030 pendiente).
 
 ## Reglas comunes de la épica
 

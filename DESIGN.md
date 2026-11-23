@@ -159,7 +159,7 @@ Todos: forma de píldora, alto mínimo de 44 px, `cursor: pointer`, foco visible
 ## 6. Íconos y logotipos
 
 - Íconos de interfaz: SVG de línea en línea, del mismo grosor, con `aria-hidden="true"` cuando el texto acompaña. Un botón que solo tiene ícono lleva `aria-label`.
-- Logotipos de Gemini, Google y Chrome: se usan los SVG que entrega el desarrollador, tal cual, sin redibujarlos, recolorearlos ni deformarlos. El de Gemini y el de Google van en la portada y donde se nombre la herramienta; el de Chrome, junto al enlace a felipecuevas.dev. El SVG de Gemini usa `mask` y `filter` con identificadores propios: si aparece más de una vez en la página, cada copia lleva identificadores únicos. Los logotipos de Gemini y Google van con `role="img"` y un `aria-label` («Gemini», «Google»).
+- Logotipos de Gemini, Google y Chrome: se usan los SVG que entrega el desarrollador, tal cual, sin redibujarlos, recolorearlos ni deformarlos. La única animación permitida sobre un logotipo es la entrada única de la estrella de Gemini en la ruta (sección 7), que termina en su forma, tamaño y colores originales. El de Gemini y el de Google van en la portada y donde se nombre la herramienta; el de Chrome, junto al enlace a felipecuevas.dev. El SVG de Gemini usa `mask` y `filter` con identificadores propios: si aparece más de una vez en la página, cada copia lleva identificadores únicos. Los logotipos de Gemini y Google van con `role="img"` y un `aria-label` («Gemini», «Google»).
 - Logotipos de GTD Telsur y Capacita Tu Futuro: SVG que entrega el desarrollador, con `role="img"` y `aria-label` («GTD Telsur», «Capacita Tu Futuro»), sin cambiar sus trazados ni sus proporciones. El de GTD va solo en el hero, con sus colores originales. El de Capacita Tu Futuro va en el hero (24 px de alto) y en el pie (48 px), recoloreado en ambos con `--color-primario` por medio de `currentColor`. En el pie lleva sobre él la etiqueta visible «Organismo Técnico de Capacitación», que describe qué es y no sugiere respaldo (AGENTS.md, regla de contenido 6).
 - Insignia de Gemini Certified Educator: el PNG que entrega el desarrollador (`src/assets/instructor/`), con `astro:assets`, sin recortarla ni recolorearla, sobre la placa `--color-placa` de la credencial del instructor. Su texto alternativo es «Insignia de Gemini Certified Educator».
 - Ícono de LinkedIn: el SVG que entrega el desarrollador, recoloreado con tokens (círculo `--color-linkedin`, glifo `--color-fondo`). Los íconos de redes no llevan efectos.
@@ -167,15 +167,40 @@ Todos: forma de píldora, alto mínimo de 44 px, `cursor: pointer`, foco visible
 
 ## 7. Movimiento
 
-- Transiciones de 150 a 300 ms en hover y foco. Se animan sobre todo `transform` y `opacity`; los cambios de color de fondo y de sombra en hover no superan los 200 ms. Duraciones en tokens: `--duracion-hover` (200 ms) y `--duracion-modal` (350 ms).
+- Transiciones de 150 a 300 ms en hover y foco. Se animan sobre todo `transform` y `opacity`; los cambios de color de fondo y de sombra en hover no superan los 200 ms. Duraciones en tokens: `--duracion-hover` (200 ms), `--duracion-modal` (350 ms), `--duracion-entrada` (500 ms), `--duracion-estrella` (800 ms) y `--escalonado` (60 ms). Las animaciones de entrada son utilidades de Tailwind v4 declaradas en `@theme` (`--animate-entrada`, `--animate-estrella`) con sus `@keyframes`, en CSS nativo: sin plugins de animación.
 - Cambio de modo: el modo nuevo se revela con un círculo de borde difuminado que crece desde el centro de la pantalla hasta cubrirla, en 1 s, con la curva `--ease-expo-out` (`cubic-bezier(0.16, 1, 0.3, 1)`). Se hace con la API View Transitions (`document.startViewTransition`); el modo anterior queda quieto debajo. En navegadores sin esa API, el modo cambia al instante.
 - Modales: al abrir desde una tarjeta o, si no la hay, desde el botón, ese origen se transforma en el modal con View Transitions en 350 ms con `--ease-expo-out`, y vuelve a él al cerrar; la página queda quieta y el fondo del modal aparece sin fundido. No se inicia si hay otra transición en curso (el cambio de modo). Sin la API, entrada con `@starting-style` (escala 0,96 → 1 y opacidad) y fundido del fondo; el cierre es inmediato.
 - Barra de avance de lectura de 3 px bajo el encabezado del sitio, guiada por el desplazamiento (`animation-timeline: scroll(root)`), con el color de la unidad visible (`<html data-unidad>`, que pone el script del encabezado); fuera de una unidad, `--color-primario`.
 - Las tarjetas de cada unidad aparecen al entrar en la ventana (opacidad y 12 px) con `animation-timeline: view()`, con un desfase según la columna (8 % del tramo de entrada por columna, el equivalente de unos 40 ms); sin soporte, se ven desde el inicio.
 - Brillo radial al 12 % que sigue al cursor en las tarjetas de bloque, solo con puntero fino, del color de la unidad (`--tinte`).
 - Filas de la ruta: en hover y con foco de teclado, fondo `--color-superficie` y el cuadrado del número sube 2 px, en 200 ms; sin sombra ni brillo.
-- No se usan animaciones infinitas, parallax, fondos animados ni efectos sobre los logotipos.
-- Con `prefers-reduced-motion: reduce`, se quitan todas las transiciones y animaciones: el revelado del cambio de modo, la transición de los modales, la barra de avance, las apariciones, el brillo, la subida del cuadrado en las filas de la ruta y el desplazamiento suave a las anclas.
+
+### 7.1 Momento focal: entrada de la portada (una vez, al cargar)
+
+- **Entrada escalonada (E1):** el lema, la ficha del curso, el botón principal, las redes y la fila de logos (columna de texto), y las 4 filas de la ruta, aparecen con opacidad 0 → 1 y subida de 8 px, con la utilidad `animate-entrada` (`--duracion-entrada`, 500 ms, `--ease-expo-out`) y un desfase de `--escalonado` (60 ms) por posición: de 0 a 4 en la columna de texto y de 1 a 4 en las filas de la ruta. La secuencia termina antes de 800 ms. **El `h1`, el `h2` «Ruta del curso» y el círculo decorativo no se animan**: el `h1` es el elemento LCP y animar su opacidad retrasaría el LCP.
+- **Estrella de Gemini (E2a):** entrada única con la utilidad `animate-estrella`: escala 0,6 → 1, giro −45° → 0° y opacidad 0 → 1, en `--duracion-estrella` (800 ms) con `--ease-expo-out` y 120 ms de retraso. Termina en su forma, tamaño y colores originales y no se repite.
+- Es CSS puro: no depende del script, corre una sola vez por carga y no vuelve a correr al navegar por anclas.
+
+### 7.2 Movimiento ligado al desplazamiento
+
+Todo va dentro de `@supports (animation-timeline: view())` (Baseline desde octubre de 2026); sin soporte, cada elemento se ve en su estado final.
+
+- **Credencial del instructor (E4):** se revela con `clip-path: circle()` que crece desde la esquina asimétrica (abajo a la izquierda, `circle(0% at 0% 100%)` → `circle(150% at 0% 100%)`), con `animation-timeline: view()` y `animation-range: entry 0% entry 60%`.
+- **Sala que se enciende (E7):** el tinte de la sala vive en una capa `::before` (`background: var(--sala)`, el mismo `--color-sala-uN`) cuya opacidad sube de 0 a 1 al entrar la unidad y baja a 0 al salir: fotogramas 0 %, 25 %, 75 % y 100 % (0 → 1 → 1 → 0) sobre `animation-range: cover 0% cover 100%` de la línea de tiempo `--unidad` (`view-timeline` de `.seccion-unidad`). Con la unidad anclada bajo el encabezado, la sala está encendida por completo. Se anima solo `opacity`; nunca `background-color`.
+- **Número que llega (E8):** el número grande de la cabecera pasa de opacidad 0 y 16 px más abajo a su lugar, con la línea de tiempo `--unidad` y `animation-range: entry 0% entry 50%`.
+- Las tarjetas de cada unidad mantienen su aparición escalonada de la 05-07.
+
+### 7.3 Continuidad al navegar
+
+- **Aterrizaje (E10):** al llegar a una unidad por un ancla (`.seccion-unidad:target`, desde la navegación, la ruta o la URL), la cabecera hace un destello único: un anillo `box-shadow` del color de la unidad (`--bloque` al 50 %) que crece de 0 a 6 px y se desvanece hasta 14 px, en 900 ms con `--ease-expo-out` y 350 ms de retraso (lo que tarda el desplazamiento suave). El número suma, como segunda animación, una escala de 1,18 → 1 en 700 ms, sin pisar la de E8. Repetir el clic en la misma ancla no lo vuelve a disparar.
+- **Píldora que se desliza (E11):** desde 1024 px, la píldora de la sección activa es una sola capa (`::after` del grupo de la navegación, después de los enlaces, como exige el ancla) posicionada con CSS Anchor Positioning sobre el enlace `aria-current` (`anchor-name: --pildora-activa`). Se desliza entre secciones con transiciones de 300 ms y `--ease-expo-out`. Va dentro de `@supports (anchor-name: --a)`; sin soporte, o si el navegador no anima el cambio de ancla, la píldora salta como antes. En el menú móvil no cambia nada.
+
+### 7.4 Límites
+
+- No se usan animaciones infinitas, parallax, fondos animados (la trama de puntos no se mueve) ni efectos sobre los logotipos, salvo la entrada única de la estrella de Gemini (7.1). Los logos de Google, GTD Telsur y Capacita Tu Futuro y la insignia de Gemini Certified Educator no se animan.
+- Se animan solo `opacity`, `translate`, `scale`, `rotate`, `clip-path` y `box-shadow` (este último solo en el destello único de E10). Nada que cambie el layout.
+- Con `prefers-reduced-motion: reduce`, se quitan todas las transiciones y animaciones: el revelado del cambio de modo, la transición de los modales, la barra de avance, las apariciones, la entrada de la portada y de la estrella, la credencial, la sala que se enciende (queda encendida), el número que llega, el aterrizaje, el deslizamiento de la píldora, el brillo, la subida del cuadrado en las filas de la ruta y el desplazamiento suave a las anclas. Todo se ve en su estado final.
+- Al imprimir, no hay animaciones: todo en su estado final y las salas sin fondo.
 
 ## 8. Implementación de los tokens
 

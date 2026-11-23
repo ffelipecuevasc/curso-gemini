@@ -1,7 +1,7 @@
 # Iteración 07-01 · Unidad 1: cuenta, modelos y prácticas del laboratorio
 
 - **Épica:** 07 · Ajustes de contenido por unidad
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/07-01-unidad-1
 - **Depende de:** cierre de la épica 06
 - **Especificación:** —
@@ -30,7 +30,7 @@ Leer antes de escribir (verificado en el repositorio el 2026-11-22; confirmar qu
 2. **Modelos.** Se reemplazan Flash-Lite y Argon por lo que muestra hoy la página oficial de modelos: Auto, Hydrogen, Neon y Carbon. Se mantiene el mensaje de que los nombres cambian y se aclara que en la cuenta del curso el selector puede mostrar otra cosa, porque la disponibilidad la define el administrador.
 3. **Privacidad.** El punto 2.4 explica las dos cuentas con la información vigente (ver «Contenido aprobado»).
 4. **Prompt avanzado.** Se agrega con `id: avanzado` en el bloque 4, después de la decisión del desarrollador (ver Tarea 4).
-5. **Laboratorio (bloque 5, punto 5.2).** La tabla pasa de 5 a 7 pasos con los tiempos aprobados, se agrega la «Revisión en 3 pasos» y el «Mapa de oportunidades», y el banco de tareas remite a las descargas.
+5. **Laboratorio (bloque 5, punto 5.2).** La tabla pasa de 5 a 6 pasos con los tiempos aprobados, se agrega la «Revisión en 3 pasos» y el «Mapa de oportunidades», y el banco de tareas remite a las descargas.
 6. **Descargas de la U1.** `u1.yaml` referencia 4 descargas: Mapa de oportunidades (PDF), Banco de tareas (PDF), dataset (CSV) y su diccionario.
 7. **Recursos de la U1.** Se agrega `acerca-modelos-gemini`. Se retira `gemini-4-argon` de la U1 (se conserva en `recursos.yaml` si otra unidad lo usa). `gemini-4-neon` se agrega solo si el desarrollador entrega el enlace oficial.
 8. **Síntesis.** Se proponen los cambios de `sintesis` de los bloques 2, 3 y 5 que los puntos anteriores vuelven falsos, y se publican solo con aprobación.
@@ -112,14 +112,14 @@ Leer antes de escribir (verificado en el repositorio el 2026-11-22; confirmar qu
 
 ## Criterios de aceptación
 
-- [ ] `pnpm build` termina sin errores y sin marcadores `PENDIENTE_*`/`VERIFICAR` visibles.
-- [ ] Ningún texto de la U1 pide al participante Google AI Plus ni cuenta personal; `grep -rn "Flash-Lite\|Argon\|Keep Activity" src/content/bloques/u1 src/content/unidades/u1.yaml` no devuelve resultados.
-- [ ] El bloque 4 publica 3 prompts (`basico`, `intermedio`, `avanzado`) y el avanzado elegido suma 8 o más en la rúbrica según el análisis del agente.
-- [ ] La tabla 5.2 tiene 7 pasos y sus minutos suman 60.
+- [x] `pnpm build` termina sin errores y sin marcadores `PENDIENTE_*`/`VERIFICAR` visibles.
+- [x] Ningún texto de la U1 pide al participante Google AI Plus ni cuenta personal; `grep -rn "Flash-Lite\|Argon\|Keep Activity" src/content/bloques/u1 src/content/unidades/u1.yaml` no devuelve resultados.
+- [x] El bloque 4 publica 3 prompts (`basico`, `intermedio`, `avanzado`) y el avanzado elegido suma 8 o más en la rúbrica según el análisis del agente.
+- [x] La tabla 5.2 tiene 6 pasos y sus minutos suman 60.
 - [ ] La U1 muestra 4 descargas y los 2 PDF abren desde el sitio publicado.
-- [ ] La «Revisión en 3 pasos» y el «Mapa de oportunidades» aparecen en el bloque 5.
-- [ ] Sin cambios de diseño: no hay componentes, clases de utilidad nuevas en componentes, tokens ni estilos nuevos (`git diff --stat` solo toca `src/content/`, `public/descargas/` y `_planificacion/`). Las capturas coinciden en estructura con la línea base.
-- [ ] Ninguna síntesis supera su límite de palabras y todas las cambiadas tienen aprobación registrada en la bitácora.
+- [x] La «Revisión en 3 pasos» y el «Mapa de oportunidades» aparecen en el bloque 5.
+- [x] Sin cambios de diseño: no hay componentes, clases de utilidad nuevas en componentes, tokens ni estilos nuevos (`git diff --stat` solo toca `src/content/`, `public/descargas/` y `_planificacion/`). Las capturas coinciden en estructura con la línea base.
+- [x] Ninguna síntesis supera su límite de palabras y todas las cambiadas tienen aprobación registrada en la bitácora.
 
 ## Riesgos
 

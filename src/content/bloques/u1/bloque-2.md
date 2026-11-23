@@ -6,10 +6,10 @@ minutos: 20
 tipo: "Exposición interactiva + mini-prueba"
 sintesis:
   resumen: "Qué es un LLM, la evolución hasta Gemini 4, los tokens, las diferencias de privacidad entre cuentas y cómo revisar alucinaciones y sesgos."
-  haras: "Distinguirás alucinaciones, sesgos, tareas delegables y reglas de la cuenta personal."
+  haras: "Distinguirás alucinaciones, sesgos, tareas delegables y reglas de privacidad de tu cuenta."
   claves:
     - "Un LLM predice texto probable; no sabe si es cierto."
-    - "En cuenta personal usa solo datos ficticios o públicos."
+    - "Con cualquier cuenta usa solo datos ficticios o públicos."
 profundiza:
   recursos:
     - que-es-un-llm
@@ -40,13 +40,15 @@ profundiza:
 | Dic-2023 | Google presenta **Gemini 1.0** (Ultra, Pro y Nano), multimodal desde su origen |
 | Feb-2024 | **Bard pasa a llamarse Gemini**, y Duet AI en Workspace también pasa a ser Gemini |
 | May-2024 | **Google I/O 2024:** Gemini 1.5 Pro con 1 millón de tokens de contexto para usuarios y 2 millones para desarrolladores, más Project Astra |
-| 2026 | Familia **Gemini 4**: Argon, Carbon e Hydrogen |
+| 2026 | Familia **Gemini 4**: Hydrogen, Neon y Carbon |
 
 > Gemini no se presentó en el I/O 2024. Se lanzó en diciembre de 2023, y el I/O 2024 fue su consolidación.
 
 **2.3 Multimodalidad y tokens.** Gemini entiende y combina texto, imágenes, audio, video y código. Un token equivale a unos 4 caracteres, y la ventana de contexto se mide en tokens. Las conversaciones y los archivos muy largos consumen contexto, y cada plan tiene límites de uso.
 
-**2.4 Cuenta personal vs. cuenta empresarial.** Con una cuenta Workspace calificada, el contenido no se usa para entrenar modelos fuera del dominio sin permiso. Con una cuenta personal (como la Google AI Plus del curso), aplican las reglas de privacidad de las apps de Gemini, que se explican a continuación.
+**2.4 Privacidad según tu cuenta.**
+- **Cuenta del curso (empresarial, Workspace):** Gemini no usa tus conversaciones para entrenar modelos fuera de la organización sin permiso. Tus chats solo los ves tú y nadie los revisa. El administrador define cuánto tiempo se guardan: 18 meses por defecto, con opciones de 3 o 36.
+- **Cuenta personal:** el ajuste se llama «Historial», y el uso para entrenar modelos es un ajuste aparte. Las conversaciones se guardan 18 meses por defecto; las que revisan personas, hasta 3 años, y los chats temporales, unos 2 meses.
 
 **2.5 Uso responsable**
 
@@ -57,8 +59,6 @@ profundiza:
 | **Delegación (expertiz de dominio)** | La IA aporta velocidad y borradores; tú aportas contexto, criterio y la decisión final |
 | **Pensamiento crítico** | Revisar antes de usar; botón «Verificar respuesta» (*Double-check*) con la Búsqueda de Google |
 
-**Seguridad con la cuenta personal.** Si la «Actividad» (*Keep Activity*) está activada, las conversaciones se usan para mejorar los servicios de Google, lo que incluye entrenar modelos. Además, un subconjunto lo revisan personas y puede conservarse hasta tres años.
+**Regla del curso:** en la cuenta del curso y en la personal solo se usan datos ficticios o públicos, nunca información de GTD, de sus clientes ni de colaboradores. Hay que revisar qué se comparte antes de generar un enlace público.
 
-**Regla del curso:** en la cuenta personal solo se usan datos ficticios o públicos, nunca información de GTD, de sus clientes ni de colaboradores. Hay que revisar qué se comparte antes de generar un enlace público.
-
-**Preguntas de autoevaluación:** ¿alucinación o sesgo?, ¿lo hago yo o lo delego?, ¿esto lo pego en la cuenta personal?
+**Preguntas de autoevaluación:** ¿alucinación o sesgo?, ¿lo hago yo o lo delego?, ¿esto lo pego en Gemini?

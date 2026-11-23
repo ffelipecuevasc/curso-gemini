@@ -19,3 +19,9 @@
 - id: plantilla-en-blanco
   titulo: "Libre"
   archivo: /descargas/plantillas-alumnos/plantilla-en-blanco/SKILL.md
+- id: u1-mapa-oportunidades
+  titulo: "Mapa de oportunidades"
+  archivo: /descargas/u1-mapa-oportunidades.pdf
+- id: u1-banco-tareas
+  titulo: "Banco de tareas"
+  archivo: /descargas/u1-banco-tareas.pdf

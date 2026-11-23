@@ -1,6 +1,6 @@
 # Épica 07 · Ajustes de contenido por unidad
 
-- **Estado:** Pendiente
+- **Estado:** En curso (07-01 En revisión)
 - **Objetivo:** dejar el contenido de cada unidad alineado con lo que el instructor enseñará en vivo, con las decisiones tomadas en la preparación de cada clase: prácticas que faltaban, material de arranque descargable y datos vigentes de Google (cuenta, modelos, privacidad). Todo dentro del diseño que dejó la épica 06, sin cambiarlo.
 
 ## Por qué existe esta épica
@@ -34,7 +34,7 @@ Las unidades 2 a 4 tendrán su propia preparación y sumarán una iteración cad
 
 | Iteración | Nombre | Estado |
 | :-------- | :----- | :----- |
-| 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](iteracion-07-01-unidad-1.md) | Pendiente |
+| 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](iteracion-07-01-unidad-1.md) | En revisión |
 | 07-02 | Unidad 2 (se redacta tras su preparación) | Sin redactar |
 | 07-03 | Unidad 3 (se redacta tras su preparación) | Sin redactar |
 | 07-04 | Unidad 4 (se redacta tras su preparación) | Sin redactar |

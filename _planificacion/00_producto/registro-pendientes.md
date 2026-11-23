@@ -2,10 +2,10 @@
 
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
-- **Última actualización:** 2026-11-22
-- **Iteración activa:** ninguna (épica 07 adoptada el 2026-11-22; la 07-01 no ha empezado)
-- **Próximo hito:** Iteración 07-01 (rama por aprobar)
-- **Métricas vigentes:** Lighthouse móvil publicado 99/100/100/100 (LCP 1,43 s, CLS 0, TBT 71 ms); JS propio 1774 B gzip; 54 `<dialog>`; 24 de 24 prompts
+- **Última actualización:** 2026-11-23
+- **Iteración activa:** 07-01 (En revisión)
+- **Próximo hito:** Revisión de la 07-01 por el desarrollador; luego preparar la 07-02 (Unidad 2)
+- **Métricas vigentes:** Lighthouse móvil publicado 99/100/100/100 (LCP 1,43 s, CLS 0, TBT 71 ms; medido antes de la 07-01); JS propio 1774 B gzip (sin cambios en la 07-01); 55 `<dialog>`; 25 de 25 prompts; palabras U1 297
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
 
@@ -19,7 +19,7 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
-| 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](../10_epicas/epica-07-ajustes-unidades/iteracion-07-01-unidad-1.md) | 07 | Pendiente | cierre de la épica 06 | — |
+| 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](../10_epicas/epica-07-ajustes-unidades/iteracion-07-01-unidad-1.md) | 07 | En revisión | cierre de la épica 06 | [bitacora-07-01](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) |
 | 07-02 | Unidad 2 (se redacta tras su preparación) | 07 | Sin redactar | 07-01 | — |
 | 07-03 | Unidad 3 (se redacta tras su preparación) | 07 | Sin redactar | 07-02 | — |
 | 07-04 | Unidad 4 (se redacta tras su preparación) | 07 | Sin redactar | 07-03 | — |
@@ -70,7 +70,8 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) · U1: 5 videos cargados en la 03-04; U2: sin videos (ausencia acordada); U3: 1 video cargado en la 03-05; U4: sin videos (ausencia acordada) | — | Desarrollador |
 | Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Publicados el dataset CSV (03-03) y su diccionario editado para participantes (03-04); de la U1 y la U2, el resto (`plantillas-alumnos.zip`, informe de Deep Research de respaldo) queda como ausencia acordada en la 03-04; en la 03-05 se publican las 4 plantillas de `plantillas-alumnos/` (U4) y quedan como ausencia acordada `optimizador-prompts/SKILL.md`, `gtd-visual.zip` y el paquete de fuentes de la U3 | — | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
-| `PENDIENTE_DESARROLLADOR` · Prompts de la U1 nombrados pero no escritos: el «Avanzado» completo de la escalera (bloque 4) y la ronda 3 del laboratorio (bloque 5) | 02-05 | Desarrollador |
+| Selector de la cuenta empresarial del curso: qué modelos muestra y si «Verificar respuesta» (*Double-check*) está disponible (tarea del desarrollador de la 07-01) | 07-01 | Desarrollador |
+| Enlace oficial del anuncio de Neon, si se quiere sumar a los recursos de la U1 (`gemini-4-neon`) | 07-01 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U2 nombrados pero no escritos: «Prompt base» del dashboard (bloque 5), «Prompts base de cada hito» y los carriles extra de los bloques 1 a 5 | 02-05 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U3 nombrados pero no escritos: los carriles extra de los bloques 1 a 5 (instrucciones sin texto de prompt) | 02-06 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U4 nombrados pero no escritos: los carriles extra de los bloques 2 a 5 (el contenido de las skills y plantillas son descargas de la épica 03) | 02-06 | Desarrollador |
@@ -95,8 +96,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-17 | Corrección 15.1 en revisión: las 4 plantillas muestran su ruta («analista-planillas/SKILL.md» y otras 3; las 2 tarjetas del dataset no cambian; pesos = `statSync`) y la U4 lleva la nota aprobada (campo `notaDescargas`, contraste 18,90:1 en ambos modos); build con 0 WARN, check sin errores, 24 de 24 prompts, 4 scripts, JS idéntico, 1 h1, 0 marcadores; falta revisión en navegador. |
-| 2026-11-17 | Corrección 15.1 terminada (dicho por el desarrollador; commit 6a31229 en `main`). Decisiones de la épica 04: Wrangler con `pnpm dlx` y versión fija, 04-03 sin canónica ni Open Graph, prioridades 16 (04-01) y 16.1 (04-02). |
 | 2026-11-17 | Iteración 04-01 en revisión: guardia de marcadores en todos los archivos de texto de `dist/` (4 de 4 pruebas fallan, `cmp` 0) y limpieza de los 6 SVG sin referencia (41 030 B) tras `astro build`; hash de `index.html` idéntico; P-008 pendiente. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-01.md) |
 | 2026-11-18 | Iteración 04-01 terminada: el desarrollador revisó 360 px en el navegador sin observaciones. P-008 aplicada por el desarrollador en `AGENTS.md` (commit 6f5ff74); sale de «Decisiones por tomar». |
 | 2026-11-18 | Iteración 04-02 en revisión: `wrangler.jsonc` del Worker `curso-gemini` (solo `dist/`), `pnpm dlx wrangler@4.164.0` y `deploy --dry-run` con código 0, 0 secretos, hash idéntico; salen la versión de Wrangler y el nombre del Worker; falta el primer despliegue del desarrollador. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-02.md) |
@@ -145,3 +144,5 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-22 | Iteración 06-05 terminada (revisión sin observaciones, dicho por el desarrollador). Iteración 06-06 en revisión (fase A, local): meta «Antes de empezar» en los 3 bloques 0; Lighthouse local (mediana de 3) móvil 93/100/96/100 y escritorio 100/100/96/100, LCP en el `h1`, CLS ≤ 0,0117; la trama no cuesta Rendimiento (con 91, sin 80); Impeccable `[]`; JS 1774 B; P-028 pendiente; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-06.md) |
 | 2026-11-22 | Iteración 06-06 terminada y épica 06 cerrada: Lighthouse móvil publicado 99/100/100/100 (LCP 1,43 s en el `h1`, CLS 0, TBT 71 ms; 05-08: 98) y escritorio 100/100/100/100; HTML publicado con 1 `h1`, 54 `<dialog>`, 24 de 24 prompts y JS 1774 B; F1, F2 (1440 × 900), F4, F5 y F6 aprobados y F3 como desviación aceptada (dichos por el desarrollador); F7 no verificado; P-028 aplicada; backlog 33 y 34 nuevos; las filas de la épica y la fila más antigua del historial pasan a `registro-archivo.md`. [Cierre](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md) |
 | 2026-11-22 | Corrección: F7 (teclado y lector) verificado por el desarrollador, sin observaciones; backlog 34 y corrección 26.1 terminados (dicho por él); épica 07 adoptada (07-01 pendiente; 07-02 a 07-04 sin redactar) y backlog 33 a evaluar en la 07-02 a la 07-04; la fila más antigua del historial pasa a `registro-archivo.md`. [Cierre 06](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md) · [Definición 07](../10_epicas/epica-07-ajustes-unidades/definicion-epica-07.md) |
+| 2026-11-23 | Iteración 07-01 en curso en `iteracion/07-01-unidad-1`: corrección documental a 6 pasos en la tabla 5.2; línea base U1 294 palabras (`innerText`), 823 px en 1440 × 900, 54 `<dialog>`, 24 de 24 prompts; 3 candidatos del prompt avanzado a la espera de la elección del desarrollador. [Bitácora](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) |
+| 2026-11-23 | Iteración 07-01 en revisión: U1 con cuenta del curso, modelos Auto/Hydrogen/Neon/Carbon, privacidad 2.4, prompt avanzado B (9 puntos), tabla 5.2 de 6 pasos (60 min), Mapa, Banco y Revisión en 3 pasos, 4 descargas; 25 prompts, 55 `<dialog>`, U1 297 palabras; cierra los pendientes del avanzado y de la ronda 3. [Bitácora](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) |

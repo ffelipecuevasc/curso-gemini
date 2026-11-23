@@ -24,10 +24,11 @@ export const franjaModal: Record<number, string> = {
   4: "border-u4",
 };
 
-/** Franja superior de una tarjeta de bloque. En modo oscuro, la U3 usa su borde claro. */
+/** Color de una tarjeta de bloque: `--tinte` pinta su marca de 40 × 6 px y su
+ * brillo (06-04). En modo oscuro, la U3 usa su borde claro. */
 export const franjaTarjeta: Record<number, string> = {
-  1: "border-t-u1 [--tinte:var(--color-u1)] [--sombra:var(--sombra-u1)] [--halo:var(--halo-u1)]",
-  2: "border-t-u2 [--tinte:var(--color-u2)] [--sombra:var(--sombra-u2)] [--halo:var(--halo-u2)]",
-  3: "border-t-u3 oscuro:border-t-borde-u3 [--tinte:var(--color-u3)] oscuro:[--tinte:var(--color-borde-u3)] [--sombra:var(--sombra-u3)] [--halo:var(--halo-u3)]",
-  4: "border-t-u4 [--tinte:var(--color-u4)] [--sombra:var(--sombra-u4)] [--halo:var(--halo-u4)]",
+  1: "[--tinte:var(--color-u1)] [--sombra:var(--sombra-u1)] [--halo:var(--halo-u1)]",
+  2: "[--tinte:var(--color-u2)] [--sombra:var(--sombra-u2)] [--halo:var(--halo-u2)]",
+  3: "[--tinte:var(--color-u3)] oscuro:[--tinte:var(--color-borde-u3)] [--sombra:var(--sombra-u3)] [--halo:var(--halo-u3)]",
+  4: "[--tinte:var(--color-u4)] [--sombra:var(--sombra-u4)] [--halo:var(--halo-u4)]",
 };

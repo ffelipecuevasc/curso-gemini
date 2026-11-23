@@ -300,7 +300,48 @@
   }
 
   .tarjeta {
-    @apply flex flex-col gap-1.5 rounded-bloque rounded-bl-esquina border border-t-[6px] border-linea bg-fondo px-4 pt-3 pb-4 text-base;
+    @apply flex flex-col gap-1.5 rounded-bloque rounded-bl-esquina border border-linea bg-fondo px-4 pt-3 pb-4 text-base;
+  }
+
+  /* Tarjeta de bloque (06-04, P-026): marca recta de la unidad, «Ver detalle»
+     como enlace con flecha y capa que cubre la tarjeta. El botón no lleva
+     position ni transform: así la capa absoluta toma la .tarjeta (relative). */
+  .marca-unidad {
+    @apply inline-block h-1.5 w-10 shrink-0 rounded-full bg-(--tinte);
+  }
+
+  .enlace-tarjeta {
+    @apply min-h-11 items-center gap-1.5 font-medium text-enlace;
+  }
+
+  .cubre-tarjeta {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .flecha-tarjeta {
+      transition: translate var(--duracion-hover) var(--ease-expo-out);
+    }
+
+    .tarjeta:hover .flecha-tarjeta,
+    .enlace-tarjeta:focus-visible .flecha-tarjeta {
+      translate: 3px 0;
+    }
+  }
+
+  /* «Terminado cuando…» como ticket de entrega: sin sombra ni subida. */
+  .tarjeta-entrega {
+    border: 1.5px dashed
+      color-mix(in oklab, var(--color-texto-2) 45%, transparent);
+    background-color: var(--color-superficie);
+    box-shadow: none !important;
+    translate: none !important;
+  }
+
+  .tarjeta-entrega::after {
+    display: none;
   }
 
   /* Botón de contorno sobre el bloque de color de la unidad: el contorno y el

@@ -1,7 +1,7 @@
 # Iteración 06-04 · Tarjetas de bloque y ticket de entrega
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/06-04-tarjetas-bloque
 - **Depende de:** 06-03 y propuesta P-026 aplicada
 - **Especificación:** —
@@ -52,12 +52,14 @@ Que cada tarjeta de bloque tenga una sola acción visible además de abrirse ent
 
 ## Criterios de aceptación
 
-- [ ] Como máximo 1 botón de contorno visible por tarjeta de bloque (`document.querySelectorAll('.tarjeta .boton-contorno')` contra la cantidad de tarjetas).
-- [ ] Un clic en cualquier punto de la tarjeta, fuera del botón de prompts, abre el detalle; un clic en el botón de prompts abre los prompts.
-- [ ] Sin JavaScript, la tarjeta no tiene zonas clicables sin función y el contenido de los `<dialog>` se lee debajo (RDA-011).
-- [ ] La marca de la U3 en oscuro usa `--color-borde-u3` y se distingue del fondo.
-- [ ] En 1440 × 900, cada unidad sigue midiendo como máximo el alto de la ventana menos el encabezado.
-- [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 0 B de JavaScript nuevo; con `prefers-reduced-motion: reduce` la flecha no se mueve.
+- [x] Como máximo 1 botón de contorno visible por tarjeta de bloque (`document.querySelectorAll('.tarjeta .boton-contorno')` contra la cantidad de tarjetas).
+- [x] Un clic en cualquier punto de la tarjeta, fuera del botón de prompts, abre el detalle; un clic en el botón de prompts abre los prompts.
+- [x] Sin JavaScript, la tarjeta no tiene zonas clicables sin función y el contenido de los `<dialog>` se lee debajo (RDA-011).
+- [x] La marca de la U3 en oscuro usa `--color-borde-u3` y se distingue del fondo.
+- [x] En 1440 × 900, cada unidad sigue midiendo como máximo el alto de la ventana menos el encabezado.
+- [x] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 0 B de JavaScript nuevo; con `prefers-reduced-motion: reduce` la flecha no se mueve.
+
+> Evidencia en [bitacora-06-04](bitacoras/bitacora-06-04.md). El clic se comprobó con `elementFromPoint` en Edge headless. El teclado, el lector de pantalla, el clic real, la transición y la revisión de 360 a 1440 px quedan a cargo del desarrollador.
 
 ## Riesgos
 

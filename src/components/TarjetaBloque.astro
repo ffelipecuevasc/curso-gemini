@@ -1,7 +1,8 @@
 ---
 // Tarjeta de un bloque numerado (DESIGN.md, sección 5, «Tarjeta de bloque»):
 // número y minutos en IBM Plex Mono, título (h3), «Qué harás», la primera clave
-// (decisión del desarrollador del 2026-11-20, para que la unidad quepa) y los botones que abren sus modales. El texto sale de `sintesis` (RDA-012);
+// (decisión del desarrollador del 2026-11-20, para que la unidad quepa), la
+// marca de la unidad, «Ver detalle» (toda la tarjeta) y el botón de prompts (06-04). El texto sale de `sintesis` (RDA-012);
 // el cuerpo completo vive en el modal de detalle (ModalesBloque.astro).
 import type { Bloque } from "../lib/unidades";
 import { franjaTarjeta } from "../lib/colores-unidad";
@@ -28,7 +29,8 @@ const contexto = `de «${titulo}»`;
   aria-labelledby={idTitulo}
   class:list={["tarjeta", franjaTarjeta[unidad]]}
 >
-  <p class="font-codigo">
+  <p class="flex items-center gap-2 font-codigo text-sm text-texto-2">
+    <span aria-hidden="true" class="marca-unidad"></span>
     <span class="sr-only">Bloque </span>
     {numero} · {minutos} min
   </p>
@@ -44,18 +46,43 @@ const contexto = `de «${titulo}»`;
       <li>{clave}</li>
     ))}
   </ul>
-  <div class="mt-auto flex flex-wrap gap-2 empty:hidden">
-    <BotonModal
-      id={idModalDetalle(bloque)}
-      etiqueta="Ver detalle"
-      contexto={contexto}
-    />
+  <div class="mt-auto flex flex-wrap items-center justify-between gap-2">
+    {/* «Ver detalle» (06-04, P-026): enlace de texto cuya capa .cubre-tarjeta
+        cubre la tarjeta entera. Ni el botón ni este pie están posicionados,
+        para que la capa tome como referencia la .tarjeta. Sin JS, oculto (RDA-011). */}
+    <button
+      type="button"
+      data-abrir-modal={idModalDetalle(bloque)}
+      aria-haspopup="dialog"
+      aria-controls={idModalDetalle(bloque)}
+      class="enlace-tarjeta hidden js:inline-flex"
+    >
+      Ver detalle
+      <span class="sr-only"> {contexto}</span>
+      <svg
+        aria-hidden="true"
+        class="flecha-tarjeta"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.75"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M3 8h10M9 4l4 4-4 4"></path>
+      </svg>
+      <span aria-hidden="true" class="cubre-tarjeta"></span>
+    </button>
     {prompts.length > 0 && (
-      <BotonModal
-        id={idModalPrompts(bloque)}
-        etiqueta={etiquetaPrompts(prompts.length)}
-        contexto={contexto}
-      />
+      <span class="relative z-10 ml-auto">
+        <BotonModal
+          id={idModalPrompts(bloque)}
+          etiqueta={etiquetaPrompts(prompts.length)}
+          contexto={contexto}
+        />
+      </span>
     )}
   </div>
 </article>

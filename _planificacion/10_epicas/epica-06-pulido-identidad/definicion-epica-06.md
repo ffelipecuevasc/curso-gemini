@@ -41,8 +41,8 @@ La vista previa con todos los cambios se armó en una rama local y el desarrolla
 | :-------- | :----- | :----- |
 | 06-01 | [Trama de puntos de fondo](iteracion-06-01-trama-puntos.md) | Terminada |
 | 06-02 | [Portada y ruta con firma](iteracion-06-02-portada-ruta.md) | Terminada |
-| 06-03 | [Cabecera de unidad sin barra de avance](iteracion-06-03-cabecera-unidad.md) | En revisión |
-| 06-04 | [Tarjetas de bloque y ticket de entrega](iteracion-06-04-tarjetas-bloque.md) | Pendiente |
+| 06-03 | [Cabecera de unidad sin barra de avance](iteracion-06-03-cabecera-unidad.md) | Terminada |
+| 06-04 | [Tarjetas de bloque y ticket de entrega](iteracion-06-04-tarjetas-bloque.md) | En revisión |
 | 06-05 | [Modales y citas](iteracion-06-05-modales.md) | Pendiente |
 | 06-06 | [Verificación final del pulido](iteracion-06-06-verificacion.md) | Pendiente |
 

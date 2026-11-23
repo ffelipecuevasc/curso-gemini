@@ -39,7 +39,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-023 | `DESIGN.md` · 1. Concepto visual (principio 3) y 2.1 Superficies | Épica 06 (06-01) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-024 | `DESIGN.md` · 5. Componentes (fila Portada y ruta) | Épica 06 (06-02) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-025 | `DESIGN.md` · 5. Componentes (fila Sección de unidad) | Épica 06 (06-03) | 2026-11-21 | Aplicada 2026-11-22 |
-| P-026 | `DESIGN.md` · 5. Componentes (fila Tarjeta de bloque) | Épica 06 (06-04) | 2026-11-21 | Pendiente |
+| P-026 | `DESIGN.md` · 5. Componentes (fila Tarjeta de bloque) | Épica 06 (06-04) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-027 | `DESIGN.md` · 5. Componentes (fila Modal) | Épica 06 (06-05) | 2026-11-21 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
@@ -791,7 +791,7 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 5. Componentes (fila «Tarjeta de bloque»)
-- **Estado:** pendiente.
+- **Estado:** aplicada 2026-11-22 por el desarrollador, comprobada con `grep` en `DESIGN.md` de la rama `iteracion/06-04-tarjetas-bloque` («Marca de 40 × 6 px» en la fila «Tarjeta de bloque»).
 - **Por qué:** la 06-04 cambia la franja superior por una marca recta, hace que toda la tarjeta abra el detalle, deja un solo botón visible y da a «Terminado cuando…» la forma de ticket. Si no se aplica, la fila sigue pidiendo la franja superior y las dos acciones como botones.
 
 **Texto actual** (copiado literalmente de `DESIGN.md`):

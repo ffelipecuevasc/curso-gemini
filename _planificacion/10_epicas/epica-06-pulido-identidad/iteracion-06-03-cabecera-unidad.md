@@ -1,7 +1,7 @@
 # Iteración 06-03 · Cabecera de unidad sin barra de avance
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/06-03-cabecera-unidad
 - **Depende de:** 06-02 y propuesta P-025 aplicada
 - **Especificación:** —

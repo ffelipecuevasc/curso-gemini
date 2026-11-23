@@ -17,7 +17,7 @@ const { numero, entregable, cantidad } = Astro.props;
 const idTitulo = `tarjeta-u${numero}-terminado`;
 ---
 
-<article aria-labelledby={idTitulo} class="tarjeta border-t-linea">
+<article aria-labelledby={idTitulo} class="tarjeta tarjeta-entrega">
   <h3 id={idTitulo} class="text-lg leading-snug font-semibold">
     Terminado cuando…
   </h3>

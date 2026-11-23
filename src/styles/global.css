@@ -275,7 +275,17 @@
   }
 
   .cabecera-unidad {
-    @apply grid gap-3 rounded-bloque rounded-bl-esquina px-5 py-4 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-x-8;
+    @apply grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-3 rounded-bloque rounded-bl-esquina px-5 py-4 lg:gap-x-6 lg:gap-y-2.5;
+  }
+
+  /* Número grande de la unidad en la cabecera (06-03, P-025): decorativo,
+     cifras de caja alta para que el «1» no se lea como «l». */
+  .numero-unidad {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 2.5rem + 3vw, 5.5rem);
+    font-weight: 700;
+    line-height: 0.8;
+    font-variant-numeric: lining-nums tabular-nums;
   }
 
   /* El título de la U1 es largo: el tamaño baja en pantallas angostas. */

@@ -1,7 +1,7 @@
 # Iteración 06-02 · Portada y ruta con firma
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/06-02-portada-ruta
 - **Depende de:** 06-01, RDA-013 aceptada y propuesta P-024 aplicada
 - **Especificación:** —

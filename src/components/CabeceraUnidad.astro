@@ -1,14 +1,16 @@
 ---
-// Cabecera de una unidad (DESIGN.md, sección 5, «Sección de unidad»): bloque
-// con el color de la unidad, con clase y duración en IBM Plex Mono, título
-// (h2), objetivo breve (RDA-012), barra del tramo de avance (RDA-008) y los
-// botones que abren los modales de la unidad: «Antes de empezar» y «Cierre»
-// (bloques sin tarjeta, si existen), «Sobre la unidad», «Recursos (n)» y
-// «Descargas (n)». Los botones solo se ven con JavaScript (BotonModal.astro).
+// Cabecera de una unidad (DESIGN.md, sección 5, «Sección de unidad»; P-025):
+// bloque con el color de la unidad; a la izquierda, el número de la unidad en
+// grande (decorativo: el h2 lo dice para lectores de pantalla); a la derecha,
+// título (h2), objetivo breve (RDA-012) y «Clase n de N · min» en IBM Plex
+// Mono. Sin barra de avance (RDA-013). Debajo, los botones que abren los
+// modales de la unidad: «Antes de empezar» y «Cierre» (bloques sin tarjeta,
+// si existen), «Sobre la unidad», «Recursos (n)» y «Descargas (n)». Los
+// botones solo se ven con JavaScript (BotonModal.astro).
+import { getEntry } from "astro:content";
 import type { UnidadConBloques } from "../lib/unidades";
 import { bloqueUnidad } from "../lib/colores-unidad";
 import { idModalDetalle, idModalUnidad } from "../lib/modales";
-import BarraAvance from "./BarraAvance.astro";
 import BotonModal from "./BotonModal.astro";
 
 interface Props {
@@ -19,8 +21,11 @@ interface Props {
 }
 
 const { unidad, recursos, descargas } = Astro.props;
-const { numero, titulo, clase, duracionMin, avance, objetivoBreve } =
-  unidad.data;
+const { numero, titulo, clase, duracionMin, objetivoBreve } = unidad.data;
+const curso = await getEntry("curso", "curso");
+if (!curso)
+  throw new Error("Falta la entrada «curso» en src/content/curso.yaml");
+const { clases } = curso.data;
 
 // Los bloques «0» (repaso) y de cierre no tienen tarjeta: van como píldoras.
 const antes = unidad.bloques.find((b) => b.data.numero === 0);
@@ -29,17 +34,17 @@ const idTitulo = `titulo-unidad-${numero}`;
 ---
 
 <header class:list={["cabecera-unidad", bloqueUnidad[numero]]}>
+  <p class="numero-unidad" aria-hidden="true">{numero}</p>
   <div class="min-w-0">
-    <p class="font-codigo">
-      Unidad {numero} · Clase {clase} · {duracionMin} min
-    </p>
-    <h2 id={idTitulo} class="titulo-unidad mt-1 wrap-break-word">
-      {titulo}
+    <h2 id={idTitulo} class="titulo-unidad wrap-break-word">
+      <span class="sr-only">Unidad {numero}: </span>{titulo}
     </h2>
-    <p class="mt-1">{objetivoBreve}</p>
+    <p class="mt-1 max-w-[62ch]">{objetivoBreve}</p>
+    <p class="mt-1 font-codigo text-sm">
+      Clase {clase} de {clases} · {duracionMin} min
+    </p>
   </div>
-  <BarraAvance desde={avance.desde} hasta={avance.hasta} class="self-start" />
-  <div class="flex flex-wrap gap-2 empty:hidden lg:col-span-2">
+  <div class="col-span-2 flex flex-wrap gap-2 empty:hidden lg:col-span-1 lg:col-start-2">
     {antes && (
       <BotonModal
         variante="sobre-color"

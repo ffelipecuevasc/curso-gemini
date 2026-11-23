@@ -38,7 +38,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-022 | `DESIGN.md` · 5. Componentes (fila Bloque de prompt) | Iteración 05-08 | 2026-11-20 | Aplicada |
 | P-023 | `DESIGN.md` · 1. Concepto visual (principio 3) y 2.1 Superficies | Épica 06 (06-01) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-024 | `DESIGN.md` · 5. Componentes (fila Portada y ruta) | Épica 06 (06-02) | 2026-11-21 | Aplicada 2026-11-22 |
-| P-025 | `DESIGN.md` · 5. Componentes (fila Sección de unidad) | Épica 06 (06-03) | 2026-11-21 | Pendiente |
+| P-025 | `DESIGN.md` · 5. Componentes (fila Sección de unidad) | Épica 06 (06-03) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-026 | `DESIGN.md` · 5. Componentes (fila Tarjeta de bloque) | Épica 06 (06-04) | 2026-11-21 | Pendiente |
 | P-027 | `DESIGN.md` · 5. Componentes (fila Modal) | Épica 06 (06-05) | 2026-11-21 | Pendiente |
 
@@ -772,7 +772,7 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 5. Componentes (fila «Sección de unidad»)
-- **Estado:** pendiente.
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-22 con `grep` en `DESIGN.md` de `main` («número de la unidad en Sora 700» en la fila «Sección de unidad»).
 - **Por qué:** la 06-03 cambia la línea de clase y duración sobre el título por el número de la unidad a la izquierda y «Clase n de 4 · 120 min» bajo el objetivo, y quita la barra de avance del tramo (RDA-013). Si no se aplica, la fila describe una cabecera con barra que ya no existe.
 
 **Texto actual** (copiado literalmente de `DESIGN.md`):

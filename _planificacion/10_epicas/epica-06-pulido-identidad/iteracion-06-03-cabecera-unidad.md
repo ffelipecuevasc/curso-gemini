@@ -1,7 +1,7 @@
 # Iteración 06-03 · Cabecera de unidad sin barra de avance
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/06-03-cabecera-unidad
 - **Depende de:** 06-02 y propuesta P-025 aplicada
 - **Especificación:** —
@@ -46,7 +46,7 @@ Que la cabecera de cada unidad se reconozca por su número grande, con el títul
 
 ## Tareas del desarrollador
 
-1. Aplicar la P-025 antes de empezar.
+1. ~~Aplicar la P-025 antes de empezar.~~ Cumplida: P-025 aplicada el 2026-11-22 (comprobada con `grep`).
 
 ## Criterios de aceptación
 

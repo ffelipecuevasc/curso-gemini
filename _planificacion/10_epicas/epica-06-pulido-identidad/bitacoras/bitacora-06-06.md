@@ -3,7 +3,7 @@
 - **Fecha:** 2026-11-22
 - **Agente:** Claude Code (Opus 5.5)
 - **Rama:** iteracion/06-06-verificacion (desde `main` en `103c745`)
-- **Estado final:** En revisión (fase A). La fase B (Lighthouse sobre la URL publicada después del merge y bitácora de cierre de la épica) va en otra pasada.
+- **Estado final:** Terminada (2026-11-22). Fase A en local; fase B en la rama `iteracion/06-06-cierre`, sobre la URL publicada (`main` en `d9ce2c0`), con la [bitácora de cierre](bitacora-06-cierre.md).
 
 ## Resumen
 
@@ -50,16 +50,22 @@ Paso 0: el desarrollador dio por terminada la 06-05 (dicho por él) y decidió q
 | TBT móvil local | 224 ms | 290 ms | +66 ms | Informativo |
 | Lighthouse escritorio local | 100 / 100 / 96 / 100 | 100 / 100 / 96 / 100 | 0 | Igual |
 | CLS (móvil / escritorio) | 0,0002 / 0,0002 | 0,0001 / 0,0117 | — | < 0,1 |
-| Lighthouse móvil publicado | 98 / 100 / 100 / 100 (LCP 1,51 s, CLS 0, TBT 165 ms) | — | — | Fase B |
+| Lighthouse móvil publicado | 98 / 100 / 100 / 100 (LCP 1,51 s, CLS 0, TBT 165 ms) | 99 / 100 / 100 / 100 (LCP 1,43 s, CLS 0, TBT 71 ms), fase B | +1 / 0 / 0 / 0 | Cumple (tolerancia de 2) |
+| Lighthouse escritorio publicado | — | 100 / 100 / 100 / 100 (LCP 0,47 s, CLS 0,0117, TBT 0 ms), fase B | — | Informativo |
 | JavaScript propio | 1774 B gzip | 1774 B gzip | 0 | Sin cambios |
 | `dist/index.html` | 346 277 B (61 883 gzip) | 355 655 B (61 703 gzip) | +9378 B (−180 gzip) | Informativo |
 | `<dialog>` · `h1` · prompts | 54 · 1 · 24 de 24 | 54 · 1 · 24 de 24 | 0 | Igual |
 | `id` · repetidos | 300 · 0 | 300 · 0 | 0 | Igual |
-| Unidades en 1440 × 900 | ≤ 823 (05-05) | 823 (06-04, agente) | 0 | Pendiente del desarrollador (F1) |
-| Unidades en 1366 × 657 | 808/808/810/783 (Fase 1 de la 06-03) | 780/780/782/755 (06-04, agente) | −28 | Pendiente del desarrollador (F1) |
-| Botones de contorno por tarjeta | hasta 2 (37 en total) | máx. 1 (17, 06-04) | −20 | Pendiente del desarrollador (F4) |
+| Unidades en 1440 × 900 | ≤ 823 (05-05) | 823 / 823 / 823 / 823 (F1, desarrollador) | 0 | Aprobado (F1) |
+| Unidades en 1366 × 657 | 808/808/810/783 (Fase 1 de la 06-03) | 778 / 778 / 780 / 754, disponible 580 (F1, desarrollador) | −30 / −30 / −30 / −29 | Aprobado (F1); U1 = 778 / 580 ≈ 1,34 pantallas (`DESIGN.md`: «unos 1,4») |
+| Página completa (pantallas) | ≤ 7 en 1440 × 900 (05-08, sin cifra) | 5,26 en 1440 × 900; en 1366 × 657, sin cifra (F2, desarrollador) | — | Aprobado en 1440 × 900 (F2) |
+| Palabras por unidad (U1 a U4) | 261 / 235 / 236 / 226 (05-05, script que excluye el texto solo para lectores); 05-08: sin cifras | 294 / 316 / 354 / 305 (F3, desarrollador, `innerText`) | Métodos distintos: no comparable | Desviación aceptada por el desarrollador: U2 +16, U3 +54 (18 %), U4 +5 sobre 300 (RDA-012) |
+| Botones de contorno por tarjeta | hasta 2 (37 en total) | total 17, máximo 1 (F4, desarrollador, 1440 × 900 claro) | −20 | Aprobado (F4) |
+| Meta del bloque 0 | — | «Antes de empezar · 5 min · Unidad 2» (F5, desarrollador) | — | Aprobado (F5) |
+| Sin JS, movimiento reducido, impresión | — | `getAnimations()` = 0 e impresión sin trama (F6, desarrollador) | — | Aprobado (F6) |
+| Teclado y lector | — | Sin resultado (F7) | — | No verificado |
 
-Los altos y los botones de la columna «06-06» son los últimos que midió el agente (06-04). La 06-05 y la 06-06 solo cambiaron el contenido de los modales, que están cerrados al medir, pero esas cifras no se repitieron en esta fase.
+Las cifras F1 a F7 las dio el desarrollador el 2026-11-22; el agente no las midió. La columna «05-08» de las palabras viene de la 05-05, medida con otro método: no sirve para afirmar una regresión.
 
 ### Comprobaciones en `dist` (script de Node fuera del repositorio)
 
@@ -97,10 +103,10 @@ Ninguna otra diferencia: tokens, tarjeta, cabecera, modal (720 px, `min(85dvh, 7
 
 ## Criterios de aceptación
 
-- [ ] Cada criterio de término de la definición, marcado con su evidencia. Parcial: trama al imprimir (por CSS), «Avance del curso» = 0, botones (06-04), Impeccable, JS y LCP local quedan medidos. Faltan los altos en navegador (F1 y F2, desarrollador) y Lighthouse publicado (fase B).
-- [ ] Lighthouse móvil sobre la URL publicada: fase B. En local, móvil 93/100/96/100 (−2 frente a la 05-08 local) y CLS 0,0001.
+- [x] Cada criterio de término de la definición, marcado con su evidencia: en la [bitácora de cierre](bitacora-06-cierre.md). Los altos (F1 y F2) los dio el desarrollador; las palabras (F3) quedan como desviación aceptada y el teclado y el lector (F7), como no verificados.
+- [x] Lighthouse móvil sobre la URL publicada (fase B, mediana de 3): 99/100/100/100, LCP 1,43 s, CLS 0, TBT 71 ms, frente a 98/100/100/100 de la 05-08. El LCP es el `h1` en las 3 corridas.
 - [x] Impeccable sin hallazgos sin resolver: `[]`.
-- [ ] Sin JavaScript, la página se lee completa en modo claro: por CSS y HTML sí (3 reglas, botones ocultos). Falta la revisión en navegador del desarrollador (F6).
+- [x] Sin JavaScript, la página se lee completa en modo claro: por CSS y HTML (3 reglas, botones ocultos) y F6 del desarrollador.
 - [x] `DESIGN.md` describe el sitio o hay propuesta para cada diferencia: P-028 con 4 cambios.
 - [x] Regresiones: build sin advertencias con la guardia, check 0/0/0, 24 de 24 prompts y 1 `h1`.
 

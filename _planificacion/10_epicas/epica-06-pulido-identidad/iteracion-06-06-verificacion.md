@@ -1,7 +1,7 @@
 # Iteración 06-06 · Verificación final del pulido
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** En revisión (fase A, local; la fase B mide la URL publicada después del merge)
+- **Estado:** Terminada (2026-11-22; fase A local y fase B publicada; [bitácora](bitacoras/bitacora-06-06.md) y [cierre](bitacoras/bitacora-06-cierre.md))
 - **Rama sugerida:** iteracion/06-06-verificacion
 - **Depende de:** 06-04 y 06-05
 - **Especificación:** —
@@ -43,12 +43,12 @@ Comprobar con mediciones que el pulido cumple el criterio de término de la épi
 
 ## Criterios de aceptación
 
-- [ ] Cada criterio de término de `definicion-epica-06.md` está marcado con su medición, su comando o su captura en la bitácora.
-- [ ] Lighthouse móvil sobre la URL publicada: mediana de 3 corridas, con tolerancia de 2 puntos por categoría respecto del cierre de la épica 05; CLS < 0,1; tabla comparada.
-- [ ] El detector de Impeccable no informa hallazgos sin resolver o sin justificar.
-- [ ] Sin JavaScript, la página se lee completa en modo claro (RDA-007) y no hay botones ni zonas clicables que no funcionen.
-- [ ] `DESIGN.md` describe el sitio publicado, o hay una propuesta pendiente para cada diferencia.
-- [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 24 de 24 prompts idénticos a su fuente; 1 `h1`.
+- [x] Cada criterio de término de `definicion-epica-06.md` está marcado con su medición en la bitácora de cierre. F3 (palabras) es una desviación aceptada y F7 (teclado y lector) queda no verificado.
+- [x] Lighthouse móvil publicado (mediana de 3): 99/100/100/100, LCP 1,43 s, CLS 0, TBT 71 ms, frente a 98/100/100/100; tabla comparada en la bitácora 06-06.
+- [x] Impeccable: `[]`.
+- [x] Sin JavaScript: CSS y HTML, más F6 del desarrollador.
+- [x] `DESIGN.md` describe el sitio publicado: P-028 aplicada.
+- [x] Regresiones: build sin advertencias con la guardia, check 0/0/0, 24 de 24 prompts y 1 `h1` (local y publicado).
 
 ## Riesgos
 

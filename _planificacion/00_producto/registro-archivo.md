@@ -57,6 +57,17 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 05-07 | [Capa de efectos con propósito](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-07-efectos.md) | 05 | Terminada | 05-05, 05-06 | [bitacora-05-07](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-07.md) |
 | 05-08 | [Pulido y verificación final del rediseño](../10_epicas/epica-05-rediseno-sintesis/iteracion-05-08-verificacion.md) | 05 | Terminada | 05-07 | [bitacora-05-08](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-08.md) · [bitacora-05-cierre](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-cierre.md) |
 
+### Épica 06 · Pulido de identidad: portada, unidades y modales (cerrada el 2026-11-22)
+
+| Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
+| :-------- | :----- | :---- | :----- | :--------- | :-------- |
+| 06-01 | Trama de puntos de fondo | 06 | Terminada | P-023 | [bitacora-06-01](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-01.md) |
+| 06-02 | Portada y ruta con firma | 06 | Terminada | 06-01, RDA-013, P-024 | [bitacora-06-02](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-02.md) |
+| 06-03 | Cabecera de unidad sin barra de avance | 06 | Terminada | 06-02, P-025 | [bitacora-06-03](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-03.md) |
+| 06-04 | Tarjetas de bloque y ticket de entrega | 06 | Terminada | 06-03, P-026 | [bitacora-06-04](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-04.md) |
+| 06-05 | Modales y citas | 06 | Terminada | 06-01, P-027 | [bitacora-06-05](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-05.md) |
+| 06-06 | Verificación final del pulido | 06 | Terminada | 06-04, 06-05, P-028 | [bitacora-06-06](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-06.md) · [bitacora-06-cierre](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md) |
+
 ## 2. Backlog terminado
 
 ### Épica 01
@@ -118,6 +129,19 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 25 | Efectos con propósito: sombras teñidas, transición de tarjeta a modal, barra de avance, aparición escalonada y brillo | Funcionalidad | — | 05-07 | Terminada |
 | 26 | Verificación final del rediseño en local y en la URL publicada, comparada con la 04-04 | Técnico | — | 05-08 | Terminada |
 
+### Épica 06
+
+| Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
+| :-------- | :------- | :--- | :------------- | :-------- | :----- |
+| 26.1 | Corrección documental de la épica 06 sin la vista previa: RDA-013 aceptada, cifras de la vista previa como referencia histórica y criterio de Lighthouse con mediana de 3 y tolerancia de 2 puntos · Rama `correccion/epica-06-sin-parche` | Corrección | — | — | Terminada (rama fusionada en `main`, según `git branch --merged`; estaba «En revisión» en el registro) |
+| 26.2 | Insignia de Gemini Certified Educator (160 × 121) y enlace a la credencial en Accredible en el modal del instructor; 4.ª línea de trayectoria sin certificaciones concretas · Rama `correccion/instructor-insignia` | Corrección | — | — | Terminada |
+| 27 | Trama de puntos de fondo en ambos modos | Diseño | — | 06-01 | Terminada |
+| 28 | Portada con ficha del curso y ruta con número grande, sin barras de avance (RDA-013) | Diseño | — | 06-02 | Terminada |
+| 29 | Cabecera de unidad con número grande; borrar `BarraAvance.astro` | Diseño | — | 06-03 | Terminada |
+| 30 | Tarjeta de bloque clicable con un solo botón y ticket de «Terminado cuando…» | Diseño | — | 06-04 | Terminada |
+| 31 | Modal con línea de datos y entradilla; cita sin borde lateral | Diseño | — | 06-05 | Terminada |
+| 32 | Verificación final y cierre de la épica 06 | Calidad | — | 06-06 | Terminada |
+
 ## 3. Historial archivado
 
 | Fecha | Cambio |
@@ -160,3 +184,4 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 2026-11-17 | Iteración 03-04 en revisión: «Profundiza» en 9 bloques de U1 y U2 (40 enlaces), 5 videos de la U1, diccionario del dataset publicado sin los patrones del instructor; U2 sin videos (ausencia acordada); 0 B de JS nuevo. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-04.md) |
 | 2026-11-17 | Iteración 03-04 terminada: el desarrollador probó en el navegador videos, descargas y 360 px, sin observaciones; ratificó el recorte del diccionario. |
 | 2026-11-17 | P-007 aplicada por el desarrollador en `AGENTS.md` (commit bc70739), ampliada a los `SKILL.md` de `plantillas-alumnos/`; sale de «Decisiones por tomar». |
+| 2026-11-17 | Iteración 03-05 en revisión: «Profundiza» en 7 bloques de U3 y U4 (16 en la página), 1 video de la U3 y las 4 plantillas `SKILL.md` de la U4 con la regex de la P-007; cierre de la épica 03 y propuesta de la 04 por aprobar. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-05.md) · [Cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |

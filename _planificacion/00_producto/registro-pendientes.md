@@ -3,8 +3,9 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-22
-- **Iteración activa:** 06-06 · Verificación final del pulido (En revisión, fase A)
-- **Próximo hito:** épica 06 · 06-06 fase B: merge, Lighthouse sobre la URL publicada y cierre de la épica; P-028 pendiente
+- **Iteración activa:** ninguna (épica 06 cerrada el 2026-11-22)
+- **Próximo hito:** épica 07, definición pendiente de la decisión del desarrollador
+- **Métricas vigentes:** Lighthouse móvil publicado 99/100/100/100 (LCP 1,43 s, CLS 0, TBT 71 ms); JS propio 1774 B gzip; 54 `<dialog>`; 24 de 24 prompts
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
 
@@ -16,16 +17,10 @@
 
 Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-archivo.md` y la épica queda resumida en la sección 2.
 
-> Épica 06 abierta el 2026-11-21: [definición](../10_epicas/epica-06-pulido-identidad/definicion-epica-06.md).
+> Sin épicas abiertas. Las filas de la épica 06 pasaron a `registro-archivo.md` al cerrarla (2026-11-22).
 
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
-| 06-01 | Trama de puntos de fondo | 06 | Terminada | P-023 | [bitacora-06-01](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-01.md) |
-| 06-02 | Portada y ruta con firma | 06 | Terminada | 06-01, RDA-013, P-024 | [bitacora-06-02](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-02.md) |
-| 06-03 | Cabecera de unidad sin barra de avance | 06 | Terminada | 06-02, P-025 | [bitacora-06-03](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-03.md) |
-| 06-04 | Tarjetas de bloque y ticket de entrega | 06 | Terminada | 06-03, P-026 | [bitacora-06-04](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-04.md) |
-| 06-05 | Modales y citas | 06 | Terminada | 06-01, P-027 | [bitacora-06-05](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-05.md) |
-| 06-06 | Verificación final del pulido | 06 | En revisión (fase A) | 06-04, 06-05 | [bitacora-06-06](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-06.md) |
 
 ## 2. Épicas cerradas
 
@@ -38,23 +33,18 @@ Una fila por épica cerrada, con enlace a su bitácora de cierre.
 | 03 | Unidades del curso | 2026-11-17 | [bitacora-03-cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
 | 04 | Publicación, medición y calidad | 2026-11-18 | [bitacora-04-cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) |
 | 05 | Rediseño visual y síntesis del contenido | 2026-11-21 | [bitacora-05-cierre](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-cierre.md) |
+| 06 | Pulido de identidad: portada, unidades y modales | 2026-11-22 | [bitacora-06-cierre](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md) |
 
 ## 3. Backlog
 
 Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignado a una iteración muestra su número; al cerrar la iteración se actualizan su fila y las de este backlog. Los terminados se quedan al final hasta que su épica se cierra; entonces pasan a `registro-archivo.md`.
 
-> Los elementos de la épica 05 pasaron a `registro-archivo.md` al cerrarla (2026-11-21).
+> Los elementos de la épica 06 (26.1 a 32) pasaron a `registro-archivo.md` al cerrarla (2026-11-22).
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
-| 26.1 | Corrección documental de la épica 06 sin la vista previa: RDA-013 aceptada, cifras de la vista previa como referencia histórica y criterio de Lighthouse con mediana de 3 y tolerancia de 2 puntos · Rama `correccion/epica-06-sin-parche` | Corrección | — | — | En revisión |
-| 26.2 | Insignia de Gemini Certified Educator (160 × 121) y enlace a la credencial en Accredible en el modal del instructor; 4.ª línea de trayectoria sin certificaciones concretas · Rama `correccion/instructor-insignia` | Corrección | — | — | Terminada |
-| 27 | Trama de puntos de fondo en ambos modos | Diseño | — | 06-01 | Terminada |
-| 28 | Portada con ficha del curso y ruta con número grande, sin barras de avance (RDA-013) | Diseño | — | 06-02 | Terminada |
-| 29 | Cabecera de unidad con número grande; borrar `BarraAvance.astro` | Diseño | — | 06-03 | Terminada |
-| 30 | Tarjeta de bloque clicable con un solo botón y ticket de «Terminado cuando…» | Diseño | — | 06-04 | Terminada |
-| 31 | Modal con línea de datos y entradilla; cita sin borde lateral | Diseño | — | 06-05 | Terminada |
-| 32 | Verificación final y cierre de la épica 06 | Calidad | — | 06-06 | En revisión (fase A) |
+| 33 | Bajar U2, U3 y U4 a 300 palabras o menos (RDA-012); F3 del cierre de la 06, medido con `innerText`: 294 / 316 / 354 / 305 · Desviación aceptada por el desarrollador; fuera del alcance de la épica 06 | Contenido | — | — | Sin asignar (fuera de alcance) |
+| 34 | Revisión con teclado y lector de pantalla de punta a punta (F7 de la 06-06, no verificado) | Calidad | — | — | Sin asignar |
 
 ## 4. Datos pendientes del cliente
 
@@ -73,7 +63,7 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 
 | Tema | RDA o hallazgo | Responsable |
 | :--- | :------------- | :---------- |
-| Aplicar o descartar la propuesta P-028 (1366 × 657, contraste sobre la trama, meta «Antes de empezar» y borde del ticket) antes del cierre de la épica 06 | P-028 | Desarrollador |
+| Definir la épica 07 (candidatos del cierre de la 06: backlog 33 y 34 y `text-wrap: pretty`) | Cierre de la épica 06 | Desarrollador |
 | Texto de «Profundiza en tu tiempo» de cada bloque: el documento del curso lista los temas, pero no la teoría escrita · Opcional desde 2026-11-17: «Profundiza» usa los recursos oficiales ya cargados y el texto no bloquea nada | — | Desarrollador |
 | Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) · U1: 5 videos cargados en la 03-04; U2: sin videos (ausencia acordada); U3: 1 video cargado en la 03-05; U4: sin videos (ausencia acordada) | — | Desarrollador |
 | Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Publicados el dataset CSV (03-03) y su diccionario editado para participantes (03-04); de la U1 y la U2, el resto (`plantillas-alumnos.zip`, informe de Deep Research de respaldo) queda como ausencia acordada en la 03-04; en la 03-05 se publican las 4 plantillas de `plantillas-alumnos/` (U4) y quedan como ausencia acordada `optimizador-prompts/SKILL.md`, `gtd-visual.zip` y el paquete de fuentes de la U3 | — | Desarrollador |
@@ -103,7 +93,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-17 | Iteración 03-05 en revisión: «Profundiza» en 7 bloques de U3 y U4 (16 en la página), 1 video de la U3 y las 4 plantillas `SKILL.md` de la U4 con la regex de la P-007; cierre de la épica 03 y propuesta de la 04 por aprobar. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-05.md) · [Cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
 | 2026-11-17 | Iteración 03-05 terminada y épica 03 cerrada (prueba en navegador dicha por el desarrollador); sus filas pasan a `registro-archivo.md`. Épica 04: 4 iteraciones generadas (04-01 a 04-04) y corrección 15.1 registrada. [Cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
 | 2026-11-17 | Corrección 15.1 en revisión: las 4 plantillas muestran su ruta («analista-planillas/SKILL.md» y otras 3; las 2 tarjetas del dataset no cambian; pesos = `statSync`) y la U4 lleva la nota aprobada (campo `notaDescargas`, contraste 18,90:1 en ambos modos); build con 0 WARN, check sin errores, 24 de 24 prompts, 4 scripts, JS idéntico, 1 h1, 0 marcadores; falta revisión en navegador. |
 | 2026-11-17 | Corrección 15.1 terminada (dicho por el desarrollador; commit 6a31229 en `main`). Decisiones de la épica 04: Wrangler con `pnpm dlx` y versión fija, 04-03 sin canónica ni Open Graph, prioridades 16 (04-01) y 16.1 (04-02). |
@@ -153,3 +142,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-22 | Iteración 06-03 terminada (revisión visual sin observaciones; U4 +42 px en 1024 × 768 aceptado, dicho por el desarrollador). P-026 aplicada. Iteración 06-04 en revisión: marca de 40 × 6 px, «Ver detalle» con flecha y capa que cubre la tarjeta, 1 botón de contorno por tarjeta (37 → 17), ticket discontinuo en «Terminado cuando…»; 823 en 1440 × 900 y 780/780/782/755 en 1366 × 657 (−18 px); JS 1774 B; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-04.md) |
 | 2026-11-22 | Iteración 06-04 terminada (revisión sin observaciones; el borde del ticket queda como está, dicho por el desarrollador). P-027 aplicada (comprobada con `grep`). Iteración 06-05 en revisión: título del detalle sin «Detalle ·» (26 → 0), línea de datos en 39 modales de bloque, entradilla de 19 px, cita sin borde lateral (Impeccable `[]`); 54 `<dialog>`, 24 de 24 prompts, JS 1774 B; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-05.md) |
 | 2026-11-22 | Iteración 06-05 terminada (revisión sin observaciones, dicho por el desarrollador). Iteración 06-06 en revisión (fase A, local): meta «Antes de empezar» en los 3 bloques 0; Lighthouse local (mediana de 3) móvil 93/100/96/100 y escritorio 100/100/96/100, LCP en el `h1`, CLS ≤ 0,0117; la trama no cuesta Rendimiento (con 91, sin 80); Impeccable `[]`; JS 1774 B; P-028 pendiente; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-06.md) |
+| 2026-11-22 | Iteración 06-06 terminada y épica 06 cerrada: Lighthouse móvil publicado 99/100/100/100 (LCP 1,43 s en el `h1`, CLS 0, TBT 71 ms; 05-08: 98) y escritorio 100/100/100/100; HTML publicado con 1 `h1`, 54 `<dialog>`, 24 de 24 prompts y JS 1774 B; F1, F2 (1440 × 900), F4, F5 y F6 aprobados y F3 como desviación aceptada (dichos por el desarrollador); F7 no verificado; P-028 aplicada; backlog 33 y 34 nuevos; las filas de la épica y la fila más antigua del historial pasan a `registro-archivo.md`. [Cierre](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md) |

@@ -41,7 +41,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-025 | `DESIGN.md` · 5. Componentes (fila Sección de unidad) | Épica 06 (06-03) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-026 | `DESIGN.md` · 5. Componentes (fila Tarjeta de bloque) | Épica 06 (06-04) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-027 | `DESIGN.md` · 5. Componentes (fila Modal) | Épica 06 (06-05) | 2026-11-21 | Aplicada |
-| P-028 | `DESIGN.md` · 2.3 Contraste (regla práctica) y 5. Componentes (filas Portada y ruta, Tarjeta de bloque y Modal) | Iteración 06-06 | 2026-11-22 | Pendiente |
+| P-028 | `DESIGN.md` · 2.3 Contraste (regla práctica) y 5. Componentes (filas Portada y ruta, Tarjeta de bloque y Modal) | Iteración 06-06 | 2026-11-22 | Aplicada 2026-11-22 |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -830,7 +830,7 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 2.3 Contraste (regla práctica) y 5. Componentes (filas «Portada y ruta», «Tarjeta de bloque» y «Modal»)
-- **Estado:** pendiente.
+- **Estado:** aplicada por el desarrollador, comprobada el 2026-11-22 con `grep` en `DESIGN.md` de `main` (`d9ce2c0`): «6,63:1», «la ruta se desplaza», «escala 1» y «Antes de empezar · m min».
 - **Por qué:** al comparar `DESIGN.md` con lo implementado en la épica 06 quedan cuatro diferencias, todas decididas por el desarrollador durante la épica:
   1. En 1366 × 657, la ruta de la portada se desplaza (opción A, 06-02).
   2. En oscuro, `--color-enlace` y `--color-primario` bajan de AAA a AA sobre el centro de un punto de la trama (excepción aceptada, 06-01).

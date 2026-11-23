@@ -18,9 +18,11 @@ interface Props {
   descripcion?: string;
   /** Nivel del encabezado: 3 en la unidad, 4 dentro de un bloque. */
   nivel?: 3 | 4;
+  /** Línea de datos en IBM Plex Mono bajo el título («Bloque n · m min · Unidad u»). */
+  meta?: string;
 }
 
-const { id, titulo, unidad, descripcion, nivel = 4 } = Astro.props;
+const { id, titulo, unidad, descripcion, nivel = 4, meta } = Astro.props;
 const Titulo = `h${nivel}` as "h3" | "h4";
 ---
 
@@ -38,12 +40,15 @@ const Titulo = `h${nivel}` as "h3" | "h4";
       unidad ? franjaModal[unidad] : "border-primario",
     ]}
   >
-    <Titulo
-      id={`${id}-titulo`}
-      class="font-display text-xl font-semibold wrap-break-word"
-    >
-      {titulo}
-    </Titulo>
+    <div class="min-w-0">
+      <Titulo
+        id={`${id}-titulo`}
+        class="font-display text-xl font-semibold wrap-break-word sm:text-2xl"
+      >
+        {titulo}
+      </Titulo>
+      {meta && <p class="mt-1 font-codigo text-sm text-texto-2">{meta}</p>}
+    </div>
     <form method="dialog" data-cerrar class="shrink-0">
       <button type="submit" aria-label="Cerrar" class="boton-icono">
         <svg
@@ -64,7 +69,7 @@ const Titulo = `h${nivel}` as "h3" | "h4";
   </div>
   <div data-modal-cuerpo class="modal-cuerpo">
     {descripcion && (
-      <p id={`${id}-desc`} class="mb-4 max-w-prose text-texto-2">
+      <p id={`${id}-desc`} class="entradilla-modal">
         {descripcion}
       </p>
     )}

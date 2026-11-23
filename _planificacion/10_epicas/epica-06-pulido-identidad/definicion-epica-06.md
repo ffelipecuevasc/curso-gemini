@@ -42,8 +42,8 @@ La vista previa con todos los cambios se armó en una rama local y el desarrolla
 | 06-01 | [Trama de puntos de fondo](iteracion-06-01-trama-puntos.md) | Terminada |
 | 06-02 | [Portada y ruta con firma](iteracion-06-02-portada-ruta.md) | Terminada |
 | 06-03 | [Cabecera de unidad sin barra de avance](iteracion-06-03-cabecera-unidad.md) | Terminada |
-| 06-04 | [Tarjetas de bloque y ticket de entrega](iteracion-06-04-tarjetas-bloque.md) | En revisión |
-| 06-05 | [Modales y citas](iteracion-06-05-modales.md) | Pendiente |
+| 06-04 | [Tarjetas de bloque y ticket de entrega](iteracion-06-04-tarjetas-bloque.md) | Terminada |
+| 06-05 | [Modales y citas](iteracion-06-05-modales.md) | En revisión |
 | 06-06 | [Verificación final del pulido](iteracion-06-06-verificacion.md) | Pendiente |
 
 > Iteraciones generadas el 2026-11-21 a pedido del desarrollador, después del cierre de la épica 05 y de aprobar la vista previa.
@@ -72,6 +72,8 @@ Orden y dependencias:
 - 2026-11-22: el criterio de Lighthouse pasa a «mediana de 3 corridas, con tolerancia de 2 puntos por categoría respecto del cierre de la épica 05; CLS < 0,1» (decisión del desarrollador).
 - 2026-11-22: 06-01 terminada; revisión visual sin observaciones (dicho por el desarrollador).
 - 2026-11-22: opción A para la portada en 1366 × 657: la columna de texto cabe y la ruta se desplaza (la última tarjeta termina hacia los 803 px; antes de la 06-02, 807 px). No se reducen la estrella, el título ni los espaciados (decisión del desarrollador).
+- 2026-11-22: 06-04 terminada; el borde del ticket queda como está (dicho por el desarrollador).
+- 2026-11-22: en la 06-05, el bloque 0 («Antes de empezar», U2 a U4) muestra «Bloque 0 · m min · Unidad u», según el texto aprobado; queda como duda para el desarrollador.
 
 ## Reglas comunes de la épica
 

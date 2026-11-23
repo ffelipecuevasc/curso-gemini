@@ -1,7 +1,7 @@
 # Iteración 06-05 · Modales y citas
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/06-05-modales
 - **Depende de:** 06-01 y propuesta P-027 aplicada (si va después de la 06-04, revisa la transición desde la tarjeta clicable)
 - **Especificación:** —
@@ -50,12 +50,12 @@ Que el modal de un bloque se lea como un artículo corto: el título del bloque,
 
 ## Criterios de aceptación
 
-- [ ] 0 títulos de modal que empiecen con «Detalle ·» en `dist/index.html`.
-- [ ] Cada modal de bloque muestra su línea de datos y ningún «min» suelto en el cuerpo.
-- [ ] El detector de Impeccable no informa `side-tab`.
-- [ ] Contraste de la entradilla y de la cita: `--color-texto` sobre `--color-fondo` y sobre `--color-superficie` en ambos modos (tabla 2.3).
-- [ ] Sin JavaScript, los modales se leen debajo de la cuadrícula con su título, sus datos y su entradilla (RDA-011).
-- [ ] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 24 de 24 prompts idénticos a su fuente; 0 B de JavaScript nuevo.
+- [x] 0 títulos de modal que empiecen con «Detalle ·» en `dist/index.html` (antes 26).
+- [x] Cada modal de bloque muestra su línea de datos y ningún «min» suelto en el cuerpo: 39 de 39 (26 de detalle y 13 de prompts), 0 sueltos.
+- [x] El detector de Impeccable no informa `side-tab`: 4.10.0 devuelve `[]`.
+- [x] Contraste de la entradilla y de la cita: claro 18,90:1 y 16,71:1; oscuro 18,90:1 y 16,69:1.
+- [x] Sin JavaScript, los modales se leen debajo de la cuadrícula con su título, sus datos y su entradilla (RDA-011): la meta y la entradilla van dentro del `<dialog>` y la regla «Modales sin JavaScript» no cambió (revisión del HTML y del CSS, no en navegador).
+- [x] Regresiones: `pnpm build` sin advertencias con la guardia; `pnpm astro check` 0/0/0; 24 de 24 prompts idénticos a su fuente; 0 B de JavaScript nuevo (1774 B).
 
 ## Riesgos
 

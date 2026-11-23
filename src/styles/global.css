@@ -262,6 +262,17 @@
   .modal-cuerpo {
     @apply max-h-[min(85dvh,760px)] min-h-0 overflow-y-auto overscroll-contain px-4 pb-6 sm:px-6;
   }
+
+  /* Entradilla del modal (iteración 06-05): el resumen del bloque, que es la descripción del <dialog>. */
+  .entradilla-modal {
+    max-width: 65ch;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-linea);
+    font-size: 1.1875rem;
+    line-height: 1.55;
+    color: var(--color-texto);
+  }
 }
 
 /*
@@ -490,9 +501,10 @@
   }
 
   .contenido-bloque blockquote {
-    border-left: 4px solid var(--color-primario);
-    padding-left: 1rem;
-    color: var(--color-texto-2);
+    padding: 0.75rem 1rem;
+    border-radius: 1rem 1rem 1rem 0.375rem;
+    background: var(--color-superficie);
+    color: var(--color-texto);
   }
 
   .contenido-bloque code {

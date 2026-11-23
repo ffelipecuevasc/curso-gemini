@@ -23,7 +23,12 @@ interface Props {
 }
 
 const { bloque, unidad } = Astro.props;
-const { titulo, minutos, sintesis, prompts, profundiza } = bloque.data;
+const { titulo, numero, minutos, sintesis, prompts, profundiza } = bloque.data;
+// El esquema garantiza «numero» o «cierre: true» (content.config.ts).
+const meta =
+  numero === undefined
+    ? `Cierre · ${minutos} min · Unidad ${unidad}`
+    : `Bloque ${numero} · ${minutos} min · Unidad ${unidad}`;
 
 const tramos = partirEnMarcadores(
   bloque.rendered?.html ?? "",
@@ -37,7 +42,8 @@ const { Content } = await render(bloque);
 
 <Modal
   id={idModalDetalle(bloque)}
-  titulo={`Detalle · ${titulo}`}
+  titulo={titulo}
+  meta={meta}
   unidad={unidad}
   descripcion={sintesis.resumen}
 >
@@ -46,7 +52,6 @@ const { Content } = await render(bloque);
       <span class="font-medium">Otra idea clave:</span> {sintesis.claves[1]}
     </p>
   )}
-  <p class="mb-4 font-codigo text-sm text-texto-2">{minutos} min</p>
   <div class="contenido-bloque">
     {conMarcador ? (
       tramos.map((t) => {
@@ -68,6 +73,7 @@ const { Content } = await render(bloque);
   <Modal
     id={idModalPrompts(bloque)}
     titulo={`Prompts · ${titulo}`}
+    meta={meta}
     unidad={unidad}
   >
     <div class="grid gap-4">

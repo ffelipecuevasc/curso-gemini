@@ -1,7 +1,7 @@
 # Iteración 06-04 · Tarjetas de bloque y ticket de entrega
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/06-04-tarjetas-bloque
 - **Depende de:** 06-03 y propuesta P-026 aplicada
 - **Especificación:** —

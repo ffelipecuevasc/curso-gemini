@@ -40,7 +40,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-024 | `DESIGN.md` · 5. Componentes (fila Portada y ruta) | Épica 06 (06-02) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-025 | `DESIGN.md` · 5. Componentes (fila Sección de unidad) | Épica 06 (06-03) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-026 | `DESIGN.md` · 5. Componentes (fila Tarjeta de bloque) | Épica 06 (06-04) | 2026-11-21 | Aplicada 2026-11-22 |
-| P-027 | `DESIGN.md` · 5. Componentes (fila Modal) | Épica 06 (06-05) | 2026-11-21 | Pendiente |
+| P-027 | `DESIGN.md` · 5. Componentes (fila Modal) | Épica 06 (06-05) | 2026-11-21 | Aplicada |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -810,7 +810,7 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 5. Componentes (fila «Modal»)
-- **Estado:** pendiente.
+- **Estado:** aplicada por el desarrollador con el «Texto propuesto» tal cual, comprobada el 2026-11-22 con `grep` en `DESIGN.md` de la rama `iteracion/06-05-modales` («una línea de datos en IBM Plex Mono» en la fila «Modal»; cambio aún sin commit en la rama). Cumplida en la 06-05.
 - **Por qué:** la 06-05 agrega bajo el título una línea de datos en IBM Plex Mono y muestra el resumen del bloque como entradilla; el título del detalle deja de llevar «Detalle ·». Si no se aplica, la fila no describe el modal publicado.
 
 **Texto actual** (copiado literalmente de `DESIGN.md`):

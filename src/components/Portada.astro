@@ -5,11 +5,13 @@
 // una línea de 1 px, los logos de Google, GTD Telsur y Capacita Tu Futuro (este
 // en --color-primario por currentColor); a la derecha, la ruta del curso como
 // índice (sección anidada con `id="ruta"` y su h2, con el logo de Gemini). Los
-// SVG no se editan.
+// SVG no se editan. Entrada escalonada (06-08, DESIGN.md 7.1): lema, ficha,
+// botón, redes y logos (posiciones 0 a 4); el h1 (LCP) no se anima.
 import { getEntry } from "astro:content";
 import Google from "../assets/iconos/google.svg";
 import GtdTelsur from "../assets/iconos/gtd-telsur.svg";
 import CapacitaTuFuturo from "../assets/iconos/capacita-tu-futuro.svg";
+import { claseEntrada, ordenEntrada } from "../lib/movimiento";
 import { obtenerUnidadesConBloques } from "../lib/unidades";
 import Redes from "./Redes.astro";
 import RutaCurso from "./RutaCurso.astro";
@@ -50,18 +52,32 @@ const ficha = [
   <div class="mx-auto grid max-w-sitio grid-cols-1 items-center gap-8 px-6 pt-10 pb-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-10 lg:pt-8">
     <div class="flex flex-col items-start gap-5">
       <h1 id="titulo-inicio" class="titulo-portada">{titulo}</h1>
-      <p class="lema-portada">{lema}</p>
-      <ul aria-label="El curso en cifras" class="ficha-curso">
+      <p class:list={["lema-portada", claseEntrada]} style={ordenEntrada(0)}>
+        {lema}
+      </p>
+      <ul
+        aria-label="El curso en cifras"
+        class:list={["ficha-curso", claseEntrada]}
+        style={ordenEntrada(1)}
+      >
         {ficha.map((dato) => <li>{dato}</li>)}
       </ul>
       <a
         href="#instructor"
-        class="boton-principal"
+        class:list={["boton-principal", claseEntrada]}
+        style={ordenEntrada(2)}
       >
         Conoce a tu instructor
       </a>
-      <Redes class="text-sm" />
-      <div class="flex w-full flex-wrap items-center gap-6 border-t border-linea pt-4 text-texto">
+      {/* Redes solo recibe clases: su posición va como propiedad arbitraria. */}
+      <Redes class={`text-sm [--orden:3] ${claseEntrada}`} />
+      <div
+        class:list={[
+          "flex w-full flex-wrap items-center gap-6 border-t border-linea pt-4 text-texto",
+          claseEntrada,
+        ]}
+        style={ordenEntrada(4)}
+      >
         <Google
           role="img"
           aria-label="Google"

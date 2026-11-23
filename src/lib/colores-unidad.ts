@@ -16,12 +16,14 @@ export const bloqueUnidad: Record<number, string> = {
   4: "bg-u4 text-sobre-u4 [--bloque:var(--color-u4)] [--sobre-bloque:var(--color-sobre-u4)] [--sombra:var(--sombra-u4)] [--halo:var(--halo-u4)]",
 };
 
-/** Fondo teñido de la sala de cada unidad (06-07, tokens `--color-sala-uN`). */
+/** Tinte de la sala de cada unidad (06-07, tokens `--color-sala-uN`). Se
+ * publica como `--sala` y lo pinta la capa `::before` de `.sala-unidad`, que
+ * se enciende al entrar la unidad (06-08, global.css). */
 export const salaUnidad: Record<number, string> = {
-  1: "bg-sala-u1",
-  2: "bg-sala-u2",
-  3: "bg-sala-u3",
-  4: "bg-sala-u4",
+  1: "[--sala:var(--color-sala-u1)]",
+  2: "[--sala:var(--color-sala-u2)]",
+  3: "[--sala:var(--color-sala-u3)]",
+  4: "[--sala:var(--color-sala-u4)]",
 };
 
 /** Franja de 10 px de la cabecera de un modal. */

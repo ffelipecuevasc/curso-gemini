@@ -1,7 +1,7 @@
 # Iteración 06-08 · Efectos de movimiento: entrada de la portada, unidades que se encienden y navegación continua
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales (reabierta el 2026-11-23)
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/06-08-efectos-movimiento
 - **Depende de:** 06-07 terminada (con merge en `main`), P-030 aplicada por el desarrollador
 - **Especificación:** —

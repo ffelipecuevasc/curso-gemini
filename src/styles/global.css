@@ -158,6 +158,30 @@
   --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duracion-hover: 200ms;
   --duracion-modal: 350ms;
+  /* 7.1 Momento focal (06-08): entrada escalonada de la portada y entrada
+     única de la estrella de Gemini. Los fotogramas solo declaran `from`: el
+     estado final es el estilo normal del elemento. Se usan con motion-safe:. */
+  --duracion-entrada: 500ms;
+  --duracion-estrella: 800ms;
+  --escalonado: 60ms;
+  --animate-entrada: entrada var(--duracion-entrada) var(--ease-expo-out) both;
+  --animate-estrella: estrella var(--duracion-estrella) var(--ease-expo-out)
+    120ms both;
+
+  @keyframes entrada {
+    from {
+      opacity: 0;
+      translate: 0 8px;
+    }
+  }
+
+  @keyframes estrella {
+    from {
+      opacity: 0;
+      scale: 0.6;
+      rotate: -45deg;
+    }
+  }
 }
 
 /* Modo oscuro: solo se redefinen los valores que cambian. */
@@ -306,8 +330,10 @@
  * aquí para no repetir las utilidades en el HTML.
  */
 @layer components {
+  /* La línea de tiempo --unidad (06-08) guía la sala y el número. */
   .seccion-unidad {
     margin-top: var(--espacio-unidades);
+    view-timeline: --unidad block;
     @apply mx-auto max-w-sitio px-6 py-10 xl:max-w-[1280px];
   }
 
@@ -317,9 +343,22 @@
   }
 
   /* Sala de la unidad (06-07, P-029): reúne la cabecera y la cuadrícula sobre
-     el tinte de la unidad (salaUnidad en src/lib/colores-unidad.ts). */
+     el tinte de la unidad (--sala, de salaUnidad en src/lib/colores-unidad.ts).
+     El tinte va en una capa propia para encenderlo solo con opacidad (06-08,
+     E7); sin animación, la capa se ve entera. */
   .sala-unidad {
+    position: relative;
+    isolation: isolate;
     @apply rounded-bloque rounded-bl-esquina p-2 sm:p-2.5;
+  }
+
+  .sala-unidad::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--sala);
   }
 
   .cabecera-unidad {
@@ -596,10 +635,10 @@
 }
 
 /* Sin color-mix(), las salas usan la superficie (como las sombras de la
-   05-07). Fuera de las capas para ganarle a la utilidad bg-sala-uN. */
+   05-07). Fuera de las capas para ganarle a la utilidad [--sala:…]. */
 @supports not (color: color-mix(in oklab, white 50%, transparent)) {
   .sala-unidad {
-    background-color: var(--color-superficie);
+    --sala: var(--color-superficie);
   }
 }
 
@@ -972,6 +1011,157 @@ html[data-transicion="modo"]::view-transition-old(root) {
 }
 
 /*
+ * 7.2 y 7.3 · Movimiento ligado al desplazamiento y continuidad al navegar
+ * (iteración 06-08, DESIGN.md). Solo opacidad, translate, scale, clip-path y
+ * un box-shadow único. Los fotogramas parten del estado oculto y terminan en
+ * el estilo normal: sin soporte o con reducir movimiento, todo se ve en su
+ * estado final (y las salas, encendidas). Con línea de tiempo van en
+ * longhands: el minificador funde el atajo `animation` con
+ * `animation-timeline` en un atajo que los navegadores descartan.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    /* E4 · La credencial se revela desde la esquina asimétrica. */
+    .credencial {
+      animation-name: revelar-credencial;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+
+    /* E7 · La sala se enciende al entrar la unidad y se apaga al salir. */
+    .sala-unidad::before {
+      animation-name: encender-sala;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: --unidad;
+      animation-range: cover 0% cover 100%;
+    }
+
+    /* E8 · El número llega desde 16 px más abajo. */
+    .numero-unidad {
+      animation-name: llegar-numero;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: --unidad;
+      animation-range: entry 0% entry 50%;
+    }
+
+    /* E10 · Al llegar por un ancla, el número suma una escala sin perder E8. */
+    .seccion-unidad:target .numero-unidad {
+      animation-name: llegar-numero, aterrizar-numero;
+      animation-duration: auto, 700ms;
+      animation-timing-function: linear, var(--ease-expo-out);
+      animation-delay: 0s, 350ms;
+      animation-fill-mode: both, both;
+      animation-timeline: --unidad, auto;
+      animation-range:
+        entry 0% entry 50%,
+        normal;
+    }
+  }
+
+  /* E10 · Destello único de la cabecera (por tiempo, fuera de view()). El
+     retraso es lo que tarda el desplazamiento suave. */
+  .seccion-unidad:target .cabecera-unidad {
+    animation: aterrizar-cabecera 900ms var(--ease-expo-out) 350ms both;
+  }
+}
+
+@keyframes revelar-credencial {
+  from {
+    clip-path: circle(0% at 0% 100%);
+  }
+  to {
+    clip-path: circle(150% at 0% 100%);
+  }
+}
+
+@keyframes encender-sala {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes llegar-numero {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+}
+
+@keyframes aterrizar-numero {
+  from {
+    scale: 1.18;
+  }
+}
+
+@keyframes aterrizar-cabecera {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--bloque) 50%, transparent);
+  }
+  20% {
+    box-shadow: 0 0 0 6px color-mix(in oklab, var(--bloque) 50%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 14px color-mix(in oklab, var(--bloque) 0%, transparent);
+  }
+}
+
+/*
+ * 7.3 · Píldora que se desliza (E11, 06-08): desde 1024 px, la píldora activa
+ * es una sola capa (::after de #menu-principal, después de los enlaces, como
+ * exige el ancla) posicionada sobre el enlace aria-current. Fuera de las capas
+ * para ganarle a las utilidades aria-[current=true]:bg-primario del enlace,
+ * que siguen pintando la píldora sin soporte y en el menú móvil. Si el motor no
+ * anima el cambio de ancla, la píldora salta y queda igual bajo el enlace.
+ */
+@media (min-width: 64rem) {
+  @supports (anchor-name: --a) {
+    #menu-principal {
+      position: relative;
+      isolation: isolate;
+    }
+
+    #menu-principal a[aria-current="true"] {
+      anchor-name: --pildora-activa;
+      background-color: transparent;
+    }
+
+    #menu-principal::after {
+      content: "";
+      position: absolute;
+      position-anchor: --pildora-activa;
+      inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
+      z-index: -1;
+      border-radius: var(--radius-pildora);
+      background-color: var(--color-primario);
+      opacity: 0;
+    }
+
+    #menu-principal:has(a[aria-current="true"])::after {
+      opacity: 1;
+    }
+  }
+}
+
+@media (min-width: 64rem) and (prefers-reduced-motion: no-preference) {
+  @supports (anchor-name: --a) {
+    #menu-principal::after {
+      transition:
+        inset 300ms var(--ease-expo-out),
+        opacity 150ms ease-out;
+    }
+  }
+}
+
+/*
  * Modales sin JavaScript (iteración 05-04, RDA-011). Sin el script en línea de
  * Base.astro (sin data-js) o sin showModal (data-sin-dialogo, lo marca
  * modal.ts), cada <dialog> se muestra en su lugar como un bloque normal: sin
@@ -1034,12 +1224,20 @@ body {
     background-image: none;
   }
 
-  /* 06-07: sin el círculo decorativo de la credencial y salas sin fondo. */
-  .credencial::before {
+  /* 06-07: sin el círculo decorativo de la credencial y salas sin fondo
+     (06-08: el tinte vive en la capa ::before). */
+  .credencial::before,
+  .sala-unidad::before {
     display: none;
   }
 
-  .sala-unidad {
-    background: none;
+  /* 06-08: sin movimiento al imprimir; todo en su estado final. */
+  #inicio *,
+  .credencial,
+  .numero-unidad,
+  .cabecera-unidad,
+  #menu-principal::after {
+    animation: none !important;
+    transition: none !important;
   }
 }

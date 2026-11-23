@@ -3,7 +3,8 @@
 // RDA-014, P-029): va dentro de la portada, como sección anidada con su
 // `id="ruta"` y su h2, con el logo de Gemini junto al título (el SVG se usa
 // tal cual), 4 filas de una columna en todos los anchos y la nota «Cada clase
-// · n min» al pie, calculada de las fichas.
+// · n min» al pie, calculada de las fichas. La estrella hace una sola entrada
+// (06-08, DESIGN.md 7.1) con clases sobre el elemento: el SVG no cambia.
 // Usa obtenerUnidadesConBloques() para que las comprobaciones entre
 // unidades y bloques (RDA-009) corran en cada build.
 import { getEntry } from "astro:content";
@@ -36,7 +37,7 @@ const [duracionMin] = duraciones;
     <Gemini
       role="img"
       aria-label="Gemini"
-      class="aspect-[296/298] h-12 w-auto shrink-0 sm:h-14"
+      class="aspect-[296/298] h-12 w-auto shrink-0 origin-center motion-safe:animate-estrella sm:h-14"
     />
   </div>
   <ol class="indice-ruta">

@@ -44,6 +44,8 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-028 | `DESIGN.md` · 2.3 Contraste (regla práctica) y 5. Componentes (filas Portada y ruta, Tarjeta de bloque y Modal) | Iteración 06-06 | 2026-11-22 | Aplicada 2026-11-22 |
 | P-029 | `DESIGN.md` · 1, 2, 4, 5, 6, 7 y 8 | Diseño de la 06-07 | 2026-11-23 | Aplicada 2026-11-23 |
 | P-030 | `DESIGN.md` · 5. Componentes (fila Portada y ruta) | Iteración 06-07 | 2026-11-23 | Pendiente |
+| P-031 | `DESIGN.md` · 6. Íconos y logotipos y 7. Movimiento (7.1 a 7.4) | Diseño de la 06-08 | 2026-11-23 | Aplicada 2026-11-23 |
+| P-032 | `AGENTS.md` · 8. Reglas de contenido, regla 6 | Iteración 06-08 | 2026-11-23 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -919,4 +921,33 @@ En 1440 × 900 y en 1366 × 657, la portada completa se ve sin desplazarse. |
 
 ```text
 En 1440 × 900, la portada completa se ve sin desplazarse; en 1366 × 657 cabe la ruta completa y la columna de texto se desplaza (las redes y los logos quedan bajo el primer pantallazo). |
+```
+
+## P-031 · Movimiento de la 06-08: momento focal, desplazamiento, continuidad y límites
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 6. Íconos y logotipos (excepción de la estrella de Gemini) y 7. Movimiento (tokens de entrada y subsecciones 7.1 a 7.4).
+- **Origen:** sesión de diseño de efectos con demo interactiva (2026-11-23). La iteración 06-08 la llama «P-030», pero ese número ya era la propuesta de 1366 × 657 de la 06-07; se renumeró a P-031 (decisión del desarrollador, 2026-11-23).
+- **Estado:** aplicada por el desarrollador el 2026-11-23 en `main` (`f3529ea`). Comprobada con `grep` en `DESIGN.md`: «### 7.1 Momento focal» (1), «--duracion-estrella» (2) y «Píldora que se desliza» (1).
+- **Por qué:** la 06-08 agrega la entrada de la portada, la estrella, la credencial, las salas que se encienden, el número, el aterrizaje y la píldora deslizante. Sin la propuesta, `DESIGN.md` no los describiría y la iteración lo contradiría (la sección 6 prohibía animar logotipos).
+- **Relación con la P-030:** no la aplica. La fila «Portada y ruta» sigue diciendo «En 1440 × 900 y en 1366 × 657, la portada completa se ve sin desplazarse», así que la P-030 sigue pendiente y vigente.
+- **Texto actual y propuesto:** el desarrollador reemplazó el documento completo, así que los pares de texto se leen en el diff del commit: `git diff b281ecf f3529ea -- DESIGN.md` (29 líneas agregadas y 4 quitadas, en las secciones 6 y 7).
+
+## P-032 · La estrella de Gemini como única excepción de movimiento en la regla 6
+
+- **Documento:** `AGENTS.md`
+- **Sección:** 8. Reglas de contenido, regla 6
+- **Origen:** iteración 06-08 (en la iteración figura como «P-031»; renumerada por el choque con la P-030).
+- **Por qué:** la regla dice que los logos de Google y Gemini «no se modifican». La 06-08 agrega una entrada única animada a la estrella de Gemini, aprobada por el desarrollador el 2026-11-23, que termina en su forma, tamaño y colores originales. Sin esta precisión, un agente podría leer la animación como una modificación y quitarla.
+
+**Texto actual** (copiado literalmente; comprobado el 2026-11-23 con `grep -c` = 1):
+
+```text
+6. El sitio nunca afirma ni sugiere respaldo de Google, GTD o Capacita Tu Futuro más allá de la redacción que entregue el cliente. Los logotipos de Google y Gemini identifican las herramientas que se enseñan; no se modifican, no se recolorean y no se presentan como sello o alianza.
+```
+
+**Texto propuesto:**
+
+```text
+6. El sitio nunca afirma ni sugiere respaldo de Google, GTD o Capacita Tu Futuro más allá de la redacción que entregue el cliente. Los logotipos de Google y Gemini identifican las herramientas que se enseñan; no se modifican, no se recolorean y no se presentan como sello o alianza. La única excepción de movimiento es la entrada única de la estrella de Gemini descrita en `DESIGN.md` (sección 7.1): ocurre una vez al cargar y termina en su forma, tamaño y colores originales. Ningún otro logotipo se anima.
 ```

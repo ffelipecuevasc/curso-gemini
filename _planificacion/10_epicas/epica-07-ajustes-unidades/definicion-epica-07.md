@@ -1,6 +1,6 @@
 # Épica 07 · Ajustes de contenido por unidad
 
-- **Estado:** En curso (07-01 En revisión)
+- **Estado:** Pendiente
 - **Objetivo:** dejar el contenido de cada unidad alineado con lo que el instructor enseñará en vivo, con las decisiones tomadas en la preparación de cada clase: prácticas que faltaban, material de arranque descargable y datos vigentes de Google (cuenta, modelos, privacidad). Todo dentro del diseño que dejó la épica 06, sin cambiarlo.
 
 ## Por qué existe esta épica
@@ -15,35 +15,37 @@ Preparación de la Unidad 1 hecha por el desarrollador el 2026-11-22 en el proye
 6. **No hay práctica de revisión** de las respuestas de Gemini, aunque «Terminado cuando…» la exige («Revisé las respuestas antes de usarlas»).
 7. **No hay práctica para identificar oportunidades** de uso en el propio trabajo, que la Guía de la sesión 1 sí pide.
 
-Las unidades 2 a 4 tendrán su propia preparación y sumarán una iteración cada una a esta épica.
+La U2 se preparó el 2026-11-23 (ver la iteración 07-02). Las unidades 3 y 4 tendrán su propia preparación y sumarán una iteración cada una a esta épica.
 
 ## Alcance
 
 1. Unidad 1: cuenta y modelos vigentes, privacidad vigente, prompt avanzado, Mapa de oportunidades, banco de tareas con material descargable, Revisión en 3 pasos y laboratorio con tiempos aprobados.
-2. Unidades 2 a 4: una iteración por unidad, que se redacta después de su preparación (no se escribe por adelantado).
+2. Unidad 2: estructura en dos mitades (55 min de explicación y demos + 65 min de práctica), cuenta y modelos vigentes, prácticas como actividades del Cuaderno, kit de marca, descargas y entrega por correo.
+3. Unidades 3 y 4: una iteración por unidad, que se redacta después de su preparación (no se escribe por adelantado).
 
 ## Fuera de alcance
 
 - Cualquier cambio de diseño: paleta, tipografías, radios, trama, tarjetas, modales, componentes nuevos o variantes visuales (RDA-004 y épica 06). El contenido nuevo usa los patrones que ya existen.
 - Dependencias nuevas y JavaScript nuevo.
 - Cambios de esquema en `src/content.config.ts`, salvo que una iteración lo justifique y el desarrollador lo apruebe antes.
-- Generar los PDF descargables: los hace el desarrollador fuera del repositorio con la skill `capacita-tu-futuro-visual` y los entrega en `public/descargas/`.
+- Generar los PDF descargables (U1: Mapa y Banco; U2: Cuaderno de práctica e informe de respaldo), el kit de marca y el logo en PNG: los hace el desarrollador fuera del repositorio y los entrega en `public/descargas/`.
 - Material de la Guía de Capacita que el plan asigna a otra unidad (imágenes, video, Deep Research, Canvas y dashboards quedan en la U2).
 
 ## Iteraciones
 
 | Iteración | Nombre | Estado |
 | :-------- | :----- | :----- |
-| 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](iteracion-07-01-unidad-1.md) | En revisión |
-| 07-02 | Unidad 2 (se redacta tras su preparación) | Sin redactar |
+| 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](iteracion-07-01-unidad-1.md) | Pendiente |
+| 07-02 | [Unidad 2: estructura en dos mitades, cuenta, modelos y prácticas del Cuaderno](iteracion-07-02-unidad-2.md) | Pendiente |
 | 07-03 | Unidad 3 (se redacta tras su preparación) | Sin redactar |
 | 07-04 | Unidad 4 (se redacta tras su preparación) | Sin redactar |
 
 ## Precondiciones
 
-- **La épica 06 debe estar cerrada:** Cumplida: épica 06 cerrada el 2026-11-22 ([bitacora-06-cierre](../epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md)).
-- 2026-11-23: la épica 06 se reabrió para la 06-07; la 07-01 espera su cierre.
-- Para la 07-01: los dos PDF de la U1 (Mapa de oportunidades y Banco de tareas) deben existir en `public/descargas/`. Comprobado el 2026-11-22: existen `u1-mapa-oportunidades.pdf` (197 560 B) y `u1-banco-tareas.pdf` (378 890 B).
+- **La épica 06 debe estar cerrada** (todas sus iteraciones y su bitácora de cierre). Esta épica respeta el diseño que deja la 06; si se empieza antes, los cambios de contenido caerían sobre componentes que la 06 todavía está rehaciendo. Al 2026-11-22, los documentos sincronizados muestran las iteraciones 06-01 a 06-06 como «Pendiente» y las correcciones 26.1 y 26.2 en revisión; la sincronización puede ir atrasada respecto del repositorio.
+- Para la 07-01: los dos PDF de la U1 (Mapa de oportunidades y Banco de tareas) deben existir en `public/descargas/`.
+- Para la 07-02: deben existir en `public/descargas/` `u2-cuaderno-practica.pdf`, `u2-informe-respaldo.pdf`, `kit-marca-gtd.md` y `gtd-telsur.png`. Conviene aplicarla después de la 07-01 (misma redacción de cuenta y de modelos). La clase de la U2 es el 2026-11-25; si el sitio aún no recibió la 07-02, el Cuaderno de práctica cubre el vacío.
+- Para la 07-02: la dirección de entrega de los participantes es `contacto@felipecuevas.dev` (dato entregado por el desarrollador el 2026-11-23).
 
 ## Decisiones de la épica
 
@@ -53,6 +55,11 @@ Las unidades 2 a 4 tendrán su propia preparación y sumarán una iteración cad
 - 2026-11-22 · Se mantienen los niveles de prompt de v5.
 - 2026-11-22 · Regla de datos: solo ficticios o públicos, también con la cuenta empresarial.
 - 2026-11-22 · El diseño no cambia: el contenido nuevo reutiliza los componentes y estilos que dejó la épica 06.
+- 2026-11-23 · U2 · La clase se divide en explicación y demos (55 min) y práctica individual (65 min), con un Cuaderno de práctica para principiantes.
+- 2026-11-23 · U2 · Los participantes no comparten enlaces: todo se entrega por correo, solo al instructor. El dashboard se entrega como captura.
+- 2026-11-23 · U2 · Se asume que los participantes pueden usar todas las funciones; cada actividad tiene plan B (el video queda solo como demostración).
+- 2026-11-23 · U2 · Se usa el SVG de GTD autorizado por el cliente; la IA no redibuja el logo. Para Presentaciones se entrega un PNG.
+- 2026-11-23 · U2 · La galería de ejemplos resueltos queda solo en las demostraciones del instructor y no se publica.
 
 ## Reglas comunes de la épica
 

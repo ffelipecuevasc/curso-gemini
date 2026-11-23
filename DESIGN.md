@@ -177,7 +177,7 @@ Todos: forma de píldora, alto mínimo de 44 px, `cursor: pointer`, foco visible
 
 ### 7.1 Momento focal: entrada de la portada (una vez, al cargar)
 
-- **Entrada escalonada (E1):** el lema, la ficha del curso, el botón principal, las redes y la fila de logos (columna de texto), y las 4 filas de la ruta, aparecen con opacidad 0 → 1 y subida de 8 px, con la utilidad `animate-entrada` (`--duracion-entrada`, 500 ms, `--ease-expo-out`) y un desfase de `--escalonado` (60 ms) por posición: de 0 a 4 en la columna de texto y de 1 a 4 en las filas de la ruta. La secuencia termina antes de 800 ms. **El `h1`, el `h2` «Ruta del curso» y el círculo decorativo no se animan**: el `h1` es el elemento LCP y animar su opacidad retrasaría el LCP.
+- **Entrada escalonada (E1):** el lema, la ficha del curso, el botón principal y las redes (columna de texto), y las 4 filas de la ruta, aparecen con opacidad 0 → 1 y subida de 8 px, con la utilidad `animate-entrada` (`--duracion-entrada`, 500 ms, `--ease-expo-out`) y un desfase de `--escalonado` (60 ms) por posición: de 0 a 3 en la columna de texto y de 1 a 4 en las filas de la ruta. La secuencia termina antes de 800 ms. **El `h1`, el `h2` «Ruta del curso», la fila de logos y el círculo decorativo no se animan**: el `h1` es el elemento LCP y animar su opacidad retrasaría el LCP, y los logos siguen la sección 7.4.
 - **Estrella de Gemini (E2a):** entrada única con la utilidad `animate-estrella`: escala 0,6 → 1, giro −45° → 0° y opacidad 0 → 1, en `--duracion-estrella` (800 ms) con `--ease-expo-out` y 120 ms de retraso. Termina en su forma, tamaño y colores originales y no se repite.
 - Es CSS puro: no depende del script, corre una sola vez por carga y no vuelve a correr al navegar por anclas.
 

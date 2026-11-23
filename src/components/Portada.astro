@@ -6,7 +6,8 @@
 // en --color-primario por currentColor); a la derecha, la ruta del curso como
 // índice (sección anidada con `id="ruta"` y su h2, con el logo de Gemini). Los
 // SVG no se editan. Entrada escalonada (06-08, DESIGN.md 7.1): lema, ficha,
-// botón, redes y logos (posiciones 0 a 4); el h1 (LCP) no se anima.
+// botón y redes (posiciones 0 a 3); el h1 (LCP), la fila de logos (7.4) y el
+// círculo decorativo no se animan.
 import { getEntry } from "astro:content";
 import Google from "../assets/iconos/google.svg";
 import GtdTelsur from "../assets/iconos/gtd-telsur.svg";
@@ -72,11 +73,7 @@ const ficha = [
       {/* Redes solo recibe clases: su posición va como propiedad arbitraria. */}
       <Redes class={`text-sm [--orden:3] ${claseEntrada}`} />
       <div
-        class:list={[
-          "flex w-full flex-wrap items-center gap-6 border-t border-linea pt-4 text-texto",
-          claseEntrada,
-        ]}
-        style={ordenEntrada(4)}
+        class="flex w-full flex-wrap items-center gap-6 border-t border-linea pt-4 text-texto"
       >
         <Google
           role="img"

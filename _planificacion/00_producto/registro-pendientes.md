@@ -4,7 +4,7 @@
 
 - **Última actualización:** 2026-11-23
 - **Iteración activa:** 06-08 (En revisión; épica 06 reabierta); 07-01 sigue En revisión
-- **Próximo hito:** Revisión de la 06-08 y merge; fase B (Lighthouse publicado y cierre de la épica 06 con la 06-07 y la 06-08); luego la 07-01 y la preparación de la 07-02 (Unidad 2)
+- **Próximo hito:** Merge de la corrección 36.1 (logos sin entrada); fase B (Lighthouse publicado y cierre de la épica 06 con la 06-07 y la 06-08); luego la 07-01 y la preparación de la 07-02 (Unidad 2)
 - **Métricas vigentes:** Lighthouse móvil publicado 99/100/100/100 (antes de la 07-01, la 06-07 y la 06-08); local 06-08 inconcluso por ruido (mediana de 9: base 73, rama 81; CLS 0); JS propio 1767 B gzip; 55 `<dialog>`; 25 de 25 prompts; U1 en 1440 × 900 818,6 de 823 px
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
@@ -47,6 +47,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
+| 36.1 | La fila de logos de la portada sin entrada E1 (`DESIGN.md` 7.4; P-033) | Corrección | [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-08-correccion-logos.md) | 06-08 | En revisión |
 | 36 | Efectos de movimiento (E1, E2a, E4, E7, E8, E10 y E11): entrada de la portada, credencial, salas que se encienden, aterrizaje y píldora deslizante, en CSS nativo | Diseño | [Iteración 06-08](../10_epicas/epica-06-pulido-identidad/iteracion-06-08-efectos-movimiento.md) | 06-08 | En revisión |
 | 35 | Recorrido de la página (RDA-014): instructor como credencial tras la portada, ruta como índice, unidades en salas y pie con la firma del OTEC | Diseño | [Iteración 06-07](../10_epicas/epica-06-pulido-identidad/iteracion-06-07-recorrido-instructor-ruta-salas.md) | 06-07 | Terminada |
 | 33 | Bajar U2, U3 y U4 a 300 palabras o menos (RDA-012); F3 del cierre de la 06, medido con `innerText`: 294 / 316 / 354 / 305 · Desviación aceptada por el desarrollador; fuera del alcance de la épica 06 · Se evalúa dentro de 07-02 a 07-04 | Contenido | — | — | Sin asignar |
@@ -103,7 +104,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-18 | Iteración 04-02 en revisión: `wrangler.jsonc` del Worker `curso-gemini` (solo `dist/`), `pnpm dlx wrangler@4.164.0` y `deploy --dry-run` con código 0, 0 secretos, hash idéntico; salen la versión de Wrangler y el nombre del Worker; falta el primer despliegue del desarrollador. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-02.md) |
 | 2026-11-18 | Iteración 04-02 terminada: el desarrollador dijo que el Worker está publicado en `https://curso-gemini.felipe-cuevas.workers.dev/`; `curl` dio 200 y 1 `h1`. |
 | 2026-11-18 | Iteración 04-03 en revisión: beacon de Web Analytics con `defer` (único recurso externo), 404 con `not_found_handling`, `robots.txt` y la licencia «Todos los derechos reservados.» en el pie; salen el token y la licencia de las decisiones; el ícono queda detenido. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-03.md) |
 | 2026-11-18 | Iteración 04-03: ícono del sitio con el glifo `school-outline` de Material Symbols Light (Apache-2.0) en blanco sobre `#007EA7`, enlazado 1 vez en `index.html` y `404.html`; sale la decisión del ícono; sigue en revisión. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-03.md) |
@@ -153,3 +153,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-23 | Iteración 07-01 en revisión: U1 con cuenta del curso, modelos Auto/Hydrogen/Neon/Carbon, privacidad 2.4, prompt avanzado B (9 puntos), tabla 5.2 de 6 pasos (60 min), Mapa, Banco y Revisión en 3 pasos, 4 descargas; 25 prompts, 55 `<dialog>`, U1 297 palabras; cierra los pendientes del avanzado y de la ronda 3. [Bitácora](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) |
 | 2026-11-23 | Épica 06 reabierta. Iteración 06-07 en revisión: instructor como credencial tras la portada, ruta como índice, unidades en salas y pie con la firma del OTEC; RDA-014, P-029 aplicada y P-030 pendiente; 1366 × 657 con 2 desviaciones aceptadas; JS 1767 B, Lighthouse local 98; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-07.md) |
 | 2026-11-23 | Iteración 06-08 en revisión: entrada de la portada y la estrella, credencial revelada, salas que se encienden, número y aterrizaje, y píldora deslizante (solo en Chromium; salta en Firefox y WebKit), en CSS nativo, con 0 dependencias y JS 1767 B; 06-07 Terminada; P-031 aplicada y P-032 pendiente; E1 suma unos 30 recálculos de estilo al cargar (riesgo para la fase B). [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-08.md) |
+| 2026-11-23 | Corrección 36.1 en revisión en `correccion/logos-sin-entrada`: la fila de logos de la portada deja de animarse con E1 (`DESIGN.md` 7.4), columna de texto de 0 a 3; 0 animaciones en la fila en 3 motores, E1 en 8 animaciones hasta 740 ms, JS 1767 B; P-033 aplicada; estrella aceptada como equivalente a `none`; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-08-correccion-logos.md) |

@@ -951,3 +951,23 @@ En 1440 × 900, la portada completa se ve sin desplazarse; en 1366 × 657 cabe l
 ```text
 6. El sitio nunca afirma ni sugiere respaldo de Google, GTD o Capacita Tu Futuro más allá de la redacción que entregue el cliente. Los logotipos de Google y Gemini identifican las herramientas que se enseñan; no se modifican, no se recolorean y no se presentan como sello o alianza. La única excepción de movimiento es la entrada única de la estrella de Gemini descrita en `DESIGN.md` (sección 7.1): ocurre una vez al cargar y termina en su forma, tamaño y colores originales. Ningún otro logotipo se anima.
 ```
+
+## P-033 · La fila de logos de la portada no entra con E1
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 7. Movimiento, 7.1 «Momento focal: entrada de la portada», viñeta «Entrada escalonada (E1)».
+- **Origen:** revisión de la 06-08. La 7.1 incluía la fila de logos en la entrada y la 7.4 dice que ningún logo se anima salvo la estrella de Gemini. El desarrollador decidió que manda la 7.4.
+- **Estado:** Aplicada 2026-11-23 por el desarrollador en `main` (`0e29f0f`). Comprobada con `Select-String` en `DESIGN.md` de la rama `correccion/logos-sin-entrada`: «la fila de logos y el círculo decorativo no se animan» (1) y «de 0 a 3 en la columna de texto» (1). El código se alineó en la misma corrección ([bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-08-correccion-logos.md)).
+- **Por qué:** sin el cambio, las secciones 7.1 y 7.4 se contradecían y la fila de logos (Google, GTD y Capacita) aparecía con opacidad y subida de 8 px.
+
+**Texto anterior** (copiado de `git show 9d479e1:DESIGN.md`):
+
+```text
+- **Entrada escalonada (E1):** el lema, la ficha del curso, el botón principal, las redes y la fila de logos (columna de texto), y las 4 filas de la ruta, aparecen con opacidad 0 → 1 y subida de 8 px, con la utilidad `animate-entrada` (`--duracion-entrada`, 500 ms, `--ease-expo-out`) y un desfase de `--escalonado` (60 ms) por posición: de 0 a 4 en la columna de texto y de 1 a 4 en las filas de la ruta. La secuencia termina antes de 800 ms. **El `h1`, el `h2` «Ruta del curso» y el círculo decorativo no se animan**: el `h1` es el elemento LCP y animar su opacidad retrasaría el LCP.
+```
+
+**Texto aplicado:**
+
+```text
+- **Entrada escalonada (E1):** el lema, la ficha del curso, el botón principal y las redes (columna de texto), y las 4 filas de la ruta, aparecen con opacidad 0 → 1 y subida de 8 px, con la utilidad `animate-entrada` (`--duracion-entrada`, 500 ms, `--ease-expo-out`) y un desfase de `--escalonado` (60 ms) por posición: de 0 a 3 en la columna de texto y de 1 a 4 en las filas de la ruta. La secuencia termina antes de 800 ms. **El `h1`, el `h2` «Ruta del curso», la fila de logos y el círculo decorativo no se animan**: el `h1` es el elemento LCP y animar su opacidad retrasaría el LCP, y los logos siguen la sección 7.4.
+```

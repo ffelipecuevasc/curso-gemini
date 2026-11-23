@@ -41,8 +41,8 @@ Las unidades 2 a 4 tendrán su propia preparación y sumarán una iteración cad
 
 ## Precondiciones
 
-- **La épica 06 debe estar cerrada** (todas sus iteraciones y su bitácora de cierre). Esta épica respeta el diseño que deja la 06; si se empieza antes, los cambios de contenido caerían sobre componentes que la 06 todavía está rehaciendo. Al 2026-11-22, los documentos sincronizados muestran las iteraciones 06-01 a 06-06 como «Pendiente» y las correcciones 26.1 y 26.2 en revisión; la sincronización puede ir atrasada respecto del repositorio.
-- Para la 07-01: los dos PDF de la U1 (Mapa de oportunidades y Banco de tareas) deben existir en `public/descargas/`.
+- **La épica 06 debe estar cerrada:** Cumplida: épica 06 cerrada el 2026-11-22 ([bitacora-06-cierre](../epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md)).
+- Para la 07-01: los dos PDF de la U1 (Mapa de oportunidades y Banco de tareas) deben existir en `public/descargas/`. Comprobado el 2026-11-22: existen `u1-mapa-oportunidades.pdf` (197 560 B) y `u1-banco-tareas.pdf` (378 890 B).
 
 ## Decisiones de la épica
 

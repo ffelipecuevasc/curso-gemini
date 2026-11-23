@@ -49,6 +49,7 @@ Sobre la URL publicada, Lighthouse móvil da **99/100/100/100**, uno más que la
 | Página completa | ≤ 7 pantallas | 5,26 en 1440 × 900; 1366 × 657 sin cifra | Desarrollador (F2) |
 | Palabras por unidad | Sin cifra (C3 «cumplido») | 294 / 316 / 354 / 305 | Desarrollador (F3) |
 | Botones de contorno por tarjeta | hasta 2 (37) | máximo 1 (17) | Desarrollador (F4) |
+| Teclado y lector de pantalla | — | Bien en todo, sin observaciones | Desarrollador (F7, 2026-11-22) |
 
 Método de Lighthouse: 13.6.0 con `pnpm dlx`, Chrome sin interfaz y 3 corridas alternadas de móvil y escritorio. El benchmarkIndex fue de 1080 a 1943 en móvil y de 1687 a 2081 en escritorio. Como la mediana publicada está a 1 punto sobre la referencia, no hizo falta medir sin trama: la trama se queda.
 
@@ -62,6 +63,7 @@ Método de Lighthouse: 13.6.0 con `pnpm dlx`, Chrome sin interfaz y 3 corridas a
 - [x] Impeccable sin hallazgos: `[]`.
 - [x] JavaScript propio sin cambios: 1774 B.
 - [x] Lighthouse móvil publicado dentro de la tolerancia de 2: 99 (+1), CLS 0.
+- [x] Teclado y lector de pantalla de punta a punta (F7): verificado por el desarrollador, sin observaciones (2026-11-22, dicho por él; el agente no lo verificó).
 
 ## Excepciones aceptadas por el desarrollador
 
@@ -78,13 +80,17 @@ Método de Lighthouse: 13.6.0 con `pnpm dlx`, Chrome sin interfaz y 3 corridas a
 - **Peso del dataset distinto entre local y publicado:** `dist/index.html` local y el publicado solo difieren en «25,4 KB» (local) contra «25,2 KB» (publicado) del CSV `solicitudes-gtd-t3-2026.csv`. La causa probable son los saltos de línea: el checkout de Windows usa CRLF y Workers Builds, LF. Es probable, no está comprobado. El peso publicado lo calcula el build de producción (RDA-010), así que el sitio muestra el valor correcto para el archivo que sirve.
 - **La trama no cuesta Rendimiento:** en local, con trama dio 91 y sin trama 80, por el ruido del equipo; publicado, 99.
 - **Rendimiento local más bajo que el publicado** (93 contra 99): local se sirve sin compresión y con el equipo cargado, como ya se vio en la 05-08.
+- **F7, teclado y lector de pantalla:** verificado por el desarrollador, sin observaciones (2026-11-22).
 
 ## Pendientes
 
-- **F7, teclado y lector de pantalla de punta a punta:** no verificado.
 - **`text-wrap: pretty`** (propuesta de la 05-08): sigue fuera de alcance.
-- **Reducción de palabras de U2 a U4** bajo 300 (RDA-012): en el backlog, fuera de alcance.
-- **Épica 07:** definición pendiente de la decisión del desarrollador.
+- **Reducción de palabras de U2 a U4** bajo 300 (RDA-012): en el backlog; se evalúa dentro de las iteraciones 07-02 a 07-04.
+- **Épica 07:** adoptada por el desarrollador el 2026-11-22 («Ajustes de contenido por unidad»).
+
+## Decisiones
+
+- 2026-11-22 · Corrección posterior al cierre (dicho por el desarrollador): F7 verificado por él, sin observaciones; corrección 26.1 terminada; épica 07 adoptada, con el backlog 33 evaluado dentro de la 07-02 a la 07-04.
 
 ## Revisión
 
@@ -94,7 +100,7 @@ Método de Lighthouse: 13.6.0 con `pnpm dlx`, Chrome sin interfaz y 3 corridas a
   - Un recuento sin método fijo (palabras) no permite comparar entre épicas.
 - **Qué cambia para lo que sigue:**
   - Toda medición que se compare entre épicas debe dejar escrito su método, como el fragmento F3 con `innerText`.
-  - La épica 07 parte con F7 y la reducción de palabras como candidatos.
+  - La épica 07 parte con la reducción de palabras como candidato (F7 quedó verificado por el desarrollador).
 
 ## Commit sugerido
 

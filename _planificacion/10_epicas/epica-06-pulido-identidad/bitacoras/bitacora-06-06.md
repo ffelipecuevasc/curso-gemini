@@ -63,7 +63,7 @@ Paso 0: el desarrollador dio por terminada la 06-05 (dicho por él) y decidió q
 | Botones de contorno por tarjeta | hasta 2 (37 en total) | total 17, máximo 1 (F4, desarrollador, 1440 × 900 claro) | −20 | Aprobado (F4) |
 | Meta del bloque 0 | — | «Antes de empezar · 5 min · Unidad 2» (F5, desarrollador) | — | Aprobado (F5) |
 | Sin JS, movimiento reducido, impresión | — | `getAnimations()` = 0 e impresión sin trama (F6, desarrollador) | — | Aprobado (F6) |
-| Teclado y lector | — | Sin resultado (F7) | — | No verificado |
+| Teclado y lector | — | Bien en todo, sin observaciones (F7, desarrollador) | — | Verificado por el desarrollador (2026-11-22) |
 
 Las cifras F1 a F7 las dio el desarrollador el 2026-11-22; el agente no las midió. La columna «05-08» de las palabras viene de la 05-05, medida con otro método: no sirve para afirmar una regresión.
 
@@ -103,7 +103,7 @@ Ninguna otra diferencia: tokens, tarjeta, cabecera, modal (720 px, `min(85dvh, 7
 
 ## Criterios de aceptación
 
-- [x] Cada criterio de término de la definición, marcado con su evidencia: en la [bitácora de cierre](bitacora-06-cierre.md). Los altos (F1 y F2) los dio el desarrollador; las palabras (F3) quedan como desviación aceptada y el teclado y el lector (F7), como no verificados.
+- [x] Cada criterio de término de la definición, marcado con su evidencia: en la [bitácora de cierre](bitacora-06-cierre.md). Los altos (F1 y F2) los dio el desarrollador; las palabras (F3) quedan como desviación aceptada y el teclado y el lector (F7), verificados por el desarrollador, sin observaciones (2026-11-22, dicho por él; el agente no lo verificó).
 - [x] Lighthouse móvil sobre la URL publicada (fase B, mediana de 3): 99/100/100/100, LCP 1,43 s, CLS 0, TBT 71 ms, frente a 98/100/100/100 de la 05-08. El LCP es el `h1` en las 3 corridas.
 - [x] Impeccable sin hallazgos sin resolver: `[]`.
 - [x] Sin JavaScript, la página se lee completa en modo claro: por CSS y HTML (3 reglas, botones ocultos) y F6 del desarrollador.
@@ -119,7 +119,7 @@ Ninguna otra diferencia: tokens, tarjeta, cabecera, modal (720 px, `min(85dvh, 7
 ## No se pudo verificar
 
 - Altos de las unidades, alto total, palabras por unidad y botones por tarjeta en navegador: los mide el desarrollador con F1 a F4.
-- Teclado, lector de pantalla, sin JavaScript, movimiento reducido e impresión en navegador: a cargo del desarrollador.
+- Teclado, lector de pantalla, sin JavaScript, movimiento reducido e impresión en navegador: a cargo del desarrollador (F6 aprobado; F7 verificado por el desarrollador, sin observaciones, 2026-11-22).
 - Lighthouse sobre la URL publicada: fase B.
 
 ## Revisión manual del desarrollador

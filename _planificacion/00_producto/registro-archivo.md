@@ -133,7 +133,7 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
-| 26.1 | Corrección documental de la épica 06 sin la vista previa: RDA-013 aceptada, cifras de la vista previa como referencia histórica y criterio de Lighthouse con mediana de 3 y tolerancia de 2 puntos · Rama `correccion/epica-06-sin-parche` | Corrección | — | — | Terminada (rama fusionada en `main`, según `git branch --merged`; estaba «En revisión» en el registro) |
+| 26.1 | Corrección documental de la épica 06 sin la vista previa: RDA-013 aceptada, cifras de la vista previa como referencia histórica y criterio de Lighthouse con mediana de 3 y tolerancia de 2 puntos · Rama `correccion/epica-06-sin-parche` | Corrección | — | — | Terminada (dicho por el desarrollador, 2026-11-22) |
 | 26.2 | Insignia de Gemini Certified Educator (160 × 121) y enlace a la credencial en Accredible en el modal del instructor; 4.ª línea de trayectoria sin certificaciones concretas · Rama `correccion/instructor-insignia` | Corrección | — | — | Terminada |
 | 27 | Trama de puntos de fondo en ambos modos | Diseño | — | 06-01 | Terminada |
 | 28 | Portada con ficha del curso y ruta con número grande, sin barras de avance (RDA-013) | Diseño | — | 06-02 | Terminada |
@@ -141,6 +141,7 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 30 | Tarjeta de bloque clicable con un solo botón y ticket de «Terminado cuando…» | Diseño | — | 06-04 | Terminada |
 | 31 | Modal con línea de datos y entradilla; cita sin borde lateral | Diseño | — | 06-05 | Terminada |
 | 32 | Verificación final y cierre de la épica 06 | Calidad | — | 06-06 | Terminada |
+| 34 | Revisión con teclado y lector de pantalla de punta a punta (F7 de la 06-06) | Calidad | — | — | Terminada (verificado por el desarrollador, sin observaciones, 2026-11-22) |
 
 ## 3. Historial archivado
 
@@ -185,3 +186,4 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 2026-11-17 | Iteración 03-04 terminada: el desarrollador probó en el navegador videos, descargas y 360 px, sin observaciones; ratificó el recorte del diccionario. |
 | 2026-11-17 | P-007 aplicada por el desarrollador en `AGENTS.md` (commit bc70739), ampliada a los `SKILL.md` de `plantillas-alumnos/`; sale de «Decisiones por tomar». |
 | 2026-11-17 | Iteración 03-05 en revisión: «Profundiza» en 7 bloques de U3 y U4 (16 en la página), 1 video de la U3 y las 4 plantillas `SKILL.md` de la U4 con la regex de la P-007; cierre de la épica 03 y propuesta de la 04 por aprobar. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-05.md) · [Cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |
+| 2026-11-17 | Iteración 03-05 terminada y épica 03 cerrada (prueba en navegador dicha por el desarrollador); sus filas pasan a `registro-archivo.md`. Épica 04: 4 iteraciones generadas (04-01 a 04-04) y corrección 15.1 registrada. [Cierre](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-cierre.md) |

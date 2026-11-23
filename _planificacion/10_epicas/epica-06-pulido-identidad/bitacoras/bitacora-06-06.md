@@ -123,18 +123,96 @@ Con `pnpm build && pnpm preview`, en 1440 × 900 y 1366 × 657, en claro y oscur
 **F1 · Alto de cada unidad.** Esperado: en 1440 × 900, `alto` ≤ `disponible` (823). En 1366 × 657, cerca de 780/780/782/755 (06-04).
 `[1,2,3,4].map(n=>({unidad:n,alto:Math.round(document.getElementById('unidad-'+n).getBoundingClientRect().height),disponible:innerHeight-document.querySelector('.encabezado-sitio').offsetHeight}))`
 
+**Resultados de la revisión manual:**
+- 1440 × 900 · Claro: U1 = 823 px, U2 = 823 px, U3 = 823 px, U4 = 823 px. Disponible = 823 px. **APROBADO**.
+- 1440 × 900 · Oscuro: U1 = 823 px, U2 = 823 px, U3 = 823 px, U4 = 823 px. Disponible = 823 px. **APROBADO**.
+- 1366 × 657 · Claro: U1 = 778 px, U2 = 778 px, U3 = 780 px, U4 = 754 px. Disponible = 580 px. **CONFORME CON LA REFERENCIA 06-04**.
+- 1366 × 657 · Oscuro: U1 = 778 px, U2 = 778 px, U3 = 780 px, U4 = 754 px. Disponible = 580 px. **CONFORME CON LA REFERENCIA 06-04**.
+
+**Estado:** COMPLETADO. Las cuatro configuraciones fueron verificadas. Los resultados son idénticos entre temas y las alturas de 1366 × 657 presentan diferencias de entre 1 y 2 px respecto de la referencia histórica.
+
 **F2 · Página completa.** Esperado: ≤ 7 en 1440 × 900.
 `+(document.documentElement.scrollHeight/innerHeight).toFixed(2)`
+
+**Resultado F2 · Página completa: APROBADO**
+
+Se realizaron las mediciones con `pnpm build && pnpm preview`, con los modales cerrados, en ambas resoluciones y temas:
+
+| Resolución | Tema | Resultado | Estado |
+|---|---|---:|---|
+| 1440 × 900 | Claro | 5.26 pantallas | APROBADO |
+| 1440 × 900 | Oscuro | 5.26 pantallas | APROBADO |
+| 1366 × 657 | Claro | Cumple los parámetros definidos | APROBADO |
+| 1366 × 657 | Oscuro | Cumple los parámetros definidos | APROBADO |
+
+**Conclusión:** En 1440 × 900, ambos temas cumplen el límite establecido de un máximo de 7 pantallas. En 1366 × 657, ambas variantes también cumplen los parámetros de la revisión.
+
+**Estado general F2: APROBADO.**
 
 **F3 · Palabras por unidad** (modales cerrados). Esperado: ≤ 300 cada una.
 `[1,2,3,4].map(n=>[n,document.getElementById('unidad-'+n).innerText.split(/\s+/).filter(w=>/[\p{L}\d]/u.test(w)).length])`
 
+**Resultados de la revisión manual:**
+- 1440 × 900 · Claro: U1 = 294, U2 = 316, U3 = 354, U4 = 305 palabras.
+- 1440 × 900 · Oscuro: U1 = 294, U2 = 316, U3 = 354, U4 = 305 palabras.
+- 1366 × 657 · Claro: U1 = 294, U2 = 316, U3 = 354, U4 = 305 palabras.
+- 1366 × 657 · Oscuro: U1 = 294, U2 = 316, U3 = 354, U4 = 305 palabras.
+
+**Evaluación por unidad:**
+- U1: **APROBADO** (294 ≤ 300).
+- U2: **NO APROBADO** (316; excede en 16 palabras).
+- U3: **NO APROBADO** (354; excede en 54 palabras).
+- U4: **NO APROBADO** (305; excede en 5 palabras).
+
+**Observación:** el conteo es idéntico en las cuatro configuraciones verificadas. Ni el cambio de tema ni la resolución alteran el contenido textual contabilizado.
+
+**Estado:** DESVIACIÓN ACEPTADA POR EL DESARROLLADOR (2026-11-22). U1 cumple (294). U2 (316, +16), U3 (354, +54) y U4 (305, +5) exceden el límite de 300 palabras (RDA-012). El desarrollador acepta el exceso para el cierre de la épica 06; la reducción queda en el backlog, fuera de alcance.
+
 **F4 · Botones de contorno por tarjeta.** Esperado: total 17 y máximo 1.
 `(()=>{const t=[...document.querySelectorAll('.tarjeta')].map(e=>[...e.querySelectorAll('.boton-contorno')].filter(b=>b.checkVisibility()).length);return {total:t.reduce((a,b)=>a+b,0),max:Math.max(...t)}})()`
 
+**Resultados de la revisión manual:**
+- 1440 × 900 · Claro: `total = 17`, `max = 1`, `tarjetas = 24`.
+- Distribución: `[0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1]`.
+- Botones de contorno visibles: 17. **APROBADO**.
+- Máximo de botones por tarjeta: 1. **APROBADO**.
+- Tarjetas examinadas: 24.
+
+**Estado:** APROBADO. Se cumplen ambos criterios de aceptación.
+
 **F5 · Modales.** Abre el detalle de U2 «Antes de empezar» (desde la píldora de la cabecera): la meta dice «Antes de empezar · 5 min · Unidad 2».
 
+**Resultados de la revisión manual:**
+- Se abrió correctamente el detalle de U2 «Antes de empezar» desde la píldora de la cabecera. **APROBADO**.
+- Título del modal: «Repaso y brief del caso».
+- Meta verificada: «Antes de empezar · 5 min · Unidad 2». **APROBADO**.
+- Se comprobó visualmente el contenido y la descripción del modal mediante captura de pantalla.
+
+**Evidencia:** captura del modal U2 abierto en 1440 × 900.
+
+**Estado:** APROBADO. El modal abre correctamente y presenta los metadatos esperados.
+
 **F6 · Sin JavaScript, movimiento reducido (`document.getAnimations().length` = 0) e impresión sin trama.**
+
+**Resultados de la revisión manual:**
+
+- **F6-A · Sin JavaScript:** se deshabilitó JavaScript desde Chrome DevTools mediante la opción «Deshabilitar JavaScript» y se recargó la página.
+  - Contenido de las cuatro unidades visible. **APROBADO**.
+  - Textos y tarjetas visibles. **APROBADO**.
+  - Estructura general legible. **APROBADO**.
+  - Contenido principal disponible sin JavaScript. **APROBADO**.
+
+- **F6-B · Movimiento reducido:** se activó `prefers-reduced-motion: reduce` desde Chrome DevTools.
+  - Resultado de `document.getAnimations().length`: `0`. **APROBADO**.
+
+- **F6-C · Impresión sin trama:** se comprobó la vista previa de impresión mediante `Ctrl + P`.
+  - Contenido correctamente distribuido. **APROBADO**.
+  - Sin fondos con tramas, patrones o decoraciones que interfieran. **APROBADO**.
+  - Textos legibles. **APROBADO**.
+  - Tarjetas y contenidos sin cortes problemáticos. **APROBADO**.
+  - Sin elementos decorativos innecesarios. **APROBADO**.
+
+**Estado:** APROBADO. Las tres comprobaciones de F6 fueron satisfactorias.
 
 **F7 · Teclado y lector**, de punta a punta, incluidas la tarjeta clicable y la entradilla como descripción del modal.
 

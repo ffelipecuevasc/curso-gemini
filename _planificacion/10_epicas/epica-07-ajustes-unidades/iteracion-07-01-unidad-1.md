@@ -1,7 +1,7 @@
 # Iteración 07-01 · Unidad 1: cuenta, modelos y prácticas del laboratorio
 
 - **Épica:** 07 · Ajustes de contenido por unidad
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/07-01-unidad-1
 - **Depende de:** cierre de la épica 06
 - **Especificación:** —

@@ -133,3 +133,46 @@ Método: `pnpm build`, `pnpm preview` en el puerto 4329 y Playwright (`playwrigh
 ## Commit sugerido
 
 `Épica 7 - Iteración 07-01: U1 con cuenta del curso, modelos vigentes, privacidad, prompt avanzado, laboratorio de 6 pasos y 4 descargas`
+
+## Cierre (2026-11-23)
+
+- **Estado:** Terminada. Cierre aprobado por el desarrollador (dicho por él, no verificado por el agente).
+- **Excepción:** esta sección se agrega a una bitácora ya entregada, como excepción a la regla 5.4 de `_planificacion/README.md` («No se editan después de entregadas»). La autorizó el desarrollador el 2026-11-23 (opción B). Lo anterior de esta bitácora no se modificó.
+- **Contexto:** la 07-01 ya estaba en `main` y se fusionó antes que la 07-02 (`4ea52b7`). La épica 07 sigue abierta con la 07-02 (En revisión), la 07-03 y la 07-04.
+- **Criterio que queda sin marcar:** «Los 2 PDF abren desde el sitio publicado». El agente no lo verificó en producción y la casilla queda como estaba.
+
+### Pendientes de la 07-01 que siguen abiertos
+
+Siguen en «Decisiones por tomar» de `registro-pendientes.md`:
+
+- **Selector de la cuenta del curso y «Verificar respuesta» (*Double-check*).** Dato nuevo: el selector aparece por defecto como «Automático» y, al abrirlo, lista todos los modelos (dicho por el desarrollador, 2026-11-23). Siguen sin confirmar qué modelos aparecen y si existe «Verificar respuesta».
+- **Enlace oficial del anuncio de Neon** (`gemini-4-neon`).
+
+### Decisiones del desarrollador del 2026-11-23
+
+Se registran aquí porque la bitácora de la 07-02 ya está entregada. La 07-02 sigue En revisión.
+
+- **Backlog 33:** la U2 con 325 palabras queda aprobada como desviación aceptada (RDA-012). Quedan por evaluar la U3 y la U4 en la 07-03 y la 07-04.
+- **Informe de respaldo de la U2:** «pymes» y «MiPymes» coexisten y no se corrige.
+- **Botones de la U2 confirmados con la cuenta del curso:**
+  - «Nueva conversación» y «+» → «Subir archivos»;
+  - «Editar plan» e «Iniciar investigación»;
+  - «Exportar» → Drive;
+  - selector «Automático»;
+  - «Descargar en tamaño completo»;
+  - barra lateral «Todo»;
+  - Archivo → Descargar → PDF;
+  - doble clic en el CSV desde Drive para abrirlo en Hojas;
+  - Datos → Crear un filtro;
+  - coma como separador de fórmulas.
+- **Siguen sin confirmar:** «Exportar a Hojas de cálculo», «Exportar a Presentaciones», «Herramientas», «Canvas» y «Crear imágenes».
+- **Carriles extra de los bloques 1, 2, 4 y 5 de la U2:** siguen pendientes de la elección del desarrollador y no se tocan.
+
+### Revisión de solo lectura: «Auto» como nombre del botón
+
+Se buscó en `src/content` si algún texto llama «Auto» al botón del selector en vez de «Automático». Ninguno lo hace de forma explícita. Las apariciones nombran el modelo de la página oficial:
+
+- `u2/bloque-1.md:43`;
+- `u1/bloque-5.md:55`.
+
+Caso límite, sin editar: `u1/bloque-5.md:54`, «el selector muestra **Auto**, **Hydrogen**…», que se puede leer como el rótulo que ve el participante.

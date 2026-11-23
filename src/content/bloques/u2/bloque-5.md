@@ -44,5 +44,3 @@ profundiza:
 <div data-prompt="corregir-dashboard"></div>
 
 **Mínimo viable:** 4 indicadores, 1 filtro que funciona y 1 cifra comprobada.
-
-**Carril extra:** modo claro/oscuro con los colores de la marca, o una pestaña de «Mercado» con 3 datos del informe de Deep Research.

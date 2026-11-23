@@ -25,6 +25,9 @@
 - id: u1-banco-tareas
   titulo: "Banco de tareas"
   archivo: /descargas/u1-banco-tareas.pdf
+- id: u2-guia-completa
+  titulo: "Guía completa · Sección Práctica U2"
+  archivo: /descargas/u2-guia-completa.pdf
 - id: u2-cuaderno-practica
   titulo: "Cuaderno de práctica · Unidad 2"
   archivo: /descargas/u2-cuaderno-practica.pdf

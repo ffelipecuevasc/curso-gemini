@@ -60,6 +60,4 @@ profundiza:
 
 **Mínimo viable:** planilla con dos filas comparadas.
 
-**Carril extra:** en la planilla exportada, usar Gemini para crear una fórmula que calcule el promedio de tiempo de resolución por región.
-
 **Para llevarte:** no siempre conviene el modelo «más potente»; conviene el adecuado para la tarea y el cupo.

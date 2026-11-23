@@ -38,5 +38,3 @@ profundiza:
 **Mínimo viable:** investigación lanzada; 2 afirmaciones comprobadas.
 
 - **Límites:** Deep Research puede tener un cupo de uso según tu cuenta, así que se lanza **una sola vez por persona**. Si no puedes lanzarlo, usa el informe de respaldo de Descargas y haz igual la verificación.
-
-**Carril extra:** pedir en el chat un resumen ejecutivo de 150 palabras del informe, dirigido a la gerencia, con la plantilla de la U1.

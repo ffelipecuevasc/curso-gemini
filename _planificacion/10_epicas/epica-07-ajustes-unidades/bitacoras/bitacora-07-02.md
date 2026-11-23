@@ -131,6 +131,16 @@ Todo lo que sigue lo verificó el agente. Método:
 - Las descargas en producción: el despliegue lo hace el desarrollador.
 - Teclado y lector de pantalla en los modales tocados: los componentes son los mismos y no se revisaron a mano.
 
+## Corrección posterior al despliegue (2026-11-23, corrección 38)
+
+Decisiones del desarrollador del 2026-11-23 (dicho por el desarrollador): quitar del sitio los carriles extra de la U2 y agregar la guía de la práctica como primera descarga. Rama `correccion/u2-sin-carriles-guia-practica`.
+
+- **Carriles:** se quitan las líneas «Carril extra» de los bloques 1, 2, 4 y 5 (el del bloque 3 ya se había retirado). `grep -i carril` sobre los bloques y la unidad de la U2: sin coincidencias. La U3 y la U4 no se tocan.
+- **Guía:** `public/descargas/u2-guia-completa.pdf` la subió el desarrollador y figura en `git ls-files`. Nueva entrada `u2-guia-completa` con título «Guía completa · Sección Práctica U2». El esquema de descargas no tiene campo de descripción, así que no se escribió ninguna.
+- **Orden de descargas de la U2:** guía, Cuaderno, CSV, diccionario, informe, kit y logo. Antes el Cuaderno iba tercero.
+- **Verificación del agente:** `pnpm build` sin errores y con 0 marcadores; `pnpm astro check` con 0 errores, 0 advertencias y 0 sugerencias. En `dist/index.html` hay 56 `<dialog>` y aparece «Descargas (7)». Las 7 descargas responden 200 en `preview` (puerto 4340) con su tipo: PDF · 198,1 KB; PDF · 4,3 MB; CSV · 25,4 KB; Markdown · 1,4 KB; PDF · 221,3 KB; Markdown · 18,5 KB; PNG · 47,9 KB.
+- **No medido por el agente:** las palabras con `innerText` y el alto de la U2 en 1440 × 900 y en 360 px. El clasificador de permisos bloqueó la medición con Playwright y quedan como verificación del desarrollador (F3 de la 06-06). Lo esperado: menos de 325 palabras en la U2 y el mismo alto de 823 px en 1440 × 900.
+
 ## Revisión manual del desarrollador
 
 - En `pnpm preview`, abrir «Descargas (6)» de la U2 y los 2 PDF, el `.md` y el PNG.

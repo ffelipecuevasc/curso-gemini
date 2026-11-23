@@ -41,5 +41,3 @@ profundiza:
 <div data-prompt="iterar-en-canvas"></div>
 
 **Mínimo viable:** 8 diapositivas en PDF.
-
-**Carril extra:** pedir notas del orador para cada diapositiva.

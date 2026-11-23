@@ -24,11 +24,15 @@ interface Props {
 
 const { bloque, unidad } = Astro.props;
 const { titulo, numero, minutos, sintesis, prompts, profundiza } = bloque.data;
-// El esquema garantiza «numero» o «cierre: true» (content.config.ts).
-const meta =
+// El esquema garantiza «numero» o «cierre: true» (content.config.ts); el
+// bloque 0 es «Antes de empezar» (decisión del desarrollador, 2026-11-22).
+const etiqueta =
   numero === undefined
-    ? `Cierre · ${minutos} min · Unidad ${unidad}`
-    : `Bloque ${numero} · ${minutos} min · Unidad ${unidad}`;
+    ? "Cierre"
+    : numero === 0
+      ? "Antes de empezar"
+      : `Bloque ${numero}`;
+const meta = `${etiqueta} · ${minutos} min · Unidad ${unidad}`;
 
 const tramos = partirEnMarcadores(
   bloque.rendered?.html ?? "",

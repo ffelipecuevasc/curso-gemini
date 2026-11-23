@@ -159,3 +159,4 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 2026-11-17 | Iteración 03-03 terminada: el desarrollador probó en el navegador la descarga, «Profundiza» con teclado y 360 px, sin observaciones; ratificó `src/lib/node-minimo.d.ts` (RDA-010). |
 | 2026-11-17 | Iteración 03-04 en revisión: «Profundiza» en 9 bloques de U1 y U2 (40 enlaces), 5 videos de la U1, diccionario del dataset publicado sin los patrones del instructor; U2 sin videos (ausencia acordada); 0 B de JS nuevo. [Bitácora](../10_epicas/epica-03-unidades/bitacoras/bitacora-03-04.md) |
 | 2026-11-17 | Iteración 03-04 terminada: el desarrollador probó en el navegador videos, descargas y 360 px, sin observaciones; ratificó el recorte del diccionario. |
+| 2026-11-17 | P-007 aplicada por el desarrollador en `AGENTS.md` (commit bc70739), ampliada a los `SKILL.md` de `plantillas-alumnos/`; sale de «Decisiones por tomar». |

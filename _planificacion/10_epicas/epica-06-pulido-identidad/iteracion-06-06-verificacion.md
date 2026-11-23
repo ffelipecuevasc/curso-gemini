@@ -1,7 +1,7 @@
 # Iteración 06-06 · Verificación final del pulido
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** Pendiente
+- **Estado:** En revisión (fase A, local; la fase B mide la URL publicada después del merge)
 - **Rama sugerida:** iteracion/06-06-verificacion
 - **Depende de:** 06-04 y 06-05
 - **Especificación:** —

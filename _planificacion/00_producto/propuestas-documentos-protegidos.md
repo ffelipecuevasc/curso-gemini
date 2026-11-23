@@ -41,6 +41,7 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-025 | `DESIGN.md` · 5. Componentes (fila Sección de unidad) | Épica 06 (06-03) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-026 | `DESIGN.md` · 5. Componentes (fila Tarjeta de bloque) | Épica 06 (06-04) | 2026-11-21 | Aplicada 2026-11-22 |
 | P-027 | `DESIGN.md` · 5. Componentes (fila Modal) | Épica 06 (06-05) | 2026-11-21 | Aplicada |
+| P-028 | `DESIGN.md` · 2.3 Contraste (regla práctica) y 5. Componentes (filas Portada y ruta, Tarjeta de bloque y Modal) | Iteración 06-06 | 2026-11-22 | Pendiente |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -823,4 +824,67 @@ Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre 
 
 ```text
 | Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, o `--color-primario` si el modal no pertenece a una unidad, como la trayectoria del instructor, título, una línea de datos en IBM Plex Mono («Bloque n · m min · Unidad n»), botón «Cerrar» de 44 px, resumen del bloque como entradilla, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
+```
+
+## P-028 · Cierre de la épica 06: 1366 × 657, contraste sobre la trama, meta del modal y borde del ticket
+
+- **Documento:** `DESIGN.md`
+- **Sección:** 2.3 Contraste (regla práctica) y 5. Componentes (filas «Portada y ruta», «Tarjeta de bloque» y «Modal»)
+- **Estado:** pendiente.
+- **Por qué:** al comparar `DESIGN.md` con lo implementado en la épica 06 quedan cuatro diferencias, todas decididas por el desarrollador durante la épica:
+  1. En 1366 × 657, la ruta de la portada se desplaza (opción A, 06-02).
+  2. En oscuro, `--color-enlace` y `--color-primario` bajan de AAA a AA sobre el centro de un punto de la trama (excepción aceptada, 06-01).
+  3. La línea de datos del modal tiene tres formas: bloque numerado, «Antes de empezar» (bloque 0) y «Cierre» (06-05 y 06-06).
+  4. El borde del ticket se declara de 1,5 px, pero se dibuja de 1 px en pantallas de escala 1 (06-04, «queda como está»).
+
+  Si no se aplica, `DESIGN.md` promete que todo cabe y que todo es AAA, y no describe la meta del bloque 0 ni el grosor real del borde.
+
+**1. Texto actual** (2.3, regla práctica, copiado literalmente de `DESIGN.md`):
+
+```text
+Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre fondo claro, el texto de color se escribe en `#00678A` o más oscuro. El contraste es simétrico: `#E4F3FF` sobre `#003B51` es el mismo 10,64:1 de `#003B51` sobre `#E4F3FF`.
+```
+
+**1. Texto propuesto:**
+
+```text
+Regla práctica: `#00B0E8` y `#F8CD46` nunca van como texto sobre blanco; sobre fondo claro, el texto de color se escribe en `#00678A` o más oscuro. El contraste es simétrico: `#E4F3FF` sobre `#003B51` es el mismo 10,64:1 de `#003B51` sobre `#E4F3FF`.
+
+Excepción sobre la trama de puntos (modo oscuro): sobre el centro de un punto (`#00394F`, `--color-puntos` compuesto sobre `--color-fondo`), `--color-enlace` (`#5DC9FF`) baja de 10,14:1 a 6,63:1 y `--color-primario` (`#00B0E8`) de 7,54:1 a 4,93:1; pasan de AAA a AA. Es el peor caso, un punto de 1 px, y nunca baja de 4,5:1. Los demás textos mantienen su nivel en ambos modos.
+```
+
+**2. Texto actual** (5, fila «Portada y ruta», copiado literalmente):
+
+```text
+| Portada y ruta | Una sola sección en el primer pantallazo: a la izquierda, título (`h1`), lema en Sora 600 y `--color-primario`, la ficha del curso en IBM Plex Mono («4 clases · 8 horas · 20 bloques · 24 prompts», calculada del contenido), botón principal «Empezar por la Unidad 1», redes y, bajo una línea de 1 px, los logos de Google, GTD Telsur y Capacita Tu Futuro; a la derecha, la ruta: su `h2` con el logo de Gemini junto a él y las 4 tarjetas de unidad en mosaico 2 × 2 (número de la unidad en Sora 700, nombre, mini-proyecto completo y «Clase n de 4 · 120 min» en IBM Plex Mono), cada una enlazada a su sección. La ruta conserva su `id="ruta"` y su `h2`. Sin barras de avance (RDA-013). |
+```
+
+**2. Texto propuesto:**
+
+```text
+| Portada y ruta | Una sola sección en el primer pantallazo: a la izquierda, título (`h1`), lema en Sora 600 y `--color-primario`, la ficha del curso en IBM Plex Mono («4 clases · 8 horas · 20 bloques · 24 prompts», calculada del contenido), botón principal «Empezar por la Unidad 1», redes y, bajo una línea de 1 px, los logos de Google, GTD Telsur y Capacita Tu Futuro; a la derecha, la ruta: su `h2` con el logo de Gemini junto a él y las 4 tarjetas de unidad en mosaico 2 × 2 (número de la unidad en Sora 700, nombre, mini-proyecto completo y «Clase n de 4 · 120 min» en IBM Plex Mono), cada una enlazada a su sección. La ruta conserva su `id="ruta"` y su `h2`. Sin barras de avance (RDA-013). En 1440 × 900 todo cabe sin desplazarse; en 1366 × 657 cabe la columna de texto y la ruta se desplaza. |
+```
+
+**3. Texto actual** (5, fila «Tarjeta de bloque», copiado literalmente):
+
+```text
+| Tarjeta de bloque | Marca de 40 × 6 px del color de la unidad, número y minutos en IBM Plex Mono, título (`h3`), «Qué harás» y la primera clave; la tarjeta entera abre el detalle con el enlace «Ver detalle» y su flecha, y el único botón visible es «Ver prompt» o «Prompts (n)». Superficie `--color-fondo` con borde de 1 px `--color-linea` y sombra de su unidad. La tarjeta «Terminado cuando…» va como ticket: borde discontinuo de 1,5 px, fondo `--color-superficie` y sin sombra. |
+```
+
+**3. Texto propuesto:**
+
+```text
+| Tarjeta de bloque | Marca de 40 × 6 px del color de la unidad, número y minutos en IBM Plex Mono, título (`h3`), «Qué harás» y la primera clave; la tarjeta entera abre el detalle con el enlace «Ver detalle» y su flecha, y el único botón visible es «Ver prompt» o «Prompts (n)». Superficie `--color-fondo` con borde de 1 px `--color-linea` y sombra de su unidad. La tarjeta «Terminado cuando…» va como ticket: borde discontinuo de 1,5 px (en pantallas de escala 1 el navegador lo dibuja de 1 px), fondo `--color-superficie` y sin sombra. |
+```
+
+**4. Texto actual** (5, fila «Modal», copiado literalmente):
+
+```text
+| Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, o `--color-primario` si el modal no pertenece a una unidad, como la trayectoria del instructor, título, una línea de datos en IBM Plex Mono («Bloque n · m min · Unidad n»), botón «Cerrar» de 44 px, resumen del bloque como entradilla, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
+```
+
+**4. Texto propuesto:**
+
+```text
+| Modal | `<dialog>` nativo (RDA-011): franja del color de la unidad, o `--color-primario` si el modal no pertenece a una unidad, como la trayectoria del instructor, título, una línea de datos en IBM Plex Mono («Bloque n · m min · Unidad n»; «Antes de empezar · m min · Unidad n» en el bloque 0 y «Cierre · m min · Unidad n» en el cierre), botón «Cerrar» de 44 px, resumen del bloque como entradilla, cuerpo con desplazamiento propio de hasta `min(85dvh, 760px)` y 720 px de ancho; hoja completa desde abajo bajo 640 px. Fondo `--color-fondo` al 70 % con desenfoque de 4 px. Variantes: prompts del bloque, detalle del bloque, recursos y descargas de la unidad, «Sobre la unidad» y «Terminado cuando…» (lista de casillas nativas que no guardan estado). Sin JavaScript, su contenido se ve en la página. |
 ```

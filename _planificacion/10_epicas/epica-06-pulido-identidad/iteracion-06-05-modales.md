@@ -1,7 +1,7 @@
 # Iteración 06-05 · Modales y citas
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales
-- **Estado:** En revisión
+- **Estado:** Terminada
 - **Rama sugerida:** iteracion/06-05-modales
 - **Depende de:** 06-01 y propuesta P-027 aplicada (si va después de la 06-04, revisa la transición desde la tarjeta clicable)
 - **Especificación:** —

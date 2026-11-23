@@ -67,6 +67,8 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 06-04 | Tarjetas de bloque y ticket de entrega | 06 | Terminada | 06-03, P-026 | [bitacora-06-04](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-04.md) |
 | 06-05 | Modales y citas | 06 | Terminada | 06-01, P-027 | [bitacora-06-05](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-05.md) |
 | 06-06 | Verificación final del pulido | 06 | Terminada | 06-04, 06-05, P-028 | [bitacora-06-06](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-06.md) · [bitacora-06-cierre](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre.md) |
+| 06-07 | Recorrido de la página: instructor primero, ruta como índice, unidades en salas y firma del OTEC (reapertura) | 06 | Terminada | cierre de la épica 06, P-029 | [bitacora-06-07](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-07.md) · [bitacora-06-cierre-06-08](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre-06-08.md) |
+| 06-08 | Efectos de movimiento: entrada de la portada, unidades que se encienden y navegación continua (reapertura; cerrada el 2026-11-23) | 06 | Terminada | 06-07, P-031 | [bitacora-06-08](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-08.md) · [bitacora-06-08-correccion-logos](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-08-correccion-logos.md) · [bitacora-06-cierre-06-08](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre-06-08.md) |
 
 ## 2. Backlog terminado
 
@@ -142,6 +144,9 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 31 | Modal con línea de datos y entradilla; cita sin borde lateral | Diseño | — | 06-05 | Terminada |
 | 32 | Verificación final y cierre de la épica 06 | Calidad | — | 06-06 | Terminada |
 | 34 | Revisión con teclado y lector de pantalla de punta a punta (F7 de la 06-06) | Calidad | — | — | Terminada (verificado por el desarrollador, sin observaciones, 2026-11-22) |
+| 35 | Recorrido de la página (RDA-014): instructor como credencial tras la portada, ruta como índice, unidades en salas y pie con la firma del OTEC | Diseño | — | 06-07 | Terminada |
+| 36 | Efectos de movimiento (E1, E2a, E4, E7, E8, E10 y E11) en CSS nativo | Diseño | — | 06-08 | Terminada (Rendimiento publicado 92 aceptado como desviación, 2026-11-23) |
+| 36.1 | La fila de logos de la portada sin entrada E1 (`DESIGN.md` 7.4; P-033) | Corrección | — | 06-08 | Terminada |
 
 ## 3. Historial archivado
 
@@ -192,3 +197,4 @@ Filas que salen de `registro-pendientes.md` al cerrar una épica o cuando el his
 | 2026-11-17 | Iteración 04-01 en revisión: guardia de marcadores en todos los archivos de texto de `dist/` (4 de 4 pruebas fallan, `cmp` 0) y limpieza de los 6 SVG sin referencia (41 030 B) tras `astro build`; hash de `index.html` idéntico; P-008 pendiente. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-01.md) |
 | 2026-11-18 | Iteración 04-01 terminada: el desarrollador revisó 360 px en el navegador sin observaciones. P-008 aplicada por el desarrollador en `AGENTS.md` (commit 6f5ff74); sale de «Decisiones por tomar». |
 | 2026-11-18 | Iteración 04-02 en revisión: `wrangler.jsonc` del Worker `curso-gemini` (solo `dist/`), `pnpm dlx wrangler@4.164.0` y `deploy --dry-run` con código 0, 0 secretos, hash idéntico; salen la versión de Wrangler y el nombre del Worker; falta el primer despliegue del desarrollador. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-02.md) |
+| 2026-11-18 | Iteración 04-02 terminada: el desarrollador dijo que el Worker está publicado en `https://curso-gemini.felipe-cuevas.workers.dev/`; `curl` dio 200 y 1 `h1`. |

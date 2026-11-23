@@ -35,14 +35,14 @@ La U2 se preparó el 2026-11-23 (ver la iteración 07-02). Las unidades 3 y 4 te
 
 | Iteración | Nombre | Estado |
 | :-------- | :----- | :----- |
-| 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](iteracion-07-01-unidad-1.md) | Pendiente |
+| 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](iteracion-07-01-unidad-1.md) | En revisión |
 | 07-02 | [Unidad 2: estructura en dos mitades, cuenta, modelos y prácticas del Cuaderno](iteracion-07-02-unidad-2.md) | Pendiente |
 | 07-03 | Unidad 3 (se redacta tras su preparación) | Sin redactar |
 | 07-04 | Unidad 4 (se redacta tras su preparación) | Sin redactar |
 
 ## Precondiciones
 
-- **La épica 06 debe estar cerrada** (todas sus iteraciones y su bitácora de cierre). Esta épica respeta el diseño que deja la 06; si se empieza antes, los cambios de contenido caerían sobre componentes que la 06 todavía está rehaciendo. Al 2026-11-22, los documentos sincronizados muestran las iteraciones 06-01 a 06-06 como «Pendiente» y las correcciones 26.1 y 26.2 en revisión; la sincronización puede ir atrasada respecto del repositorio.
+- **La épica 06 debe estar cerrada** (todas sus iteraciones y su bitácora de cierre). Esta épica respeta el diseño que deja la 06; si se empieza antes, los cambios de contenido caerían sobre componentes que la 06 todavía está rehaciendo. Cumplida: la épica 06 se cerró el 2026-11-23 ([cierre](../epica-06-pulido-identidad/bitacoras/bitacora-06-cierre-06-08.md)).
 - Para la 07-01: los dos PDF de la U1 (Mapa de oportunidades y Banco de tareas) deben existir en `public/descargas/`.
 - Para la 07-02: deben existir en `public/descargas/` `u2-cuaderno-practica.pdf`, `u2-informe-respaldo.pdf`, `kit-marca-gtd.md` y `gtd-telsur.png`. Conviene aplicarla después de la 07-01 (misma redacción de cuenta y de modelos). La clase de la U2 es el 2026-11-25; si el sitio aún no recibió la 07-02, el Cuaderno de práctica cubre el vacío.
 - Para la 07-02: la dirección de entrega de los participantes es `contacto@felipecuevas.dev` (dato entregado por el desarrollador el 2026-11-23).
@@ -72,7 +72,7 @@ La U2 se preparó el 2026-11-23 (ver la iteración 07-02). Las unidades 3 y 4 te
 ## Criterio de término
 
 - Las 4 iteraciones cerradas, `pnpm build` sin errores y sin marcadores `PENDIENTE_*`/`VERIFICAR` visibles.
-- Capturas en 360 px y 1440 px, modo claro y oscuro, de cada unidad tocada, comparadas con las de la épica 06: sin cambios de diseño.
+- Capturas en 360 px y 1440 px, modo claro y oscuro, de cada unidad tocada, comparadas con las de la épica 06: sin cambios de diseño. Las capturas de comparación (línea base y resultado) se toman con `prefers-reduced-motion: reduce` emulado, para que los efectos de la 06-08 no dejen estados intermedios.
 
 ## Cierre
 

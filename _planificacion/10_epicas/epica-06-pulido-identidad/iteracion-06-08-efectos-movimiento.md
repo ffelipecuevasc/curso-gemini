@@ -1,7 +1,7 @@
 # Iteración 06-08 · Efectos de movimiento: entrada de la portada, unidades que se encienden y navegación continua
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales (reabierta el 2026-11-23)
-- **Estado:** En revisión
+- **Estado:** Terminada (2026-11-23; [bitácora](bitacoras/bitacora-06-08.md), [corrección de logos](bitacoras/bitacora-06-08-correccion-logos.md) y [cierre](bitacoras/bitacora-06-cierre-06-08.md))
 - **Rama sugerida:** iteracion/06-08-efectos-movimiento
 - **Depende de:** 06-07 terminada (con merge en `main`), P-030 aplicada por el desarrollador
 - **Especificación:** —
@@ -295,7 +295,7 @@ En `Encabezado.astro` y `global.css`, solo desde 1024 px:
 - [ ] CLS < 0,1 (local y publicado). El perfil de rendimiento sobre la credencial y una unidad no muestra cuadros de más de 16 ms sostenidos.
 - [ ] `pnpm build` sin advertencias y con la guardia en 0 marcadores; `pnpm astro check` 0/0/0; 24 de 24 prompts; 54 `<dialog>`; 1 `h1`.
 - [ ] Impeccable: `[]`, o cada hallazgo justificado en la bitácora.
-- [ ] Lighthouse móvil publicado, mediana de 3: cada categoría a 2 puntos o menos de la medición de cierre de la 06-07; el elemento LCP sigue siendo el `h1`.
+- [ ] Lighthouse móvil publicado, mediana de 3: cada categoría a 2 puntos o menos de la medición de cierre de la 06-07; el elemento LCP sigue siendo el `h1`. · La medición de la 06-07 no existe; referencia 99/100/100/100 (cierre de la 06-06). Publicado: **92**/100/100/100, CLS 0, LCP en el `h1`. **Rendimiento no se cumple (−7)**: desviación aceptada por el desarrollador el 2026-11-23; corrección 37 ([cierre](bitacoras/bitacora-06-cierre-06-08.md)).
 
 ## P-031 (texto para `propuestas-documentos-protegidos.md`)
 

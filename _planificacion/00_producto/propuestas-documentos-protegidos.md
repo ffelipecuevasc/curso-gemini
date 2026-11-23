@@ -43,9 +43,10 @@ La P-001 (transición animada del cambio de modo en `DESIGN.md`) la aplicó el d
 | P-027 | `DESIGN.md` · 5. Componentes (fila Modal) | Épica 06 (06-05) | 2026-11-21 | Aplicada |
 | P-028 | `DESIGN.md` · 2.3 Contraste (regla práctica) y 5. Componentes (filas Portada y ruta, Tarjeta de bloque y Modal) | Iteración 06-06 | 2026-11-22 | Aplicada 2026-11-22 |
 | P-029 | `DESIGN.md` · 1, 2, 4, 5, 6, 7 y 8 | Diseño de la 06-07 | 2026-11-23 | Aplicada 2026-11-23 |
-| P-030 | `DESIGN.md` · 5. Componentes (fila Portada y ruta) | Iteración 06-07 | 2026-11-23 | Pendiente |
+| P-030 | `DESIGN.md` · 5. Componentes (fila Portada y ruta) | Iteración 06-07 | 2026-11-23 | Aplicada 2026-11-23 |
 | P-031 | `DESIGN.md` · 6. Íconos y logotipos y 7. Movimiento (7.1 a 7.4) | Diseño de la 06-08 | 2026-11-23 | Aplicada 2026-11-23 |
-| P-032 | `AGENTS.md` · 8. Reglas de contenido, regla 6 | Iteración 06-08 | 2026-11-23 | Pendiente |
+| P-032 | `AGENTS.md` · 8. Reglas de contenido, regla 6 | Iteración 06-08 | 2026-11-23 | Aplicada 2026-11-23 |
+| P-033 | `DESIGN.md` · 7. Movimiento, 7.1 (viñeta «Entrada escalonada (E1)») | Revisión de la 06-08 | 2026-11-23 | Aplicada 2026-11-23 |
 
 ## P-002 · Las fuentes ya no viven en `public/fuentes/`
 
@@ -909,6 +910,7 @@ Excepción sobre la trama de puntos (modo oscuro): sobre el centro de un punto (
 
 - **Documento:** `DESIGN.md`
 - **Sección:** 5. Componentes, fila «Portada y ruta» (última frase)
+- **Estado:** Aplicada 2026-11-23 por el desarrollador en `main` (`4aca802`). Comprobada con `grep` en `DESIGN.md`: «cabe la ruta completa y la columna de texto se desplaza» (1).
 - **Por qué:** en la 06-07 se midió que, en 1366 × 657, la ruta como índice cabe (termina en 643 px), pero la columna de texto no: el `h1` ocupa 4 líneas, las redes 2 filas y los logos terminan en 756 px (en `main` terminaban en 779). El desarrollador lo aceptó como desviación el 2026-11-23. Si no se aplica, `DESIGN.md` promete algo que el sitio no cumple, y la próxima iteración que toque la portada lo tomará como criterio.
 
 **Texto actual** (copiado literalmente):
@@ -938,6 +940,7 @@ En 1440 × 900, la portada completa se ve sin desplazarse; en 1366 × 657 cabe l
 - **Documento:** `AGENTS.md`
 - **Sección:** 8. Reglas de contenido, regla 6
 - **Origen:** iteración 06-08 (en la iteración figura como «P-031»; renumerada por el choque con la P-030).
+- **Estado:** Aplicada 2026-11-23 por el desarrollador en `main` (`4aca802`). Comprobada con `grep` en `AGENTS.md`: «Ningún otro logotipo se anima» (1).
 - **Por qué:** la regla dice que los logos de Google y Gemini «no se modifican». La 06-08 agrega una entrada única animada a la estrella de Gemini, aprobada por el desarrollador el 2026-11-23, que termina en su forma, tamaño y colores originales. Sin esta precisión, un agente podría leer la animación como una modificación y quitarla.
 
 **Texto actual** (copiado literalmente; comprobado el 2026-11-23 con `grep -c` = 1):

@@ -1,7 +1,7 @@
 # Iteración 06-07 · Recorrido de la página: instructor primero, ruta como índice, unidades en salas y firma del OTEC
 
 - **Épica:** 06 · Pulido de identidad: portada, unidades y modales (reabierta el 2026-11-23 para esta iteración)
-- **Estado:** En revisión
+- **Estado:** Terminada (2026-11-23, merge `b281ecf`; [bitácora](bitacoras/bitacora-06-07.md) y [cierre](bitacoras/bitacora-06-cierre-06-08.md))
 - **Rama sugerida:** iteracion/06-07-recorrido-instructor-ruta-salas
 - **Depende de:** cierre de la épica 06 (2026-11-22), P-029 aplicada por el desarrollador y RDA-014 registrada (tarea 1)
 - **Especificación:** —
@@ -231,7 +231,7 @@ En `@theme` (modo claro) y redefinidos bajo `[data-modo="oscuro"]`, según `DESI
 - [x] `pnpm build` sin advertencias y con la guardia en 0 marcadores; `pnpm astro check` 0/0/0; 24 de 24 prompts; 54 `<dialog>`; 0 `id` repetidos.
 - [x] JavaScript propio ≤ 1774 B gzip, sin JavaScript nuevo.
 - [x] Impeccable: `[]`, o cada hallazgo justificado en la bitácora.
-- [ ] Lighthouse móvil publicado, mediana de 3: cada categoría a 2 puntos o menos de 99/100/100/100; CLS < 0,1; el elemento LCP sigue siendo el `h1`. · Fase B, después del merge.
+- [ ] Lighthouse móvil publicado, mediana de 3: cada categoría a 2 puntos o menos de 99/100/100/100; CLS < 0,1; el elemento LCP sigue siendo el `h1`. · Se midió junto con la 06-08 (decisión del desarrollador): **92**/100/100/100, CLS 0, LCP en el `h1`; Rendimiento no se cumple y queda como desviación aceptada el 2026-11-23 ([cierre](bitacoras/bitacora-06-cierre-06-08.md)).
 
 ## RDA-014 (texto para `decisiones.md`)
 

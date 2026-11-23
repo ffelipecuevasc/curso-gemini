@@ -1,6 +1,6 @@
 # Épica 06 · Pulido de identidad: portada, unidades y modales
 
-- **Estado:** Reabierta (2026-11-23) para la 06-07 y la 06-08; cerrada antes el 2026-11-22
+- **Estado:** Cerrada (2026-11-23), con Rendimiento móvil publicado en 92 aceptado como desviación; antes se cerró el 2026-11-22 y se reabrió el 2026-11-23 para la 06-07 y la 06-08
 - **Objetivo:** que el sitio se vea propio y no de plantilla: una portada con firma, unidades con jerarquía clara entre lo que se lee y lo que se hace, modales que se leen como contenido, y una trama de puntos de fondo que une todo. Sin salir de la paleta, las tipografías ni los radios de felipecuevas.dev (RDA-004) y sin perder la unidad en una pantalla de la épica 05.
 
 ## Por qué existe esta épica
@@ -46,7 +46,7 @@ La vista previa con todos los cambios se armó en una rama local y el desarrolla
 | 06-05 | [Modales y citas](iteracion-06-05-modales.md) | Terminada |
 | 06-06 | [Verificación final del pulido](iteracion-06-06-verificacion.md) | Terminada |
 | 06-07 | [Recorrido de la página: instructor primero, ruta como índice, unidades en salas y firma del OTEC](iteracion-06-07-recorrido-instructor-ruta-salas.md) | Terminada |
-| 06-08 | [Efectos de movimiento: entrada de la portada, unidades que se encienden y navegación continua](iteracion-06-08-efectos-movimiento.md) | En revisión |
+| 06-08 | [Efectos de movimiento: entrada de la portada, unidades que se encienden y navegación continua](iteracion-06-08-efectos-movimiento.md) | Terminada |
 
 > Iteraciones 06-01 a 06-06 generadas el 2026-11-21 a pedido del desarrollador, después del cierre de la épica 05 y de aprobar la vista previa. La 06-07 se agregó el 2026-11-23, al reabrir la épica (RDA-014, P-029), y la 06-08 el mismo día, después de la sesión de efectos (P-031).
 
@@ -81,6 +81,8 @@ Orden y dependencias:
 - 2026-11-23: la épica se reabre para la 06-07 (recorrido de la página): instructor como credencial después de la portada, ruta como índice, unidades en salas y pie con la firma del OTEC, en una sola iteración de 8 tareas como excepción de tamaño (decisiones del desarrollador; RDA-014 y P-029, aplicada en `main` en `e489e64`).
 - 2026-11-23: en la 06-07 se aceptan como desviaciones la portada en 1366 × 657 (cabe la ruta, no la columna de texto) y la U1 en 1366 × 657 (+39 px) (decisiones del desarrollador; P-030 pendiente).
 - 2026-11-23: la épica sigue reabierta para la 06-08 (efectos de movimiento E1, E2a, E4, E7, E8, E10 y E11, en CSS nativo y sin JavaScript nuevo); la 06-07 queda Terminada con su merge en `main` (`b281ecf`), y su Lighthouse publicado va en el cierre de la 06-08 (decisiones del desarrollador; P-031 aplicada en `f3529ea`, P-032 pendiente). El cierre de la épica pasa a `bitacora-06-cierre-06-08.md`.
+- 2026-11-23: manda la sección 7.4 de `DESIGN.md`: la fila de logos no entra con E1 (corrección 36.1, P-033); la estrella de Gemini cumple con `scale: 1` y `rotate: 0deg` (equivalentes a `none`); P-030 y P-032 aplicadas en `main` (`4aca802`) (decisiones del desarrollador).
+- 2026-11-23: la referencia de Lighthouse del cierre es 99/100/100/100 (cierre de la 06-06), porque la medición publicada de la 06-07 no existe. Rendimiento móvil publicado en 92 (TBT 324 ms) se acepta como desviación, igual que en la épica 04; Accesibilidad, Buenas prácticas y SEO en 100, CLS 0 y LCP en el `h1` cumplen. Se abre la corrección 37 de rendimiento sin bloquear la épica 07. Épica cerrada (decisiones del desarrollador).
 
 ## Reglas comunes de la épica
 
@@ -113,4 +115,4 @@ Orden y dependencias:
 
 Al cerrar la épica se escribe `bitacoras/bitacora-06-cierre.md`, con la revisión al cierre. Aquí solo se enlaza.
 
-- **Bitácora de cierre:** [bitacora-06-cierre](bitacoras/bitacora-06-cierre.md)
+- **Bitácora de cierre:** [bitacora-06-cierre](bitacoras/bitacora-06-cierre.md) (06-01 a 06-06) · [bitacora-06-cierre-06-08](bitacoras/bitacora-06-cierre-06-08.md) (reapertura: 06-07, 06-08 y corrección 36.1)

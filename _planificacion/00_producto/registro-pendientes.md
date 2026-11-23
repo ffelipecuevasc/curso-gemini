@@ -3,9 +3,9 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-23
-- **Iteración activa:** ninguna en curso (épica 06 cerrada el 2026-11-23); 07-01 En revisión; 07-02 Pendiente
-- **Próximo hito:** 07-02 (Unidad 2) antes de la clase del 2026-11-25
-- **Métricas vigentes:** Lighthouse móvil publicado 92/100/100/100 (LCP 1,70 s en el `h1`, CLS 0, TBT 324 ms; Rendimiento aceptado como desviación, corrección 37); JS propio 1767 B gzip; 55 `<dialog>`; 25 de 25 prompts; U1 en 1440 × 900 818,6 de 823 px
+- **Iteración activa:** ninguna en curso; 07-01 En revisión; 07-02 En revisión
+- **Próximo hito:** publicar la 07-02 (Unidad 2) antes de la clase del 2026-11-25
+- **Métricas vigentes:** Lighthouse móvil publicado 92/100/100/100 (LCP 1,70 s en el `h1`, CLS 0, TBT 324 ms; Rendimiento aceptado como desviación, corrección 37); JS propio 1767 B gzip; 56 `<dialog>`; 32 de 32 prompts; U1 en 1440 × 900 818,6 de 823 px
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
 
@@ -20,7 +20,7 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
 | 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](../10_epicas/epica-07-ajustes-unidades/iteracion-07-01-unidad-1.md) | 07 | En revisión | cierre de la épica 06 | [bitacora-07-01](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) |
-| 07-02 | [Unidad 2: estructura en dos mitades, cuenta, modelos y prácticas del Cuaderno](../10_epicas/epica-07-ajustes-unidades/iteracion-07-02-unidad-2.md) | 07 | Pendiente | cierre de la épica 06 (cumplido); conviene después de la 07-01 | — |
+| 07-02 | [Unidad 2: estructura en dos mitades, cuenta, modelos y prácticas del Cuaderno](../10_epicas/epica-07-ajustes-unidades/iteracion-07-02-unidad-2.md) | 07 | En revisión | cierre de la épica 06 (cumplido); conviene después de la 07-01 | [bitacora-07-02](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-02.md) |
 | 07-03 | Unidad 3 (se redacta tras su preparación) | 07 | Sin redactar | 07-02 | — |
 | 07-04 | Unidad 4 (se redacta tras su preparación) | 07 | Sin redactar | 07-03 | — |
 
@@ -46,7 +46,7 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
 | 37 | Diagnóstico y reducción del costo de los efectos de la 06-08: primero, diagnóstico por efecto (E1, E4, E7 y E8) con el panel de rendimiento y Lighthouse publicado; después, la reducción que apruebe el desarrollador. Meta: 95 o más en Rendimiento móvil publicado sin perder los efectos que aporten (hoy 92). No bloquea la épica 07 | Corrección | [Cierre 06](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre-06-08.md) | — | Pendiente |
-| 33 | Bajar U2, U3 y U4 a 300 palabras o menos (RDA-012); F3 del cierre de la 06, medido con `innerText`: 294 / 316 / 354 / 305 · Desviación aceptada por el desarrollador; fuera del alcance de la épica 06 · Se evalúa dentro de 07-02 a 07-04 | Contenido | — | — | Sin asignar |
+| 33 | Bajar U2, U3 y U4 a 300 palabras o menos (RDA-012); F3 del cierre de la 06, medido con `innerText`: 294 / 316 / 354 / 305 · Desviación aceptada por el desarrollador; fuera del alcance de la épica 06 · Se evalúa dentro de 07-02 a 07-04 · 07-02: la U2 sube de 316 a 325 (contenido aprobado y botones de prompts); no se recortó contenido aprobado | Contenido | — | — | Sin asignar |
 
 > El backlog 34 (F7) quedó terminado y pasó a `registro-archivo.md` (2026-11-22).
 
@@ -69,12 +69,13 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | :--- | :------------- | :---------- |
 | Texto de «Profundiza en tu tiempo» de cada bloque: el documento del curso lista los temas, pero no la teoría escrita · Opcional desde 2026-11-17: «Profundiza» usa los recursos oficiales ya cargados y el texto no bloquea nada | — | Desarrollador |
 | Videos oficiales de Google en YouTube para cada unidad (el documento del curso no trae enlaces a videos) · U1: 5 videos cargados en la 03-04; U2: sin videos (ausencia acordada); U3: 1 video cargado en la 03-05; U4: sin videos (ausencia acordada) | — | Desarrollador |
-| Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Publicados el dataset CSV (03-03) y su diccionario editado para participantes (03-04); de la U1 y la U2, el resto (`plantillas-alumnos.zip`, informe de Deep Research de respaldo) queda como ausencia acordada en la 03-04; en la 03-05 se publican las 4 plantillas de `plantillas-alumnos/` (U4) y quedan como ausencia acordada `optimizador-prompts/SKILL.md`, `gtd-visual.zip` y el paquete de fuentes de la U3 | — | Desarrollador |
+| Archivos de descarga finales: dataset CSV, `plantillas-alumnos.zip`, informe de Deep Research de respaldo, paquete de fuentes de la U3, `optimizador-prompts/SKILL.md`, `gtd-visual.zip` con el logo (`src/assets/iconos/gtd-telsur.svg`) y plantillas de skills de la U4 · Publicados el dataset CSV (03-03) y su diccionario editado para participantes (03-04); de la U1 y la U2, el resto (`plantillas-alumnos.zip`, informe de Deep Research de respaldo) queda como ausencia acordada en la 03-04; en la 03-05 se publican las 4 plantillas de `plantillas-alumnos/` (U4) y quedan como ausencia acordada `optimizador-prompts/SKILL.md`, `gtd-visual.zip` y el paquete de fuentes de la U3 · 07-02: se publican el informe de Deep Research de respaldo, el Cuaderno de práctica, el kit de marca y el logo en PNG de la U2 | — | Desarrollador |
 | Cuándo se hace la corrección 37 (rendimiento de los efectos de la 06-08): después de la clase de la U2 (2026-11-25) | Cierre de la épica 06 | Desarrollador |
 | Zona horaria de las fechas de la documentación (se asumió America/Santiago) | — | Desarrollador |
 | Selector de la cuenta empresarial del curso: qué modelos muestra y si «Verificar respuesta» (*Double-check*) está disponible (tarea del desarrollador de la 07-01) | 07-01 | Desarrollador |
 | Enlace oficial del anuncio de Neon, si se quiere sumar a los recursos de la U1 (`gemini-4-neon`) | 07-01 | Desarrollador |
-| `PENDIENTE_DESARROLLADOR` · Prompts de la U2 nombrados pero no escritos: «Prompt base» del dashboard (bloque 5), «Prompts base de cada hito» y los carriles extra de los bloques 1 a 5 | 02-05 | Desarrollador |
+| U2 con una cuenta de participante: qué modelos muestra el selector y los nombres exactos de los botones («Exportar a Hojas de cálculo», «Exportar a Presentaciones», «Exportar» → Drive, «Crear imágenes», «Descargar en tamaño completo»); el sitio usa las palabras de las guías oficiales | 07-02 | Desarrollador |
+| `PENDIENTE_DESARROLLADOR` · Prompts de la U2 nombrados pero no escritos: los carriles extra de los bloques 1, 2, 4 y 5 (el prompt base del dashboard y los de cada hito se publicaron en la 07-02; el carril del bloque 3 se retiró) | 02-05 · 07-02 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U3 nombrados pero no escritos: los carriles extra de los bloques 1 a 5 (instrucciones sin texto de prompt) | 02-06 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U4 nombrados pero no escritos: los carriles extra de los bloques 2 a 5 (el contenido de las skills y plantillas son descargas de la épica 03) | 02-06 | Desarrollador |
 
@@ -93,6 +94,7 @@ Ideas detectadas durante el trabajo que no forman parte de lo comprometido, incl
 | Mosaico de tarjetas proporcional a los minutos, línea de metro en la ruta, buscador de prompts y «Copiar prompt» directo en la tarjeta | Crítica de diseño de la épica 06 | 2026-11-21 |
 | Logo de GTD en modo oscuro: con sus colores originales (`#5F7EBA`, `#43649C`) se ve apagado sobre `#00131D`; recolorearlo requiere autorización del cliente | Iteración 06-07 | 2026-11-23 |
 | Efectos de movimiento que quedaron fuera de la 06-08: E3 (círculo de la portada), E5 (cifras de la credencial), E6 (insignia), E12 (sombra del encabezado) y E14 (anillo de foco) | Sesión de efectos de la 06-08 (decisión del desarrollador) | 2026-11-23 |
+| Carriles extra de la U2 (bloques 1, 2, 4 y 5): el Cuaderno de práctica no los menciona y los participantes solo siguen el Cuaderno; evaluar si se quitan, como el del bloque 3 (la 07-02 pedía mantener los de los bloques 1 y 5) | Iteración 07-02 | 2026-11-23 |
 | Alto de las unidades en WebKit: en el WebKit de Playwright sobre Windows las unidades miden 866 / 894 / 795 / 817 px en 1440 × 900 (823 en Chromium y Firefox); U1 y U2 ya medían 866 y 894 px en la línea base, antes de la 06-08. Comprobarlo en Safari real (Mac o iPhone) antes de abrir una corrección | Iteración 06-08 | 2026-11-23 |
 
 ## 7. Historial
@@ -101,7 +103,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-18 | Iteración 04-03 en revisión: beacon de Web Analytics con `defer` (único recurso externo), 404 con `not_found_handling`, `robots.txt` y la licencia «Todos los derechos reservados.» en el pie; salen el token y la licencia de las decisiones; el ícono queda detenido. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-03.md) |
 | 2026-11-18 | Iteración 04-03: ícono del sitio con el glifo `school-outline` de Material Symbols Light (Apache-2.0) en blanco sobre `#007EA7`, enlazado 1 vez en `index.html` y `404.html`; sale la decisión del ícono; sigue en revisión. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-03.md) |
 | 2026-11-18 | Iteración 04-03 terminada: el desarrollador revisó 360 px y ambos modos, la 404 en producción y las visitas en Web Analytics. |
 | 2026-11-18 | Iteración 04-04 en revisión: Lighthouse 13.6.0 móvil (mediana de 3): local 98/98/96/100, sin Web Analytics 96/98/100/100, publicada 94/98/100/100; 2 ajustes propuestos a la espera de decisión; faltan el cierre de la épica 04 y las fechas de las clases del cliente. [Bitácora](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-04.md) |
@@ -151,3 +152,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-23 | Iteración 06-08 en revisión: entrada de la portada y la estrella, credencial revelada, salas que se encienden, número y aterrizaje, y píldora deslizante (solo en Chromium; salta en Firefox y WebKit), en CSS nativo, con 0 dependencias y JS 1767 B; 06-07 Terminada; P-031 aplicada y P-032 pendiente; E1 suma unos 30 recálculos de estilo al cargar (riesgo para la fase B). [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-08.md) |
 | 2026-11-23 | Corrección 36.1 en revisión en `correccion/logos-sin-entrada`: la fila de logos de la portada deja de animarse con E1 (`DESIGN.md` 7.4), columna de texto de 0 a 3; 0 animaciones en la fila en 3 motores, E1 en 8 animaciones hasta 740 ms, JS 1767 B; P-033 aplicada; estrella aceptada como equivalente a `none`; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-08-correccion-logos.md) |
 | 2026-11-23 | Épica 06 cerrada (opción a del desarrollador): Lighthouse móvil publicado 92/100/100/100 (LCP 1,70 s en el `h1`, CLS 0, TBT 324 ms) frente a 99 del cierre de la 06-06, aceptado como desviación; 06-08 y corrección 36.1 Terminadas; P-030 y P-032 aplicadas; backlog 37 de rendimiento Pendiente; propuesta de WebKit; épica 07 ajustada (capturas con reducir movimiento, 07-01 En revisión, 07-02 Pendiente); filas de la reapertura y la fila más antigua del historial pasan a `registro-archivo.md`. [Cierre](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre-06-08.md) |
+| 2026-11-23 | Iteración 07-02 en revisión: U2 en dos mitades (55 + 65 = 120 min), cuenta del curso, modelos vigentes, prácticas como actividades del Cuaderno con mínimo viable, 12 prompts idénticos al Cuaderno, cierre con entrega por correo, 6 descargas (`.png` agregado a `FORMATOS`, excepción aprobada) y 10 síntesis aprobadas; 32 prompts, 56 `<dialog>`, U2 325 palabras; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-02.md) |

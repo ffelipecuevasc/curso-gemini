@@ -25,3 +25,15 @@
 - id: u1-banco-tareas
   titulo: "Banco de tareas"
   archivo: /descargas/u1-banco-tareas.pdf
+- id: u2-cuaderno-practica
+  titulo: "Cuaderno de práctica · Unidad 2"
+  archivo: /descargas/u2-cuaderno-practica.pdf
+- id: u2-informe-respaldo
+  titulo: "Informe de respaldo de Deep Research"
+  archivo: /descargas/u2-informe-respaldo.pdf
+- id: u2-kit-marca-gtd
+  titulo: "Kit de marca GTD"
+  archivo: /descargas/kit-marca-gtd.md
+- id: u2-logo-gtd-png
+  titulo: "Logotipo GTD (PNG)"
+  archivo: /descargas/gtd-telsur.png

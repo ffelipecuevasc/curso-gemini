@@ -2,9 +2,9 @@
 unidad: u2
 numero: 4
 titulo: "Presentación con marca en Canvas"
-minutos: 20
-microcharlaMin: 3
-practicaMin: 17
+minutos: 17
+microcharlaMin: 7
+practicaMin: 10
 sintesis:
   resumen: "Genera en Canvas una presentación de ocho diapositivas con el informe y el dataset, itera una diapositiva y expórtala a Presentaciones para aplicar marca."
   haras: "Crearás una presentación de ocho diapositivas y la exportarás a Presentaciones."
@@ -14,12 +14,16 @@ sintesis:
 prompts:
   - id: presentacion-con-marca
     titulo: "Presentación con marca en Canvas"
-    descripcion: "Pide en Canvas una presentación de ocho diapositivas para la gerencia con contexto de mercado, tres hallazgos con cifras, acciones y paleta GTD sin logo."
-    texto: "Crea una presentación de 8 diapositivas para la gerencia de [área]: portada, contexto de mercado (del informe), 3 hallazgos del trimestre con cifras, 2 acciones propuestas, próximos pasos y cierre. Usa la paleta GTD indicada. Sin logo: lo agregaré yo"
+    descripcion: "Pide en Canvas ocho diapositivas para la gerencia con contexto de mercado del informe, tres hallazgos con cifras del CSV, acciones y cierre, sin logo."
+    texto: |-
+      Crea una presentación de 8 diapositivas para la gerencia de [mi área]: portada, contexto de mercado (usa el informe de Deep Research de este chat), 3 hallazgos del trimestre con cifras (usa el archivo CSV adjunto), 2 acciones propuestas, próximos pasos y cierre.
+      Una idea por diapositiva y máximo 4 viñetas por diapositiva. Sin logo: lo agregaré yo.
+      [pega aquí el bloque de marca]
   - id: iterar-en-canvas
     titulo: "Iterar en Canvas"
-    descripcion: "Instrucción breve para iterar una diapositiva específica en Canvas y convertirla en un gráfico de barras antes de exportar a Google Presentaciones."
-    texto: "convierte la diapositiva 4 en un gráfico de barras"
+    descripcion: "Instrucción breve para cambiar una sola diapositiva en Canvas y convertirla en un gráfico de barras con las cifras del archivo."
+    texto: |-
+      Convierte la diapositiva 4 en un gráfico de barras con las cifras del archivo.
 profundiza:
   recursos:
     - presentaciones-app-gemini
@@ -30,10 +34,12 @@ profundiza:
 - Para que salga como presentación y no como texto, el prompt debe pedir diapositivas de forma explícita.
 - Canvas trae pocos diseños, así que el **acabado de marca se hace en Presentaciones**: colores del tema y logo oficial.
 
-**Práctica**
-1. Prompt con la plantilla de la U1 más el bloque de marca: «Crea una presentación de 8 diapositivas para la gerencia de [área]: portada, contexto de mercado (del informe), 3 hallazgos del trimestre con cifras, 2 acciones propuestas, próximos pasos y cierre. Usa la paleta GTD indicada. Sin logo: lo agregaré yo».
-2. Iterar en Canvas: ajustar una diapositiva a la vez (por ejemplo, «convierte la diapositiva 4 en un gráfico de barras»).
-3. **Exportar a Presentaciones**, aplicar los colores del tema e insertar el logo oficial en la portada y el cierre.
-4. Revisión humana: cifras contra el dataset, fuentes del informe y que no haya afirmaciones inventadas.
+**Práctica (Actividad 5 del Cuaderno):** en el chat del informe, adjunta el CSV y activa Canvas; pide las 8 diapositivas; cambia una; exporta a Presentaciones; descarga el PDF. Si sobra tiempo: logo en PNG y colores del tema.
+
+<div data-prompt="presentacion-con-marca"></div>
+
+<div data-prompt="iterar-en-canvas"></div>
+
+**Mínimo viable:** 8 diapositivas en PDF.
 
 **Carril extra:** pedir notas del orador para cada diapositiva.

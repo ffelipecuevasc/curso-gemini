@@ -1,7 +1,7 @@
 # Iteración 07-02 · Unidad 2: estructura en dos mitades, cuenta, modelos y prácticas del Cuaderno
 
 - **Épica:** 07 · Ajustes de contenido por unidad
-- **Estado:** Pendiente
+- **Estado:** En revisión
 - **Rama sugerida:** iteracion/07-02-unidad-2
 - **Depende de:** cierre de la épica 06. Conviene aplicarla después de la 07-01 (misma redacción de cuenta y de modelos), pero no la necesita para funcionar.
 - **Especificación:** —
@@ -288,15 +288,15 @@ Solo cambian las que el contenido nuevo vuelve falsas. El resto se mantiene.
 
 ## Criterios de aceptación
 
-- [ ] `pnpm build` termina sin errores y sin marcadores `PENDIENTE_*`/`VERIFICAR` visibles.
-- [ ] `grep -rn "Flash-Lite\|Argon\|cuenta personal\|Google AI Plus\|espacio del curso\|<svg>" src/content/bloques/u2 src/content/unidades/u2.yaml` no devuelve resultados dirigidos al participante.
-- [ ] Los minutos de los bloques suman 120, con 55 de explicación y demostración y 65 de práctica (o el equivalente de la opción B).
-- [ ] Cada práctica remite a su actividad del Cuaderno y los prompts publicados son idénticos a los del Cuaderno.
-- [ ] La U2 muestra 6 descargas y los 2 PDF, el `.md` y el PNG abren desde el sitio publicado.
-- [ ] El bloque 5 no habla de compartir el enlace y el cierre explica la entrega por correo.
-- [ ] Sin cambios de diseño: `git diff --stat` solo toca `src/content/`, `public/descargas/` y `_planificacion/`. Las capturas coinciden en estructura con la línea base.
-- [ ] Ninguna síntesis supera su límite de palabras y todas las cambiadas tienen aprobación registrada en la bitácora.
-- [ ] El dato de la dirección de correo coincide con el entregado por el desarrollador.
+- [x] `pnpm build` termina sin errores y sin marcadores `PENDIENTE_*`/`VERIFICAR` visibles.
+- [x] `grep -rn "Flash-Lite\|Argon\|cuenta personal\|Google AI Plus\|espacio del curso\|<svg>" src/content/bloques/u2 src/content/unidades/u2.yaml` no devuelve resultados dirigidos al participante (queda 1: «Con Google AI Plus aparecen Auto e Hydrogen», texto aprobado que describe el plan).
+- [x] Los minutos de los bloques suman 120, con 55 de explicación y demostración y 65 de práctica (o el equivalente de la opción B).
+- [x] Cada práctica remite a su actividad del Cuaderno y los prompts publicados son idénticos a los del Cuaderno.
+- [ ] La U2 muestra 6 descargas y los 2 PDF, el `.md` y el PNG abren desde el sitio publicado (en local sí; falta producción).
+- [x] El bloque 5 no habla de compartir el enlace y el cierre explica la entrega por correo.
+- [x] Sin cambios de diseño: `git diff --stat` solo toca `src/content/`, `public/descargas/` y `_planificacion/`, más la línea `.png` de `src/lib/descargas.ts` (excepción aprobada por el desarrollador). Las capturas coinciden en estructura con la línea base.
+- [x] Ninguna síntesis supera su límite de palabras y todas las cambiadas tienen aprobación registrada en la bitácora.
+- [x] El dato de la dirección de correo coincide con el entregado por el desarrollador.
 
 ## Riesgos
 

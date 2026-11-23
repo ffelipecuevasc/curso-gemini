@@ -14,6 +14,7 @@ const FORMATOS: Readonly<Record<string, string>> = {
   ".txt": "TXT",
   ".xlsx": "XLSX",
   ".docx": "DOCX",
+  ".png": "PNG",
 };
 
 const numero = (valor: number) =>

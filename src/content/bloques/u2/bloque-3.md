@@ -66,7 +66,7 @@ profundiza:
 
 <div data-prompt="identidad-visual-gtd"></div>
 
-**Práctica (Actividad 4 del Cuaderno):** elige 5 datos de tu análisis; crea la infografía como imagen con el bloque de marca y **sin logo**; revisa texto y cifras letra por letra; corrige solo lo que falle; descarga la imagen. El camino B (código, con el logo oficial) lo demuestra el instructor.
+**Práctica (Actividad 4 de la Guía completa):** elige 5 datos de tu análisis; crea la infografía como imagen con el bloque de marca y **sin logo**; revisa texto y cifras letra por letra; corrige solo lo que falle; descarga la imagen. El camino B (código, con el logo oficial) lo demuestra el instructor.
 
 <div data-prompt="infografia-imagen"></div>
 

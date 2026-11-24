@@ -141,6 +141,18 @@ Decisiones del desarrollador del 2026-11-23 (dicho por el desarrollador): quitar
 - **Verificación del agente:** `pnpm build` sin errores y con 0 marcadores; `pnpm astro check` con 0 errores, 0 advertencias y 0 sugerencias. En `dist/index.html` hay 56 `<dialog>` y aparece «Descargas (7)». Las 7 descargas responden 200 en `preview` (puerto 4340) con su tipo: PDF · 198,1 KB; PDF · 4,3 MB; CSV · 25,4 KB; Markdown · 1,4 KB; PDF · 221,3 KB; Markdown · 18,5 KB; PNG · 47,9 KB.
 - **No medido por el agente:** las palabras con `innerText` y el alto de la U2 en 1440 × 900 y en 360 px. El clasificador de permisos bloqueó la medición con Playwright y quedan como verificación del desarrollador (F3 de la 06-06). Lo esperado: menos de 325 palabras en la U2 y el mismo alto de 823 px en 1440 × 900.
 
+## Corrección posterior al despliegue (2026-11-24, corrección 40)
+
+Decisión del desarrollador del 2026-11-24 (dicho por el desarrollador): `u2-guia-completa.pdf` pasa a ser el cuaderno maestro único de la práctica y reemplaza a `u2-cuaderno-practica.pdf`; el informe de respaldo se mantiene. Motivo: los participantes se pierden saltando entre PDF. Rama `correccion/u2-guia-unica-practica`.
+
+- **PDF nuevo:** el desarrollador lo reemplazó. `git hash-object` da `ca5e78c` contra `77f82e9` en HEAD; peso de 202 873 B a 1 282 377 B (PDF · 1,2 MB). `u2-informe-respaldo.pdf` tiene el mismo hash que HEAD. El borrado de `u2-cuaderno-practica.pdf` ya estaba en el índice, hecho por el desarrollador.
+- **Contenido del PDF (solo lectura):** texto extraído con un script propio en el scratchpad (zlib y CMaps `ToUnicode`, sin dependencias en el proyecto). Los 12 prompts de la U2 aparecen idénticos (espacios y ligaduras normalizados). No contiene 38,6 · 23,3 · 16,4 · 53,8 · 7,55 ni «Si algo falla». Las actividades 0 a 7 coinciden con la numeración de los bloques.
+- **Descargas:** sale `u2-cuaderno-practica` de `descargas.yaml` y de `u2.yaml`. Orden: guía, CSV, diccionario, informe, kit y logo. Título nuevo «Guía completa · Práctica U2 (cuaderno)», elegido por el desarrollador.
+- **Textos:** en los bloques 0 a 5, «del Cuaderno» pasa a «de la Guía completa» y «con el Cuaderno de práctica», a «con la Guía completa». El cierre dice «(Actividad 7)» sin nombrar el Cuaderno y no cambia.
+- **Verificación del agente:** `pnpm build` sin errores y con 0 marcadores; `pnpm astro check` con 0 errores, 0 advertencias y 0 sugerencias. Playwright (`playwright-core` solo en el scratchpad, Chrome del sistema, reducir movimiento): 56 `<dialog>`; alto de la U2 de 823 px en 1440 × 900 y 2473 px en 360 × 800, en claro y oscuro, sin desborde horizontal. El modal de descargas de la U2 lista las 6 en el orden pedido: PDF · 1,2 MB; CSV · 25,4 KB; Markdown · 1,4 KB; PDF · 221,3 KB; Markdown · 18,5 KB; PNG · 47,9 KB. Las 6 responden 200 en `preview` y `u2-cuaderno-practica.pdf` responde 404.
+- **Palabras:** los textos cambiados viven en modales cerrados y no aparecen en el `innerText` de la U2 (0 apariciones de «Guía completa» y de «Cuaderno»), así que las 325 palabras aceptadas no cambian. El script de esta pasada cuenta 339 en la U2 y 304 en la U1, que no se tocó (297 en la 07-02): cuenta con otro criterio y la cifra no se compara con la vigente.
+- **No revisado a mano:** el teclado en el modal de descargas (los componentes no cambiaron).
+
 ## Revisión manual del desarrollador
 
 - En `pnpm preview`, abrir «Descargas (6)» de la U2 y los 2 PDF, el `.md` y el PNG.

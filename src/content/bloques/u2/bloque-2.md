@@ -31,7 +31,7 @@ profundiza:
 - Con tu cuenta del curso puedes investigar en la web y subir archivos. Las fuentes Gmail y Drive solo se usan si las apps están conectadas, y en el curso no se conectan.
 - Se revisa como cualquier borrador: citas, fechas y cifras.
 
-**Práctica (Actividades 1 y 3 del Cuaderno):** lanza el prompt con Deep Research, lee el plan antes de iniciar la investigación y no cierres la pestaña. Cuando termine, comprueba 3 afirmaciones abriendo sus fuentes y exporta el informe a Docs.
+**Práctica (Actividades 1 y 3 de la Guía completa):** lanza el prompt con Deep Research, lee el plan antes de iniciar la investigación y no cierres la pestaña. Cuando termine, comprueba 3 afirmaciones abriendo sus fuentes y exporta el informe a Docs.
 
 <div data-prompt="deep-research"></div>
 

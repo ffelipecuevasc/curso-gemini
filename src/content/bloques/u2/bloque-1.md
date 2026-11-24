@@ -50,7 +50,7 @@ profundiza:
 - **Selección automática:** Gemini puede elegir modelo y nivel por ti. Hoy la apagamos para comparar.
 - **Regla práctica:** rápido para redactar o reformular; profundo para analizar, calcular o decidir.
 
-**Práctica (Actividad 2 del Cuaderno):** adjunta el CSV; anota lo que muestra tu selector; envía el análisis con la opción más rápida y con la más potente (si solo hay una, compara un prompt corto con uno que pide razonar paso a paso); cronometra cada respuesta; pide la tabla comparativa; usa «Exportar a Hojas de cálculo».
+**Práctica (Actividad 2 de la Guía completa):** adjunta el CSV; anota lo que muestra tu selector; envía el análisis con la opción más rápida y con la más potente (si solo hay una, compara un prompt corto con uno que pide razonar paso a paso); cronometra cada respuesta; pide la tabla comparativa; usa «Exportar a Hojas de cálculo».
 
 <div data-prompt="analisis"></div>
 

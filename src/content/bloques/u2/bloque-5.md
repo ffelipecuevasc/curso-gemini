@@ -37,7 +37,7 @@ profundiza:
 - **Precaución al compartir:** cualquiera con el enlace público de una app puede ver y editar los datos asociados a ella. Con los datos ficticios del curso no hay riesgo, pero en el trabajo real la regla es cuidar qué datos se cargan en una app que se va a compartir.
 - **En esta clase nadie comparte el enlace de Canvas:** entregas una captura de pantalla.
 
-**Práctica (Actividad 6 del Cuaderno):** pega el prompt con el CSV adjunto; prueba cada filtro; corrige un error describiéndolo; comprueba una cifra contra el CSV; toma una captura.
+**Práctica (Actividad 6 de la Guía completa):** pega el prompt con el CSV adjunto; prueba cada filtro; corrige un error describiéndolo; comprueba una cifra contra el CSV; toma una captura.
 
 <div data-prompt="dashboard"></div>
 

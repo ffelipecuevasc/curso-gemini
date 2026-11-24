@@ -34,7 +34,7 @@ profundiza:
 - Para que salga como presentación y no como texto, el prompt debe pedir diapositivas de forma explícita.
 - Canvas trae pocos diseños, así que el **acabado de marca se hace en Presentaciones**: colores del tema y logo oficial.
 
-**Práctica (Actividad 5 del Cuaderno):** en el chat del informe, adjunta el CSV y activa Canvas; pide las 8 diapositivas; cambia una; exporta a Presentaciones; descarga el PDF. Si sobra tiempo: logo en PNG y colores del tema.
+**Práctica (Actividad 5 de la Guía completa):** en el chat del informe, adjunta el CSV y activa Canvas; pide las 8 diapositivas; cambia una; exporta a Presentaciones; descarga el PDF. Si sobra tiempo: logo en PNG y colores del tema.
 
 <div data-prompt="presentacion-con-marca"></div>
 

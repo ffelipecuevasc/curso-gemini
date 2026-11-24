@@ -29,11 +29,8 @@
   titulo: "Banco de tareas"
   archivo: /descargas/u1-banco-tareas.pdf
 - id: u2-guia-completa
-  titulo: "Guía completa · Sección Práctica U2"
+  titulo: "Guía completa · Práctica U2 (cuaderno)"
   archivo: /descargas/u2-guia-completa.pdf
-- id: u2-cuaderno-practica
-  titulo: "Cuaderno de práctica · Unidad 2"
-  archivo: /descargas/u2-cuaderno-practica.pdf
 - id: u2-informe-respaldo
   titulo: "Informe de respaldo de Deep Research"
   archivo: /descargas/u2-informe-respaldo.pdf

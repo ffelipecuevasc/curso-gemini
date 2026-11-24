@@ -176,3 +176,15 @@ Se buscó en `src/content` si algún texto llama «Auto» al botón del selector
 - `u1/bloque-5.md:55`.
 
 Caso límite, sin editar: `u1/bloque-5.md:54`, «el selector muestra **Auto**, **Hydrogen**…», que se puede leer como el rótulo que ve el participante.
+
+## Corrección posterior al despliegue (2026-11-23, corrección 39)
+
+Decisión del desarrollador del 2026-11-23 (dicho por el desarrollador): la U1 tendrá una 5.ª descarga, la guía de la práctica, como primera de la lista, igual que la U2. Rama `correccion/u1-guia-practica-descargas`, aprobada por él. Esta sección se agrega a una bitácora ya entregada con su aprobación expresa; lo anterior no se modificó.
+
+- **Archivo:** `public/descargas/u1-guia-completa.pdf` lo subió el desarrollador. Está en disco (538 150 B) y aún no figura en `git ls-files` porque no tiene seguimiento; lo incluye en su commit.
+- **Cambios (sin código ni texto nuevo):** entrada `u1-guia-completa` en `descargas.yaml` con título «Guía completa · Sección Práctica U1» (mismo patrón que la U2) y primera de la lista `descargas` de `u1.yaml`. Orden: guía, Mapa de oportunidades, Banco de tareas, dataset y diccionario.
+- **Verificación del agente:** `pnpm build` sin errores y con 0 marcadores; `pnpm astro check` con 0 errores, 0 advertencias y 0 sugerencias. En `dist/index.html` hay 56 `<dialog>` y el modal de la U1 dice «Descargas (5)».
+- **Descargas de la U1 (formato y peso mostrados):** PDF · 525,5 KB; PDF · 192,9 KB; PDF · 370,0 KB; CSV · 25,4 KB; Markdown · 1,4 KB. Las 5 responden 200 con el mismo tamaño que en `dist/descargas/`.
+- **Cómo se sirvieron:** el `astro preview` del puerto 4340 era de otra sesión, no se pudo cerrar y servía una compilación anterior (404 en los PDF). Las respuestas 200 se comprobaron con un servidor estático de Python sobre `dist/` (puerto 4343), ya cerrado, y no con `astro preview`.
+- **Palabras y alto (Edge headless, iframe, `innerText`):** el método da 304 palabras en la U1 y no 297 como el registro, por lo que no es el mismo conteo. Se midió también la línea base (sin el cambio) con el mismo método: idéntica. U1 304 → 304, U2 339, U3 362, U4 314 (sin cambio); alto 823,0 px en 1440 × 900 y 2510,5 px en 360 px, igual en ambas compilaciones. Con el conteo del registro la U1 sigue en 297 palabras, bajo el límite de 300 (RDA-012): el cambio no agrega texto a la sección, solo un elemento al modal.
+- **No medido:** teclado y vista en `pnpm preview` en 360 px y escritorio en ambos modos; queda como revisión del desarrollador.

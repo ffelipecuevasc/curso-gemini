@@ -2,12 +2,12 @@
 unidad: u3
 numero: 4
 titulo: "Presentaciones: configuración y el poder del prompt de diseño"
-minutos: 20
-microcharlaMin: 3
-practicaMin: 17
+minutos: 22
+microcharlaMin: 10
+practicaMin: 12
 sintesis:
-  resumen: "Configura una presentación en Studio y compara el resultado sin prompt con el de un prompt de diseño con la marca GTD."
-  haras: "Crea las presentaciones A y B y compara el cambio."
+  resumen: "Configura una presentación en Studio con el prompt de diseño de la marca GTD, revisa el esquema y descárgala en PDF."
+  haras: "Crea tu presentación con estilo GTD y descárgala en PDF."
   claves:
     - "Prompt de diseño más específico, resultado más consistente."
     - "El logotipo no va en el prompt: se agrega después."
@@ -53,13 +53,10 @@ profundiza:
   - una lista de cosas que evitar.
 
   Cuanto más específico, más consistente sale el diseño. Se usa como inspiración y se adapta a la marca de GTD, sin copiar estilos ajenos tal cual.
+- **En la demostración:** el instructor compara una presentación sin prompt (A) con una con el prompt de estilo GTD (B): qué cambia en colores, densidad de texto y estructura.
 
-**Práctica**
-1. **Presentación A:** diapositivas para presentar, longitud predeterminada y **sin prompt**. Lanzar.
-2. **Presentación B:** misma configuración con el **prompt de estilo GTD** y el interruptor **Revisar** activado. Revisar el esquema, ajustar un tema y generar.
-3. Comparar A y B: ¿qué cambió en colores, densidad de texto y estructura?
-4. Dejar comentarios en 1 o 2 diapositivas de B y generar la **versión revisada**.
+**Práctica (ejercicio 4 de la Guía completa):** configura una presentación como *diapositivas para presentar*, con longitud predeterminada y el **prompt de estilo GTD**; activa **Revisar**, lee el esquema y genera. Deja un comentario en 1 diapositiva, genera la **versión revisada** y descárgala en PDF. Sigue el ejercicio 4 de la Guía completa (Descargas).
+
+<div data-prompt="estilo-gtd"></div>
 
 **Regla de marca:** el logotipo no se pide en el prompt, porque un modelo generativo podría redibujarlo. Si la presentación se exporta, el logo oficial se agrega después.
-
-**Carril extra:** generar una *presentación detallada* para enviar como lectura previa del curso.

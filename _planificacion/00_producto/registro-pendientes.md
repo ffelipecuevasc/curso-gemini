@@ -3,9 +3,9 @@
 **Backlog y fuente única de verdad del trabajo pendiente.** Si discrepa con cualquier otro documento de planificación sobre el estado del trabajo, prevalece este archivo.
 
 - **Última actualización:** 2026-11-24
-- **Iteración activa:** ninguna en curso; 07-01 Terminada; 07-02 En revisión
-- **Próximo hito:** publicar la 07-02 (Unidad 2) antes de la clase del 2026-11-25
-- **Métricas vigentes:** Lighthouse móvil publicado 92/100/100/100 (LCP 1,70 s en el `h1`, CLS 0, TBT 324 ms; Rendimiento aceptado como desviación, corrección 37); JS propio 1767 B gzip; 56 `<dialog>`; 32 de 32 prompts; U1 en 1440 × 900 818,6 de 823 px
+- **Iteración activa:** 07-03 En revisión; 07-01 y 07-02 Terminadas
+- **Próximo hito:** publicar la 07-03 (Unidad 3) a más tardar el 2026-11-29, antes de la clase del 2026-11-30
+- **Métricas vigentes:** Lighthouse móvil publicado 92/100/100/100 (LCP 1,70 s en el `h1`, CLS 0, TBT 324 ms; Rendimiento aceptado como desviación, corrección 37); JS propio 1767 B gzip; 56 `<dialog>`; 29 prompts; unidades en 1440 × 900 823 px
 - **Entrega comprometida:** `PENDIENTE_CLIENTE` (fecha de la clase 1)
 - **Flujo de ramas vigente:** una rama por iteración (`iteracion/XX-YY-descripcion-corta`), aprobada por el desarrollador; publicación continua desde `main` con Workers Builds en `https://curso-gemini.felipe-cuevas.workers.dev/`
 
@@ -20,8 +20,8 @@ Solo las épicas abiertas. Al cerrar una épica, sus filas pasan a `registro-arc
 | Iteración | Nombre | Épica | Estado | Depende de | Bitácoras |
 | :-------- | :----- | :---- | :----- | :--------- | :-------- |
 | 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](../10_epicas/epica-07-ajustes-unidades/iteracion-07-01-unidad-1.md) | 07 | Terminada | cierre de la épica 06 | [bitacora-07-01](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) |
-| 07-02 | [Unidad 2: estructura en dos mitades, cuenta, modelos y prácticas del Cuaderno](../10_epicas/epica-07-ajustes-unidades/iteracion-07-02-unidad-2.md) | 07 | En revisión | cierre de la épica 06 (cumplido); conviene después de la 07-01 | [bitacora-07-02](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-02.md) |
-| 07-03 | Unidad 3 (se redacta tras su preparación) | 07 | Sin redactar | 07-02 | — |
+| 07-02 | [Unidad 2: estructura en dos mitades, cuenta, modelos y prácticas del Cuaderno](../10_epicas/epica-07-ajustes-unidades/iteracion-07-02-unidad-2.md) | 07 | Terminada | cierre de la épica 06 (cumplido); conviene después de la 07-01 | [bitacora-07-02](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-02.md) |
+| 07-03 | [Unidad 3: dos mitades, cuenta corporativa, fecha neutral y prácticas de la Guía completa](../10_epicas/epica-07-ajustes-unidades/iteracion-07-03-unidad-3.md) | 07 | En revisión | 07-02 (cumplido) | [bitacora-07-03](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-03.md) |
 | 07-04 | Unidad 4 (se redacta tras su preparación) | 07 | Sin redactar | 07-03 | — |
 
 ## 2. Épicas cerradas
@@ -45,11 +45,11 @@ Lo comprometido que falta construir, ordenado por prioridad. Un elemento asignad
 
 | Prioridad | Elemento | Tipo | Especificación | Iteración | Estado |
 | :-------- | :------- | :--- | :------------- | :-------- | :----- |
-| 40 | U2 con un único PDF de práctica: «Guía completa · Práctica U2 (cuaderno)» reemplaza al Cuaderno de práctica, 6 descargas y bloques que citan la Guía completa (decisión del desarrollador del 2026-11-24) | Corrección | [Bitácora 07-02](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-02.md) | 07-02 | En revisión |
-| 39 | «Guía completa · Sección Práctica U1» como primera de 5 descargas de la U1, igual que la U2 (decisión del desarrollador del 2026-11-23, posterior al despliegue) | Corrección | [Bitácora 07-01](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) | 07-01 | En revisión |
-| 38 | U2 sin carriles extra (bloques 1, 2, 4 y 5) y «Guía completa · Sección Práctica U2» como primera de 7 descargas (decisiones del desarrollador del 2026-11-23, posteriores al despliegue de la 07-02) | Corrección | [Bitácora 07-02](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-02.md) | 07-02 | En revisión |
+| 40 | U2 con un único PDF de práctica: «Guía completa · Práctica U2 (cuaderno)» reemplaza al Cuaderno de práctica, 6 descargas y bloques que citan la Guía completa (decisión del desarrollador del 2026-11-24) | Corrección | [Bitácora 07-02](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-02.md) | 07-02 | Terminada |
+| 39 | «Guía completa · Sección Práctica U1» como primera de 5 descargas de la U1, igual que la U2 (decisión del desarrollador del 2026-11-23, posterior al despliegue) | Corrección | [Bitácora 07-01](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) | 07-01 | Terminada |
+| 38 | U2 sin carriles extra (bloques 1, 2, 4 y 5) y «Guía completa · Sección Práctica U2» como primera de 7 descargas (decisiones del desarrollador del 2026-11-23, posteriores al despliegue de la 07-02) | Corrección | [Bitácora 07-02](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-02.md) | 07-02 | Terminada |
 | 37 | Diagnóstico y reducción del costo de los efectos de la 06-08: primero, diagnóstico por efecto (E1, E4, E7 y E8) con el panel de rendimiento y Lighthouse publicado; después, la reducción que apruebe el desarrollador. Meta: 95 o más en Rendimiento móvil publicado sin perder los efectos que aporten (hoy 92). No bloquea la épica 07 | Corrección | [Cierre 06](../10_epicas/epica-06-pulido-identidad/bitacoras/bitacora-06-cierre-06-08.md) | — | Pendiente |
-| 33 | Bajar U2, U3 y U4 a 300 palabras o menos (RDA-012); F3 del cierre de la 06, medido con `innerText`: 294 / 316 / 354 / 305 · Desviación aceptada por el desarrollador; fuera del alcance de la épica 06 · Se evalúa dentro de 07-02 a 07-04 · 07-02: la U2 sube de 316 a 325 (contenido aprobado y botones de prompts); no se recortó contenido aprobado · 2026-11-23: U2 con 325 palabras aprobada como desviación aceptada (dicho por el desarrollador); quedan U3 y U4 (07-03 y 07-04) | Contenido | — | — | Sin asignar |
+| 33 | Bajar U2, U3 y U4 a 300 palabras o menos (RDA-012); F3 del cierre de la 06, medido con `innerText`: 294 / 316 / 354 / 305 · Desviación aceptada por el desarrollador; fuera del alcance de la épica 06 · Se evalúa dentro de 07-02 a 07-04 · 07-02: la U2 sube de 316 a 325 (contenido aprobado y botones de prompts); no se recortó contenido aprobado · 2026-11-23: U2 con 325 palabras aprobada como desviación aceptada (dicho por el desarrollador); quedan U3 y U4 (07-03 y 07-04) · 07-03: la U3 baja de 354 a 349 (línea base medida; el encargo decía 253) | Contenido | — | — | Sin asignar |
 
 > El backlog 34 (F7) quedó terminado y pasó a `registro-archivo.md` (2026-11-22).
 
@@ -78,7 +78,9 @@ Decisiones del desarrollador que bloquean o condicionan trabajo. Mientras falten
 | Selector de la cuenta empresarial del curso: qué modelos muestra y si «Verificar respuesta» (*Double-check*) está disponible (tarea del desarrollador de la 07-01) · 2026-11-23: el selector aparece por defecto como «Automático» y al abrirlo lista todos los modelos (dicho por el desarrollador); siguen sin confirmar qué modelos aparecen y si existe «Verificar respuesta» | 07-01 | Desarrollador |
 | Enlace oficial del anuncio de Neon, si se quiere sumar a los recursos de la U1 (`gemini-4-neon`) | 07-01 | Desarrollador |
 | U2 con una cuenta de participante: qué modelos muestra el selector y los nombres exactos de los botones («Exportar a Hojas de cálculo», «Exportar a Presentaciones», «Exportar» → Drive, «Crear imágenes», «Descargar en tamaño completo»); el sitio usa las palabras de las guías oficiales · 2026-11-23, confirmados con la cuenta del curso (dicho por el desarrollador): «Nueva conversación», «+» → «Subir archivos», «Editar plan» e «Iniciar investigación», «Exportar» → Drive, selector «Automático», «Descargar en tamaño completo», barra lateral «Todo», Archivo → Descargar → PDF, doble clic en el CSV desde Drive para abrirlo en Hojas, Datos → Crear un filtro y coma como separador de fórmulas; siguen sin confirmar «Exportar a Hojas de cálculo», «Exportar a Presentaciones», «Herramientas», «Canvas» y «Crear imágenes» | 07-02 | Desarrollador |
-| `PENDIENTE_DESARROLLADOR` · Prompts de la U3 nombrados pero no escritos: los carriles extra de los bloques 1 a 5 (instrucciones sin texto de prompt) | 02-06 | Desarrollador |
+| U3: confirmar el 2026-11-29 en el Diario Oficial si se publicó la postergación de la Ley 21.719 (el sitio usa redacción neutral y no cambia) | 07-03 | Desarrollador |
+| U3: confirmar la dirección de entrada a Gemini Notebook con la cuenta corporativa de GTD y que esa cuenta pueda enviar correo con adjuntos a una dirección externa | 07-03 | Desarrollador |
+| U3: confirmar a ojo, en la página 6 de `u3-guia-completa.pdf`, que el prompt de Deep Research dice «protección» y «prácticas» (el texto extraído sale dañado) | 07-03 | Desarrollador |
 | `PENDIENTE_DESARROLLADOR` · Prompts de la U4 nombrados pero no escritos: los carriles extra de los bloques 2 a 5 (el contenido de las skills y plantillas son descargas de la épica 03) | 02-06 | Desarrollador |
 
 ## 6. Propuestas fuera de alcance
@@ -96,6 +98,7 @@ Ideas detectadas durante el trabajo que no forman parte de lo comprometido, incl
 | Mosaico de tarjetas proporcional a los minutos, línea de metro en la ruta, buscador de prompts y «Copiar prompt» directo en la tarjeta | Crítica de diseño de la épica 06 | 2026-11-21 |
 | Logo de GTD en modo oscuro: con sus colores originales (`#5F7EBA`, `#43649C`) se ve apagado sobre `#00131D`; recolorearlo requiere autorización del cliente | Iteración 06-07 | 2026-11-23 |
 | Efectos de movimiento que quedaron fuera de la 06-08: E3 (círculo de la portada), E5 (cifras de la credencial), E6 (insignia), E12 (sombra del encabezado) y E14 (anillo de foco) | Sesión de efectos de la 06-08 (decisión del desarrollador) | 2026-11-23 |
+| U1 y U2 dicen «cuenta empresarial del curso/Capacita»; con el dato de la cuenta corporativa de GTD (U3) habría que revisarlas en una corrección aparte, si el desarrollador lo decide | Iteración 07-03 | 2026-11-24 |
 | Alto de las unidades en WebKit: en el WebKit de Playwright sobre Windows las unidades miden 866 / 894 / 795 / 817 px en 1440 × 900 (823 en Chromium y Firefox); U1 y U2 ya medían 866 y 894 px en la línea base, antes de la 06-08. Comprobarlo en Safari real (Mac o iPhone) antes de abrir una corrección | Iteración 06-08 | 2026-11-23 |
 
 ## 7. Historial
@@ -104,7 +107,6 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 
 | Fecha | Cambio |
 | :---- | :----- |
-| 2026-11-18 | Épica 05 (rediseño visual y síntesis) planificada a pedido del desarrollador antes del cierre de la 04: definición, 8 iteraciones (05-01 a 05-08), RDA-011 y RDA-012 propuestas y propuestas P-009 a P-011; backlog 19 a 26. No se empieza hasta cerrar la épica 04. [Definición](../10_epicas/epica-05-rediseno-sintesis/definicion-epica-05.md) |
 | 2026-11-18 | Reconciliación del registro: se restauran desde d947746 los estados de la 04-02 a la 04-04, el backlog 16.1 a 18 y 7 filas de historial que fd81fc4 había pisado; se conserva lo de la épica 05. |
 | 2026-11-18 | Iteración 04-04 terminada y épica 04 cerrada con una excepción aceptada por el desarrollador: Rendimiento publicado 87 (meta 95), que se atiende en la 05-08; sus filas pasan a `registro-archivo.md` y las 4 filas más antiguas del historial también. [Cierre](../10_epicas/epica-04-publicacion-calidad/bitacoras/bitacora-04-cierre.md) |
 | 2026-11-19 | Corrección 18.1 en revisión: ajustes documentales de la épica 05 (INP informativo con referencia TBT en definición, 05-07 y 05-08; P-009 antes de 05-01; P-011 y cuerpo solo en modal en 05-04; riesgo de no medir Lighthouse al cerrar la 05-05 en la 05-08); sale el ajuste INP de «Decisiones por tomar». [Bitácora](../10_epicas/epica-05-rediseno-sintesis/bitacoras/bitacora-05-00-correccion-documental.md) |
@@ -154,3 +156,4 @@ Una fila por cambio, en una sola línea, con enlace a la bitácora que tiene el 
 | 2026-11-23 | Corrección 38 en revisión en `correccion/u2-sin-carriles-guia-practica`: sin carriles extra en los bloques 1, 2, 4 y 5 de la U2 y «Guía completa · Sección Práctica U2» (PDF · 198,1 KB) como primera de 7 descargas (dicho por el desarrollador); salen de «Decisiones por tomar» y de «Propuestas fuera de alcance» los carriles de la U2 (U3 y U4 siguen pendientes); 56 `<dialog>`; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-02.md) |
 | 2026-11-23 | Corrección 39 en revisión en `correccion/u1-guia-practica-descargas`: «Guía completa · Sección Práctica U1» (PDF · 525,5 KB) como primera de 5 descargas de la U1, igual que la U2 y sin cambios de código (dicho por el desarrollador); 56 `<dialog>`, sin texto nuevo y sin cambio de alto ni de palabras; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-01.md) |
 | 2026-11-24 | Corrección 40 en revisión en `correccion/u2-guia-unica-practica`: «Guía completa · Práctica U2 (cuaderno)» (PDF · 1,2 MB) como único PDF de práctica, sin el Cuaderno, 6 descargas y 7 referencias a la Guía completa en los bloques 0 a 5 (dicho por el desarrollador); 12 de 12 prompts idénticos al PDF; 56 `<dialog>`, U2 823 px en 1440 × 900; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-02.md) |
+| 2026-11-24 | 07-02 y correcciones 38 a 40 Terminadas (U2 publicada, dicho por el desarrollador, no verificado por el agente). Iteración 07-03 en revisión en `iteracion/07-03-unidad-3`: U3 en dos mitades (55 + 65), cuenta corporativa de GTD, fecha de vigencia neutral, prácticas de los ejercicios 1 a 5 de la Guía completa, 9 prompts (8 idénticos al PDF; `deep-research` con extracción dañada), 2 descargas, 2 recursos, entrega por correo y 11 síntesis aprobadas; 29 prompts, 56 `<dialog>`, U3 349 palabras y 823 px; la fila más antigua del historial pasa a `registro-archivo.md`. [Bitácora](../10_epicas/epica-07-ajustes-unidades/bitacoras/bitacora-07-03.md) |

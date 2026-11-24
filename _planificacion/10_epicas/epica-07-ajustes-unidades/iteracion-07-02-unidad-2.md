@@ -1,7 +1,7 @@
 # Iteración 07-02 · Unidad 2: estructura en dos mitades, cuenta, modelos y prácticas del Cuaderno
 
 - **Épica:** 07 · Ajustes de contenido por unidad
-- **Estado:** En revisión
+- **Estado:** Terminada (2026-11-24, dicho por el desarrollador)
 - **Rama sugerida:** iteracion/07-02-unidad-2
 - **Depende de:** cierre de la épica 06. Conviene aplicarla después de la 07-01 (misma redacción de cuenta y de modelos), pero no la necesita para funcionar.
 - **Especificación:** —

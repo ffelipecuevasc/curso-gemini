@@ -2,9 +2,9 @@
 unidad: u3
 numero: 1
 titulo: "Fuentes: archivos, URL, YouTube, Fast Research y Deep Research"
-minutos: 20
-microcharlaMin: 3
-practicaMin: 17
+minutos: 27
+microcharlaMin: 12
+practicaMin: 15
 sintesis:
   resumen: "Qué fuentes acepta un cuaderno, en qué se diferencian Fast Research y Deep Research y cómo armar tu cuaderno de la ley con fuentes confiables."
   haras: "Crea tu cuaderno y súmale al menos cinco fuentes confiables."
@@ -25,6 +25,8 @@ profundiza:
     - crear-cuaderno
     - agregar-descubrir-fuentes
     - deep-research-tipos-fuentes
+    - ley-21719-bcn
+    - video-ley-21719-lawwwing
 ---
 
 **Conceptos clave**
@@ -43,17 +45,12 @@ profundiza:
 - **Etiquetado automático:** desde 5 fuentes, el cuaderno agrupa las fuentes por tema y les pone etiquetas que se pueden renombrar y reorganizar.
 - **Criterio de calidad:** primero lo oficial (bcn.cl, sitios .gob.cl, organismos reguladores), después la prensa especializada y nunca fuentes anónimas.
 
-**Práctica**
-1. Crear el cuaderno «Ley 21.719 · Kit GTD».
-2. **Lanzar Deep Research** primero, para que trabaje en segundo plano: «Impacto de la Ley 21.719 de protección de datos personales en empresas de telecomunicaciones en Chile: obligaciones, plazos, sanciones y buenas prácticas, priorizando fuentes oficiales».
-3. Mientras corre, agregar:
-   - **archivo desde el equipo:** el PDF de la ley (paquete del LMS);
-   - **URL** oficial;
-   - **video de YouTube**.
-4. **Fast Research:** «guías oficiales de implementación de la Ley 21.719». Importar 2 fuentes oficiales y descartar las que no lo sean.
-5. Cuando termine Deep Research, revisar el informe e **importar solo las fuentes confiables**.
-6. Con 5 o más fuentes, observar el **etiquetado automático**, renombrar una etiqueta y explicar en una línea por qué está cada fuente.
+**Práctica (ejercicio 1 de la Guía completa):** crea el cuaderno «Ley 21.719 · Kit GTD» y lanza Deep Research primero. Mientras trabaja, agrega tus 3 fuentes base: el PDF de la ley (en Descargas), la URL oficial de la ley en BCN y el video de Lawwwing, que es una **fuente no oficial** y contrastas con el texto oficial. Luego importa 2 fuentes oficiales con Fast Research y solo las fuentes confiables de Deep Research. Con 5 o más, renombra una etiqueta y anota por qué está cada fuente. Sigue el ejercicio 1 de la Guía completa (Descargas).
 
-**Carril extra:** agregar como fuente una página pública de GTD sobre privacidad o términos del servicio, si existe, para contrastarla con la ley.
+<div data-prompt="deep-research"></div>
+
+<div data-prompt="fast-research"></div>
+
+**Plan B:** si Deep Research no aparece o no termina, sigues con Fast Research y tus fuentes base.
 
 **Para llevarte:** un cuaderno vale lo que valen sus fuentes. Para miles de reportes, se divide el corpus en varios cuadernos temáticos, porque cada plan tiene un límite de fuentes por cuaderno.

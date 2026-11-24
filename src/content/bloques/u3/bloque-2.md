@@ -2,12 +2,12 @@
 unidad: u3
 numero: 2
 titulo: "Configurar el chat y conversar con el cuaderno"
-minutos: 20
-microcharlaMin: 3
-practicaMin: 17
+minutos: 22
+microcharlaMin: 9
+practicaMin: 13
 sintesis:
   resumen: "Configura el estilo y la longitud del chat, prueba prompts sobre la ley y verifica las respuestas abriendo la cita en el pasaje original."
-  haras: "Configura el chat, prueba al menos cuatro prompts y verifica dos citas."
+  haras: "Configura el chat, contrasta la fecha de vigencia y verifica citas."
   claves:
     - "El chat solo usa tus fuentes."
     - "Haz clic en una cita para ir al pasaje original."
@@ -32,18 +32,17 @@ prompts:
     titulo: "Pregunta precisa"
     descripcion: "Pregunta qué derechos tiene un titular de datos y en qué artículos de la ley están."
     texto: "¿Qué derechos tiene un titular de datos y en qué artículos están?"
-  - id: comparacion-entre-fuentes
-    titulo: "Comparación entre fuentes"
-    descripcion: "Compara lo que dice el informe de Deep Research con el texto de la ley sobre sanciones y busca diferencias."
-    texto: "Compara lo que dice el informe de Deep Research con el texto de la ley sobre sanciones. ¿Hay diferencias?"
-  - id: vacios-y-contradicciones
-    titulo: "Vacíos y contradicciones"
-    descripcion: "Pregunta qué temas importantes para una empresa de telecomunicaciones no quedan claros en las fuentes del cuaderno."
-    texto: "¿Qué temas importantes para una empresa de telecomunicaciones no quedan claros en estas fuentes?"
   - id: caso-aplicado
     titulo: "Caso aplicado (ficticio)"
     descripcion: "Caso ficticio: un cliente pide por WhatsApp que eliminen sus datos; consulta qué dice la ley y qué pasos debería seguir el ejecutivo."
     texto: "Un cliente pide por WhatsApp que eliminen sus datos. ¿Qué dice la ley y qué pasos debería seguir el ejecutivo?"
+  - id: fecha-vigencia
+    titulo: "Fecha de vigencia"
+    descripcion: "Pregunta desde qué fecha rige la ley según tus fuentes, qué dice cada una y si alguna menciona una postergación."
+    texto: |-
+        ¿Desde qué fecha rige la Ley 21.719 según mis fuentes? Indica qué dice cada fuente
+        sobre la entrada en vigencia, con la fecha de esa fuente, y señala si alguna menciona
+        una postergación. Si las fuentes no coinciden, explica la diferencia.
 profundiza:
   recursos:
     - usar-chat-cuaderno
@@ -57,16 +56,14 @@ profundiza:
 - Con la **casilla de cada fuente** se incluyen o excluyen fuentes de la respuesta.
 - El chat **solo usa las fuentes**. Si se le pide algo creativo fuera de ellas, puede responder que no puede contestar.
 
-**Práctica**
-1. Pegar la plantilla en Personalizado y elegir la longitud **Predeterminada**.
-2. **Banco de prompts** (usa al menos 4):
-   - *Síntesis por audiencia:* «Explica en 5 puntos qué cambia la ley para un ejecutivo de atención al cliente».
-   - *Pregunta precisa:* «¿Qué derechos tiene un titular de datos y en qué artículos están?».
-   - *Comparación entre fuentes:* «Compara lo que dice el informe de Deep Research con el texto de la ley sobre sanciones. ¿Hay diferencias?».
-   - *Vacíos y contradicciones:* «¿Qué temas importantes para una empresa de telecomunicaciones no quedan claros en estas fuentes?».
-   - *Caso aplicado (ficticio):* «Un cliente pide por WhatsApp que eliminen sus datos. ¿Qué dice la ley y qué pasos debería seguir el ejecutivo?».
-3. Cambiar la longitud a **Más corta** y repetir un prompt para comparar.
-4. **Verificar 2 citas** abriendo el pasaje original.
-5. Guardar las 2 mejores respuestas como **notas**.
+**Práctica (ejercicio 2 de la Guía completa):** pega la plantilla en Personalizado con la longitud Predeterminada; envía los 3 prompts del banco; cambia a **Más corta**, repite uno y compara. Luego pregunta por la fecha de vigencia, verifica 2 citas en el pasaje original y guarda tu mejor respuesta como nota, con la fecha que indica cada fuente. Sigue el ejercicio 2 de la Guía completa (Descargas).
 
-**Carril extra:** excluir el video con su casilla y repetir una pregunta para ver cómo cambia la respuesta.
+<div data-prompt="plantilla-estilo-personalizado"></div>
+
+<div data-prompt="sintesis-por-audiencia"></div>
+
+<div data-prompt="pregunta-precisa"></div>
+
+<div data-prompt="caso-aplicado"></div>
+
+<div data-prompt="fecha-vigencia"></div>

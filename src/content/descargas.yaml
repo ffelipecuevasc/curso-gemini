@@ -40,3 +40,9 @@
 - id: u2-logo-gtd-png
   titulo: "Logotipo GTD (PNG)"
   archivo: /descargas/gtd-telsur.png
+- id: u3-guia-completa
+  titulo: "Guía completa · Sección Práctica U3"
+  archivo: /descargas/u3-guia-completa.pdf
+- id: u3-ley-21719
+  titulo: "Ley 21.719 · texto oficial (BCN)"
+  archivo: /descargas/u3-ley-21719.pdf

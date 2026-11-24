@@ -36,8 +36,8 @@ La U2 se preparó el 2026-11-23 (ver la iteración 07-02). Las unidades 3 y 4 te
 | Iteración | Nombre | Estado |
 | :-------- | :----- | :----- |
 | 07-01 | [Unidad 1: cuenta, modelos y prácticas del laboratorio](iteracion-07-01-unidad-1.md) | Terminada |
-| 07-02 | [Unidad 2: estructura en dos mitades, cuenta, modelos y prácticas del Cuaderno](iteracion-07-02-unidad-2.md) | En revisión |
-| 07-03 | Unidad 3 (se redacta tras su preparación) | Sin redactar |
+| 07-02 | [Unidad 2: estructura en dos mitades, cuenta, modelos y prácticas del Cuaderno](iteracion-07-02-unidad-2.md) | Terminada |
+| 07-03 | [Unidad 3: dos mitades, cuenta corporativa, fecha neutral y prácticas de la Guía completa](iteracion-07-03-unidad-3.md) | En revisión |
 | 07-04 | Unidad 4 (se redacta tras su preparación) | Sin redactar |
 
 ## Precondiciones
